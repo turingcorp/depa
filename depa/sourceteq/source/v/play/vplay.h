@@ -1,6 +1,10 @@
 #import "appdel.h"
 #import "viewbase.h"
 
-@interface vplay:UIView
+@class vspinner;
+
+@interface vplay:viewbase
+
+@property(weak, nonatomic)vspinner *spinner;
 
 @end
