@@ -3,3 +3,5 @@
 #import "mdb.h"
 #import "mdbcreate.h"
 #import "msettings.h"
+#import "msearch.h"
+#import "msearchresult.h"
