@@ -11,6 +11,11 @@
     return self;
 }
 
+-(void)dealloc
+{
+    [self.callmanager cancelcall];
+}
+
 -(void)loadView
 {
     self.view = [[vplayload alloc] init:self];
@@ -24,6 +29,9 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    amanager *callmanager = [amanager call:apicall_search delegate:self valriables:nil];
+    self.callmanager = callmanager;
 }
 
 -(BOOL)prefersStatusBarHidden
