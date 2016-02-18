@@ -2,4 +2,6 @@
 
 @interface aparser:NSObject
 
+-(instancetype)init:(NSDictionary*)json;
+
 @end
