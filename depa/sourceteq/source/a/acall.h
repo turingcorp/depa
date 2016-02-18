@@ -3,6 +3,8 @@
 @interface acall:NSObject
 
 -(instancetype)init:(NSString*)variables;
+-(void)buildrequest;
+-(void)buildendpoint:(NSDictionary*)params;
 -(NSURLRequest*)request;
 
 @property(copy, nonatomic)NSString *server;

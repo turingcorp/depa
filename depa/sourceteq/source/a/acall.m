@@ -8,6 +8,7 @@
     
     self.variables = variables;
     self.post = NO;
+    self.timeout = 25;
     self.keyforserver = @"server";
     self.keyforendpoint = @"";
     
@@ -15,6 +16,16 @@
 }
 
 #pragma mark public
+
+-(void)buildrequest
+{
+    
+}
+
+-(void)buildendpoint:(NSDictionary*)params
+{
+    
+}
 
 -(NSURLRequest*)request
 {
