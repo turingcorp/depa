@@ -7,7 +7,18 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
+                       acall *callmodel;
                        
+                       switch(call)
+                       {
+                            case apicall_search:
+                               
+                               callmodel = [[acallsearch alloc] init];
+                               
+                               break;
+                       }
+                       
+                       __unused amanager *manager = [[amanager alloc] init:callmodel delegate:delegate];
                    });
 }
 
