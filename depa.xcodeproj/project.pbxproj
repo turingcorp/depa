@@ -36,6 +36,7 @@
 		DA9141831C7662BC004BE5D1 /* loader4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9141741C7662BC004BE5D1 /* loader4@2x.png */; };
 		DA9141841C7662BC004BE5D1 /* loader4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9141751C7662BC004BE5D1 /* loader4@3x.png */; };
 		DA9141881C766669004BE5D1 /* vplay.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141871C766669004BE5D1 /* vplay.m */; };
+		DA91418E1C766B77004BE5D1 /* vplayload.m in Sources */ = {isa = PBXBuildFile; fileRef = DA91418D1C766B77004BE5D1 /* vplayload.m */; };
 		DACDA83F1C76073200A37D15 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F21C76073200A37D15 /* analytics.plist */; };
 		DACDA8401C76073200A37D15 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F31C76073200A37D15 /* defs.plist */; };
 		DACDA8411C76073200A37D15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F41C76073200A37D15 /* Localizable.strings */; };
@@ -105,6 +106,8 @@
 		DA9141751C7662BC004BE5D1 /* loader4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loader4@3x.png"; sourceTree = "<group>"; };
 		DA9141861C766669004BE5D1 /* vplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplay.h; sourceTree = "<group>"; };
 		DA9141871C766669004BE5D1 /* vplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplay.m; sourceTree = "<group>"; };
+		DA91418C1C766B77004BE5D1 /* vplayload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayload.h; sourceTree = "<group>"; };
+		DA91418D1C766B77004BE5D1 /* vplayload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayload.m; sourceTree = "<group>"; };
 		DAADE8431C755FB900489E6E /* depa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = depa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACDA7F21C76073200A37D15 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
 		DACDA7F31C76073200A37D15 /* defs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defs.plist; sourceTree = "<group>"; };
@@ -246,6 +249,8 @@
 			children = (
 				DA9141861C766669004BE5D1 /* vplay.h */,
 				DA9141871C766669004BE5D1 /* vplay.m */,
+				DA91418C1C766B77004BE5D1 /* vplayload.h */,
+				DA91418D1C766B77004BE5D1 /* vplayload.m */,
 			);
 			path = play;
 			sourceTree = "<group>";
@@ -701,6 +706,7 @@
 				DACDA8421C76073200A37D15 /* appdel.m in Sources */,
 				DA6973271C764C4700A2C6EB /* aparsersearch.m in Sources */,
 				DACDA84D1C76073200A37D15 /* mdb.m in Sources */,
+				DA91418E1C766B77004BE5D1 /* vplayload.m in Sources */,
 				DACDA8521C76073200A37D15 /* vblur.m in Sources */,
 				DACDA8451C76073200A37D15 /* analytics.m in Sources */,
 				DACDA8461C76073200A37D15 /* tools.m in Sources */,
