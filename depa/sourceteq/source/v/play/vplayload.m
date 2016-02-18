@@ -20,6 +20,7 @@
     [label setFont:[UIFont fontWithName:fontname size:22]];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setText:NSLocalizedString(@"play_load_retrylabel", nil)];
+    [label setHidden:YES];
     self.label = label;
     
     UIButton *button = [[UIButton alloc] init];
@@ -31,6 +32,7 @@
     [button.titleLabel setFont:[UIFont fontWithName:fontboldname size:15]];
     [button.layer setCornerRadius:4];
     [button setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [button setHidden:YES];
     self.button = button;
     
     [self addSubview:label];
@@ -64,6 +66,8 @@
 -(void)showretry
 {
     [self.spinner stopAnimating];
+    [self.label setHidden:NO];
+    [self.button setHidden:NO];
 }
 
 -(void)showloading

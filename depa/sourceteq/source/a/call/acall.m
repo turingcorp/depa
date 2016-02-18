@@ -53,6 +53,8 @@
         [request setHTTPBody:bodydata];
     }
     
+    NSLog(@"%@", urlstring);
+    
     return request;
 }
 

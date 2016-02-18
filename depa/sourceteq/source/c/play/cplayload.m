@@ -30,19 +30,47 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    amanager *callmanager = [amanager call:apicall_search delegate:self valriables:nil];
-    self.callmanager = callmanager;
+    [self recall];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [self stopcall];
 }
 
 -(BOOL)prefersStatusBarHidden
 {
     return NO;
+}
+
+#pragma mark functionality
+
+-(void)recall
+{
+    amanager *callmanager = [amanager call:apicall_search delegate:self valriables:@""];
+    self.callmanager = callmanager;
+}
+
+-(void)stopcall
+{
+    [self.callmanager cancelcall];
+    [self.viewload showretry];
+}
+
+#pragma mark -
+#pragma mark call del
+
+-(void)callsuccess:(amanager*)manager
+{
+    
+}
+
+-(void)call:(amanager*)manager error:(NSString*)error
+{
+    [valert alert:error inview:self.viewload];
+    [self.callmanager cancelcall];
+    [self.viewload showretry];
 }
 
 @end
