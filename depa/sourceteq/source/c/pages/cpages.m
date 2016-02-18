@@ -8,7 +8,7 @@
 -(instancetype)init
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    [self setViewControllers:@[[[clist alloc] init]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [self setViewControllers:@[[[UIViewController alloc] init]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     UIBarButtonItem *itemadd = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(actionadd:)];
     self.itemadd = itemadd;
@@ -63,7 +63,7 @@
 {
     __weak cpages *weakself = self;
     
-    [weakself setViewControllers:@[[[clist alloc] init]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:
+    [weakself setViewControllers:@[[[UIViewController alloc] init]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:
      ^(BOOL done)
      {
          [weakself.navigationItem setRightBarButtonItem:weakself.itemadd];
@@ -75,18 +75,12 @@
 {
     __weak cpages *weakself = self;
     
-    [weakself setViewControllers:@[[[cconfig alloc] init]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:
+    [weakself setViewControllers:@[[[UIViewController alloc] init]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:
      ^(BOOL done)
      {
          [weakself.navigationItem setRightBarButtonItem:weakself.itemlistright];
          [weakself.navigationItem setLeftBarButtonItem:nil];
      }];
-}
-
--(void)actionshare:(UIBarButtonItem*)item
-{
-    cflow *controller = self.viewControllers[0];
-    [controller exportflow];
 }
 
 #pragma mark functionality
@@ -95,7 +89,7 @@
 {
     __weak cpages *weakself = self;
     
-    [weakself setViewControllers:@[[[cflow alloc] init]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:
+    [weakself setViewControllers:@[[[UIViewController alloc] init]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:
      ^(BOOL done)
      {
          [weakself.navigationItem setRightBarButtonItem:weakself.itemshare];
@@ -107,7 +101,7 @@
 {
     __weak cpages *weakself = self;
     
-    [weakself setViewControllers:@[[[clist alloc] init]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:
+    [weakself setViewControllers:@[[[UIViewController alloc] init]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:
      ^(BOOL done)
      {
          [weakself.navigationItem setRightBarButtonItem:weakself.itemadd];

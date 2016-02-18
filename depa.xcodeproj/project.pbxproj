@@ -655,6 +655,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/depa/sourceteq/core/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -671,6 +672,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/depa/sourceteq/core/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
