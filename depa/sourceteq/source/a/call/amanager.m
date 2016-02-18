@@ -2,8 +2,10 @@
 
 @implementation amanager
 
-+(void)call:(apicall)call delegate:(id<acalldelegate>)delegate valriables:(id)variables
++(instancetype)call:(apicall)call delegate:(id<acalldelegate>)delegate valriables:(id)variables;
 {
+    amanager *manager = [[amanager alloc] init:delegate];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
@@ -11,7 +13,7 @@
                        
                        switch(call)
                        {
-                            case apicall_search:
+                           case apicall_search:
                                
                                callmodel = [[acallsearch alloc] init:variables];
                                
@@ -19,26 +21,16 @@
                        }
                        
                        [callmodel buildrequest];
-                       __unused amanager *manager = [[amanager alloc] init:callmodel delegate:delegate];
+                       [manager makecall:callmodel];
                    });
+    
+    return manager;
 }
 
--(instancetype)init:(acall*)call delegate:(id<acalldelegate>)delegate
+-(instancetype)init:(id<acalldelegate>)delegate
 {
     self = [super init];
-    
-    self.call = call;
     self.delegate = delegate;
-    
-    NSOperationQueue *operation = [[NSOperationQueue alloc] init];
-    NSURLSessionTask *task;
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
-    [configuration setAllowsCellularAccess:YES];
-    [configuration setTimeoutIntervalForRequest:call.timeout];
-    self.session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:operation];
-    task = [self.session dataTaskWithRequest:call.request];
-    [task resume];
-    [self.session finishTasksAndInvalidate];
     
     return self;
 }
@@ -50,6 +42,28 @@
     [self.delegate call:self error:errorstring];
     
 #warning "track analytics"
+}
+
+#pragma mark public
+
+-(void)makecall:(acall*)call
+{
+    self.call = call;
+    
+    NSOperationQueue *operation = [[NSOperationQueue alloc] init];
+    NSURLSessionTask *task;
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+    [configuration setAllowsCellularAccess:YES];
+    [configuration setTimeoutIntervalForRequest:call.timeout];
+    self.session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:operation];
+    task = [self.session dataTaskWithRequest:call.request];
+    [task resume];
+    [self.session finishTasksAndInvalidate];
+}
+
+-(void)cancelcall
+{
+    [self.session invalidateAndCancel];
 }
 
 #pragma mark -

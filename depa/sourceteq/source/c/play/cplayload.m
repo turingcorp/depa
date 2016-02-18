@@ -21,6 +21,11 @@
     return UIStatusBarStyleLightContent;
 }
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
 -(BOOL)prefersStatusBarHidden
 {
     return NO;
