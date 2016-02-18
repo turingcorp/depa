@@ -1,5 +1,5 @@
 #import "appdel.h"
 
-@interface cplay:UIViewController
+@interface cplay:UIPageViewController
 
 @end

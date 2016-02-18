@@ -2,9 +2,22 @@
 
 @implementation cplay
 
--(void)loadView
+-(instancetype)init
 {
-    self.view = [[vplay alloc] init:self];
+    self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    [self setViewControllers:@[[[cplayload alloc] init]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    return self;
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return NO;
 }
 
 @end
