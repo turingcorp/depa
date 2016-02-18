@@ -5,25 +5,14 @@
 -(instancetype)init
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    [self setViewControllers:@[[[cplay alloc] init]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    self.itemplay = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionplay:)];
+    self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
+    self.itemconfig = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(actionconfig:)];
+    self.itemfavorites = [[UIBarButtonItem  alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(actionfavorites:)];
     
-    UIBarButtonItem *itemadd = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(actionadd:)];
-    self.itemadd = itemadd;
-    
-    UIBarButtonItem *itemsettings = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settings"] style:UIBarButtonItemStylePlain target:self action:@selector(actionconfig:)];
-    self.itemsettings = itemsettings;
-    
-    UIBarButtonItem *itemlistleft = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"list"] style:UIBarButtonItemStylePlain target:self action:@selector(actionlistleft:)];
-    self.itemlistleft = itemlistleft;
-    
-    UIBarButtonItem *itemlistright = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"list"] style:UIBarButtonItemStylePlain target:self action:@selector(actionlistright:)];
-    self.itemlistright = itemlistright;
-    
-    UIBarButtonItem *itemshare = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionshare:)];
-    self.itemshare = itemshare;
-    
-    [self.navigationItem setRightBarButtonItem:itemadd];
-    [self.navigationItem setLeftBarButtonItem:itemsettings];
+    [self.navigationItem setRightBarButtonItem:self.itemfavorites];
+    [self.navigationItem setLeftBarButtonItem:self.itemconfig];
+    [self showplay:UIPageViewControllerNavigationDirectionForward animated:NO];
     
     return self;
 }
@@ -46,14 +35,9 @@
 
 #pragma mark actions
 
--(void)actionplayleft:(UIBarButtonItem*)item
+-(void)actionplay:(UIBarButtonItem*)item
 {
-    [self showplay:UIPageViewControllerNavigationDirectionReverse animated:YES];
-}
-
--(void)actionplayright:(UIBarButtonItem*)item
-{
-    [self showplay:UIPageViewControllerNavigationDirectionForward animated:YES];
+    [self showplay:item.tag animated:YES];
 }
 
 -(void)actionconfig:(UIBarButtonItem*)item
@@ -68,19 +52,27 @@
 
 #pragma mark functionality
 
+-(void)changecontroller:(UIViewController*)controller direction:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
+{
+    NSArray *array = @[controller];
+    [self setViewControllers:array direction:direction animated:animated completion:nil];
+}
+
 -(void)showplay:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
-    
+    [self changecontroller:[[cplayload alloc] init] direction:direction animated:animated];
 }
 
 -(void)showconfig:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
-    
+    self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
+    [self changecontroller:[[UIViewController alloc] init] direction:direction animated:animated];
 }
 
 -(void)showfavorites:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
-    
+    self.itemplay.tag = UIPageViewControllerNavigationDirectionReverse;
+    [self changecontroller:[[UIViewController alloc] init] direction:direction animated:animated];
 }
 
 @end
