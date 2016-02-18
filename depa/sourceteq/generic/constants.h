@@ -5,8 +5,8 @@
 
 // font
 
-#define fontname                @"Menlo-Regular"
-#define fontboldname            @"Menlo-Bold"
+#define fontname                @"HelveticaNeue-Thin"
+#define fontboldname            @"HelveticaNeue-Medium"
 
 // ids
 
