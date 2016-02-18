@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */; };
 		DACDA83E1C76073200A37D15 /* flux.db in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7ED1C76073200A37D15 /* flux.db */; };
 		DACDA83F1C76073200A37D15 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F21C76073200A37D15 /* analytics.plist */; };
 		DACDA8401C76073200A37D15 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F31C76073200A37D15 /* defs.plist */; };
@@ -36,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.release.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.release.xcconfig"; sourceTree = "<group>"; };
+		78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-depa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.debug.xcconfig"; sourceTree = "<group>"; };
 		DAADE8431C755FB900489E6E /* depa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = depa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACDA7ED1C76073200A37D15 /* flux.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = flux.db; sourceTree = "<group>"; };
 		DACDA7F21C76073200A37D15 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
@@ -102,17 +106,29 @@
 			files = (
 				DACDA8491C76073200A37D15 /* libtimerbg.a in Frameworks */,
 				DACDA8481C76073200A37D15 /* libdb.a in Frameworks */,
+				7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB4E0AF9290284B33151FF99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */,
+				2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DAADE83A1C755FB900489E6E = {
 			isa = PBXGroup;
 			children = (
 				DAADE8451C755FB900489E6E /* depa */,
 				DAADE8441C755FB900489E6E /* Products */,
+				AB4E0AF9290284B33151FF99 /* Pods */,
+				DE15BEF0973E01072524BBA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -386,6 +402,14 @@
 			path = private;
 			sourceTree = "<group>";
 		};
+		DE15BEF0973E01072524BBA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -393,9 +417,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAADE85A1C755FB900489E6E /* Build configuration list for PBXNativeTarget "depa" */;
 			buildPhases = (
+				1EBA22556BB5D97B4002D502 /* Check Pods Manifest.lock */,
 				DAADE83F1C755FB900489E6E /* Sources */,
 				DAADE8401C755FB900489E6E /* Frameworks */,
 				DAADE8411C755FB900489E6E /* Resources */,
+				3E532161D82269EC7F54515B /* Embed Pods Frameworks */,
+				42047248BA6BF1822F5CFD1B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -453,6 +480,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1EBA22556BB5D97B4002D502 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3E532161D82269EC7F54515B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-depa/Pods-depa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42047248BA6BF1822F5CFD1B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-depa/Pods-depa-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DAADE83F1C755FB900489E6E /* Sources */ = {
@@ -580,6 +655,7 @@
 		};
 		DAADE85B1C755FB900489E6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = depa/Info.plist;
@@ -595,6 +671,7 @@
 		};
 		DAADE85C1C755FB900489E6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = depa/Info.plist;
