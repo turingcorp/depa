@@ -35,6 +35,7 @@
 		DA9141821C7662BC004BE5D1 /* loader4.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9141731C7662BC004BE5D1 /* loader4.png */; };
 		DA9141831C7662BC004BE5D1 /* loader4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9141741C7662BC004BE5D1 /* loader4@2x.png */; };
 		DA9141841C7662BC004BE5D1 /* loader4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9141751C7662BC004BE5D1 /* loader4@3x.png */; };
+		DA9141881C766669004BE5D1 /* vplay.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141871C766669004BE5D1 /* vplay.m */; };
 		DACDA83F1C76073200A37D15 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F21C76073200A37D15 /* analytics.plist */; };
 		DACDA8401C76073200A37D15 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F31C76073200A37D15 /* defs.plist */; };
 		DACDA8411C76073200A37D15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F41C76073200A37D15 /* Localizable.strings */; };
@@ -102,6 +103,8 @@
 		DA9141731C7662BC004BE5D1 /* loader4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loader4.png; sourceTree = "<group>"; };
 		DA9141741C7662BC004BE5D1 /* loader4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loader4@2x.png"; sourceTree = "<group>"; };
 		DA9141751C7662BC004BE5D1 /* loader4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loader4@3x.png"; sourceTree = "<group>"; };
+		DA9141861C766669004BE5D1 /* vplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplay.h; sourceTree = "<group>"; };
+		DA9141871C766669004BE5D1 /* vplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplay.m; sourceTree = "<group>"; };
 		DAADE8431C755FB900489E6E /* depa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = depa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACDA7F21C76073200A37D15 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
 		DACDA7F31C76073200A37D15 /* defs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defs.plist; sourceTree = "<group>"; };
@@ -236,6 +239,15 @@
 				DA69732D1C76549400A2C6EB /* msearchresult.m */,
 			);
 			path = search;
+			sourceTree = "<group>";
+		};
+		DA9141851C766646004BE5D1 /* play */ = {
+			isa = PBXGroup;
+			children = (
+				DA9141861C766669004BE5D1 /* vplay.h */,
+				DA9141871C766669004BE5D1 /* vplay.m */,
+			);
+			path = play;
 			sourceTree = "<group>";
 		};
 		DAADE83A1C755FB900489E6E = {
@@ -479,6 +491,7 @@
 		DACDA82B1C76073200A37D15 /* v */ = {
 			isa = PBXGroup;
 			children = (
+				DA9141851C766646004BE5D1 /* play */,
 				DACDA82C1C76073200A37D15 /* alert */,
 				DACDA82F1C76073200A37D15 /* general */,
 				DACDA8361C76073200A37D15 /* main */,
@@ -682,6 +695,7 @@
 			files = (
 				DACDA8501C76073200A37D15 /* msettings.m in Sources */,
 				DACDA8551C76073200A37D15 /* vrate.m in Sources */,
+				DA9141881C766669004BE5D1 /* vplay.m in Sources */,
 				DACDA84A1C76073200A37D15 /* cmain.m in Sources */,
 				DACDA8441C76073200A37D15 /* main.m in Sources */,
 				DACDA8421C76073200A37D15 /* appdel.m in Sources */,
