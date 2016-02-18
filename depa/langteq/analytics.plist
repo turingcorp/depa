@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>screens</key>
+	<array>
+		<string>list</string>
+        <string>flow</string>
+        <string>detail</string>
+        <string>config</string>
+	</array>
+	<key>events</key>
+	<array>
+		<string>export</string>
+        <string>save</string>
+        <string>addett</string>
+        <string>changecolor</string>
+        <string>edittext</string>
+        <string>remove</string>
+	</array>
+	<key>actions</key>
+	<array>
+		<string>done</string>
+	</array>
+</dict>
+</plist>

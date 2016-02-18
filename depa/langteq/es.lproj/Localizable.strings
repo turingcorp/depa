@@ -1,0 +1,63 @@
+"app_title"="flux";
+
+"flow_main_title"="Constructor";
+"flow_catalog_con"="Conector";
+"flow_catalog_pro"="Proceso";
+"flow_catalog_dec"="Comparador";
+"flow_catalog_io"="Entrada/Salida";
+"flow_catalog_cancel"="Cancelar";
+"flow_catalog_connect"="Conectar elemento";
+"flow_catalog_connect_cancel"="Cancelar conectar";
+
+"flow_colors_main"="Principal";
+"flow_colors_blue"="Azul";
+"flow_colors_green"="Verde";
+"flow_colors_yellow"="Amarillo";
+"flow_colors_violet"="Violeta";
+"flow_colors_grey"="Gris";
+"flow_colors_pink"="Rosa";
+"flow_colors_accept"="Listo";
+
+"flow_etttext_con_start"="Punto inicial";
+"flow_etttext_con_end"="Punto final";
+"flow_etttext_dec"="Una comparacion";
+"flow_etttext_io"="Entrada de datos";
+"flow_etttext_pro"="Algun proceso";
+
+"flow_field_done"="Listo";
+"flow_field_placeholder"="Descripcion";
+
+"flow_exportname"="flujo.png";
+
+"flow_detail_title"="Finalizar";
+"flow_detail_action_save"="Guardar";
+"flow_detail_action_export"="Exportar";
+
+"list_main_title"="Flujos";
+"list_header_empty"="No has creado flujos";
+"list_header_button"="Crea el primero";
+
+"config_main_title"="Configurar";
+"config_item_hr"="Usar alta resolucion\n";
+"config_item_hrdescr"="Mejor calidad, archivos mas grandes";
+"config_item_size"="Tamaño de fuente";
+
+"font_title"="Tipo de fuente";
+"font_menlo"="Menlo";
+"font_arial"="Arial";
+"font_helvetica"="Helvetica";
+"font_times"="Times";
+"font_futura"="Futura";
+
+"rate_descr"="How would you rate this app?";
+"rate_donereview"="Rate sent. Would you write a review in the app store?";
+"rate_send"="Send";
+"rate_done"="Not now";
+"rate_review"="Review";
+"rate_accept"="Done";
+"rate_thankyou"="Thank you for your support";
+
+"alert_cancel"="Cancelar";
+"alert_delete_title"="¿Cerrar editor?";
+"alert_delete_descr"="Perderas tus cambios";
+"alert_delete_ok"="Cerrar";

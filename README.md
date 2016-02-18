@@ -1,2 +1,0 @@
-# depa
-Depa iOS
