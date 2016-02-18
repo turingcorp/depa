@@ -1,1 +1,0 @@
-#define analyticsid                 @"UA-72037850-7"
