@@ -57,6 +57,7 @@
 		DA69730E1C76240C00A2C6EB /* acallsearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acallsearch.m; sourceTree = "<group>"; };
 		DA6973101C76246900A2C6EB /* acall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acall.h; sourceTree = "<group>"; };
 		DA6973111C76246900A2C6EB /* acall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acall.m; sourceTree = "<group>"; };
+		DA6973131C7625B600A2C6EB /* acalldelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acalldelegate.h; sourceTree = "<group>"; };
 		DAADE8431C755FB900489E6E /* depa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = depa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACDA7F21C76073200A37D15 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
 		DACDA7F31C76073200A37D15 /* defs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defs.plist; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 				DA6973111C76246900A2C6EB /* acall.m */,
 				DA69730D1C76240C00A2C6EB /* acallsearch.h */,
 				DA69730E1C76240C00A2C6EB /* acallsearch.m */,
+				DA6973131C7625B600A2C6EB /* acalldelegate.h */,
 			);
 			path = a;
 			sourceTree = "<group>";
