@@ -12,6 +12,7 @@
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
 		DA6973061C760D0600A2C6EB /* cplay.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6973051C760D0600A2C6EB /* cplay.m */; };
+		DA69730B1C76224200A2C6EB /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA69730A1C76224200A2C6EB /* amanager.m */; };
 		DACDA83F1C76073200A37D15 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F21C76073200A37D15 /* analytics.plist */; };
 		DACDA8401C76073200A37D15 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F31C76073200A37D15 /* defs.plist */; };
 		DACDA8411C76073200A37D15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F41C76073200A37D15 /* Localizable.strings */; };
@@ -47,6 +48,9 @@
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
 		DA6973041C760D0600A2C6EB /* cplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cplay.h; sourceTree = "<group>"; };
 		DA6973051C760D0600A2C6EB /* cplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cplay.m; sourceTree = "<group>"; };
+		DA6973081C76222C00A2C6EB /* a.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = a.h; sourceTree = "<group>"; };
+		DA6973091C76224200A2C6EB /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
+		DA69730A1C76224200A2C6EB /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
 		DAADE8431C755FB900489E6E /* depa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = depa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACDA7F21C76073200A37D15 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
 		DACDA7F31C76073200A37D15 /* defs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defs.plist; sourceTree = "<group>"; };
@@ -135,6 +139,16 @@
 				DA6973051C760D0600A2C6EB /* cplay.m */,
 			);
 			path = play;
+			sourceTree = "<group>";
+		};
+		DA6973071C76222400A2C6EB /* a */ = {
+			isa = PBXGroup;
+			children = (
+				DA6973081C76222C00A2C6EB /* a.h */,
+				DA6973091C76224200A2C6EB /* amanager.h */,
+				DA69730A1C76224200A2C6EB /* amanager.m */,
+			);
+			path = a;
 			sourceTree = "<group>";
 		};
 		DAADE83A1C755FB900489E6E = {
@@ -269,6 +283,7 @@
 		DACDA8101C76073200A37D15 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				DA6973071C76222400A2C6EB /* a */,
 				DACDA8111C76073200A37D15 /* c */,
 				DACDA81B1C76073200A37D15 /* m */,
 				DACDA8291C76073200A37D15 /* s */,
@@ -545,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA69730B1C76224200A2C6EB /* amanager.m in Sources */,
 				DACDA8501C76073200A37D15 /* msettings.m in Sources */,
 				DACDA8551C76073200A37D15 /* vrate.m in Sources */,
 				DACDA84A1C76073200A37D15 /* cmain.m in Sources */,
