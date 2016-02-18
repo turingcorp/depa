@@ -9,6 +9,7 @@
     if(self.validjson)
     {
         self.array = [NSMutableArray array];
+        NSDictionary *paging = json[@"paging"];
         NSArray *results = json[@"results"];
         NSUInteger count = results.count;
         
@@ -19,6 +20,10 @@
             
             [self.array addObject:item];
         }
+        
+        self.total = [paging[@"total"] unsignedIntegerValue];
+        self.offset = [paging[@"offset"] unsignedIntegerValue];
+        self.limit = [paging[@"limit"] unsignedIntegerValue];
     }
     
     return self;

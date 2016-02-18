@@ -39,4 +39,12 @@
     return string;
 }
 
+-(void)join:(aparsersearch*)searchresults
+{
+    self.total = searchresults.total;
+    self.offset = searchresults.offset;
+    self.limit = searchresults.limit;
+    [array addObjectsFromArray:searchresults.array];
+}
+
 @end
