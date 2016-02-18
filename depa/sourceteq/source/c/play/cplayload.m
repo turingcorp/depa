@@ -19,6 +19,7 @@
 -(void)loadView
 {
     self.view = [[vplayload alloc] init:self];
+    self.viewload = (vplayload*)self.view;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
