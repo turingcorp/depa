@@ -60,7 +60,7 @@
 
 -(void)showplay:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
-    [self changecontroller:[[cplayload alloc] init] direction:direction animated:animated];
+    [self changecontroller:[[cplay alloc] init] direction:direction animated:animated];
 }
 
 -(void)showconfig:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
