@@ -10,7 +10,7 @@
     [self setUserInteractionEnabled:NO];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setContentMode:UIViewContentModeScaleAspectFit];
-    [self setAnimationDuration:0.5];
+    [self setAnimationDuration:1.5];
     self.animationImages = @[
                              [UIImage imageNamed:@"loader0"],
                              [UIImage imageNamed:@"loader1"],
