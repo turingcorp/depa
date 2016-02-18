@@ -15,7 +15,9 @@
         for(NSUInteger i = 0; i < count; i++)
         {
             NSDictionary *itemresults =  results[i];
+            msearchresult *item = [[msearchresult alloc] init:itemresults];
             
+            [self.array addObject:item];
         }
     }
     
