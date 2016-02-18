@@ -16,6 +16,8 @@
 		DA69731E1C764B6100A2C6EB /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6973181C764B6100A2C6EB /* acall.m */; };
 		DA69731F1C764B6100A2C6EB /* acallsearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DA69731B1C764B6100A2C6EB /* acallsearch.m */; };
 		DA6973201C764B6100A2C6EB /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA69731D1C764B6100A2C6EB /* amanager.m */; };
+		DA6973241C764C3600A2C6EB /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6973231C764C3600A2C6EB /* aparser.m */; };
+		DA6973271C764C4700A2C6EB /* aparsersearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6973261C764C4700A2C6EB /* aparsersearch.m */; };
 		DACDA83F1C76073200A37D15 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F21C76073200A37D15 /* analytics.plist */; };
 		DACDA8401C76073200A37D15 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F31C76073200A37D15 /* defs.plist */; };
 		DACDA8411C76073200A37D15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F41C76073200A37D15 /* Localizable.strings */; };
@@ -60,6 +62,10 @@
 		DA69731B1C764B6100A2C6EB /* acallsearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acallsearch.m; sourceTree = "<group>"; };
 		DA69731C1C764B6100A2C6EB /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
 		DA69731D1C764B6100A2C6EB /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
+		DA6973221C764C3600A2C6EB /* aparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparser.h; sourceTree = "<group>"; };
+		DA6973231C764C3600A2C6EB /* aparser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparser.m; sourceTree = "<group>"; };
+		DA6973251C764C4700A2C6EB /* aparsersearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparsersearch.h; sourceTree = "<group>"; };
+		DA6973261C764C4700A2C6EB /* aparsersearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparsersearch.m; sourceTree = "<group>"; };
 		DAADE8431C755FB900489E6E /* depa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = depa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACDA7F21C76073200A37D15 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
 		DACDA7F31C76073200A37D15 /* defs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defs.plist; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 		DA6973071C76222400A2C6EB /* a */ = {
 			isa = PBXGroup;
 			children = (
+				DA6973211C764C2800A2C6EB /* parser */,
 				DA6973161C764B6100A2C6EB /* call */,
 				DA6973081C76222C00A2C6EB /* a.h */,
 			);
@@ -171,6 +178,17 @@
 				DA69731D1C764B6100A2C6EB /* amanager.m */,
 			);
 			path = call;
+			sourceTree = "<group>";
+		};
+		DA6973211C764C2800A2C6EB /* parser */ = {
+			isa = PBXGroup;
+			children = (
+				DA6973221C764C3600A2C6EB /* aparser.h */,
+				DA6973231C764C3600A2C6EB /* aparser.m */,
+				DA6973251C764C4700A2C6EB /* aparsersearch.h */,
+				DA6973261C764C4700A2C6EB /* aparsersearch.m */,
+			);
+			path = parser;
 			sourceTree = "<group>";
 		};
 		DAADE83A1C755FB900489E6E = {
@@ -589,11 +607,13 @@
 				DACDA84A1C76073200A37D15 /* cmain.m in Sources */,
 				DACDA8441C76073200A37D15 /* main.m in Sources */,
 				DACDA8421C76073200A37D15 /* appdel.m in Sources */,
+				DA6973271C764C4700A2C6EB /* aparsersearch.m in Sources */,
 				DACDA84D1C76073200A37D15 /* mdb.m in Sources */,
 				DACDA8521C76073200A37D15 /* vblur.m in Sources */,
 				DACDA8451C76073200A37D15 /* analytics.m in Sources */,
 				DACDA8461C76073200A37D15 /* tools.m in Sources */,
 				DA6973201C764B6100A2C6EB /* amanager.m in Sources */,
+				DA6973241C764C3600A2C6EB /* aparser.m in Sources */,
 				DACDA84F1C76073200A37D15 /* mdirs.m in Sources */,
 				DACDA8471C76073200A37D15 /* updater.m in Sources */,
 				DA69731F1C764B6100A2C6EB /* acallsearch.m in Sources */,
