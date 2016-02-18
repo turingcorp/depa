@@ -40,7 +40,22 @@
         }
         else if([object isKindOfClass:[NSArray class]])
         {
-            validobject = [NSMutableArray array];
+            NSArray *arrobject = object;
+            NSMutableArray *validarray = [NSMutableArray array];
+            NSUInteger count = arrobject.count;
+            
+            for(NSUInteger i = 0; i < count; i++)
+            {
+                id rawobject = arrobject[i];
+                id returnedobject = [self basicparse:rawobject];
+                
+                if(returnedobject)
+                {
+                    [validarray addObject:returnedobject];
+                }
+            }
+            
+            validobject = validarray;
         }
         else
         {
