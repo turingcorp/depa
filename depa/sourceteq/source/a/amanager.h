@@ -8,7 +8,10 @@
 +(void)call:(apicall)call delegate:(id<acalldelegate>)delegate valriables:(id)variables;
 
 @property(weak, nonatomic)id<acalldelegate> delegate;
-@property(strong, nonatomic)id response;
+@property(strong, nonatomic)NSDictionary *response;
 @property(strong, nonatomic)acall *call;
+@property(strong, nonatomic)NSURLSession *session;
+@property(strong, nonatomic)NSMutableData *data;
+@property(strong, nonatomic)NSError *error;
 
 @end
