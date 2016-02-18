@@ -7,6 +7,6 @@
 	<key>version</key>
 	<integer>10</integer>
 	<key>dbname</key>
-	<string>flux.db</string>
+	<string>depa.db</string>
 </dict>
 </plist>
