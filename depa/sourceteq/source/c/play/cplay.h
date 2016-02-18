@@ -1,13 +1,5 @@
-//
-//  cplay.h
-//  depa
-//
-//  Created by zero on 2/18/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
 
-#import <Foundation/Foundation.h>
-
-@interface cplay : NSObject
+@interface cplay:UIViewController
 
 @end
