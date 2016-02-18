@@ -29,7 +29,7 @@
 
 -(void)buildendpoint:(NSDictionary*)params
 {
-    self.endpoint = params[self.keyforendpoint];
+    self.endpoint = [NSString stringWithFormat:@"%@?", params[self.keyforendpoint]];
 }
 
 -(NSURLRequest*)request
