@@ -8,6 +8,8 @@
     
     self.variables = variables;
     self.post = NO;
+    self.keyforserver = @"server";
+    self.keyforendpoint = @"";
     
     return self;
 }
@@ -18,6 +20,9 @@
 {
     NSMutableURLRequest *request;
     NSMutableString *urlstring = [NSMutableString string];
+    [urlstring appendString:self.server];
+    [urlstring appendString:self.endpoint];
+    [urlstring appendString:self.variables];
     
     if(self.post)
     {
