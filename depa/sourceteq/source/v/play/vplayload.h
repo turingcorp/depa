@@ -3,4 +3,6 @@
 
 @interface vplayload:viewbase
 
+@property(weak, nonatomic)NSLayoutConstraint *constraint;
+
 @end
