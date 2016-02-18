@@ -46,76 +46,41 @@
 
 #pragma mark actions
 
--(void)actionadd:(UIBarButtonItem*)item
+-(void)actionplayleft:(UIBarButtonItem*)item
 {
-    [self insideaddflow];
+    [self showplay:UIPageViewControllerNavigationDirectionReverse animated:YES];
 }
 
--(void)actionlistleft:(UIBarButtonItem*)item
+-(void)actionplayright:(UIBarButtonItem*)item
 {
-    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alert_delete_title", nil) message:NSLocalizedString(@"alert_delete_descr", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"alert_cancel", nil) otherButtonTitles:NSLocalizedString(@"alert_delete_ok", nil), nil] show];
-}
-
--(void)actionlistright:(UIBarButtonItem*)item
-{
-    __weak cpages *weakself = self;
-    
-    [weakself setViewControllers:@[[[UIViewController alloc] init]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:
-     ^(BOOL done)
-     {
-         [weakself.navigationItem setRightBarButtonItem:weakself.itemadd];
-         [weakself.navigationItem setLeftBarButtonItem:weakself.itemsettings];
-     }];
+    [self showplay:UIPageViewControllerNavigationDirectionForward animated:YES];
 }
 
 -(void)actionconfig:(UIBarButtonItem*)item
 {
-    __weak cpages *weakself = self;
-    
-    [weakself setViewControllers:@[[[UIViewController alloc] init]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:
-     ^(BOOL done)
-     {
-         [weakself.navigationItem setRightBarButtonItem:weakself.itemlistright];
-         [weakself.navigationItem setLeftBarButtonItem:nil];
-     }];
+    [self showconfig:UIPageViewControllerNavigationDirectionReverse animated:YES];
+}
+
+-(void)actionfavorites:(UIBarButtonItem*)item
+{
+    [self showfavorites:UIPageViewControllerNavigationDirectionForward animated:YES];
 }
 
 #pragma mark functionality
 
--(void)insideaddflow
+-(void)showplay:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
-    __weak cpages *weakself = self;
     
-    [weakself setViewControllers:@[[[UIViewController alloc] init]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:
-     ^(BOOL done)
-     {
-         [weakself.navigationItem setRightBarButtonItem:weakself.itemshare];
-         [weakself.navigationItem setLeftBarButtonItem:weakself.itemlistleft];
-     }];
 }
 
--(void)insideshowlistleft
+-(void)showconfig:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
-    __weak cpages *weakself = self;
     
-    [weakself setViewControllers:@[[[UIViewController alloc] init]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:
-     ^(BOOL done)
-     {
-         [weakself.navigationItem setRightBarButtonItem:weakself.itemadd];
-         [weakself.navigationItem setLeftBarButtonItem:weakself.itemsettings];
-     }];
 }
 
-#pragma mark public
-
--(void)addflow
+-(void)showfavorites:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
-    [self insideaddflow];
-}
-
--(void)showlist
-{
-    [self insideshowlistleft];
+    
 }
 
 @end
