@@ -1,13 +1,12 @@
-//
-//  amanager.h
-//  depa
-//
-//  Created by zero on 2/18/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
 
-#import <Foundation/Foundation.h>
+@interface amanager:NSObject<NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
 
-@interface amanager : NSObject
++(void)call:(id)delegate valriables:(NSString*)variables;
+-(void)cancel;
+
+@property(weak, nonatomic)id delegate;
+@property(strong, nonatomic)id response;
+@property(copy, nonatomic)NSString *variables;
 
 @end
