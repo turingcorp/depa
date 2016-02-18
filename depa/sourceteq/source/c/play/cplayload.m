@@ -1,13 +1,10 @@
-//
-//  cplayload.m
-//  depa
-//
-//  Created by zero on 2/18/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "cplayload.h"
 
 @implementation cplayload
+
+-(void)loadView
+{
+    self.view = [[vplayload alloc] init:self];
+}
 
 @end

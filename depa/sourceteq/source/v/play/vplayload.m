@@ -2,7 +2,7 @@
 
 @implementation vplayload
 
--(instancetype)init:(UIViewController*)controller
+-(instancetype)init:(cplayload*)controller
 {
     self = [super init:controller];
     [self setClipsToBounds:YES];
