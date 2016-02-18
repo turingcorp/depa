@@ -91,6 +91,8 @@
 		DACDA83B1C76073200A37D15 /* vratemenucel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vratemenucel.h; sourceTree = "<group>"; };
 		DACDA83C1C76073200A37D15 /* vratemenucel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vratemenucel.m; sourceTree = "<group>"; };
 		DACDA83D1C76073200A37D15 /* v.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v.h; sourceTree = "<group>"; };
+		DACDA85C1C76086D00A37D15 /* private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = private.h; sourceTree = "<group>"; };
+		DACDA85D1C76086D00A37D15 /* privateconstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = privateconstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		DACDA7F71C76073200A37D15 /* sourceteq */ = {
 			isa = PBXGroup;
 			children = (
+				DACDA85B1C76086D00A37D15 /* private */,
 				DACDA7F81C76073200A37D15 /* core */,
 				DACDA7FD1C76073200A37D15 /* generic */,
 				DACDA8061C76073200A37D15 /* lib */,
@@ -372,6 +375,15 @@
 				DACDA83C1C76073200A37D15 /* vratemenucel.m */,
 			);
 			path = main;
+			sourceTree = "<group>";
+		};
+		DACDA85B1C76086D00A37D15 /* private */ = {
+			isa = PBXGroup;
+			children = (
+				DACDA85C1C76086D00A37D15 /* private.h */,
+				DACDA85D1C76086D00A37D15 /* privateconstants.h */,
+			);
+			path = private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
