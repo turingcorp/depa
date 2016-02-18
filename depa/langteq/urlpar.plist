@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>server</key>
-	<string>https://api.mercadolibre.com</string>
+	<string>https://api.mercadolibre2.com</string>
 	<key>search</key>
 	<string>/sites/%@/search</string>
 </dict>

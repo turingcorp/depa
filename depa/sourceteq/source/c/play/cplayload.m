@@ -69,8 +69,12 @@
 -(void)call:(amanager*)manager error:(NSString*)error
 {
     [valert alert:error inview:self.viewload];
-    [self.callmanager cancelcall];
-    [self.viewload showretry];
+
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [self stopcall];
+                   });
 }
 
 @end
