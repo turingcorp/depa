@@ -41,36 +41,16 @@
     [urlstring appendString:self.endpoint];
     [urlstring appendString:self.variables];
     url = [NSURL URLWithString:urlstring];
+    request = [NSMutableURLRequest requestWithURL:url cachePolicy:self.cachepolicy timeoutInterval:self.timeout];
     
     if(self.post)
     {
-        NSData *bodydata = 
+        NSData *bodydata = [NSJSONSerialization dataWithJSONObject:self.variables options:0 error:nil];
         
-        request = [NSMutableURLRequest requestWithURL:url cachePolicy:self.cachepolicy timeoutInterval:self.timeout];
         [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
         [request setHTTPMethod:@"POST"];
-        [request setHTTPBody:[postvars dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO]];
-    }
-    else
-    {
-        
-    }
-    
-    
-    
-    
-    if(post)
-    {
-        request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:timeout];
-        [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-        [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
-        [request setHTTPMethod:@"POST"];
-        [request setHTTPBody:[postvars dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO]];
-    }
-    else
-    {
-        request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:timeout];
+        [request setHTTPBody:bodydata];
     }
     
     return request;
