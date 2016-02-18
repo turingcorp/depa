@@ -2,4 +2,6 @@
 
 @interface msearchresult:NSObject
 
+-(instancetype)init:(NSDictionary*)rawitem;
+
 @end
