@@ -13,6 +13,7 @@
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
 		DA6973061C760D0600A2C6EB /* cplay.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6973051C760D0600A2C6EB /* cplay.m */; };
 		DA69730B1C76224200A2C6EB /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA69730A1C76224200A2C6EB /* amanager.m */; };
+		DA69730F1C76240C00A2C6EB /* acallsearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DA69730E1C76240C00A2C6EB /* acallsearch.m */; };
 		DACDA83F1C76073200A37D15 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F21C76073200A37D15 /* analytics.plist */; };
 		DACDA8401C76073200A37D15 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F31C76073200A37D15 /* defs.plist */; };
 		DACDA8411C76073200A37D15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F41C76073200A37D15 /* Localizable.strings */; };
@@ -51,6 +52,9 @@
 		DA6973081C76222C00A2C6EB /* a.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = a.h; sourceTree = "<group>"; };
 		DA6973091C76224200A2C6EB /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
 		DA69730A1C76224200A2C6EB /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
+		DA69730C1C7623F800A2C6EB /* acallprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acallprotocol.h; sourceTree = "<group>"; };
+		DA69730D1C76240C00A2C6EB /* acallsearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acallsearch.h; sourceTree = "<group>"; };
+		DA69730E1C76240C00A2C6EB /* acallsearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acallsearch.m; sourceTree = "<group>"; };
 		DAADE8431C755FB900489E6E /* depa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = depa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACDA7F21C76073200A37D15 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
 		DACDA7F31C76073200A37D15 /* defs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defs.plist; sourceTree = "<group>"; };
@@ -147,6 +151,9 @@
 				DA6973081C76222C00A2C6EB /* a.h */,
 				DA6973091C76224200A2C6EB /* amanager.h */,
 				DA69730A1C76224200A2C6EB /* amanager.m */,
+				DA69730C1C7623F800A2C6EB /* acallprotocol.h */,
+				DA69730D1C76240C00A2C6EB /* acallsearch.h */,
+				DA69730E1C76240C00A2C6EB /* acallsearch.m */,
 			);
 			path = a;
 			sourceTree = "<group>";
@@ -571,6 +578,7 @@
 				DACDA8451C76073200A37D15 /* analytics.m in Sources */,
 				DACDA8461C76073200A37D15 /* tools.m in Sources */,
 				DACDA84F1C76073200A37D15 /* mdirs.m in Sources */,
+				DA69730F1C76240C00A2C6EB /* acallsearch.m in Sources */,
 				DACDA8471C76073200A37D15 /* updater.m in Sources */,
 				DA6973061C760D0600A2C6EB /* cplay.m in Sources */,
 				DACDA8541C76073200A37D15 /* vspinner.m in Sources */,
