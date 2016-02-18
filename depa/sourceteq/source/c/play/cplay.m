@@ -36,7 +36,7 @@
 
 -(void)shownextitem:(UIPageViewControllerNavigationDirection)direction
 {
-    
+    [self changecontroller:[[cplayitem alloc] init:self] direction:direction animated:YES];
 }
 
 #pragma mark public

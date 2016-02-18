@@ -34,6 +34,8 @@
 {
     NSMutableString *string = [NSMutableString string];
     
+    [string appendString:@"has_pictures=yes&limit=1&offset=0&category=1479"];
+    
     return string;
 }
 

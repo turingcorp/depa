@@ -63,7 +63,11 @@
 
 -(void)callsuccess:(amanager*)manager
 {
-    
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [self.play playno];
+                   });
 }
 
 -(void)call:(amanager*)manager error:(NSString*)error
