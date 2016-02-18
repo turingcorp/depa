@@ -9,8 +9,6 @@
     [self setBackgroundColor:[UIColor whiteColor]];
     
     vspinner *spinner = [[vspinner alloc] init];
-    self.spinner = spinner;
-    
     [self addSubview:spinner];
     [spinner startAnimating];
     
