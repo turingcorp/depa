@@ -13,11 +13,12 @@
                        {
                             case apicall_search:
                                
-                               callmodel = [[acallsearch alloc] init];
+                               callmodel = [[acallsearch alloc] init:variables];
                                
                                break;
                        }
                        
+                       [callmodel buildrequest];
                        __unused amanager *manager = [[amanager alloc] init:callmodel delegate:delegate];
                    });
 }
