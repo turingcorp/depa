@@ -2,6 +2,13 @@
 
 // app
 
+// api
+
+typedef NS_ENUM(NSUInteger, apicall)
+{
+    apicall_search
+};
+
 // analytics
 
 typedef NS_ENUM(NSUInteger, ga_screen)
