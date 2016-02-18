@@ -1,2 +1,4 @@
+"app_title"="depa";
+
 "apicall_error_nodata"="Error connecting to server, try again";
 "apicall_error_parsingjgon"="Error reading server response, try again";
