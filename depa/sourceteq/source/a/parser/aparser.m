@@ -6,7 +6,7 @@
 {
     self = [super init];
     
-    NSDictionary *validjson = [self basicparse:json];
+    self.validjson = [self basicparse:json];
     
     return self;
 }

@@ -4,4 +4,6 @@
 
 -(instancetype)init:(NSDictionary*)json;
 
+@property(strong, nonatomic)NSDictionary *validjson;
+
 @end
