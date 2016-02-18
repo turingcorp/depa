@@ -37,6 +37,7 @@
 		DA9141841C7662BC004BE5D1 /* loader4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9141751C7662BC004BE5D1 /* loader4@3x.png */; };
 		DA9141881C766669004BE5D1 /* vplay.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141871C766669004BE5D1 /* vplay.m */; };
 		DA91418E1C766B77004BE5D1 /* vplayload.m in Sources */ = {isa = PBXBuildFile; fileRef = DA91418D1C766B77004BE5D1 /* vplayload.m */; };
+		DA9141911C766C3F004BE5D1 /* cplayload.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141901C766C3F004BE5D1 /* cplayload.m */; };
 		DACDA83F1C76073200A37D15 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F21C76073200A37D15 /* analytics.plist */; };
 		DACDA8401C76073200A37D15 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F31C76073200A37D15 /* defs.plist */; };
 		DACDA8411C76073200A37D15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F41C76073200A37D15 /* Localizable.strings */; };
@@ -108,6 +109,8 @@
 		DA9141871C766669004BE5D1 /* vplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplay.m; sourceTree = "<group>"; };
 		DA91418C1C766B77004BE5D1 /* vplayload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayload.h; sourceTree = "<group>"; };
 		DA91418D1C766B77004BE5D1 /* vplayload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayload.m; sourceTree = "<group>"; };
+		DA91418F1C766C3F004BE5D1 /* cplayload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cplayload.h; sourceTree = "<group>"; };
+		DA9141901C766C3F004BE5D1 /* cplayload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cplayload.m; sourceTree = "<group>"; };
 		DAADE8431C755FB900489E6E /* depa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = depa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACDA7F21C76073200A37D15 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
 		DACDA7F31C76073200A37D15 /* defs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defs.plist; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 			children = (
 				DA6973041C760D0600A2C6EB /* cplay.h */,
 				DA6973051C760D0600A2C6EB /* cplay.m */,
+				DA91418F1C766C3F004BE5D1 /* cplayload.h */,
+				DA9141901C766C3F004BE5D1 /* cplayload.m */,
 			);
 			path = play;
 			sourceTree = "<group>";
@@ -723,6 +728,7 @@
 				DACDA84C1C76073200A37D15 /* cpages.m in Sources */,
 				DA69731E1C764B6100A2C6EB /* acall.m in Sources */,
 				DACDA8561C76073200A37D15 /* vratemenu.m in Sources */,
+				DA9141911C766C3F004BE5D1 /* cplayload.m in Sources */,
 				DACDA8511C76073200A37D15 /* valert.m in Sources */,
 				DACDA84B1C76073200A37D15 /* crate.m in Sources */,
 				DACDA8531C76073200A37D15 /* viewbase.m in Sources */,
