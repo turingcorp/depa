@@ -2,7 +2,7 @@
 
 @implementation amanager
 
-+(void)call:(apicall)call delegate:(id<acalldelegate>)delegate valriables:(NSString*)variables
++(void)call:(apicall)call delegate:(id<acalldelegate>)delegate valriables:(id)variables
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
