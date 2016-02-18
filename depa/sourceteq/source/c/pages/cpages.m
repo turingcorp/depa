@@ -10,8 +10,6 @@
     self.itemconfig = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(actionconfig:)];
     self.itemfavorites = [[UIBarButtonItem  alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(actionfavorites:)];
     
-    [self.navigationItem setRightBarButtonItem:self.itemfavorites];
-    [self.navigationItem setLeftBarButtonItem:self.itemconfig];
     [self showplay:UIPageViewControllerNavigationDirectionForward animated:NO];
     
     return self;
@@ -61,18 +59,24 @@
 -(void)showplay:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
     [self changecontroller:[[cplay alloc] init] direction:direction animated:animated];
+    [self.navigationItem setRightBarButtonItem:self.itemfavorites];
+    [self.navigationItem setLeftBarButtonItem:self.itemconfig];
 }
 
 -(void)showconfig:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
     self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
     [self changecontroller:[[UIViewController alloc] init] direction:direction animated:animated];
+    [self.navigationItem setRightBarButtonItem:self.itemplay];
+    [self.navigationItem setLeftBarButtonItem:nil];
 }
 
 -(void)showfavorites:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
     self.itemplay.tag = UIPageViewControllerNavigationDirectionReverse;
     [self changecontroller:[[UIViewController alloc] init] direction:direction animated:animated];
+    [self.navigationItem setRightBarButtonItem:nil];
+    [self.navigationItem setLeftBarButtonItem:self.itemplay];
 }
 
 @end

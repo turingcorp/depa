@@ -17,7 +17,7 @@
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setFont:[UIFont fontWithName:fontname size:22]];
+    [label setFont:[UIFont fontWithName:fontname size:16]];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setText:NSLocalizedString(@"play_load_retrylabel", nil)];
     [label setHidden:YES];
