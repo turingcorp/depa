@@ -1,6 +1,6 @@
 #import "appdel.h"
-#import "acallprotocol.h"
+#import "acall.h"
 
-@interface acallsearch:NSObject<acallprotocol>
+@interface acallsearch:acall
 
 @end
