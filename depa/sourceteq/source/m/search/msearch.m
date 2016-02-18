@@ -30,6 +30,11 @@
     return item;
 }
 
+-(void)remove:(NSUInteger)index
+{
+    [array removeObjectAtIndex:index];
+}
+
 -(NSString*)variables
 {
     NSMutableString *string = [NSMutableString string];
@@ -45,6 +50,19 @@
     self.offset = searchresults.offset;
     self.limit = searchresults.limit;
     [array addObjectsFromArray:searchresults.array];
+}
+
+-(msearchresult*)next
+{
+    msearchresult *item;
+    
+    if([self count])
+    {
+        item = [self item:0];
+        [self remove:0];
+    }
+    
+    return item;
 }
 
 @end

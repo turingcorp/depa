@@ -7,5 +7,6 @@
 -(instancetype)init:(cplay*)play;
 
 @property(weak, nonatomic)cplay *play;
+@property(strong, nonatomic)msearchresult *item;
 
 @end

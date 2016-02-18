@@ -7,6 +7,7 @@
     self = [super init];
     
     self.play = play;
+    self.item = play.model
     
     return self;
 }
