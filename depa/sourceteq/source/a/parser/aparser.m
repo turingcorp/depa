@@ -21,6 +21,8 @@
     {
         if([object isKindOfClass:[NSDictionary class]])
         {
+            NSDictionary *dictobject = object;
+            NSArray *rawkeys = dictobject.allKeys;
             validobject = [NSMutableDictionary  dictionary];
         }
         else if([object isKindOfClass:[NSArray class]])
