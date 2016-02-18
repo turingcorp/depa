@@ -1,4 +1,7 @@
 "app_title"="depa";
 
+"play_load_retrylabel"="Error searching";
+"play_load_retrybutton"="Retry";
+
 "apicall_error_nodata"="Error connecting to server, try again";
 "apicall_error_parsingjgon"="Error reading server response, try again";

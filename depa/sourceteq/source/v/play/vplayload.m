@@ -9,15 +9,42 @@
     [self setBackgroundColor:[UIColor whiteColor]];
     
     vspinner *spinner = [[vspinner alloc] init];
+    self.spinner = spinner;
     [self addSubview:spinner];
     [spinner startAnimating];
+
+    UILabel *label = [[UILabel alloc] init];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setUserInteractionEnabled:NO];
+    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [label setFont:[UIFont fontWithName:fontname size:22]];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    [label setText:NSLocalizedString(@"play_load_retrylabel", nil)];
+    self.label = label;
     
-    NSDictionary *views = @{@"spinner":spinner};
+    UIButton *button = [[UIButton alloc] init];
+    [button setBackgroundColor:colormain];
+    [button setClipsToBounds:YES];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithWhite:1 alpha:0.2] forState:UIControlStateHighlighted];
+    [button setTitle:NSLocalizedString(@"play_load_retrybutton", nil) forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont fontWithName:fontboldname size:15]];
+    [button.layer setCornerRadius:4];
+    [button setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.button = button;
+    
+    [self addSubview:label];
+    [self addSubview:button];
+    
+    NSDictionary *views = @{@"spinner":spinner, @"label":label, @"button":button};
     NSDictionary *metrics = @{};
     
     self.constraint = [NSLayoutConstraint constraintWithItem:spinner attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:1];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[spinner(80)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-200-[label]-10-[button(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[button]-80-|" options:0 metrics:metrics views:views]];
     [self addConstraint:self.constraint];
     
     return self;
@@ -30,6 +57,18 @@
     self.constraint.constant = margin;
     
     [super layoutSubviews];
+}
+
+#pragma mark public
+
+-(void)showretry
+{
+    [self.spinner stopAnimating];
+}
+
+-(void)showloading
+{
+    [self.spinner startAnimating];
 }
 
 @end
