@@ -2,6 +2,7 @@
 #import "acalldelegate.h"
 
 @class acall;
+@class aparser;
 
 @interface amanager:NSObject<NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
 
@@ -10,8 +11,9 @@
 -(void)cancelcall;
 
 @property(weak, nonatomic)id<acalldelegate> delegate;
-@property(strong, nonatomic)NSDictionary *response;
 @property(strong, nonatomic)acall *call;
+@property(strong, nonatomic)aparser *parser;
+@property(strong, nonatomic)NSDictionary *response;
 @property(strong, nonatomic)NSURLSession *session;
 @property(strong, nonatomic)NSMutableData *data;
 @property(strong, nonatomic)NSError *error;

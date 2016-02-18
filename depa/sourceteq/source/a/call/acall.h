@@ -12,6 +12,7 @@
 @property(copy, nonatomic)NSString *endpoint;
 @property(copy, nonatomic)NSString *keyforserver;
 @property(copy, nonatomic)NSString *keyforendpoint;
+@property(nonatomic)Class parser;
 @property(nonatomic)NSURLRequestCachePolicy cachepolicy;
 @property(nonatomic)NSUInteger timeout;
 @property(nonatomic)BOOL post;

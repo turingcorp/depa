@@ -1,4 +1,5 @@
 #import "acall.h"
+#import "aparser.h"
 
 @implementation acall
 
@@ -12,6 +13,7 @@
     self.keyforserver = @"server";
     self.keyforendpoint = @"";
     self.cachepolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    self.parser = [aparser class];
     
     return self;
 }
