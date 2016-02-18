@@ -31,7 +31,7 @@
 
 -(void)showloading:(BOOL)animated
 {
-    [self changecontroller:[[cplayload alloc] init] direction:UIPageViewControllerNavigationDirectionForward animated:animated];
+    [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:animated];
 }
 
 @end
