@@ -5,6 +5,6 @@
 	<key>server</key>
 	<string>https://api.mercadolibre.com</string>
 	<key>search</key>
-	<string>/sites/%@/search</string>
+	<string>/sites/%@/search?</string>
 </dict>
 </plist>
