@@ -34,4 +34,21 @@
     [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:animated];
 }
 
+-(void)shownextitem:(UIPageViewControllerNavigationDirection)direction
+{
+    
+}
+
+#pragma mark public
+
+-(void)playlike
+{
+    [self shownextitem:UIPageViewControllerNavigationDirectionReverse];
+}
+
+-(void)playno
+{
+    [self shownextitem:UIPageViewControllerNavigationDirectionForward];
+}
+
 @end

@@ -30,4 +30,11 @@
     return item;
 }
 
+-(NSString*)variables
+{
+    NSMutableString *string = [NSMutableString string];
+    
+    return string;
+}
+
 @end
