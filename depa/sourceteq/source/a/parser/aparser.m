@@ -17,13 +17,26 @@
 {
     id validobject;
     
-    if(object)
+    if(object && ![object isKindOfClass:[NSNull class]])
     {
         if([object isKindOfClass:[NSDictionary class]])
         {
             NSDictionary *dictobject = object;
             NSArray *rawkeys = dictobject.allKeys;
-            validobject = [NSMutableDictionary  dictionary];
+            NSMutableDictionary *validdictionary = [NSMutableDictionary dictionary];
+            
+            for(NSString *key in rawkeys)
+            {
+                id rawobject = dictobject[key];
+                id returnedobject = [self basicparse:rawobject];
+                
+                if(returnedobject)
+                {
+                    validdictionary[key] = returnedobject;
+                }
+            }
+            
+            validobject = validdictionary;
         }
         else if([object isKindOfClass:[NSArray class]])
         {
