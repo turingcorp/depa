@@ -8,6 +8,6 @@
 @property(weak, nonatomic)id delegate;
 @property(strong, nonatomic)id response;
 @property(copy, nonatomic)NSString *variables;
-@property(nonatomic)
+@property(nonatomic)apicall call;
 
 @end
