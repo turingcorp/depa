@@ -1,9 +1,6 @@
 #import "appdel.h"
 
-@interface vspinner:UIView
-
--(void)stop;
--(void)start;
+@interface vspinner:UIImageView
 
 @property(weak, nonatomic)UIActivityIndicatorView *spin;
 
