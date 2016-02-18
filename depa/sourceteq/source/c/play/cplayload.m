@@ -63,6 +63,8 @@
 
 -(void)callsuccess:(amanager*)manager
 {
+    [self.play.model join:(aparsersearch*)manager.parser];
+    
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
