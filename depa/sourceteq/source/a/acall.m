@@ -19,12 +19,16 @@
 
 -(void)buildrequest
 {
-    
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"" ofType:@""];
+    NSURL *fileurl = [NSURL fileURLWithPath:filepath];
+    NSDictionary *params = [NSDictionary dictionaryWithContentsOfURL:fileurl];
+    self.server = params[self.keyforserver];
+    [self buildendpoint:params];
 }
 
 -(void)buildendpoint:(NSDictionary*)params
 {
-    
+    self.endpoint = params[self.keyforendpoint];
 }
 
 -(NSURLRequest*)request
