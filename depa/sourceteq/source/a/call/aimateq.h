@@ -1,13 +1,29 @@
-//
-//  aimateq.h
-//  depa
-//
-//  Created by zero on 2/19/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
 
-#import <Foundation/Foundation.h>
+@interface aimateq:NSObject<NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate>
 
-@interface aimateq : NSObject
+-(void)addimage:(NSString*)url;
+
+@end
+
+
+
+#import "appdel.h"
+
+@interface cloudimg:NSObject<NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate>
+
++(cloudimg*)sha;
+-(void)image:(NSString*)_url;
+
+@end
+
+@interface cloudimgreference:NSObject
+
++(UIImage*)userinfo:(NSDictionary*)_userinfo equals:(NSString*)_reference;
+-(cloudimgreference*)init:(NSString*)_url image:(UIImage*)_image;
+-(NSDictionary*)userinfo;
+
+@property(strong, nonatomic)UIImage *image;
+@property(strong, nonatomic)NSString *url;
 
 @end
