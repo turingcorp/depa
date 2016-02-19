@@ -61,6 +61,13 @@
     [super layoutSubviews];
 }
 
+#pragma mark actions
+
+-(void)actionretry:(UIButton*)button
+{
+    [(cplayload*)self.controller recall];
+}
+
 #pragma mark public
 
 -(void)showretry
