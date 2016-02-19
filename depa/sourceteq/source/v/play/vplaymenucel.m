@@ -21,9 +21,21 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-30-[image]-30-|" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+-(void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    [self hover];
+}
+
+-(void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+    [self hover];
 }
 
 #pragma mark functionality
@@ -32,11 +44,11 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        
+        [self.image setTintColor:[colormain colorWithAlphaComponent:0.2]];
     }
     else
     {
-        
+        [self.image setTintColor:colormain];
     }
 }
 
@@ -44,7 +56,7 @@
 
 -(void)config:(id<mplaymenuprotocol>)model
 {
-    [self.image setImage:[UIImage imageNamed:[model assetname]]];
+    [self.image setImage:[[UIImage imageNamed:[model assetname]] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [self hover];
 }
 
