@@ -1,5 +1,7 @@
 #import "vplaymenu.h"
 
+static const NSUInteger cellwidth = 120;
+
 @implementation vplaymenu
 
 -(instancetype)init
@@ -16,7 +18,6 @@
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
     [flow setMinimumLineSpacing:0];
-    [flow setSectionInset:UIEdgeInsetsZero];
     [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
@@ -45,9 +46,19 @@
 #pragma mark -
 #pragma mark col del
 
+-(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
+{
+    CGFloat totalwidth = col.bounds.size.width;
+    CGFloat allcells = [self.model count] * cellwidth;
+    CGFloat margin = (totalwidth - allcells) / 2.0;
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, 0, margin);
+    
+    return insets;
+}
+
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGSize size = CGSizeMake(col.bounds.size.width / 2.0, col.bounds.size.height);
+    CGSize size = CGSizeMake(cellwidth, col.bounds.size.height);
     
     return size;
 }
