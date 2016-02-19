@@ -28,6 +28,7 @@
     [collection setScrollEnabled:NO];
     [collection setBounces:NO];
     [collection setBackgroundColor:[UIColor clearColor]];
+    [collection registerClass:[vplaymenucel class] forCellWithReuseIdentifier:celid];
     self.collection = collection;
     
     [self addSubview:collection];
