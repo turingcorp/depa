@@ -5,3 +5,7 @@
 #import "msettings.h"
 #import "msearch.h"
 #import "msearchresult.h"
+#import "mplaymenu.h"
+#import "mplaymenuprotocol.h"
+#import "mplaymenulike.h"
+#import "mplaymenuno.h"
