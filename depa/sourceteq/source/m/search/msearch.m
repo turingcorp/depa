@@ -10,6 +10,7 @@
     self = [super init];
     
     array = [NSMutableArray array];
+    self.limit = 10;
     
     return self;
 }
@@ -38,8 +39,9 @@
 -(NSString*)variables
 {
     NSMutableString *string = [NSMutableString string];
-    
-    [string appendString:@"has_pictures=yes&limit=1&offset=0&category=1479"];
+    [string appendString:@"category=1479&has_pictures=yes"];
+    [string appendFormat:@"&limit=%@", @(self.limit)];
+    [string appendFormat:@"&offset=%@", @(self.offset)];
     
     return string;
 }
@@ -48,7 +50,6 @@
 {
     self.total = searchresults.total;
     self.offset = searchresults.offset;
-    self.limit = searchresults.limit;
     [array addObjectsFromArray:searchresults.array];
 }
 

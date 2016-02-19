@@ -6,10 +6,25 @@
 {
     self = [super init:controller];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor grayColor]];
+    [self setBackgroundColor:[UIColor whiteColor]];
     
-    NSDictionary *views = @{};
+    UILabel *label = [[UILabel alloc] init];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setUserInteractionEnabled:NO];
+    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    [label setText:controller.item.itemtitle];
+    [label setFont:[UIFont fontWithName:fontname size:20]];
+    [label setNumberOfLines:0];
+    [label setTextColor:[UIColor blackColor]];
+    
+    [self addSubview:label];
+    
+    NSDictionary *views = @{@"label":label};
     NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[label]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label]-50-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
