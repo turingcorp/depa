@@ -11,4 +11,18 @@
     return self;
 }
 
+#pragma mark public
+
+-(BOOL)equalsnotification:(NSNotification*)notification
+{
+    return notification.userInfo[@"image"] == self;
+}
+
+-(NSDictionary*)userinfo
+{
+    NSDictionary *userinfo = @{@"image":self};
+    
+    return userinfo;
+}
+
 @end
