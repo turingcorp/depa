@@ -10,6 +10,9 @@
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
     
     UIImageView *image = [[UIImageView alloc] init];
+    [image setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [image setUserInteractionEnabled:NO];
+    [image setContentMode:UIViewContentModeScaleAspectFit];
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
@@ -24,7 +27,6 @@
     [titlebase setTranslatesAutoresizingMaskIntoConstraints:NO];
     [titlebase setBackgroundColor:[UIColor whiteColor]];
     [titlebase setClipsToBounds:YES];
-    [titlebase.layer setCornerRadius:2];
     
     [titlebase addSubview:label];
     [self addSubview:image];
@@ -34,11 +36,11 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image]-70-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label]-15-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[label]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[titlebase]-10-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[titlebase(40)]-10-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[titlebase]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[titlebase(60)]-5-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
