@@ -1,5 +1,6 @@
 #import "appdel.h"
+#import "viewbase.h"
 
-@interface vplayitem:UIView
+@interface vplayitem:viewbase
 
 @end
