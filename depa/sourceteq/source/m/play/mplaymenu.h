@@ -3,4 +3,7 @@
 
 @interface mplaymenu:NSObject
 
+-(NSUInteger)count;
+-(id<mplaymenuprotocol>)item:(NSUInteger)index;
+
 @end
