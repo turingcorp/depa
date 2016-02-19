@@ -11,7 +11,6 @@
     vspinner *spinner = [[vspinner alloc] init];
     self.spinner = spinner;
     [self addSubview:spinner];
-    [spinner startAnimating];
 
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
@@ -33,6 +32,7 @@
     [button.layer setCornerRadius:4];
     [button setTranslatesAutoresizingMaskIntoConstraints:NO];
     [button setHidden:YES];
+    [button addTarget:self action:@selector(actionretry:) forControlEvents:UIControlEventTouchUpInside];
     self.button = button;
     
     [self addSubview:label];
@@ -44,7 +44,7 @@
     self.constraint = [NSLayoutConstraint constraintWithItem:spinner attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:1];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[spinner(80)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-200-[label]-10-[button(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-150-[label]-20-[button(40)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[button]-80-|" options:0 metrics:metrics views:views]];
     [self addConstraint:self.constraint];
@@ -79,6 +79,8 @@
 
 -(void)showloading
 {
+    [self.label setHidden:YES];
+    [self.button setHidden:YES];
     [self.spinner startAnimating];
 }
 
