@@ -21,7 +21,7 @@
     dispatch_async(self.queue,
                    ^
                    {
-                       self.tasks = [NSMutableArray array];
+                       self.items = [NSMutableArray array];
                    });
     
     NSOperationQueue *operation = [[NSOperationQueue alloc] init];
@@ -33,6 +33,15 @@
     return self;
 }
 
+#pragma mark functionality
+
+-(void)imageerror:(NSString*)error
+{
+    NSLog(@"Image error: %@", error);
+    
+#warning "add analytics"
+}
+
 #pragma mark public
 
 -(void)addtoqueue:(aimateqitem*)item
@@ -40,39 +49,47 @@
     dispatch_async(self.queue,
                    ^
                    {
-                       NSURLSessionDownloadTask *task = [self.session downloadTaskWithURL:[NSURL URLWithString:_url]];
-                       [tasks addObject:task];
-                       task.taskDescription = _url;
-                       [task resume];
-                   });
-}
-
-
--(void)image:(NSString*)_url
-{
-    dispatch_async(queue,
-                   ^(void)
-                   {
-                       
+                       if(!item.task)
+                       {
+                           NSURL *url = [NSURL URLWithString:item.url];
+                           NSURLSessionDownloadTask *task = [self.session downloadTaskWithURL:url];
+                           item.task = task;
+                           [self.items addObject:item];
+                           [task resume];
+                       }
                    });
 }
 
 #pragma mark -
 #pragma mark session task del
 
--(void)URLSession:(NSURLSession*)_session task:(NSURLSessionTask*)_task didCompleteWithError:(NSError*)_error
+-(void)URLSession:(NSURLSession*)session task:(NSURLSessionTask*)task didCompleteWithError:(NSError*)error
 {
-    if(_error)
+    if(error)
     {
-        NSLog(@"Image with error: %@", _error.localizedDescription);
+        [self imageerror:error.localizedDescription];
     }
 }
 
 #pragma mark download task del
 
--(void)URLSession:(NSURLSession*)_session downloadTask:(NSURLSessionDownloadTask*)_task didFinishDownloadingToURL:(NSURL*)_location
+-(void)URLSession:(NSURLSession*)session downloadTask:(NSURLSessionDownloadTask*)task didFinishDownloadingToURL:(NSURL*)location
 {
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:_location]];
+    NSData *data = [NSData dataWithContentsOfURL:location];
+    UIImage *image = [UIImage imageWithData:data];
+    
+    if(image)
+    {
+        dispatch_async(self.queue,
+                       ^
+                       {
+                           
+                       });
+    }
+    else
+    {
+        [self imageerror:NSLocalizedString(@"", nil)];
+    }
     
     dispatch_async(queue,
                    ^(void)
