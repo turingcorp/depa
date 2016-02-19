@@ -12,4 +12,11 @@
     return name;
 }
 
+-(UIColor*)tintcolor
+{
+    UIColor *color = [UIColor colorWithRed:1 green:0.3 blue:0 alpha:1];
+    
+    return color;
+}
+
 @end
