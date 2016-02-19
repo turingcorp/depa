@@ -44,6 +44,9 @@
 		DA9141A11C76969F004BE5D1 /* mplaymenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141A01C76969F004BE5D1 /* mplaymenu.m */; };
 		DA9141A51C76971D004BE5D1 /* mplaymenulike.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141A41C76971D004BE5D1 /* mplaymenulike.m */; };
 		DA9141A81C769738004BE5D1 /* mplaymenuno.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141A71C769738004BE5D1 /* mplaymenuno.m */; };
+		DA9738A21C7790D100F148FA /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = DA97389F1C7790D100F148FA /* no.png */; };
+		DA9738A31C7790D100F148FA /* no@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9738A01C7790D100F148FA /* no@2x.png */; };
+		DA9738A41C7790D100F148FA /* no@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9738A11C7790D100F148FA /* no@3x.png */; };
 		DACDA83F1C76073200A37D15 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F21C76073200A37D15 /* analytics.plist */; };
 		DACDA8401C76073200A37D15 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F31C76073200A37D15 /* defs.plist */; };
 		DACDA8411C76073200A37D15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F41C76073200A37D15 /* Localizable.strings */; };
@@ -130,6 +133,9 @@
 		DA9141A41C76971D004BE5D1 /* mplaymenulike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mplaymenulike.m; sourceTree = "<group>"; };
 		DA9141A61C769738004BE5D1 /* mplaymenuno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mplaymenuno.h; sourceTree = "<group>"; };
 		DA9141A71C769738004BE5D1 /* mplaymenuno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mplaymenuno.m; sourceTree = "<group>"; };
+		DA97389F1C7790D100F148FA /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no.png; sourceTree = "<group>"; };
+		DA9738A01C7790D100F148FA /* no@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no@2x.png"; sourceTree = "<group>"; };
+		DA9738A11C7790D100F148FA /* no@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no@3x.png"; sourceTree = "<group>"; };
 		DAADE8431C755FB900489E6E /* depa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = depa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACDA7F21C76073200A37D15 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
 		DACDA7F31C76073200A37D15 /* defs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defs.plist; sourceTree = "<group>"; };
@@ -349,6 +355,9 @@
 		DACDA7F01C76073200A37D15 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				DA97389F1C7790D100F148FA /* no.png */,
+				DA9738A01C7790D100F148FA /* no@2x.png */,
+				DA9738A11C7790D100F148FA /* no@3x.png */,
 				DA9141671C7662BC004BE5D1 /* loader0.png */,
 				DA9141681C7662BC004BE5D1 /* loader0@2x.png */,
 				DA9141691C7662BC004BE5D1 /* loader0@3x.png */,
@@ -666,7 +675,9 @@
 				DACDA8411C76073200A37D15 /* Localizable.strings in Resources */,
 				DA9141801C7662BC004BE5D1 /* loader3@2x.png in Resources */,
 				DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */,
+				DA9738A31C7790D100F148FA /* no@2x.png in Resources */,
 				DA91417D1C7662BC004BE5D1 /* loader2@2x.png in Resources */,
+				DA9738A41C7790D100F148FA /* no@3x.png in Resources */,
 				DA6973151C76328900A2C6EB /* urlpar.plist in Resources */,
 				DA91417F1C7662BC004BE5D1 /* loader3.png in Resources */,
 				DA91417A1C7662BC004BE5D1 /* loader1@2x.png in Resources */,
@@ -679,6 +690,7 @@
 				DACDA8401C76073200A37D15 /* defs.plist in Resources */,
 				DA9141761C7662BC004BE5D1 /* loader0.png in Resources */,
 				DA9141811C7662BC004BE5D1 /* loader3@3x.png in Resources */,
+				DA9738A21C7790D100F148FA /* no.png in Resources */,
 				DACDA83F1C76073200A37D15 /* analytics.plist in Resources */,
 				DA6973001C760C5400A2C6EB /* in in Resources */,
 				DA91417B1C7662BC004BE5D1 /* loader1@3x.png in Resources */,
