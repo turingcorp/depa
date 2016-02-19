@@ -40,6 +40,7 @@
 		DA9141911C766C3F004BE5D1 /* cplayload.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141901C766C3F004BE5D1 /* cplayload.m */; };
 		DA9141941C766C97004BE5D1 /* cplayitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141931C766C97004BE5D1 /* cplayitem.m */; };
 		DA9141971C769440004BE5D1 /* vplaymenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141961C769440004BE5D1 /* vplaymenu.m */; };
+		DA91419A1C769605004BE5D1 /* vplaymenucel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141991C769605004BE5D1 /* vplaymenucel.m */; };
 		DACDA83F1C76073200A37D15 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F21C76073200A37D15 /* analytics.plist */; };
 		DACDA8401C76073200A37D15 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F31C76073200A37D15 /* defs.plist */; };
 		DACDA8411C76073200A37D15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F41C76073200A37D15 /* Localizable.strings */; };
@@ -117,6 +118,8 @@
 		DA9141931C766C97004BE5D1 /* cplayitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cplayitem.m; sourceTree = "<group>"; };
 		DA9141951C769440004BE5D1 /* vplaymenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplaymenu.h; sourceTree = "<group>"; };
 		DA9141961C769440004BE5D1 /* vplaymenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplaymenu.m; sourceTree = "<group>"; };
+		DA9141981C769605004BE5D1 /* vplaymenucel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplaymenucel.h; sourceTree = "<group>"; };
+		DA9141991C769605004BE5D1 /* vplaymenucel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplaymenucel.m; sourceTree = "<group>"; };
 		DAADE8431C755FB900489E6E /* depa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = depa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACDA7F21C76073200A37D15 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
 		DACDA7F31C76073200A37D15 /* defs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defs.plist; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				DA91418D1C766B77004BE5D1 /* vplayload.m */,
 				DA9141951C769440004BE5D1 /* vplaymenu.h */,
 				DA9141961C769440004BE5D1 /* vplaymenu.m */,
+				DA9141981C769605004BE5D1 /* vplaymenucel.h */,
+				DA9141991C769605004BE5D1 /* vplaymenucel.m */,
 			);
 			path = play;
 			sourceTree = "<group>";
@@ -731,6 +736,7 @@
 				DA69732E1C76549400A2C6EB /* msearchresult.m in Sources */,
 				DACDA84F1C76073200A37D15 /* mdirs.m in Sources */,
 				DACDA8471C76073200A37D15 /* updater.m in Sources */,
+				DA91419A1C769605004BE5D1 /* vplaymenucel.m in Sources */,
 				DA69731F1C764B6100A2C6EB /* acallsearch.m in Sources */,
 				DA6973061C760D0600A2C6EB /* cplay.m in Sources */,
 				DACDA8541C76073200A37D15 /* vspinner.m in Sources */,
