@@ -7,26 +7,8 @@
 +(instancetype)singleton;
 -(void)addtoqueue:(aimateqitem*)item;
 
-@end
-
-
-
-#import "appdel.h"
-
-@interface cloudimg:NSObject<NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate>
-
-+(cloudimg*)sha;
--(void)image:(NSString*)_url;
-
-@end
-
-@interface cloudimgreference:NSObject
-
-+(UIImage*)userinfo:(NSDictionary*)_userinfo equals:(NSString*)_reference;
--(cloudimgreference*)init:(NSString*)_url image:(UIImage*)_image;
--(NSDictionary*)userinfo;
-
-@property(strong, nonatomic)UIImage *image;
-@property(strong, nonatomic)NSString *url;
+@property(strong, nonatomic)NSMutableArray *tasks;
+@property(strong, nonatomic)NSURLSession *session;
+@property(nonatomic)dispatch_queue_t queue;
 
 @end

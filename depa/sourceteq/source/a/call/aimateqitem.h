@@ -6,6 +6,7 @@
 -(BOOL)equalsnotification:(NSNotification*)notification;
 -(NSDictionary*)userinfo;
 
+@property(weak, nonatomic)NSURLSessionDownloadTask *task;
 @property(strong, nonatomic)UIImage *image;
 @property(copy, nonatomic)NSString *url;
 
