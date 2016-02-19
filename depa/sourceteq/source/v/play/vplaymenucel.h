@@ -2,4 +2,6 @@
 
 @interface vplaymenucel:UICollectionViewCell
 
+-(void)config;
+
 @end
