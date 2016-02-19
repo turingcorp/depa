@@ -11,4 +11,11 @@
     return single;
 }
 
+#pragma mark public
+
+-(void)addtoqueue:(aimateqitem*)item
+{
+    
+}
+
 @end
