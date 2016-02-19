@@ -14,7 +14,7 @@
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setText:controller.item.itemtitle];
-    [label setFont:[UIFont fontWithName:fontname size:20]];
+    [label setFont:[UIFont fontWithName:fontname size:17]];
     [label setNumberOfLines:0];
     [label setTextColor:[UIColor blackColor]];
 

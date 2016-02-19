@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */; };
+		DA2427A71C77A9FF00FE44B0 /* vplayitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A61C77A9FF00FE44B0 /* vplayitem.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -60,6 +61,8 @@
 		2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.release.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.release.xcconfig"; sourceTree = "<group>"; };
 		78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-depa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.debug.xcconfig"; sourceTree = "<group>"; };
+		DA2427A51C77A9FF00FE44B0 /* vplayitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitem.h; sourceTree = "<group>"; };
+		DA2427A61C77A9FF00FE44B0 /* vplayitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitem.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				DA9141961C769440004BE5D1 /* vplaymenu.m */,
 				DA9141981C769605004BE5D1 /* vplaymenucel.h */,
 				DA9141991C769605004BE5D1 /* vplaymenucel.m */,
+				DA2427A51C77A9FF00FE44B0 /* vplayitem.h */,
+				DA2427A61C77A9FF00FE44B0 /* vplayitem.m */,
 			);
 			path = play;
 			sourceTree = "<group>";
@@ -684,6 +689,7 @@
 				DA9141881C766669004BE5D1 /* vplay.m in Sources */,
 				DACDA84A1C76073200A37D15 /* cmain.m in Sources */,
 				DACDA8441C76073200A37D15 /* main.m in Sources */,
+				DA2427A71C77A9FF00FE44B0 /* vplayitem.m in Sources */,
 				DACDA8421C76073200A37D15 /* appdel.m in Sources */,
 				DA6973271C764C4700A2C6EB /* aparsersearch.m in Sources */,
 				DA9141971C769440004BE5D1 /* vplaymenu.m in Sources */,
