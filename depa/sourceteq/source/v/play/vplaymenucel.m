@@ -44,11 +44,11 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.image setTintColor:[colormain colorWithAlphaComponent:0.2]];
+        [self.image setTintColor:[[self.model tintcolor] colorWithAlphaComponent:0.2]];
     }
     else
     {
-        [self.image setTintColor:colormain];
+        [self.image setTintColor:[self.model tintcolor]];
     }
 }
 
@@ -56,6 +56,8 @@
 
 -(void)config:(id<mplaymenuprotocol>)model
 {
+    self.model = model;
+    
     [self.image setImage:[[UIImage imageNamed:[model assetname]] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [self hover];
 }
