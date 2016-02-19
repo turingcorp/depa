@@ -4,4 +4,6 @@
 
 -(void)config:(id<mplaymenuprotocol>)model;
 
+@property(weak, nonatomic)UIImageView *image;
+
 @end
