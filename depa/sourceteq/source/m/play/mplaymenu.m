@@ -5,6 +5,20 @@
     NSArray *array;
 }
 
+-(instancetype)init
+{
+    self = [super init];
+    
+    array = @[
+              [[mplaymenuno alloc] init],
+              [[mplaymenulike alloc] init]
+              ];
+    
+    return self;
+}
+
+#pragma mark public
+
 -(NSUInteger)count
 {
     NSUInteger count = array.count;
