@@ -46,16 +46,18 @@
 
 #pragma mark functionality
 
--(void)recall
-{
-    amanager *callmanager = [amanager call:apicall_search delegate:self valriables:[self.play.model variables]];
-    self.callmanager = callmanager;
-}
-
 -(void)stopcall
 {
     [self.callmanager cancelcall];
     [self.viewload showretry];
+}
+
+#pragma mark public
+
+-(void)recall
+{
+    amanager *callmanager = [amanager call:apicall_search delegate:self valriables:[self.play.model variables]];
+    self.callmanager = callmanager;
 }
 
 #pragma mark -

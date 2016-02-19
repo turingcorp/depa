@@ -8,6 +8,7 @@
 @interface cplayload:UIViewController<acalldelegate>
 
 -(instancetype)init:(cplay*)play;
+-(void)recall;
 
 @property(weak, nonatomic)cplay *play;
 @property(weak, nonatomic)vplayload *viewload;
