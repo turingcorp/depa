@@ -17,10 +17,14 @@
     [label setFont:[UIFont fontWithName:fontname size:20]];
     [label setNumberOfLines:0];
     [label setTextColor:[UIColor blackColor]];
+
+    vplaymenu *menu = [[vplaymenu alloc] init];
+    self.menu = menu;
     
     [self addSubview:label];
+    [self addSubview:menu];
     
-    NSDictionary *views = @{@"label":label};
+    NSDictionary *views = @{@"label":label, @"menu":menu};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[label]-20-|" options:0 metrics:metrics views:views]];

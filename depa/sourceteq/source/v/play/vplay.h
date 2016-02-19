@@ -1,10 +1,10 @@
 #import "appdel.h"
 #import "viewbase.h"
 
-@class vspinner;
+@class vplaymenu;
 
 @interface vplay:viewbase
 
-@property(weak, nonatomic)vspinner *spinner;
+@property(weak, nonatomic)vplaymenu *menu;
 
 @end
