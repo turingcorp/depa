@@ -1,8 +1,11 @@
 #import "appdel.h"
 
+@class aimateqitem;
+
 @interface aimateq:NSObject<NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate>
 
--(void)addimage:(NSString*)url;
++(instancetype)singleton;
+-(void)addtoqueue:(aimateqitem*)item;
 
 @end
 
