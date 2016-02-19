@@ -2,4 +2,6 @@
 
 @protocol mplaymenuprotocol <NSObject>
 
+-(NSString*)assetname;
+
 @end

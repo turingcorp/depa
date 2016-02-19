@@ -15,6 +15,8 @@
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.image = image;
     
+    NSDictionary *views
+    
     return self;
 }
 
@@ -22,7 +24,7 @@
 
 -(void)config:(id<mplaymenuprotocol>)model
 {
-    
+    [self.image setImage:[model assetname]];
 }
 
 @end
