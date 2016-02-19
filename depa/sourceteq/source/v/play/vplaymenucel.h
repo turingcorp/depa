@@ -2,6 +2,6 @@
 
 @interface vplaymenucel:UICollectionViewCell
 
--(void)config;
+-(void)config:(id<mplaymenuprotocol>)model;
 
 @end
