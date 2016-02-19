@@ -3,3 +3,4 @@
 #import "acalldelegate.h"
 #import "aparsersearch.h"
 #import "aimateq.h"
+#import "aimateqitem.h"
