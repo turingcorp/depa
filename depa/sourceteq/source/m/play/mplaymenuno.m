@@ -14,7 +14,7 @@
 
 -(UIColor*)tintcolor
 {
-    UIColor *color = [UIColor colorWithRed:1 green:0.4 blue:0.2 alpha:1];
+    UIColor *color = [UIColor colorWithRed:1 green:0.3 blue:0 alpha:1];
     
     return color;
 }
