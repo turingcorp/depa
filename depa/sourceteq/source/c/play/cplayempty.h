@@ -1,13 +1,5 @@
-//
-//  cplayempty.h
-//  depa
-//
-//  Created by zero on 2/20/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
 
-#import <Foundation/Foundation.h>
-
-@interface cplayempty : NSObject
+@interface cplayempty:UIViewController
 
 @end
