@@ -64,6 +64,7 @@
     if([self count])
     {
         item = [self item:0];
+        item.search = self;
         [self remove:0];
     }
     
