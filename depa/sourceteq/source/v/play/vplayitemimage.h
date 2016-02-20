@@ -1,13 +1,11 @@
-//
-//  vplayitemimage.h
-//  depa
-//
-//  Created by zero on 2/20/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
 
-#import <Foundation/Foundation.h>
+@class msearchresult;
 
-@interface vplayitemimage : NSObject
+@interface vplayitemimage:UIView
+
+-(instancetype)init:(msearchresult*)model;
+
+@property(weak, nonatomic)msearchresult *model;
 
 @end
