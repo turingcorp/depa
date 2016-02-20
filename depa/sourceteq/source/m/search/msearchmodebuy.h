@@ -1,6 +1,6 @@
 #import "appdel.h"
 #import "msearchmodeprotocol.h"
 
-@interface msearchmodebuy:NSObject
+@interface msearchmodebuy:NSObject<msearchmodeprotocol>
 
 @end
