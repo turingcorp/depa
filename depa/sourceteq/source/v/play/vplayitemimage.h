@@ -7,5 +7,6 @@
 -(instancetype)init:(msearchresult*)model;
 
 @property(weak, nonatomic)msearchresult *model;
+@property(weak, nonatomic)UIImageView *image;
 
 @end
