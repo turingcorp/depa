@@ -8,6 +8,7 @@
     [self setBackgroundColor:[UIColor whiteColor]];
     [self setUserInteractionEnabled:NO];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self setUserInteractionEnabled:NO];
     
     self.model = model;
     
@@ -17,6 +18,7 @@
     [label setBackgroundColor:[UIColor clearColor]];
     [label setFont:[UIFont fontWithName:fontname size:16]];
     [label setTextColor:[UIColor blackColor]];
+    [label setText:model.itemtitle];
     
     [self addSubview:label];
     

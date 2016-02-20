@@ -13,6 +13,7 @@
 		DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */; };
 		DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */; };
 		DA2427B31C77F2DE00FE44B0 /* vplayitemfooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427B21C77F2DE00FE44B0 /* vplayitemfooter.m */; };
+		DA2427B61C77F61100FE44B0 /* vplayitemmiddle.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -75,6 +76,8 @@
 		DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemheader.m; sourceTree = "<group>"; };
 		DA2427B11C77F2DE00FE44B0 /* vplayitemfooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemfooter.h; sourceTree = "<group>"; };
 		DA2427B21C77F2DE00FE44B0 /* vplayitemfooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemfooter.m; sourceTree = "<group>"; };
+		DA2427B41C77F61100FE44B0 /* vplayitemmiddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemmiddle.h; sourceTree = "<group>"; };
+		DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemmiddle.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -278,6 +281,8 @@
 				DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */,
 				DA2427B11C77F2DE00FE44B0 /* vplayitemfooter.h */,
 				DA2427B21C77F2DE00FE44B0 /* vplayitemfooter.m */,
+				DA2427B41C77F61100FE44B0 /* vplayitemmiddle.h */,
+				DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */,
 			);
 			path = play;
 			sourceTree = "<group>";
@@ -722,6 +727,7 @@
 				DA6973201C764B6100A2C6EB /* amanager.m in Sources */,
 				DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */,
 				DA6973241C764C3600A2C6EB /* aparser.m in Sources */,
+				DA2427B61C77F61100FE44B0 /* vplayitemmiddle.m in Sources */,
 				DA69732E1C76549400A2C6EB /* msearchresult.m in Sources */,
 				DACDA84F1C76073200A37D15 /* mdirs.m in Sources */,
 				DACDA8471C76073200A37D15 /* updater.m in Sources */,
