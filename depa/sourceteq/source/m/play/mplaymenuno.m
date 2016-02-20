@@ -19,4 +19,9 @@
     return color;
 }
 
+-(void)action:(cplayitem*)controller
+{
+    [controller.play playno];
+}
+
 @end
