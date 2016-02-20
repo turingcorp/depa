@@ -36,7 +36,19 @@
 
 -(void)shownextitem:(UIPageViewControllerNavigationDirection)direction
 {
-    [self changecontroller:[[cplayitem alloc] init:self] direction:direction animated:YES];
+    msearchresult *item = [self.model next];
+    UIViewController *controller;
+    
+    if(item)
+    {
+        controller = [[cplayitem alloc] init:self item:item];
+    }
+    else
+    {
+        controller = [[cplayload alloc] init:self];
+    }
+    
+    [self changecontroller:controller direction:direction animated:YES];
 }
 
 #pragma mark public

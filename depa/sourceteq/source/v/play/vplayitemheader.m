@@ -10,10 +10,10 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setUserInteractionEnabled:NO];
     
-    NSDictionary *attrnorm = @{NSFontAttributeName:[UIFont fontWithName:fontname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.5]};
-    NSDictionary *attrhl = @{NSFontAttributeName:[UIFont fontWithName:fontname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.85]};
-    NSString *stringcurrent = [NSString stringWithFormat:@"%@/", [[tools singleton] numbertostring:@(model.search.current)]];
-    NSString *stringtotal = [[tools singleton] numbertostring:@(model.search.total)];
+    NSDictionary *attrnorm = @{NSFontAttributeName:[UIFont fontWithName:fontname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.7]};
+    NSDictionary *attrhl = @{NSFontAttributeName:[UIFont fontWithName:fontboldname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.2]};
+    NSString *stringcurrent = [[tools singleton] numbertostring:@(model.search.current)];
+    NSString *stringtotal = [NSString stringWithFormat:@"|%@", [[tools singleton] numbertostring:@(model.search.total)]];
     
     NSMutableAttributedString *mut = [[NSMutableAttributedString alloc] init];
     [mut appendAttributedString:[[NSAttributedString alloc] initWithString:model.search.displayname attributes:attrnorm]];

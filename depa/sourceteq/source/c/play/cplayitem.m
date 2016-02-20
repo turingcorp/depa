@@ -2,12 +2,12 @@
 
 @implementation cplayitem
 
--(instancetype)init:(cplay*)play
+-(instancetype)init:(cplay*)play item:(msearchresult*)item
 {
     self = [super init];
     
     self.play = play;
-    self.item = [play.model next];
+    self.item = item;
     
     return self;
 }
