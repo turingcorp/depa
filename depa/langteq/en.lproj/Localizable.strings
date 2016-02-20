@@ -2,6 +2,8 @@
 
 "play_load_retrylabel"="Error searching";
 "play_load_retrybutton"="Try again";
+"play_empty"="You played all the results, refine your search and start again";
+"play_empty_button"="Refine now";
 
 "search_type_flat"="Apartment";
 "search_type_house"="House";
