@@ -5,12 +5,14 @@
     NSMutableArray *array;
 }
 
--(instancetype)init:(id<msearchtypeprotocol>)searchtype
+-(instancetype)init:(id<msearchtypeprotocol>)searchtype mode:(id<msearchmodeprotocol>)searchmode
 {
     self = [super init];
     
     self.searchtype = searchtype;
+    self.searchmode = searchmode;
     self.limit = 10;
+    self.current = 0;
     array = [NSMutableArray array];
     
     return self;
@@ -57,6 +59,7 @@
 -(msearchresult*)next
 {
     msearchresult *item;
+    self.current = 0;
     
     if([self count])
     {
