@@ -4,13 +4,14 @@ static const NSUInteger cellwidth = 120;
 
 @implementation vplaymenu
 
--(instancetype)init
+-(instancetype)init:(cplayitem*)controller
 {
     self = [super init];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor clearColor]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     
+    self.controller = controller;
     self.model = [[mplaymenu alloc] init];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
