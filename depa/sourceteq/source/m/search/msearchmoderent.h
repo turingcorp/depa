@@ -1,13 +1,6 @@
-//
-//  msearchmoderent.h
-//  depa
-//
-//  Created by zero on 2/20/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "msearchmodeprotocol.h"
 
-#import <Foundation/Foundation.h>
-
-@interface msearchmoderent : NSObject
+@interface msearchmoderent:NSObject<msearchmodeprotocol>
 
 @end
