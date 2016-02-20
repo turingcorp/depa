@@ -1,11 +1,12 @@
 #import "appdel.h"
-#import "viewbase.h"
 
-@class cplayitem;
+@class msearchresult;
 
-@interface vplayitem:viewbase
+@interface vplayitem:UIView
 
-@property(weak, nonatomic)cplayitem *controlleritem;
+-(instancetype)init:(msearchresult*)model;
+
+@property(weak, nonatomic)msearchresult *model;
 @property(weak, nonatomic)UIImageView *image;
 
 @end

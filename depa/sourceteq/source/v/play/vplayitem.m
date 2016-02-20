@@ -2,14 +2,14 @@
 
 @implementation vplayitem
 
--(instancetype)init:(cplayitem*)controller
+-(instancetype)init:(msearchresult*)model
 {
-    self = [super init:controller];
+    self = [super init];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
 
-    self.controlleritem = controller;
+    self.model = model;
     
     UIImageView *image = [[UIImageView alloc] init];
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
