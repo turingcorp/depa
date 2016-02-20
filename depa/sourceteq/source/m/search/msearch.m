@@ -64,10 +64,10 @@
 -(msearchresult*)next
 {
     msearchresult *item;
-    self.current++;
     
     if([self count])
     {
+        self.current++;
         item = [self item:0];
         item.search = self;
         [self remove:0];

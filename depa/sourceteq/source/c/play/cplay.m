@@ -6,7 +6,7 @@
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.model = [[msearch alloc] init:[[msearchtypeflat alloc] init] mode:[[msearchmoderent alloc] init]];
-    [self showloading:NO];
+    [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:YES];
     
     return self;
 }
@@ -29,11 +29,6 @@
     [self setViewControllers:array direction:direction animated:animated completion:nil];
 }
 
--(void)showloading:(BOOL)animated
-{
-    [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:animated];
-}
-
 -(void)shownextitem:(UIPageViewControllerNavigationDirection)direction
 {
     msearchresult *item = [self.model next];
@@ -45,7 +40,14 @@
     }
     else
     {
-        controller = [[cplayempty alloc] init];
+        if(self.model.offset < self.model.total)
+        {
+            controller = [[cplayload alloc] init:self];
+        }
+        else
+        {
+            controller = [[cplayempty alloc] init];
+        }
     }
     
     [self changecontroller:controller direction:direction animated:YES];
