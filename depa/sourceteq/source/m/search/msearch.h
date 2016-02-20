@@ -1,5 +1,6 @@
 #import "appdel.h"
 #import "msearchtypeprotocol.h"
+#import "msearchmodeprotocol.h"
 
 @class msearchresult;
 @class aparsersearch;

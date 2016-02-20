@@ -3,8 +3,8 @@
 "play_load_retrylabel"="Error searching";
 "play_load_retrybutton"="Try again";
 
-"search_type_flat"="Apartments";
-"search_type_house"="Houses";
+"search_type_flat"="Apartment";
+"search_type_house"="House";
 "search_mode_rent"="for rent";
 "search_mode_buy"="for sale";
 

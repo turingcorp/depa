@@ -11,7 +11,7 @@
     
     self.searchtype = searchtype;
     self.searchmode = searchmode;
-    self.limit = 10;
+    self.limit = 20;
     self.current = 0;
     array = [NSMutableArray array];
     
@@ -59,7 +59,7 @@
 -(msearchresult*)next
 {
     msearchresult *item;
-    self.current = 0;
+    self.current++;
     
     if([self count])
     {

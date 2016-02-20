@@ -14,9 +14,10 @@
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setFont:[UIFont fontWithName:fontname size:13]];
-    [label setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
+    [label setFont:[UIFont fontWithName:fontname size:14]];
+    [label setTextColor:[UIColor colorWithWhite:0 alpha:0.65]];
     [label setText:[model.search displayname]];
+    [label setTextAlignment:NSTextAlignmentRight];
     
     [self addSubview:label];
     

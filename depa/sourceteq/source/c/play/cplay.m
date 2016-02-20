@@ -5,7 +5,7 @@
 -(instancetype)init
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    self.model = [[msearch alloc] init:[[msearchtypeflat alloc] init]];
+    self.model = [[msearch alloc] init:[[msearchtypeflat alloc] init] mode:[[msearchmoderent alloc] init]];
     [self showloading:NO];
     
     return self;
