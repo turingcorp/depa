@@ -8,11 +8,14 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
+
+    self.controlleritem = controller;
     
     UIImageView *image = [[UIImageView alloc] init];
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setUserInteractionEnabled:NO];
     [image setContentMode:UIViewContentModeScaleAspectFit];
+    self.image = image;
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
@@ -42,7 +45,30 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[titlebase]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[titlebase(60)]-5-|" options:0 metrics:metrics views:views]];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedimage:) name:notimageloaded object:nil];
+    
     return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark notified
+
+-(void)notifiedimage:(NSNotification*)notification
+{
+    aimateqitem *apiimage = self.controlleritem.item.apiimage;
+    
+    if([apiimage equalsnotification:notification])
+    {
+        dispatch_async(dispatch_get_main_queue(),
+                       ^
+                       {
+                           [self.image setImage:apiimage.image];
+                       });
+    }
 }
 
 @end

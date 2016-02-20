@@ -92,7 +92,8 @@
                                if(item.task == task)
                                {
                                    [self.items removeObjectAtIndex:i];
-                                   [[NSNotificationCenter defaultCenter] postNotificationName:notimageloaded object:[item userinfo]];
+                                   item.image = image;
+                                   [[NSNotificationCenter defaultCenter] postNotificationName:notimageloaded object:nil userInfo:[item userinfo]];
                                    
                                    break;
                                }

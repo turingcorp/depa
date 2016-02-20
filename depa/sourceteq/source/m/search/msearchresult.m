@@ -8,9 +8,11 @@
 
     self.itemid = rawitem[@"id"];
     self.itemtitle = rawitem[@"title"];
-    self.itemthumbnail = rawitem[@"thumbnail"];
     self.itemprice = rawitem[@"price"];
-    self.itemthumbnail = [self.itemthumbnail stringByReplacingOccurrencesOfString:@"-I.jpg" withString:@"-O.jpg"];
+    
+    NSString *thumbnail = rawitem[@"thumbnail"];
+    thumbnail = [thumbnail stringByReplacingOccurrencesOfString:@"-I.jpg" withString:@"-O.jpg"];
+    self.apiimage = [[aimateqitem alloc] init:thumbnail];
     
     return self;
 }

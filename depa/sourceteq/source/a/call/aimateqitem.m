@@ -7,6 +7,7 @@
     self = [super init];
     
     self.url = url;
+    [[aimateq singleton] addtoqueue:self];
     
     return self;
 }
