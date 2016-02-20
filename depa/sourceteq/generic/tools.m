@@ -3,6 +3,7 @@
 @implementation tools
 {
     NSNumberFormatter *numformatter;
+    NSNumberFormatter *priceformatter;
     CFStringRef stringref;
 }
 
@@ -62,6 +63,8 @@
     
     numformatter = [[NSNumberFormatter alloc] init];
     [numformatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    priceformatter = [[NSNumberFormatter alloc] init];
+    [priceformatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     stringref = (CFStringRef)@"!*'();:@&=+$,/?%#[]";
     
     return self;
@@ -79,6 +82,13 @@
 -(NSString*)numbertostring:(NSNumber*)number
 {
     NSString *string = [numformatter stringFromNumber:number];
+    
+    return string;
+}
+
+-(NSString*)pricetostring:(NSNumber*)number
+{
+    NSString *string = [priceformatter stringFromNumber:number];
     
     return string;
 }

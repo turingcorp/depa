@@ -14,16 +14,30 @@
     UIImageView *image = [[UIImageView alloc] init];
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setUserInteractionEnabled:NO];
-    [image setContentMode:UIViewContentModeScaleAspectFit];
+    [image setContentMode:UIViewContentModeScaleAspectFill];
     self.image = image;
     
-    UILabel *label = [[UILabel alloc] init];
-    [label setBackgroundColor:[UIColor clearColor]];
-    [label setUserInteractionEnabled:NO];
-    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setFont:[UIFont fontWithName:fontname size:16]];
-    [label setText:controller.item.itemtitle];
-    [label setTextColor:[UIColor blackColor]];
+    UILabel *labelprice = [[UILabel alloc] init];
+    [labelprice setBackgroundColor:[UIColor clearColor]];
+    [labelprice setUserInteractionEnabled:NO];
+    [labelprice setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelprice setFont:[UIFont fontWithName:fontboldname size:16]];
+    [labelprice setTextColor:[UIColor blackColor]];
+    [labelprice setText:[[tools singleton] pricetostring:controller.item.itemprice]];
+    
+    UIView *pricebase = [[UIView alloc] init];
+    [pricebase setUserInteractionEnabled:NO];
+    [pricebase setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [pricebase setBackgroundColor:[UIColor whiteColor]];
+    [pricebase setClipsToBounds:YES];
+    
+    UILabel *labeltitle = [[UILabel alloc] init];
+    [labeltitle setBackgroundColor:[UIColor clearColor]];
+    [labeltitle setUserInteractionEnabled:NO];
+    [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labeltitle setFont:[UIFont fontWithName:fontname size:16]];
+    [labeltitle setText:controller.item.itemtitle];
+    [labeltitle setTextColor:[UIColor blackColor]];
     
     UIView *titlebase = [[UIView alloc] init];
     [titlebase setUserInteractionEnabled:NO];
@@ -31,19 +45,23 @@
     [titlebase setBackgroundColor:[UIColor whiteColor]];
     [titlebase setClipsToBounds:YES];
     
-    [titlebase addSubview:label];
+    [pricebase addSubview:labelprice];
+    [titlebase addSubview:labeltitle];
     [self addSubview:image];
     [self addSubview:titlebase];
+    [self addSubview:pricebase];
     
-    NSDictionary *views = @{@"image":image, @"label":label, @"titlebase":titlebase};
+    NSDictionary *views = @{@"image":image, @"labeltitle":labeltitle, @"titlebase":titlebase, @"pricebase":pricebase, @"labelprice":labelprice};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image]-70-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label]-15-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[label]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image]-5-[pricebase(40)]-5-[titlebase(60)]-5-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[labeltitle]-15-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[labeltitle]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[titlebase]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[titlebase(60)]-5-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[labelprice]-15-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[labelprice]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[pricebase]-0-|" options:0 metrics:metrics views:views]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedimage:) name:notimageloaded object:nil];
     
