@@ -83,28 +83,26 @@
         dispatch_async(self.queue,
                        ^
                        {
+                           NSUInteger count = self.items.count;
                            
+                           for(NSUInteger i = 0; i < count; i++)
+                           {
+                               aimateqitem *item = self.items[i];
+                               
+                               if(item.task == task)
+                               {
+                                   [self.items removeObjectAtIndex:i];
+                                   [[NSNotificationCenter defaultCenter] postNotificationName:notimageloaded object:[item userinfo]];
+                                   
+                                   break;
+                               }
+                           }
                        });
     }
     else
     {
-        [self imageerror:NSLocalizedString(@"", nil)];
+        [self imageerror:NSLocalizedString(@"apicall_imateq_error_noimage", nil)];
     }
-    
-    dispatch_async(queue,
-                   ^(void)
-                   {
-                       NSUInteger index = [tasks indexOfObject:_task];
-                       
-                       if(index != NSNotFound)
-                       {
-                           [tasks removeObject:_task];
-                           NSString *url = _task.taskDescription;
-                           cloudimgreference *reference = [[cloudimgreference alloc] init:url image:image];
-                           
-                           [[NSNotificationCenter defaultCenter] postNotificationName:notimageloaded object:nil userInfo:[reference userinfo]];
-                       }
-                   });
 }
 
 @end

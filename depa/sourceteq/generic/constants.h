@@ -22,6 +22,7 @@
 
 #define notflowschanged         @"flowschanged"
 #define notflowsreload          @"flowsreload"
+#define notimageloaded          @"imageloaded"
 
 // extra
 
