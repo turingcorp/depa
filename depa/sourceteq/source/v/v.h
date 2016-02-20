@@ -10,3 +10,4 @@
 #import "vplaymenucel.h"
 #import "vplayitem.h"
 #import "vplayitemheader.h"
+#import "vplayitemfooter.h"
