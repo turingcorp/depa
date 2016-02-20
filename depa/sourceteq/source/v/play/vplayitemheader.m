@@ -10,14 +10,22 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setUserInteractionEnabled:NO];
     
+    NSDictionary *attrnorm = @{NSFontAttributeName:[UIFont fontWithName:fontname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.5]};
+    NSDictionary *attrhl = @{NSFontAttributeName:[UIFont fontWithName:fontname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.85]};
+    NSString *stringcurrent = [NSString stringWithFormat:@"%@/", [[tools singleton] numbertostring:@(model.search.current)]];
+    NSString *stringtotal = [[tools singleton] numbertostring:@(model.search.total)];
+    
+    NSMutableAttributedString *mut = [[NSMutableAttributedString alloc] init];
+    [mut appendAttributedString:[[NSAttributedString alloc] initWithString:model.search.displayname attributes:attrnorm]];
+    [mut appendAttributedString:[[NSAttributedString alloc] initWithString:stringcurrent attributes:attrnorm]];
+    [mut appendAttributedString:[[NSAttributedString alloc] initWithString:stringtotal attributes:attrhl]];
+    
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setFont:[UIFont fontWithName:fontname size:14]];
-    [label setTextColor:[UIColor colorWithWhite:0 alpha:0.65]];
-    [label setText:[model.search displayname]];
     [label setTextAlignment:NSTextAlignmentRight];
+    [label setAttributedText:mut];
     
     [self addSubview:label];
     

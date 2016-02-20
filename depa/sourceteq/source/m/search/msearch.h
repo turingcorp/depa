@@ -14,10 +14,10 @@
 -(NSString*)variables;
 -(void)join:(aparsersearch*)searchresults;
 -(msearchresult*)next;
--(NSString*)displayname;
 
 @property(strong, nonatomic)id<msearchtypeprotocol> searchtype;
 @property(strong, nonatomic)id<msearchmodeprotocol> searchmode;
+@property(copy, nonatomic)NSString *displayname;
 @property(nonatomic)NSUInteger total;
 @property(nonatomic)NSUInteger offset;
 @property(nonatomic)NSUInteger limit;

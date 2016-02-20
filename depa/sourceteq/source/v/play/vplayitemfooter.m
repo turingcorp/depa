@@ -17,6 +17,7 @@
     [label setFont:[UIFont fontWithName:fontname size:15]];
     [label setTextColor:[UIColor blackColor]];
     [label setText:model.itemtitle];
+    [label setNumberOfLines:0];
     
     [self addSubview:label];
     
