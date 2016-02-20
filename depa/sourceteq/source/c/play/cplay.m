@@ -45,7 +45,7 @@
     }
     else
     {
-        controller = [[cplayload alloc] init:self];
+        controller = [[cplayempty alloc] init];
     }
     
     [self changecontroller:controller direction:direction animated:YES];

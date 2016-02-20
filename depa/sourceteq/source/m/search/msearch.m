@@ -11,7 +11,7 @@
     
     self.searchtype = searchtype;
     self.searchmode = searchmode;
-    self.limit = 20;
+    self.limit = 5;
     self.current = 0;
     array = [NSMutableArray array];
     
