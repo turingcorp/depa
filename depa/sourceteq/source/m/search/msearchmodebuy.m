@@ -7,7 +7,7 @@
 
 -(NSString*)displayname
 {
-    NSString *name = NSLocalizedString(@"", nil);
+    NSString *name = NSLocalizedString(@"search_mode_buy", nil);
     
     return name;
 }

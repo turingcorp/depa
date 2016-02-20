@@ -5,6 +5,8 @@
 
 "search_type_flat"="Apartments";
 "search_type_house"="Houses";
+"search_mode_rent"="for rent";
+"search_mode_buy"="for sale";
 
 "apicall_error_nodata"="Error connecting to server, try again";
 "apicall_error_parsingjgon"="Error reading server response, try again";
