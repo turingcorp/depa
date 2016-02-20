@@ -17,6 +17,8 @@
 		DA2427B91C783D7A00FE44B0 /* vplayitemimage.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427B81C783D7A00FE44B0 /* vplayitemimage.m */; };
 		DA2427BD1C7848B300FE44B0 /* msearchtypeflat.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427BC1C7848B300FE44B0 /* msearchtypeflat.m */; };
 		DA2427C01C7848C300FE44B0 /* msearchtypehouse.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427BF1C7848C300FE44B0 /* msearchtypehouse.m */; };
+		DA2427C41C784E5900FE44B0 /* msearchmoderent.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427C31C784E5900FE44B0 /* msearchmoderent.m */; };
+		DA2427CA1C784E8800FE44B0 /* msearchmodebuy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427C91C784E8800FE44B0 /* msearchmodebuy.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -88,6 +90,11 @@
 		DA2427BC1C7848B300FE44B0 /* msearchtypeflat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = msearchtypeflat.m; sourceTree = "<group>"; };
 		DA2427BE1C7848C300FE44B0 /* msearchtypehouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msearchtypehouse.h; sourceTree = "<group>"; };
 		DA2427BF1C7848C300FE44B0 /* msearchtypehouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = msearchtypehouse.m; sourceTree = "<group>"; };
+		DA2427C11C784E4700FE44B0 /* msearchmodeprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msearchmodeprotocol.h; sourceTree = "<group>"; };
+		DA2427C21C784E5900FE44B0 /* msearchmoderent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msearchmoderent.h; sourceTree = "<group>"; };
+		DA2427C31C784E5900FE44B0 /* msearchmoderent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = msearchmoderent.m; sourceTree = "<group>"; };
+		DA2427C81C784E8800FE44B0 /* msearchmodebuy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msearchmodebuy.h; sourceTree = "<group>"; };
+		DA2427C91C784E8800FE44B0 /* msearchmodebuy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = msearchmodebuy.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -275,6 +282,11 @@
 				DA2427BC1C7848B300FE44B0 /* msearchtypeflat.m */,
 				DA2427BE1C7848C300FE44B0 /* msearchtypehouse.h */,
 				DA2427BF1C7848C300FE44B0 /* msearchtypehouse.m */,
+				DA2427C11C784E4700FE44B0 /* msearchmodeprotocol.h */,
+				DA2427C21C784E5900FE44B0 /* msearchmoderent.h */,
+				DA2427C31C784E5900FE44B0 /* msearchmoderent.m */,
+				DA2427C81C784E8800FE44B0 /* msearchmodebuy.h */,
+				DA2427C91C784E8800FE44B0 /* msearchmodebuy.m */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -728,6 +740,7 @@
 			files = (
 				DACDA8501C76073200A37D15 /* msettings.m in Sources */,
 				DACDA8551C76073200A37D15 /* vrate.m in Sources */,
+				DA2427CA1C784E8800FE44B0 /* msearchmodebuy.m in Sources */,
 				DA9141881C766669004BE5D1 /* vplay.m in Sources */,
 				DA2427B91C783D7A00FE44B0 /* vplayitemimage.m in Sources */,
 				DACDA84A1C76073200A37D15 /* cmain.m in Sources */,
@@ -765,6 +778,7 @@
 				DA9141911C766C3F004BE5D1 /* cplayload.m in Sources */,
 				DA9141A51C76971D004BE5D1 /* mplaymenulike.m in Sources */,
 				DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */,
+				DA2427C41C784E5900FE44B0 /* msearchmoderent.m in Sources */,
 				DACDA8511C76073200A37D15 /* valert.m in Sources */,
 				DACDA84B1C76073200A37D15 /* crate.m in Sources */,
 				DACDA8531C76073200A37D15 /* viewbase.m in Sources */,
