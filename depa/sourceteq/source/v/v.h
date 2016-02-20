@@ -13,3 +13,4 @@
 #import "vplayitemfooter.h"
 #import "vplayitemmiddle.h"
 #import "vplayitemimage.h"
+#import "vplayempty.h"
