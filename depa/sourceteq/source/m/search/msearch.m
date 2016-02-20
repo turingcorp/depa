@@ -13,6 +13,7 @@
     self.searchmode = searchmode;
     self.limit = 5;
     self.current = 0;
+    self.offset = 0;
     array = [NSMutableArray array];
     
     NSMutableString *string = [NSMutableString string];
@@ -57,7 +58,7 @@
 -(void)join:(aparsersearch*)searchresults
 {
     self.total = searchresults.total;
-    self.offset = searchresults.offset;
+    self.offset += searchresults.limit;
     [array addObjectsFromArray:searchresults.array];
 }
 
