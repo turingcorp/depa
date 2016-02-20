@@ -23,7 +23,7 @@
     
     vplayitemmiddle *middel = [[vplayitemmiddle alloc] init:model];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedimage:) name:notimageloaded object:nil];
+    
     
     return self;
 }

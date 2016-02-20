@@ -26,7 +26,36 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     
+    [self refreshimage];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedimage:) name:notimageloaded object:nil];
+    
     return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark notified
+
+-(void)notifiedimage:(NSNotification*)notification
+{
+    if([self.model.apiimage equalsnotification:notification])
+    {
+        dispatch_async(dispatch_get_main_queue(),
+                       ^
+                       {
+                           [self refreshimage];
+                       });
+    }
+}
+
+#pragma mark functionality
+
+-(void)refreshimage
+{
+    [self.image setImage:self.model.apiimage.image];
 }
 
 @end
