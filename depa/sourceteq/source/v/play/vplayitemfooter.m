@@ -9,9 +9,7 @@
     [self setUserInteractionEnabled:NO];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setUserInteractionEnabled:NO];
-    
-    self.model = model;
-    
+
     UILabel *label = [[UILabel alloc] init];
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];

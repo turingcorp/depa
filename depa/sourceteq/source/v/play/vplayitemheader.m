@@ -10,8 +10,6 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setUserInteractionEnabled:NO];
     
-    self.model = model;
-    
     return self;
 }
 
