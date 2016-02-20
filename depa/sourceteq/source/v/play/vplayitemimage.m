@@ -5,7 +5,7 @@
 -(instancetype)init:(msearchresult*)model
 {
     self = [super init];
-    [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundColor:[UIColor blackColor]];
     [self setUserInteractionEnabled:NO];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
@@ -24,7 +24,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[image]-1-|" options:0 metrics:metrics views:views]];
     
     [self refreshimage];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedimage:) name:notimageloaded object:nil];

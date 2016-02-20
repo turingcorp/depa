@@ -14,7 +14,7 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setBackgroundColor:[UIColor clearColor]];
-    [label setFont:[UIFont fontWithName:fontname size:16]];
+    [label setFont:[UIFont fontWithName:fontname size:15]];
     [label setTextColor:[UIColor blackColor]];
     [label setText:model.itemtitle];
     
