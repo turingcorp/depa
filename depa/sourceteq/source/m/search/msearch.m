@@ -5,12 +5,13 @@
     NSMutableArray *array;
 }
 
--(instancetype)init
+-(instancetype)init:(id<msearchtypeprotocol>)searchtype
 {
     self = [super init];
     
-    array = [NSMutableArray array];
+    self.searchtype = searchtype;
     self.limit = 10;
+    array = [NSMutableArray array];
     
     return self;
 }
