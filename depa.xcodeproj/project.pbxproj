@@ -11,6 +11,7 @@
 		DA2427A71C77A9FF00FE44B0 /* vplayitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A61C77A9FF00FE44B0 /* vplayitem.m */; };
 		DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A91C77D14900FE44B0 /* aimateq.m */; };
 		DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */; };
+		DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -69,6 +70,8 @@
 		DA2427A91C77D14900FE44B0 /* aimateq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aimateq.m; sourceTree = "<group>"; };
 		DA2427AB1C77D1C200FE44B0 /* aimateqitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aimateqitem.h; sourceTree = "<group>"; };
 		DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aimateqitem.m; sourceTree = "<group>"; };
+		DA2427AE1C77F17B00FE44B0 /* vplayitemheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemheader.h; sourceTree = "<group>"; };
+		DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemheader.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -268,6 +271,8 @@
 				DA9141991C769605004BE5D1 /* vplaymenucel.m */,
 				DA2427A51C77A9FF00FE44B0 /* vplayitem.h */,
 				DA2427A61C77A9FF00FE44B0 /* vplayitem.m */,
+				DA2427AE1C77F17B00FE44B0 /* vplayitemheader.h */,
+				DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */,
 			);
 			path = play;
 			sourceTree = "<group>";
@@ -710,6 +715,7 @@
 				DACDA8461C76073200A37D15 /* tools.m in Sources */,
 				DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */,
 				DA6973201C764B6100A2C6EB /* amanager.m in Sources */,
+				DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */,
 				DA6973241C764C3600A2C6EB /* aparser.m in Sources */,
 				DA69732E1C76549400A2C6EB /* msearchresult.m in Sources */,
 				DACDA84F1C76073200A37D15 /* mdirs.m in Sources */,
