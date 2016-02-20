@@ -8,7 +8,7 @@
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor whiteColor]];
     
-    vplayitem *item = [[vplayitem alloc] init:controller];
+    vplayitem *item = [[vplayitem alloc] init:controller.item];
     self.item = item;
 
     vplaymenu *menu = [[vplaymenu alloc] init];
