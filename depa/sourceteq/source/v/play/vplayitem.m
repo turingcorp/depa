@@ -23,7 +23,7 @@
     [labelprice setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelprice setFont:[UIFont fontWithName:fontboldname size:16]];
     [labelprice setTextColor:[UIColor blackColor]];
-    [labelprice setText:[[tools singleton] pricetostring:controller.item.itemprice]];
+    [labelprice setText:[[tools singleton] pricetostring:self.model.itemprice]];
     
     UIView *pricebase = [[UIView alloc] init];
     [pricebase setUserInteractionEnabled:NO];
@@ -36,7 +36,7 @@
     [labeltitle setUserInteractionEnabled:NO];
     [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labeltitle setFont:[UIFont fontWithName:fontname size:16]];
-    [labeltitle setText:controller.item.itemtitle];
+    [labeltitle setText:self.model.itemtitle];
     [labeltitle setTextColor:[UIColor blackColor]];
     
     UIView *titlebase = [[UIView alloc] init];
@@ -77,7 +77,7 @@
 
 -(void)notifiedimage:(NSNotification*)notification
 {
-    aimateqitem *apiimage = self.controlleritem.item.apiimage;
+    aimateqitem *apiimage = self.model.apiimage;
     
     if([apiimage equalsnotification:notification])
     {
