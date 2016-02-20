@@ -70,4 +70,14 @@
     return item;
 }
 
+-(NSString*)displayname
+{
+    NSMutableString *string = [NSMutableString string];
+    [string appendString:[self.searchtype displayname]];
+    [string appendFormat:@" %@", [self.searchmode displayname]];
+    [string appendFormat:@" %@/%@", [[tools singleton] numbertostring:@(self.current)], [[tools singleton] numbertostring:@(self.total)]];
+    
+    return string;
+}
+
 @end

@@ -13,6 +13,7 @@
 -(NSString*)variables;
 -(void)join:(aparsersearch*)searchresults;
 -(msearchresult*)next;
+-(NSString*)displayname;
 
 @property(strong, nonatomic)id<msearchtypeprotocol> searchtype;
 @property(strong, nonatomic)id<msearchmodeprotocol> searchmode;
