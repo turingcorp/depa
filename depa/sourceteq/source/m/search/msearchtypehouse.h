@@ -1,13 +1,6 @@
-//
-//  msearchtypehouse.h
-//  depa
-//
-//  Created by zero on 2/20/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "msearchtypeprotocol.h"
 
-#import <Foundation/Foundation.h>
-
-@interface msearchtypehouse : NSObject
+@interface msearchtypehouse:NSObject<msearchtypeprotocol>
 
 @end

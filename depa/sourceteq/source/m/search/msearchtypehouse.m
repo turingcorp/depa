@@ -2,7 +2,6 @@
 
 @implementation msearchtypehouse
 
-
 #pragma mark -
 #pragma mark search protocol
 
