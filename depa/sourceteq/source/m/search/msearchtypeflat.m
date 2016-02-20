@@ -1,13 +1,15 @@
-//
-//  msearchtypeflat.m
-//  depa
-//
-//  Created by zero on 2/20/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "msearchtypeflat.h"
 
 @implementation msearchtypeflat
+
+#pragma mark -
+#pragma mark search protocol
+
+-(NSString*)displayname
+{
+    NSString *name = NSLocalizedString(@"", nil);
+    
+    return name;
+}
 
 @end

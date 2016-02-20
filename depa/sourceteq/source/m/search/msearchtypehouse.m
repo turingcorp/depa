@@ -1,13 +1,16 @@
-//
-//  msearchtypehouse.m
-//  depa
-//
-//  Created by zero on 2/20/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "msearchtypehouse.h"
 
 @implementation msearchtypehouse
+
+
+#pragma mark -
+#pragma mark search protocol
+
+-(NSString*)displayname
+{
+    NSString *name = NSLocalizedString(@"", nil);
+    
+    return name;
+}
 
 @end
