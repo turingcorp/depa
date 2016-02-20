@@ -10,7 +10,7 @@
     
     vplayitem *item = [[vplayitem alloc] init:controller.item];
 
-    vplaymenu *menu = [[vplaymenu alloc] init];
+    vplaymenu *menu = [[vplaymenu alloc] init:controller];
     self.menu = menu;
     
     [self addSubview:item];

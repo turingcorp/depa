@@ -11,3 +11,5 @@
 #import "vplayitem.h"
 #import "vplayitemheader.h"
 #import "vplayitemfooter.h"
+#import "vplayitemmiddle.h"
+#import "vplayitemimage.h"

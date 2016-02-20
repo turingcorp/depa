@@ -14,6 +14,7 @@
 		DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */; };
 		DA2427B31C77F2DE00FE44B0 /* vplayitemfooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427B21C77F2DE00FE44B0 /* vplayitemfooter.m */; };
 		DA2427B61C77F61100FE44B0 /* vplayitemmiddle.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */; };
+		DA2427B91C783D7A00FE44B0 /* vplayitemimage.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427B81C783D7A00FE44B0 /* vplayitemimage.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -78,6 +79,8 @@
 		DA2427B21C77F2DE00FE44B0 /* vplayitemfooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemfooter.m; sourceTree = "<group>"; };
 		DA2427B41C77F61100FE44B0 /* vplayitemmiddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemmiddle.h; sourceTree = "<group>"; };
 		DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemmiddle.m; sourceTree = "<group>"; };
+		DA2427B71C783D7A00FE44B0 /* vplayitemimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemimage.h; sourceTree = "<group>"; };
+		DA2427B81C783D7A00FE44B0 /* vplayitemimage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemimage.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 				DA2427B21C77F2DE00FE44B0 /* vplayitemfooter.m */,
 				DA2427B41C77F61100FE44B0 /* vplayitemmiddle.h */,
 				DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */,
+				DA2427B71C783D7A00FE44B0 /* vplayitemimage.h */,
+				DA2427B81C783D7A00FE44B0 /* vplayitemimage.m */,
 			);
 			path = play;
 			sourceTree = "<group>";
@@ -712,6 +717,7 @@
 				DACDA8501C76073200A37D15 /* msettings.m in Sources */,
 				DACDA8551C76073200A37D15 /* vrate.m in Sources */,
 				DA9141881C766669004BE5D1 /* vplay.m in Sources */,
+				DA2427B91C783D7A00FE44B0 /* vplayitemimage.m in Sources */,
 				DACDA84A1C76073200A37D15 /* cmain.m in Sources */,
 				DACDA8441C76073200A37D15 /* main.m in Sources */,
 				DA2427A71C77A9FF00FE44B0 /* vplayitem.m in Sources */,
