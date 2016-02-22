@@ -9,6 +9,7 @@
     [self setBackgroundColor:[UIColor whiteColor]];
     
     vplayitem *item = [[vplayitem alloc] init:controller.item];
+    self.item = item;
 
     vplaymenu *menu = [[vplaymenu alloc] init:controller];
     self.menu = menu;

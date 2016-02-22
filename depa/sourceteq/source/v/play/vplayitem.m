@@ -14,6 +14,7 @@
     vplayitemfooter *footer = [[vplayitemfooter alloc] init:model];
     vplayitemmiddle *middle = [[vplayitemmiddle alloc] init:model];
     vplayitemimage *image = [[vplayitemimage alloc] init:model];
+    self.image = image;
     
     [self addSubview:image];
     [self addSubview:header];
