@@ -15,3 +15,8 @@
 #import "mplaymenuprotocol.h"
 #import "mplaymenulike.h"
 #import "mplaymenuno.h"
+#import "mconfig.h"
+#import "mconfigprotocol.h"
+#import "mconfiglocation.h"
+#import "mconfigtype.h"
+#import "mconfigmode.h"
