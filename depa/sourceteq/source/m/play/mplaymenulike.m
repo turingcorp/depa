@@ -42,24 +42,29 @@
     NSDictionary *views = @{@"image":image};
     NSDictionary *metrics = @{@"height":@(imageheight), @"margin":@(imagemargin)};
     
-    NSLayoutConstraint *constr = [NSLayoutConstraint constraintWithItem:image attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:itemimage attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+    NSLayoutConstraint *constr = [NSLayoutConstraint constraintWithItem:image attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:itemimage attribute:NSLayoutAttributeBottom multiplier:1 constant:imagemargin];
     
     [view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     [view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[image(height)]" options:0 metrics:metrics views:views]];
     [view addConstraint:constr];
-    constr.constant = -imagemargin;
     
-    [UIView animateWithDuration:2 animations:
-     ^
-     {
-         [itemimage.image setAlpha:0.3];
-         [image setAlpha:1];
-         [image layoutIfNeeded];
-     } completion:
-     ^(BOOL done)
-     {
-         [controller.play playlike];
-     }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 100), dispatch_get_main_queue(),
+                   ^
+                   {
+                       constr.constant = -imagemargin;
+                       
+                       [UIView animateWithDuration:0.5 animations:
+                        ^
+                        {
+                            [itemimage.image setAlpha:0.5];
+                            [image setAlpha:1];
+                            [itemimage layoutIfNeeded];
+                        } completion:
+                        ^(BOOL done)
+                        {
+                            [controller.play playlike];
+                        }];
+                   });
 }
 
 @end
