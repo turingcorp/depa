@@ -5,6 +5,9 @@
 -(instancetype)init
 {
     self = [super init];
+    [self setClipsToBounds:YES];
+    [self setBackgroundColor:[UIColor clearColor]];
+    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
