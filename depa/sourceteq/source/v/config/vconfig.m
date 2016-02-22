@@ -7,6 +7,8 @@
     self = [super init:controller];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
+
+    self.model = [[mconfig alloc] init];
     
     return self;
 }
@@ -27,6 +29,7 @@
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     vconfigcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
+    
     
     return cel;
 }
