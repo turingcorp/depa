@@ -16,3 +16,4 @@
 #import "vplayempty.h"
 #import "vconfig.h"
 #import "vconfigcel.h"
+#import "vconfiglocation.h"
