@@ -23,6 +23,12 @@ static const NSUInteger minitemspull = 3;
     return NO;
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self stopcall];
+}
+
 #pragma mark functionality
 
 -(void)changecontroller:(UIViewController*)controller direction:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
@@ -74,6 +80,12 @@ static const NSUInteger minitemspull = 3;
                    });
 }
 
+-(void)stopcall
+{
+    [self.callmanager cancelcall];
+    self.model.busy = NO;
+}
+
 #pragma mark public
 
 -(void)playlike
@@ -84,6 +96,37 @@ static const NSUInteger minitemspull = 3;
 -(void)playno
 {
     [self shownextitem:UIPageViewControllerNavigationDirectionForward];
+}
+
+#pragma mark -
+#pragma mark call del
+
+-(void)callsuccess:(amanager*)manager
+{
+    [self.model join:(aparsersearch*)manager.parser];
+    
+    if([self.current isKindOfClass:[cplayload class]])
+    {
+        dispatch_async(dispatch_get_main_queue(),
+                       ^
+                       {
+                           
+                           [self.play playno];
+                       });
+    }
+    
+    self.model.busy = NO;
+}
+
+-(void)call:(amanager*)manager error:(NSString*)error
+{
+    NSLog(@"Error: %@", error);
+    
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [self stopcall];
+                   });
 }
 
 @end
