@@ -5,12 +5,11 @@
     NSUInteger cellwidth;
 }
 
--(instancetype)init
+-(instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     [self setBackgroundColor:[UIColor clearColor]];
     [self setClipsToBounds:YES];
-    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     cellwidth = 100;
     
