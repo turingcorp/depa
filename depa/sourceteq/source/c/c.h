@@ -6,3 +6,4 @@
 #import "cplayitem.h"
 #import "cplayempty.h"
 #import "cconfig.h"
+#import "cconfigloc.h"
