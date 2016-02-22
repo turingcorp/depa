@@ -21,6 +21,8 @@
 
 -(void)action:(cplayitem*)controller
 {
+    
+    
     [controller.play playlike];
 }
 
