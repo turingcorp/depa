@@ -86,6 +86,7 @@ static const NSUInteger cellwidth = 120;
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
+    [col setUserInteractionEnabled:NO];
     [[self.model item:index.item] action:self.controller];
 }
 
