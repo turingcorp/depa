@@ -1,5 +1,5 @@
 #import "appdel.h"
 
-@interface vconfigloclist:UIView
+@interface vconfigloclist:UICollectionViewCell
 
 @end
