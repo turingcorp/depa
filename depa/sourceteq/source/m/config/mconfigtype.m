@@ -15,9 +15,11 @@
     return 80;
 }
 
--(void)config:(vconfigcel*)cel
+-(UIView*)overview
 {
+    vconfiglocation *over = [[vconfiglocation alloc] init];
     
+    return over;
 }
 
 -(void)selected:(cconfig*)controller

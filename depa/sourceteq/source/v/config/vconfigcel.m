@@ -17,6 +17,7 @@
 {
     [self.overview removeFromSuperview];
     self.overview = view;
+    [self addSubview:view];
     
     NSDictionary *views = @{@"over":view};
     NSDictionary *metrics = @{};

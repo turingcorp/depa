@@ -15,15 +15,11 @@
     return 60;
 }
 
--(void)config:(vconfigcel*)cel
+-(UIView*)overview
 {
-    [cel.overview removeFromSuperview];
-    
     vconfiglocation *over = [[vconfiglocation alloc] init];
-    [cel addSubview:over];
-    cel.overview = over;
     
-    
+    return over;
 }
 
 -(void)selected:(cconfig*)controller
