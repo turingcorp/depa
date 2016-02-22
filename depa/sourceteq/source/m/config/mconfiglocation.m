@@ -2,11 +2,27 @@
 
 @implementation mconfiglocation
 
--(instancetype)init
+#pragma mark -
+#pragma mark config protocol
+
+-(BOOL)selectable
 {
-    self = [super init];
+    return YES;
+}
+
+-(NSUInteger)cellheight
+{
+    return 60;
+}
+
+-(void)config:(vconfigcel*)cel
+{
     
-    return self;
+}
+
+-(void)selected:(cconfig*)controller
+{
+    
 }
 
 @end
