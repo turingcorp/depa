@@ -44,6 +44,13 @@
 #pragma mark -
 #pragma mark col del
 
+-(BOOL)collectionView:(UICollectionView*)col shouldSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    BOOL selectable = [[self.model item:index.item] selectable];
+    
+    return selectable;
+}
+
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
     CGSize size = CGSizeMake(col.bounds.size.width, [[self.model item:index.item] cellheight]);
@@ -69,6 +76,11 @@
     [cel config:[[self.model item:index.item] overview]];
     
     return cel;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    [[self.model item:index.item] selected:(cconfig*)self.controller];
 }
 
 @end

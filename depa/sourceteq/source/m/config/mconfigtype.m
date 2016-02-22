@@ -22,9 +22,4 @@
     return over;
 }
 
--(void)selected:(cconfig*)controller
-{
-    
-}
-
 @end

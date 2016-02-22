@@ -7,7 +7,7 @@
 
 -(BOOL)selectable
 {
-    return YES;
+    return NO;
 }
 
 -(NSUInteger)cellheight
@@ -20,11 +20,6 @@
     vconfiglocation *over = [[vconfiglocation alloc] init];
     
     return over;
-}
-
--(void)selected:(cconfig*)controller
-{
-    
 }
 
 @end
