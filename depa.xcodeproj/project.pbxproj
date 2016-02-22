@@ -24,6 +24,10 @@
 		DA25B1411C7B7D3A00B4BB21 /* cconfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1401C7B7D3A00B4BB21 /* cconfig.m */; };
 		DA25B1451C7B7E4600B4BB21 /* vconfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1441C7B7E4600B4BB21 /* vconfig.m */; };
 		DA25B1481C7B80CE00B4BB21 /* vconfigcel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1471C7B80CE00B4BB21 /* vconfigcel.m */; };
+		DA25B14C1C7B828F00B4BB21 /* mconfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B14B1C7B828F00B4BB21 /* mconfig.m */; };
+		DA25B1501C7B82C800B4BB21 /* mconfiglocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B14F1C7B82C800B4BB21 /* mconfiglocation.m */; };
+		DA25B1531C7B82D300B4BB21 /* mconfigtype.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1521C7B82D300B4BB21 /* mconfigtype.m */; };
+		DA25B1561C7B82DB00B4BB21 /* mconfigmode.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1551C7B82DB00B4BB21 /* mconfigmode.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -110,6 +114,15 @@
 		DA25B1441C7B7E4600B4BB21 /* vconfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfig.m; sourceTree = "<group>"; };
 		DA25B1461C7B80CE00B4BB21 /* vconfigcel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigcel.h; sourceTree = "<group>"; };
 		DA25B1471C7B80CE00B4BB21 /* vconfigcel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigcel.m; sourceTree = "<group>"; };
+		DA25B14A1C7B828F00B4BB21 /* mconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfig.h; sourceTree = "<group>"; };
+		DA25B14B1C7B828F00B4BB21 /* mconfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfig.m; sourceTree = "<group>"; };
+		DA25B14D1C7B82B600B4BB21 /* mconfigprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigprotocol.h; sourceTree = "<group>"; };
+		DA25B14E1C7B82C800B4BB21 /* mconfiglocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfiglocation.h; sourceTree = "<group>"; };
+		DA25B14F1C7B82C800B4BB21 /* mconfiglocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfiglocation.m; sourceTree = "<group>"; };
+		DA25B1511C7B82D300B4BB21 /* mconfigtype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigtype.h; sourceTree = "<group>"; };
+		DA25B1521C7B82D300B4BB21 /* mconfigtype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigtype.m; sourceTree = "<group>"; };
+		DA25B1541C7B82DB00B4BB21 /* mconfigmode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigmode.h; sourceTree = "<group>"; };
+		DA25B1551C7B82DB00B4BB21 /* mconfigmode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigmode.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -249,6 +262,22 @@
 				DA25B1441C7B7E4600B4BB21 /* vconfig.m */,
 				DA25B1461C7B80CE00B4BB21 /* vconfigcel.h */,
 				DA25B1471C7B80CE00B4BB21 /* vconfigcel.m */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		DA25B1491C7B828000B4BB21 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				DA25B14A1C7B828F00B4BB21 /* mconfig.h */,
+				DA25B14B1C7B828F00B4BB21 /* mconfig.m */,
+				DA25B14D1C7B82B600B4BB21 /* mconfigprotocol.h */,
+				DA25B14E1C7B82C800B4BB21 /* mconfiglocation.h */,
+				DA25B14F1C7B82C800B4BB21 /* mconfiglocation.m */,
+				DA25B1511C7B82D300B4BB21 /* mconfigtype.h */,
+				DA25B1521C7B82D300B4BB21 /* mconfigtype.m */,
+				DA25B1541C7B82DB00B4BB21 /* mconfigmode.h */,
+				DA25B1551C7B82DB00B4BB21 /* mconfigmode.m */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -539,6 +568,7 @@
 		DACDA81B1C76073200A37D15 /* m */ = {
 			isa = PBXGroup;
 			children = (
+				DA25B1491C7B828000B4BB21 /* config */,
 				DA91419B1C769674004BE5D1 /* play */,
 				DA6973281C76546900A2C6EB /* search */,
 				DACDA81C1C76073200A37D15 /* db */,
@@ -779,6 +809,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA25B1561C7B82DB00B4BB21 /* mconfigmode.m in Sources */,
 				DACDA8501C76073200A37D15 /* msettings.m in Sources */,
 				DACDA8551C76073200A37D15 /* vrate.m in Sources */,
 				DA2427CA1C784E8800FE44B0 /* msearchmodebuy.m in Sources */,
@@ -796,6 +827,7 @@
 				DACDA8521C76073200A37D15 /* vblur.m in Sources */,
 				DACDA8451C76073200A37D15 /* analytics.m in Sources */,
 				DACDA8461C76073200A37D15 /* tools.m in Sources */,
+				DA25B1531C7B82D300B4BB21 /* mconfigtype.m in Sources */,
 				DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */,
 				DA2427BD1C7848B300FE44B0 /* msearchtypeflat.m in Sources */,
 				DA6973201C764B6100A2C6EB /* amanager.m in Sources */,
@@ -825,9 +857,11 @@
 				DA2427C41C784E5900FE44B0 /* msearchmoderent.m in Sources */,
 				DACDA8511C76073200A37D15 /* valert.m in Sources */,
 				DACDA84B1C76073200A37D15 /* crate.m in Sources */,
+				DA25B1501C7B82C800B4BB21 /* mconfiglocation.m in Sources */,
 				DACDA8531C76073200A37D15 /* viewbase.m in Sources */,
 				DA2427C01C7848C300FE44B0 /* msearchtypehouse.m in Sources */,
 				DACDA84E1C76073200A37D15 /* mdbcreate.m in Sources */,
+				DA25B14C1C7B828F00B4BB21 /* mconfig.m in Sources */,
 				DA2427B31C77F2DE00FE44B0 /* vplayitemfooter.m in Sources */,
 				DA2427CD1C7863A100FE44B0 /* cplayempty.m in Sources */,
 				DA2427D01C7863E800FE44B0 /* vplayempty.m in Sources */,
