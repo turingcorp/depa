@@ -7,7 +7,7 @@
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.itemplay = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionplay:)];
     self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
-    self.itemconfig = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(actionconfig:)];
+    self.itemconfig = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"filter"] style:UIBarButtonItemStylePlain target:self action:@selector(actionconfig:)];
     self.itemfavorites = [[UIBarButtonItem  alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(actionfavorites:)];
     
     [self showplay:UIPageViewControllerNavigationDirectionForward animated:NO];
