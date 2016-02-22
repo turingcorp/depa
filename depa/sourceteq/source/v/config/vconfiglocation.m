@@ -8,6 +8,7 @@
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor clearColor]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self setUserInteractionEnabled:NO];
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
@@ -20,10 +21,11 @@
     UILabel *labellocation = [[UILabel alloc] init];
     [labellocation setBackgroundColor:[UIColor clearColor]];
     [labellocation setFont:[UIFont fontWithName:fontname size:16]];
-    [labellocation setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
+    [labellocation setTextColor:[UIColor colorWithWhite:0 alpha:0.7]];
     [labellocation setUserInteractionEnabled:NO];
     [labellocation setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labellocation setText:@"Distrito federal"];
+    [labellocation setTextAlignment:NSTextAlignmentRight];
     self.labellocation = labellocation;
     
     [self addSubview:label];
