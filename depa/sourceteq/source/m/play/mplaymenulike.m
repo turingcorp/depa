@@ -48,15 +48,14 @@
     [view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[image(height)]" options:0 metrics:metrics views:views]];
     [view addConstraint:constr];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 100), dispatch_get_main_queue(),
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 10), dispatch_get_main_queue(),
                    ^
                    {
                        constr.constant = -imagemargin;
                        
-                       [UIView animateWithDuration:0.5 animations:
+                       [UIView animateWithDuration:0.4 animations:
                         ^
                         {
-                            [itemimage.image setAlpha:0.5];
                             [image setAlpha:1];
                             [itemimage layoutIfNeeded];
                         } completion:
@@ -65,6 +64,12 @@
                             [controller.play playlike];
                         }];
                    });
+    
+    [UIView animateWithDuration:1 animations:
+     ^
+     {
+         [itemimage.image setAlpha:0];
+     }];
 }
 
 @end
