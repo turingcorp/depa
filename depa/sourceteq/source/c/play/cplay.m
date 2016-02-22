@@ -52,6 +52,19 @@
     }
     
     [self changecontroller:controller direction:direction animated:YES];
+    [self backgroundpull];
+}
+
+-(void)backgroundpull
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       if(!self.model.busy)
+                       {
+                           
+                       }
+                   });
 }
 
 #pragma mark public
