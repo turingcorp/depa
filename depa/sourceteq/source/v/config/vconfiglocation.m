@@ -21,7 +21,7 @@
     UILabel *labellocation = [[UILabel alloc] init];
     [labellocation setBackgroundColor:[UIColor clearColor]];
     [labellocation setFont:[UIFont fontWithName:fontname size:16]];
-    [labellocation setTextColor:[UIColor colorWithWhite:0 alpha:0.7]];
+    [labellocation setTextColor:[UIColor colorWithWhite:0 alpha:0.9]];
     [labellocation setUserInteractionEnabled:NO];
     [labellocation setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labellocation setText:@"Distrito federal"];
