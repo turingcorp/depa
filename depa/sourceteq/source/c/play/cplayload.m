@@ -57,8 +57,12 @@
 -(void)recall
 {
     [self.viewload showloading];
-    amanager *callmanager = [amanager call:apicall_search delegate:self valriables:[self.play.model variables]];
-    self.callmanager = callmanager;
+    
+    if(!self.play.model.busy)
+    {
+        amanager *callmanager = [amanager call:apicall_search delegate:self valriables:[self.play.model variables]];
+        self.callmanager = callmanager;
+    }
 }
 
 #pragma mark -
