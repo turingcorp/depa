@@ -24,4 +24,6 @@
 @property(nonatomic)NSUInteger current;
 @property(nonatomic)BOOL busy;
 
+#warning "con"
+
 @end
