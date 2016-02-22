@@ -5,6 +5,9 @@
 
 @interface vplay:viewbase
 
+-(void)displaylike;
+-(void)displayno;
+
 @property(weak, nonatomic)vplaymenu *menu;
 
 @end

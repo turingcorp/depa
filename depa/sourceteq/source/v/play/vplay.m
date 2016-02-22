@@ -26,4 +26,16 @@
     return self;
 }
 
+#pragma mark public
+
+-(void)displaylike
+{
+    
+}
+
+-(void)displayno
+{
+    
+}
+
 @end
