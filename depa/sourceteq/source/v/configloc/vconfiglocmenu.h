@@ -1,5 +1,5 @@
 #import "appdel.h"
 
-@interface vconfiglocmenu:UIView
+@interface vconfiglocmenu:UIView<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @end
