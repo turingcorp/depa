@@ -17,6 +17,12 @@
 
 -(void)config:(vconfigcel*)cel
 {
+    [cel.overview removeFromSuperview];
+    
+    vconfiglocation *over = [[vconfiglocation alloc] init];
+    [cel addSubview:over];
+    cel.overview = over;
+    
     
 }
 

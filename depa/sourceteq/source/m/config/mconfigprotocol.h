@@ -7,7 +7,7 @@
 
 -(BOOL)selectable;
 -(NSUInteger)cellheight;
--(void)config:(vconfigcel*)cel;
+-(UIView*)overview;
 
 @optional
 

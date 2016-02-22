@@ -66,7 +66,7 @@
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     vconfigcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
-    [[self.model item:index.item] config:cel];
+    [cel config:[[self.model item:index.item] overview]];
     
     return cel;
 }
