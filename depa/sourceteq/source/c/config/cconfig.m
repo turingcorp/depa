@@ -2,4 +2,9 @@
 
 @implementation cconfig
 
+-(void)loadView
+{
+    
+}
+
 @end
