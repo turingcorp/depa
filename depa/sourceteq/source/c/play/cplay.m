@@ -110,8 +110,7 @@ static const NSUInteger minitemspull = 3;
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           
-                           [self.play playno];
+                           [self shownextitem:UIPageViewControllerNavigationDirectionForward];
                        });
     }
     

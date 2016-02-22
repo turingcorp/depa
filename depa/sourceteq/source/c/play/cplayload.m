@@ -50,6 +50,7 @@
 {
     [self.callmanager cancelcall];
     [self.viewload showretry];
+    self.play.model.busy = NO;
 }
 
 #pragma mark public
@@ -60,6 +61,7 @@
     
     if(!self.play.model.busy)
     {
+        self.play.model.busy = YES;
         amanager *callmanager = [amanager call:apicall_search delegate:self valriables:[self.play.model variables]];
         self.callmanager = callmanager;
     }
@@ -71,6 +73,7 @@
 -(void)callsuccess:(amanager*)manager
 {
     [self.play.model join:(aparsersearch*)manager.parser];
+    self.play.model.busy = NO;
     
     dispatch_async(dispatch_get_main_queue(),
                    ^
