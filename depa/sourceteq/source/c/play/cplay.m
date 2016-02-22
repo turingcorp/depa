@@ -1,5 +1,7 @@
 #import "cplay.h"
 
+static const NSUInteger minitemspull = 3;
+
 @implementation cplay
 
 -(instancetype)init
@@ -60,9 +62,14 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       if(!self.model.busy)
+                       if([self.model count] < minitemspull)
                        {
-                           
+                           if(!self.model.busy)
+                           {
+                               self.model.busy = YES;
+                               amanager *callmanager = [amanager call:apicall_search delegate:self valriables:[self.model variables]];
+                               self.callmanager = callmanager;
+                           }
                        }
                    });
 }

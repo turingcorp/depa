@@ -1,5 +1,7 @@
 #import "msearch.h"
 
+static const NSUInteger itemslimit = 5;
+
 @implementation msearch
 {
     NSMutableArray *array;
@@ -11,7 +13,7 @@
     
     self.searchtype = searchtype;
     self.searchmode = searchmode;
-    self.limit = 5;
+    self.limit = itemslimit;
     self.current = 0;
     self.offset = 0;
     array = [NSMutableArray array];
