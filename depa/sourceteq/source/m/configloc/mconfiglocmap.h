@@ -1,13 +1,6 @@
-//
-//  mconfiglocmap.h
-//  depa
-//
-//  Created by zero on 2/22/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "mconfiglocprotocol.h"
 
-#import <Foundation/Foundation.h>
-
-@interface mconfiglocmap : NSObject
+@interface mconfiglocmap:NSObject<mconfiglocprotocol>
 
 @end

@@ -14,11 +14,15 @@
 
 -(NSString*)title
 {
-    NSString *title = NSLocalizedString(@"", nil);
+    NSString *title = NSLocalizedString(@"config_location_menu_list", nil);
+    
+    return title;
 }
 
 -(UIView*)overview
 {
+    vconfigloclist *list = [[vconfigloclist alloc] init];
+    
     return nil;
 }
 
