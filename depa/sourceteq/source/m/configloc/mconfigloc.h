@@ -1,13 +1,9 @@
-//
-//  mconfigloc.h
-//  depa
-//
-//  Created by zero on 2/22/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "mconfiglocprotocol.h"
 
-#import <Foundation/Foundation.h>
+@interface mconfigloc:NSObject
 
-@interface mconfigloc : NSObject
+-(NSUInteger)count;
+-(id<mconfiglocprotocol>)item:(NSUInteger)index;
 
 @end

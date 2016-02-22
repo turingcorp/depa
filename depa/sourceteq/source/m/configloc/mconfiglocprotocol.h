@@ -1,13 +1,9 @@
-//
-//  mconfiglocprotocol.h
-//  depa
-//
-//  Created by zero on 2/22/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @protocol mconfiglocprotocol <NSObject>
+
+-(NSString*)assetname;
+-(NSString*)title;
+-(UICollectionViewCell*)cell;
 
 @end
