@@ -22,5 +22,6 @@
 @property(nonatomic)NSUInteger offset;
 @property(nonatomic)NSUInteger limit;
 @property(nonatomic)NSUInteger current;
+@property(nonatomic)BOOL busy;
 
 @end
