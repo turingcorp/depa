@@ -11,6 +11,8 @@
 "search_mode_rent"="for rent";
 "search_mode_buy"="for sale";
 
+"config_header_title"="Settings";
+
 "apicall_error_nodata"="Error connecting to server, try again";
 "apicall_error_parsingjgon"="Error reading server response, try again";
 "apicall_imateq_error_noimage"="Error downloading image";
