@@ -8,7 +8,8 @@
 -(instancetype)init
 {
     self = [super init];
-    
+
+    self.selected = 0;
     array = @[
               [[mconfigloclist alloc] init],
               [[mconfiglocmap alloc] init]
@@ -31,6 +32,11 @@
     id<mconfiglocprotocol> item = array[index];
     
     return item;
+}
+
+-(id<mconfiglocprotocol>)itemselected
+{
+    return [self item:self.selected];
 }
 
 @end

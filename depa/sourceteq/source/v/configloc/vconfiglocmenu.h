@@ -7,5 +7,6 @@
 -(void)location:(vconfigloc*)configloc;
 
 @property(weak, nonatomic)vconfigloc *configloc;
+@property(weak, nonatomic)UICollectionView *collection;
 
 @end

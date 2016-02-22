@@ -5,5 +5,8 @@
 
 -(NSUInteger)count;
 -(id<mconfiglocprotocol>)item:(NSUInteger)index;
+-(id<mconfiglocprotocol>)itemselected;
+
+@property(nonatomic)NSUInteger selected;
 
 @end

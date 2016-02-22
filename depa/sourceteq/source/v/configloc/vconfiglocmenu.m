@@ -20,6 +20,15 @@
     [flow setMinimumLineSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     
+    UICollectionView *collection = [[UICollectionView alloc] init];
+    [collection setBackgroundColor:[UIColor clearColor]];
+    [collection setClipsToBounds:YES];
+    [collection setDataSource:self];
+    [collection setDelegate:self];
+    self.collection = collection;
+    
+    [self addSubview:collection];
+    
     return self;
 }
 
