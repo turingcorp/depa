@@ -13,7 +13,7 @@
     NSDictionary *attrnorm = @{NSFontAttributeName:[UIFont fontWithName:fontname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.7]};
     NSDictionary *attrhl = @{NSFontAttributeName:[UIFont fontWithName:fontboldname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.2]};
     NSString *stringcurrent = [[tools singleton] numbertostring:@(model.search.current)];
-    NSString *stringtotal = [NSString stringWithFormat:@"|%@", [[tools singleton] numbertostring:@(model.search.total)]];
+    NSString *stringtotal = [NSString stringWithFormat:NSLocalizedString(@"play_item_header_of", nil), [[tools singleton] numbertostring:@(model.search.total)]];
     
     NSMutableAttributedString *mut = [[NSMutableAttributedString alloc] init];
     [mut appendAttributedString:[[NSAttributedString alloc] initWithString:model.search.displayname attributes:attrnorm]];

@@ -1,6 +1,6 @@
 #import "msearch.h"
 
-static const NSUInteger itemslimit = 5;
+static const NSUInteger itemslimit = 10;
 
 @implementation msearch
 {

@@ -4,6 +4,7 @@
 "play_load_retrybutton"="Try again";
 "play_empty"="You played all the results, refine your search and start again";
 "play_empty_button"="Refine now";
+"play_item_header_of"=" of %@";
 
 "search_type_flat"="Apartment";
 "search_type_house"="House";
