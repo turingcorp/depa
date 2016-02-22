@@ -25,6 +25,7 @@
 
 -(void)changecontroller:(UIViewController*)controller direction:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
+    self.current = controller;
     NSArray *array = @[controller];
     [self setViewControllers:array direction:direction animated:animated completion:nil];
 }
