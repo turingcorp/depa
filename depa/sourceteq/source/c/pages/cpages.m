@@ -66,7 +66,7 @@
 -(void)showconfig:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
     self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
-    [self changecontroller:[[UIViewController alloc] init] direction:direction animated:animated];
+    [self changecontroller:[[cconfig alloc] init] direction:direction animated:animated];
     [self.navigationItem setRightBarButtonItem:self.itemplay];
     [self.navigationItem setLeftBarButtonItem:nil];
 }
