@@ -23,7 +23,7 @@
 {
     vconfigloclist *list = [[vconfigloclist alloc] init];
     
-    return nil;
+    return list;
 }
 
 @end

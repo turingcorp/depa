@@ -23,7 +23,7 @@
 {
     vconfiglocmap *map = [[vconfiglocmap alloc] init];
     
-    return nil;
+    return map;
 }
 
 @end
