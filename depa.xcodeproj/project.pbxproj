@@ -21,6 +21,7 @@
 		DA2427CA1C784E8800FE44B0 /* msearchmodebuy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427C91C784E8800FE44B0 /* msearchmodebuy.m */; };
 		DA2427CD1C7863A100FE44B0 /* cplayempty.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427CC1C7863A100FE44B0 /* cplayempty.m */; };
 		DA2427D01C7863E800FE44B0 /* vplayempty.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427CF1C7863E800FE44B0 /* vplayempty.m */; };
+		DA25B1411C7B7D3A00B4BB21 /* cconfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1401C7B7D3A00B4BB21 /* cconfig.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -101,6 +102,8 @@
 		DA2427CC1C7863A100FE44B0 /* cplayempty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cplayempty.m; sourceTree = "<group>"; };
 		DA2427CE1C7863E800FE44B0 /* vplayempty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayempty.h; sourceTree = "<group>"; };
 		DA2427CF1C7863E800FE44B0 /* vplayempty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayempty.m; sourceTree = "<group>"; };
+		DA25B13F1C7B7D3A00B4BB21 /* cconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cconfig.h; sourceTree = "<group>"; };
+		DA25B1401C7B7D3A00B4BB21 /* cconfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cconfig.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -222,6 +225,15 @@
 				2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DA25B13E1C7B7D2B00B4BB21 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				DA25B13F1C7B7D3A00B4BB21 /* cconfig.h */,
+				DA25B1401C7B7D3A00B4BB21 /* cconfig.m */,
+			);
+			path = config;
 			sourceTree = "<group>";
 		};
 		DA6973031C760CF600A2C6EB /* play */ = {
@@ -479,6 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				DACDA8121C76073200A37D15 /* c.h */,
+				DA25B13E1C7B7D2B00B4BB21 /* config */,
 				DA6973031C760CF600A2C6EB /* play */,
 				DACDA8131C76073200A37D15 /* main */,
 				DACDA8181C76073200A37D15 /* pages */,
@@ -771,6 +784,7 @@
 				DA6973241C764C3600A2C6EB /* aparser.m in Sources */,
 				DA2427B61C77F61100FE44B0 /* vplayitemmiddle.m in Sources */,
 				DA69732E1C76549400A2C6EB /* msearchresult.m in Sources */,
+				DA25B1411C7B7D3A00B4BB21 /* cconfig.m in Sources */,
 				DACDA84F1C76073200A37D15 /* mdirs.m in Sources */,
 				DACDA8471C76073200A37D15 /* updater.m in Sources */,
 				DA9141A11C76969F004BE5D1 /* mplaymenu.m in Sources */,
