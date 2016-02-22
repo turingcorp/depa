@@ -2,4 +2,6 @@
 
 @interface vconfiglocation:UIView
 
+@property(weak, nonatomic)UILabel *labellocation;
+
 @end
