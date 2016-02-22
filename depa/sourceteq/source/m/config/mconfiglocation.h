@@ -1,13 +1,6 @@
-//
-//  mconfiglocation.h
-//  depa
-//
-//  Created by zero on 2/22/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "mconfigprotocol.h"
 
-#import <Foundation/Foundation.h>
-
-@interface mconfiglocation : NSObject
+@interface mconfiglocation:NSObject<mconfigprotocol>
 
 @end
