@@ -24,7 +24,7 @@
 
 -(void)selected:(cconfig*)controller
 {
-    
+    [[cmain singleton] pushViewController:[[cconfigloc alloc] init] animated:YES];
 }
 
 @end

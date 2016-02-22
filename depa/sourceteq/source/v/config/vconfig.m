@@ -41,6 +41,13 @@
     return self;
 }
 
+#pragma mark public
+
+-(void)didappear
+{
+    [self.collection reloadData];
+}
+
 #pragma mark -
 #pragma mark col del
 
