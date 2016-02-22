@@ -36,6 +36,8 @@
 		DA25B1711C7BBA6400B4BB21 /* mconfigloc.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1701C7BBA6400B4BB21 /* mconfigloc.m */; };
 		DA25B1751C7BBA8500B4BB21 /* mconfigloclist.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1741C7BBA8500B4BB21 /* mconfigloclist.m */; };
 		DA25B1781C7BBA8F00B4BB21 /* mconfiglocmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1771C7BBA8F00B4BB21 /* mconfiglocmap.m */; };
+		DA25B17B1C7BBEC200B4BB21 /* vconfigloclist.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B17A1C7BBEC200B4BB21 /* vconfigloclist.m */; };
+		DA25B17E1C7BBECE00B4BB21 /* vconfiglocmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B17D1C7BBECE00B4BB21 /* vconfiglocmap.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -148,6 +150,10 @@
 		DA25B1741C7BBA8500B4BB21 /* mconfigloclist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigloclist.m; sourceTree = "<group>"; };
 		DA25B1761C7BBA8F00B4BB21 /* mconfiglocmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfiglocmap.h; sourceTree = "<group>"; };
 		DA25B1771C7BBA8F00B4BB21 /* mconfiglocmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfiglocmap.m; sourceTree = "<group>"; };
+		DA25B1791C7BBEC200B4BB21 /* vconfigloclist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigloclist.h; sourceTree = "<group>"; };
+		DA25B17A1C7BBEC200B4BB21 /* vconfigloclist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigloclist.m; sourceTree = "<group>"; };
+		DA25B17C1C7BBECE00B4BB21 /* vconfiglocmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfiglocmap.h; sourceTree = "<group>"; };
+		DA25B17D1C7BBECE00B4BB21 /* vconfiglocmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfiglocmap.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -341,6 +347,10 @@
 				DA25B16A1C7BB0B900B4BB21 /* vconfiglocmenu.m */,
 				DA25B16C1C7BB1D500B4BB21 /* vconfiglocmenucel.h */,
 				DA25B16D1C7BB1D500B4BB21 /* vconfiglocmenucel.m */,
+				DA25B1791C7BBEC200B4BB21 /* vconfigloclist.h */,
+				DA25B17A1C7BBEC200B4BB21 /* vconfigloclist.m */,
+				DA25B17C1C7BBECE00B4BB21 /* vconfiglocmap.h */,
+				DA25B17D1C7BBECE00B4BB21 /* vconfiglocmap.m */,
 			);
 			path = configloc;
 			sourceTree = "<group>";
@@ -910,12 +920,14 @@
 				DA25B1411C7B7D3A00B4BB21 /* cconfig.m in Sources */,
 				DACDA84F1C76073200A37D15 /* mdirs.m in Sources */,
 				DACDA8471C76073200A37D15 /* updater.m in Sources */,
+				DA25B17B1C7BBEC200B4BB21 /* vconfigloclist.m in Sources */,
 				DA9141A11C76969F004BE5D1 /* mplaymenu.m in Sources */,
 				DA91419A1C769605004BE5D1 /* vplaymenucel.m in Sources */,
 				DA25B1451C7B7E4600B4BB21 /* vconfig.m in Sources */,
 				DA69731F1C764B6100A2C6EB /* acallsearch.m in Sources */,
 				DA25B1751C7BBA8500B4BB21 /* mconfigloclist.m in Sources */,
 				DA9141A81C769738004BE5D1 /* mplaymenuno.m in Sources */,
+				DA25B17E1C7BBECE00B4BB21 /* vconfiglocmap.m in Sources */,
 				DA6973061C760D0600A2C6EB /* cplay.m in Sources */,
 				DA25B1711C7BBA6400B4BB21 /* mconfigloc.m in Sources */,
 				DACDA8541C76073200A37D15 /* vspinner.m in Sources */,

@@ -1,13 +1,25 @@
-//
-//  mconfigloclist.m
-//  depa
-//
-//  Created by zero on 2/22/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mconfigloclist.h"
 
 @implementation mconfigloclist
+
+#pragma mark -
+#pragma mark config loc protocol
+
+-(NSString*)assetname
+{
+    NSString *asset = @"";
+    
+    return asset;
+}
+
+-(NSString*)title
+{
+    NSString *title = NSLocalizedString(@"", nil);
+}
+
+-(UIView*)overview
+{
+    return nil;
+}
 
 @end

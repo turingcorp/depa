@@ -4,6 +4,6 @@
 
 -(NSString*)assetname;
 -(NSString*)title;
--(UICollectionViewCell*)cell;
+-(UIView*)overview;
 
 @end
