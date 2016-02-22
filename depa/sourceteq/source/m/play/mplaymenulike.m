@@ -65,7 +65,7 @@
                         }];
                    });
     
-    [UIView animateWithDuration:1 animations:
+    [UIView animateWithDuration:0.9 animations:
      ^
      {
          [itemimage.image setAlpha:0];
