@@ -23,6 +23,13 @@
     return self;
 }
 
+#pragma mark public
+
+-(void)location:(vconfigloc*)configloc
+{
+    self.configloc = configloc;
+}
+
 #pragma mark -
 #pragma mark col del
 

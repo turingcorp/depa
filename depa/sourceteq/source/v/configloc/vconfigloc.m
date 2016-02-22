@@ -12,6 +12,7 @@
     [self setBackgroundColor:[UIColor whiteColor]];
 
     menuheight = 80;
+    self.model = [[mconfigloc alloc] init];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
@@ -34,6 +35,13 @@
     [self addSubview:collection];
     
     return self;
+}
+
+#pragma mark public
+
+-(void)changemode:(id<mconfiglocprotocol>)item
+{
+    
 }
 
 #pragma mark -
@@ -66,7 +74,7 @@
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
     vconfiglocmenu *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerid forIndexPath:index];
-    header.configloc = self;
+    [header location:self];
     
     return header;
 }
