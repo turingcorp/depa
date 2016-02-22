@@ -13,8 +13,9 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setBackgroundColor:[UIColor clearColor]];
-    [label setFont:[UIFont fontWithName:fontboldname size:16]];
+    [label setFont:[UIFont fontWithName:fontboldname size:20]];
     [label setTextColor:[UIColor colorWithWhite:0 alpha:0.3]];
+    [label setTextAlignment:NSTextAlignmentCenter];
     [label setText:NSLocalizedString(@"config_header_title", nil)];
     
     [self addSubview:label];
@@ -23,7 +24,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label]-25-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

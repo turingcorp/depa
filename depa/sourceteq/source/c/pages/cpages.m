@@ -18,7 +18,6 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setTitle:NSLocalizedString(@"app_title", nil)];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -58,6 +57,8 @@
 
 -(void)showplay:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
+    [self setTitle:NSLocalizedString(@"app_title", nil)];
+    
     [self changecontroller:[[cplay alloc] init] direction:direction animated:animated];
     [self.navigationItem setRightBarButtonItem:self.itemfavorites];
     [self.navigationItem setLeftBarButtonItem:self.itemconfig];
@@ -65,6 +66,8 @@
 
 -(void)showconfig:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
+    [self setTitle:NSLocalizedString(@"config_title", nil)];
+    
     self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
     [self changecontroller:[[cconfig alloc] init] direction:direction animated:animated];
     [self.navigationItem setRightBarButtonItem:self.itemplay];
@@ -73,6 +76,8 @@
 
 -(void)showfavorites:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
+    [self setTitle:NSLocalizedString(@"favorites_title", nil)];
+    
     self.itemplay.tag = UIPageViewControllerNavigationDirectionReverse;
     [self changecontroller:[[UIViewController alloc] init] direction:direction animated:animated];
     [self.navigationItem setRightBarButtonItem:nil];

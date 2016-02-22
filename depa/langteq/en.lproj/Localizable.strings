@@ -11,7 +11,9 @@
 "search_mode_rent"="for rent";
 "search_mode_buy"="for sale";
 
-"config_header_title"="Settings";
+"config_title"="Settings";
+
+"favorites_title"="Favorites";
 
 "apicall_error_nodata"="Error connecting to server, try again";
 "apicall_error_parsingjgon"="Error reading server response, try again";

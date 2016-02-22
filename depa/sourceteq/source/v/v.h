@@ -15,4 +15,5 @@
 #import "vplayitemimage.h"
 #import "vplayempty.h"
 #import "vconfig.h"
+#import "vconfigheader.h"
 #import "vconfigcel.h"
