@@ -19,3 +19,4 @@
 #import "vconfiglocation.h"
 #import "vconfigloc.h"
 #import "vconfiglocmenu.h"
+#import "vconfiglocmenucel.h"

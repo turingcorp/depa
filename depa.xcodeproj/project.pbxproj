@@ -33,6 +33,9 @@
 		DA25B1681C7BAB9700B4BB21 /* vconfigloc.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1671C7BAB9700B4BB21 /* vconfigloc.m */; };
 		DA25B16B1C7BB0B900B4BB21 /* vconfiglocmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B16A1C7BB0B900B4BB21 /* vconfiglocmenu.m */; };
 		DA25B16E1C7BB1D500B4BB21 /* vconfiglocmenucel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B16D1C7BB1D500B4BB21 /* vconfiglocmenucel.m */; };
+		DA25B1711C7BBA6400B4BB21 /* mconfigloc.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1701C7BBA6400B4BB21 /* mconfigloc.m */; };
+		DA25B1751C7BBA8500B4BB21 /* mconfigloclist.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1741C7BBA8500B4BB21 /* mconfigloclist.m */; };
+		DA25B1781C7BBA8F00B4BB21 /* mconfiglocmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1771C7BBA8F00B4BB21 /* mconfiglocmap.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -138,6 +141,13 @@
 		DA25B16A1C7BB0B900B4BB21 /* vconfiglocmenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfiglocmenu.m; sourceTree = "<group>"; };
 		DA25B16C1C7BB1D500B4BB21 /* vconfiglocmenucel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfiglocmenucel.h; sourceTree = "<group>"; };
 		DA25B16D1C7BB1D500B4BB21 /* vconfiglocmenucel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfiglocmenucel.m; sourceTree = "<group>"; };
+		DA25B16F1C7BBA6400B4BB21 /* mconfigloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigloc.h; sourceTree = "<group>"; };
+		DA25B1701C7BBA6400B4BB21 /* mconfigloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigloc.m; sourceTree = "<group>"; };
+		DA25B1721C7BBA7900B4BB21 /* mconfiglocprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfiglocprotocol.h; sourceTree = "<group>"; };
+		DA25B1731C7BBA8500B4BB21 /* mconfigloclist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigloclist.h; sourceTree = "<group>"; };
+		DA25B1741C7BBA8500B4BB21 /* mconfigloclist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigloclist.m; sourceTree = "<group>"; };
+		DA25B1761C7BBA8F00B4BB21 /* mconfiglocmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfiglocmap.h; sourceTree = "<group>"; };
+		DA25B1771C7BBA8F00B4BB21 /* mconfiglocmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfiglocmap.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -302,6 +312,13 @@
 		DA25B15D1C7BAACD00B4BB21 /* configloc */ = {
 			isa = PBXGroup;
 			children = (
+				DA25B16F1C7BBA6400B4BB21 /* mconfigloc.h */,
+				DA25B1701C7BBA6400B4BB21 /* mconfigloc.m */,
+				DA25B1721C7BBA7900B4BB21 /* mconfiglocprotocol.h */,
+				DA25B1731C7BBA8500B4BB21 /* mconfigloclist.h */,
+				DA25B1741C7BBA8500B4BB21 /* mconfigloclist.m */,
+				DA25B1761C7BBA8F00B4BB21 /* mconfiglocmap.h */,
+				DA25B1771C7BBA8F00B4BB21 /* mconfiglocmap.m */,
 			);
 			path = configloc;
 			sourceTree = "<group>";
@@ -867,6 +884,7 @@
 				DA9141881C766669004BE5D1 /* vplay.m in Sources */,
 				DA2427B91C783D7A00FE44B0 /* vplayitemimage.m in Sources */,
 				DACDA84A1C76073200A37D15 /* cmain.m in Sources */,
+				DA25B1781C7BBA8F00B4BB21 /* mconfiglocmap.m in Sources */,
 				DACDA8441C76073200A37D15 /* main.m in Sources */,
 				DA25B1481C7B80CE00B4BB21 /* vconfigcel.m in Sources */,
 				DA25B15C1C7B8EEA00B4BB21 /* vconfiglocation.m in Sources */,
@@ -896,8 +914,10 @@
 				DA91419A1C769605004BE5D1 /* vplaymenucel.m in Sources */,
 				DA25B1451C7B7E4600B4BB21 /* vconfig.m in Sources */,
 				DA69731F1C764B6100A2C6EB /* acallsearch.m in Sources */,
+				DA25B1751C7BBA8500B4BB21 /* mconfigloclist.m in Sources */,
 				DA9141A81C769738004BE5D1 /* mplaymenuno.m in Sources */,
 				DA6973061C760D0600A2C6EB /* cplay.m in Sources */,
+				DA25B1711C7BBA6400B4BB21 /* mconfigloc.m in Sources */,
 				DACDA8541C76073200A37D15 /* vspinner.m in Sources */,
 				DA69732B1C76547B00A2C6EB /* msearch.m in Sources */,
 				DA9141941C766C97004BE5D1 /* cplayitem.m in Sources */,
