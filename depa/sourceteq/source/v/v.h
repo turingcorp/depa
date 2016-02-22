@@ -20,3 +20,5 @@
 #import "vconfigloc.h"
 #import "vconfiglocmenu.h"
 #import "vconfiglocmenucel.h"
+#import "vconfigloclist.h"
+#import "vconfiglocmap.h"
