@@ -30,9 +30,16 @@
     [collection setShowsVerticalScrollIndicator:NO];
     [collection setBounces:NO];
     [collection setScrollEnabled:NO];
+    [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
     [collection registerClass:[vconfiglocmenu class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerid];
-    
+    self.collection = collection;
     [self addSubview:collection];
+    
+    NSDictionary *views = @{@"col":collection};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -41,7 +48,8 @@
 
 -(void)changemode:(id<mconfiglocprotocol>)item
 {
-    
+    [self.collection registerClass:[item overview] forCellWithReuseIdentifier:celid];
+    [self.collection reloadData];
 }
 
 #pragma mark -

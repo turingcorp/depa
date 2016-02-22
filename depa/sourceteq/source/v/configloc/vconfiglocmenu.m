@@ -45,10 +45,9 @@
 -(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
 {
     CGFloat width = col.bounds.size.width;
-    CGFloat cellswidth = cellwidth * self.mode;
-    
-    CGFloat margin;
-    UIEdgeInsets insets = UIEdgeInsetsMake(0, marign, 0, margin);
+    CGFloat cellswidth = cellwidth * [self.configloc.model count];
+    CGFloat margin = (width - cellswidth) / 2.0;
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, 0, margin);
     
     return insets;
 }
@@ -60,12 +59,15 @@
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    NSUInteger count = [self.configloc.model count];
+    
+    return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     vconfiglocmenucel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
+    [cel setSelected:index.item == self.configloc.model.selected];
     
     return cel;
 }

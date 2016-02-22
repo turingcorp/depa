@@ -4,6 +4,6 @@
 
 -(NSString*)assetname;
 -(NSString*)title;
--(UIView*)overview;
+-(Class)overview;
 
 @end

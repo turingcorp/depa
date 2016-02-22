@@ -19,11 +19,11 @@
     return title;
 }
 
--(UIView*)overview
+-(Class)overview
 {
-    vconfiglocmap *map = [[vconfiglocmap alloc] init];
+    Class class = [vconfigloclist class];
     
-    return map;
+    return class;
 }
 
 @end

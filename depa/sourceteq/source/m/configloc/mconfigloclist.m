@@ -19,11 +19,11 @@
     return title;
 }
 
--(UIView*)overview
+-(Class)overview
 {
-    vconfigloclist *list = [[vconfigloclist alloc] init];
+    Class class = [vconfigloclist class];
     
-    return list;
+    return class;
 }
 
 @end
