@@ -3,7 +3,6 @@
 @protocol mconfigmodprotocol <NSObject>
 
 -(NSString*)title;
--(NSString*)assetname;
 -(search_mode)type;
 
 @end
