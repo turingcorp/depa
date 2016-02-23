@@ -46,7 +46,7 @@
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
 {
-    CGSize size = CGSizeMake(col.bounds.size.width, 120);
+    CGSize size = CGSizeMake(col.bounds.size.width, 130);
     
     return size;
 }

@@ -14,7 +14,7 @@
     cellwidth = 100;
     
     UIView *border = [[UIView alloc] init];
-    [border setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.1]];
+    [border setBackgroundColor:colormain];
     [border setUserInteractionEnabled:NO];
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
     

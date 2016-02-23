@@ -10,6 +10,7 @@
     self = [super init];
     
     array = [NSMutableArray array];
+    self.titletype = NSLocalizedString(@"config_location_list_countries", nil);
     
     return self;
 }
