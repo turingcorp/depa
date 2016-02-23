@@ -11,7 +11,8 @@
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor clearColor]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
+
+    self.selected = 0;
     self.model = [[mconfigmod alloc] init];
     celwidth = 120;
     
@@ -40,6 +41,21 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    
+    NSUInteger count = [self.model count];
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        id<mconfigmodprotocol> item = [self.model item:i];
+        
+        if([item type] == [[msettings singleton].searchmode type])
+        {
+            self.selected = i;
+            
+            break;
+        }
+    }
+    
+    [collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:self.selected inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     
     return self;
 }
@@ -83,6 +99,18 @@
     [cel config:[self.model item:index.item]];
     
     return cel;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    NSUInteger item = index.item;
+    
+    if(item != self.selected)
+    {
+        [msettings singleton].searchmode = [self.model item:item];
+        [[msettings singleton] save];
+        self.selected = item;
+    }
 }
 
 @end

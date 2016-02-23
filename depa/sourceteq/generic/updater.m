@@ -8,6 +8,7 @@ NSString *flowsfolder;
 +(void)launch
 {
     [[analytics singleton] start];
+    [msettings singleton];
     [updater update];
 }
 
