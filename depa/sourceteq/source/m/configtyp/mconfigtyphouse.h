@@ -1,13 +1,6 @@
-//
-//  mconfigtyphouse.h
-//  depa
-//
-//  Created by zero on 2/23/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "mconfigtypprotocol.h"
 
-#import <Foundation/Foundation.h>
-
-@interface mconfigtyphouse : NSObject
+@interface mconfigtyphouse:NSObject<mconfigtypprotocol>
 
 @end
