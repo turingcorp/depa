@@ -6,7 +6,6 @@
 {
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor whiteColor]];
 
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
@@ -27,11 +26,40 @@
     return self;
 }
 
+-(void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    [self hover];
+}
+
+-(void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+    [self hover];
+}
+
+#pragma mark functionality
+
+-(void)hover
+{
+    if(self.isSelected || self.isHighlighted)
+    {
+        [self.label setTextColor:[UIColor whiteColor]];
+        [self setBackgroundColor:colormain];
+    }
+    else
+    {
+        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.3]];
+        [self setBackgroundColor:[UIColor whiteColor]];
+    }
+}
+
 #pragma mark public
 
 -(void)config:(mconfigloclistitem*)model
 {
     [self.label setText:[model title]];
+    [self hover];
 }
 
 @end
