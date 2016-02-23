@@ -1,10 +1,6 @@
 #import "appdel.h"
-#import "acall.h"
+#import "acalllocation.h"
 
-@interface acalllocationstate:acall
-
--(instancetype)init:(mcountryitem*)country;
-
-@property(weak, nonatomic)mcountryitem *country;
+@interface acalllocationstate:acalllocation
 
 @end

@@ -18,7 +18,7 @@
 -(void)buildendpoint:(NSDictionary*)params
 {
     NSString *countryid = @"MLM";
-    NSString *rawendpoint = params[@"search"];
+    NSString *rawendpoint = params[self.keyforendpoint];
     self.endpoint = [NSString stringWithFormat:rawendpoint, countryid];
 }
 

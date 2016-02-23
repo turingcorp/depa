@@ -541,6 +541,8 @@
 				DA6973191C764B6100A2C6EB /* acalldelegate.h */,
 				DA69731A1C764B6100A2C6EB /* acallsearch.h */,
 				DA69731B1C764B6100A2C6EB /* acallsearch.m */,
+				DA3173211C7CF7D400B6CEF7 /* acalllocation.h */,
+				DA3173221C7CF7D400B6CEF7 /* acalllocation.m */,
 				DA3173181C7CF43D00B6CEF7 /* acalllocationstate.h */,
 				DA3173191C7CF43D00B6CEF7 /* acalllocationstate.m */,
 				DA69731C1C764B6100A2C6EB /* amanager.h */,
@@ -549,8 +551,6 @@
 				DA2427A91C77D14900FE44B0 /* aimateq.m */,
 				DA2427AB1C77D1C200FE44B0 /* aimateqitem.h */,
 				DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */,
-				DA3173211C7CF7D400B6CEF7 /* acalllocation.h */,
-				DA3173221C7CF7D400B6CEF7 /* acalllocation.m */,
 			);
 			path = call;
 			sourceTree = "<group>";
