@@ -29,6 +29,8 @@
 -(void)returnfetch:(NSArray*)returnarray
 {
     array = returnarray;
+    
+    [self sort];
     [[NSNotificationCenter defaultCenter] postNotificationName:notloclistitemfetched object:nil];
 }
 
