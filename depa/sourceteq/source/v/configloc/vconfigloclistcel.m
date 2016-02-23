@@ -7,6 +7,22 @@
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor whiteColor]];
+
+    UILabel *label = [[UILabel alloc] init];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setUserInteractionEnabled:NO];
+    [label setFont:[UIFont fontWithName:fontname size:18]];
+    [label setNumberOfLines:0];
+    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.label = label;
+    
+    [self addSubview:label];
+    
+    NSDictionary *views = @{@"label":label};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[label]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -15,7 +31,7 @@
 
 -(void)config:(mconfigloclistitem*)model
 {
-    
+    [self.label setText:[model title]];
 }
 
 @end

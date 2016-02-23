@@ -1,5 +1,8 @@
 #import "appdel.h"
 
+@class mcountryitemrent;
+@class mcountryitembuy;
+
 @interface mcountryitemapartment:NSObject
 
 -(instancetype)init:(NSDictionary*)dictionary;

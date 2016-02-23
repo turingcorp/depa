@@ -54,7 +54,7 @@
 {
     if(model.parent)
     {
-        NSString *title = [NSString stringWithFormat:@"%@: %@", model.parent.titletype, model.titleitem];
+        NSString *title = [NSString stringWithFormat:@"%@: %@", [model.parent.strategy title], model.title];
         [self.button setTitle:title forState:UIControlStateNormal];
         [self.button setHidden:NO];
     }
@@ -63,7 +63,7 @@
         [self.button setHidden:YES];
     }
     
-    [self.label setText:[NSString stringWithFormat:NSLocalizedString(@"config_location_list_select", nil), [model titletype]]];
+    [self.label setText:[NSString stringWithFormat:NSLocalizedString(@"config_location_list_select", nil), [model.strategy title]]];
 }
 
 @end
