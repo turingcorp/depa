@@ -9,8 +9,15 @@
     if(self.validjson)
     {
         self.array = [NSMutableArray array];
+        NSArray *filters = self.validjson[@"available_filters"];
+        NSUInteger count = filters.count;
         
-        NSLog(@"%@", self.validjson);
+        for(NSUInteger i = 0; i < count; i++)
+        {
+            NSDictionary *filtersitem = filters[i];
+            
+            if
+        }
     }
     
     return self;
