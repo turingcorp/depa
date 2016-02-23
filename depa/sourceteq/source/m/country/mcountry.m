@@ -2,14 +2,21 @@
 
 @implementation mcountry
 {
-    NSArray *array;
+    NSMutableArray *array;
 }
 
 -(instancetype)init
 {
     self = [super init];
     
-    array = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"country" withExtension:@"plist"]];
+    array = [NSMutableArray array];
+    NSArray *rawarray = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"country" withExtension:@"plist"]];
+    NSUInteger count = rawarray.count;
+    
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        NSDictionary *rawitem = rawarray[i];
+    }
     
     return self;
 }

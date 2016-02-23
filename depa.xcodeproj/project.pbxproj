@@ -44,6 +44,10 @@
 		DA3172D01C7C9DD600B6CEF7 /* mcountry.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172CF1C7C9DD600B6CEF7 /* mcountry.m */; };
 		DA3172D31C7C9DDF00B6CEF7 /* mcountryitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172D21C7C9DDF00B6CEF7 /* mcountryitem.m */; };
 		DA3172D51C7C9EAD00B6CEF7 /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA3172D41C7C9EAD00B6CEF7 /* country.plist */; };
+		DA3172D81C7CA49200B6CEF7 /* mcountryitemapartment.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172D71C7CA49200B6CEF7 /* mcountryitemapartment.m */; };
+		DA3172DB1C7CA49E00B6CEF7 /* mcountryitemhouse.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172DA1C7CA49E00B6CEF7 /* mcountryitemhouse.m */; };
+		DA3172DE1C7CA4BD00B6CEF7 /* mcountryitemrent.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172DD1C7CA4BD00B6CEF7 /* mcountryitemrent.m */; };
+		DA3172E11C7CA4C800B6CEF7 /* mcountryitembuy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172E01C7CA4C800B6CEF7 /* mcountryitembuy.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -171,6 +175,14 @@
 		DA3172D11C7C9DDF00B6CEF7 /* mcountryitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcountryitem.h; sourceTree = "<group>"; };
 		DA3172D21C7C9DDF00B6CEF7 /* mcountryitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mcountryitem.m; sourceTree = "<group>"; };
 		DA3172D41C7C9EAD00B6CEF7 /* country.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = country.plist; sourceTree = "<group>"; };
+		DA3172D61C7CA49200B6CEF7 /* mcountryitemapartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcountryitemapartment.h; sourceTree = "<group>"; };
+		DA3172D71C7CA49200B6CEF7 /* mcountryitemapartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mcountryitemapartment.m; sourceTree = "<group>"; };
+		DA3172D91C7CA49E00B6CEF7 /* mcountryitemhouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcountryitemhouse.h; sourceTree = "<group>"; };
+		DA3172DA1C7CA49E00B6CEF7 /* mcountryitemhouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mcountryitemhouse.m; sourceTree = "<group>"; };
+		DA3172DC1C7CA4BD00B6CEF7 /* mcountryitemrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcountryitemrent.h; sourceTree = "<group>"; };
+		DA3172DD1C7CA4BD00B6CEF7 /* mcountryitemrent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mcountryitemrent.m; sourceTree = "<group>"; };
+		DA3172DF1C7CA4C800B6CEF7 /* mcountryitembuy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcountryitembuy.h; sourceTree = "<group>"; };
+		DA3172E01C7CA4C800B6CEF7 /* mcountryitembuy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mcountryitembuy.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -385,6 +397,14 @@
 				DA3172CF1C7C9DD600B6CEF7 /* mcountry.m */,
 				DA3172D11C7C9DDF00B6CEF7 /* mcountryitem.h */,
 				DA3172D21C7C9DDF00B6CEF7 /* mcountryitem.m */,
+				DA3172D61C7CA49200B6CEF7 /* mcountryitemapartment.h */,
+				DA3172D71C7CA49200B6CEF7 /* mcountryitemapartment.m */,
+				DA3172D91C7CA49E00B6CEF7 /* mcountryitemhouse.h */,
+				DA3172DA1C7CA49E00B6CEF7 /* mcountryitemhouse.m */,
+				DA3172DC1C7CA4BD00B6CEF7 /* mcountryitemrent.h */,
+				DA3172DD1C7CA4BD00B6CEF7 /* mcountryitemrent.m */,
+				DA3172DF1C7CA4C800B6CEF7 /* mcountryitembuy.h */,
+				DA3172E01C7CA4C800B6CEF7 /* mcountryitembuy.m */,
 			);
 			path = country;
 			sourceTree = "<group>";
@@ -927,6 +947,7 @@
 				DA25B1611C7BAAFD00B4BB21 /* cconfigloc.m in Sources */,
 				DACDA8551C76073200A37D15 /* vrate.m in Sources */,
 				DA25B16E1C7BB1D500B4BB21 /* vconfiglocmenucel.m in Sources */,
+				DA3172E11C7CA4C800B6CEF7 /* mcountryitembuy.m in Sources */,
 				DA2427CA1C784E8800FE44B0 /* msearchmodebuy.m in Sources */,
 				DA25B18D1C7BE7B300B4BB21 /* vconfigloclistcel.m in Sources */,
 				DA9141881C766669004BE5D1 /* vplay.m in Sources */,
@@ -936,6 +957,7 @@
 				DA25B1781C7BBA8F00B4BB21 /* mconfiglocmap.m in Sources */,
 				DACDA8441C76073200A37D15 /* main.m in Sources */,
 				DA25B1481C7B80CE00B4BB21 /* vconfigcel.m in Sources */,
+				DA3172DB1C7CA49E00B6CEF7 /* mcountryitemhouse.m in Sources */,
 				DA25B1871C7BE43B00B4BB21 /* mconfigloclistitem.m in Sources */,
 				DA25B15C1C7B8EEA00B4BB21 /* vconfiglocation.m in Sources */,
 				DA3172D31C7C9DDF00B6CEF7 /* mcountryitem.m in Sources */,
@@ -943,6 +965,7 @@
 				DACDA8421C76073200A37D15 /* appdel.m in Sources */,
 				DA6973271C764C4700A2C6EB /* aparsersearch.m in Sources */,
 				DA9141971C769440004BE5D1 /* vplaymenu.m in Sources */,
+				DA3172DE1C7CA4BD00B6CEF7 /* mcountryitemrent.m in Sources */,
 				DACDA84D1C76073200A37D15 /* mdb.m in Sources */,
 				DA91418E1C766B77004BE5D1 /* vplayload.m in Sources */,
 				DACDA8521C76073200A37D15 /* vblur.m in Sources */,
@@ -952,6 +975,7 @@
 				DACDA8461C76073200A37D15 /* tools.m in Sources */,
 				DA25B1531C7B82D300B4BB21 /* mconfigtype.m in Sources */,
 				DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */,
+				DA3172D81C7CA49200B6CEF7 /* mcountryitemapartment.m in Sources */,
 				DA2427BD1C7848B300FE44B0 /* msearchtypeflat.m in Sources */,
 				DA6973201C764B6100A2C6EB /* amanager.m in Sources */,
 				DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */,
