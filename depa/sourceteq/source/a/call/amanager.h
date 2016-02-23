@@ -6,8 +6,7 @@
 
 @interface amanager:NSObject<NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
 
-+(instancetype)call:(apicall)call delegate:(id<acalldelegate>)delegate valriables:(id)variables;
--(void)makecall:(acall*)call;
++(instancetype)call:(acall*)callmodel delegate:(id<acalldelegate>)delegate;
 -(void)cancelcall;
 
 @property(weak, nonatomic)id<acalldelegate> delegate;

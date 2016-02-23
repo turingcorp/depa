@@ -9,7 +9,7 @@
     self.country = country;
     self = [super init:vars];
     self.keyforendpoint = @"search";
-    self.parser = [aparsersearch class];
+    self.parser = [aparserlocation class];
     
     return self;
 }

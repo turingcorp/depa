@@ -2,24 +2,13 @@
 
 @implementation amanager
 
-+(instancetype)call:(apicall)call delegate:(id<acalldelegate>)delegate valriables:(id)variables;
++(instancetype)call:(acall*)callmodel delegate:(id<acalldelegate>)delegate
 {
     amanager *manager = [[amanager alloc] init:delegate];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       acall *callmodel;
-                       
-                       switch(call)
-                       {
-                           case apicall_search:
-                               
-                               callmodel = [[acallsearch alloc] init:variables];
-                               
-                               break;
-                       }
-                       
                        [callmodel buildrequest];
                        [manager makecall:callmodel];
                    });

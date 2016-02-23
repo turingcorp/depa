@@ -2,34 +2,38 @@
 
 @implementation sconfiglocstate
 
+-(void)dealloc
+{
+    [self.manager cancelcall];
+}
+
 #pragma mark -
 #pragma mark config loc del
 
 -(void)items:(mconfigloclistitem*)item
 {
-    NSMutableArray *array = [NSMutableArray array];
-    mcountry *countries = [[mcountry alloc] init];
-    
-    NSUInteger count = [countries count];
-    for(NSUInteger i = 0; i < count; i++)
-    {
-        mcountryitem *countryitem = [countries item:i];
-        mconfigloclistitem *item = [[mconfigloclistitem alloc] init];
-        item.strategy = [[sconfiglocstate alloc] init];
-        item.title = countryitem.countryname;
-        item.country = countryitem;
-        
-        [array addObject:item];
-    }
-    
-//    [item returnfetch:array];
+    amanager *callmanager = [amanager call:[[acallsearch alloc] init:[self.play.model variables]] delegate:self];
+    self.callmanager = callmanager;
 }
 
 -(NSString*)title
 {
-    NSString *title = NSLocalizedString(@"config_location_list_countries", nil);
+    NSString *title = NSLocalizedString(@"config_location_list_state", nil);
     
     return title;
+}
+
+#pragma mark -
+#pragma mark call del
+
+-(void)callsuccess:(amanager*)manager
+{
+    
+}
+
+-(void)call:(amanager*)manager error:(NSString*)error
+{
+    
 }
 
 @end

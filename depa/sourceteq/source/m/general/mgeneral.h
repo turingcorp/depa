@@ -12,13 +12,6 @@ typedef NS_ENUM(NSUInteger, search_type)
     search_type_apartment
 };
 
-// api
-
-typedef NS_ENUM(NSUInteger, apicall)
-{
-    apicall_search
-};
-
 // analytics
 
 typedef NS_ENUM(NSUInteger, ga_screen)
