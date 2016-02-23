@@ -7,5 +7,6 @@
 -(void)save;
 
 @property(strong, nonatomic)id<mconfigmodprotocol> searchmode;
+@property(strong, nonatomic)id<mconfigtypprotocol> searchtype;
 
 @end
