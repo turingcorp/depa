@@ -12,27 +12,27 @@
     [label setUserInteractionEnabled:NO];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont fontWithName:fontname size:13]];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.label = label;
     
-    UIImageView *image = [[UIImageView alloc] init];
-    [image setClipsToBounds:YES];
-    [image setContentMode:UIViewContentModeScaleAspectFit];
-    [image setUserInteractionEnabled:NO];
-    [image setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.image = image;
+    UIView *selector = [[UIView alloc] init];
+    [selector setUserInteractionEnabled:NO];
+    [selector setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [selector setBackgroundColor:colormain];
+    [selector setClipsToBounds:YES];
+    [selector.layer setCornerRadius:4];
+    self.selector = selector;
     
+    [self addSubview:selector];
     [self addSubview:label];
-    [self addSubview:image];
     
-    NSDictionary *views = @{@"label":label, @"image":image};
+    NSDictionary *views = @{@"label":label, @"selector":selector};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label]-10-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[image(30)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[selector]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[selector]-20-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -55,13 +55,15 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.image setTintColor:colormain];
-        [self.label setTextColor:colormain];
+        [self.selector setHidden:NO];
+        [self.label setTextColor:[UIColor whiteColor]];
+        [self.label setFont:[UIFont fontWithName:fontboldname size:18]];
     }
     else
     {
-        [self.image setTintColor:[UIColor colorWithWhite:0 alpha:0.3]];
-        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.3]];
+        [self.selector setHidden:YES];
+        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
+        [self.label setFont:[UIFont fontWithName:fontname size:16]];
     }
 }
 
@@ -69,7 +71,8 @@
 
 -(void)config:(id<mconfigmodprotocol>)model
 {
-    
+    [self.label setText:[model title]];
+    [self hover];
 }
 
 @end

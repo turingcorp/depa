@@ -13,7 +13,7 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     self.model = [[mconfigmod alloc] init];
-    celwidth = 100;
+    celwidth = 120;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
@@ -80,6 +80,7 @@
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     vconfigmodecel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
+    [cel config:[self.model item:index.item]];
     
     return cel;
 }
