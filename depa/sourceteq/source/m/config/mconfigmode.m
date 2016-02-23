@@ -17,7 +17,7 @@
 
 -(UIView*)overview
 {
-    vconfiglocation *over = [[vconfiglocation alloc] init];
+    vconfigmode *over = [[vconfigmode alloc] init];
     
     return over;
 }
