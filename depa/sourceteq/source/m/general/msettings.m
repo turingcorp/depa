@@ -20,20 +20,25 @@
     
     if(settings)
     {
-        self.highresolution = [settings[@"hr"] boolValue];
-        self.fontselected = settings[@"fontname"];
-        self.fontsize = [settings[@"fontsize"] unsignedIntegerValue];
+        search_mode mode = (search_mode)[settings[@"searchmode"] unsignedIntegerValue];
+        [self loadsearchmode:mode];
     }
     else
     {
-        self.highresolution = YES;
-        self.fontselected = fontname;
-        self.fontsize = 16;
+        search_mode mode = search_mode_rent;
+        [self loadsearchmode:mode];
         
         [self save];
     }
     
     return self;
+}
+
+#pragma mark functionality
+
+-(void)loadsearchmode:(search_mode)mode
+{
+    
 }
 
 #pragma mark public

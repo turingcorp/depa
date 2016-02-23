@@ -19,4 +19,9 @@
     return assetname;
 }
 
+-(search_mode)type
+{
+    return search_mode_rent;
+}
+
 @end

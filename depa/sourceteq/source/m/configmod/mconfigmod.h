@@ -5,5 +5,6 @@
 
 -(NSUInteger)count;
 -(id<mconfigmodprotocol>)item:(NSUInteger)index;
+-(id<mconfigmodprotocol>)modewithtype:(search_mode)type;
 
 @end
