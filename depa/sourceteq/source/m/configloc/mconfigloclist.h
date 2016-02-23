@@ -3,4 +3,6 @@
 
 @interface mconfigloclist:NSObject<mconfiglocprotocol>
 
+-()
+
 @end

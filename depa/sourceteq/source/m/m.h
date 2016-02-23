@@ -23,4 +23,5 @@
 #import "mconfigloc.h"
 #import "mconfiglocprotocol.h"
 #import "mconfigloclist.h"
+#import "mconfigloclistitem.h"
 #import "mconfiglocmap.h"
