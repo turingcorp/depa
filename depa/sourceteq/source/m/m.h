@@ -31,3 +31,7 @@
 #import "mcountryitemhouse.h"
 #import "mcountryitemrent.h"
 #import "mcountryitembuy.h"
+#import "mconfigmod.h"
+#import "mconfigmodprotocol.h"
+#import "mconfigmodrent.h"
+#import "mconfigmodbuy.h"
