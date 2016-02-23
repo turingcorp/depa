@@ -30,7 +30,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[icon(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[icon(75)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label]-10-|" options:0 metrics:metrics views:views]];
     
@@ -60,7 +60,7 @@
     }
     else
     {
-        [self.icon setTintColor:[UIColor colorWithWhite:0 alpha:0.3]];
+        [self.icon setTintColor:[UIColor colorWithWhite:0 alpha:0.2]];
         [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.3]];
     }
 }

@@ -20,8 +20,8 @@
     
     UILabel *labellocation = [[UILabel alloc] init];
     [labellocation setBackgroundColor:[UIColor clearColor]];
-    [labellocation setFont:[UIFont fontWithName:fontname size:16]];
-    [labellocation setTextColor:[UIColor colorWithWhite:0 alpha:0.9]];
+    [labellocation setFont:[UIFont fontWithName:fontname size:18]];
+    [labellocation setTextColor:colormain];
     [labellocation setUserInteractionEnabled:NO];
     [labellocation setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labellocation setText:@"Distrito federal"];
@@ -37,7 +37,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[label]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[location]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[label]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[location]-10-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[location]-18-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
