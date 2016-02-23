@@ -19,4 +19,9 @@
     return assetname;
 }
 
+-(search_type)type
+{
+    return search_type_house;
+}
+
 @end

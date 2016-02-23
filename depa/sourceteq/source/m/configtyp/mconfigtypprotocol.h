@@ -4,5 +4,6 @@
 
 -(NSString*)title;
 -(NSString*)assetname;
+-(search_type)type;
 
 @end

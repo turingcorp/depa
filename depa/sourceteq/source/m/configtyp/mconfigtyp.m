@@ -33,4 +33,22 @@
     return item;
 }
 
+-(id<mconfigtypprotocol>)itemwithtype:(search_type)type
+{
+    id<mconfigtypprotocol> item;
+    
+    NSUInteger count = array.count;
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        item = array[i];
+        
+        if([item type] == type)
+        {
+            break;
+        }
+    }
+    
+    return item;
+}
+
 @end

@@ -5,5 +5,6 @@
 
 -(NSUInteger)count;
 -(id<mconfigtypprotocol>)item:(NSUInteger)index;
+-(id<mconfigtypprotocol>)itemwithtype:(search_type)type;
 
 @end
