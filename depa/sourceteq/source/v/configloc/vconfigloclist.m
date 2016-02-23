@@ -26,6 +26,8 @@
     [collection setDataSource:self];
     [collection setBackgroundColor:[UIColor clearColor]];
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [collection registerClass:[vconfigloclistheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerid];
+    [collection registerClass:[vconfigloclistcel class] forCellWithReuseIdentifier:celid];
     self.collection = collection;
     
     [self addSubview:collection];

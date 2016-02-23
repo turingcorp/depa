@@ -1,5 +1,5 @@
 #import "appdel.h"
 
-@interface vconfigloclistheader : NSObject
+@interface vconfigloclistheader:UICollectionReusableView
 
 @end
