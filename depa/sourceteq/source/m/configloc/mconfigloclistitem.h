@@ -15,5 +15,6 @@
 @property(strong, nonatomic)mcountryitem *country;
 @property(strong, nonatomic)mconfigloclistitem *parent;
 @property(copy, nonatomic)NSString *title;
+@property(copy, nonatomic)NSString *error;
 
 @end
