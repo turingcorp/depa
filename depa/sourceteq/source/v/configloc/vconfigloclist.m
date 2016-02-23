@@ -152,4 +152,9 @@
     return cel;
 }
 
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    
+}
+
 @end
