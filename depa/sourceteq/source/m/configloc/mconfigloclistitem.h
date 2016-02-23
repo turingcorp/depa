@@ -9,6 +9,7 @@
 -(mconfigloclistitem*)item:(NSUInteger)index;
 -(void)fetch;
 -(void)returnfetch:(NSArray*)returnarray;
+-(void)returnerror:(NSString*)error;
 -(void)sort;
 
 @property(strong, nonatomic)id<sconfiglocprotocol> strategy;

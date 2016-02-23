@@ -10,5 +10,6 @@
 @property(strong, nonatomic)mconfigloclistitem *model;
 @property(weak, nonatomic)vspinner *spinner;
 @property(weak, nonatomic)UICollectionView *collection;
+@property(weak, nonatomic)UIButton *buttonretry;
 
 @end

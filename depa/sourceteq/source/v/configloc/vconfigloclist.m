@@ -30,19 +30,34 @@
     [collection registerClass:[vconfigloclistcel class] forCellWithReuseIdentifier:celid];
     self.collection = collection;
     
+    UIButton *buttonretry = [[UIButton alloc] init];
+    [buttonretry setBackgroundColor:colormain];
+    [buttonretry.layer setCornerRadius:4];
+    [buttonretry.titleLabel setFont:[UIFont fontWithName:fontname size:16]];
+    [buttonretry setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [buttonretry setTitleColor:[UIColor colorWithWhite:1 alpha:0.1] forState:UIControlStateHighlighted];
+    [buttonretry setTitle:NSLocalizedString(@"config_location_button_retry", nil) forState:UIControlStateNormal];
+    [buttonretry setClipsToBounds:YES];
+    [buttonretry setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [buttonretry addTarget:self action:@selector(actionretry:) forControlEvents:UIControlEventTouchUpInside];
+    self.buttonretry = buttonretry;
+    
     vspinner *spinner = [[vspinner alloc] init];
     self.spinner = spinner;
     
     [self addSubview:spinner];
     [self addSubview:collection];
+    [self addSubview:buttonretry];
     
-    NSDictionary *views = @{@"col":collection, @"spinner":spinner};
+    NSDictionary *views = @{@"col":collection, @"spinner":spinner, @"retry":buttonretry};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[spinner(80)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[retry]-80-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-140-[retry(40)]" options:0 metrics:metrics views:views]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedloclistitemfetched:) name:notloclistitemfetched object:nil];
     
@@ -77,14 +92,36 @@
                    });
 }
 
+#pragma mark actions
+
+-(void)actionretry:(UIButton*)button
+{
+    [self load:self.model];
+}
+
 #pragma mark functionality
 
 -(void)refreshcol
 {
-    [self.collection setHidden:NO];
-    [self.collection reloadData];
     [self.spinner stopAnimating];
     [self.spinner setHidden:YES];
+    
+    if(self.model.error)
+    {
+        [self.buttonretry setHidden:NO];
+        [self errorfound:self.model.error];
+    }
+    else
+    {
+        [self.collection setHidden:NO];
+        [self.collection reloadData];
+    }
+}
+
+-(void)errorfound:(NSString*)error
+{
+    NSLog(@"%@", error);
+    [valert alert:error inview:self];
 }
 
 #pragma mark public
@@ -95,6 +132,7 @@
                    ^
                    {
                        self.model = item;
+                       [self.buttonretry setHidden:YES];
                        [self.collection setHidden:YES];
                        [self.spinner setHidden:NO];
                        [self.spinner startAnimating];

@@ -28,9 +28,17 @@
 
 -(void)returnfetch:(NSArray*)returnarray
 {
+    self.error = nil;
     array = returnarray;
     
     [self sort];
+    [[NSNotificationCenter defaultCenter] postNotificationName:notloclistitemfetched object:nil];
+}
+
+-(void)returnerror:(NSString*)error
+{
+    self.error = error;
+    array = nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:notloclistitemfetched object:nil];
 }
 
