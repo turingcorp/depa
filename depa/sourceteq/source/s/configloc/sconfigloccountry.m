@@ -15,6 +15,7 @@
     {
         mcountryitem *countryitem = [countries item:i];
         mconfigloclistitem *item = [[mconfigloclistitem alloc] init];
+        item.strategy = [[sconfiglocstate alloc] init];
         
         [array addObject:item];
     }
