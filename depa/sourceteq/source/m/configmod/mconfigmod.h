@@ -1,13 +1,9 @@
-//
-//  mconfigmod.h
-//  depa
-//
-//  Created by zero on 2/23/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "mconfigmodprotocol.h"
 
-#import <Foundation/Foundation.h>
+@interface mconfigmod:NSObject
 
-@interface mconfigmod : NSObject
+-(NSUInteger)count;
+-(id<mconfigmodprotocol>)item:(NSUInteger)index;
 
 @end
