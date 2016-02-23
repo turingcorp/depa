@@ -7,6 +7,7 @@
 
 -(NSUInteger)count;
 -(mconfigloclistitem*)item:(NSUInteger)index;
+-(void)fetch;
 
 @property(strong, nonatomic)id<sconfiglocprotocol> strategy;
 @property(strong, nonatomic)mcountry *countries;

@@ -28,11 +28,9 @@
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
     [collection registerClass:[vconfigloclistheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerid];
     [collection registerClass:[vconfigloclistcel class] forCellWithReuseIdentifier:celid];
-    [collection setHidden:YES];
     self.collection = collection;
     
     vspinner *spinner = [[vspinner alloc] init];
-    [spinner startAnimating];
     self.spinner = spinner;
     
     [self addSubview:spinner];
@@ -46,7 +44,14 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[spinner(80)]" options:0 metrics:metrics views:views]];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedloclistitemfetched:) name:notloclistitemfetched object:nil];
+    
     return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 -(void)setSelected:(BOOL)selected
@@ -55,6 +60,43 @@
 
 -(void)setHighlighted:(BOOL)highlighted
 {
+}
+
+#pragma mark notified
+
+-(void)notifiedloclistitemfetched:(NSNotification*)notification
+{
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       
+                   });
+}
+
+#pragma mark functionality
+
+-(void)refreshcol
+{
+    
+}
+
+#pragma mark public
+
+-(void)load:(mconfigloclistitem*)item
+{
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       self.model = item;
+                       [self.collection setHidden:YES];
+                       [self.spinner startAnimating];
+                       
+                       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                                      ^
+                                      {
+                                          [item fetch];
+                                      });
+                   });
 }
 
 #pragma mark -
