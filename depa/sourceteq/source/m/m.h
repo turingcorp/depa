@@ -35,3 +35,7 @@
 #import "mconfigmodprotocol.h"
 #import "mconfigmodrent.h"
 #import "mconfigmodbuy.h"
+#import "mconfigtyp.h"
+#import "mconfigtypprotocol.h"
+#import "mconfigtyphouse.h"
+#import "mconfigtypapartment.h"

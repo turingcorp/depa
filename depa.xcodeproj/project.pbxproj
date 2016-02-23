@@ -57,7 +57,7 @@
 		DA3172FD1C7CC8C600B6CEF7 /* mconfigmodbuy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172FC1C7CC8C600B6CEF7 /* mconfigmodbuy.m */; };
 		DA3173011C7CDBBD00B6CEF7 /* mconfigtyp.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173001C7CDBBD00B6CEF7 /* mconfigtyp.m */; };
 		DA3173051C7CDBD700B6CEF7 /* mconfigtyphouse.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173041C7CDBD700B6CEF7 /* mconfigtyphouse.m */; };
-		DA3173081C7CDBE800B6CEF7 /* mconfigtypeapartment.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173071C7CDBE800B6CEF7 /* mconfigtypeapartment.m */; };
+		DA31730B1C7CDF1A00B6CEF7 /* mconfigtypapartment.m in Sources */ = {isa = PBXBuildFile; fileRef = DA31730A1C7CDF1A00B6CEF7 /* mconfigtypapartment.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -214,8 +214,8 @@
 		DA3173021C7CDBC900B6CEF7 /* mconfigtypprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigtypprotocol.h; sourceTree = "<group>"; };
 		DA3173031C7CDBD700B6CEF7 /* mconfigtyphouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigtyphouse.h; sourceTree = "<group>"; };
 		DA3173041C7CDBD700B6CEF7 /* mconfigtyphouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigtyphouse.m; sourceTree = "<group>"; };
-		DA3173061C7CDBE800B6CEF7 /* mconfigtypeapartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigtypeapartment.h; sourceTree = "<group>"; };
-		DA3173071C7CDBE800B6CEF7 /* mconfigtypeapartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigtypeapartment.m; sourceTree = "<group>"; };
+		DA3173091C7CDF1A00B6CEF7 /* mconfigtypapartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigtypapartment.h; sourceTree = "<group>"; };
+		DA31730A1C7CDF1A00B6CEF7 /* mconfigtypapartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigtypapartment.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -480,8 +480,8 @@
 				DA3173021C7CDBC900B6CEF7 /* mconfigtypprotocol.h */,
 				DA3173031C7CDBD700B6CEF7 /* mconfigtyphouse.h */,
 				DA3173041C7CDBD700B6CEF7 /* mconfigtyphouse.m */,
-				DA3173061C7CDBE800B6CEF7 /* mconfigtypeapartment.h */,
-				DA3173071C7CDBE800B6CEF7 /* mconfigtypeapartment.m */,
+				DA3173091C7CDF1A00B6CEF7 /* mconfigtypapartment.h */,
+				DA31730A1C7CDF1A00B6CEF7 /* mconfigtypapartment.m */,
 			);
 			path = configtyp;
 			sourceTree = "<group>";
@@ -1030,7 +1030,6 @@
 				DA3172E11C7CA4C800B6CEF7 /* mcountryitembuy.m in Sources */,
 				DA2427CA1C784E8800FE44B0 /* msearchmodebuy.m in Sources */,
 				DA3172EC1C7CBE9B00B6CEF7 /* sconfiglocstate.m in Sources */,
-				DA3173081C7CDBE800B6CEF7 /* mconfigtypeapartment.m in Sources */,
 				DA25B18D1C7BE7B300B4BB21 /* vconfigloclistcel.m in Sources */,
 				DA9141881C766669004BE5D1 /* vplay.m in Sources */,
 				DA3172D01C7C9DD600B6CEF7 /* mcountry.m in Sources */,
@@ -1041,6 +1040,7 @@
 				DACDA8441C76073200A37D15 /* main.m in Sources */,
 				DA25B1481C7B80CE00B4BB21 /* vconfigcel.m in Sources */,
 				DA3172DB1C7CA49E00B6CEF7 /* mcountryitemhouse.m in Sources */,
+				DA31730B1C7CDF1A00B6CEF7 /* mconfigtypapartment.m in Sources */,
 				DA25B1871C7BE43B00B4BB21 /* mconfigloclistitem.m in Sources */,
 				DA25B15C1C7B8EEA00B4BB21 /* vconfiglocation.m in Sources */,
 				DA3172D31C7C9DDF00B6CEF7 /* mcountryitem.m in Sources */,
