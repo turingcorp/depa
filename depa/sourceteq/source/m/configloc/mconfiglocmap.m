@@ -21,7 +21,7 @@
 
 -(Class)overview
 {
-    Class class = [vconfigloclist class];
+    Class class = [vconfiglocmap class];
     
     return class;
 }

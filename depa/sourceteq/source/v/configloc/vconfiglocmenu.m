@@ -13,6 +13,11 @@
     
     cellwidth = 100;
     
+    UIView *border = [[UIView alloc] init];
+    [border setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.1]];
+    [border setUserInteractionEnabled:NO];
+    [border setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
@@ -20,14 +25,27 @@
     [flow setMinimumLineSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     
-    UICollectionView *collection = [[UICollectionView alloc] init];
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setBackgroundColor:[UIColor clearColor]];
     [collection setClipsToBounds:YES];
     [collection setDataSource:self];
     [collection setDelegate:self];
+    [collection setBounces:NO];
+    [collection setScrollEnabled:NO];
+    [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [collection registerClass:[vconfiglocmenucel class] forCellWithReuseIdentifier:celid];
     self.collection = collection;
     
+    [self addSubview:border];
     [self addSubview:collection];
+    
+    NSDictionary *views = @{@"col":collection, @"border":border};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(2)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -52,6 +70,13 @@
     return insets;
 }
 
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
+{
+    CGSize size = CGSizeMake(cellwidth, col.bounds.size.height);
+    
+    return size;
+}
+
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
     return 1;
@@ -68,6 +93,7 @@
 {
     vconfiglocmenucel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
     [cel setSelected:index.item == self.configloc.model.selected];
+    [cel config:[self.configloc.model item:index.item]];
     
     return cel;
 }
