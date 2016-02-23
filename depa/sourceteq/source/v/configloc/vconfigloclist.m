@@ -6,7 +6,7 @@
 {
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:1]];
 
     self.model = [[mconfigloclistitem alloc] init];
     
@@ -17,7 +17,7 @@
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     [flow setSectionInset:UIEdgeInsetsMake(2, 0, 2, 0)];
     
-    UICollectionView *collection = [[UICollectionView alloc] init];
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setClipsToBounds:YES];
     [collection setShowsHorizontalScrollIndicator:NO];
     [collection setShowsVerticalScrollIndicator:NO];
@@ -73,6 +73,7 @@
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
     vconfigloclistheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerid forIndexPath:index];
+    [header config:self.model];
     
     return header;
 }
