@@ -63,6 +63,26 @@
     return 1;
 }
 
--(NSInteger)
+-(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
+{
+    NSUInteger count = [self.model count];
+    
+    return count;
+}
+
+-(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
+{
+    vconfigloclistheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerid forIndexPath:index];
+    
+    return header;
+}
+
+-(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
+{
+    vconfigloclistcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
+    [cel config:[self.model item:index.item]];
+    
+    return cel;
+}
 
 @end
