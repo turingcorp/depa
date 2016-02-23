@@ -16,6 +16,7 @@
 "config_location_menu_list"="List";
 "config_location_menu_map"="Map";
 "config_location_list_countries"="Country";
+"config_location_list_select"="Select %@";
 
 "favorites_title"="Favorites";
 

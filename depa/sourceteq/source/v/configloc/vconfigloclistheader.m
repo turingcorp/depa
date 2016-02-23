@@ -20,11 +20,12 @@
     
     UIButton *button = [[UIButton alloc] init];
     [button setBackgroundColor:colorsecond];
-    [button setTitle:@"Mexico" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor colorWithWhite:1 alpha:0.1] forState:UIControlStateHighlighted];
     [button.titleLabel setFont:[UIFont fontWithName:fontboldname size:14]];
     [button setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [button addTarget:self action:@selector(actionback:) forControlEvents:UIControlEventTouchUpInside];
+    self.button = button;
     
     [self addSubview:label];
     [self addSubview:button];
@@ -40,11 +41,29 @@
     return self;
 }
 
+#pragma mark actions
+
+-(void)actionback:(UIButton*)button
+{
+    
+}
+
 #pragma mark public
 
 -(void)config:(mconfigloclistitem*)model
 {
-    [self.label setText:[model titletype]];
+    if(model.parent)
+    {
+        NSString *title = [NSString stringWithFormat:@"%@: %@", model.parent.titletype, model.titleitem];
+        [self.button setTitle:title forState:UIControlStateNormal];
+        [self.button setHidden:NO];
+    }
+    else
+    {
+        [self.button setHidden:YES];
+    }
+    
+    [self.label setText:[NSString stringWithFormat:NSLocalizedString(@"config_location_list_select", nil), [model titletype]]];
 }
 
 @end
