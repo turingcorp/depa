@@ -41,6 +41,8 @@
 		DA25B1871C7BE43B00B4BB21 /* mconfigloclistitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1861C7BE43B00B4BB21 /* mconfigloclistitem.m */; };
 		DA25B18A1C7BE7A900B4BB21 /* vconfigloclistheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B1891C7BE7A900B4BB21 /* vconfigloclistheader.m */; };
 		DA25B18D1C7BE7B300B4BB21 /* vconfigloclistcel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25B18C1C7BE7B300B4BB21 /* vconfigloclistcel.m */; };
+		DA3172D01C7C9DD600B6CEF7 /* mcountry.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172CF1C7C9DD600B6CEF7 /* mcountry.m */; };
+		DA3172D31C7C9DDF00B6CEF7 /* mcountryitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172D21C7C9DDF00B6CEF7 /* mcountryitem.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -163,6 +165,10 @@
 		DA25B1891C7BE7A900B4BB21 /* vconfigloclistheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigloclistheader.m; sourceTree = "<group>"; };
 		DA25B18B1C7BE7B300B4BB21 /* vconfigloclistcel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigloclistcel.h; sourceTree = "<group>"; };
 		DA25B18C1C7BE7B300B4BB21 /* vconfigloclistcel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigloclistcel.m; sourceTree = "<group>"; };
+		DA3172CE1C7C9DD600B6CEF7 /* mcountry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcountry.h; sourceTree = "<group>"; };
+		DA3172CF1C7C9DD600B6CEF7 /* mcountry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mcountry.m; sourceTree = "<group>"; };
+		DA3172D11C7C9DDF00B6CEF7 /* mcountryitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcountryitem.h; sourceTree = "<group>"; };
+		DA3172D21C7C9DDF00B6CEF7 /* mcountryitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mcountryitem.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -368,6 +374,17 @@
 				DA25B17D1C7BBECE00B4BB21 /* vconfiglocmap.m */,
 			);
 			path = configloc;
+			sourceTree = "<group>";
+		};
+		DA3172CD1C7C9DCA00B6CEF7 /* country */ = {
+			isa = PBXGroup;
+			children = (
+				DA3172CE1C7C9DD600B6CEF7 /* mcountry.h */,
+				DA3172CF1C7C9DD600B6CEF7 /* mcountry.m */,
+				DA3172D11C7C9DDF00B6CEF7 /* mcountryitem.h */,
+				DA3172D21C7C9DDF00B6CEF7 /* mcountryitem.m */,
+			);
+			path = country;
 			sourceTree = "<group>";
 		};
 		DA6973031C760CF600A2C6EB /* play */ = {
@@ -657,6 +674,7 @@
 		DACDA81B1C76073200A37D15 /* m */ = {
 			isa = PBXGroup;
 			children = (
+				DA3172CD1C7C9DCA00B6CEF7 /* country */,
 				DA25B15D1C7BAACD00B4BB21 /* configloc */,
 				DA25B1491C7B828000B4BB21 /* config */,
 				DA91419B1C769674004BE5D1 /* play */,
@@ -908,6 +926,7 @@
 				DA2427CA1C784E8800FE44B0 /* msearchmodebuy.m in Sources */,
 				DA25B18D1C7BE7B300B4BB21 /* vconfigloclistcel.m in Sources */,
 				DA9141881C766669004BE5D1 /* vplay.m in Sources */,
+				DA3172D01C7C9DD600B6CEF7 /* mcountry.m in Sources */,
 				DA2427B91C783D7A00FE44B0 /* vplayitemimage.m in Sources */,
 				DACDA84A1C76073200A37D15 /* cmain.m in Sources */,
 				DA25B1781C7BBA8F00B4BB21 /* mconfiglocmap.m in Sources */,
@@ -915,6 +934,7 @@
 				DA25B1481C7B80CE00B4BB21 /* vconfigcel.m in Sources */,
 				DA25B1871C7BE43B00B4BB21 /* mconfigloclistitem.m in Sources */,
 				DA25B15C1C7B8EEA00B4BB21 /* vconfiglocation.m in Sources */,
+				DA3172D31C7C9DDF00B6CEF7 /* mcountryitem.m in Sources */,
 				DA2427A71C77A9FF00FE44B0 /* vplayitem.m in Sources */,
 				DACDA8421C76073200A37D15 /* appdel.m in Sources */,
 				DA6973271C764C4700A2C6EB /* aparsersearch.m in Sources */,
