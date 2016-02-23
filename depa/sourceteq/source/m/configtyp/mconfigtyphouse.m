@@ -14,7 +14,7 @@
 
 -(NSString*)assetname
 {
-    NSString *assetname = @"";
+    NSString *assetname = @"house";
     
     return assetname;
 }

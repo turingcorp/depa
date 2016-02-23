@@ -1,13 +1,22 @@
-//
-//  mconfigtypapartment.m
-//  depa
-//
-//  Created by zero on 2/23/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mconfigtypapartment.h"
 
 @implementation mconfigtypapartment
+
+#pragma mark -
+#pragma mark typ protocol
+
+-(NSString*)title
+{
+    NSString *title = NSLocalizedString(@"", nil);
+    
+    return title;
+}
+
+-(NSString*)assetname
+{
+    NSString *assetname = @"apt";
+    
+    return assetname;
+}
 
 @end

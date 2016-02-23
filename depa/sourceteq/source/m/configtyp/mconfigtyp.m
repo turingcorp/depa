@@ -10,7 +10,9 @@
     self = [super init];
     
     array = @[
-              [mconfigtyphouse]];
+              [[mconfigtypapartment alloc] init],
+              [[mconfigtyphouse alloc] init]
+              ];
     
     return self;
 }
