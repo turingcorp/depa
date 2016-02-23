@@ -1,13 +1,10 @@
-//
-//  acalllocation.h
-//  depa
-//
-//  Created by zero on 2/23/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "acall.h"
 
-#import <Foundation/Foundation.h>
+@interface acalllocation:acall
 
-@interface acalllocation : NSObject
+-(instancetype)init:(id)variables country:(mcountryitem*)country;
+
+@property(weak, nonatomic)mcountryitem *country;
 
 @end
