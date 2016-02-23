@@ -1,6 +1,6 @@
-#import "aparserlocation.h"
+#import "aparserlocationstate.h"
 
-@implementation aparserlocation
+@implementation aparserlocationstate
 
 -(instancetype)init:(NSDictionary*)json
 {
@@ -15,8 +15,6 @@
         for(NSUInteger i = 0; i < count; i++)
         {
             NSDictionary *filtersitem = filters[i];
-            
-            if
         }
     }
     
