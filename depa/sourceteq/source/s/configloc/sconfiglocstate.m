@@ -12,10 +12,7 @@
 
 -(void)items:(mconfigloclistitem*)item
 {
-    NSString *categoryid = [item.country categoryforsettings];
-    NSString *variables = [NSString stringWithFormat:@"category=%@", categoryid];
-    
-    amanager *manager = [amanager call:[[acalllocation alloc] init:variables country:item.country] delegate:self];
+    amanager *manager = [amanager call:[[acalllocationstate alloc] init:item.country] delegate:self];
     self.manager = manager;
 }
 

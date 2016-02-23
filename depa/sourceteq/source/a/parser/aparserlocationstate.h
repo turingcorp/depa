@@ -1,8 +1,6 @@
 #import "appdel.h"
-#import "aparser.h"
+#import "aparserlocation.h"
 
-@interface aparserlocationstate:aparser
-
-@property(strong, nonatomic)NSMutableArray *array;
+@interface aparserlocationstate:aparserlocation
 
 @end

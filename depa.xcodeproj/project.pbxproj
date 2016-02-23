@@ -62,6 +62,8 @@
 		DA3173111C7CDFE200B6CEF7 /* vconfigtypecel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173101C7CDFE200B6CEF7 /* vconfigtypecel.m */; };
 		DA31731A1C7CF43D00B6CEF7 /* acalllocationstate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173191C7CF43D00B6CEF7 /* acalllocationstate.m */; };
 		DA31731D1C7CF4BA00B6CEF7 /* aparserlocationstate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA31731C1C7CF4BA00B6CEF7 /* aparserlocationstate.m */; };
+		DA3173201C7CF65800B6CEF7 /* aparserlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA31731F1C7CF65800B6CEF7 /* aparserlocation.m */; };
+		DA3173231C7CF7D400B6CEF7 /* acalllocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173221C7CF7D400B6CEF7 /* acalllocation.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -228,6 +230,10 @@
 		DA3173191C7CF43D00B6CEF7 /* acalllocationstate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalllocationstate.m; sourceTree = "<group>"; };
 		DA31731B1C7CF4BA00B6CEF7 /* aparserlocationstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserlocationstate.h; sourceTree = "<group>"; };
 		DA31731C1C7CF4BA00B6CEF7 /* aparserlocationstate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserlocationstate.m; sourceTree = "<group>"; };
+		DA31731E1C7CF65800B6CEF7 /* aparserlocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserlocation.h; sourceTree = "<group>"; };
+		DA31731F1C7CF65800B6CEF7 /* aparserlocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserlocation.m; sourceTree = "<group>"; };
+		DA3173211C7CF7D400B6CEF7 /* acalllocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acalllocation.h; sourceTree = "<group>"; };
+		DA3173221C7CF7D400B6CEF7 /* acalllocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalllocation.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -543,6 +549,8 @@
 				DA2427A91C77D14900FE44B0 /* aimateq.m */,
 				DA2427AB1C77D1C200FE44B0 /* aimateqitem.h */,
 				DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */,
+				DA3173211C7CF7D400B6CEF7 /* acalllocation.h */,
+				DA3173221C7CF7D400B6CEF7 /* acalllocation.m */,
 			);
 			path = call;
 			sourceTree = "<group>";
@@ -554,6 +562,8 @@
 				DA6973231C764C3600A2C6EB /* aparser.m */,
 				DA6973251C764C4700A2C6EB /* aparsersearch.h */,
 				DA6973261C764C4700A2C6EB /* aparsersearch.m */,
+				DA31731E1C7CF65800B6CEF7 /* aparserlocation.h */,
+				DA31731F1C7CF65800B6CEF7 /* aparserlocation.m */,
 				DA31731B1C7CF4BA00B6CEF7 /* aparserlocationstate.h */,
 				DA31731C1C7CF4BA00B6CEF7 /* aparserlocationstate.m */,
 			);
@@ -1083,6 +1093,7 @@
 				DA2427BD1C7848B300FE44B0 /* msearchtypeflat.m in Sources */,
 				DA6973201C764B6100A2C6EB /* amanager.m in Sources */,
 				DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */,
+				DA3173201C7CF65800B6CEF7 /* aparserlocation.m in Sources */,
 				DA31730E1C7CDFD800B6CEF7 /* vconfigtype.m in Sources */,
 				DA6973241C764C3600A2C6EB /* aparser.m in Sources */,
 				DA2427B61C77F61100FE44B0 /* vplayitemmiddle.m in Sources */,
@@ -1105,6 +1116,7 @@
 				DA3173011C7CDBBD00B6CEF7 /* mconfigtyp.m in Sources */,
 				DACDA8541C76073200A37D15 /* vspinner.m in Sources */,
 				DA69732B1C76547B00A2C6EB /* msearch.m in Sources */,
+				DA3173231C7CF7D400B6CEF7 /* acalllocation.m in Sources */,
 				DA9141941C766C97004BE5D1 /* cplayitem.m in Sources */,
 				DACDA8571C76073200A37D15 /* vratemenucel.m in Sources */,
 				DACDA84C1C76073200A37D15 /* cpages.m in Sources */,

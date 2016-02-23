@@ -4,12 +4,15 @@
 
 -(instancetype)init:(mcountryitem*)country
 {
-    NSString *vars = [NSString stringWithFormat:@"%@&limit=0&offset=0", variables];
+    NSString *categoryid = [country categoryforsettings];
+    NSMutableString *vars = [NSMutableString string];
+    [vars appendString:@"limit=0&offset=0&"];
+    [vars appendFormat:@"category=%@", categoryid];
     
-    self.country = country;
     self = [super init:vars];
+    self.country = country;
     self.keyforendpoint = @"search";
-    self.parser = [aparserlocation class];
+    self.parser = [aparserlocationstate class];
     
     return self;
 }
