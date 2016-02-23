@@ -32,4 +32,13 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:notloclistitemfetched object:nil];
 }
 
+-(void)sort
+{
+    array = [array sortedArrayUsingComparator:
+    ^NSComparisonResult(mconfigloclistitem *item1, mconfigloclistitem *item2)
+    {
+        return [item1.title compare:item2.title];
+    }];
+}
+
 @end
