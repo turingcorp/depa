@@ -50,6 +50,8 @@
 		DA3172E11C7CA4C800B6CEF7 /* mcountryitembuy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172E01C7CA4C800B6CEF7 /* mcountryitembuy.m */; };
 		DA3172E91C7CBD3300B6CEF7 /* sconfigloccountry.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172E81C7CBD3300B6CEF7 /* sconfigloccountry.m */; };
 		DA3172EC1C7CBE9B00B6CEF7 /* sconfiglocstate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172EB1C7CBE9B00B6CEF7 /* sconfiglocstate.m */; };
+		DA3172EF1C7CC6B700B6CEF7 /* vconfigmode.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172EE1C7CC6B700B6CEF7 /* vconfigmode.m */; };
+		DA3172F21C7CC74700B6CEF7 /* vconfigmodecel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172F11C7CC74700B6CEF7 /* vconfigmodecel.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -190,6 +192,10 @@
 		DA3172E81C7CBD3300B6CEF7 /* sconfigloccountry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sconfigloccountry.m; sourceTree = "<group>"; };
 		DA3172EA1C7CBE9B00B6CEF7 /* sconfiglocstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sconfiglocstate.h; sourceTree = "<group>"; };
 		DA3172EB1C7CBE9B00B6CEF7 /* sconfiglocstate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sconfiglocstate.m; sourceTree = "<group>"; };
+		DA3172ED1C7CC6B700B6CEF7 /* vconfigmode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigmode.h; sourceTree = "<group>"; };
+		DA3172EE1C7CC6B700B6CEF7 /* vconfigmode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigmode.m; sourceTree = "<group>"; };
+		DA3172F01C7CC74700B6CEF7 /* vconfigmodecel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigmodecel.h; sourceTree = "<group>"; };
+		DA3172F11C7CC74700B6CEF7 /* vconfigmodecel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigmodecel.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -331,6 +337,10 @@
 				DA25B1471C7B80CE00B4BB21 /* vconfigcel.m */,
 				DA25B15A1C7B8EEA00B4BB21 /* vconfiglocation.h */,
 				DA25B15B1C7B8EEA00B4BB21 /* vconfiglocation.m */,
+				DA3172ED1C7CC6B700B6CEF7 /* vconfigmode.h */,
+				DA3172EE1C7CC6B700B6CEF7 /* vconfigmode.m */,
+				DA3172F01C7CC74700B6CEF7 /* vconfigmodecel.h */,
+				DA3172F11C7CC74700B6CEF7 /* vconfigmodecel.m */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -1033,12 +1043,14 @@
 				DA25B1501C7B82C800B4BB21 /* mconfiglocation.m in Sources */,
 				DACDA8531C76073200A37D15 /* viewbase.m in Sources */,
 				DA2427C01C7848C300FE44B0 /* msearchtypehouse.m in Sources */,
+				DA3172F21C7CC74700B6CEF7 /* vconfigmodecel.m in Sources */,
 				DACDA84E1C76073200A37D15 /* mdbcreate.m in Sources */,
 				DA25B14C1C7B828F00B4BB21 /* mconfig.m in Sources */,
 				DA25B18A1C7BE7A900B4BB21 /* vconfigloclistheader.m in Sources */,
 				DA2427B31C77F2DE00FE44B0 /* vplayitemfooter.m in Sources */,
 				DA2427CD1C7863A100FE44B0 /* cplayempty.m in Sources */,
 				DA2427D01C7863E800FE44B0 /* vplayempty.m in Sources */,
+				DA3172EF1C7CC6B700B6CEF7 /* vconfigmode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

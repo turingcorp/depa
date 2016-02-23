@@ -24,3 +24,5 @@
 #import "vconfigloclistheader.h"
 #import "vconfigloclistcel.h"
 #import "vconfiglocmap.h"
+#import "vconfigmode.h"
+#import "vconfigmodecel.h"
