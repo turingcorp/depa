@@ -28,17 +28,35 @@
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
     [collection registerClass:[vconfigloclistheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerid];
     [collection registerClass:[vconfigloclistcel class] forCellWithReuseIdentifier:celid];
+    [collection setHidden:YES];
     self.collection = collection;
     
+    vspinner *spinner = [[vspinner alloc] init];
+    [spinner startAnimating];
+    self.spinner = spinner;
+    
+    [self addSubview:spinner];
     [self addSubview:collection];
     
-    NSDictionary *views = @{@"col":collection};
+    NSDictionary *views = @{@"col":collection, @"spinner":spinner};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[spinner(80)]" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+-(void)setSelected:(BOOL)selected
+{
+    
+}
+
+-(void)setHighlighted:(BOOL)highlighted
+{
+    
 }
 
 #pragma mark -
