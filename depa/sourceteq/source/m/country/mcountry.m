@@ -16,6 +16,8 @@
     for(NSUInteger i = 0; i < count; i++)
     {
         NSDictionary *rawitem = rawarray[i];
+        mcountryitem *item = [[mcountryitem alloc] init:rawitem];
+        [array addObject:item];
     }
     
     return self;
