@@ -5,7 +5,7 @@
 
 @interface vconfigloc:viewbase<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
--(void)changemode:(id<mconfiglocprotocol>)item;
+-(void)changemode;
 
 @property(weak, nonatomic)UICollectionView *collection;
 @property(strong, nonatomic)mconfigloc *model;

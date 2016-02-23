@@ -40,15 +40,16 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self changemode];
     
     return self;
 }
 
 #pragma mark public
 
--(void)changemode:(id<mconfiglocprotocol>)item
+-(void)changemode
 {
-    [self.collection registerClass:[item overview] forCellWithReuseIdentifier:celid];
+    [self.collection registerClass:[self.model.itemselected overview] forCellWithReuseIdentifier:celid];
     [self.collection reloadData];
 }
 
