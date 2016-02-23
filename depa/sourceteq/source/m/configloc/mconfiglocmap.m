@@ -7,7 +7,7 @@
 
 -(NSString*)assetname
 {
-    NSString *asset = @"";
+    NSString *asset = @"map";
     
     return asset;
 }
