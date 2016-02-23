@@ -154,7 +154,7 @@
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    
+    [self load:[self.model item:index.item]];
 }
 
 @end

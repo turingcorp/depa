@@ -28,7 +28,7 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self setBackgroundColor:[UIColor colorWithWhite:0.8 alpha:1]];
+        [self setBackgroundColor:colorsecond];
     }
     else
     {
