@@ -11,7 +11,6 @@
 @property(strong, nonatomic)id<sconfiglocprotocol> strategy;
 @property(strong, nonatomic)mcountry *countries;
 @property(strong, nonatomic)mconfigloclistitem *parent;
-@property(copy, nonatomic)NSString *titletype;
-@property(copy, nonatomic)NSString *titleitem;
+@property(copy, nonatomic)NSString *title;
 
 @end
