@@ -8,6 +8,8 @@
     
     if(self.validjson)
     {
+        self.array = [NSMutableArray array];
+        
         NSLog(@"%@", self.validjson);
     }
     

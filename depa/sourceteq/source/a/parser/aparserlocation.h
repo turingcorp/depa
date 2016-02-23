@@ -3,4 +3,6 @@
 
 @interface aparserlocation:aparser
 
+@property(strong, nonatomic)NSMutableArray *array;
+
 @end

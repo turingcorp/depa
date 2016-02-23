@@ -9,8 +9,8 @@
     if(self.validjson)
     {
         self.array = [NSMutableArray array];
-        NSDictionary *paging = json[@"paging"];
-        NSArray *results = json[@"results"];
+        NSDictionary *paging = self.validjson[@"paging"];
+        NSArray *results = self.validjson[@"results"];
         NSUInteger count = results.count;
         
         for(NSUInteger i = 0; i < count; i++)
