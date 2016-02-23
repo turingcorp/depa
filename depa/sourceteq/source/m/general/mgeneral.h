@@ -1,6 +1,16 @@
 #import <Foundation/Foundation.h>
 
-// app
+typedef NS_ENUM(NSUInteger, search_mode)
+{
+    search_mode_rent,
+    search_mode_buy
+};
+
+typedef NS_ENUM(NSUInteger, search_type)
+{
+    search_type_house,
+    search_type_apartment
+};
 
 // api
 
