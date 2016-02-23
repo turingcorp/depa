@@ -1,4 +1,5 @@
 #import "aparserlocation.h"
+#import "mconfigloclistitem.h"
 
 @implementation aparserlocation
 
@@ -19,7 +20,7 @@
             
             if([rawfilterid isEqualToString:self.filterid])
             {
-                NSLog(@"%@", filtersitem);
+                [self fillarray:filtersitem];
                 
                 break;
             }
@@ -27,6 +28,27 @@
     }
     
     return self;
+}
+
+#pragma mark functionality
+
+-(void)fillarray:(NSDictionary*)filter
+{
+    NSArray *values = filter[@"values"];
+    NSUInteger count = values.count;
+    
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        NSDictionary *rawvalue = values[i];
+        NSString *rawid = rawvalue[@"id"];
+        NSString *rawname = rawvalue[@"name"];
+        
+        mconfigloclistitem *item = [[mconfigloclistitem alloc] init];
+        item.itemid = rawid;
+        item.title = rawname;
+        
+        [self.array addObject:item];
+    }
 }
 
 @end

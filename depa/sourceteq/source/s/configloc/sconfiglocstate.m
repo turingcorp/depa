@@ -29,12 +29,13 @@
 
 -(void)callsuccess:(amanager*)manager
 {
-    
+    aparserlocation *parser = (aparserlocation*)manager.parser;
+    [self.item returnfetch:parser.array];
 }
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-    
+    [self.item returnerror:error];
 }
 
 @end
