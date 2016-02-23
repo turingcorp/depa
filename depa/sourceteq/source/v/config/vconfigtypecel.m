@@ -24,6 +24,7 @@
     self.icon = icon;
     
     [self addSubview:label];
+    [self addSubview:icon];
     
     NSDictionary *views = @{@"label":label, @"icon":icon};
     NSDictionary *metrics = @{};

@@ -1,5 +1,7 @@
 #import "appdel.h"
 
+@class mconfigtyp;
+
 @interface vconfigtype:UIView<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property(strong, nonatomic)mconfigtyp *model;
