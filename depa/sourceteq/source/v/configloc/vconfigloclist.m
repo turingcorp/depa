@@ -6,7 +6,7 @@
 {
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor blueColor]];
+    [self setBackgroundColor:[UIColor clearColor]];
     
     return self;
 }

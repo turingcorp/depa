@@ -11,7 +11,7 @@
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor whiteColor]];
 
-    menuheight = 80;
+    menuheight = 60;
     self.model = [[mconfigloc alloc] init];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
@@ -49,7 +49,7 @@
 
 -(void)changemode
 {
-    [self.collection registerClass:[self.model.itemselected overview] forCellWithReuseIdentifier:celid];
+    [self.collection registerClass:[self.model.itemselected overview] forCellWithReuseIdentifier:[self.model.itemselected title]];
     [self.collection reloadData];
 }
 
@@ -90,7 +90,7 @@
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
-    UICollectionViewCell *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
+    UICollectionViewCell *cel = [col dequeueReusableCellWithReuseIdentifier:[self.model.itemselected title] forIndexPath:index];
     
     return cel;
 }

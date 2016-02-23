@@ -100,8 +100,13 @@
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    [self.configloc.model changeselected:index.item];
-    [self.configloc changemode];
+    NSUInteger item = index.item;
+    
+    if(item != self.configloc.model.selected)
+    {
+        [self.configloc.model changeselected:item];
+        [self.configloc changemode];
+    }
 }
 
 @end
