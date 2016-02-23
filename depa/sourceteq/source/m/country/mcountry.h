@@ -1,5 +1,7 @@
 #import "appdel.h"
 
+@class mcountryitem;
+
 @interface mcountry:NSObject
 
 -(NSUInteger)count;
