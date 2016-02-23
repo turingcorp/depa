@@ -20,6 +20,12 @@
         [array addObject:item];
     }
     
+    [array sortedArrayUsingComparator:
+     ^NSComparisonResult(mcountryitem *item1, mcountryitem *item2)
+    {
+        return [item1.countryname compare:item2.countryname];
+    }];
+    
     return self;
 }
 

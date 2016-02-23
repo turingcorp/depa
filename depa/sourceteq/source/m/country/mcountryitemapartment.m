@@ -6,7 +6,10 @@
 {
     self = [super init];
     
-    
+    NSString *rawbuy = dictionary[@"buy"];
+    NSString *rawrent = dictionary[@"rent"];
+    self.buy = [[mcountryitembuy alloc] init:rawbuy];
+    self.rent = [[mcountryitemrent alloc] init:rawrent];
     
     return self;
 }

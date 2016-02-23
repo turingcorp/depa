@@ -48,6 +48,7 @@
 		DA3172DB1C7CA49E00B6CEF7 /* mcountryitemhouse.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172DA1C7CA49E00B6CEF7 /* mcountryitemhouse.m */; };
 		DA3172DE1C7CA4BD00B6CEF7 /* mcountryitemrent.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172DD1C7CA4BD00B6CEF7 /* mcountryitemrent.m */; };
 		DA3172E11C7CA4C800B6CEF7 /* mcountryitembuy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172E01C7CA4C800B6CEF7 /* mcountryitembuy.m */; };
+		DA3172E61C7CBCE000B6CEF7 /* mconfigloccountry.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3172E51C7CBCE000B6CEF7 /* mconfigloccountry.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -183,6 +184,9 @@
 		DA3172DD1C7CA4BD00B6CEF7 /* mcountryitemrent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mcountryitemrent.m; sourceTree = "<group>"; };
 		DA3172DF1C7CA4C800B6CEF7 /* mcountryitembuy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcountryitembuy.h; sourceTree = "<group>"; };
 		DA3172E01C7CA4C800B6CEF7 /* mcountryitembuy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mcountryitembuy.m; sourceTree = "<group>"; };
+		DA3172E31C7CBCC600B6CEF7 /* sconfiglocprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sconfiglocprotocol.h; sourceTree = "<group>"; };
+		DA3172E41C7CBCE000B6CEF7 /* mconfigloccountry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigloccountry.h; sourceTree = "<group>"; };
+		DA3172E51C7CBCE000B6CEF7 /* mconfigloccountry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigloccountry.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -407,6 +411,16 @@
 				DA3172E01C7CA4C800B6CEF7 /* mcountryitembuy.m */,
 			);
 			path = country;
+			sourceTree = "<group>";
+		};
+		DA3172E21C7CBCB500B6CEF7 /* configloc */ = {
+			isa = PBXGroup;
+			children = (
+				DA3172E31C7CBCC600B6CEF7 /* sconfiglocprotocol.h */,
+				DA3172E41C7CBCE000B6CEF7 /* mconfigloccountry.h */,
+				DA3172E51C7CBCE000B6CEF7 /* mconfigloccountry.m */,
+			);
+			path = configloc;
 			sourceTree = "<group>";
 		};
 		DA6973031C760CF600A2C6EB /* play */ = {
@@ -743,6 +757,7 @@
 		DACDA8291C76073200A37D15 /* s */ = {
 			isa = PBXGroup;
 			children = (
+				DA3172E21C7CBCB500B6CEF7 /* configloc */,
 				DACDA82A1C76073200A37D15 /* s.h */,
 			);
 			path = s;
@@ -985,6 +1000,7 @@
 				DA25B1411C7B7D3A00B4BB21 /* cconfig.m in Sources */,
 				DACDA84F1C76073200A37D15 /* mdirs.m in Sources */,
 				DACDA8471C76073200A37D15 /* updater.m in Sources */,
+				DA3172E61C7CBCE000B6CEF7 /* mconfigloccountry.m in Sources */,
 				DA25B17B1C7BBEC200B4BB21 /* vconfigloclist.m in Sources */,
 				DA9141A11C76969F004BE5D1 /* mplaymenu.m in Sources */,
 				DA91419A1C769605004BE5D1 /* vplaymenucel.m in Sources */,
