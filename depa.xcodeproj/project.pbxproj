@@ -58,6 +58,8 @@
 		DA3173011C7CDBBD00B6CEF7 /* mconfigtyp.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173001C7CDBBD00B6CEF7 /* mconfigtyp.m */; };
 		DA3173051C7CDBD700B6CEF7 /* mconfigtyphouse.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173041C7CDBD700B6CEF7 /* mconfigtyphouse.m */; };
 		DA31730B1C7CDF1A00B6CEF7 /* mconfigtypapartment.m in Sources */ = {isa = PBXBuildFile; fileRef = DA31730A1C7CDF1A00B6CEF7 /* mconfigtypapartment.m */; };
+		DA31730E1C7CDFD800B6CEF7 /* vconfigtype.m in Sources */ = {isa = PBXBuildFile; fileRef = DA31730D1C7CDFD800B6CEF7 /* vconfigtype.m */; };
+		DA3173111C7CDFE200B6CEF7 /* vconfigtypecel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173101C7CDFE200B6CEF7 /* vconfigtypecel.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -216,6 +218,10 @@
 		DA3173041C7CDBD700B6CEF7 /* mconfigtyphouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigtyphouse.m; sourceTree = "<group>"; };
 		DA3173091C7CDF1A00B6CEF7 /* mconfigtypapartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigtypapartment.h; sourceTree = "<group>"; };
 		DA31730A1C7CDF1A00B6CEF7 /* mconfigtypapartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigtypapartment.m; sourceTree = "<group>"; };
+		DA31730C1C7CDFD800B6CEF7 /* vconfigtype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigtype.h; sourceTree = "<group>"; };
+		DA31730D1C7CDFD800B6CEF7 /* vconfigtype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigtype.m; sourceTree = "<group>"; };
+		DA31730F1C7CDFE200B6CEF7 /* vconfigtypecel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigtypecel.h; sourceTree = "<group>"; };
+		DA3173101C7CDFE200B6CEF7 /* vconfigtypecel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigtypecel.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -361,6 +367,10 @@
 				DA3172EE1C7CC6B700B6CEF7 /* vconfigmode.m */,
 				DA3172F01C7CC74700B6CEF7 /* vconfigmodecel.h */,
 				DA3172F11C7CC74700B6CEF7 /* vconfigmodecel.m */,
+				DA31730C1C7CDFD800B6CEF7 /* vconfigtype.h */,
+				DA31730D1C7CDFD800B6CEF7 /* vconfigtype.m */,
+				DA31730F1C7CDFE200B6CEF7 /* vconfigtypecel.h */,
+				DA3173101C7CDFE200B6CEF7 /* vconfigtypecel.m */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -1058,10 +1068,12 @@
 				DACDA8461C76073200A37D15 /* tools.m in Sources */,
 				DA25B1531C7B82D300B4BB21 /* mconfigtype.m in Sources */,
 				DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */,
+				DA3173111C7CDFE200B6CEF7 /* vconfigtypecel.m in Sources */,
 				DA3172D81C7CA49200B6CEF7 /* mcountryitemapartment.m in Sources */,
 				DA2427BD1C7848B300FE44B0 /* msearchtypeflat.m in Sources */,
 				DA6973201C764B6100A2C6EB /* amanager.m in Sources */,
 				DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */,
+				DA31730E1C7CDFD800B6CEF7 /* vconfigtype.m in Sources */,
 				DA6973241C764C3600A2C6EB /* aparser.m in Sources */,
 				DA2427B61C77F61100FE44B0 /* vplayitemmiddle.m in Sources */,
 				DA69732E1C76549400A2C6EB /* msearchresult.m in Sources */,

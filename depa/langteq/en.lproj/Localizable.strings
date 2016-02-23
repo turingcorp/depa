@@ -19,6 +19,8 @@
 "config_location_list_select"="Select %@";
 "config_mode_rent"="Rent";
 "config_mode_buy"="Buy";
+"config_type_house"="House";
+"config_type_apartment"="Apartment";
 
 "favorites_title"="Favorites";
 

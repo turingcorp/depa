@@ -7,7 +7,7 @@
 
 -(NSString*)title
 {
-    NSString *title = NSLocalizedString(@"", nil);
+    NSString *title = NSLocalizedString(@"config_type_apartment", nil);
     
     return title;
 }
