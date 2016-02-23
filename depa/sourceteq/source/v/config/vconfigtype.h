@@ -6,5 +6,6 @@
 
 @property(strong, nonatomic)mconfigtyp *model;
 @property(weak, nonatomic)UICollectionView *collection;
+@property(nonatomic)NSUInteger selected;
 
 @end

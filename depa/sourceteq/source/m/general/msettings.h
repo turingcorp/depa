@@ -1,5 +1,6 @@
 #import "appdel.h"
 #import "mconfigmodprotocol.h"
+#import "mconfigtypprotocol.h"
 
 @interface msettings:NSObject
 
