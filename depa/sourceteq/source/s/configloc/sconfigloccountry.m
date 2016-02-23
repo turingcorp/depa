@@ -5,7 +5,7 @@
 #pragma mark -
 #pragma mark config loc del
 
--(NSArray*)items
+-(void)items:(mconfigloclistitem*)item
 {
     NSMutableArray *array = [NSMutableArray array];
     mcountry *countries = [[mcountry alloc] init];
@@ -16,11 +16,13 @@
         mcountryitem *countryitem = [countries item:i];
         mconfigloclistitem *item = [[mconfigloclistitem alloc] init];
         item.strategy = [[sconfiglocstate alloc] init];
+        item.title = countryitem.countryname;
+        item.country = countryitem;
         
         [array addObject:item];
     }
     
-    return array;
+    [item returnfetch:array];
 }
 
 -(NSString*)title

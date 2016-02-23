@@ -1,8 +1,10 @@
 #import <UIKit/UIKit.h>
 
+@class mconfigloclistitem;
+
 @protocol sconfiglocprotocol <NSObject>
 
--(NSArray*)items;
+-(void)items:(mconfigloclistitem*)item;
 -(NSString*)title;
 
 @end

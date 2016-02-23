@@ -5,15 +5,6 @@
     NSArray *array;
 }
 
--(instancetype)init
-{
-    self = [super init];
-    
-    
-    
-    return self;
-}
-
 #pragma mark public
 
 -(NSUInteger)count
@@ -28,6 +19,17 @@
     mconfigloclistitem *item = array[index];
     
     return item;
+}
+
+-(void)fetch
+{
+    [self.strategy items:self];
+}
+
+-(void)returnfetch:(NSArray*)returnarray
+{
+    array = returnarray;
+    [[NSNotificationCenter defaultCenter] postNotificationName:notloclistitemfetched object:nil];
 }
 
 @end

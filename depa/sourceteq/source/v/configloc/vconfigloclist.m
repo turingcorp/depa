@@ -46,6 +46,10 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedloclistitemfetched:) name:notloclistitemfetched object:nil];
     
+    mconfigloclistitem *item = [[mconfigloclistitem alloc] init];
+    item.strategy = [[sconfigloccountry alloc] init];
+    [self load:item];
+    
     return self;
 }
 
@@ -69,7 +73,7 @@
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       
+                       [self refreshcol];
                    });
 }
 
@@ -77,7 +81,10 @@
 
 -(void)refreshcol
 {
-    
+    [self.collection setHidden:NO];
+    [self.collection reloadData];
+    [self.spinner stopAnimating];
+    [self.spinner setHidden:YES];
 }
 
 #pragma mark public
@@ -89,6 +96,7 @@
                    {
                        self.model = item;
                        [self.collection setHidden:YES];
+                       [self.spinner setHidden:NO];
                        [self.spinner startAnimating];
                        
                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
