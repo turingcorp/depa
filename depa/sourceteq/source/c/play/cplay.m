@@ -73,7 +73,7 @@ static const NSUInteger minitemspull = 3;
                            if(!self.model.busy)
                            {
                                self.model.busy = YES;
-                               amanager *callmanager = [amanager call:apicall_search delegate:self valriables:[self.model variables]];
+                               amanager *callmanager = [amanager call:[[acallsearch alloc] init:[self.model variables]] delegate:self];
                                self.callmanager = callmanager;
                            }
                        }

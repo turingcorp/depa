@@ -62,7 +62,7 @@
     if(!self.play.model.busy)
     {
         self.play.model.busy = YES;
-        amanager *callmanager = [amanager call:apicall_search delegate:self valriables:[self.play.model variables]];
+        amanager *callmanager = [amanager call:[[acallsearch alloc] init:[self.play.model variables]] delegate:self];
         self.callmanager = callmanager;
     }
 }

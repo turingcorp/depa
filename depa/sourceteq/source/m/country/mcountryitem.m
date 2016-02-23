@@ -18,4 +18,30 @@
     return self;
 }
 
+#pragma mark public
+
+-(NSString*)categoryforsettings
+{
+    NSString *categoryid;
+    search_type type = [[msettings singleton].searchtype type];
+    search_mode mode = [[msettings singleton].searchmode type];
+    
+    switch(type)
+    {
+        case search_type_apartment:
+            
+            categoryid = [self.apartment categoryformode:mode];
+            
+            break;
+            
+        case search_type_house:
+            
+            categoryid = [self.house categoryformode:mode];
+            
+            break;
+    }
+    
+    return categoryid;
+}
+
 @end

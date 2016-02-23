@@ -14,4 +14,28 @@
     return self;
 }
 
+#pragma mark public
+
+-(NSString*)categoryformode:(search_mode)mode
+{
+    NSString *categoryid;
+    
+    switch(mode)
+    {
+        case search_mode_rent:
+            
+            categoryid = self.rent.categoryid;
+            
+            break;
+            
+        case search_mode_buy:
+            
+            categoryid = self.buy.categoryid;
+            
+            break;
+    }
+    
+    return categoryid;
+}
+
 @end

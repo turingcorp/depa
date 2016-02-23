@@ -12,8 +12,13 @@
 
 -(void)items:(mconfigloclistitem*)item
 {
-    amanager *callmanager = [amanager call:[[acallsearch alloc] init:[self.play.model variables]] delegate:self];
-    self.callmanager = callmanager;
+    NSString *categoryid;
+    NSMutableString *variables = [[NSMutableString alloc] init];
+    [variables appendString:@"category="];
+    [variables appendFormat:@"%@&", categoryid];
+    
+    amanager *manager = [amanager call:[[acalllocation alloc] init:@"" country:item.country] delegate:self];
+    self.manager = manager;
 }
 
 -(NSString*)title

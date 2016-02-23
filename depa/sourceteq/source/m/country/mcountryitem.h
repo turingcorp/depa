@@ -6,6 +6,7 @@
 @interface mcountryitem:NSObject
 
 -(instancetype)init:(NSDictionary*)dictionary;
+-(NSString*)categoryforsettings;
 
 @property(strong, nonatomic)mcountryitemhouse *house;
 @property(strong, nonatomic)mcountryitemapartment *apartment;
