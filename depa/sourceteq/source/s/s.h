@@ -1,2 +1,2 @@
-#import "mconfiglocprotocol.h"
-#import "mconfigloccountry.h"
+#import "sconfiglocprotocol.h"
+#import "sconfigloccountry.h"
