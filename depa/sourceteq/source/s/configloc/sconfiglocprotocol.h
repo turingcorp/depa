@@ -2,4 +2,7 @@
 
 @protocol sconfiglocprotocol <NSObject>
 
+-(NSArray*)items;
+-(NSString*)title;
+
 @end
