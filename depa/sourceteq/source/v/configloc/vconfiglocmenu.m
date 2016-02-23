@@ -55,6 +55,7 @@
 -(void)location:(vconfigloc*)configloc
 {
     self.configloc = configloc;
+    [self.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:configloc.model.selected inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
 }
 
 #pragma mark -
@@ -92,10 +93,15 @@
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     vconfiglocmenucel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
-    [cel setSelected:index.item == self.configloc.model.selected];
     [cel config:[self.configloc.model item:index.item]];
     
     return cel;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    [self.configloc.model changeselected:index.item];
+    [self.configloc changemode];
 }
 
 @end

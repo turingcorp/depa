@@ -2,9 +2,9 @@
 
 @implementation vconfigloclist
 
--(instancetype)init
+-(instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor blueColor]];
     

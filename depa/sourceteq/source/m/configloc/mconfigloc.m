@@ -39,4 +39,9 @@
     return [self item:self.selected];
 }
 
+-(void)changeselected:(NSUInteger)index
+{
+    self.selected = index;
+}
+
 @end
