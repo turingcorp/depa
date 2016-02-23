@@ -36,9 +36,10 @@
 
 #pragma mark functionality
 
--(void)loadsearchmode:(search_mode)mode
+-(void)loadsearchmode:(search_mode)type
 {
-    
+    mconfigmod *mod = [[mconfigmod alloc] init];
+    self.searchmode = [mod modewithtype:type];
 }
 
 #pragma mark public
@@ -46,9 +47,7 @@
 -(void)save
 {
     NSMutableDictionary *settings = [NSMutableDictionary dictionary];
-    settings[@"hr"] = @(self.highresolution);
-    settings[@"fontname"] = self.fontselected;
-    settings[@"fontsize"] = @(self.fontsize);
+    settings[@"searchmode"] = @([self.searchmode type]);
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:settings forKey:@"settings"];
