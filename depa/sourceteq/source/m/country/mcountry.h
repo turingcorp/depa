@@ -1,13 +1,8 @@
-//
-//  mcountry.h
-//  depa
-//
-//  Created by zero on 2/23/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
 
-#import <Foundation/Foundation.h>
+@interface mcountry:NSObject
 
-@interface mcountry : NSObject
+-(NSUInteger)count;
+-(mcountryitem*)item:(NSUInteger)index;
 
 @end
