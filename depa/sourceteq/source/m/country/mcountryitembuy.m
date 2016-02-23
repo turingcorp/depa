@@ -1,13 +1,13 @@
-//
-//  mcountryitembuy.m
-//  depa
-//
-//  Created by zero on 2/23/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mcountryitembuy.h"
 
 @implementation mcountryitembuy
+
+-(instancetype)init:(NSString*)categoryid
+{
+    self = [super init];
+    self.categoryid = categoryid;
+    
+    return self;
+}
 
 @end

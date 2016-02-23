@@ -27,3 +27,7 @@
 #import "mconfiglocmap.h"
 #import "mcountry.h"
 #import "mcountryitem.h"
+#import "mcountryitemapartment.h"
+#import "mcountryitemhouse.h"
+#import "mcountryitemrent.h"
+#import "mcountryitembuy.h"
