@@ -2,25 +2,14 @@
 
 @implementation mconfigloclistitem
 {
-    NSMutableArray *array;
+    NSArray *array;
 }
 
 -(instancetype)init
 {
     self = [super init];
     
-    array = [NSMutableArray array];
-    self.titletype = NSLocalizedString(@"config_location_list_countries", nil);
-    self.countries = [[mcountry alloc] init];
     
-    NSUInteger count = [self.countries count];
-    for(NSUInteger i = 0; i < count; i++)
-    {
-        mcountryitem *item = [self.countries item:i];
-        mconfigloclistitem *
-        
-        [array addObject:];
-    }
     
     return self;
 }
