@@ -75,25 +75,30 @@
 
 -(void)actionback:(UIButton*)button
 {
-    
+    [self setUserInteractionEnabled:NO];
+    [self.list back];
 }
 
 -(void)actionaccept:(UIButton*)button
 {
-    
+    [self setUserInteractionEnabled:NO];
+    [self.list accept];
 }
 
 #pragma mark public
 
--(void)config:(mconfigloclistitem*)model
+-(void)config:(vconfigloclist*)list
 {
-    if(model.parent)
+    self.list = list;
+    
+    if(list.model.parent)
     {
-        NSString *title = [NSString stringWithFormat:NSLocalizedString(@"config_location_list_current", nil), model.title];
+        NSString *title = [NSString stringWithFormat:NSLocalizedString(@"config_location_list_current", nil), list.model.title];
         [self.labelcurrent setText:title];
     }
     
-    [self.label setText:[NSString stringWithFormat:NSLocalizedString(@"config_location_list_select", nil), [model.strategyinstance title]]];
+    [self.label setText:[NSString stringWithFormat:NSLocalizedString(@"config_location_list_select", nil), [list.model.strategyinstance title]]];
+    [self setUserInteractionEnabled:YES];
 }
 
 @end

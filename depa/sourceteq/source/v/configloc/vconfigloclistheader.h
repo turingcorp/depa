@@ -1,11 +1,12 @@
 #import "appdel.h"
 
-@class mconfigloclistitem;
+@class vconfigloclist;
 
 @interface vconfigloclistheader:UICollectionReusableView
 
--(void)config:(mconfigloclistitem*)model;
+-(void)config:(vconfigloclist*)list;
 
+@property(weak, nonatomic)vconfigloclist *list;
 @property(weak, nonatomic)UILabel *labelcurrent;
 @property(weak, nonatomic)UILabel *label;
 

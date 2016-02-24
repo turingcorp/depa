@@ -6,6 +6,8 @@
 @interface vconfigloclist:UICollectionViewCell<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 -(void)load:(mconfigloclistitem*)item;
+-(void)accept;
+-(void)back;
 
 @property(strong, nonatomic)mconfigloclistitem *model;
 @property(weak, nonatomic)vspinner *spinner;

@@ -143,6 +143,17 @@
                    });
 }
 
+-(void)accept
+{
+    
+}
+
+-(void)back
+{
+    self.model = self.model.parent;
+    [self refreshcol];
+}
+
 #pragma mark -
 #pragma mark col del
 
@@ -182,7 +193,7 @@
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
     vconfigloclistheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerid forIndexPath:index];
-    [header config:self.model];
+    [header config:self];
     
     return header;
 }
