@@ -1,0 +1,13 @@
+#import "acalllocationneigh.h"
+
+@implementation acalllocationneigh
+
+-(instancetype)init:(mconfigloclistitem*)item
+{
+    self = [super init:item];
+    self.parser = [[aparserlocationcity alloc] init:item];
+    
+    return self;
+}
+
+@end

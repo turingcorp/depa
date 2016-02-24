@@ -11,6 +11,7 @@
 		DA1FBD541C7E06CA0038A822 /* acalllocationcity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD531C7E06CA0038A822 /* acalllocationcity.m */; };
 		DA1FBD571C7E078C0038A822 /* aparserlocationcity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD561C7E078C0038A822 /* aparserlocationcity.m */; };
 		DA1FBD5A1C7E42240038A822 /* sconfiglocneigh.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD591C7E42240038A822 /* sconfiglocneigh.m */; };
+		DA1FBD5D1C7E439C0038A822 /* acalllocationneigh.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD5C1C7E439C0038A822 /* acalllocationneigh.m */; };
 		DA2427A71C77A9FF00FE44B0 /* vplayitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A61C77A9FF00FE44B0 /* vplayitem.m */; };
 		DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A91C77D14900FE44B0 /* aimateq.m */; };
 		DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */; };
@@ -126,6 +127,8 @@
 		DA1FBD561C7E078C0038A822 /* aparserlocationcity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserlocationcity.m; sourceTree = "<group>"; };
 		DA1FBD581C7E42240038A822 /* sconfiglocneigh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sconfiglocneigh.h; sourceTree = "<group>"; };
 		DA1FBD591C7E42240038A822 /* sconfiglocneigh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sconfiglocneigh.m; sourceTree = "<group>"; };
+		DA1FBD5B1C7E439C0038A822 /* acalllocationneigh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acalllocationneigh.h; sourceTree = "<group>"; };
+		DA1FBD5C1C7E439C0038A822 /* acalllocationneigh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalllocationneigh.m; sourceTree = "<group>"; };
 		DA2427A51C77A9FF00FE44B0 /* vplayitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitem.h; sourceTree = "<group>"; };
 		DA2427A61C77A9FF00FE44B0 /* vplayitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitem.m; sourceTree = "<group>"; };
 		DA2427A81C77D14900FE44B0 /* aimateq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aimateq.h; sourceTree = "<group>"; };
@@ -563,6 +566,8 @@
 				DA3173191C7CF43D00B6CEF7 /* acalllocationstate.m */,
 				DA1FBD521C7E06CA0038A822 /* acalllocationcity.h */,
 				DA1FBD531C7E06CA0038A822 /* acalllocationcity.m */,
+				DA1FBD5B1C7E439C0038A822 /* acalllocationneigh.h */,
+				DA1FBD5C1C7E439C0038A822 /* acalllocationneigh.m */,
 				DA69731C1C764B6100A2C6EB /* amanager.h */,
 				DA69731D1C764B6100A2C6EB /* amanager.m */,
 				DA2427A81C77D14900FE44B0 /* aimateq.h */,
@@ -1088,6 +1093,7 @@
 				DA25B1781C7BBA8F00B4BB21 /* mconfiglocmap.m in Sources */,
 				DA3172E91C7CBD3300B6CEF7 /* sconfigloccountry.m in Sources */,
 				DACDA8441C76073200A37D15 /* main.m in Sources */,
+				DA1FBD5D1C7E439C0038A822 /* acalllocationneigh.m in Sources */,
 				DA25B1481C7B80CE00B4BB21 /* vconfigcel.m in Sources */,
 				DA3172DB1C7CA49E00B6CEF7 /* mcountryitemhouse.m in Sources */,
 				DA31730B1C7CDF1A00B6CEF7 /* mconfigtypapartment.m in Sources */,
