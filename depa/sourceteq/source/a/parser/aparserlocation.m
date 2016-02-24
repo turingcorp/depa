@@ -42,6 +42,7 @@
 
 -(void)fillarray:(NSDictionary*)filter
 {
+    mcountryitem *country = self.item.country;
     NSArray *values = filter[@"values"];
     NSUInteger count = values.count;
     
@@ -51,7 +52,7 @@
         NSString *rawid = rawvalue[@"id"];
         NSString *rawname = rawvalue[@"name"];
         
-        mconfigloclistitem *item = [[mconfigloclistitem alloc] init:self.item.country];
+        mconfigloclistitem *item = [[mconfigloclistitem alloc] init:country];
         item.parent = self.item;
         item.strategy = self.strategy;
         item.itemid = rawid;
