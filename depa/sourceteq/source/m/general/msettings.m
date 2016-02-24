@@ -26,12 +26,16 @@
         countryid = settings[@"countryid"];
         mode = (search_mode)[settings[@"searchmode"] unsignedIntegerValue];
         type = (search_type)[settings[@"searchtype"] unsignedIntegerValue];
+        self.location = settings[@"location"];
+        self.locationname = settings[@"locationname"];
     }
     else
     {
         countryid = @"MLM";
         mode = search_mode_rent;
         type = search_type_apartment;
+        self.location = @"";
+        self.locationname = @"Mexico";
     }
     
     [self loadsearchmode:mode];
@@ -73,6 +77,8 @@
     settings[@"searchmode"] = @([self.searchmode type]);
     settings[@"searchtype"] = @([self.searchtype type]);
     settings[@"countryid"] = self.country.countryid;
+    settings[@"location"] = self.location;
+    settings[@"locationname"] = self.locationname;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:settings forKey:@"settings"];
