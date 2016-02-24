@@ -6,7 +6,7 @@
 
 -(void)config:(mconfigloclistitem*)model;
 
-@property(weak, nonatomic)UIButton *button;
+@property(weak, nonatomic)UILabel *labelcurrent;
 @property(weak, nonatomic)UILabel *label;
 
 @end
