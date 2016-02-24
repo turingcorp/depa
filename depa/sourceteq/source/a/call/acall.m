@@ -13,7 +13,6 @@
     self.keyforserver = @"server";
     self.keyforendpoint = @"";
     self.cachepolicy = NSURLRequestReloadIgnoringLocalCacheData;
-    self.parser = [[aparser alloc] init];
     
     return self;
 }

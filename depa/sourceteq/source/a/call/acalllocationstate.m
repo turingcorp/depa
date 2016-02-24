@@ -10,7 +10,7 @@
     [vars appendFormat:@"category=%@", categoryid];
     
     self = [super init:item variables:vars];
-    self.parser = [aparserlocationstate class];
+    self.parser = [[aparserlocationstate alloc] init];
     
     return self;
 }

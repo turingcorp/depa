@@ -60,7 +60,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedloclistitemfetched:) name:notloclistitemfetched object:nil];
     
     mconfigloclistitem *item = [[mconfigloclistitem alloc] init];
-    item.strategy = [[sconfigloccountry alloc] init];
+    item.strategy = [sconfigloccountry class];
     [self load:item];
     
     return self;

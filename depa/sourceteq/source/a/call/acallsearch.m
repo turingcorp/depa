@@ -7,7 +7,7 @@
     self = [super init:variables];
     
     self.keyforendpoint = @"search";
-    self.parser = [aparsersearch class];
+    self.parser = [[aparsersearch alloc] init];
     
     return self;
 }

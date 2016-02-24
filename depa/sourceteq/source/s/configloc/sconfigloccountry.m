@@ -14,7 +14,7 @@
     {
         mcountryitem *countryitem = [[mcountry singleton] item:i];
         mconfigloclistitem *item = [[mconfigloclistitem alloc] init:countryitem];
-        item.strategy = [[sconfiglocstate alloc] init];
+        item.strategy = [sconfiglocstate class];
         item.title = countryitem.countryname;
         
         [array addObject:item];

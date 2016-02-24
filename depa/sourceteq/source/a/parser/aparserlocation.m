@@ -3,11 +3,11 @@
 
 @implementation aparserlocation
 
--(instancetype)init
+-(instancetype)init:(mconfigloclistitem*)item
 {
     self = [super init];
     
-    self.filterid = @"";
+    self.item = item;
     
     return self;
 }
@@ -50,8 +50,9 @@
         NSString *rawid = rawvalue[@"id"];
         NSString *rawname = rawvalue[@"name"];
         
-        mconfigloclistitem *item = [[mconfigloclistitem alloc] init];
-        item.strategy = [[sconfigloccity alloc] init];
+        mconfigloclistitem *item = [[mconfigloclistitem alloc] init:self.item.country];
+        item.parent = self.item;
+        item.strategy = self.strategy;
         item.itemid = rawid;
         item.title = rawname;
         

@@ -32,7 +32,8 @@
 
 -(void)fetch
 {
-    [self.strategy items:self];
+    self.strategyinstance = [[self.strategy alloc] init];
+    [self.strategyinstance items:self];
 }
 
 -(void)returnfetch:(NSArray*)returnarray
