@@ -146,6 +146,9 @@
 
 -(void)accept
 {
+    [msettings singleton].location = [self.model path];
+    [msettings singleton].locationname = self.model.title;
+    [[msettings singleton] save];
     [[cmain singleton] popViewControllerAnimated:YES];
 }
 
