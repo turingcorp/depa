@@ -13,7 +13,7 @@
 -(void)items:(mconfigloclistitem*)item
 {
     self.item = item;
-    amanager *manager = [amanager call:[[acalllocationstate alloc] init:item] delegate:self];
+    amanager *manager = [amanager call:[[acalllocationcity alloc] init:item] delegate:self];
     self.manager = manager;
 }
 
