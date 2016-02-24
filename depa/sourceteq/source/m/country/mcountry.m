@@ -48,4 +48,22 @@
     return item;
 }
 
+-(mcountryitem*)countryforid:(NSString*)countryid
+{
+    mcountryitem *country;
+    NSUInteger count = [self count];
+    
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        country = [self item:i];
+        
+        if([country.countryid isEqualToString:countryid])
+        {
+            break;
+        }
+    }
+    
+    return country;
+}
+
 @end

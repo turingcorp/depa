@@ -7,5 +7,6 @@
 +(instancetype)singleton;
 -(NSUInteger)count;
 -(mcountryitem*)item:(NSUInteger)index;
+-(mcountryitem*)countryforid:(NSString*)countryid;
 
 @end

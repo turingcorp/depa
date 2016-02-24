@@ -17,22 +17,29 @@
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *settings = [defaults valueForKey:@"settings"];
+    NSString *countryid;
+    search_mode mode;
+    search_type type;
     
     if(settings)
     {
-        search_mode mode = (search_mode)[settings[@"searchmode"] unsignedIntegerValue];
-        search_type type = (search_type)[settings[@"searchtype"] unsignedIntegerValue];
-        
-        [self loadsearchmode:mode];
-        [self loadsearchtype:type];
+        countryid = settings[@"countryid"];
+        mode = (search_mode)[settings[@"searchmode"] unsignedIntegerValue];
+        type = (search_type)[settings[@"searchtype"] unsignedIntegerValue];
     }
     else
     {
-        search_mode mode = search_mode_rent;
-        search_type type = search_type_apartment;
-        [self loadsearchmode:mode];
-        [self loadsearchtype:type];
-        
+        countryid = @"MLM";
+        mode = search_mode_rent;
+        type = search_type_apartment;
+    }
+    
+    [self loadsearchmode:mode];
+    [self loadsearchtype:type];
+    [self loadcountry:countryid];
+    
+    if(!settings)
+    {
         [self save];
     }
     
@@ -53,6 +60,11 @@
     self.searchtype = [typ itemwithtype:type];
 }
 
+-(void)loadcountry:(NSString*)countryid
+{
+    self.country = [[mcountry singleton] countryforid:countryid];
+}
+
 #pragma mark public
 
 -(void)save
@@ -60,6 +72,7 @@
     NSMutableDictionary *settings = [NSMutableDictionary dictionary];
     settings[@"searchmode"] = @([self.searchmode type]);
     settings[@"searchtype"] = @([self.searchtype type]);
+    settings[@"countryid"] = self.country.countryid;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:settings forKey:@"settings"];

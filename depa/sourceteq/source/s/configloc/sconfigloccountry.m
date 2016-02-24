@@ -8,12 +8,11 @@
 -(void)items:(mconfigloclistitem*)item
 {
     NSMutableArray *array = [NSMutableArray array];
-    mcountry *countries = [[mcountry alloc] init];
+    NSUInteger count = [[mcountry singleton] count];
     
-    NSUInteger count = [countries count];
     for(NSUInteger i = 0; i < count; i++)
     {
-        mcountryitem *countryitem = [countries item:i];
+        mcountryitem *countryitem = [[mcountry singleton] item:i];
         mconfigloclistitem *item = [[mconfigloclistitem alloc] init];
         item.strategy = [[sconfiglocstate alloc] init];
         item.title = countryitem.countryname;
