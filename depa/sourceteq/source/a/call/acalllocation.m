@@ -3,17 +3,17 @@
 
 @implementation acalllocation
 
--(instancetype)init:(mcountryitem*)country
+-(instancetype)init:(mconfigloclistitem*)item
 {
-    self = [self init:country variables:nil];
+    self = [self init:item variables:nil];
     
     return self;
 }
 
--(instancetype)init:(mcountryitem*)country variables:(NSString*)variables
+-(instancetype)init:(mconfigloclistitem*)item variables:(NSString*)variables
 {
     self = [super init:variables];
-    self.country = country;
+    self.item = item;
     self.keyforendpoint = @"search";
     
     return self;
@@ -25,7 +25,7 @@
 -(void)buildendpoint:(NSDictionary*)params
 {
     NSString *rawendpoint = params[self.keyforendpoint];
-    self.endpoint = [NSString stringWithFormat:rawendpoint, self.country.countryid];
+    self.endpoint = [NSString stringWithFormat:rawendpoint, self.item.country.countryid];
 }
 
 @end

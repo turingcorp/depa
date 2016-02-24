@@ -13,10 +13,9 @@
     for(NSUInteger i = 0; i < count; i++)
     {
         mcountryitem *countryitem = [[mcountry singleton] item:i];
-        mconfigloclistitem *item = [[mconfigloclistitem alloc] init];
+        mconfigloclistitem *item = [[mconfigloclistitem alloc] init:countryitem];
         item.strategy = [[sconfiglocstate alloc] init];
         item.title = countryitem.countryname;
-        item.country = countryitem;
         
         [array addObject:item];
     }

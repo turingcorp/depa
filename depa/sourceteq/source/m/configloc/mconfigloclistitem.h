@@ -5,6 +5,7 @@
 
 @interface mconfigloclistitem:NSObject
 
+-(instancetype)init:(mcountryitem*)country;
 -(NSUInteger)count;
 -(mconfigloclistitem*)item:(NSUInteger)index;
 -(void)fetch;

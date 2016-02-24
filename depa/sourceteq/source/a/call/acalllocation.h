@@ -1,6 +1,6 @@
 #import "acall.h"
 
-@class mcountryitem;
+@class mconfigloclistitem;
 
 @interface acalllocation:acall
 

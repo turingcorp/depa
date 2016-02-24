@@ -5,6 +5,15 @@
     NSArray *array;
 }
 
+-(instancetype)init:(mcountryitem*)country
+{
+    self = [super init];
+    
+    self.country = country;
+    
+    return self;
+}
+
 #pragma mark public
 
 -(NSUInteger)count
