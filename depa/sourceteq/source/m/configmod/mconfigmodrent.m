@@ -4,7 +4,7 @@
 
 -(NSString*)description
 {
-    NSString *description = NSLocalizedString(@"", nil);
+    NSString *description = NSLocalizedString(@"search_mode_rent", nil);
     
     return description;
 }
