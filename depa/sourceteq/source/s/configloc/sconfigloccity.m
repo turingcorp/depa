@@ -24,6 +24,13 @@
     return title;
 }
 
+-(NSString*)filterid
+{
+    NSString *filter = @"city";
+    
+    return filter;
+}
+
 #pragma mark -
 #pragma mark call del
 

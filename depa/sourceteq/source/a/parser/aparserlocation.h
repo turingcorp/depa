@@ -8,7 +8,6 @@
 
 @property(weak, nonatomic)mconfigloclistitem *item;
 @property(strong, nonatomic)NSMutableArray *array;
-@property(copy, nonatomic)NSString *filterid;
 @property(nonatomic)Class strategy;
 
 @end

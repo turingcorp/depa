@@ -12,6 +12,7 @@
 -(void)returnfetch:(NSArray*)returnarray;
 -(void)returnerror:(NSString*)error;
 -(void)sort;
+-(NSString*)path;
 
 @property(strong, nonatomic)id<sconfiglocprotocol> strategyinstance;
 @property(strong, nonatomic)mconfigloclistitem *parent;

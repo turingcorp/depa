@@ -4,7 +4,6 @@
 
 -(void)parse:(NSDictionary*)json
 {
-    self.filterid = @"city";
     [super parse:json];
 }
 

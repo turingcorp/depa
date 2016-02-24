@@ -17,6 +17,7 @@
         item.parent = itemparent;
         item.strategy = [sconfiglocstate class];
         item.title = countryitem.countryname;
+        item.itemid = [countryitem categoryforsettings];
         
         [array addObject:item];
     }
@@ -29,6 +30,13 @@
     NSString *title = NSLocalizedString(@"config_location_list_countries", nil);
     
     return title;
+}
+
+-(NSString*)filterid
+{
+    NSString *filter = @"category";
+    
+    return filter;
 }
 
 @end

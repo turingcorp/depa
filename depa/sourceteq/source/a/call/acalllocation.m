@@ -5,14 +5,11 @@
 
 -(instancetype)init:(mconfigloclistitem*)item
 {
-    self = [self init:item variables:nil];
+    NSMutableString *vars = [NSMutableString string];
+    [vars appendString:@"limit=0&offset=0&"];
+    [vars appendString:[item path]];
     
-    return self;
-}
-
--(instancetype)init:(mconfigloclistitem*)item variables:(NSString*)variables
-{
-    self = [super init:variables];
+    self = [super init:vars];
     self.item = item;
     self.keyforendpoint = @"search";
     

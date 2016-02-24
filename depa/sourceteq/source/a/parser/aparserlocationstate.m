@@ -4,7 +4,6 @@
 
 -(void)parse:(NSDictionary*)json
 {
-    self.filterid = @"state";
     self.strategy = [sconfigloccity class];
     [super parse:json];
 }

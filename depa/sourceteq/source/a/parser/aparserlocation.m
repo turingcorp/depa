@@ -20,6 +20,7 @@
     {
         self.array = [NSMutableArray array];
         NSArray *filters = self.validjson[@"available_filters"];
+        NSString *filterid = [self.item.strategyinstance filterid];
         NSUInteger count = filters.count;
         
         for(NSUInteger i = 0; i < count; i++)
@@ -27,7 +28,7 @@
             NSDictionary *filtersitem = filters[i];
             NSString *rawfilterid = filtersitem[@"id"];
             
-            if([rawfilterid isEqualToString:self.filterid])
+            if([rawfilterid isEqualToString:filterid])
             {
                 [self fillarray:filtersitem];
                 
