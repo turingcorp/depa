@@ -4,9 +4,9 @@
 
 @interface acalllocation:acall
 
--(instancetype)init:(mcountryitem*)country;
--(instancetype)init:(mcountryitem*)country variables:(NSString*)variables;
+-(instancetype)init:(mconfigloclistitem*)item;
+-(instancetype)init:(mconfigloclistitem*)item variables:(NSString*)variables;
 
-@property(weak, nonatomic)mcountryitem *country;
+@property(weak, nonatomic)mconfigloclistitem *item;
 
 @end

@@ -2,7 +2,7 @@
 
 @implementation acalllocationstate
 
--(instancetype)init:(mcountryitem*)country
+-(instancetype)init:(mconfigloclistitem*)item
 {
     NSString *categoryid = [country categoryforsettings];
     NSMutableString *vars = [NSMutableString string];

@@ -5,6 +5,15 @@
     NSMutableArray *array;
 }
 
++(instancetype)singleton
+{
+    static mcountry *single;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^(void) { single = [[self alloc] init]; });
+    
+    return single;
+}
+
 -(instancetype)init
 {
     self = [super init];

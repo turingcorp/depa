@@ -13,8 +13,8 @@
 -(void)sort;
 
 @property(strong, nonatomic)id<sconfiglocprotocol> strategy;
-@property(strong, nonatomic)mcountryitem *country;
 @property(strong, nonatomic)mconfigloclistitem *parent;
+@property(weak, nonatomic)mcountryitem *country;
 @property(copy, nonatomic)NSString *itemid;
 @property(copy, nonatomic)NSString *title;
 @property(copy, nonatomic)NSString *error;

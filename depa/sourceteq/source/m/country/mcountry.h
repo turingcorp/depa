@@ -4,6 +4,7 @@
 
 @interface mcountry:NSObject
 
++(instancetype)singleton;
 -(NSUInteger)count;
 -(mcountryitem*)item:(NSUInteger)index;
 
