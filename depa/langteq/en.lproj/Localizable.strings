@@ -17,6 +17,7 @@
 "config_location_menu_map"="Map";
 "config_location_list_countries"="Country";
 "config_location_list_state"="State";
+"config_location_list_city"="City";
 "config_location_list_select"="Select %@";
 "config_location_button_retry"="Try again";
 "config_mode_rent"="Rent";

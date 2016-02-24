@@ -19,7 +19,7 @@
 
 -(NSString*)title
 {
-    NSString *title = NSLocalizedString(@"config_location_list_state", nil);
+    NSString *title = NSLocalizedString(@"config_location_list_city", nil);
     
     return title;
 }
