@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 
 @class mconfigloclistitem;
+@class aparserlocation;
 
 @protocol sconfiglocprotocol <NSObject>
 
@@ -10,5 +11,6 @@
 @optional
 
 -(NSString*)filterid;
+-(void)nofilters:(NSDictionary*)json parser:(aparserlocation*)parser;
 
 @end

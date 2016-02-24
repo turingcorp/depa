@@ -22,6 +22,7 @@
         NSArray *filters = self.validjson[@"available_filters"];
         NSString *filterid = [self.item.strategyinstance filterid];
         NSUInteger count = filters.count;
+        BOOL found = NO;
         
         for(NSUInteger i = 0; i < count; i++)
         {
@@ -31,8 +32,17 @@
             if([rawfilterid isEqualToString:filterid])
             {
                 [self fillarray:filtersitem];
+                found = YES;
                 
                 break;
+            }
+        }
+        
+        if(!found)
+        {
+            if([self.item.strategyinstance respondsToSelector:@selector(nofilters:parser:)])
+            {
+                [self.item.strategyinstance nofilters:json parser:self];
             }
         }
     }

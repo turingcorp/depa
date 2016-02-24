@@ -31,6 +31,14 @@
     return filter;
 }
 
+-(void)nofilters:(NSDictionary*)json parser:(aparserlocation*)parser
+{
+    /*
+    aparserlocation *newparser = [[[self.item.strategyinstance optionalparser] alloc] init:self.item];
+    [newparser parse:json];
+    self.array = newparser.array;*/
+}
+
 #pragma mark -
 #pragma mark call del
 
