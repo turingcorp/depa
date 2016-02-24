@@ -45,11 +45,11 @@
     [view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     [view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(margin)-[image(height)]" options:0 metrics:metrics views:views]];
     
-    [UIView animateWithDuration:0.4 animations:
+    [UIView animateWithDuration:0.25 animations:
      ^
      {
          [image setAlpha:1];
-         [itemimage.image setAlpha:0.3];
+         [itemimage.image setAlpha:0.5];
      } completion:
      ^(BOOL done)
      {

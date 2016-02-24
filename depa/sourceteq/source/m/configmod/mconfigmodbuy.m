@@ -2,6 +2,13 @@
 
 @implementation mconfigmodbuy
 
+-(NSString*)description
+{
+    NSString *description = NSLocalizedString(@"", nil);
+    
+    return description;
+}
+
 #pragma mark -
 #pragma mark config mode protocol
 

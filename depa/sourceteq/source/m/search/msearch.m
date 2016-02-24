@@ -7,20 +7,18 @@ static const NSUInteger itemslimit = 10;
     NSMutableArray *array;
 }
 
--(instancetype)init:(id<msearchtypeprotocol>)searchtype mode:(id<msearchmodeprotocol>)searchmode
+-(instancetype)init
 {
     self = [super init];
     
-    self.searchtype = searchtype;
-    self.searchmode = searchmode;
     self.limit = itemslimit;
     self.current = 0;
     self.offset = 0;
     array = [NSMutableArray array];
     
     NSMutableString *string = [NSMutableString string];
-    [string appendString:[self.searchtype displayname]];
-    [string appendFormat:@" %@ ", [self.searchmode displayname]];
+    [string appendString:[[msettings singleton].searchtype description]];
+    [string appendFormat:@" %@ ", [[msettings singleton].searchmode description]];
     self.displayname = string;
     
     return self;

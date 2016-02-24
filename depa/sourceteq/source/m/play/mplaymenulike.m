@@ -53,7 +53,7 @@
                    {
                        constr.constant = -imagemargin;
                        
-                       [UIView animateWithDuration:0.4 animations:
+                       [UIView animateWithDuration:0.3 animations:
                         ^
                         {
                             [image setAlpha:1];
@@ -65,10 +65,10 @@
                         }];
                    });
     
-    [UIView animateWithDuration:0.9 animations:
+    [UIView animateWithDuration:0.4 animations:
      ^
      {
-         [itemimage.image setAlpha:0];
+         [itemimage.image setAlpha:0.5];
      }];
 }
 

@@ -7,7 +7,7 @@ static const NSUInteger minitemspull = 3;
 -(instancetype)init
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    self.model = [[msearch alloc] init:[[msearchtypeflat alloc] init] mode:[[msearchmoderent alloc] init]];
+    self.model = [[msearch alloc] init];
     [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:YES];
     
     return self;

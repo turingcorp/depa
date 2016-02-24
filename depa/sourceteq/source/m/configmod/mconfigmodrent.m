@@ -2,6 +2,13 @@
 
 @implementation mconfigmodrent
 
+-(NSString*)description
+{
+    NSString *description = NSLocalizedString(@"", nil);
+    
+    return description;
+}
+
 #pragma mark -
 #pragma mark config mode protocol
 

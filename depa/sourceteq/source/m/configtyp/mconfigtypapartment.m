@@ -2,6 +2,13 @@
 
 @implementation mconfigtypapartment
 
+-(NSString*)description
+{
+    NSString *description = NSLocalizedString(@"", nil);
+    
+    return description;
+}
+
 #pragma mark -
 #pragma mark typ protocol
 
