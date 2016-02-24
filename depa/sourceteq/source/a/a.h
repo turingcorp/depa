@@ -7,5 +7,6 @@
 #import "aparsersearch.h"
 #import "aparserlocationstate.h"
 #import "aparserlocationcity.h"
+#import "aparserlocationneigh.h"
 #import "aimateq.h"
 #import "aimateqitem.h"
