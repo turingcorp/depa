@@ -88,7 +88,7 @@
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                            ^
                            {
-                               self.parser = [[[self.call parser] alloc] init:self.response];
+                               [self.call.parser parse:self.response];
                                [self.delegate callsuccess:self];
                            });
         }

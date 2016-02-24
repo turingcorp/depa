@@ -3,9 +3,18 @@
 
 @implementation aparserlocation
 
--(instancetype)init:(NSDictionary*)json
+-(instancetype)init
 {
-    self = [super init:json];
+    self = [super init];
+    
+    self.filterid = @"";
+    
+    return self;
+}
+
+-(void)parse:(NSDictionary*)json
+{
+    [super parse:json];
     
     if(self.validjson)
     {
@@ -26,8 +35,6 @@
             }
         }
     }
-    
-    return self;
 }
 
 #pragma mark functionality
@@ -44,6 +51,7 @@
         NSString *rawname = rawvalue[@"name"];
         
         mconfigloclistitem *item = [[mconfigloclistitem alloc] init];
+        item.strategy = [[sconfigloccity alloc] init];
         item.itemid = rawid;
         item.title = rawname;
         

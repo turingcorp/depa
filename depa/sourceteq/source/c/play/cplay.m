@@ -103,7 +103,7 @@ static const NSUInteger minitemspull = 3;
 
 -(void)callsuccess:(amanager*)manager
 {
-    [self.model join:(aparsersearch*)manager.parser];
+    [self.model join:(aparsersearch*)manager.call.parser];
     
     if([self.current isKindOfClass:[cplayload class]])
     {

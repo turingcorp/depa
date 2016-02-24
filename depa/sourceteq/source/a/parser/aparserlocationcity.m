@@ -2,12 +2,10 @@
 
 @implementation aparserlocationcity
 
--(instancetype)init:(NSDictionary*)json
+-(void)parse:(NSDictionary*)json
 {
     self.filterid = @"city";
-    self = [super init:json];
-    
-    return self;
+    [super parse:json];
 }
 
 @end

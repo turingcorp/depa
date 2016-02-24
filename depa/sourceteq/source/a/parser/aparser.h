@@ -2,7 +2,7 @@
 
 @interface aparser:NSObject
 
--(instancetype)init:(NSDictionary*)json;
+-(void)parse:(NSDictionary*)json;
 
 @property(strong, nonatomic)NSDictionary *validjson;
 

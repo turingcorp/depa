@@ -72,7 +72,7 @@
 
 -(void)callsuccess:(amanager*)manager
 {
-    [self.play.model join:(aparsersearch*)manager.parser];
+    [self.play.model join:(aparsersearch*)manager.call.parser];
     self.play.model.busy = NO;
     
     dispatch_async(dispatch_get_main_queue(),

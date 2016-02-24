@@ -11,7 +11,6 @@
 
 @property(weak, nonatomic)id<acalldelegate> delegate;
 @property(strong, nonatomic)acall *call;
-@property(strong, nonatomic)aparser *parser;
 @property(strong, nonatomic)NSDictionary *response;
 @property(strong, nonatomic)NSURLSession *session;
 @property(strong, nonatomic)NSMutableData *data;

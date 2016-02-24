@@ -2,12 +2,10 @@
 
 @implementation aparserlocationstate
 
--(instancetype)init:(NSDictionary*)json
+-(void)parse:(NSDictionary*)json
 {
     self.filterid = @"state";
-    self = [super init:json];
-    
-    return self;
+    [super parse:json];
 }
 
 @end

@@ -2,9 +2,9 @@
 
 @implementation aparsersearch
 
--(instancetype)init:(NSDictionary*)json
+-(void)parse:(NSDictionary*)json
 {
-    self = [super init:json];
+    [super parse:json];
     
     if(self.validjson)
     {
@@ -25,8 +25,6 @@
         self.offset = [paging[@"offset"] unsignedIntegerValue];
         self.limit = [paging[@"limit"] unsignedIntegerValue];
     }
-    
-    return self;
 }
 
 @end

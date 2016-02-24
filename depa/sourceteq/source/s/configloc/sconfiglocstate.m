@@ -29,7 +29,7 @@
 
 -(void)callsuccess:(amanager*)manager
 {
-    aparserlocation *parser = (aparserlocation*)manager.parser;
+    aparserlocation *parser = (aparserlocation*)manager.call.parser;
     [self.item returnfetch:parser.array];
 }
 

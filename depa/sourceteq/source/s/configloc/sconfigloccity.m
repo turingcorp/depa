@@ -13,7 +13,7 @@
 -(void)items:(mconfigloclistitem*)item
 {
     self.item = item;
-    amanager *manager = [amanager call:[[acalllocationstate alloc] init:item.country] delegate:self];
+    amanager *manager = [amanager call:[[acalllocationstate alloc] init:item] delegate:self];
     self.manager = manager;
 }
 
@@ -29,7 +29,7 @@
 
 -(void)callsuccess:(amanager*)manager
 {
-    aparserlocation *parser = (aparserlocation*)manager.parser;
+    aparserlocation *parser = (aparserlocation*)manager.call.parser;
     [self.item returnfetch:parser.array];
 }
 

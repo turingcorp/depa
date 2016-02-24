@@ -2,15 +2,6 @@
 
 @implementation aparser
 
--(instancetype)init:(NSDictionary*)json
-{
-    self = [super init];
-    
-    self.validjson = [self basicparse:json];
-    
-    return self;
-}
-
 #pragma mark functionality
 
 -(id)basicparse:(id)object
@@ -64,6 +55,13 @@
     }
     
     return validobject;
+}
+
+#pragma mark public
+
+-(void)parse:(NSDictionary*)json
+{
+    self.validjson = [self basicparse:json];
 }
 
 @end

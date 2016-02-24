@@ -10,7 +10,7 @@
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
-    [label setFont:[UIFont fontWithName:fontname size:17]];
+    [label setFont:[UIFont fontWithName:fontname size:15]];
     [label setNumberOfLines:0];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.label = label;
@@ -49,7 +49,7 @@
     }
     else
     {
-        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.7]];
+        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.85]];
         [self setBackgroundColor:[UIColor whiteColor]];
     }
 }
