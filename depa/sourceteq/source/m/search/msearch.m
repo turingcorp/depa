@@ -50,9 +50,11 @@ static const NSUInteger itemslimit = 10;
 -(NSString*)variables
 {
     NSMutableString *string = [NSMutableString string];
-    [string appendString:@"category=1479&has_pictures=yes"];
+    [string appendFormat:@"category=%@", [[msettings singleton].country categoryforsettings]];
+    [string appendString:@"&has_pictures=yes"];
     [string appendFormat:@"&limit=%@", @(self.limit)];
-    [string appendFormat:@"&offset=%@", @(self.offset)];
+    [string appendFormat:@"&offset=%@&", @(self.offset)];
+    [string appendString:[msettings singleton].location];
     
     return string;
 }

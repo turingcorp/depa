@@ -24,7 +24,7 @@
     [labellocation setTextColor:colormain];
     [labellocation setUserInteractionEnabled:NO];
     [labellocation setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labellocation setText:@"Distrito federal"];
+    [labellocation setText:[msettings singleton].locationname];
     [labellocation setTextAlignment:NSTextAlignmentRight];
     self.labellocation = labellocation;
     

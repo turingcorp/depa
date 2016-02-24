@@ -17,9 +17,8 @@
 
 -(void)buildendpoint:(NSDictionary*)params
 {
-    NSString *countryid = @"MLM";
     NSString *rawendpoint = params[self.keyforendpoint];
-    self.endpoint = [NSString stringWithFormat:rawendpoint, countryid];
+    self.endpoint = [NSString stringWithFormat:rawendpoint, [msettings singleton].country.countryid];
 }
 
 @end
