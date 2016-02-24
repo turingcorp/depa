@@ -5,7 +5,7 @@
 -(instancetype)init:(mconfigloclistitem*)item
 {
     self = [super init:item];
-    self.parser = [[aparserlocationcity alloc] init:item];
+    self.parser = [[aparserlocationneigh alloc] init:item];
     
     return self;
 }

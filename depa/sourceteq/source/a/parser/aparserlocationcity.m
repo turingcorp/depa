@@ -4,6 +4,7 @@
 
 -(void)parse:(NSDictionary*)json
 {
+    self.strategy = [sconfiglocneigh class];
     [super parse:json];
 }
 
