@@ -18,6 +18,7 @@
 "config_location_list_countries"="Country";
 "config_location_list_state"="State";
 "config_location_list_city"="City";
+"config_location_list_neigh"="Neightbourhood";
 "config_location_list_select"="Filter by %@";
 "config_location_list_current"="Search in %@";
 "config_location_button_retry"="Try again";

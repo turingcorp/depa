@@ -112,6 +112,7 @@
     else
     {
         [self.collection setHidden:NO];
+        [self.collection scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
         [self.collection reloadData];
     }
 }
