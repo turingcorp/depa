@@ -6,6 +6,9 @@
 
 -(void)items:(mconfigloclistitem*)item;
 -(NSString*)title;
+
+@optional
+
 -(NSString*)filterid;
 
 @end

@@ -7,6 +7,7 @@
 {
     NSMutableString *vars = [NSMutableString string];
     [vars appendString:@"limit=0&offset=0&"];
+    [vars appendFormat:@"category=%@&", [item.country categoryforsettings]];
     [vars appendString:[item path]];
     
     self = [super init:vars];

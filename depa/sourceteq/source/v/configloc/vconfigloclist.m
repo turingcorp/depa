@@ -146,7 +146,7 @@
 
 -(void)accept
 {
-    
+    [[cmain singleton] popViewControllerAnimated:YES];
 }
 
 -(void)back
@@ -209,7 +209,17 @@
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    [self load:[self.model item:index.item]];
+    mconfigloclistitem *item = [self.model item:index.item];
+    
+    if(item.strategy)
+    {
+        [self load:item];
+    }
+    else
+    {
+        self.model = item;
+        [self accept];
+    }
 }
 
 @end

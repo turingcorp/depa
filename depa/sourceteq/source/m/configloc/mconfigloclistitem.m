@@ -67,8 +67,11 @@
     
     if(self.parent)
     {
-        [string appendString:[self.parent path]];
-        [string appendFormat:@"%@=%@&", [self.parent.strategyinstance filterid], self.itemid];
+        if([self.parent.strategyinstance respondsToSelector:@selector(filterid)])
+        {
+            [string appendString:[self.parent path]];
+            [string appendFormat:@"%@=%@&", [self.parent.strategyinstance filterid], self.itemid];
+        }
     }
     
     return string;
