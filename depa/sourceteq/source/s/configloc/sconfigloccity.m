@@ -1,13 +1,41 @@
-//
-//  sconfigloccity.m
-//  depa
-//
-//  Created by zero on 2/23/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "sconfigloccity.h"
 
 @implementation sconfigloccity
+
+-(void)dealloc
+{
+    [self.manager cancelcall];
+}
+
+#pragma mark -
+#pragma mark config loc del
+
+-(void)items:(mconfigloclistitem*)item
+{
+    self.item = item;
+    amanager *manager = [amanager call:[[acalllocationstate alloc] init:item.country] delegate:self];
+    self.manager = manager;
+}
+
+-(NSString*)title
+{
+    NSString *title = NSLocalizedString(@"config_location_list_state", nil);
+    
+    return title;
+}
+
+#pragma mark -
+#pragma mark call del
+
+-(void)callsuccess:(amanager*)manager
+{
+    aparserlocation *parser = (aparserlocation*)manager.parser;
+    [self.item returnfetch:parser.array];
+}
+
+-(void)call:(amanager*)manager error:(NSString*)error
+{
+    [self.item returnerror:error];
+}
 
 @end
