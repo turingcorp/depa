@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */; };
 		DA1FBD541C7E06CA0038A822 /* acalllocationcity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD531C7E06CA0038A822 /* acalllocationcity.m */; };
+		DA1FBD571C7E078C0038A822 /* aparserlocationcity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD561C7E078C0038A822 /* aparserlocationcity.m */; };
 		DA2427A71C77A9FF00FE44B0 /* vplayitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A61C77A9FF00FE44B0 /* vplayitem.m */; };
 		DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A91C77D14900FE44B0 /* aimateq.m */; };
 		DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */; };
@@ -120,6 +121,8 @@
 		A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.debug.xcconfig"; sourceTree = "<group>"; };
 		DA1FBD521C7E06CA0038A822 /* acalllocationcity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acalllocationcity.h; sourceTree = "<group>"; };
 		DA1FBD531C7E06CA0038A822 /* acalllocationcity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalllocationcity.m; sourceTree = "<group>"; };
+		DA1FBD551C7E078C0038A822 /* aparserlocationcity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserlocationcity.h; sourceTree = "<group>"; };
+		DA1FBD561C7E078C0038A822 /* aparserlocationcity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserlocationcity.m; sourceTree = "<group>"; };
 		DA2427A51C77A9FF00FE44B0 /* vplayitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitem.h; sourceTree = "<group>"; };
 		DA2427A61C77A9FF00FE44B0 /* vplayitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitem.m; sourceTree = "<group>"; };
 		DA2427A81C77D14900FE44B0 /* aimateq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aimateq.h; sourceTree = "<group>"; };
@@ -576,6 +579,8 @@
 				DA31731F1C7CF65800B6CEF7 /* aparserlocation.m */,
 				DA31731B1C7CF4BA00B6CEF7 /* aparserlocationstate.h */,
 				DA31731C1C7CF4BA00B6CEF7 /* aparserlocationstate.m */,
+				DA1FBD551C7E078C0038A822 /* aparserlocationcity.h */,
+				DA1FBD561C7E078C0038A822 /* aparserlocationcity.m */,
 			);
 			path = parser;
 			sourceTree = "<group>";
@@ -1120,6 +1125,7 @@
 				DA69731F1C764B6100A2C6EB /* acallsearch.m in Sources */,
 				DA25B1751C7BBA8500B4BB21 /* mconfigloclist.m in Sources */,
 				DA9141A81C769738004BE5D1 /* mplaymenuno.m in Sources */,
+				DA1FBD571C7E078C0038A822 /* aparserlocationcity.m in Sources */,
 				DA25B17E1C7BBECE00B4BB21 /* vconfiglocmap.m in Sources */,
 				DA6973061C760D0600A2C6EB /* cplay.m in Sources */,
 				DA25B1711C7BBA6400B4BB21 /* mconfigloc.m in Sources */,

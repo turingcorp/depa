@@ -10,6 +10,7 @@
     [vars appendFormat:@"category=%@", categoryid];
     
     self = [super init:country variables:vars];
+    self.parser = [aparserlocationcity class];
     
     return self;
 }

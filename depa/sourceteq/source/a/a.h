@@ -5,5 +5,6 @@
 #import "acalldelegate.h"
 #import "aparsersearch.h"
 #import "aparserlocationstate.h"
+#import "aparserlocationcity.h"
 #import "aimateq.h"
 #import "aimateqitem.h"

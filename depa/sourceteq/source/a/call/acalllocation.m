@@ -15,7 +15,6 @@
     self = [super init:variables];
     self.country = country;
     self.keyforendpoint = @"search";
-    self.parser = [aparserlocationstate class];
     
     return self;
 }
