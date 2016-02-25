@@ -25,6 +25,7 @@
 #define notimageloaded          @"imageloaded"
 #define notloclistitemfetched   @"loclistitemfetched"
 #define notitemsloaded          @"itemsloaded"
+#define notlikedloaded          @"likedloaded"
 
 // extra
 
