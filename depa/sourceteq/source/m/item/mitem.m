@@ -22,28 +22,33 @@
                    ^
                    {
                        self.countryid = countryid;
-                       dictionary = [NSMutableDictionary dictionary];
-                       NSString *query = [NSString stringWithFormat:
-                                          @"SELECT id, itemid, status FROM item "
-                                          "WHERE countryid=\"%@\" "
-                                          "ORDER BY id ASC;",
-                                          countryid];
-                       NSArray *rawarray = [db rows:query];
-                       NSUInteger count = rawarray.count;
-                       
-                       for(NSUInteger i = 0; i < count; i++)
-                       {
-                           NSDictionary *rawitem = rawarray[i];
-                           NSString *rawitemid = rawitem[@"itemid"];
-                           NSUInteger rawid = [rawitem[@"id"] unsignedIntegerValue];
-                           item_status rawstatus = (item_status)[rawitem[@"status"] unsignedIntegerValue];
-                           mitemitem *item = [[mitemitem alloc] init:rawid itemid:rawitemid status:rawstatus];
-                           
-                           [self add:item];
-                       }
+                       [self insideload];
                        
                        [[NSNotificationCenter defaultCenter] postNotificationName:notitemsloaded object:nil];
                    });
+}
+
+-(void)insideload
+{
+    dictionary = [NSMutableDictionary dictionary];
+    NSString *query = [NSString stringWithFormat:
+                       @"SELECT id, itemid, status FROM item "
+                       "WHERE countryid=\"%@\" "
+                       "ORDER BY id ASC;",
+                       self.countryid];
+    NSArray *rawarray = [db rows:query];
+    NSUInteger count = rawarray.count;
+    
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        NSDictionary *rawitem = rawarray[i];
+        NSString *rawitemid = rawitem[@"itemid"];
+        NSUInteger rawid = [rawitem[@"id"] unsignedIntegerValue];
+        item_status rawstatus = (item_status)[rawitem[@"status"] unsignedIntegerValue];
+        mitemitem *item = [[mitemitem alloc] init:rawid itemid:rawitemid status:rawstatus];
+        
+        [self add:item];
+    }
 }
 
 -(mitemitem*)newitem:(NSString*)itemid

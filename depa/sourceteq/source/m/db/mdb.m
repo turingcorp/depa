@@ -24,11 +24,20 @@
 +(NSNumber*)itemswith:(item_status)status
 {
     NSString *query = [NSString stringWithFormat:
-                       @"SELECT COUNT(id) FROM item where status=%@;",
+                       @"SELECT COUNT(id) FROM item WHERE status=%@;",
                        @(status)];
     NSNumber *value = [db value:query];
     
     return value;
+}
+
++(void)clear:(item_status)status
+{
+    NSString *query = [NSString stringWithFormat:
+                       @"DELETE FROM item WHERE status=%@;",
+                       @(status)];
+    [db query:query];
+    [[mitem singleton] insideload];
 }
 
 @end

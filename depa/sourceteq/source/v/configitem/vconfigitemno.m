@@ -39,6 +39,7 @@
     UIButton *button = [[UIButton alloc] init];
     [button setBackgroundColor:color];
     [button setClipsToBounds:YES];
+    [button setTranslatesAutoresizingMaskIntoConstraints:NO];
     [button.titleLabel setFont:[UIFont fontWithName:fontboldname size:15]];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor colorWithWhite:1 alpha:0.2] forState:UIControlStateHighlighted];
@@ -58,7 +59,8 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-30-[info]-30-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[button]-80-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[image(150)]-(-20)-[label]-30-[info]-10-[button(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[image(150)]-(-25)-[label]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[info]-10-[button(40)]-100-|" options:0 metrics:metrics views:views]];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
@@ -80,7 +82,35 @@
 
 -(void)actionclear:(UIButton*)button
 {
-    
+    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"config_item_no_alert_title", nil) message:NSLocalizedString(@"config_item_no_alert_message", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"config_item_alert_cancel", nil) otherButtonTitles:NSLocalizedString(@"config_item_alert_clear", nil), nil] show];
+}
+
+#pragma mark functionality
+
+-(void)clearlist
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       [mdb clear:item_status_no];
+                       
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          [[cmain singleton] popToRootViewControllerAnimated:YES];
+                                      });
+                   });
+}
+
+#pragma mark -
+#pragma mark alert del
+
+-(void)alertView:(UIAlertView*)alert clickedButtonAtIndex:(NSInteger)index
+{
+    if(index)
+    {
+        [self clearlist];
+    }
 }
 
 @end
