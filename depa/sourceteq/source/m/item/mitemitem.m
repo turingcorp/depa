@@ -2,9 +2,10 @@
 
 @implementation mitemitem
 
--(instancetype)init:(NSString*)itemid status:(item_status)status
+-(instancetype)init:(NSString*)dbid itemid:(NSString*)temid status:(item_status)status
 {
     self = [super init];
+    self.dbid = dbid;
     self.itemid = itemid;
     self.status = status;
     
