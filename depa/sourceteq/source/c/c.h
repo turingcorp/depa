@@ -7,3 +7,5 @@
 #import "cplayempty.h"
 #import "cconfig.h"
 #import "cconfigloc.h"
+#import "cconfigitemlike.h"
+#import "cconfigitemno.h"

@@ -26,6 +26,8 @@
 "config_mode_buy"="Buy";
 "config_type_house"="House";
 "config_type_apartment"="Apartment";
+"config_item_like_title"="Likes";
+"config_item_no_title"="Discarded";
 
 "settings_original_locationname"="Mexico City";
 

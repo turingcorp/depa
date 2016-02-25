@@ -118,6 +118,8 @@
 		DACDA8551C76073200A37D15 /* vrate.m in Sources */ = {isa = PBXBuildFile; fileRef = DACDA8381C76073200A37D15 /* vrate.m */; };
 		DACDA8561C76073200A37D15 /* vratemenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DACDA83A1C76073200A37D15 /* vratemenu.m */; };
 		DACDA8571C76073200A37D15 /* vratemenucel.m in Sources */ = {isa = PBXBuildFile; fileRef = DACDA83C1C76073200A37D15 /* vratemenucel.m */; };
+		DAD5C3731C7F85A800FF8FDF /* cconfigitemlike.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3721C7F85A800FF8FDF /* cconfigitemlike.m */; };
+		DAD5C3761C7F85B300FF8FDF /* cconfigitemno.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3751C7F85B300FF8FDF /* cconfigitemno.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -355,6 +357,10 @@
 		DACDA85C1C76086D00A37D15 /* private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = private.h; sourceTree = "<group>"; };
 		DACDA85D1C76086D00A37D15 /* privateconstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = privateconstants.h; sourceTree = "<group>"; };
 		DAD5C3691C7F82C000FF8FDF /* vconfigcelprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigcelprotocol.h; sourceTree = "<group>"; };
+		DAD5C3711C7F85A800FF8FDF /* cconfigitemlike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cconfigitemlike.h; sourceTree = "<group>"; };
+		DAD5C3721C7F85A800FF8FDF /* cconfigitemlike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cconfigitemlike.m; sourceTree = "<group>"; };
+		DAD5C3741C7F85B300FF8FDF /* cconfigitemno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cconfigitemno.h; sourceTree = "<group>"; };
+		DAD5C3751C7F85B300FF8FDF /* cconfigitemno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cconfigitemno.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -817,6 +823,7 @@
 			isa = PBXGroup;
 			children = (
 				DACDA8121C76073200A37D15 /* c.h */,
+				DAD5C36A1C7F853900FF8FDF /* configitem */,
 				DA25B15E1C7BAAE700B4BB21 /* configloc */,
 				DA25B13E1C7B7D2B00B4BB21 /* config */,
 				DA6973031C760CF600A2C6EB /* play */,
@@ -960,6 +967,17 @@
 				DACDA85D1C76086D00A37D15 /* privateconstants.h */,
 			);
 			path = private;
+			sourceTree = "<group>";
+		};
+		DAD5C36A1C7F853900FF8FDF /* configitem */ = {
+			isa = PBXGroup;
+			children = (
+				DAD5C3711C7F85A800FF8FDF /* cconfigitemlike.h */,
+				DAD5C3721C7F85A800FF8FDF /* cconfigitemlike.m */,
+				DAD5C3741C7F85B300FF8FDF /* cconfigitemno.h */,
+				DAD5C3751C7F85B300FF8FDF /* cconfigitemno.m */,
+			);
+			path = configitem;
 			sourceTree = "<group>";
 		};
 		DE15BEF0973E01072524BBA8 /* Frameworks */ = {
@@ -1163,6 +1181,7 @@
 				DA1FBD701C7F73F90038A822 /* vconfiglike.m in Sources */,
 				DA1FBD571C7E078C0038A822 /* aparserlocationcity.m in Sources */,
 				DA25B17E1C7BBECE00B4BB21 /* vconfiglocmap.m in Sources */,
+				DAD5C3731C7F85A800FF8FDF /* cconfigitemlike.m in Sources */,
 				DA6973061C760D0600A2C6EB /* cplay.m in Sources */,
 				DA25B1711C7BBA6400B4BB21 /* mconfigloc.m in Sources */,
 				DA3173011C7CDBBD00B6CEF7 /* mconfigtyp.m in Sources */,
@@ -1185,6 +1204,7 @@
 				DA25B1501C7B82C800B4BB21 /* mconfiglocation.m in Sources */,
 				DACDA8531C76073200A37D15 /* viewbase.m in Sources */,
 				DA3173051C7CDBD700B6CEF7 /* mconfigtyphouse.m in Sources */,
+				DAD5C3761C7F85B300FF8FDF /* cconfigitemno.m in Sources */,
 				DA3172FD1C7CC8C600B6CEF7 /* mconfigmodbuy.m in Sources */,
 				DA31731D1C7CF4BA00B6CEF7 /* aparserlocationstate.m in Sources */,
 				DA3172F21C7CC74700B6CEF7 /* vconfigmodecel.m in Sources */,
