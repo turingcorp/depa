@@ -21,4 +21,14 @@
     [mdbcreate create];
 }
 
++(NSNumber*)itemswith:(item_status)status
+{
+    NSString *query = [NSString stringWithFormat:
+                       @"SELECT COUNT(id) FROM item where status=%@;",
+                       @(status)];
+    NSNumber *value = [db value:query];
+    
+    return value;
+}
+
 @end

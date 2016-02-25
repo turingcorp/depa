@@ -45,10 +45,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       NSString *query = [NSString stringWithFormat:
-                                          @"SELECT COUNT(id) FROM item where status=%@;",
-                                          @(item_status_like)];
-                       NSNumber *value = [db value:query];
+                       NSNumber *value = [mdb itemswith:item_status_like];
                        NSString *valuestring = [[tools singleton] numbertostring:value];
                        
                        dispatch_async(dispatch_get_main_queue(),
