@@ -9,3 +9,4 @@
 #import "cconfigloc.h"
 #import "cconfigitemlike.h"
 #import "cconfigitemno.h"
+#import "cliked.h"

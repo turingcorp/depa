@@ -122,6 +122,7 @@
 		DAD5C3761C7F85B300FF8FDF /* cconfigitemno.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3751C7F85B300FF8FDF /* cconfigitemno.m */; };
 		DAD5C37A1C7F871800FF8FDF /* vconfigitemlike.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3791C7F871800FF8FDF /* vconfigitemlike.m */; };
 		DAD5C37D1C7F872600FF8FDF /* vconfigitemno.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C37C1C7F872600FF8FDF /* vconfigitemno.m */; };
+		DAD5C3811C7F99CA00FF8FDF /* cliked.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3801C7F99CA00FF8FDF /* cliked.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -367,6 +368,8 @@
 		DAD5C3791C7F871800FF8FDF /* vconfigitemlike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigitemlike.m; sourceTree = "<group>"; };
 		DAD5C37B1C7F872600FF8FDF /* vconfigitemno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigitemno.h; sourceTree = "<group>"; };
 		DAD5C37C1C7F872600FF8FDF /* vconfigitemno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigitemno.m; sourceTree = "<group>"; };
+		DAD5C37F1C7F99CA00FF8FDF /* cliked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cliked.h; sourceTree = "<group>"; };
+		DAD5C3801C7F99CA00FF8FDF /* cliked.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cliked.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -829,6 +832,8 @@
 			isa = PBXGroup;
 			children = (
 				DACDA8121C76073200A37D15 /* c.h */,
+				DAD5C3821C7F9A1400FF8FDF /* item */,
+				DAD5C37E1C7F99BD00FF8FDF /* liked */,
 				DAD5C36A1C7F853900FF8FDF /* configitem */,
 				DA25B15E1C7BAAE700B4BB21 /* configloc */,
 				DA25B13E1C7B7D2B00B4BB21 /* config */,
@@ -998,6 +1003,22 @@
 			path = configitem;
 			sourceTree = "<group>";
 		};
+		DAD5C37E1C7F99BD00FF8FDF /* liked */ = {
+			isa = PBXGroup;
+			children = (
+				DAD5C37F1C7F99CA00FF8FDF /* cliked.h */,
+				DAD5C3801C7F99CA00FF8FDF /* cliked.m */,
+			);
+			path = liked;
+			sourceTree = "<group>";
+		};
+		DAD5C3821C7F9A1400FF8FDF /* item */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
 		DE15BEF0973E01072524BBA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1149,6 +1170,7 @@
 				DA2427B91C783D7A00FE44B0 /* vplayitemimage.m in Sources */,
 				DACDA84A1C76073200A37D15 /* cmain.m in Sources */,
 				DA25B1781C7BBA8F00B4BB21 /* mconfiglocmap.m in Sources */,
+				DAD5C3811C7F99CA00FF8FDF /* cliked.m in Sources */,
 				DA3172E91C7CBD3300B6CEF7 /* sconfigloccountry.m in Sources */,
 				DACDA8441C76073200A37D15 /* main.m in Sources */,
 				DA1FBD5D1C7E439C0038A822 /* acalllocationneigh.m in Sources */,
