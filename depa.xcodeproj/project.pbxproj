@@ -14,6 +14,7 @@
 		DA1FBD5D1C7E439C0038A822 /* acalllocationneigh.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD5C1C7E439C0038A822 /* acalllocationneigh.m */; };
 		DA1FBD601C7E43E00038A822 /* aparserlocationneigh.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD5F1C7E43E00038A822 /* aparserlocationneigh.m */; };
 		DA1FBD641C7F461C0038A822 /* mitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD631C7F461C0038A822 /* mitem.m */; };
+		DA1FBD671C7F514E0038A822 /* mitemitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD661C7F514E0038A822 /* mitemitem.m */; };
 		DA2427A71C77A9FF00FE44B0 /* vplayitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A61C77A9FF00FE44B0 /* vplayitem.m */; };
 		DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A91C77D14900FE44B0 /* aimateq.m */; };
 		DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */; };
@@ -131,6 +132,8 @@
 		DA1FBD5F1C7E43E00038A822 /* aparserlocationneigh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserlocationneigh.m; sourceTree = "<group>"; };
 		DA1FBD621C7F461C0038A822 /* mitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mitem.h; sourceTree = "<group>"; };
 		DA1FBD631C7F461C0038A822 /* mitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitem.m; sourceTree = "<group>"; };
+		DA1FBD651C7F514E0038A822 /* mitemitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mitemitem.h; sourceTree = "<group>"; };
+		DA1FBD661C7F514E0038A822 /* mitemitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemitem.m; sourceTree = "<group>"; };
 		DA2427A51C77A9FF00FE44B0 /* vplayitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitem.h; sourceTree = "<group>"; };
 		DA2427A61C77A9FF00FE44B0 /* vplayitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitem.m; sourceTree = "<group>"; };
 		DA2427A81C77D14900FE44B0 /* aimateq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aimateq.h; sourceTree = "<group>"; };
@@ -369,6 +372,8 @@
 			children = (
 				DA1FBD621C7F461C0038A822 /* mitem.h */,
 				DA1FBD631C7F461C0038A822 /* mitem.m */,
+				DA1FBD651C7F514E0038A822 /* mitemitem.h */,
+				DA1FBD661C7F514E0038A822 /* mitemitem.m */,
 			);
 			path = item;
 			sourceTree = "<group>";
@@ -1150,6 +1155,7 @@
 				DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */,
 				DACDA8511C76073200A37D15 /* valert.m in Sources */,
 				DACDA84B1C76073200A37D15 /* crate.m in Sources */,
+				DA1FBD671C7F514E0038A822 /* mitemitem.m in Sources */,
 				DA25B1501C7B82C800B4BB21 /* mconfiglocation.m in Sources */,
 				DACDA8531C76073200A37D15 /* viewbase.m in Sources */,
 				DA3173051C7CDBD700B6CEF7 /* mconfigtyphouse.m in Sources */,

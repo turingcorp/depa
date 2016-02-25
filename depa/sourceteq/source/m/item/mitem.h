@@ -1,13 +1,13 @@
-//
-//  mitem.h
-//  depa
-//
-//  Created by zero on 2/25/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
 
-#import <Foundation/Foundation.h>
+@class mitemitem;
 
-@interface mitem : NSObject
+@interface mitem:NSObject
+
+-(instancetype)init:(NSString*)countryid;
+-(NSUInteger)count;
+-(mitemitem*)item:(NSUInteger)index;
+
+@property(copy, nonatomic)NSString *countryid;
 
 @end

@@ -34,3 +34,4 @@
 #import "mconfigtyphouse.h"
 #import "mconfigtypapartment.h"
 #import "mitem.h"
+#import "mitemitem.h"
