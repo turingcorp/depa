@@ -21,6 +21,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
+                       self.countryid = countryid;
                        dictionary = [NSMutableDictionary dictionary];
                        NSString *query = [NSString stringWithFormat:
                                           @"SELECT id, itemid, status FROM item "
@@ -28,6 +29,7 @@
                                           "ORDER BY id ASC;",
                                           countryid];
                        NSArray *rawarray = [db rows:query];
+                       NSLog(@"%@", rawarray);
                        NSUInteger count = rawarray.count;
                        
                        for(NSUInteger i = 0; i < count; i++)

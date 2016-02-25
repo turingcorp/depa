@@ -6,6 +6,7 @@
 
 @interface cplay:UIPageViewController<acalldelegate>
 
+-(instancetype)init:(BOOL)synch;
 -(void)playlike;
 -(void)playno;
 

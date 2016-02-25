@@ -4,12 +4,20 @@ static const NSUInteger minitemspull = 3;
 
 @implementation cplay
 
--(instancetype)init
+-(instancetype)init:(BOOL)synch
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:YES];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifieditemsloaded:) name:notitemsloaded object:nil];
+    if(synch)
+    {
+        self.model = [[msearch alloc] init];
+    }
+    else
+    {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifieditemsloaded:) name:notitemsloaded object:nil];
+    }
+    
+    [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:YES];
     
     return self;
 }

@@ -10,7 +10,7 @@
     self.itemconfig = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"filter"] style:UIBarButtonItemStylePlain target:self action:@selector(actionconfig:)];
     self.itemfavorites = [[UIBarButtonItem  alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(actionfavorites:)];
     
-    [self showplay:UIPageViewControllerNavigationDirectionForward animated:NO];
+    [self showplay:UIPageViewControllerNavigationDirectionForward animated:NO sync:NO];
     
     return self;
 }
@@ -34,7 +34,7 @@
 
 -(void)actionplay:(UIBarButtonItem*)item
 {
-    [self showplay:item.tag animated:YES];
+    [self showplay:item.tag animated:YES sync:YES];
 }
 
 -(void)actionconfig:(UIBarButtonItem*)item
@@ -55,11 +55,11 @@
     [self setViewControllers:array direction:direction animated:animated completion:nil];
 }
 
--(void)showplay:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
+-(void)showplay:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated sync:(BOOL)sync
 {
     [self setTitle:NSLocalizedString(@"app_title", nil)];
     
-    [self changecontroller:[[cplay alloc] init] direction:direction animated:animated];
+    [self changecontroller:[[cplay alloc] init:sync] direction:direction animated:animated];
     [self.navigationItem setRightBarButtonItem:self.itemfavorites];
     [self.navigationItem setLeftBarButtonItem:self.itemconfig];
 }

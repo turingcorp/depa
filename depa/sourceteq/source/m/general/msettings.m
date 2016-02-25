@@ -93,9 +93,9 @@
 
 -(void)changecountry:(mcountryitem*)country location:(NSString*)location locationname:(NSString*)locationname
 {
-    self.country = country;
     self.location = location;
     self.locationname = locationname;
+    [self changecountry:country];
     
     [self save];
 }
