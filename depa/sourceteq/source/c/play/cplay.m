@@ -9,7 +9,7 @@ static const NSUInteger minitemspull = 3;
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:YES];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedupdater:) name:notupdater object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedupdater:) name:notitemsloaded object:nil];
     
     return self;
 }
@@ -37,8 +37,10 @@ static const NSUInteger minitemspull = 3;
 
 #pragma mark notified
 
--(void)notifiedupdater:(NSNotification*)notification
+-(void)notifieditemsloaded:(NSNotification*)notification
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     self.model = [[msearch alloc] init];
     
     if([self.current isKindOfClass:[cplayload class]])

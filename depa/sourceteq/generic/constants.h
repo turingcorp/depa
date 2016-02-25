@@ -24,7 +24,7 @@
 #define notflowsreload          @"flowsreload"
 #define notimageloaded          @"imageloaded"
 #define notloclistitemfetched   @"loclistitemfetched"
-#define notupdater              @"updater"
+#define notitemsloaded          @"itemsloaded"
 
 // extra
 
