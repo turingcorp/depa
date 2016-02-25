@@ -32,7 +32,7 @@
 {
     dictionary = [NSMutableDictionary dictionary];
     NSString *query = [NSString stringWithFormat:
-                       @"SELECT id, itemid, status, thumbnail "
+                       @"SELECT id, itemid, status "
                        "FROM item "
                        "WHERE countryid=\"%@\" "
                        "ORDER BY id ASC;",
@@ -44,10 +44,9 @@
     {
         NSDictionary *rawitem = rawarray[i];
         NSString *rawitemid = rawitem[@"itemid"];
-        NSString *rawthumbnail = rawitem[@"thumbnail"];
         NSUInteger rawid = [rawitem[@"id"] unsignedIntegerValue];
         item_status rawstatus = (item_status)[rawitem[@"status"] unsignedIntegerValue];
-        mitemitem *item = [[mitemitem alloc] init:rawid itemid:rawitemid status:rawstatus thumbnail:rawthumbnail];
+        mitemitem *item = [[mitemitem alloc] init:rawid itemid:rawitemid status:rawstatus];
         
         [self add:item];
     }
@@ -64,7 +63,7 @@
                        "VALUES(%@, \"%@\", \"%@\", %@, \"%@\");",
                        @(now), self.countryid, itemid, @(status), thumbnail];
     NSUInteger dbid = [db query_identity:query];
-    item = [[mitemitem alloc] init:dbid itemid:itemid status:status thumbnail:thumbnail];
+    item = [[mitemitem alloc] init:dbid itemid:itemid status:status];
     
     [self add:item];
     

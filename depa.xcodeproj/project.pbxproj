@@ -881,6 +881,7 @@
 		DACDA81B1C76073200A37D15 /* m */ = {
 			isa = PBXGroup;
 			children = (
+				DAD5C3911C7FA19B00FF8FDF /* liked */,
 				DA1FBD611C7F45D20038A822 /* item */,
 				DA3172FE1C7CDBB200B6CEF7 /* configtyp */,
 				DA3172F31C7CC89A00B6CEF7 /* configmod */,
@@ -1051,6 +1052,13 @@
 			children = (
 				DAD5C3881C7F9AC500FF8FDF /* vliked.h */,
 				DAD5C3891C7F9AC500FF8FDF /* vliked.m */,
+			);
+			path = liked;
+			sourceTree = "<group>";
+		};
+		DAD5C3911C7FA19B00FF8FDF /* liked */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = liked;
 			sourceTree = "<group>";

@@ -23,7 +23,6 @@
                    {
                        
                        
-                       [[NSNotificationCenter defaultCenter] postNotificationName:<#(nonnull NSString *)#> object:<#(nullable id)#>];
                    });
 }
 
