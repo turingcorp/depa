@@ -30,17 +30,17 @@
                        @"INSERT INTO item "
                        "(created, countryid, itemid, status, thumbnail, title, currency, price, "
                        "meters, rooms, parking, phone, email, latitude, longitude) "
-                       "VALUES(%@, \"%@\", \"%@\", %@, \"%@\", \"%@\", %@, %@, "
+                       "VALUES(%@, \"%@\", \"%@\", %@, \"%@\", \"%@\", \"%@\", %@, "
                        "%@, %@, %@, \"%@\", \"%@\", %@, %@);",
                        @(now), countryid, itemid, @(status), thumbnail, title, currency, price,
                        meters, rooms, parking, phone, email, @(intlatitude), @(intlongitude)];
-    
+
     NSUInteger dbid = [db query_identity:query];
     
     return dbid;
 }
 
-+(NSNumber*)itemswitch:(item_status)status
++(NSNumber*)itemsfor:(item_status)status
 {
     NSString *query = [NSString stringWithFormat:
                        @"SELECT COUNT(id) FROM item WHERE status=%@;",

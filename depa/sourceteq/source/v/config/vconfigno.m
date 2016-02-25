@@ -43,7 +43,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       NSNumber *value = [mdb itemswitch:item_status_no];
+                       NSNumber *value = [mdb itemsfor:item_status_no];
                        NSString *valuestring = [[tools singleton] numbertostring:value];
                        
                        dispatch_async(dispatch_get_main_queue(),

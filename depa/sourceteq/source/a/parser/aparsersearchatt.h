@@ -1,6 +1,6 @@
 #import "appdel.h"
 
-@class aparsersearchatt;
+@class aparsersearchattitem;
 
 @interface aparsersearchatt:NSObject
 
