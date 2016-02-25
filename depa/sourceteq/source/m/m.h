@@ -14,6 +14,7 @@
 #import "mconfiglocation.h"
 #import "mconfigtype.h"
 #import "mconfigmode.h"
+#import "mconfigno.h"
 #import "mconfigloc.h"
 #import "mconfiglocprotocol.h"
 #import "mconfigloclist.h"

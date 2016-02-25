@@ -33,9 +33,9 @@
     [self recall];
 }
 
--(void)viewWillDisappear:(BOOL)animated
+-(void)viewDidDisappear:(BOOL)animated
 {
-    [super viewWillDisappear:animated];
+    [super viewDidDisappear:animated];
     [self stopcall];
 }
 
@@ -83,7 +83,7 @@
     aparsersearch *parser = (aparsersearch*)manager.call.parser;
     [self.play.model stats:parser];
     
-    if(parser.pullagain)
+    if(parser.pullagain && self.play.model.offset < self.play.model.total)
     {
         [self inrecall];
     }

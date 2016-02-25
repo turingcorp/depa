@@ -29,7 +29,6 @@
                                           "ORDER BY id ASC;",
                                           countryid];
                        NSArray *rawarray = [db rows:query];
-                       NSLog(@"%@", rawarray);
                        NSUInteger count = rawarray.count;
                        
                        for(NSUInteger i = 0; i < count; i++)

@@ -100,7 +100,7 @@ static const NSUInteger minitemspull = 3;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       if([self.model count] < minitemspull)
+                       if([self.model count] < minitemspull && self.model.offset < self.model.total)
                        {
                            if(!self.model.busy)
                            {
