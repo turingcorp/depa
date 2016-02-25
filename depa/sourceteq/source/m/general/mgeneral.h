@@ -16,8 +16,8 @@ typedef NS_ENUM(NSUInteger, search_type)
 typedef NS_ENUM(NSUInteger, item_status)
 {
     item_status_none,
-    item_status_favorite,
-    item_status_nolike
+    item_status_like,
+    item_status_no
 };
 
 // analytics

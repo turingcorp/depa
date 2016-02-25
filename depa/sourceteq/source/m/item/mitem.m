@@ -30,13 +30,31 @@
     for(NSUInteger i = 0; i < count; i++)
     {
         NSDictionary *rawitem = rawarray[i];
-        NSString *rawid = rawitem[@"id"];
         NSString *rawitemid = rawitem[@"itemid"];
+        NSUInteger rawid = [rawitem[@"id"] unsignedIntegerValue];
         item_status rawstatus = (item_status)[rawitem[@"status"] unsignedIntegerValue];
         mitemitem *item = [[mitemitem alloc] init:rawid itemid:rawitemid status:rawstatus];
         
         [self add:item];
     }
+}
+
+-(mitemitem*)newitem:(NSString*)itemid
+{
+    mitemitem *item;
+    item_status status = item_status_none;
+    NSUInteger now = [NSDate date].timeIntervalSince1970;
+    NSString *query = [NSString stringWithFormat:
+                       @"INSERT INTO item "
+                       "(created, countryid, itemid, status) "
+                       "values(%@, \"%@\", \"%@\", %@);",
+                       @(now), self.countryid, itemid, @(status)];
+    NSUInteger dbid = [db query_identity:query];
+    item = [[mitemitem alloc] init:dbid itemid:itemid status:status];
+    
+    [self add:item];
+    
+    return item;
 }
 
 -(void)add:(mitemitem*)item

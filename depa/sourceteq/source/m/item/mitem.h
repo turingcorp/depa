@@ -6,6 +6,7 @@
 
 +(instancetype)singleton;
 -(void)load:(NSString*)countryid;
+-(mitemitem*)newitem:(NSString*)itemid;
 -(void)add:(mitemitem*)item;
 -(mitemitem*)item:(NSString*)itemid;
 
