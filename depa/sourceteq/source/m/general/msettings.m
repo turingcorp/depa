@@ -34,8 +34,8 @@
         countryid = @"MLM";
         mode = search_mode_rent;
         type = search_type_apartment;
-        self.location = @"";
-        self.locationname = @"Mexico";
+        self.location = @"state=TUxNUERJUzYwOTQ&";
+        self.locationname = NSLocalizedString(@"settings_original_locationname", nil);
     }
     
     [self loadsearchmode:mode];

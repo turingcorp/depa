@@ -27,7 +27,9 @@
 "config_type_house"="House";
 "config_type_apartment"="Apartment";
 
-"favorites_title"="Favorites";
+"settings_original_locationname"="Mexico City";
+
+"favorites_title"="Likes";
 
 "apicall_error_nodata"="Error connecting to server, try again";
 "apicall_error_parsingjgon"="Error reading server response, try again";

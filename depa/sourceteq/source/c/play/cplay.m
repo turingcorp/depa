@@ -9,7 +9,7 @@ static const NSUInteger minitemspull = 3;
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:YES];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedupdater:) name:notitemsloaded object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifieditemsloaded:) name:notitemsloaded object:nil];
     
     return self;
 }
