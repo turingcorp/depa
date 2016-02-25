@@ -33,3 +33,4 @@
 #import "mconfigtypprotocol.h"
 #import "mconfigtyphouse.h"
 #import "mconfigtypapartment.h"
+#import "mitem.h"

@@ -86,8 +86,9 @@
     return string;
 }
 
--(NSString*)pricetostring:(NSNumber*)number
+-(NSString*)pricetostring:(NSNumber*)number currency:(NSString*)currency
 {
+    [priceformatter setCurrencyCode:currency];
     NSString *string = [priceformatter stringFromNumber:number];
     
     return string;

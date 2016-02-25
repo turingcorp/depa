@@ -9,7 +9,7 @@
 +(UIImage*)qrcode:(NSString*)string;
 -(NSString*)urlencode:(NSString*)string;
 -(NSString*)numbertostring:(NSNumber*)number;
--(NSString*)pricetostring:(NSNumber*)number;
+-(NSString*)pricetostring:(NSNumber*)number currency:(NSString*)currency;
 -(NSNumber*)stringtonumber:(NSString*)string;
 
 @end

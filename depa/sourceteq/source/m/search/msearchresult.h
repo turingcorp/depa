@@ -11,6 +11,7 @@
 @property(strong, nonatomic)aimateqitem *apiimage;
 @property(copy, nonatomic)NSString *itemid;
 @property(copy, nonatomic)NSString *itemtitle;
+@property(copy, nonatomic)NSString *itemcurrency;
 @property(copy, nonatomic)NSNumber *itemprice;
 
 @end

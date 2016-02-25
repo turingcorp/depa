@@ -12,6 +12,14 @@ typedef NS_ENUM(NSUInteger, search_type)
     search_type_apartment
 };
 
+
+typedef NS_ENUM(NSUInteger, item_status)
+{
+    item_status_none,
+    item_status_favorite,
+    item_status_nolike
+};
+
 // analytics
 
 typedef NS_ENUM(NSUInteger, ga_screen)

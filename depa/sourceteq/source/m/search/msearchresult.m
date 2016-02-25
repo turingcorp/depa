@@ -8,6 +8,7 @@
 
     self.itemid = rawitem[@"id"];
     self.itemprice = rawitem[@"price"];
+    self.itemcurrency = rawitem[@"currency_id"];
     
     NSString *itemrawtitle = rawitem[@"title"];
     
