@@ -5,6 +5,8 @@
 #import "acalllocationneigh.h"
 #import "acalldelegate.h"
 #import "aparsersearch.h"
+#import "aparsersearchatt.h"
+#import "aparsersearchattitem.h"
 #import "aparserlocationstate.h"
 #import "aparserlocationcity.h"
 #import "aparserlocationneigh.h"

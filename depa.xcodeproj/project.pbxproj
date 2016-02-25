@@ -127,6 +127,8 @@
 		DAD5C38A1C7F9AC500FF8FDF /* vliked.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3891C7F9AC500FF8FDF /* vliked.m */; };
 		DAD5C38D1C7F9ADD00FF8FDF /* vitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C38C1C7F9ADD00FF8FDF /* vitem.m */; };
 		DAD5C3901C7F9EE300FF8FDF /* mitemliked.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C38F1C7F9EE300FF8FDF /* mitemliked.m */; };
+		DAD5C3941C7FAFD800FF8FDF /* aparsersearchatt.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3931C7FAFD800FF8FDF /* aparsersearchatt.m */; };
+		DAD5C3971C7FAFE500FF8FDF /* aparsersearchattitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3961C7FAFE500FF8FDF /* aparsersearchattitem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -382,6 +384,10 @@
 		DAD5C38C1C7F9ADD00FF8FDF /* vitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitem.m; sourceTree = "<group>"; };
 		DAD5C38E1C7F9EE300FF8FDF /* mitemliked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mitemliked.h; sourceTree = "<group>"; };
 		DAD5C38F1C7F9EE300FF8FDF /* mitemliked.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemliked.m; sourceTree = "<group>"; };
+		DAD5C3921C7FAFD800FF8FDF /* aparsersearchatt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparsersearchatt.h; sourceTree = "<group>"; };
+		DAD5C3931C7FAFD800FF8FDF /* aparsersearchatt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparsersearchatt.m; sourceTree = "<group>"; };
+		DAD5C3951C7FAFE500FF8FDF /* aparsersearchattitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparsersearchattitem.h; sourceTree = "<group>"; };
+		DAD5C3961C7FAFE500FF8FDF /* aparsersearchattitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparsersearchattitem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -642,6 +648,10 @@
 				DA6973231C764C3600A2C6EB /* aparser.m */,
 				DA6973251C764C4700A2C6EB /* aparsersearch.h */,
 				DA6973261C764C4700A2C6EB /* aparsersearch.m */,
+				DAD5C3921C7FAFD800FF8FDF /* aparsersearchatt.h */,
+				DAD5C3931C7FAFD800FF8FDF /* aparsersearchatt.m */,
+				DAD5C3951C7FAFE500FF8FDF /* aparsersearchattitem.h */,
+				DAD5C3961C7FAFE500FF8FDF /* aparsersearchattitem.m */,
 				DA31731E1C7CF65800B6CEF7 /* aparserlocation.h */,
 				DA31731F1C7CF65800B6CEF7 /* aparserlocation.m */,
 				DA31731B1C7CF4BA00B6CEF7 /* aparserlocationstate.h */,
@@ -1294,6 +1304,7 @@
 				DA3173051C7CDBD700B6CEF7 /* mconfigtyphouse.m in Sources */,
 				DAD5C3761C7F85B300FF8FDF /* cconfigitemno.m in Sources */,
 				DA3172FD1C7CC8C600B6CEF7 /* mconfigmodbuy.m in Sources */,
+				DAD5C3971C7FAFE500FF8FDF /* aparsersearchattitem.m in Sources */,
 				DA31731D1C7CF4BA00B6CEF7 /* aparserlocationstate.m in Sources */,
 				DA3172F21C7CC74700B6CEF7 /* vconfigmodecel.m in Sources */,
 				DACDA84E1C76073200A37D15 /* mdbcreate.m in Sources */,
@@ -1301,6 +1312,7 @@
 				DA1FBD541C7E06CA0038A822 /* acalllocationcity.m in Sources */,
 				DA3172F61C7CC8A400B6CEF7 /* mconfigmod.m in Sources */,
 				DAD5C37A1C7F871800FF8FDF /* vconfigitemlike.m in Sources */,
+				DAD5C3941C7FAFD800FF8FDF /* aparsersearchatt.m in Sources */,
 				DA25B18A1C7BE7A900B4BB21 /* vconfigloclistheader.m in Sources */,
 				DA2427B31C77F2DE00FE44B0 /* vplayitemfooter.m in Sources */,
 				DAD5C3901C7F9EE300FF8FDF /* mitemliked.m in Sources */,
