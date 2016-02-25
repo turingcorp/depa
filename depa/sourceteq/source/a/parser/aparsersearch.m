@@ -15,6 +15,8 @@
         NSDictionary *paging = self.validjson[@"paging"];
         NSArray *results = self.validjson[@"results"];
         NSUInteger count = results.count;
+        search_type type = [[msettings singleton].searchtype type];
+        search_mode mode = [[msettings singleton].searchmode type];
         
         for(NSUInteger i = 0; i < count; i++)
         {
@@ -49,8 +51,9 @@
                 {
                     NSString *rawtitleprefix = [rawtitle substringToIndex:1].uppercaseString;
                     NSString *rawtitlesuffix = [rawtitle substringFromIndex:1].lowercaseString;
-                    rawtitle = [NSString stringWithFormat:@"%@%@",
-                                        rawtitleprefix, rawtitlesuffix];
+                    rawtitle = [NSString stringWithFormat:
+                                @"%@%@",
+                                rawtitleprefix, rawtitlesuffix];
                 }
                 
                 rawthumb = [rawthumb stringByReplacingOccurrencesOfString:@"-I." withString:@"-O."];
@@ -125,8 +128,25 @@
                         rawemail = @"";
                     }
                     
-                    [mdb add:rawid country:countryid status:status thumbnail:rawthumb title:rawtitle currency:rawcurrency price:rawprice meters:rawmeters rooms:rawrooms parking:rawparking phone:rawphone email:rawemail latitude:rawlatitude longitude:rawlongitude];
+                    mdbitem *dbitem = [[mdbitem alloc] init];
+                    dbitem.itemid = rawid;
+                    dbitem.countryid = countryid;
+                    dbitem.thumbnail = rawthumb;
+                    dbitem.title = rawtitle;
+                    dbitem.currency = rawcurrency;
+                    dbitem.price = rawprice;
+                    dbitem.meters = rawmeters;
+                    dbitem.rooms = rawrooms;
+                    dbitem.parking = rawparking;
+                    dbitem.phone = rawphone;
+                    dbitem.email = rawemail;
+                    dbitem.latitude = rawlatitude;
+                    dbitem.longitude = rawlongitude;
+                    dbitem.status = status;
+                    dbitem.mode = mode;
+                    dbitem.type = type;
                     
+                    dbid = [mdb add:dbitem];
                     item = [[mitemitem alloc] init:dbid itemid:rawid status:status];
                     [[mitem singleton] add:item];
                 }

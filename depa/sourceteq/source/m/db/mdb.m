@@ -21,19 +21,22 @@
     [mdbcreate create];
 }
 
-+(NSUInteger)add:(NSString*)itemid country:(NSString*)countryid status:(item_status)status thumbnail:(NSString*)thumbnail title:(NSString*)title currency:(NSString*)currency price:(NSNumber*)price meters:(NSNumber*)meters rooms:(NSNumber*)rooms parking:(NSNumber*)parking phone:(NSString*)phone email:(NSString*)email latitude:(double)latitude longitude:(double)longitude
++(NSUInteger)add:(mdbitem*)item
 {
     NSUInteger now = [NSDate date].timeIntervalSince1970;
-    NSInteger intlatitude = latitude * coorddelta;
-    NSInteger intlongitude = longitude * coorddelta;
+    NSInteger intlatitude = item.latitude * coorddelta;
+    NSInteger intlongitude = item.longitude * coorddelta;
     NSString *query = [NSString stringWithFormat:
                        @"INSERT INTO item "
                        "(created, countryid, itemid, status, thumbnail, title, currency, price, "
-                       "meters, rooms, parking, phone, email, latitude, longitude) "
+                       "meters, rooms, parking, phone, email, latitude, longitude, "
+                       "searchmode, searchtype) "
                        "VALUES(%@, \"%@\", \"%@\", %@, \"%@\", \"%@\", \"%@\", %@, "
-                       "%@, %@, %@, \"%@\", \"%@\", %@, %@);",
-                       @(now), countryid, itemid, @(status), thumbnail, title, currency, price,
-                       meters, rooms, parking, phone, email, @(intlatitude), @(intlongitude)];
+                       "%@, %@, %@, \"%@\", \"%@\", %@, %@, "
+                       "%@, %@);",
+                       @(now), item.countryid, item.itemid, @(item.status), item.thumbnail, item.title, item.currency, item.price,
+                       item.meters, item.rooms, item.parking, item.phone, item.email, @(intlatitude), @(intlongitude),
+                       @(item.mode), @(item.type)];
 
     NSUInteger dbid = [db query_identity:query];
     

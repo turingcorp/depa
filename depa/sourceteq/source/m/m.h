@@ -2,6 +2,7 @@
 #import "mdirs.h"
 #import "mdb.h"
 #import "mdbcreate.h"
+#import "mdbitem.h"
 #import "msettings.h"
 #import "msearch.h"
 #import "msearchresult.h"

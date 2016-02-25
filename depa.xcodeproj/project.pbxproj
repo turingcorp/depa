@@ -129,6 +129,7 @@
 		DAD5C3901C7F9EE300FF8FDF /* mitemliked.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C38F1C7F9EE300FF8FDF /* mitemliked.m */; };
 		DAD5C3941C7FAFD800FF8FDF /* aparsersearchatt.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3931C7FAFD800FF8FDF /* aparsersearchatt.m */; };
 		DAD5C3971C7FAFE500FF8FDF /* aparsersearchattitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3961C7FAFE500FF8FDF /* aparsersearchattitem.m */; };
+		DAD5C39A1C7FC34900FF8FDF /* mdbitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3991C7FC34900FF8FDF /* mdbitem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -388,6 +389,8 @@
 		DAD5C3931C7FAFD800FF8FDF /* aparsersearchatt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparsersearchatt.m; sourceTree = "<group>"; };
 		DAD5C3951C7FAFE500FF8FDF /* aparsersearchattitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparsersearchattitem.h; sourceTree = "<group>"; };
 		DAD5C3961C7FAFE500FF8FDF /* aparsersearchattitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparsersearchattitem.m; sourceTree = "<group>"; };
+		DAD5C3981C7FC34900FF8FDF /* mdbitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbitem.h; sourceTree = "<group>"; };
+		DAD5C3991C7FC34900FF8FDF /* mdbitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbitem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -915,6 +918,8 @@
 				DACDA81E1C76073200A37D15 /* mdb.m */,
 				DACDA81F1C76073200A37D15 /* mdbcreate.h */,
 				DACDA8201C76073200A37D15 /* mdbcreate.m */,
+				DAD5C3981C7FC34900FF8FDF /* mdbitem.h */,
+				DAD5C3991C7FC34900FF8FDF /* mdbitem.m */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -1299,6 +1304,7 @@
 				DACDA8511C76073200A37D15 /* valert.m in Sources */,
 				DACDA84B1C76073200A37D15 /* crate.m in Sources */,
 				DA1FBD671C7F514E0038A822 /* mitemitem.m in Sources */,
+				DAD5C39A1C7FC34900FF8FDF /* mdbitem.m in Sources */,
 				DA25B1501C7B82C800B4BB21 /* mconfiglocation.m in Sources */,
 				DACDA8531C76073200A37D15 /* viewbase.m in Sources */,
 				DA3173051C7CDBD700B6CEF7 /* mconfigtyphouse.m in Sources */,
