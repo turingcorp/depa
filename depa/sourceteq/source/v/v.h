@@ -28,3 +28,5 @@
 #import "vconfigmodecel.h"
 #import "vconfigtype.h"
 #import "vconfigtypecel.h"
+#import "vconfiglike.h"
+#import "vconfigno.h"

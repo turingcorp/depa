@@ -17,6 +17,8 @@
 		DA1FBD671C7F514E0038A822 /* mitemitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD661C7F514E0038A822 /* mitemitem.m */; };
 		DA1FBD6A1C7F6EEA0038A822 /* mconfigno.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD691C7F6EEA0038A822 /* mconfigno.m */; };
 		DA1FBD6D1C7F72B70038A822 /* mconfiglike.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD6C1C7F72B70038A822 /* mconfiglike.m */; };
+		DA1FBD701C7F73F90038A822 /* vconfiglike.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD6F1C7F73F90038A822 /* vconfiglike.m */; };
+		DA1FBD731C7F74050038A822 /* vconfigno.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD721C7F74050038A822 /* vconfigno.m */; };
 		DA2427A71C77A9FF00FE44B0 /* vplayitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A61C77A9FF00FE44B0 /* vplayitem.m */; };
 		DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A91C77D14900FE44B0 /* aimateq.m */; };
 		DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */; };
@@ -140,6 +142,10 @@
 		DA1FBD691C7F6EEA0038A822 /* mconfigno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigno.m; sourceTree = "<group>"; };
 		DA1FBD6B1C7F72B70038A822 /* mconfiglike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfiglike.h; sourceTree = "<group>"; };
 		DA1FBD6C1C7F72B70038A822 /* mconfiglike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfiglike.m; sourceTree = "<group>"; };
+		DA1FBD6E1C7F73F90038A822 /* vconfiglike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfiglike.h; sourceTree = "<group>"; };
+		DA1FBD6F1C7F73F90038A822 /* vconfiglike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfiglike.m; sourceTree = "<group>"; };
+		DA1FBD711C7F74050038A822 /* vconfigno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigno.h; sourceTree = "<group>"; };
+		DA1FBD721C7F74050038A822 /* vconfigno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigno.m; sourceTree = "<group>"; };
 		DA2427A51C77A9FF00FE44B0 /* vplayitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitem.h; sourceTree = "<group>"; };
 		DA2427A61C77A9FF00FE44B0 /* vplayitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitem.m; sourceTree = "<group>"; };
 		DA2427A81C77D14900FE44B0 /* aimateq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aimateq.h; sourceTree = "<group>"; };
@@ -410,6 +416,10 @@
 				DA31730D1C7CDFD800B6CEF7 /* vconfigtype.m */,
 				DA31730F1C7CDFE200B6CEF7 /* vconfigtypecel.h */,
 				DA3173101C7CDFE200B6CEF7 /* vconfigtypecel.m */,
+				DA1FBD6E1C7F73F90038A822 /* vconfiglike.h */,
+				DA1FBD6F1C7F73F90038A822 /* vconfiglike.m */,
+				DA1FBD711C7F74050038A822 /* vconfigno.h */,
+				DA1FBD721C7F74050038A822 /* vconfigno.m */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -1096,6 +1106,7 @@
 				DA3172EC1C7CBE9B00B6CEF7 /* sconfiglocstate.m in Sources */,
 				DA25B18D1C7BE7B300B4BB21 /* vconfigloclistcel.m in Sources */,
 				DA9141881C766669004BE5D1 /* vplay.m in Sources */,
+				DA1FBD731C7F74050038A822 /* vconfigno.m in Sources */,
 				DA3172D01C7C9DD600B6CEF7 /* mcountry.m in Sources */,
 				DA2427B91C783D7A00FE44B0 /* vplayitemimage.m in Sources */,
 				DACDA84A1C76073200A37D15 /* cmain.m in Sources */,
@@ -1147,6 +1158,7 @@
 				DA25B1751C7BBA8500B4BB21 /* mconfigloclist.m in Sources */,
 				DA1FBD601C7E43E00038A822 /* aparserlocationneigh.m in Sources */,
 				DA9141A81C769738004BE5D1 /* mplaymenuno.m in Sources */,
+				DA1FBD701C7F73F90038A822 /* vconfiglike.m in Sources */,
 				DA1FBD571C7E078C0038A822 /* aparserlocationcity.m in Sources */,
 				DA25B17E1C7BBECE00B4BB21 /* vconfiglocmap.m in Sources */,
 				DA6973061C760D0600A2C6EB /* cplay.m in Sources */,

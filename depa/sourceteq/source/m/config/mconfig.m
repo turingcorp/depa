@@ -12,7 +12,9 @@
     array = @[
               [[mconfigtype alloc] init],
               [[mconfigmode alloc] init],
-              [[mconfiglocation alloc] init]
+              [[mconfiglocation alloc] init],
+              [[mconfiglike alloc] init],
+              [[mconfigno alloc] init]
               ];
     
     return self;
