@@ -151,10 +151,7 @@
 
 -(void)accept
 {
-    [msettings singleton].country = self.model.country;
-    [msettings singleton].location = [self.model path];
-    [msettings singleton].locationname = self.model.title;
-    [[msettings singleton] save];
+    [[msettings singleton] changecountry:self.model.country location:[self.model path] locationname:self.model.title];
     [[cmain singleton] popViewControllerAnimated:YES];
 }
 

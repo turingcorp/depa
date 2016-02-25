@@ -73,6 +73,7 @@
 -(void)changecountry:(mcountryitem*)country
 {
     self.country = country;
+    [[mitem singleton] load:country.countryid];
 }
 
 #pragma mark public
