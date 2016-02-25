@@ -53,6 +53,12 @@
     self.play.model.busy = NO;
 }
 
+-(void)inrecall
+{
+    amanager *callmanager = [amanager call:[[acallsearch alloc] init:[self.play.model variables]] delegate:self];
+    self.callmanager = callmanager;
+}
+
 #pragma mark public
 
 -(void)recall
@@ -64,8 +70,7 @@
         if(!self.play.model.busy)
         {
             self.play.model.busy = YES;
-            amanager *callmanager = [amanager call:[[acallsearch alloc] init:[self.play.model variables]] delegate:self];
-            self.callmanager = callmanager;
+            [self inrecall];
         }
     }
 }
@@ -75,14 +80,24 @@
 
 -(void)callsuccess:(amanager*)manager
 {
-    [self.play.model join:(aparsersearch*)manager.call.parser];
-    self.play.model.busy = NO;
+    aparsersearch *parser = (aparsersearch*)manager.call.parser;
+    [self.play.model stats:parser];
     
-    dispatch_async(dispatch_get_main_queue(),
-                   ^
-                   {
-                       [self.play playno];
-                   });
+    if(parser.pullagain)
+    {
+        [self inrecall];
+    }
+    else
+    {
+        [self.play.model join:parser];
+        self.play.model.busy = NO;
+        
+        dispatch_async(dispatch_get_main_queue(),
+                       ^
+                       {
+                           [self.play playno];
+                       });
+    }
 }
 
 -(void)call:(amanager*)manager error:(NSString*)error

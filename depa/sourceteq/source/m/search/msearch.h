@@ -9,6 +9,7 @@
 -(msearchresult*)item:(NSUInteger)index;
 -(void)remove:(NSUInteger)index;
 -(NSString*)variables;
+-(void)stats:(aparsersearch*)searchresults;
 -(void)join:(aparsersearch*)searchresults;
 -(msearchresult*)next;
 

@@ -57,10 +57,14 @@ static const NSUInteger itemslimit = 10;
     return string;
 }
 
--(void)join:(aparsersearch*)searchresults
+-(void)stats:(aparsersearch*)searchresults
 {
     self.total = searchresults.total;
-    self.offset += searchresults.limit;
+    self.offset = searchresults.offset + self.limit;
+}
+
+-(void)join:(aparsersearch*)searchresults
+{
     [array addObjectsFromArray:searchresults.array];
 }
 

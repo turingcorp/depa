@@ -7,5 +7,6 @@
 @property(nonatomic)NSUInteger total;
 @property(nonatomic)NSUInteger offset;
 @property(nonatomic)NSUInteger limit;
+@property(nonatomic)BOOL pullagain;
 
 @end

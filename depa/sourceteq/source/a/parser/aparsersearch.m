@@ -6,6 +6,8 @@
 {
     [super parse:json];
     
+    self.pullagain = NO;
+    
     if(self.validjson)
     {
         self.array = [NSMutableArray array];
@@ -53,6 +55,11 @@
 
                 [self.array addObject:searchresult];
             }
+        }
+        
+        if(results.count && !self.array.count)
+        {
+            self.pullagain = YES;
         }
         
         self.total = [paging[@"total"] unsignedIntegerValue];
