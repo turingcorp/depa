@@ -123,6 +123,7 @@
 		DAD5C37A1C7F871800FF8FDF /* vconfigitemlike.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3791C7F871800FF8FDF /* vconfigitemlike.m */; };
 		DAD5C37D1C7F872600FF8FDF /* vconfigitemno.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C37C1C7F872600FF8FDF /* vconfigitemno.m */; };
 		DAD5C3811C7F99CA00FF8FDF /* cliked.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3801C7F99CA00FF8FDF /* cliked.m */; };
+		DAD5C3851C7F9A3400FF8FDF /* citem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3841C7F9A3400FF8FDF /* citem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -370,6 +371,8 @@
 		DAD5C37C1C7F872600FF8FDF /* vconfigitemno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigitemno.m; sourceTree = "<group>"; };
 		DAD5C37F1C7F99CA00FF8FDF /* cliked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cliked.h; sourceTree = "<group>"; };
 		DAD5C3801C7F99CA00FF8FDF /* cliked.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cliked.m; sourceTree = "<group>"; };
+		DAD5C3831C7F9A3400FF8FDF /* citem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = citem.h; sourceTree = "<group>"; };
+		DAD5C3841C7F9A3400FF8FDF /* citem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = citem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1015,6 +1018,8 @@
 		DAD5C3821C7F9A1400FF8FDF /* item */ = {
 			isa = PBXGroup;
 			children = (
+				DAD5C3831C7F9A3400FF8FDF /* citem.h */,
+				DAD5C3841C7F9A3400FF8FDF /* citem.m */,
 			);
 			path = item;
 			sourceTree = "<group>";
@@ -1188,6 +1193,7 @@
 				DACDA84D1C76073200A37D15 /* mdb.m in Sources */,
 				DA91418E1C766B77004BE5D1 /* vplayload.m in Sources */,
 				DACDA8521C76073200A37D15 /* vblur.m in Sources */,
+				DAD5C3851C7F9A3400FF8FDF /* citem.m in Sources */,
 				DA25B16B1C7BB0B900B4BB21 /* vconfiglocmenu.m in Sources */,
 				DA25B1681C7BAB9700B4BB21 /* vconfigloc.m in Sources */,
 				DACDA8451C76073200A37D15 /* analytics.m in Sources */,
