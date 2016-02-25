@@ -32,7 +32,8 @@
 {
     dictionary = [NSMutableDictionary dictionary];
     NSString *query = [NSString stringWithFormat:
-                       @"SELECT id, itemid, status FROM item "
+                       @"SELECT id, itemid, status, thumbnail "
+                       "FROM item "
                        "WHERE countryid=\"%@\" "
                        "ORDER BY id ASC;",
                        self.countryid];
@@ -43,26 +44,27 @@
     {
         NSDictionary *rawitem = rawarray[i];
         NSString *rawitemid = rawitem[@"itemid"];
+        NSString *rawthumbnail = rawitem[@"thumbnail"];
         NSUInteger rawid = [rawitem[@"id"] unsignedIntegerValue];
         item_status rawstatus = (item_status)[rawitem[@"status"] unsignedIntegerValue];
-        mitemitem *item = [[mitemitem alloc] init:rawid itemid:rawitemid status:rawstatus];
+        mitemitem *item = [[mitemitem alloc] init:rawid itemid:rawitemid status:rawstatus thumbnail:rawthumbnail];
         
         [self add:item];
     }
 }
 
--(mitemitem*)newitem:(NSString*)itemid
+-(mitemitem*)newitem:(NSString*)itemid thumbnail:(NSString*)thumbnail
 {
     mitemitem *item;
     item_status status = item_status_none;
     NSUInteger now = [NSDate date].timeIntervalSince1970;
     NSString *query = [NSString stringWithFormat:
                        @"INSERT INTO item "
-                       "(created, countryid, itemid, status) "
-                       "values(%@, \"%@\", \"%@\", %@);",
-                       @(now), self.countryid, itemid, @(status)];
+                       "(created, countryid, itemid, status, thumbnail) "
+                       "VALUES(%@, \"%@\", \"%@\", %@, \"%@\");",
+                       @(now), self.countryid, itemid, @(status), thumbnail];
     NSUInteger dbid = [db query_identity:query];
-    item = [[mitemitem alloc] init:dbid itemid:itemid status:status];
+    item = [[mitemitem alloc] init:dbid itemid:itemid status:status thumbnail:thumbnail];
     
     [self add:item];
     

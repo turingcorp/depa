@@ -1,6 +1,6 @@
 #import "appdel.h"
 #import "viewbase.h"
 
-@interface vliked:viewbase
+@interface vliked:viewbase<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @end

@@ -2,12 +2,13 @@
 
 @implementation mitemitem
 
--(instancetype)init:(NSUInteger)dbid itemid:(NSString*)itemid status:(item_status)status
+-(instancetype)init:(NSUInteger)dbid itemid:(NSString*)itemid status:(item_status)status thumbnail:(NSString*)thumbnail
 {
     self = [super init];
     self.dbid = dbid;
     self.itemid = itemid;
     self.status = status;
+    self.thumbnail = thumbnail;
     
     return self;
 }
