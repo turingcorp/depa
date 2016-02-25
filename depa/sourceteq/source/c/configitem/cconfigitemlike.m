@@ -10,7 +10,7 @@
 
 -(void)loadView
 {
-    self.view = [[vconfigloc alloc] init:self];
+    self.view = [[vconfigitemlike alloc] init:self];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle

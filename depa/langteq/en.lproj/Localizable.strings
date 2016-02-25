@@ -28,6 +28,8 @@
 "config_type_apartment"="Apartment";
 "config_item_like_title"="Likes";
 "config_item_no_title"="Discarded";
+"config_item_no_info"="Discarded publications are excluded while searching and never shown\n\nClear the discarded list to play all the publications again";
+"config_item_no_button"="Clear list";
 
 "settings_original_locationname"="Mexico City";
 
