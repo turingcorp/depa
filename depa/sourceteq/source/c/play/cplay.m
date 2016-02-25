@@ -7,10 +7,16 @@ static const NSUInteger minitemspull = 3;
 -(instancetype)init
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    self.model = [[msearch alloc] init];
     [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:YES];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedupdater:) name:notupdater object:nil];
+    
     return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -27,6 +33,22 @@ static const NSUInteger minitemspull = 3;
 {
     [super viewWillDisappear:animated];
     [self stopcall];
+}
+
+#pragma mark notified
+
+-(void)notifiedupdater:(NSNotification*)notification
+{
+    self.model = [[msearch alloc] init];
+    
+    if([self.current isKindOfClass:[cplayload class]])
+    {
+        dispatch_async(dispatch_get_main_queue(),
+                       ^
+                       {
+                           [(cplayload*)self.current recall];
+                       });
+    }
 }
 
 #pragma mark functionality

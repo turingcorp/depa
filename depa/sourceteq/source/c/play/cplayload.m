@@ -59,11 +59,14 @@
 {
     [self.viewload showloading];
     
-    if(!self.play.model.busy)
+    if(self.play.model)
     {
-        self.play.model.busy = YES;
-        amanager *callmanager = [amanager call:[[acallsearch alloc] init:[self.play.model variables]] delegate:self];
-        self.callmanager = callmanager;
+        if(!self.play.model.busy)
+        {
+            self.play.model.busy = YES;
+            amanager *callmanager = [amanager call:[[acallsearch alloc] init:[self.play.model variables]] delegate:self];
+            self.callmanager = callmanager;
+        }
     }
 }
 
