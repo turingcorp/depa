@@ -5,12 +5,12 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setTitle:NSLocalizedString(@"config_item_like_title", nil)];
+    [self setTitle:NSLocalizedString(@"liked_title", nil)];
 }
 
 -(void)loadView
 {
-    self.view = [[vconfigitemlike alloc] init:self];
+    self.view = [[vliked alloc] init:self];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle

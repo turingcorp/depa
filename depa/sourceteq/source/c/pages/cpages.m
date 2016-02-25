@@ -76,7 +76,7 @@
 
 -(void)showfavorites:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
-    [self setTitle:NSLocalizedString(@"favorites_title", nil)];
+    [self setTitle:NSLocalizedString(@"liked_title", nil)];
     
     self.itemplay.tag = UIPageViewControllerNavigationDirectionReverse;
     [self changecontroller:[[UIViewController alloc] init] direction:direction animated:animated];

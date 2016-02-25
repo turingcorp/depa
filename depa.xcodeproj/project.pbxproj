@@ -124,6 +124,8 @@
 		DAD5C37D1C7F872600FF8FDF /* vconfigitemno.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C37C1C7F872600FF8FDF /* vconfigitemno.m */; };
 		DAD5C3811C7F99CA00FF8FDF /* cliked.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3801C7F99CA00FF8FDF /* cliked.m */; };
 		DAD5C3851C7F9A3400FF8FDF /* citem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3841C7F9A3400FF8FDF /* citem.m */; };
+		DAD5C38A1C7F9AC500FF8FDF /* vliked.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3891C7F9AC500FF8FDF /* vliked.m */; };
+		DAD5C38D1C7F9ADD00FF8FDF /* vitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C38C1C7F9ADD00FF8FDF /* vitem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -373,6 +375,10 @@
 		DAD5C3801C7F99CA00FF8FDF /* cliked.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cliked.m; sourceTree = "<group>"; };
 		DAD5C3831C7F9A3400FF8FDF /* citem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = citem.h; sourceTree = "<group>"; };
 		DAD5C3841C7F9A3400FF8FDF /* citem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = citem.m; sourceTree = "<group>"; };
+		DAD5C3881C7F9AC500FF8FDF /* vliked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vliked.h; sourceTree = "<group>"; };
+		DAD5C3891C7F9AC500FF8FDF /* vliked.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vliked.m; sourceTree = "<group>"; };
+		DAD5C38B1C7F9ADD00FF8FDF /* vitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitem.h; sourceTree = "<group>"; };
+		DAD5C38C1C7F9ADD00FF8FDF /* vitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -928,6 +934,8 @@
 		DACDA82B1C76073200A37D15 /* v */ = {
 			isa = PBXGroup;
 			children = (
+				DAD5C3861C7F9AB200FF8FDF /* item */,
+				DAD5C3871C7F9AB200FF8FDF /* liked */,
 				DAD5C3771C7F870C00FF8FDF /* configitem */,
 				DA25B1621C7BAB7A00B4BB21 /* configloc */,
 				DA25B1421C7B7E2D00B4BB21 /* config */,
@@ -1022,6 +1030,24 @@
 				DAD5C3841C7F9A3400FF8FDF /* citem.m */,
 			);
 			path = item;
+			sourceTree = "<group>";
+		};
+		DAD5C3861C7F9AB200FF8FDF /* item */ = {
+			isa = PBXGroup;
+			children = (
+				DAD5C38B1C7F9ADD00FF8FDF /* vitem.h */,
+				DAD5C38C1C7F9ADD00FF8FDF /* vitem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		DAD5C3871C7F9AB200FF8FDF /* liked */ = {
+			isa = PBXGroup;
+			children = (
+				DAD5C3881C7F9AC500FF8FDF /* vliked.h */,
+				DAD5C3891C7F9AC500FF8FDF /* vliked.m */,
+			);
+			path = liked;
 			sourceTree = "<group>";
 		};
 		DE15BEF0973E01072524BBA8 /* Frameworks */ = {
@@ -1182,6 +1208,7 @@
 				DA25B1481C7B80CE00B4BB21 /* vconfigcel.m in Sources */,
 				DA3172DB1C7CA49E00B6CEF7 /* mcountryitemhouse.m in Sources */,
 				DA31730B1C7CDF1A00B6CEF7 /* mconfigtypapartment.m in Sources */,
+				DAD5C38A1C7F9AC500FF8FDF /* vliked.m in Sources */,
 				DA25B1871C7BE43B00B4BB21 /* mconfigloclistitem.m in Sources */,
 				DA25B15C1C7B8EEA00B4BB21 /* vconfiglocation.m in Sources */,
 				DA3172D31C7C9DDF00B6CEF7 /* mcountryitem.m in Sources */,
@@ -1201,6 +1228,7 @@
 				DA25B1531C7B82D300B4BB21 /* mconfigtype.m in Sources */,
 				DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */,
 				DA3173111C7CDFE200B6CEF7 /* vconfigtypecel.m in Sources */,
+				DAD5C38D1C7F9ADD00FF8FDF /* vitem.m in Sources */,
 				DA3172D81C7CA49200B6CEF7 /* mcountryitemapartment.m in Sources */,
 				DA1FBD6A1C7F6EEA0038A822 /* mconfigno.m in Sources */,
 				DA6973201C764B6100A2C6EB /* amanager.m in Sources */,
