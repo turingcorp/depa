@@ -20,11 +20,14 @@
             mitemitem *item;
             NSDictionary *itemresults =  results[i];
             NSString *iditemresults = itemresults[@"id"];
+            NSString *thumbitemresults = itemresults[@"thumbnail"];
+            thumbitemresults = [thumbitemresults stringByReplacingOccurrencesOfString:@"I.jpg" withString:@"O.jpg"];
+            
             item = [[mitem singleton] item:iditemresults];
             
             if(!item)
             {
-                item = [[mitem singleton] newitem:iditemresults];
+                item = [[mitem singleton] newitem:iditemresults thumbnail:thumbitemresults];
             }
             
             if(item.status == item_status_none)
@@ -32,7 +35,6 @@
                 msearchresult *searchresult = [[msearchresult alloc] init];
                 NSString *currencyitemresults = itemresults[@"currency_id"];
                 NSString *titleitemresults = itemresults[@"title"];
-                NSString *thumbitemresults = itemresults[@"thumbnail"];
                 NSNumber *priceitemresults = itemresults[@"price"];
                 aimateqitem *rawimage;
                 
@@ -44,7 +46,6 @@
                                         rawtitleprefix, rawtitlesuffix];
                 }
                 
-                thumbitemresults = [thumbitemresults stringByReplacingOccurrencesOfString:@"I.jpg" withString:@"O.jpg"];
                 rawimage = [[aimateqitem alloc] init:thumbitemresults];
                 
                 searchresult.item = item;
