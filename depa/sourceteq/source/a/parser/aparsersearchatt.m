@@ -66,4 +66,24 @@
     return item;
 }
 
+-(aparsersearchattitem*)itemfor:(search_attr)attr
+{
+    aparsersearchattitem *item;
+    NSUInteger count = [self count];
+    
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        aparsersearchattitem *initem = [self item:i];
+        
+        if(initem.attr == attr)
+        {
+            item = initem;
+            
+            break;
+        }
+    }
+    
+    return item;
+}
+
 @end

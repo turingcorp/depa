@@ -20,6 +20,9 @@
         {
             mitemitem *item;
             NSDictionary *itemresults =  results[i];
+            NSDictionary *rawaddress;
+            NSDictionary *rawlocation;
+            NSArray *rawattributes;
             NSString *rawid = itemresults[@"id"];
             NSString *rawthumb;
             NSString *rawtitle;
@@ -30,8 +33,8 @@
             NSNumber *rawmeters;
             NSNumber *rawrooms;
             NSNumber *rawparking;
-            NSNumber *rawlatitude;
-            NSNumber *rawlongitude;
+            double rawlatitude = 0;
+            double rawlongitude = 0;
             
             item = [[mitem singleton] item:rawid];
 
@@ -56,8 +59,73 @@
                 {
                     NSUInteger dbid;
                     item_status status = item_status_none;
+                    rawattributes = itemresults[@"attributes"];
+                    rawaddress = itemresults[@"address"];
+                    rawlocation = itemresults[@"location"];
+                    aparsersearchatt *attributes = [[aparsersearchatt alloc] init:rawattributes];
+                    aparsersearchattitem *attmeters = [attributes itemfor:search_attr_mtrs];
+                    aparsersearchattitem *attrooms = [attributes itemfor:search_attr_rooms];
                     
-                    [mdb add:rawid country:countryid status:status thumbnail:rawthumb title:rawtitle currency:rawcurrency price:rawprice meters:rawmeters rooms:<#(NSNumber *)#> parking:<#(NSNumber *)#> phone:<#(NSString *)#> email:<#(NSString *)#> latitude:<#(double)#> longitude:<#(double)#>];
+                    if(attmeters)
+                    {
+                        NSUInteger integermeters = attmeters.value.integerValue;
+                        rawmeters = @(integermeters);
+                    }
+                    
+                    if(attrooms)
+                    {
+                        NSUInteger integerrooms = attrooms.value.integerValue;
+                        rawrooms = @(integerrooms);
+                    }
+                    
+                    if(rawaddress)
+                    {
+                        NSString *rawinphone1 = rawaddress[@"phone1"];
+                        
+                        if(rawinphone1 && rawinphone1.length > 1)
+                        {
+                            rawphone = rawinphone1;
+                        }
+                    }
+                    
+                    if(rawlocation)
+                    {
+                        NSNumber *rawinlatitude = rawlocation[@"latitude"];
+                        NSNumber *rawinlongitude = rawlocation[@"longitude"];
+                        
+                        if(rawinlatitude && rawinlongitude)
+                        {
+                            rawlatitude = rawinlatitude.doubleValue;
+                            rawlongitude = rawinlongitude.doubleValue;
+                        }
+                    }
+                    
+                    if(!rawmeters)
+                    {
+                        rawmeters = @(0);
+                    }
+                    
+                    if(!rawrooms)
+                    {
+                        rawrooms = @(0);
+                    }
+                    
+                    if(!rawparking)
+                    {
+                        rawparking = @(0);
+                    }
+                    
+                    if(!rawphone)
+                    {
+                        rawphone = @"";
+                    }
+                    
+                    if(!rawemail)
+                    {
+                        rawemail = @"";
+                    }
+                    
+                    [mdb add:rawid country:countryid status:status thumbnail:rawthumb title:rawtitle currency:rawcurrency price:rawprice meters:rawmeters rooms:rawrooms parking:rawparking phone:rawphone email:rawemail latitude:rawlatitude longitude:rawlongitude];
                     
                     item = [[mitemitem alloc] init:dbid itemid:rawid status:status];
                     [[mitem singleton] add:item];
