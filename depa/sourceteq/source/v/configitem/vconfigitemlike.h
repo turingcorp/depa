@@ -1,6 +1,6 @@
 #import "appdel.h"
 #import "viewbase.h"
 
-@interface vconfigitemlike:viewbase
+@interface vconfigitemlike:viewbase<UIAlertViewDelegate>
 
 @end
