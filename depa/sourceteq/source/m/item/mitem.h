@@ -4,7 +4,8 @@
 
 @interface mitem:NSObject
 
--(instancetype)init:(NSString*)countryid;
++(instancetype)singleton;
+-(void)load:(NSString*)countryid;
 -(void)add:(mitemitem*)item;
 -(mitemitem*)item:(NSString*)itemid;
 

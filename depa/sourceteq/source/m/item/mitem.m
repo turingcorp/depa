@@ -5,10 +5,19 @@
     NSMutableDictionary *dictionary;
 }
 
--(instancetype)init:(NSString*)countryid
++(instancetype)singleton
 {
-    self = [super init];
+    static mitem *single;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^(void) { single = [[self alloc] init]; });
     
+    return single;
+}
+
+#pragma mark public
+
+-(void)load:(NSString*)countryid
+{
     dictionary = [NSMutableDictionary dictionary];
     NSString *query = [NSString stringWithFormat:
                        @"SELECT id, itemid, status FROM item "
@@ -28,11 +37,7 @@
         
         [self add:item];
     }
-    
-    return self;
 }
-
-#pragma mark public
 
 -(void)add:(mitemitem*)item
 {
