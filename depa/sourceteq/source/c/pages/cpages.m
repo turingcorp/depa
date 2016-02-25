@@ -79,7 +79,7 @@
     [self setTitle:NSLocalizedString(@"liked_title", nil)];
     
     self.itemplay.tag = UIPageViewControllerNavigationDirectionReverse;
-    [self changecontroller:[[UIViewController alloc] init] direction:direction animated:animated];
+    [self changecontroller:[[cliked alloc] init] direction:direction animated:animated];
     [self.navigationItem setRightBarButtonItem:nil];
     [self.navigationItem setLeftBarButtonItem:self.itemplay];
 }

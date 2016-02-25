@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import "vconfigcelprotocol.h"
 
 @class cconfig;
 @class vconfigcel;
@@ -7,7 +8,7 @@
 
 -(BOOL)selectable;
 -(NSUInteger)cellheight;
--(UIView*)overview;
+-(UIView<vconfigcelprotocol>*)overview;
 
 @optional
 
