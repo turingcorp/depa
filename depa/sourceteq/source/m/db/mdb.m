@@ -43,6 +43,15 @@
     return dbid;
 }
 
++(NSArray*)itemsfor:(item_status)status
+{
+    NSMutableArray *array = [NSMutableArray array];
+    
+    
+    
+    return array;
+}
+
 +(NSNumber*)itemsfor:(item_status)status
 {
     NSString *query = [NSString stringWithFormat:

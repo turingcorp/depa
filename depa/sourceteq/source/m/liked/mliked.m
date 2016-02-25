@@ -1,6 +1,6 @@
-#import "mitemliked.h"
+#import "mliked.h"
 
-@implementation mitemliked
+@implementation mliked
 {
     NSMutableArray *array;
 }
@@ -9,7 +9,7 @@
 {
     self = [super init];
     
-    array = [NSMutableArray array];
+    [self load];
     
     return self;
 }
@@ -21,8 +21,11 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
+                       array = [NSMutableArray array];
+                       NSString *query = [NSString stringWithFormat:
+                                          @"SELECT "];
                        
-                       
+                       [[NSNotificationCenter defaultCenter] postNotificationName:notlikedloaded object:nil];
                    });
 }
 
@@ -35,9 +38,9 @@
     return count;
 }
 
--(mitemitem*)item:(NSUInteger)index
+-(mlikeditem*)item:(NSUInteger)index
 {
-    mitemitem *item = array[index];
+    mlikeditem *item = array[index];
     
     return item;
 }
