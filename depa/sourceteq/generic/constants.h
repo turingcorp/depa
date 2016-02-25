@@ -17,6 +17,7 @@
 // sizes
 
 #define deltaline               300
+#define coorddelta              1000000.0
 
 // notifications
 

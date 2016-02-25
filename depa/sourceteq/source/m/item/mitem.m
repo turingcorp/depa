@@ -52,24 +52,6 @@
     }
 }
 
--(mitemitem*)newitem:(NSString*)itemid thumbnail:(NSString*)thumbnail
-{
-    mitemitem *item;
-    item_status status = item_status_none;
-    NSUInteger now = [NSDate date].timeIntervalSince1970;
-    NSString *query = [NSString stringWithFormat:
-                       @"INSERT INTO item "
-                       "(created, countryid, itemid, status, thumbnail) "
-                       "VALUES(%@, \"%@\", \"%@\", %@, \"%@\");",
-                       @(now), self.countryid, itemid, @(status), thumbnail];
-    NSUInteger dbid = [db query_identity:query];
-    item = [[mitemitem alloc] init:dbid itemid:itemid status:status];
-    
-    [self add:item];
-    
-    return item;
-}
-
 -(void)add:(mitemitem*)item
 {
     dictionary[item.itemid] = item;
