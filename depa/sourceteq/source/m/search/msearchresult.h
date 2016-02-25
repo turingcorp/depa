@@ -7,6 +7,8 @@
 @interface msearchresult:NSObject
 
 -(instancetype)init:(mitemitem*)item;
+-(void)playlike;
+-(void)playno;
 
 @property(weak, nonatomic)mitemitem *item;
 @property(weak, nonatomic)msearch *search;

@@ -61,7 +61,7 @@
                         } completion:
                         ^(BOOL done)
                         {
-                            [controller.play playlike];
+                            [controller playlike];
                         }];
                    });
     

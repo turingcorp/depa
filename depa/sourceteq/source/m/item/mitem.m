@@ -22,7 +22,7 @@
     NSString *query = [NSString stringWithFormat:
                        @"SELECT id, itemid, status FROM item "
                        "WHERE countryid=\"%@\" "
-                       "ORDER BY id ASC",
+                       "ORDER BY id ASC;",
                        countryid];
     NSArray *rawarray = [db rows:query];
     NSUInteger count = rawarray.count;

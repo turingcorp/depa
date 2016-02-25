@@ -53,7 +53,7 @@
      } completion:
      ^(BOOL done)
      {
-         [controller.play playno];
+         [controller playno];
      }];
 }
 

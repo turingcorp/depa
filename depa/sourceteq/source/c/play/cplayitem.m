@@ -27,4 +27,18 @@
     return NO;
 }
 
+#pragma mark public
+
+-(void)playlike
+{
+    [self.item playlike];
+    [self.play playlike];
+}
+
+-(void)playno
+{
+    [self.item playno];
+    [self.play playno];
+}
+
 @end

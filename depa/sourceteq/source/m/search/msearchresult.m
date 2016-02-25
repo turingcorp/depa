@@ -10,4 +10,16 @@
     return self;
 }
 
+#pragma mark public
+
+-(void)playlike
+{
+    [self.item changestatus:item_status_like];
+}
+
+-(void)playno
+{
+    [self.item changestatus:item_status_no];
+}
+
 @end

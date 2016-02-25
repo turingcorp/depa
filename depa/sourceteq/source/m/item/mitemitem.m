@@ -12,4 +12,21 @@
     return self;
 }
 
+#pragma mark public
+
+-(void)changestatus:(item_status)status
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       self.status = status;
+                       
+                       NSString *query = [NSString stringWithFormat:
+                                          @"UPDATE item SET status=%@ "
+                                          "WHERE id=%@;",
+                                          @(status), @(self.dbid)];
+                       [db query:query];
+                   });
+}
+
 @end
