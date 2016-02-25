@@ -18,33 +18,8 @@
     
     if(self.validjson)
     {
-        self.array = [NSMutableArray array];
         NSArray *filters = self.validjson[@"available_filters"];
-        NSString *filterid = [self.item.strategyinstance filterid];
-        NSUInteger count = filters.count;
-        BOOL found = NO;
-        
-        for(NSUInteger i = 0; i < count; i++)
-        {
-            NSDictionary *filtersitem = filters[i];
-            NSString *rawfilterid = filtersitem[@"id"];
-            
-            if([rawfilterid isEqualToString:filterid])
-            {
-                [self fillarray:filtersitem];
-                found = YES;
-                
-                break;
-            }
-        }
-        
-        if(!found)
-        {
-            if([self.item.strategyinstance respondsToSelector:@selector(nofilters:parser:)])
-            {
-                [self.item.strategyinstance nofilters:json parser:self];
-            }
-        }
+        [self lookingin:filters];
     }
 }
 
@@ -69,6 +44,38 @@
         item.title = rawname;
         
         [self.array addObject:item];
+    }
+}
+
+#pragma mark public
+
+-(void)lookingin:(NSArray*)filters
+{
+    NSString *filterid = [self.item.strategyinstance filterid];
+    self.array = [NSMutableArray array];
+    NSUInteger count = filters.count;
+    BOOL found = NO;
+    
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        NSDictionary *filtersitem = filters[i];
+        NSString *rawfilterid = filtersitem[@"id"];
+        
+        if([rawfilterid isEqualToString:filterid])
+        {
+            [self fillarray:filtersitem];
+            found = YES;
+            
+            break;
+        }
+    }
+    
+    if(!found)
+    {
+        if([self.item.strategyinstance respondsToSelector:@selector(nofilters:parser:)])
+        {
+            [self.item.strategyinstance nofilters:filters parser:self];
+        }
     }
 }
 

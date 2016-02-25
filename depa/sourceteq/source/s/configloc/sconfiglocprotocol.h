@@ -11,6 +11,6 @@
 @optional
 
 -(NSString*)filterid;
--(void)nofilters:(NSDictionary*)json parser:(aparserlocation*)parser;
+-(void)nofilters:(NSArray*)filters parser:(aparserlocation*)parser;
 
 @end

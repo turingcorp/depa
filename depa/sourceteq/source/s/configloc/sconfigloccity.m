@@ -31,12 +31,13 @@
     return filter;
 }
 
--(void)nofilters:(NSDictionary*)json parser:(aparserlocation*)parser
+-(void)nofilters:(NSArray*)filters parser:(aparserlocation*)parser
 {
-    /*
-    aparserlocation *newparser = [[[self.item.strategyinstance optionalparser] alloc] init:self.item];
-    [newparser parse:json];
-    self.array = newparser.array;*/
+    [self.manager cancelcall];
+    parser.item.strategyinstance = [[sconfiglocneigh alloc] init];
+    aparserlocationneigh *newparser = [[aparserlocationneigh alloc] init:parser.item];
+    [newparser lookingin:filters];
+    [parser.item returnfetch:newparser.array];
 }
 
 #pragma mark -
