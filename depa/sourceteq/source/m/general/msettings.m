@@ -66,7 +66,13 @@
 
 -(void)loadcountry:(NSString*)countryid
 {
-    self.country = [[mcountry singleton] countryforid:countryid];
+    mcountryitem *country = [[mcountry singleton] countryforid:countryid];
+    [self changecountry:country];
+}
+
+-(void)changecountry:(mcountryitem*)country
+{
+    self.country = country;
 }
 
 #pragma mark public
@@ -82,6 +88,15 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:settings forKey:@"settings"];
+}
+
+-(void)changecountry:(mcountryitem*)country location:(NSString*)location locationname:(NSString*)locationname
+{
+    self.country = country;
+    self.location = location;
+    self.locationname = locationname;
+    
+    [self save];
 }
 
 @end

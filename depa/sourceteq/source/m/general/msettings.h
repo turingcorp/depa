@@ -8,6 +8,7 @@
 
 +(instancetype)singleton;
 -(void)save;
+-(void)changecountry:(mcountryitem*)country location:(NSString*)location locationname:(NSString*)locationname;
 
 @property(strong, nonatomic)id<mconfigmodprotocol> searchmode;
 @property(strong, nonatomic)id<mconfigtypprotocol> searchtype;
