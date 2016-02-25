@@ -1,12 +1,14 @@
 #import "appdel.h"
 
+@class mitemitem;
 @class msearch;
 @class aimateqitem;
 
 @interface msearchresult:NSObject
 
--(instancetype)init:(NSDictionary*)rawitem;
+-(instancetype)init:(mitemitem*)item;
 
+@property(weak, nonatomic)mitemitem *item;
 @property(weak, nonatomic)msearch *search;
 @property(strong, nonatomic)aimateqitem *apiimage;
 @property(copy, nonatomic)NSString *itemid;
