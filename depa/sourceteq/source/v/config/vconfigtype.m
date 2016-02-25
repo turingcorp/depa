@@ -112,4 +112,10 @@
     }
 }
 
+#pragma mark config cel protocol
+
+-(void)hover:(BOOL)hover
+{
+}
+
 @end

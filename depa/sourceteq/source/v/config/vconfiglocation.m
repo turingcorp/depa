@@ -15,13 +15,12 @@
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setUserInteractionEnabled:NO];
     [label setFont:[UIFont fontWithName:fontboldname size:16]];
-    [label setTextColor:[UIColor colorWithWhite:0 alpha:0.3]];
     [label setText:NSLocalizedString(@"config_location_title", nil)];
+    self.label = label;
     
     UILabel *labellocation = [[UILabel alloc] init];
     [labellocation setBackgroundColor:[UIColor clearColor]];
     [labellocation setFont:[UIFont fontWithName:fontname size:18]];
-    [labellocation setTextColor:colormain];
     [labellocation setUserInteractionEnabled:NO];
     [labellocation setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labellocation setText:[msettings singleton].locationname];
@@ -40,6 +39,23 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[location]-18-|" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+#pragma mark -
+#pragma mark config cel protocol
+
+-(void)hover:(BOOL)hover
+{
+    if(hover)
+    {
+        [self.label setTextColor:[UIColor whiteColor]];
+        [self.labellocation setTextColor:[UIColor whiteColor]];
+    }
+    else
+    {
+        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.3]];
+        [self.labellocation setTextColor:colormain];
+    }
 }
 
 @end

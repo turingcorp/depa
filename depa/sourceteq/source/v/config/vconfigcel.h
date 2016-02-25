@@ -1,9 +1,10 @@
 #import "appdel.h"
+#import "vconfigcelprotocol.h"
 
 @interface vconfigcel:UICollectionViewCell
 
--(void)config:(UIView*)view;
+-(void)config:(UIView<vconfigcelprotocol>*)view;
 
-@property(weak, nonatomic)UIView *overview;
+@property(weak, nonatomic)UIView<vconfigcelprotocol> *overview;
 
 @end

@@ -26,7 +26,9 @@
 
 -(void)hover
 {
-    if(self.isSelected || self.isHighlighted)
+    BOOL hover = self.isSelected || self.isHighlighted;
+    
+    if(hover)
     {
         [self setBackgroundColor:colorsecond];
     }
@@ -34,11 +36,13 @@
     {
         [self setBackgroundColor:[UIColor whiteColor]];
     }
+    
+    [self.overview hover:hover];
 }
 
 #pragma mark public
 
--(void)config:(UIView*)view
+-(void)config:(UIView<vconfigcelprotocol>*)view
 {
     [self.overview removeFromSuperview];
     self.overview = view;

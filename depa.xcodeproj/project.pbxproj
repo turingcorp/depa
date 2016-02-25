@@ -354,6 +354,7 @@
 		DACDA83D1C76073200A37D15 /* v.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v.h; sourceTree = "<group>"; };
 		DACDA85C1C76086D00A37D15 /* private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = private.h; sourceTree = "<group>"; };
 		DACDA85D1C76086D00A37D15 /* privateconstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = privateconstants.h; sourceTree = "<group>"; };
+		DAD5C3691C7F82C000FF8FDF /* vconfigcelprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigcelprotocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +407,7 @@
 				DA25B1441C7B7E4600B4BB21 /* vconfig.m */,
 				DA25B1461C7B80CE00B4BB21 /* vconfigcel.h */,
 				DA25B1471C7B80CE00B4BB21 /* vconfigcel.m */,
+				DAD5C3691C7F82C000FF8FDF /* vconfigcelprotocol.h */,
 				DA25B15A1C7B8EEA00B4BB21 /* vconfiglocation.h */,
 				DA25B15B1C7B8EEA00B4BB21 /* vconfiglocation.m */,
 				DA3172ED1C7CC6B700B6CEF7 /* vconfigmode.h */,

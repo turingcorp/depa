@@ -1,6 +1,9 @@
 #import "vconfiglike.h"
 
 @implementation vconfiglike
+{
+    UIColor *color;
+}
 
 -(instancetype)init
 {
@@ -9,7 +12,7 @@
     [self setBackgroundColor:[UIColor clearColor]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    UIColor *color = [UIColor colorWithRed:0.4 green:0.7 blue:0.8 alpha:1];
+    color = [UIColor colorWithRed:0.4 green:0.7 blue:0.8 alpha:1];
     
     UIImageView *icon = [[UIImageView alloc] init];
     [icon setClipsToBounds:YES];
@@ -18,6 +21,7 @@
     [icon setImage:[[UIImage imageNamed:@"like"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [icon setContentMode:UIViewContentModeScaleAspectFit];
     [icon setTintColor:color];
+    self.icon = icon;
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
@@ -26,6 +30,7 @@
     [label setFont:[UIFont fontWithName:fontboldname size:22]];
     [label setTextColor:color];
     [label setTextAlignment:NSTextAlignmentRight];
+    self.label = label;
     
     [self addSubview:label];
     [self addSubview:icon];
@@ -54,6 +59,23 @@
                    });
     
     return self;
+}
+
+#pragma mark -
+#pragma mark config cel protocol
+
+-(void)hover:(BOOL)hover
+{
+    if(hover)
+    {
+        [self.icon setTintColor:[UIColor whiteColor]];
+        [self.label setTextColor:[UIColor whiteColor]];
+    }
+    else
+    {
+        [self.icon setTintColor:color];
+        [self.label setTextColor:color];
+    }
 }
 
 @end
