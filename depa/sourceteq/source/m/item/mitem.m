@@ -2,14 +2,14 @@
 
 @implementation mitem
 {
-    NSMutableArray *array;
+    NSMutableDictionary *dictionary;
 }
 
 -(instancetype)init:(NSString*)countryid
 {
     self = [super init];
     
-    array = [NSMutableArray array];
+    dictionary = [NSMutableDictionary dictionary];
     NSString *query = [NSString stringWithFormat:
                        @"SELECT id, itemid, status FROM item "
                        "WHERE countryid=\"%@\" "
@@ -26,7 +26,7 @@
         item_status rawstatus = (item_status)[rawitem[@"status"] unsignedIntegerValue];
         mitemitem *item = [[mitemitem alloc] init:rawid itemid:rawitemid status:rawstatus];
         
-        [array addObject:item];
+        [self add:item];
     }
     
     return self;
@@ -34,16 +34,14 @@
 
 #pragma mark public
 
--(NSUInteger)count
+-(void)add:(mitemitem*)item
 {
-    NSUInteger count = array.count;
-    
-    return count;
+    dictionary[item.itemid] = item;
 }
 
--(mitemitem*)item:(NSUInteger)index
+-(mitemitem*)item:(NSString*)itemid
 {
-    mitemitem *item = array[index];
+    mitemitem *item = dictionary[itemid];
     
     return item;
 }

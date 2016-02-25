@@ -5,8 +5,8 @@
 @interface mitem:NSObject
 
 -(instancetype)init:(NSString*)countryid;
--(NSUInteger)count;
--(mitemitem*)item:(NSUInteger)index;
+-(void)add:(mitemitem*)item;
+-(mitemitem*)item:(NSString*)itemid;
 
 @property(copy, nonatomic)NSString *countryid;
 
