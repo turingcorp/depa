@@ -32,6 +32,7 @@
                            mdbitem *rawitem = rawarray[i];
                            mlikeditem *item = [[mlikeditem alloc] init:self];
                            [item title:rawitem.title currency:rawitem.currency price:rawitem.price];
+                           item.thumbnail = rawitem.thumbnail;
                            [array addObject:item];
                        }
                        

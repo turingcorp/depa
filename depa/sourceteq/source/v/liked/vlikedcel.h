@@ -1,9 +1,9 @@
 #import "appdel.h"
 
-static const NSUInteger vlikedcellhrpadding = 6;
-static const NSUInteger vlikedcellbottompadding = 8;
-static const NSUInteger vlikedcellspacing = 4;
-static const NSUInteger vlikedcellimageheight = 160;
+static const NSUInteger vlikedcellhrpadding = 8;
+static const NSUInteger vlikedcellbottompadding = 10;
+static const NSUInteger vlikedcellspacing = 8;
+static const NSUInteger vlikedcellimageheight = 170;
 
 @class mlikeditem;
 
