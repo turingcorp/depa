@@ -5,8 +5,8 @@
 
 // font
 
-#define fontname                @"HelveticaNeue-Light"
-#define fontboldname            @"HelveticaNeue-Medium"
+#define fontname                @"AppleSDGothicNeo-Light"
+#define fontboldname            @"AppleSDGothicNeo-Medium"
 
 // ids
 

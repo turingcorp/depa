@@ -17,15 +17,14 @@
     [labeltitle setBackgroundColor:[UIColor clearColor]];
     [labeltitle setUserInteractionEnabled:NO];
     [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labeltitle setFont:[UIFont fontWithName:fontname size:15]];
-    [labeltitle setNumberOfLines:0];
+    [labeltitle setFont:[UIFont fontWithName:fontname size:14]];
     self.labeltitle = labeltitle;
     
     UILabel *labelprice = [[UILabel alloc] init];
     [labelprice setBackgroundColor:[UIColor clearColor]];
     [labelprice setUserInteractionEnabled:NO];
     [labelprice setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labelprice setFont:[UIFont fontWithName:fontboldname size:18]];
+    [labelprice setFont:[UIFont fontWithName:fontname size:14]];
     self.labelprice = labelprice;
     
     [self addSubview:baseimage];
@@ -39,7 +38,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[base]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-110-[price]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-110-[title]-10-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[price]-0-[title]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[title]-5-[price]" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -62,14 +61,14 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self setBackgroundColor:colormain];
-        [self.labelprice setTextColor:[UIColor whiteColor]];
-        [self.labeltitle setTextColor:[UIColor whiteColor]];
+        [self setBackgroundColor:[UIColor colorWithWhite:0.92 alpha:1]];
+        [self.labelprice setTextColor:colormain];
+        [self.labeltitle setTextColor:colormain];
     }
     else
     {
         [self setBackgroundColor:[UIColor whiteColor]];
-        [self.labelprice setTextColor:colormain];
+        [self.labelprice setTextColor:colorsecond];
         [self.labeltitle setTextColor:colorsecond];
     }
 }
@@ -81,10 +80,7 @@
     self.item = item;
     [self.labeltitle setText:item.title];
     [self.labelprice setText:[[tools singleton] pricetostring:item.price currency:item.currencyid]];
-    
     [self hover];
-    [self.labeltitle layoutIfNeeded];
-    [self layoutSubviews];
 }
 
 @end
