@@ -2,7 +2,7 @@
 
 @class citem;
 
-@interface vitembar:UIView
+@interface vitemcontact:UIButton
 
 -(instancetype)init:(citem*)controller;
 

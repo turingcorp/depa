@@ -39,3 +39,4 @@
 #import "vitem.h"
 #import "vitembar.h"
 #import "vitemcar.h"
+#import "vitemcontact.h"

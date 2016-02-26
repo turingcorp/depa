@@ -58,7 +58,14 @@
 
 -(BOOL)prefersStatusBarHidden
 {
-    return YES;
+    return NO;
+}
+
+#pragma mark public
+
+-(void)back
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end
