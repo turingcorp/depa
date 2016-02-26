@@ -8,13 +8,8 @@
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
 
-    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
-    [flow setHeaderReferenceSize:CGSizeZero];
-    [flow setFooterReferenceSize:CGSizeZero];
-    [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumLineSpacing:2];
-    [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flow setSectionInset:UIEdgeInsetsMake(2, 0, 30, 0)];
+    self.model = [[mliked alloc] init];
+    vlikedflow *flow = [[vlikedflow alloc] init:self.model];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setBackgroundColor:[UIColor clearColor]];
@@ -37,7 +32,6 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedupdateliked:) name:notlikedloaded object:nil];
-    self.model = [[mliked alloc] init];
     
     return self;
 }
@@ -60,13 +54,6 @@
 
 #pragma mark -
 #pragma mark col del
-
--(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
-{
-    CGSize size = CGSizeMake(col.bounds.size.width, 100);
-    
-    return size;
-}
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {

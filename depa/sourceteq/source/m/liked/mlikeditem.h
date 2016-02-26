@@ -2,8 +2,11 @@
 
 @interface mlikeditem:NSObject
 
-@property(copy, nonatomic)NSString *title;
-@property(copy, nonatomic)NSString *currencyid;
-@property(copy, nonatomic)NSNumber *price;
+-(instancetype)init:(UIFont*)font;
+-(void)title:(NSString*)title currency:(NSString*)currency price:(NSNumber*)price;
+-(CGFloat)heightforwidth:(CGFloat)width;
+
+@property(weak, nonatomic)UIFont *font;
+@property(strong, nonatomic)NSMutableAttributedString *display;
 
 @end
