@@ -7,6 +7,7 @@
 -(NSUInteger)count;
 -(mlikeditem*)item:(NSUInteger)index;
 
-@property(strong, nonatomic)UIFont *font;
+@property(strong, nonatomic)UIFont *fonttitle;
+@property(strong, nonatomic)UIFont *fontprice;
 
 @end

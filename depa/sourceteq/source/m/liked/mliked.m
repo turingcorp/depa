@@ -9,7 +9,8 @@
 {
     self = [super init];
     
-    self.font = [UIFont fontWithName:fontname size:16];
+    self.fonttitle = [UIFont fontWithName:fontname size:14];
+    self.fontprice = [UIFont fontWithName:fontname size:12];
     [self load];
     
     return self;
@@ -29,7 +30,7 @@
                        for(NSUInteger i = 0; i < count; i++)
                        {
                            mdbitem *rawitem = rawarray[i];
-                           mlikeditem *item = [[mlikeditem alloc] init:self.font];
+                           mlikeditem *item = [[mlikeditem alloc] init:self];
                            [item title:rawitem.title currency:rawitem.currency price:rawitem.price];
                            [array addObject:item];
                        }

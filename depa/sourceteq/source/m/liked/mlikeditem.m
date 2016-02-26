@@ -2,11 +2,11 @@
 
 @implementation mlikeditem
 
--(instancetype)init:(UIFont*)font
+-(instancetype)init:(mliked*)model
 {
     self = [super init];
     
-    self.font = font;
+    self.model = model;
     
     return self;
 }
@@ -15,12 +15,13 @@
 
 -(void)title:(NSString*)title currency:(NSString*)currency price:(NSNumber*)price
 {
-    NSDictionary *attributes = @{NSFontAttributeName:self.font};
-    NSString *pricestring = [NSString stringWithFormat:@"\n%@", [[tools singleton] pricetostring:price currency:currency]];
+    NSDictionary *atttitle = @{NSFontAttributeName:self.model.fonttitle};
+    NSDictionary *attprice = @{NSFontAttributeName:self.model.fontprice};
+    NSString *pricestring = [NSString stringWithFormat:@"\n\n%@", [[tools singleton] pricetostring:price currency:currency]];
     
     self.display = [[NSMutableAttributedString alloc] init];
-    [self.display appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
-    [self.display appendAttributedString:[[NSAttributedString alloc] initWithString:pricestring attributes:attributes]];
+    [self.display appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:atttitle]];
+    [self.display appendAttributedString:[[NSAttributedString alloc] initWithString:pricestring attributes:attprice]];
 }
 
 -(CGFloat)heightforwidth:(CGFloat)width;

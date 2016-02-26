@@ -1,12 +1,14 @@
 #import "appdel.h"
 
+@class mliked;
+
 @interface mlikeditem:NSObject
 
--(instancetype)init:(UIFont*)font;
+-(instancetype)init:(mliked*)model;
 -(void)title:(NSString*)title currency:(NSString*)currency price:(NSNumber*)price;
 -(CGFloat)heightforwidth:(CGFloat)width;
 
-@property(weak, nonatomic)UIFont *font;
+@property(weak, nonatomic)mliked *model;
 @property(strong, nonatomic)NSMutableAttributedString *display;
 
 @end

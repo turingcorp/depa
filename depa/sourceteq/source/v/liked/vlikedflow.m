@@ -18,7 +18,7 @@
     self = [super init];
     
     self.model = model;
-    padding = 2;
+    padding = 4;
     padding2 = padding * 2;
     mincols = 2;
     maxcols = 3;
@@ -84,6 +84,8 @@
         totalheight = fmaxf(totalheight, coly);
         yoff[currentcol] = @(coly);
     }
+    
+    totalheight += 20;
 }
 
 -(CGSize)collectionViewContentSize
