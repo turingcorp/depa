@@ -1,13 +1,6 @@
-//
-//  vitem.h
-//  depa
-//
-//  Created by zero on 2/25/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "viewbase.h"
 
-#import <Foundation/Foundation.h>
-
-@interface vitem : NSObject
+@interface vitem:viewbase
 
 @end

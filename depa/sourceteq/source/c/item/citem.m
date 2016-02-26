@@ -2,15 +2,23 @@
 
 @implementation citem
 
+-(instancetype)init:(NSString*)itemid title:(NSString*)title
+{
+    self = [super init];
+    [self setTitle:title];
+    
+    return self;
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setTitle:NSLocalizedString(@"config_item_like_title", nil)];
+#warning "analytics"
 }
 
 -(void)loadView
 {
-    self.view = [[vconfigitemlike alloc] init:self];
+    self.view = [[vitem alloc] init:self];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle

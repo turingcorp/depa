@@ -84,7 +84,11 @@
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    [[cmain singleton] pushViewController:[[citem alloc] init] animated:YES];
+    mlikeditem *item = [self.model item:index.item];
+    NSString *title = item.displaytitle;
+    NSString *itemid = item.itemid;
+    
+    [[cmain singleton] pushViewController:[[citem alloc] init:itemid title:title] animated:YES];
 }
 
 @end

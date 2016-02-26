@@ -31,8 +31,27 @@
                        {
                            mdbitem *rawitem = rawarray[i];
                            mlikeditem *item = [[mlikeditem alloc] init:self];
+                           NSString *displaytitle;
+                           
+                           switch(rawitem.mode)
+                           {
+                                case search_mode_rent:
+                                   
+                                   displaytitle = NSLocalizedString(@"search_mode_rent", nil);
+                                   
+                                   break;
+                                   
+                                case search_mode_buy:
+                                   
+                                   displaytitle = NSLocalizedString(@"search_mode_buy", nil);
+                                   
+                                   break;
+                           }
+                           
                            [item title:rawitem.title currency:rawitem.currency price:rawitem.price];
+                           item.itemid = rawitem.itemid;
                            item.thumbnail = rawitem.thumbnail;
+                           item.displaytitle = displaytitle;
                            [array addObject:item];
                        }
                        

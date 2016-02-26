@@ -12,6 +12,8 @@
 @property(weak, nonatomic)mliked *model;
 @property(strong, nonatomic)aimateqitem *apiimage;
 @property(strong, nonatomic)NSMutableAttributedString *display;
+@property(copy, nonatomic)NSString *itemid;
+@property(copy, nonatomic)NSString *displaytitle;
 @property(copy, nonatomic)NSString *thumbnail;
 
 @end
