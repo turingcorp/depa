@@ -17,15 +17,15 @@
     [background setClipsToBounds:YES];
     [background setUserInteractionEnabled:NO];
     [background setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.layer setCornerRadius:circleside / 2.0];
+    [background.layer setCornerRadius:circleside / 2.0];
     
     [self addSubview:background];
     
     NSDictionary *views = @{@"background":background};
     NSDictionary *metrics = @{@"circleside":@(circleside)};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[background(circleside)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[background(circleside)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[background(circleside)]-5-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[background(circleside)]" options:0 metrics:metrics views:views]];
     
     return self;
 }

@@ -14,6 +14,7 @@
 @property(strong, nonatomic)NSMutableAttributedString *display;
 @property(copy, nonatomic)NSString *itemid;
 @property(copy, nonatomic)NSString *thumbnail;
+@property(nonatomic)search_type type;
 @property(nonatomic)search_mode mode;
 
 @end

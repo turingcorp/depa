@@ -2,7 +2,7 @@
 
 @interface citem:UIViewController
 
--(instancetype)init:(NSString*)itemid mode:(search_mode)mode;
+-(instancetype)init:(NSString*)itemid type:(search_type)type mode:(search_mode)mode;
 -(void)back;
 
 @end

@@ -34,6 +34,7 @@
                            [item title:rawitem.title currency:rawitem.currency price:rawitem.price];
                            item.itemid = rawitem.itemid;
                            item.thumbnail = rawitem.thumbnail;
+                           item.type = rawitem.type;
                            item.mode = rawitem.mode;
                            [array addObject:item];
                        }

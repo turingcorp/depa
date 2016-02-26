@@ -14,23 +14,40 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
--(instancetype)init:(NSString*)itemid mode:(search_mode)mode
+-(instancetype)init:(NSString*)itemid type:(search_type)type mode:(search_mode)mode
 {
     self = [super init];
     
-    NSString *displaytitle;
+    NSMutableString *displaytitle = [NSMutableString string];
+    
+    switch(type)
+    {
+        case search_type_house:
+            
+            [displaytitle appendString:NSLocalizedString(@"search_type_house", nil)];
+            
+            break;
+            
+        case search_type_apartment:
+            
+            [displaytitle appendString:NSLocalizedString(@"search_type_flat", nil)];
+            
+            break;
+    }
+    
+    [displaytitle appendString:@" "];
     
     switch(mode)
     {
         case search_mode_rent:
             
-            displaytitle = NSLocalizedString(@"search_mode_rent", nil);
+            [displaytitle appendString:NSLocalizedString(@"search_mode_rent", nil)];
             
             break;
             
         case search_mode_buy:
             
-            displaytitle = NSLocalizedString(@"search_mode_buy", nil);
+            [displaytitle appendString:NSLocalizedString(@"search_mode_buy", nil)];
             
             break;
     }
