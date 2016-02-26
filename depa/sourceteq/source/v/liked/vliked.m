@@ -52,6 +52,13 @@
                    });
 }
 
+#pragma mark public
+
+-(void)unselect
+{
+    [self.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:-1 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+}
+
 #pragma mark -
 #pragma mark col del
 
@@ -73,6 +80,11 @@
     [cel config:[self.model item:index.item]];
     
     return cel;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    [[cmain singleton] pushViewController:[[citem alloc] init] animated:YES];
 }
 
 @end

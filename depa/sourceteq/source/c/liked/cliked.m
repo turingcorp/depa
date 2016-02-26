@@ -8,6 +8,12 @@
     [self setTitle:NSLocalizedString(@"liked_title", nil)];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [(vliked*)self.view unselect];
+}
+
 -(void)loadView
 {
     self.view = [[vliked alloc] init:self];
