@@ -75,8 +75,8 @@
         NSNumber *rawrooms = rawitem[@"rooms"];
         NSNumber *rawparking = rawitem[@"parking"];
         item_status rawstatus = (item_status)[rawitem[@"status"] unsignedIntegerValue];
-        search_mode rawmode = (search_mode)[rawitem[@"mode"] unsignedIntegerValue];
-        search_type rawtype = (search_type)[rawitem[@"type"] unsignedIntegerValue];
+        search_mode rawmode = (search_mode)[rawitem[@"searchmode"] unsignedIntegerValue];
+        search_type rawtype = (search_type)[rawitem[@"searchtype"] unsignedIntegerValue];
         double rawlatitude = [rawitem[@"latitude"] integerValue] / coorddelta;
         double rawlongitude = [rawitem[@"longitude"] integerValue] / coorddelta;
         NSUInteger rawcreated = [rawitem[@"created"] unsignedIntegerValue];
