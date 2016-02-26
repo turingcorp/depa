@@ -34,4 +34,5 @@
 #import "vconfigitemlike.h"
 #import "vconfigitemno.h"
 #import "vliked.h"
+#import "vlikedcel.h"
 #import "vitem.h"

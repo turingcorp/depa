@@ -22,8 +22,19 @@
                    ^
                    {
                        array = [NSMutableArray array];
-                       NSString *query = [NSString stringWithFormat:
-                                          @"SELECT "];
+                       NSArray *rawarray = [mdb allitemsfor:item_status_like];
+                       NSUInteger count = rawarray.count;
+                       
+                       for(NSUInteger i = 0; i < count; i++)
+                       {
+                           mdbitem *rawitem = rawarray[i];
+                           mlikeditem *item = [[mlikeditem alloc] init];
+                           item.title = rawitem.title;
+                           item.currencyid = rawitem.currency;
+                           item.price = rawitem.price;
+                           
+                           [array addObject:item];
+                       }
                        
                        [[NSNotificationCenter defaultCenter] postNotificationName:notlikedloaded object:nil];
                    });

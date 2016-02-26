@@ -131,6 +131,7 @@
 		DAD5C39A1C7FC34900FF8FDF /* mdbitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3991C7FC34900FF8FDF /* mdbitem.m */; };
 		DAD5C39D1C7FC81500FF8FDF /* mliked.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C39C1C7FC81500FF8FDF /* mliked.m */; };
 		DAD5C3A01C7FC81F00FF8FDF /* mlikeditem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C39F1C7FC81F00FF8FDF /* mlikeditem.m */; };
+		DAD5C3A31C7FD14000FF8FDF /* vlikedcel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3A21C7FD14000FF8FDF /* vlikedcel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -394,6 +395,8 @@
 		DAD5C39C1C7FC81500FF8FDF /* mliked.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mliked.m; sourceTree = "<group>"; };
 		DAD5C39E1C7FC81F00FF8FDF /* mlikeditem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mlikeditem.h; sourceTree = "<group>"; };
 		DAD5C39F1C7FC81F00FF8FDF /* mlikeditem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mlikeditem.m; sourceTree = "<group>"; };
+		DAD5C3A11C7FD14000FF8FDF /* vlikedcel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vlikedcel.h; sourceTree = "<group>"; };
+		DAD5C3A21C7FD14000FF8FDF /* vlikedcel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vlikedcel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1068,6 +1071,8 @@
 			children = (
 				DAD5C3881C7F9AC500FF8FDF /* vliked.h */,
 				DAD5C3891C7F9AC500FF8FDF /* vliked.m */,
+				DAD5C3A11C7FD14000FF8FDF /* vlikedcel.h */,
+				DAD5C3A21C7FD14000FF8FDF /* vlikedcel.m */,
 			);
 			path = liked;
 			sourceTree = "<group>";
@@ -1307,6 +1312,7 @@
 				DACDA8561C76073200A37D15 /* vratemenu.m in Sources */,
 				DA9141911C766C3F004BE5D1 /* cplayload.m in Sources */,
 				DA9141A51C76971D004BE5D1 /* mplaymenulike.m in Sources */,
+				DAD5C3A31C7FD14000FF8FDF /* vlikedcel.m in Sources */,
 				DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */,
 				DACDA8511C76073200A37D15 /* valert.m in Sources */,
 				DACDA84B1C76073200A37D15 /* crate.m in Sources */,
