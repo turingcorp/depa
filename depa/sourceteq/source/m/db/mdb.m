@@ -43,11 +43,65 @@
     return dbid;
 }
 
-+(NSArray*)itemsfor:(item_status)status
++(NSArray*)allitemsfor:(item_status)status
 {
     NSMutableArray *array = [NSMutableArray array];
+    NSString *query = [NSString stringWithFormat:
+                       @"SELECT id, created, countryid, itemid, status, thumbnail, "
+                       "title, currency, price, meters, rooms, parking, "
+                       "phone, email, latitude, longitude, searchmode, "
+                       "searchtype "
+                       "FROM item "
+                       "WHERE status=%@ "
+                       "ORDER BY created ASC;",
+                       @(status)];
+    NSArray *rawarray = [db rows:query];
+    NSUInteger count = rawarray.count;
     
-    
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        mdbitem *dbitem = [[mdbitem alloc] init];
+        NSDictionary *rawitem = rawarray[i];
+        NSString *rawitemid = rawitem[@"itemid"];
+        NSString *rawcountryid = rawitem[@"countryid"];
+        NSString *rawthumb = rawitem[@"thumbnail"];
+        NSString *rawtitle = rawitem[@"title"];
+        NSString *rawcurrency = rawitem[@"currency"];
+        NSString *rawphone = rawitem[@"phone"];
+        NSString *rawemail = rawitem[@"email"];
+        NSNumber *rawdbid = rawitem[@"id"];
+        NSNumber *rawprice = rawitem[@"price"];
+        NSNumber *rawmeters = rawitem[@"meters"];
+        NSNumber *rawrooms = rawitem[@"rooms"];
+        NSNumber *rawparking = rawitem[@"parking"];
+        item_status rawstatus = (item_status)[rawitem[@"status"] unsignedIntegerValue];
+        search_mode rawmode = (search_mode)[rawitem[@"mode"] unsignedIntegerValue];
+        search_type rawtype = (search_type)[rawitem[@"type"] unsignedIntegerValue];
+        double rawlatitude = [rawitem[@"latitude"] integerValue] / coorddelta;
+        double rawlongitude = [rawitem[@"longitude"] integerValue] / coorddelta;
+        NSUInteger rawcreated = [rawitem[@"created"] unsignedIntegerValue];
+        
+        dbitem.dbid = rawdbid;
+        dbitem.created = rawcreated;
+        dbitem.countryid = rawcountryid;
+        dbitem.itemid = rawitemid;
+        dbitem.status = rawstatus;
+        dbitem.thumbnail = rawthumb;
+        dbitem.title = rawtitle;
+        dbitem.currency = rawcurrency;
+        dbitem.price = rawprice;
+        dbitem.meters = rawmeters;
+        dbitem.rooms = rawrooms;
+        dbitem.parking = rawparking;
+        dbitem.phone = rawphone;
+        dbitem.email = rawemail;
+        dbitem.latitude = rawlatitude;
+        dbitem.longitude = rawlongitude;
+        dbitem.mode = rawmode;
+        dbitem.type = rawtype;
+        
+        [array addObject:dbitem];
+    }
     
     return array;
 }
