@@ -13,7 +13,7 @@
 @property(strong, nonatomic)aimateqitem *apiimage;
 @property(strong, nonatomic)NSMutableAttributedString *display;
 @property(copy, nonatomic)NSString *itemid;
-@property(copy, nonatomic)NSString *displaytitle;
 @property(copy, nonatomic)NSString *thumbnail;
+@property(nonatomic)search_mode mode;
 
 @end

@@ -2,6 +2,6 @@
 
 @interface citem:UIViewController
 
--(instancetype)init:(NSString*)itemid title:(NSString*)title;
+-(instancetype)init:(NSString*)itemid mode:(search_mode)mode;
 
 @end
