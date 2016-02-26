@@ -2,6 +2,18 @@
 
 @implementation citem
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 -(instancetype)init:(NSString*)itemid mode:(search_mode)mode
 {
     self = [super init];
@@ -46,7 +58,7 @@
 
 -(BOOL)prefersStatusBarHidden
 {
-    return NO;
+    return YES;
 }
 
 @end

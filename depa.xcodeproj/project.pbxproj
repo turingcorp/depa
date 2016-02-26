@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */; };
 		DA1C50861C80A6A000598B1A /* vlikedflow.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1C50851C80A6A000598B1A /* vlikedflow.m */; };
+		DA1C50891C80EDA800598B1A /* vitemcar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1C50881C80EDA800598B1A /* vitemcar.m */; };
+		DA1C508F1C80F59700598B1A /* vitembar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1C508E1C80F59700598B1A /* vitembar.m */; };
 		DA1FBD541C7E06CA0038A822 /* acalllocationcity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD531C7E06CA0038A822 /* acalllocationcity.m */; };
 		DA1FBD571C7E078C0038A822 /* aparserlocationcity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD561C7E078C0038A822 /* aparserlocationcity.m */; };
 		DA1FBD5A1C7E42240038A822 /* sconfiglocneigh.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD591C7E42240038A822 /* sconfiglocneigh.m */; };
@@ -141,6 +143,10 @@
 		A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.debug.xcconfig"; sourceTree = "<group>"; };
 		DA1C50841C80A6A000598B1A /* vlikedflow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vlikedflow.h; sourceTree = "<group>"; };
 		DA1C50851C80A6A000598B1A /* vlikedflow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vlikedflow.m; sourceTree = "<group>"; };
+		DA1C50871C80EDA800598B1A /* vitemcar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemcar.h; sourceTree = "<group>"; };
+		DA1C50881C80EDA800598B1A /* vitemcar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemcar.m; sourceTree = "<group>"; };
+		DA1C508D1C80F59700598B1A /* vitembar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitembar.h; sourceTree = "<group>"; };
+		DA1C508E1C80F59700598B1A /* vitembar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitembar.m; sourceTree = "<group>"; };
 		DA1FBD521C7E06CA0038A822 /* acalllocationcity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acalllocationcity.h; sourceTree = "<group>"; };
 		DA1FBD531C7E06CA0038A822 /* acalllocationcity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalllocationcity.m; sourceTree = "<group>"; };
 		DA1FBD551C7E078C0038A822 /* aparserlocationcity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserlocationcity.h; sourceTree = "<group>"; };
@@ -1065,6 +1071,10 @@
 			children = (
 				DAD5C38B1C7F9ADD00FF8FDF /* vitem.h */,
 				DAD5C38C1C7F9ADD00FF8FDF /* vitem.m */,
+				DA1C508D1C80F59700598B1A /* vitembar.h */,
+				DA1C508E1C80F59700598B1A /* vitembar.m */,
+				DA1C50871C80EDA800598B1A /* vitemcar.h */,
+				DA1C50881C80EDA800598B1A /* vitemcar.m */,
 			);
 			path = item;
 			sourceTree = "<group>";
@@ -1241,6 +1251,7 @@
 				DA9141881C766669004BE5D1 /* vplay.m in Sources */,
 				DA1FBD731C7F74050038A822 /* vconfigno.m in Sources */,
 				DA3172D01C7C9DD600B6CEF7 /* mcountry.m in Sources */,
+				DA1C50891C80EDA800598B1A /* vitemcar.m in Sources */,
 				DA2427B91C783D7A00FE44B0 /* vplayitemimage.m in Sources */,
 				DACDA84A1C76073200A37D15 /* cmain.m in Sources */,
 				DA25B1781C7BBA8F00B4BB21 /* mconfiglocmap.m in Sources */,
@@ -1259,6 +1270,7 @@
 				DA2427A71C77A9FF00FE44B0 /* vplayitem.m in Sources */,
 				DACDA8421C76073200A37D15 /* appdel.m in Sources */,
 				DA6973271C764C4700A2C6EB /* aparsersearch.m in Sources */,
+				DA1C508F1C80F59700598B1A /* vitembar.m in Sources */,
 				DA9141971C769440004BE5D1 /* vplaymenu.m in Sources */,
 				DA3172DE1C7CA4BD00B6CEF7 /* mcountryitemrent.m in Sources */,
 				DACDA84D1C76073200A37D15 /* mdb.m in Sources */,
