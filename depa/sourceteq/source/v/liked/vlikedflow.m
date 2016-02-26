@@ -6,9 +6,11 @@
     CGFloat addedwidth;
     CGFloat addedheight;
     CGFloat padding;
+    CGFloat padding_2;
     CGFloat padding2;
     CGFloat totalwidth;
     CGFloat totalheight;
+    CGFloat totalcellwidth;
     NSUInteger mincols;
     NSUInteger maxcols;
 }
@@ -19,6 +21,7 @@
     
     self.model = model;
     padding = 4;
+    padding_2 = padding / 2;
     padding2 = padding * 2;
     mincols = 2;
     maxcols = 3;
@@ -42,7 +45,8 @@
     NSUInteger columns;
     NSUInteger items = [self.model count];
     NSUInteger currentcol;
-    totalwidth = self.collectionView.bounds.size.width - padding2;
+    totalwidth = self.collectionView.bounds.size.width;
+    totalcellwidth = totalwidth - padding;
     totalheight = 0;
     
     if(totalwidth < 800)
@@ -54,13 +58,20 @@
         columns = maxcols;
     }
     
-    columnwidth = totalwidth / (CGFloat)columns;
-    celwidth = columnwidth - padding2;
+    columnwidth = totalcellwidth / (CGFloat)columns;
+    celwidth = columnwidth - padding;
     textwidth = celwidth - addedwidth;
     
     for(NSUInteger i = 0; i < columns; i++)
     {
-        [xoff addObject:@((i * columnwidth) + padding)];
+        CGFloat addedpadding = 0;
+        
+        if(i)
+        {
+            addedpadding = padding;
+        }
+        
+        [xoff addObject:@((i * columnwidth) + addedpadding)];
         [yoff addObject:@(padding)];
     }
     
@@ -74,7 +85,7 @@
         CGFloat x = [xoff[currentcol] floatValue];
         CGFloat y = [yoff[currentcol] floatValue];
         CGRect frame = CGRectMake(x, y, columnwidth, heightpadding);
-        CGRect inset = CGRectInset(frame, padding, padding);
+        CGRect inset = CGRectInset(frame, padding_2, padding);
         CGFloat coly = y + heightpadding;
         
         UICollectionViewLayoutAttributes *attr = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexpath];

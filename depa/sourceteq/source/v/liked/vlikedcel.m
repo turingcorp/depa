@@ -6,6 +6,14 @@
 {
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
+    [self setBackgroundColor:[UIColor clearColor]];
+    
+    UIView *basegeneral = [[UIView alloc] init];
+    [basegeneral setClipsToBounds:YES];
+    [basegeneral setUserInteractionEnabled:NO];
+    [basegeneral setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [basegeneral.layer setCornerRadius:5];
+    self.basegeneral = basegeneral;
     
     UIView *baseimage = [[UIView alloc] init];
     [baseimage setClipsToBounds:YES];
@@ -20,12 +28,15 @@
     [label setNumberOfLines:0];
     self.label = label;
     
+    [self addSubview:basegeneral];
     [self addSubview:baseimage];
     [self addSubview:label];
     
-    NSDictionary *views = @{@"label":label, @"base":baseimage};
+    NSDictionary *views = @{@"basegeneral":basegeneral, @"label":label, @"base":baseimage};
     NSDictionary *metrics = @{@"imageheight":@(vlikedcellimageheight), @"spacing":@(vlikedcellspacing), @"hrpadding":@(vlikedcellhrpadding), @"bottompadding":@(vlikedcellbottompadding)};
     
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[basegeneral]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[basegeneral]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[base]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[base(imageheight)]-(spacing)-[label]-(bottompadding)-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(hrpadding)-[label]-(hrpadding)-|" options:0 metrics:metrics views:views]];
@@ -51,12 +62,12 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self setBackgroundColor:[UIColor colorWithWhite:0.92 alpha:1]];
+        [self.basegeneral setBackgroundColor:[UIColor colorWithWhite:0.92 alpha:1]];
         [self.label setTextColor:colormain];
     }
     else
     {
-        [self setBackgroundColor:[UIColor whiteColor]];
+        [self.basegeneral setBackgroundColor:[UIColor whiteColor]];
         [self.label setTextColor:colorsecond];
     }
 }

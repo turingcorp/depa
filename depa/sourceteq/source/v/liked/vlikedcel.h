@@ -12,6 +12,9 @@ static const NSUInteger vlikedcellimageheight = 160;
 -(void)config:(mlikeditem*)item;
 
 @property(weak, nonatomic)mlikeditem *item;
+@property(weak, nonatomic)UIView *basegeneral;
+@property(weak, nonatomic)UIView *baseimage;
+@property(weak, nonatomic)UIImageView *image;
 @property(weak, nonatomic)UILabel *label;
 
 @end
