@@ -21,7 +21,6 @@
     self.image = image;
     
     UIView *background = [[UIView alloc] init];
-    [background setBackgroundColor:colormain];
     [background setClipsToBounds:YES];
     [background setUserInteractionEnabled:NO];
     [background setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -62,13 +61,13 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.image setTintColor:[UIColor blackColor]];
-        [self.background setAlpha:0.3];
+        [self.image setTintColor:[UIColor colorWithWhite:0 alpha:0.6]];
+        [self.background setBackgroundColor:[colormain colorWithAlphaComponent:0.2]];
     }
     else
     {
         [self.image setTintColor:[UIColor whiteColor]];
-        [self.background setAlpha:1];
+        [self.background setBackgroundColor:colormain];
     }
 }
 
