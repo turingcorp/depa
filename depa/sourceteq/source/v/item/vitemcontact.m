@@ -18,7 +18,7 @@
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setContentMode:UIViewContentModeScaleAspectFit];
     [image setImage:[[UIImage imageNamed:@"contact"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    [image setTintColor:[UIColor whiteColor]];
+    self.image = image;
     
     UIView *background = [[UIView alloc] init];
     [background setBackgroundColor:colormain];
@@ -26,6 +26,7 @@
     [background setUserInteractionEnabled:NO];
     [background setTranslatesAutoresizingMaskIntoConstraints:NO];
     [background.layer setCornerRadius:4];
+    self.background = background;
     
     [background addSubview:image];
     [self addSubview:background];
@@ -38,7 +39,37 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[image]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[image]-10-|" options:0 metrics:metrics views:views]];
     
+    [self hover];
+    
     return self;
+}
+
+-(void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    [self hover];
+}
+
+-(void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+    [self hover];
+}
+
+#pragma mark functionality
+
+-(void)hover
+{
+    if(self.isSelected || self.isHighlighted)
+    {
+        [self.image setTintColor:[UIColor blackColor]];
+        [self.background setAlpha:0.3];
+    }
+    else
+    {
+        [self.image setTintColor:[UIColor whiteColor]];
+        [self.background setAlpha:1];
+    }
 }
 
 @end

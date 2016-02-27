@@ -19,7 +19,7 @@
     
     barmaxheight = 65;
     barminheight = 20;
-    contactmintop = 5;
+    contactmintop = 10;
     contactmaxtop = 20;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
@@ -69,7 +69,7 @@
 {
     CGFloat offset = scroll.contentOffset.y;
     CGFloat barheight = barmaxheight - offset;
-    CGFloat contacttop = contactmintop + offset;
+    CGFloat contacttop = contactmintop + (offset / 10.0);
     
     if(barheight < barminheight)
     {
