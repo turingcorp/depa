@@ -67,6 +67,8 @@
     [self addConstraint:self.lcbar];
     [self addConstraint:self.lccontact];
     
+#warning "loader control"
+    
     return self;
 }
 
