@@ -13,7 +13,8 @@
     self = [super init:controller];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
-    
+
+    self.controlleritem = controller;
     vitembar *bar = [[vitembar alloc] init:controller];
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
     
@@ -68,6 +69,13 @@
     [self addConstraint:self.lccontact];
     
     return self;
+}
+
+#pragma mark public
+
+-(void)itemloaded
+{
+    
 }
 
 #pragma mark -
