@@ -59,8 +59,6 @@
         [request setHTTPBody:bodydata];
     }
     
-#warning "post url"
-    
     NSLog(@"%@", urlstring);
     
     return request;
