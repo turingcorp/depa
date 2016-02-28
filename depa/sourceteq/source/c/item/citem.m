@@ -85,4 +85,17 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+#pragma mark -
+#pragma mark call del
+
+-(void)callsuccess:(amanager *)manager
+{
+    
+}
+
+-(void)call:(amanager *)manager error:(NSString *)error
+{
+    
+}
+
 @end
