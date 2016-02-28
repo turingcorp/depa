@@ -40,7 +40,12 @@
     NSURL *url;
     [urlstring appendString:self.server];
     [urlstring appendString:self.endpoint];
-    [urlstring appendString:self.variables];
+    
+    if(!self.post)
+    {
+        [urlstring appendString:self.variables];
+    }
+    
     url = [NSURL URLWithString:urlstring];
     request = [NSMutableURLRequest requestWithURL:url cachePolicy:self.cachepolicy timeoutInterval:self.timeout];
     

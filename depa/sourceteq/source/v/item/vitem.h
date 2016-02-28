@@ -1,6 +1,7 @@
 #import "appdel.h"
 #import "viewbase.h"
 
+@class citem;
 @class vspinner;
 
 @interface vitem:viewbase<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>

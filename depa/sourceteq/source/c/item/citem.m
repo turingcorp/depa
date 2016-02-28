@@ -6,6 +6,12 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    if(!self.manager)
+    {
+        amanager *manager = [amanager call:[[acalltoken alloc] init:@{}] delegate:self];
+        self.manager = manager;
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated

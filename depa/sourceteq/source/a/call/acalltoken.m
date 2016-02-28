@@ -8,7 +8,7 @@
     
     self.post = YES;
     self.keyforendpoint = @"token";
-    self.parser = [[aparsersearch alloc] init];
+    self.parser = [[aparsertoken alloc] init];
     
     return self;
 }
