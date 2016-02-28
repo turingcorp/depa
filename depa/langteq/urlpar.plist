@@ -6,5 +6,7 @@
 	<string>https://api.mercadolibre.com</string>
 	<key>search</key>
 	<string>/sites/%@/search?</string>
+	<key>token</key>
+	<string>/oauth/token?grant_type=client_credentials&amp;client_id=%@&amp;client_secret=%@</string>
 </dict>
 </plist>
