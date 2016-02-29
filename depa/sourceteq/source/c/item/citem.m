@@ -9,8 +9,8 @@
     
     if(!self.manager)
     {
-        amanager *manager = [amanager call:[[acalltoken alloc] init:@{}] delegate:self];
-        self.manager = manager;
+//        amanager *manager = [amanager call:[[acalltoken alloc] init:@{}] delegate:self];
+//        self.manager = manager;
     }
 }
 

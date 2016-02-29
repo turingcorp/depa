@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */; };
-		DA0EC9C01C82E44900672AA6 /* acalltoken.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0EC9BF1C82E44900672AA6 /* acalltoken.m */; };
-		DA0EC9C31C82E59F00672AA6 /* aparsertoken.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0EC9C21C82E59F00672AA6 /* aparsertoken.m */; };
 		DA1C50861C80A6A000598B1A /* vlikedflow.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1C50851C80A6A000598B1A /* vlikedflow.m */; };
 		DA1C50891C80EDA800598B1A /* vitemcar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1C50881C80EDA800598B1A /* vitemcar.m */; };
 		DA1C508F1C80F59700598B1A /* vitembar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1C508E1C80F59700598B1A /* vitembar.m */; };
@@ -144,10 +142,6 @@
 		2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.release.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.release.xcconfig"; sourceTree = "<group>"; };
 		78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-depa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.debug.xcconfig"; sourceTree = "<group>"; };
-		DA0EC9BE1C82E44900672AA6 /* acalltoken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acalltoken.h; sourceTree = "<group>"; };
-		DA0EC9BF1C82E44900672AA6 /* acalltoken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalltoken.m; sourceTree = "<group>"; };
-		DA0EC9C11C82E59F00672AA6 /* aparsertoken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparsertoken.h; sourceTree = "<group>"; };
-		DA0EC9C21C82E59F00672AA6 /* aparsertoken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparsertoken.m; sourceTree = "<group>"; };
 		DA1C50841C80A6A000598B1A /* vlikedflow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vlikedflow.h; sourceTree = "<group>"; };
 		DA1C50851C80A6A000598B1A /* vlikedflow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vlikedflow.m; sourceTree = "<group>"; };
 		DA1C50871C80EDA800598B1A /* vitemcar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemcar.h; sourceTree = "<group>"; };
@@ -662,8 +656,6 @@
 				DA2427A91C77D14900FE44B0 /* aimateq.m */,
 				DA2427AB1C77D1C200FE44B0 /* aimateqitem.h */,
 				DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */,
-				DA0EC9BE1C82E44900672AA6 /* acalltoken.h */,
-				DA0EC9BF1C82E44900672AA6 /* acalltoken.m */,
 			);
 			path = call;
 			sourceTree = "<group>";
@@ -687,8 +679,6 @@
 				DA1FBD561C7E078C0038A822 /* aparserlocationcity.m */,
 				DA1FBD5E1C7E43E00038A822 /* aparserlocationneigh.h */,
 				DA1FBD5F1C7E43E00038A822 /* aparserlocationneigh.m */,
-				DA0EC9C11C82E59F00672AA6 /* aparsertoken.h */,
-				DA0EC9C21C82E59F00672AA6 /* aparsertoken.m */,
 			);
 			path = parser;
 			sourceTree = "<group>";
@@ -1306,7 +1296,6 @@
 				DA6973201C764B6100A2C6EB /* amanager.m in Sources */,
 				DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */,
 				DA3173201C7CF65800B6CEF7 /* aparserlocation.m in Sources */,
-				DA0EC9C31C82E59F00672AA6 /* aparsertoken.m in Sources */,
 				DA31730E1C7CDFD800B6CEF7 /* vconfigtype.m in Sources */,
 				DA6973241C764C3600A2C6EB /* aparser.m in Sources */,
 				DA2427B61C77F61100FE44B0 /* vplayitemmiddle.m in Sources */,
@@ -1352,7 +1341,6 @@
 				DACDA84B1C76073200A37D15 /* crate.m in Sources */,
 				DA1FBD671C7F514E0038A822 /* mitemitem.m in Sources */,
 				DAD5C39A1C7FC34900FF8FDF /* mdbitem.m in Sources */,
-				DA0EC9C01C82E44900672AA6 /* acalltoken.m in Sources */,
 				DA25B1501C7B82C800B4BB21 /* mconfiglocation.m in Sources */,
 				DACDA8531C76073200A37D15 /* viewbase.m in Sources */,
 				DA3173051C7CDBD700B6CEF7 /* mconfigtyphouse.m in Sources */,
