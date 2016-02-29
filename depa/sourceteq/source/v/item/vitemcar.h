@@ -1,6 +1,7 @@
 #import "appdel.h"
 
 @class citem;
+@class vitemcarpaging;
 
 @interface vitemcar:UIView<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -8,6 +9,7 @@
 -(void)refresh;
 
 @property(weak, nonatomic)citem *controller;
+@property(weak, nonatomic)vitemcarpaging *paging;
 @property(weak, nonatomic)UICollectionView *collection;
 
 @end

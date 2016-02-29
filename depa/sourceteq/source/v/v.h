@@ -41,3 +41,5 @@
 #import "vitemcar.h"
 #import "vitemcarcel.h"
 #import "vitemcontact.h"
+#import "vitemcarpaging.h"
+#import "vitemcarpagingcel.h"

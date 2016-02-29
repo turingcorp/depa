@@ -37,14 +37,20 @@
     [collection setPagingEnabled:YES];
     [collection registerClass:[vitemcarcel class] forCellWithReuseIdentifier:celid];
     self.collection = collection;
+
+    vitemcarpaging *paging = [[vitemcarpaging alloc] init:controller];
+    self.paging = paging;
     
     [self addSubview:collection];
+    [self addSubview:paging];
     
-    NSDictionary *views = @{@"col":collection};
+    NSDictionary *views = @{@"col":collection, @"paging":paging};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[paging]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[paging(9)]-20-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -67,6 +73,7 @@
     }
     
     [self.collection reloadData];
+    [self.paging.collection reloadData];
 }
 
 #pragma mark -
@@ -96,8 +103,14 @@
 {
     vitemcarcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
     [cel config:[self.controller.item.images item:index.item]];
+    [self.paging.collection selectItemAtIndexPath:index animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     
     return cel;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    
 }
 
 @end
