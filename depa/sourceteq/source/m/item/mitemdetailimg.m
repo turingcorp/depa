@@ -32,7 +32,14 @@
 
 -(void)add:(NSArray*)urls
 {
+    NSUInteger count = urls.count;
     
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        NSString *url = urls[i];
+        aimateqitem *image = [[aimateqitem alloc] init:url];
+        [array addObject:image];
+    }
 }
 
 @end

@@ -28,6 +28,9 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    [self setExtendedLayoutIncludesOpaqueBars:NO];
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
 #warning "analytics"
 }
 
@@ -112,7 +115,7 @@
     aparseritem *parser = (aparseritem*)manager.call.parser;
     [self.item.images add:parser.picturesarray];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+    dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
                        [self.viewitem itemloaded];
