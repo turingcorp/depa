@@ -1,11 +1,13 @@
 #import "appdel.h"
 
+@class mitemdetail;
+
 @interface citem:UIViewController<acalldelegate>
 
--(instancetype)init:(NSString*)itemid type:(search_type)type mode:(search_mode)mode;
+-(instancetype)init:(mitemdetail*)item;
 -(void)back;
 
 @property(weak, nonatomic)amanager *manager;
-@property(copy, nonatomic)NSString *itemid;
+@property(strong, nonatomic)mitemdetail *item;
 
 @end

@@ -2,12 +2,12 @@
 
 @implementation citem
 
--(instancetype)init:(NSString*)itemid type:(search_type)type mode:(search_mode)mode
+-(instancetype)init:(mitemdetail*)item
 {
     self = [super init];
     
-    self.itemid = itemid;
-    [self titlefortype:type mode:mode];
+    self.item = item;
+    [self createtitle];
     
     return self;
 }
@@ -19,7 +19,7 @@
     
     if(!self.manager)
     {
-        amanager *manager = [amanager call:[[acallitem alloc] init:self.itemid] delegate:self];
+        amanager *manager = [amanager call:[[acallitem alloc] init:self.item.itemid] delegate:self];
         self.manager = manager;
     }
 }
@@ -53,11 +53,11 @@
 
 #pragma mark functionality
 
--(void)titlefortype:(search_type)type mode:(search_mode)mode
+-(void)createtitle
 {
     NSMutableString *displaytitle = [NSMutableString string];
     
-    switch(type)
+    switch(self.item.type)
     {
         case search_type_house:
             
@@ -74,7 +74,7 @@
     
     [displaytitle appendString:@" "];
     
-    switch(mode)
+    switch(self.item.mode)
     {
         case search_mode_rent:
             
