@@ -1,6 +1,6 @@
-#import "mitemdetailinfotitleprice.h"
+#import "mitemdetailinfodesc.h"
 
-@implementation mitemdetailinfotitleprice
+@implementation mitemdetailinfodesc
 {
     NSMutableAttributedString *mutstring;
     CGFloat cellheight;
@@ -24,11 +24,8 @@
 -(void)config:(mitemdetail*)item collection:(UICollectionView*)collection
 {
     NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.45]};
-    NSDictionary *attrprice = @{NSFontAttributeName:[UIFont fontWithName:fontname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.3]};
     mutstring = [[NSMutableAttributedString alloc] init];
     [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemtitle attributes:attrtitle]];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:attrprice]];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemprice attributes:attrprice]];
     
     CGFloat colwidth = collection.bounds.size.width;
     CGFloat textwidth = colwidth - (marginhorizontal * 2);

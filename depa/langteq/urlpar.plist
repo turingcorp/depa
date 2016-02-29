@@ -8,5 +8,7 @@
 	<string>/sites/%@/search?</string>
 	<key>item</key>
 	<string>/items/%@</string>
+	<key>desc</key>
+	<string>/items/%@/description</string>
 </dict>
 </plist>

@@ -120,7 +120,7 @@
         self.item.itemprice = [[tools singleton] pricetostring:parser.itemprice currency:parser.itemcurrency];
         
         mitemdetailinfotitleprice *infotitleprice = [[mitemdetailinfotitleprice alloc] init];
-        [infotitleprice config:self.item];
+        [infotitleprice config:self.item collection:self.viewitem.collection];
         
         [self.viewitem.model add:infotitleprice];
         
@@ -128,20 +128,36 @@
                        ^
                        {
                            [self.viewitem itemloaded];
+                           
+                           amanager *manager = [amanager call:[[acalldesc alloc] init:self.item.itemid] delegate:self];
+                           self.manager = manager;
                        });
     }
     else
     {
+        aparserdesc *parser = (aparserdesc*)manager.call.parser;
+        self.item.itemdesc = parser.itemdesc;
         
+        mitemdetailinfodesc *infodesc = [[mitemdetailinfodesc alloc] init];
+        [infodesc config:self.item collection:self.viewitem.collection];
+        
+        [self.viewitem.model add:infodesc];
+        
+        dispatch_async(dispatch_get_main_queue(),
+                       ^
+                       {
+                           [self.viewitem descriptionloaded];
+                       });
     }
 }
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
+    self.manager = nil;
+    
     if([manager.call isKindOfClass:[acallitem class]])
     {
         [valert alert:error inview:self.viewitem offsettop:65];
-        self.manager = nil;
         
         dispatch_async(dispatch_get_main_queue(),
                        ^

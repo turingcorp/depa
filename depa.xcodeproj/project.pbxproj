@@ -18,6 +18,9 @@
 		DA12BC931C84F2E600ED9497 /* mitemdetailinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC921C84F2E600ED9497 /* mitemdetailinfo.m */; };
 		DA12BC971C84F56B00ED9497 /* mitemdetailinfotitleprice.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC961C84F56B00ED9497 /* mitemdetailinfotitleprice.m */; };
 		DA12BC9A1C84F70700ED9497 /* vitemcel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC991C84F70700ED9497 /* vitemcel.m */; };
+		DA12BC9D1C8504FD00ED9497 /* aparserdesc.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC9C1C8504FD00ED9497 /* aparserdesc.m */; };
+		DA12BCA01C85050C00ED9497 /* acalldesc.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC9F1C85050C00ED9497 /* acalldesc.m */; };
+		DA12BCA31C85078B00ED9497 /* mitemdetailinfodesc.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BCA21C85078B00ED9497 /* mitemdetailinfodesc.m */; };
 		DA1C50861C80A6A000598B1A /* vlikedflow.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1C50851C80A6A000598B1A /* vlikedflow.m */; };
 		DA1C50891C80EDA800598B1A /* vitemcar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1C50881C80EDA800598B1A /* vitemcar.m */; };
 		DA1C508F1C80F59700598B1A /* vitembar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1C508E1C80F59700598B1A /* vitembar.m */; };
@@ -173,6 +176,12 @@
 		DA12BC961C84F56B00ED9497 /* mitemdetailinfotitleprice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemdetailinfotitleprice.m; sourceTree = "<group>"; };
 		DA12BC981C84F70700ED9497 /* vitemcel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemcel.h; sourceTree = "<group>"; };
 		DA12BC991C84F70700ED9497 /* vitemcel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemcel.m; sourceTree = "<group>"; };
+		DA12BC9B1C8504FD00ED9497 /* aparserdesc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserdesc.h; sourceTree = "<group>"; };
+		DA12BC9C1C8504FD00ED9497 /* aparserdesc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserdesc.m; sourceTree = "<group>"; };
+		DA12BC9E1C85050C00ED9497 /* acalldesc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acalldesc.h; sourceTree = "<group>"; };
+		DA12BC9F1C85050C00ED9497 /* acalldesc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalldesc.m; sourceTree = "<group>"; };
+		DA12BCA11C85078B00ED9497 /* mitemdetailinfodesc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mitemdetailinfodesc.h; sourceTree = "<group>"; };
+		DA12BCA21C85078B00ED9497 /* mitemdetailinfodesc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemdetailinfodesc.m; sourceTree = "<group>"; };
 		DA1C50841C80A6A000598B1A /* vlikedflow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vlikedflow.h; sourceTree = "<group>"; };
 		DA1C50851C80A6A000598B1A /* vlikedflow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vlikedflow.m; sourceTree = "<group>"; };
 		DA1C50871C80EDA800598B1A /* vitemcar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemcar.h; sourceTree = "<group>"; };
@@ -481,6 +490,8 @@
 				DA12BC941C84F2F500ED9497 /* mitemdetailinfoprotocol.h */,
 				DA12BC951C84F56B00ED9497 /* mitemdetailinfotitleprice.h */,
 				DA12BC961C84F56B00ED9497 /* mitemdetailinfotitleprice.m */,
+				DA12BCA11C85078B00ED9497 /* mitemdetailinfodesc.h */,
+				DA12BCA21C85078B00ED9497 /* mitemdetailinfodesc.m */,
 			);
 			path = item;
 			sourceTree = "<group>";
@@ -684,6 +695,8 @@
 				DA69731B1C764B6100A2C6EB /* acallsearch.m */,
 				DA12BC791C84869900ED9497 /* acallitem.h */,
 				DA12BC7A1C84869900ED9497 /* acallitem.m */,
+				DA12BC9E1C85050C00ED9497 /* acalldesc.h */,
+				DA12BC9F1C85050C00ED9497 /* acalldesc.m */,
 				DA3173211C7CF7D400B6CEF7 /* acalllocation.h */,
 				DA3173221C7CF7D400B6CEF7 /* acalllocation.m */,
 				DA3173181C7CF43D00B6CEF7 /* acalllocationstate.h */,
@@ -711,6 +724,8 @@
 				DA6973261C764C4700A2C6EB /* aparsersearch.m */,
 				DA12BC7C1C8487BC00ED9497 /* aparseritem.h */,
 				DA12BC7D1C8487BC00ED9497 /* aparseritem.m */,
+				DA12BC9B1C8504FD00ED9497 /* aparserdesc.h */,
+				DA12BC9C1C8504FD00ED9497 /* aparserdesc.m */,
 				DAD5C3921C7FAFD800FF8FDF /* aparsersearchatt.h */,
 				DAD5C3931C7FAFD800FF8FDF /* aparsersearchatt.m */,
 				DAD5C3951C7FAFE500FF8FDF /* aparsersearchattitem.h */,
@@ -1345,13 +1360,16 @@
 				DA25B1531C7B82D300B4BB21 /* mconfigtype.m in Sources */,
 				DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */,
 				DA3173111C7CDFE200B6CEF7 /* vconfigtypecel.m in Sources */,
+				DA12BCA01C85050C00ED9497 /* acalldesc.m in Sources */,
 				DAD5C38D1C7F9ADD00FF8FDF /* vitem.m in Sources */,
 				DAD5C3A01C7FC81F00FF8FDF /* mlikeditem.m in Sources */,
 				DA3172D81C7CA49200B6CEF7 /* mcountryitemapartment.m in Sources */,
 				DA12BC8A1C849A8800ED9497 /* vitemcarcel.m in Sources */,
+				DA12BC9D1C8504FD00ED9497 /* aparserdesc.m in Sources */,
 				DA1FBD6A1C7F6EEA0038A822 /* mconfigno.m in Sources */,
 				DA6973201C764B6100A2C6EB /* amanager.m in Sources */,
 				DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */,
+				DA12BCA31C85078B00ED9497 /* mitemdetailinfodesc.m in Sources */,
 				DA3173201C7CF65800B6CEF7 /* aparserlocation.m in Sources */,
 				DA31730E1C7CDFD800B6CEF7 /* vconfigtype.m in Sources */,
 				DA6973241C764C3600A2C6EB /* aparser.m in Sources */,

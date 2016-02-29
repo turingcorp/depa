@@ -10,6 +10,7 @@
 @property(copy, nonatomic)NSString *itemid;
 @property(copy, nonatomic)NSString *itemtitle;
 @property(copy, nonatomic)NSString *itemprice;
+@property(copy, nonatomic)NSString *itemdesc;
 @property(nonatomic)search_type type;
 @property(nonatomic)search_mode mode;
 

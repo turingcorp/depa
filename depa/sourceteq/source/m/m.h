@@ -42,6 +42,7 @@
 #import "mitemdetailinfo.h"
 #import "mitemdetailinfoprotocol.h"
 #import "mitemdetailinfotitleprice.h"
+#import "mitemdetailinfodesc.h"
 #import "mitemdetailimg.h"
 #import "mliked.h"
 #import "mlikeditem.h"
