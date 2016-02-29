@@ -52,6 +52,7 @@
     [collection setDataSource:self];
     [collection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:celid];
     [collection setUserInteractionEnabled:NO];
+    self.collection = collection;
     
     vitemcar *car = [[vitemcar alloc] init:self.controlleritem];
     self.car = car;

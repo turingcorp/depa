@@ -2,7 +2,7 @@
 
 @implementation valert
 
-+(void)alert:(NSString*)message inview:(UIView*)view
++(void)alert:(NSString*)message inview:(UIView*)view offsettop:(CGFloat)offsettop
 {
     dispatch_async(dispatch_get_main_queue(),
                    ^
@@ -11,10 +11,10 @@
                        [view addSubview:alert];
                        
                        NSDictionary *views = @{@"alert":alert};
-                       NSDictionary *metrics = @{};
+                       NSDictionary *metrics = @{@"top":@(offsettop)};
                        
                        [view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[alert]-0-|" options:0 metrics:metrics views:views]];
-                       [view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[alert]" options:0 metrics:metrics views:views]];
+                       [view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(top)-[alert]" options:0 metrics:metrics views:views]];
                        
                        [alert show];
                    });

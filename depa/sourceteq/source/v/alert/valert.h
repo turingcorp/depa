@@ -2,6 +2,6 @@
 
 @interface valert:UIView
 
-+(void)alert:(NSString*)message inview:(UIView*)view;
++(void)alert:(NSString*)message inview:(UIView*)view offsettop:(CGFloat)offsettop;
 
 @end

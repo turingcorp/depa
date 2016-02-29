@@ -121,7 +121,7 @@
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-    [valert alert:error inview:self.viewitem.car];
+    [valert alert:error inview:self.viewitem offsettop:65];
     self.manager = nil;
     
     dispatch_async(dispatch_get_main_queue(),

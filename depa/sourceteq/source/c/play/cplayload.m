@@ -102,7 +102,7 @@
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-    [valert alert:error inview:self.viewload];
+    [valert alert:error inview:self.viewload offsettop:0];
     NSLog(@"Error: %@", error);
 
     dispatch_async(dispatch_get_main_queue(),
