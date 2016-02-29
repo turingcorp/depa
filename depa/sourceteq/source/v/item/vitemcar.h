@@ -7,5 +7,6 @@
 -(instancetype)init:(citem*)controller;
 
 @property(weak, nonatomic)citem *controller;
+@property(weak, nonatomic)UICollectionView *collection;
 
 @end
