@@ -4,8 +4,9 @@
 
 @interface vitemcarcel:UICollectionViewCell
 
--(void)config:(aimateqitem*)image;
+-(void)config:(aimateqitem*)apiimage;
 
-@property(weak, nonatomic)aimateqitem *image;
+@property(weak, nonatomic)aimateqitem *apiimage;
+@property(weak, nonatomic)UIImageView *image;
 
 @end

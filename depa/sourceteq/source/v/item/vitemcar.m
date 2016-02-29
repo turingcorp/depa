@@ -9,7 +9,7 @@
 -(instancetype)init:(citem*)controller
 {
     self = [super init];
-    [self setBackgroundColor:[UIColor colorWithWhite:0.85 alpha:1]];
+    [self setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:1]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
     
@@ -23,7 +23,7 @@
     [flow setMinimumInteritemSpacing:0];
     [flow setMinimumLineSpacing:2];
     [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    [flow setSectionInset:UIEdgeInsetsMake(0, 2, 0, 2)];
+    [flow setSectionInset:UIEdgeInsetsMake(2, 2, 2, 2)];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setBackgroundColor:[UIColor clearColor]];
@@ -43,7 +43,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-2-[col]-2-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

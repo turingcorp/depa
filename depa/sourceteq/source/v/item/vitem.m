@@ -27,7 +27,7 @@
     barminheight = 20;
     contactmintop = 10;
     contactmaxtop = 20;
-    carminheight = 30;
+    carminheight = 5;
     
     vspinner *spinner = [[vspinner alloc] init];
     [spinner startAnimating];
