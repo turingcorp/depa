@@ -1,15 +1,21 @@
 #import "vitemcar.h"
 
 @implementation vitemcar
+{
+    CGFloat cellwidth;
+    CGFloat cellheight;
+}
 
 -(instancetype)init:(citem*)controller
 {
     self = [super init];
-    [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundColor:[UIColor colorWithWhite:0.85 alpha:1]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
     
     self.controller = controller;
+    cellwidth = 0;
+    cellheight = 0;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
@@ -37,28 +43,42 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-2-[col]-2-|" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+-(void)layoutSubviews
+{
+    [self.collection.collectionViewLayout invalidateLayout];
+    [super layoutSubviews];
+}
+
+#pragma mark public
+
+-(void)refresh
+{
+    cellwidth = self.collection.bounds.size.width;
+    
+    if(cellwidth > 900)
+    {
+        cellwidth = 500;
+    }
+    else
+    {
+        cellwidth -= 4;
+    }
+    
+    [self.collection reloadData];
 }
 
 #pragma mark -
 #pragma mark col del
 
--(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath *)index
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGFloat width = col.bounds.size.width;
-    
-    if(width > 900)
-    {
-        width = 500;
-    }
-    else
-    {
-        width -= 4;
-    }
-    
-    CGSize size = CGSizeMake(width, col.bounds.size.height);
+    cellheight = col.bounds.size.height - 4;
+    CGSize size = CGSizeMake(cellwidth, cellheight);
     
     return size;
 }

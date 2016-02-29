@@ -7,8 +7,7 @@
     CGFloat contactmaxtop;
     CGFloat contactmintop;
     CGFloat carheight;
-    CGFloat colmaxtop;
-    CGFloat colmintop;
+    CGFloat carminheight;
     NSUInteger cells;
 }
 
@@ -23,13 +22,12 @@
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
     
     cells = 8;
+    carheight = 250;
     barmaxheight = 65;
     barminheight = 20;
     contactmintop = 10;
     contactmaxtop = 20;
-    carheight = 250;
-    colmaxtop = carheight + barmaxheight;
-    colmintop = barminheight;
+    carminheight = 30;
     
     vspinner *spinner = [[vspinner alloc] init];
     [spinner startAnimating];
@@ -41,7 +39,7 @@
     [flow setMinimumInteritemSpacing:0];
     [flow setMinimumLineSpacing:2];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flow setSectionInset:UIEdgeInsetsMake(0, 0, 40, 0)];
+    [flow setSectionInset:UIEdgeInsetsMake(carheight, 0, 40, 0)];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setClipsToBounds:YES];
@@ -59,16 +57,15 @@
     vitemcar *car = [[vitemcar alloc] init:self.controlleritem];
     self.car = car;
     
-    [self addSubview:car];
     [self addSubview:collection];
+    [self addSubview:car];
     [self addSubview:bar];
     [self addSubview:contact];
     [self addSubview:spinner];
     
     self.lcbar = [NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:barmaxheight];
     self.lccontact = [NSLayoutConstraint constraintWithItem:contact attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:contactmintop];
-    self.lccar = [NSLayoutConstraint constraintWithItem:car attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:barmaxheight];
-    self.lccol = [NSLayoutConstraint constraintWithItem:collection attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:colmaxtop];
+    self.lccar = [NSLayoutConstraint constraintWithItem:car attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:carheight];
     
     NSDictionary *views = @{@"contact":contact, @"bar":bar, @"collection":collection, @"spinner":spinner, @"car":car};
     NSDictionary *metrics = @{@"carheight":@(carheight)};
@@ -77,16 +74,14 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[contact(60)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[collection]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[collection]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-100-[spinner(80)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[car]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[car(carheight)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[collection]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[car]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.lcbar];
     [self addConstraint:self.lccontact];
     [self addConstraint:self.lccar];
-    [self addConstraint:self.lccol];
     
     return self;
 }
@@ -107,7 +102,7 @@
     [self.spinner stopAnimating];
     [self.spinner removeFromSuperview];
     [self.collection setUserInteractionEnabled:YES];
-    [self.car.collection reloadData];
+    [self.car refresh];
 }
 
 -(void)errorloading
@@ -143,8 +138,7 @@
     CGFloat offset_10 = offset / 10.0;
     CGFloat barheight = barmaxheight - offset;
     CGFloat contacttop = contactmintop + offset_10;
-    CGFloat cartop = barmaxheight - offset;
-    CGFloat coltop = colmaxtop - offset;
+    CGFloat newcarheight = carheight - offset;
     
     if(barheight < barminheight)
     {
@@ -164,19 +158,14 @@
         contacttop = contactmintop;
     }
     
-    if(coltop > colmaxtop)
+    if(newcarheight < carminheight)
     {
-        coltop = colmaxtop;
-    }
-    else if(coltop < colmintop)
-    {
-        coltop = colmintop;
+        newcarheight = carminheight;
     }
     
     self.lcbar.constant = barheight;
     self.lccontact.constant = contacttop;
-    self.lccar.constant = cartop;
-    self.lccol.constant = coltop;
+    self.lccar.constant = newcarheight;
 }
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index

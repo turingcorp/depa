@@ -17,6 +17,5 @@
 @property(weak, nonatomic)NSLayoutConstraint *lcbar;
 @property(weak, nonatomic)NSLayoutConstraint *lccontact;
 @property(weak, nonatomic)NSLayoutConstraint *lccar;
-@property(weak, nonatomic)NSLayoutConstraint *lccol;
 
 @end
