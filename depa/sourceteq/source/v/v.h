@@ -37,6 +37,7 @@
 #import "vlikedflow.h"
 #import "vlikedcel.h"
 #import "vitem.h"
+#import "vitemcel.h"
 #import "vitembar.h"
 #import "vitemcar.h"
 #import "vitemcarcel.h"

@@ -8,6 +8,8 @@
 
 @property(strong, nonatomic)mitemdetailimg *images;
 @property(copy, nonatomic)NSString *itemid;
+@property(copy, nonatomic)NSString *itemtitle;
+@property(copy, nonatomic)NSString *itemprice;
 @property(nonatomic)search_type type;
 @property(nonatomic)search_mode mode;
 

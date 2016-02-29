@@ -8,7 +8,6 @@
     CGFloat contactmintop;
     CGFloat carheight;
     CGFloat carminheight;
-    NSUInteger cells;
 }
 
 -(instancetype)init:(citem*)controller
@@ -18,10 +17,10 @@
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
 
     self.controlleritem = controller;
+    self.model = [[mitemdetailinfo alloc] init];
     vitembar *bar = [[vitembar alloc] init:controller];
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
     
-    cells = 8;
     carheight = 280;
     barmaxheight = 65;
     barminheight = 20;
@@ -50,11 +49,12 @@
     [collection setAlwaysBounceVertical:YES];
     [collection setDelegate:self];
     [collection setDataSource:self];
-    [collection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:celid];
-    [collection setUserInteractionEnabled:NO];
+    [collection registerClass:[vitemcel class] forCellWithReuseIdentifier:celid];
+    [collection setHidden:YES];
     self.collection = collection;
     
     vitemcar *car = [[vitemcar alloc] init:self.controlleritem];
+    [car setHidden:YES];
     self.car = car;
     
     [self addSubview:collection];
@@ -102,8 +102,15 @@
 {
     [self.spinner stopAnimating];
     [self.spinner removeFromSuperview];
-    [self.collection setUserInteractionEnabled:YES];
+    [self.collection setHidden:NO];
+    [self.car setHidden:NO];
+    [self.collection reloadData];
     [self.car refresh];
+}
+
+-(void)descriptionloaded
+{
+    [self.collection reloadData];
 }
 
 -(void)errorloading
@@ -177,7 +184,8 @@
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGSize size = CGSizeMake(col.bounds.size.width, 100);
+    CGFloat height = [[self.model item:index.item] height];
+    CGSize size = CGSizeMake(col.bounds.size.width, height);
     
     return size;
 }
@@ -189,13 +197,15 @@
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    return cells;
+    NSUInteger count = [self.model count];
+    
+    return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
-    UICollectionViewCell *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
-    [cel setBackgroundColor:[UIColor whiteColor]];
+    vitemcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
+    [cel config:[[self.model item:index.item] overview]];
     
     return cel;
 }

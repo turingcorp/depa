@@ -4,15 +4,18 @@
 @class citem;
 @class vspinner;
 @class vitemcar;
+@class mitemdetailinfo;
 
 @interface vitem:viewbase<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 -(void)itemloaded;
+-(void)descriptionloaded;
 -(void)errorloading;
 
 @property(weak, nonatomic)citem *controlleritem;
 @property(weak, nonatomic)vspinner *spinner;
 @property(weak, nonatomic)vitemcar *car;
+@property(strong, nonatomic)mitemdetailinfo *model;
 @property(weak, nonatomic)UICollectionView *collection;
 @property(weak, nonatomic)NSLayoutConstraint *lcbar;
 @property(weak, nonatomic)NSLayoutConstraint *lccontact;

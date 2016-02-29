@@ -112,26 +112,43 @@
 
 -(void)callsuccess:(amanager*)manager
 {
-    aparseritem *parser = (aparseritem*)manager.call.parser;
-    [self.item.images add:parser.picturesarray];
-    
-    dispatch_async(dispatch_get_main_queue(),
-                   ^
-                   {
-                       [self.viewitem itemloaded];
-                   });
+    if([manager.call isKindOfClass:[acallitem class]])
+    {
+        aparseritem *parser = (aparseritem*)manager.call.parser;
+        [self.item.images add:parser.picturesarray];
+        self.item.itemtitle = parser.itemtitle;
+        self.item.itemprice = [[tools singleton] pricetostring:parser.itemprice currency:parser.itemcurrency];
+        
+        mitemdetailinfotitleprice *infotitleprice = [[mitemdetailinfotitleprice alloc] init];
+        [infotitleprice config:self.item];
+        
+        [self.viewitem.model add:infotitleprice];
+        
+        dispatch_async(dispatch_get_main_queue(),
+                       ^
+                       {
+                           [self.viewitem itemloaded];
+                       });
+    }
+    else
+    {
+        
+    }
 }
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-    [valert alert:error inview:self.viewitem offsettop:65];
-    self.manager = nil;
-    
-    dispatch_async(dispatch_get_main_queue(),
-                   ^
-                   {
-                       [self.viewitem errorloading];
-                   });
+    if([manager.call isKindOfClass:[acallitem class]])
+    {
+        [valert alert:error inview:self.viewitem offsettop:65];
+        self.manager = nil;
+        
+        dispatch_async(dispatch_get_main_queue(),
+                       ^
+                       {
+                           [self.viewitem errorloading];
+                       });
+    }
 }
 
 @end
