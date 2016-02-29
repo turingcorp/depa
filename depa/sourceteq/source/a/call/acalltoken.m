@@ -19,7 +19,7 @@
 -(void)buildendpoint:(NSDictionary*)params
 {
     NSString *rawendpoint = params[self.keyforendpoint];
-    self.endpoint = [NSString stringWithFormat:rawendpoint, meliclientid, melisecretkey];
+    self.endpoint = [NSString stringWithFormat:rawendpoint, meliclientid, melisecretkey, melicode];
 }
 
 @end
