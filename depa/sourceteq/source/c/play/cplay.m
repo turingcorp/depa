@@ -70,7 +70,7 @@ static const NSUInteger minitemspull = 3;
     [self setViewControllers:array direction:direction animated:animated completion:nil];
 }
 
--(void)shownextitem:(UIPageViewControllerNavigationDirection)direction
+-(void)shownextitem:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
     msearchresult *item = [self.model next];
     UIViewController *controller;
@@ -91,7 +91,7 @@ static const NSUInteger minitemspull = 3;
         }
     }
     
-    [self changecontroller:controller direction:direction animated:YES];
+    [self changecontroller:controller direction:direction animated:animated];
     [self backgroundpull];
 }
 
@@ -122,12 +122,17 @@ static const NSUInteger minitemspull = 3;
 
 -(void)playlike
 {
-    [self shownextitem:UIPageViewControllerNavigationDirectionReverse];
+    [self shownextitem:UIPageViewControllerNavigationDirectionReverse animated:YES];
 }
 
 -(void)playno
 {
-    [self shownextitem:UIPageViewControllerNavigationDirectionForward];
+    [self shownextitem:UIPageViewControllerNavigationDirectionForward animated:YES];
+}
+
+-(void)playitem
+{
+    [self shownextitem:UIPageViewControllerNavigationDirectionForward animated:NO];
 }
 
 #pragma mark -
@@ -142,7 +147,7 @@ static const NSUInteger minitemspull = 3;
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [self shownextitem:UIPageViewControllerNavigationDirectionForward];
+                           [self shownextitem:UIPageViewControllerNavigationDirectionForward animated:NO];
                        });
     }
     

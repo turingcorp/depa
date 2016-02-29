@@ -9,7 +9,7 @@
 -(instancetype)init:(citem*)controller
 {
     self = [super init];
-    [self setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:1]];
+    [self setBackgroundColor:[UIColor colorWithWhite:0.92 alpha:1]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
     
@@ -21,9 +21,9 @@
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumLineSpacing:2];
+    [flow setMinimumLineSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    [flow setSectionInset:UIEdgeInsetsMake(2, 2, 2, 2)];
+    [flow setSectionInset:UIEdgeInsetsMake(2, 0, 2, 0)];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setBackgroundColor:[UIColor clearColor]];
@@ -34,6 +34,7 @@
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
     [collection setDataSource:self];
     [collection setDelegate:self];
+    [collection setPagingEnabled:YES];
     [collection registerClass:[vitemcarcel class] forCellWithReuseIdentifier:celid];
     self.collection = collection;
     
@@ -63,10 +64,6 @@
     if(cellwidth > 900)
     {
         cellwidth = 500;
-    }
-    else
-    {
-        cellwidth -= 4;
     }
     
     [self.collection reloadData];

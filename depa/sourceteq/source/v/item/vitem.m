@@ -22,12 +22,12 @@
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
     
     cells = 8;
-    carheight = 250;
+    carheight = 310;
     barmaxheight = 65;
     barminheight = 20;
     contactmintop = 10;
     contactmaxtop = 20;
-    carminheight = 5;
+    carminheight = 80;
     
     vspinner *spinner = [[vspinner alloc] init];
     [spinner startAnimating];

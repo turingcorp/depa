@@ -9,6 +9,7 @@
 -(instancetype)init:(BOOL)synch;
 -(void)playlike;
 -(void)playno;
+-(void)playitem;
 
 @property(strong, nonatomic)msearch *model;
 @property(weak, nonatomic)amanager *callmanager;
