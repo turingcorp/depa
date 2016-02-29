@@ -10,6 +10,7 @@
     self = [super init];
     [self setClipsToBounds:YES];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self setUserInteractionEnabled:NO];
     
     interitem = 0;
     self.controller = controller;

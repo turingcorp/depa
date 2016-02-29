@@ -10,6 +10,9 @@
     
     if(self.validjson)
     {
+        self.itemtitle = self.validjson[@"title"];
+        self.itemcurrency = self.validjson[@"currency_id"];
+        self.itemprice = self.validjson[@"price"];
         NSArray *jsonpictures = self.validjson[@"pictures"];
         NSUInteger count = jsonpictures.count;
         
