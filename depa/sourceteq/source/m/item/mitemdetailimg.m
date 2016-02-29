@@ -30,4 +30,9 @@
     return item;
 }
 
+-(void)add:(NSArray*)urls
+{
+    
+}
+
 @end

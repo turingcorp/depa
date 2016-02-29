@@ -71,11 +71,45 @@
     return self;
 }
 
+#pragma mark actions
+
+-(void)actiontryagain:(UIButton*)button
+{
+    [button removeFromSuperview];
+    [self.spinner startAnimating];
+}
+
 #pragma mark public
 
 -(void)itemloaded
 {
+    [self.spinner stopAnimating];
+    [self.spinner removeFromSuperview];
+    [self.collection setHidden:NO];
+}
+
+-(void)errorloading
+{
+    [self.spinner stopAnimating];
     
+    UIButton *button = [[UIButton alloc] init];
+    [button setBackgroundColor:colorsecond];
+    [button setClipsToBounds:YES];
+    [button setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithWhite:1 alpha:0.1] forState:UIControlStateHighlighted];
+    [button setTitle:NSLocalizedString(@"item_detail_buttonretry", nil) forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont fontWithName:fontboldname size:16]];
+    [button addTarget:self action:@selector(actiontryagain:) forControlEvents:UIControlEventTouchUpInside];
+    [button.layer setCornerRadius:4];
+    
+    [self addSubview:button];
+    
+    NSDictionary *views = @{@"button":button};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[button]-80-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-120-[button(40)]" options:0 metrics:metrics views:views]];
 }
 
 #pragma mark -
@@ -123,7 +157,7 @@
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    return 10;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index

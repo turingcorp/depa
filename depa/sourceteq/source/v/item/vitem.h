@@ -7,6 +7,7 @@
 @interface vitem:viewbase<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 -(void)itemloaded;
+-(void)errorloading;
 
 @property(weak, nonatomic)citem *controlleritem;
 @property(weak, nonatomic)vspinner *spinner;

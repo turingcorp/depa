@@ -16,12 +16,7 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    
-    if(!self.manager)
-    {
-        amanager *manager = [amanager call:[[acallitem alloc] init:self.item.itemid] delegate:self];
-        self.manager = manager;
-    }
+    [self tryagain];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -39,6 +34,7 @@
 -(void)loadView
 {
     self.view = [[vitem alloc] init:self];
+    self.viewitem = (vitem*)self.view;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -99,17 +95,40 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+-(void)tryagain
+{
+    if(!self.manager)
+    {
+        amanager *manager = [amanager call:[[acallitem alloc] init:self.item.itemid] delegate:self];
+        self.manager = manager;
+    }
+}
+
 #pragma mark -
 #pragma mark call del
 
 -(void)callsuccess:(amanager*)manager
 {
+    aparseritem *parser = (aparseritem*)manager.call.parser;
+    [self.item.images add:parser.picturesarray];
     
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       [self.viewitem itemloaded];
+                   });
 }
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
+    [valert alert:error inview:self.viewitem];
+    self.manager = nil;
     
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [self.viewitem errorloading];
+                   });
 }
 
 @end

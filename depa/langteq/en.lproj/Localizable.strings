@@ -39,6 +39,8 @@
 "config_item_no_alert_title"="Clear discarded?";
 "config_item_no_alert_message"="Publications will be played once more";
 
+"item_detail_buttonretry"="Try again";
+
 "settings_original_locationname"="Mexico City";
 
 "liked_title"="Liked";
