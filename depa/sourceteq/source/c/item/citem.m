@@ -2,6 +2,16 @@
 
 @implementation citem
 
+-(instancetype)init:(NSString*)itemid type:(search_type)type mode:(search_mode)mode
+{
+    self = [super init];
+    
+    self.itemid = itemid;
+    [self titlefortype:type mode:mode];
+    
+    return self;
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -9,8 +19,8 @@
     
     if(!self.manager)
     {
-//        amanager *manager = [amanager call:[[acalltoken alloc] init:@{}] delegate:self];
-//        self.manager = manager;
+        amanager *manager = [amanager call:[[acallitem alloc] init:self.itemid] delegate:self];
+        self.manager = manager;
     }
 }
 
@@ -20,10 +30,31 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
--(instancetype)init:(NSString*)itemid type:(search_type)type mode:(search_mode)mode
+-(void)viewDidLoad
 {
-    self = [super init];
-    
+    [super viewDidLoad];
+#warning "analytics"
+}
+
+-(void)loadView
+{
+    self.view = [[vitem alloc] init:self];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return NO;
+}
+
+#pragma mark functionality
+
+-(void)titlefortype:(search_type)type mode:(search_mode)mode
+{
     NSMutableString *displaytitle = [NSMutableString string];
     
     switch(type)
@@ -59,29 +90,6 @@
     }
     
     [self setTitle:displaytitle];
-    
-    return self;
-}
-
--(void)viewDidLoad
-{
-    [super viewDidLoad];
-#warning "analytics"
-}
-
--(void)loadView
-{
-    self.view = [[vitem alloc] init:self];
-}
-
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-
--(BOOL)prefersStatusBarHidden
-{
-    return NO;
 }
 
 #pragma mark public

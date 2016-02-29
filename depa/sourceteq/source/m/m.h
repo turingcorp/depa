@@ -38,5 +38,6 @@
 #import "mconfigtypapartment.h"
 #import "mitem.h"
 #import "mitemitem.h"
+#import "mitemdetail.h"
 #import "mliked.h"
 #import "mlikeditem.h"

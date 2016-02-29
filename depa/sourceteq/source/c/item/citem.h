@@ -6,5 +6,6 @@
 -(void)back;
 
 @property(weak, nonatomic)amanager *manager;
+@property(copy, nonatomic)NSString *itemid;
 
 @end

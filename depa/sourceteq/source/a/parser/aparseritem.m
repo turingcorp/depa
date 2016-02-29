@@ -16,7 +16,12 @@
         for(NSUInteger i = 0; i < count; i++)
         {
             NSDictionary *rawpicture = jsonpictures[i];
+            NSString *imageurl = rawpicture[@"url"];
             
+            if(imageurl)
+            {
+                [self.picturesarray addObject:imageurl];
+            }
         }
     }
 }
