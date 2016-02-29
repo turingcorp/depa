@@ -12,6 +12,7 @@
 		DA12BC7E1C8487BC00ED9497 /* aparseritem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC7D1C8487BC00ED9497 /* aparseritem.m */; };
 		DA12BC841C848B0700ED9497 /* mitemdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC831C848B0700ED9497 /* mitemdetail.m */; };
 		DA12BC871C848BF900ED9497 /* mitemdetailimg.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC861C848BF900ED9497 /* mitemdetailimg.m */; };
+		DA12BC8A1C849A8800ED9497 /* vitemcarcel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC891C849A8800ED9497 /* vitemcarcel.m */; };
 		DA1C50861C80A6A000598B1A /* vlikedflow.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1C50851C80A6A000598B1A /* vlikedflow.m */; };
 		DA1C50891C80EDA800598B1A /* vitemcar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1C50881C80EDA800598B1A /* vitemcar.m */; };
 		DA1C508F1C80F59700598B1A /* vitembar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1C508E1C80F59700598B1A /* vitembar.m */; };
@@ -154,6 +155,8 @@
 		DA12BC831C848B0700ED9497 /* mitemdetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemdetail.m; sourceTree = "<group>"; };
 		DA12BC851C848BF900ED9497 /* mitemdetailimg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mitemdetailimg.h; sourceTree = "<group>"; };
 		DA12BC861C848BF900ED9497 /* mitemdetailimg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemdetailimg.m; sourceTree = "<group>"; };
+		DA12BC881C849A8800ED9497 /* vitemcarcel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemcarcel.h; sourceTree = "<group>"; };
+		DA12BC891C849A8800ED9497 /* vitemcarcel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemcarcel.m; sourceTree = "<group>"; };
 		DA1C50841C80A6A000598B1A /* vlikedflow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vlikedflow.h; sourceTree = "<group>"; };
 		DA1C50851C80A6A000598B1A /* vlikedflow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vlikedflow.m; sourceTree = "<group>"; };
 		DA1C50871C80EDA800598B1A /* vitemcar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemcar.h; sourceTree = "<group>"; };
@@ -1098,6 +1101,8 @@
 				DA1C508E1C80F59700598B1A /* vitembar.m */,
 				DA1C50871C80EDA800598B1A /* vitemcar.h */,
 				DA1C50881C80EDA800598B1A /* vitemcar.m */,
+				DA12BC881C849A8800ED9497 /* vitemcarcel.h */,
+				DA12BC891C849A8800ED9497 /* vitemcarcel.m */,
 				DA1C50901C810F3A00598B1A /* vitemcontact.h */,
 				DA1C50911C810F3A00598B1A /* vitemcontact.m */,
 			);
@@ -1313,6 +1318,7 @@
 				DAD5C38D1C7F9ADD00FF8FDF /* vitem.m in Sources */,
 				DAD5C3A01C7FC81F00FF8FDF /* mlikeditem.m in Sources */,
 				DA3172D81C7CA49200B6CEF7 /* mcountryitemapartment.m in Sources */,
+				DA12BC8A1C849A8800ED9497 /* vitemcarcel.m in Sources */,
 				DA1FBD6A1C7F6EEA0038A822 /* mconfigno.m in Sources */,
 				DA6973201C764B6100A2C6EB /* amanager.m in Sources */,
 				DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */,

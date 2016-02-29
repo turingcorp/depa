@@ -39,4 +39,5 @@
 #import "vitem.h"
 #import "vitembar.h"
 #import "vitemcar.h"
+#import "vitemcarcel.h"
 #import "vitemcontact.h"

@@ -46,6 +46,7 @@
     [collection setDataSource:self];
     [collection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:celid];
     [collection setUserInteractionEnabled:NO];
+    [collection setHidden:YES];
     
     [self addSubview:collection];
     [self addSubview:bar];
@@ -77,6 +78,7 @@
 {
     [button removeFromSuperview];
     [self.spinner startAnimating];
+    [self.controlleritem tryagain];
 }
 
 #pragma mark public
@@ -109,7 +111,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[button]-80-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-120-[button(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-185-[button(40)]" options:0 metrics:metrics views:views]];
 }
 
 #pragma mark -
