@@ -39,5 +39,6 @@
 #import "mitem.h"
 #import "mitemitem.h"
 #import "mitemdetail.h"
+#import "mitemdetailimg.h"
 #import "mliked.h"
 #import "mlikeditem.h"
