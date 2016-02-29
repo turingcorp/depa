@@ -7,7 +7,7 @@
     self = [super init:variables];
     
     self.keyforendpoint = @"item";
-    self.parser = [[aparsersearch alloc] init];
+    self.parser = [[aparseritem alloc] init];
     
     return self;
 }
