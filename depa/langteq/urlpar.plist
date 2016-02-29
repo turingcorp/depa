@@ -6,7 +6,7 @@
 	<string>https://api.mercadolibre.com</string>
 	<key>search</key>
 	<string>/sites/%@/search?</string>
-	<key>token</key>
-	<string>/oauth/token?grant_type=authorization_code&amp;client_id=%@&amp;client_secret=%@&amp;code=%@&amp;redirect_uri=https://nubecero.com</string>
+	<key>item</key>
+	<string>/items/%@</string>
 </dict>
 </plist>
