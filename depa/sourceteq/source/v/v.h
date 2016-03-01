@@ -46,3 +46,4 @@
 #import "vitemcarpagingcel.h"
 #import "vitemlocation.h"
 #import "vitemlocationmenu.h"
+#import "vitemlocationmap.h"

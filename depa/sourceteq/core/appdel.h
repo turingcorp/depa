@@ -3,6 +3,8 @@
 #import <UIKit/UIKit.h>
 #import <Google/Analytics.h>
 #import <AVFoundation/AVFoundation.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "analytics.h"
 #import "db.h"
 #import "timerbg.h"
