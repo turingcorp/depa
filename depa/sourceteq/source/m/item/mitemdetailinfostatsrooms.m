@@ -9,7 +9,7 @@
 
 -(NSString*)asset
 {
-    NSString *asset = @"";
+    NSString *asset = @"rooms";
     
     return asset;
 }
