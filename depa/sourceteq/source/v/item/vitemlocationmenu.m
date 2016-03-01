@@ -6,7 +6,7 @@
 {
     self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.08]];
+    [self setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.1]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     self.controller = controller;
@@ -14,8 +14,8 @@
     UIButton *buttonback = [[UIButton alloc] init];
     [buttonback setClipsToBounds:YES];
     [buttonback setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [buttonback setImage:[[UIImage imageNamed:@"aback"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-    [buttonback setImage:[[UIImage imageNamed:@"aback"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
+    [buttonback setImage:[[UIImage imageNamed:@"aback"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
+    [buttonback setImage:[[UIImage imageNamed:@"aback"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [buttonback.imageView setTintColor:colormain];
     [buttonback.imageView setClipsToBounds:YES];
     [buttonback.imageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -25,7 +25,7 @@
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
     [border setClipsToBounds:YES];
     [border setUserInteractionEnabled:NO];
-    [border setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.2]];
+    [border setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.2]];
     
     [self addSubview:border];
     [self addSubview:buttonback];
@@ -35,8 +35,8 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(1)]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[back(80)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[back]-1-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[back(60)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[back(50)]" options:0 metrics:metrics views:views]];
     
     return self;
 }

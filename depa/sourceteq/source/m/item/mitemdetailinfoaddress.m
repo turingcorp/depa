@@ -24,9 +24,7 @@
 
 -(void)actionmap:(UIButton*)button
 {
-    
-    
-//    [[cmain singleton] presentViewController:controller animated:YES completion:nil];
+    [citemlocation show:self.item];
 }
 
 #pragma mark -

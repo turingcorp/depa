@@ -25,6 +25,16 @@
     self.view = [[vitemlocation alloc] init:self];
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleDefault;
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return NO;
+}
+
 #pragma mark public
 
 -(void)back
