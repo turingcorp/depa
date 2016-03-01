@@ -20,6 +20,13 @@
     return self;
 }
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [(vitemlocation*)self.view loadmap];
+}
+
 -(void)loadView
 {
     self.view = [[vitemlocation alloc] init:self];

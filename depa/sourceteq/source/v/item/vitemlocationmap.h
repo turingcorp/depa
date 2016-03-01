@@ -1,13 +1,5 @@
-//
-//  vitemlocationmap.h
-//  depa
-//
-//  Created by zero on 3/1/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
 
-#import <Foundation/Foundation.h>
-
-@interface vitemlocationmap : NSObject
+@interface vitemlocationmap:MKMapView
 
 @end
