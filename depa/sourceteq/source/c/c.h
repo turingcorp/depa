@@ -12,3 +12,4 @@
 #import "cliked.h"
 #import "citem.h"
 #import "citemlocation.h"
+#import "citemcontact.h"

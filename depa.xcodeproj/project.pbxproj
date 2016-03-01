@@ -93,6 +93,7 @@
 		DA3173261C7D175C00B6CEF7 /* sconfigloccity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173251C7D175C00B6CEF7 /* sconfigloccity.m */; };
 		DA3E740E1C862C6300A73297 /* vitemstats.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E740D1C862C6300A73297 /* vitemstats.m */; };
 		DA3E74111C862C6C00A73297 /* vitemstatscel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E74101C862C6C00A73297 /* vitemstatscel.m */; };
+		DA3E74141C86386800A73297 /* citemcontact.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E74131C86386800A73297 /* citemcontact.m */; };
 		DA4118BC1C85E186002CD805 /* citemlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118BB1C85E186002CD805 /* citemlocation.m */; };
 		DA4118BF1C85E3B3002CD805 /* vitemlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118BE1C85E3B3002CD805 /* vitemlocation.m */; };
 		DA4118C21C85E498002CD805 /* vitemlocationmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118C11C85E498002CD805 /* vitemlocationmenu.m */; };
@@ -344,6 +345,8 @@
 		DA3E740D1C862C6300A73297 /* vitemstats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemstats.m; sourceTree = "<group>"; };
 		DA3E740F1C862C6C00A73297 /* vitemstatscel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemstatscel.h; sourceTree = "<group>"; };
 		DA3E74101C862C6C00A73297 /* vitemstatscel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemstatscel.m; sourceTree = "<group>"; };
+		DA3E74121C86386800A73297 /* citemcontact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = citemcontact.h; sourceTree = "<group>"; };
+		DA3E74131C86386800A73297 /* citemcontact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = citemcontact.m; sourceTree = "<group>"; };
 		DA4118BA1C85E186002CD805 /* citemlocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = citemlocation.h; sourceTree = "<group>"; };
 		DA4118BB1C85E186002CD805 /* citemlocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = citemlocation.m; sourceTree = "<group>"; };
 		DA4118BD1C85E3B3002CD805 /* vitemlocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemlocation.h; sourceTree = "<group>"; };
@@ -1184,6 +1187,8 @@
 				DAD5C3841C7F9A3400FF8FDF /* citem.m */,
 				DA4118BA1C85E186002CD805 /* citemlocation.h */,
 				DA4118BB1C85E186002CD805 /* citemlocation.m */,
+				DA3E74121C86386800A73297 /* citemcontact.h */,
+				DA3E74131C86386800A73297 /* citemcontact.m */,
 			);
 			path = item;
 			sourceTree = "<group>";
@@ -1394,6 +1399,7 @@
 				DACDA8551C76073200A37D15 /* vrate.m in Sources */,
 				DA25B16E1C7BB1D500B4BB21 /* vconfiglocmenucel.m in Sources */,
 				DA4118BC1C85E186002CD805 /* citemlocation.m in Sources */,
+				DA3E74141C86386800A73297 /* citemcontact.m in Sources */,
 				DA3172E11C7CA4C800B6CEF7 /* mcountryitembuy.m in Sources */,
 				DA3172EC1C7CBE9B00B6CEF7 /* sconfiglocstate.m in Sources */,
 				DA12BC931C84F2E600ED9497 /* mitemdetailinfo.m in Sources */,
