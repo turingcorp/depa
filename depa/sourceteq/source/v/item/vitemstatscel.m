@@ -23,7 +23,7 @@
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setFont:[UIFont fontWithName:fontname size:18]];
-    [label setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
+    [label setTextColor:[UIColor colorWithWhite:0 alpha:0.3]];
     self.label = label;
     
     [self addSubview:image];
