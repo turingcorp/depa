@@ -39,7 +39,7 @@
     
     if(item.rooms)
     {
-        NSString *roomstitle = [NSString stringWithFormat:NSLocalizedString(@"item_detail_stats_rooms", nil), @(item.meters)];
+        NSString *roomstitle = [NSString stringWithFormat:NSLocalizedString(@"item_detail_stats_rooms", nil), @(item.rooms)];
         mitemdetailinfostatsrooms *rooms = [[mitemdetailinfostatsrooms alloc] init];
         rooms.title = roomstitle;
         
@@ -48,7 +48,7 @@
     
     if(item.garages)
     {
-        NSString *garagetitle = [NSString stringWithFormat:NSLocalizedString(@"item_detail_stats_garages", nil), @(item.meters)];
+        NSString *garagetitle = [NSString stringWithFormat:NSLocalizedString(@"item_detail_stats_garages", nil), @(item.garages)];
         mitemdetailinfostatsgarages *garage = [[mitemdetailinfostatsgarages alloc] init];
         garage.title = garagetitle;
         

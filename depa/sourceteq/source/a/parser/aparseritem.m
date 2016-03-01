@@ -42,47 +42,31 @@
             
             if(attmeters)
             {
-                if(![attmeters.value.lowercaseString isEqualToString:@"no"])
+                NSInteger rawmeters = attmeters.value.integerValue;
+                
+                if(rawmeters > 0)
                 {
-                    NSInteger rawmeters = attmeters.value.integerValue;
-                    
-                    if(rawmeters > 0)
-                    {
-                        self.meters = rawmeters;
-                    }
+                    self.meters = rawmeters;
                 }
             }
             
             if(attrooms)
             {
-                if(![attrooms.value.lowercaseString isEqualToString:@"no"])
+                NSInteger rawrooms = attrooms.value.integerValue;
+                
+                if(rawrooms > 0)
                 {
-                    NSInteger rawrooms = attrooms.value.integerValue;
-                    
-                    if(rawrooms > 0)
-                    {
-                        self.rooms = rawrooms;
-                    }
+                    self.rooms = rawrooms;
                 }
             }
             
             if(attgarage)
             {
-                if(![attgarage.value.lowercaseString isEqualToString:@"no"])
+                NSInteger rawgarage = attgarage.value.integerValue;
+                
+                if(rawgarage > 0)
                 {
-                    if([attgarage.value.lowercaseString isEqualToString:@"si"])
-                    {
-                        self.garages = 1;
-                    }
-                    else
-                    {
-                        NSInteger rawgarage = attgarage.value.integerValue;
-                        
-                        if(rawgarage > 0)
-                        {
-                            self.garages = rawgarage;
-                        }
-                    }
+                    self.garages = rawgarage;
                 }
             }
         }
