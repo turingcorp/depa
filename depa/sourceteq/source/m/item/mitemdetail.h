@@ -17,5 +17,8 @@
 @property(copy, nonatomic)NSNumber *longitude;
 @property(nonatomic)search_type type;
 @property(nonatomic)search_mode mode;
+@property(nonatomic)NSUInteger meters;
+@property(nonatomic)NSUInteger rooms;
+@property(nonatomic)NSUInteger garages;
 
 @end

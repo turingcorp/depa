@@ -10,5 +10,8 @@
 @property(copy, nonatomic)NSNumber *itemprice;
 @property(copy, nonatomic)NSNumber *latitude;
 @property(copy, nonatomic)NSNumber *longitude;
+@property(nonatomic)NSUInteger rooms;
+@property(nonatomic)NSUInteger meters;
+@property(nonatomic)NSUInteger garages;
 
 @end

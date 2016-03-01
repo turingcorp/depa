@@ -127,6 +127,9 @@
         self.item.itemaddress = parser.itemaddress;
         self.item.latitude = parser.latitude;
         self.item.longitude = parser.longitude;
+        self.item.meters = parser.meters;
+        self.item.rooms = parser.rooms;
+        self.item.garages = parser.garages;
         self.item.itemprice = [[tools singleton] pricetostring:parser.itemprice currency:parser.itemcurrency];
         
         mitemdetailinfostats *infostats = [[mitemdetailinfostats alloc] init];

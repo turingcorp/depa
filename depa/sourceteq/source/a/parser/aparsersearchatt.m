@@ -42,6 +42,10 @@
         {
             attr = search_attr_rooms;
         }
+        else if([concreteid isEqualToString:@"garage"])
+        {
+            attr = search_attr_garage;
+        }
         
         item = [[aparsersearchattitem alloc] init:attr value:rawvalue];
         [array addObject:item];

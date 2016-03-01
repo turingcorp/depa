@@ -16,7 +16,8 @@ typedef NS_ENUM(NSUInteger, search_attr)
 {
     search_attr_unknown,
     search_attr_mtrs,
-    search_attr_rooms
+    search_attr_rooms,
+    search_attr_garage
 };
 
 typedef NS_ENUM(NSUInteger, item_status)
