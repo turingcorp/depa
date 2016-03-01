@@ -2,6 +2,12 @@
 
 @implementation citem
 
++(void)show:(mitemdetail*)item
+{
+    citem *controller = [[citem alloc] init:item];
+    [[cmain singleton] pushViewController:controller animated:YES];
+}
+
 -(instancetype)init:(mitemdetail*)item
 {
     self = [super init];

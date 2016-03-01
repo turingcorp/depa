@@ -9,6 +9,7 @@
 #import "vplaymenu.h"
 #import "vplaymenucel.h"
 #import "vplayitem.h"
+#import "vplayitembutton.h"
 #import "vplayitemheader.h"
 #import "vplayitemfooter.h"
 #import "vplayitemmiddle.h"

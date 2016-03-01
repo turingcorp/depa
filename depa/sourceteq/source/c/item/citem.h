@@ -5,7 +5,7 @@
 
 @interface citem:UIViewController<acalldelegate>
 
--(instancetype)init:(mitemdetail*)item;
++(void)show:(mitemdetail*)item;
 -(void)back;
 -(void)tryagain;
 
