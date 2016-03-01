@@ -91,6 +91,8 @@
 		DA3173201C7CF65800B6CEF7 /* aparserlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA31731F1C7CF65800B6CEF7 /* aparserlocation.m */; };
 		DA3173231C7CF7D400B6CEF7 /* acalllocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173221C7CF7D400B6CEF7 /* acalllocation.m */; };
 		DA3173261C7D175C00B6CEF7 /* sconfigloccity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173251C7D175C00B6CEF7 /* sconfigloccity.m */; };
+		DA3E740E1C862C6300A73297 /* vitemstats.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E740D1C862C6300A73297 /* vitemstats.m */; };
+		DA3E74111C862C6C00A73297 /* vitemstatscel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E74101C862C6C00A73297 /* vitemstatscel.m */; };
 		DA4118BC1C85E186002CD805 /* citemlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118BB1C85E186002CD805 /* citemlocation.m */; };
 		DA4118BF1C85E3B3002CD805 /* vitemlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118BE1C85E3B3002CD805 /* vitemlocation.m */; };
 		DA4118C21C85E498002CD805 /* vitemlocationmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118C11C85E498002CD805 /* vitemlocationmenu.m */; };
@@ -98,6 +100,9 @@
 		DA4118C71C85EFF8002CD805 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4118C61C85EFF8002CD805 /* MapKit.framework */; };
 		DA4118CA1C85F22E002CD805 /* mitemannotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118C91C85F22E002CD805 /* mitemannotation.m */; };
 		DA4118CD1C860468002CD805 /* vplayitembutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118CC1C860468002CD805 /* vplayitembutton.m */; };
+		DA4118D41C860F42002CD805 /* mitemdetailinfostatsmeters.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118D31C860F42002CD805 /* mitemdetailinfostatsmeters.m */; };
+		DA4118D71C860F50002CD805 /* mitemdetailinfostatsrooms.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118D61C860F50002CD805 /* mitemdetailinfostatsrooms.m */; };
+		DA4118DA1C860F60002CD805 /* mitemdetailinfostatsgarages.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118D91C860F60002CD805 /* mitemdetailinfostatsgarages.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -335,6 +340,10 @@
 		DA3173221C7CF7D400B6CEF7 /* acalllocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalllocation.m; sourceTree = "<group>"; };
 		DA3173241C7D175C00B6CEF7 /* sconfigloccity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sconfigloccity.h; sourceTree = "<group>"; };
 		DA3173251C7D175C00B6CEF7 /* sconfigloccity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sconfigloccity.m; sourceTree = "<group>"; };
+		DA3E740C1C862C6300A73297 /* vitemstats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemstats.h; sourceTree = "<group>"; };
+		DA3E740D1C862C6300A73297 /* vitemstats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemstats.m; sourceTree = "<group>"; };
+		DA3E740F1C862C6C00A73297 /* vitemstatscel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemstatscel.h; sourceTree = "<group>"; };
+		DA3E74101C862C6C00A73297 /* vitemstatscel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemstatscel.m; sourceTree = "<group>"; };
 		DA4118BA1C85E186002CD805 /* citemlocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = citemlocation.h; sourceTree = "<group>"; };
 		DA4118BB1C85E186002CD805 /* citemlocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = citemlocation.m; sourceTree = "<group>"; };
 		DA4118BD1C85E3B3002CD805 /* vitemlocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemlocation.h; sourceTree = "<group>"; };
@@ -348,6 +357,13 @@
 		DA4118C91C85F22E002CD805 /* mitemannotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemannotation.m; sourceTree = "<group>"; };
 		DA4118CB1C860468002CD805 /* vplayitembutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitembutton.h; sourceTree = "<group>"; };
 		DA4118CC1C860468002CD805 /* vplayitembutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitembutton.m; sourceTree = "<group>"; };
+		DA4118D11C860F28002CD805 /* mitemdetailinfostatsprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mitemdetailinfostatsprotocol.h; sourceTree = "<group>"; };
+		DA4118D21C860F42002CD805 /* mitemdetailinfostatsmeters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mitemdetailinfostatsmeters.h; sourceTree = "<group>"; };
+		DA4118D31C860F42002CD805 /* mitemdetailinfostatsmeters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemdetailinfostatsmeters.m; sourceTree = "<group>"; };
+		DA4118D51C860F50002CD805 /* mitemdetailinfostatsrooms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mitemdetailinfostatsrooms.h; sourceTree = "<group>"; };
+		DA4118D61C860F50002CD805 /* mitemdetailinfostatsrooms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemdetailinfostatsrooms.m; sourceTree = "<group>"; };
+		DA4118D81C860F60002CD805 /* mitemdetailinfostatsgarages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mitemdetailinfostatsgarages.h; sourceTree = "<group>"; };
+		DA4118D91C860F60002CD805 /* mitemdetailinfostatsgarages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemdetailinfostatsgarages.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -517,6 +533,13 @@
 				DA12BC941C84F2F500ED9497 /* mitemdetailinfoprotocol.h */,
 				DA12BCA41C850B6C00ED9497 /* mitemdetailinfostats.h */,
 				DA12BCA51C850B6C00ED9497 /* mitemdetailinfostats.m */,
+				DA4118D11C860F28002CD805 /* mitemdetailinfostatsprotocol.h */,
+				DA4118D21C860F42002CD805 /* mitemdetailinfostatsmeters.h */,
+				DA4118D31C860F42002CD805 /* mitemdetailinfostatsmeters.m */,
+				DA4118D51C860F50002CD805 /* mitemdetailinfostatsrooms.h */,
+				DA4118D61C860F50002CD805 /* mitemdetailinfostatsrooms.m */,
+				DA4118D81C860F60002CD805 /* mitemdetailinfostatsgarages.h */,
+				DA4118D91C860F60002CD805 /* mitemdetailinfostatsgarages.m */,
 				DA12BCA71C85128E00ED9497 /* mitemdetailinfoaddress.h */,
 				DA12BCA81C85128E00ED9497 /* mitemdetailinfoaddress.m */,
 				DA12BC951C84F56B00ED9497 /* mitemdetailinfotitleprice.h */,
@@ -1190,6 +1213,10 @@
 				DA4118C11C85E498002CD805 /* vitemlocationmenu.m */,
 				DA4118C31C85ED04002CD805 /* vitemlocationmap.h */,
 				DA4118C41C85ED04002CD805 /* vitemlocationmap.m */,
+				DA3E740C1C862C6300A73297 /* vitemstats.h */,
+				DA3E740D1C862C6300A73297 /* vitemstats.m */,
+				DA3E740F1C862C6C00A73297 /* vitemstatscel.h */,
+				DA3E74101C862C6C00A73297 /* vitemstatscel.m */,
 			);
 			path = item;
 			sourceTree = "<group>";
@@ -1412,6 +1439,7 @@
 				DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */,
 				DA3173111C7CDFE200B6CEF7 /* vconfigtypecel.m in Sources */,
 				DA12BCA01C85050C00ED9497 /* acalldesc.m in Sources */,
+				DA3E74111C862C6C00A73297 /* vitemstatscel.m in Sources */,
 				DAD5C38D1C7F9ADD00FF8FDF /* vitem.m in Sources */,
 				DAD5C3A01C7FC81F00FF8FDF /* mlikeditem.m in Sources */,
 				DA3172D81C7CA49200B6CEF7 /* mcountryitemapartment.m in Sources */,
@@ -1440,6 +1468,7 @@
 				DA1FBD5A1C7E42240038A822 /* sconfiglocneigh.m in Sources */,
 				DA25B1751C7BBA8500B4BB21 /* mconfigloclist.m in Sources */,
 				DA1FBD601C7E43E00038A822 /* aparserlocationneigh.m in Sources */,
+				DA4118D71C860F50002CD805 /* mitemdetailinfostatsrooms.m in Sources */,
 				DA9141A81C769738004BE5D1 /* mplaymenuno.m in Sources */,
 				DA1FBD701C7F73F90038A822 /* vconfiglike.m in Sources */,
 				DA1FBD571C7E078C0038A822 /* aparserlocationcity.m in Sources */,
@@ -1462,14 +1491,17 @@
 				DACDA84C1C76073200A37D15 /* cpages.m in Sources */,
 				DA69731E1C764B6100A2C6EB /* acall.m in Sources */,
 				DACDA8561C76073200A37D15 /* vratemenu.m in Sources */,
+				DA3E740E1C862C6300A73297 /* vitemstats.m in Sources */,
 				DA9141911C766C3F004BE5D1 /* cplayload.m in Sources */,
 				DA9141A51C76971D004BE5D1 /* mplaymenulike.m in Sources */,
+				DA4118DA1C860F60002CD805 /* mitemdetailinfostatsgarages.m in Sources */,
 				DAD5C3A31C7FD14000FF8FDF /* vlikedcel.m in Sources */,
 				DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */,
 				DACDA8511C76073200A37D15 /* valert.m in Sources */,
 				DA4118C51C85ED04002CD805 /* vitemlocationmap.m in Sources */,
 				DACDA84B1C76073200A37D15 /* crate.m in Sources */,
 				DA1FBD671C7F514E0038A822 /* mitemitem.m in Sources */,
+				DA4118D41C860F42002CD805 /* mitemdetailinfostatsmeters.m in Sources */,
 				DAD5C39A1C7FC34900FF8FDF /* mdbitem.m in Sources */,
 				DA25B1501C7B82C800B4BB21 /* mconfiglocation.m in Sources */,
 				DA12BC971C84F56B00ED9497 /* mitemdetailinfotitleprice.m in Sources */,

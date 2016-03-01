@@ -48,3 +48,5 @@
 #import "vitemlocation.h"
 #import "vitemlocationmenu.h"
 #import "vitemlocationmap.h"
+#import "vitemstats.h"
+#import "vitemstatscel.h"
