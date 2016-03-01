@@ -10,13 +10,19 @@
     
     vblur *blur = [vblur light:YES];
     
-    [self addSubview:blur];
+    vitemlocationmenu *menu = [[vitemlocationmenu alloc] init:controller];
+    self.menu = menu;
     
-    NSDictionary *views = @{@"blur":blur};
+    [self addSubview:blur];
+    [self addSubview:menu];
+    
+    NSDictionary *views = @{@"blur":blur, @"menu":menu};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blur]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[blur]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[menu(70)]" options:0 metrics:metrics views:views]];
     
     return self;
 }

@@ -20,4 +20,16 @@
     return self;
 }
 
+-(void)loadView
+{
+    self.view = [[vitemlocation alloc] init:self];
+}
+
+#pragma mark public
+
+-(void)back
+{
+    [[cmain singleton] dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
