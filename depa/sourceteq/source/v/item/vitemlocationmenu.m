@@ -78,8 +78,11 @@
     UIButton *buttonuser = [[UIButton alloc] init];
     [buttonuser setClipsToBounds:YES];
     [buttonuser setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [buttonuser setBackgroundColor:colormain];
-    [buttonuser.layer setCornerRadius:11];
+    [buttonuser setImage:[[UIImage imageNamed:@"user"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [buttonuser setImage:[[UIImage imageNamed:@"user"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
+    [buttonuser.imageView setTintColor:colormain];
+    [buttonuser.imageView setClipsToBounds:YES];
+    [buttonuser.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonuser addTarget:self action:@selector(actionuser:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:buttonuser];
@@ -87,8 +90,8 @@
     NSDictionary *views = @{@"user":buttonuser};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[user(22)]-90-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-29-[user(22)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[user(70)]-70-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[user(40)]" options:0 metrics:metrics views:views]];
 }
 
 @end
