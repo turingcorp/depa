@@ -9,7 +9,7 @@
     [self setBackgroundColor:[UIColor clearColor]];
     
     self.controllerlocation = controller;
-    self.mapspan = MKCoordinateSpanMake(0.07, 0.07);
+    self.mapspan = MKCoordinateSpanMake(0.005, 0.005);
     vblur *blur = [vblur light:YES];
     vitemlocationmenu *menu = [[vitemlocationmenu alloc] init:controller];
     self.menu = menu;
@@ -79,6 +79,12 @@
         case kCLAuthorizationStatusRestricted:
             break;
     }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(),
+                   ^
+                   {
+                       [self centeritem];
+                   });
 }
 
 #pragma mark public
@@ -108,6 +114,7 @@
     
     MKCoordinateRegion region = MKCoordinateRegionMake(self.annotation.coordinate, self.mapspan);
     [self.map setRegion:region animated:YES];
+    [self.map selectAnnotation:self.annotation animated:YES];
 }
 
 #pragma mark -
@@ -116,7 +123,6 @@
 -(void)mapView:(MKMapView*)mapview didUpdateUserLocation:(MKUserLocation*)userlocation
 {
     self.userlocation = userlocation.coordinate;
-    [self centeritem];
 }
 
 -(void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status

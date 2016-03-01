@@ -30,6 +30,7 @@
 -(void)loadView
 {
     self.view = [[vitemlocation alloc] init:self];
+    self.viewlocation = (vitemlocation*)self.view;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
