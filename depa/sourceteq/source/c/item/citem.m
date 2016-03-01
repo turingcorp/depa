@@ -117,11 +117,20 @@
         aparseritem *parser = (aparseritem*)manager.call.parser;
         [self.item.images add:parser.picturesarray];
         self.item.itemtitle = parser.itemtitle;
+        self.item.itemaddress = parser.itemaddress;
         self.item.itemprice = [[tools singleton] pricetostring:parser.itemprice currency:parser.itemcurrency];
+        
+        mitemdetailinfostats *infostats = [[mitemdetailinfostats alloc] init];
+        [infostats config:self.item collection:self.viewitem.collection];
+        
+        mitemdetailinfoaddress *infoaddress = [[mitemdetailinfoaddress alloc] init];
+        [infoaddress config:self.item collection:self.viewitem.collection];
         
         mitemdetailinfotitleprice *infotitleprice = [[mitemdetailinfotitleprice alloc] init];
         [infotitleprice config:self.item collection:self.viewitem.collection];
         
+        [self.viewitem.model add:infostats];
+        [self.viewitem.model add:infoaddress];
         [self.viewitem.model add:infotitleprice];
         
         dispatch_async(dispatch_get_main_queue(),

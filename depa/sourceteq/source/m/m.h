@@ -41,6 +41,8 @@
 #import "mitemdetail.h"
 #import "mitemdetailinfo.h"
 #import "mitemdetailinfoprotocol.h"
+#import "mitemdetailinfostats.h"
+#import "mitemdetailinfoaddress.h"
 #import "mitemdetailinfotitleprice.h"
 #import "mitemdetailinfodesc.h"
 #import "mitemdetailimg.h"

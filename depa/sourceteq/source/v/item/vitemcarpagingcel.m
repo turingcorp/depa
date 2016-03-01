@@ -10,7 +10,7 @@
     
     UIView *circle = [[UIView alloc] init];
     [circle setClipsToBounds:YES];
-    [circle.layer setCornerRadius:2];
+    [circle.layer setCornerRadius:3];
     [circle.layer setBorderWidth:1];
     [circle.layer setBorderColor:[UIColor colorWithWhite:0.8 alpha:1].CGColor];
     [circle setUserInteractionEnabled:NO];

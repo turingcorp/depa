@@ -12,7 +12,7 @@
 {
     self = [super init];
     
-    marginvertical = 30;
+    marginvertical = 10;
     marginhorizontal = 20;
     
     return self;
@@ -23,8 +23,8 @@
 
 -(void)config:(mitemdetail*)item collection:(UICollectionView*)collection
 {
-    NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.45]};
-    NSDictionary *attrprice = @{NSFontAttributeName:[UIFont fontWithName:fontname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.3]};
+    NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.5]};
+    NSDictionary *attrprice = @{NSFontAttributeName:[UIFont fontWithName:fontname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
     mutstring = [[NSMutableAttributedString alloc] init];
     [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemtitle attributes:attrtitle]];
     [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:attrprice]];
@@ -32,7 +32,7 @@
     
     CGFloat colwidth = collection.bounds.size.width;
     CGFloat textwidth = colwidth - (marginhorizontal * 2);
-    CGFloat textheight = ceilf([mutstring boundingRectWithSize:CGSizeMake(textwidth, 200) options:stringdrawing context:nil].size.height);
+    CGFloat textheight = ceilf([mutstring boundingRectWithSize:CGSizeMake(textwidth, 500) options:stringdrawing context:nil].size.height);
     cellheight = textheight + (marginvertical * 2);
 }
 

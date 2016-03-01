@@ -1,6 +1,6 @@
-#import "mitemdetailinfodesc.h"
+#import "mitemdetailinfoaddress.h"
 
-@implementation mitemdetailinfodesc
+@implementation mitemdetailinfoaddress
 {
     NSMutableAttributedString *mutstring;
     CGFloat cellheight;
@@ -25,7 +25,7 @@
 {
     NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
     mutstring = [[NSMutableAttributedString alloc] init];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemdesc attributes:attrtitle]];
+    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemaddress attributes:attrtitle]];
     
     CGFloat colwidth = collection.bounds.size.width;
     CGFloat textwidth = colwidth - (marginhorizontal * 2);
