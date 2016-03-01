@@ -79,7 +79,7 @@
     [buttonuser setClipsToBounds:YES];
     [buttonuser setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonuser setBackgroundColor:colormain];
-    [buttonuser.layer setCornerRadius:13];
+    [buttonuser.layer setCornerRadius:11];
     [buttonuser addTarget:self action:@selector(actionuser:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:buttonuser];
@@ -87,8 +87,8 @@
     NSDictionary *views = @{@"user":buttonuser};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[user(26)]-90-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-27-[user(26)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[user(22)]-90-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-29-[user(22)]" options:0 metrics:metrics views:views]];
 }
 
 @end

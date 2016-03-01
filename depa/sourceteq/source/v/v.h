@@ -36,6 +36,7 @@
 #import "vconfigitemno.h"
 #import "vliked.h"
 #import "vlikedflow.h"
+#import "vlikedheader.h"
 #import "vlikedcel.h"
 #import "vitem.h"
 #import "vitemcel.h"

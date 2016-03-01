@@ -51,6 +51,7 @@
 "settings_original_locationname"="Mexico City";
 
 "liked_title"="Liked";
+"liked_empty"="No likes yet";
 
 "apicall_error_nodata"="Error connecting to server, try again";
 "apicall_error_parsingjgon"="Error reading server response, try again";
