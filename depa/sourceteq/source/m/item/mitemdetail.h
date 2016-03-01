@@ -14,6 +14,7 @@
 @property(copy, nonatomic)NSString *itemdesc;
 @property(copy, nonatomic)NSString *itemaddress;
 @property(copy, nonatomic)NSString *contactphone;
+@property(copy, nonatomic)NSString *permalink;
 @property(copy, nonatomic)NSNumber *latitude;
 @property(copy, nonatomic)NSNumber *longitude;
 @property(nonatomic)search_type type;

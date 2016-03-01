@@ -114,6 +114,11 @@
     }
 }
 
+-(void)contact
+{
+    [citemcontact show:self.item];
+}
+
 #pragma mark -
 #pragma mark call del
 
@@ -124,6 +129,7 @@
         aparseritem *parser = (aparseritem*)manager.call.parser;
         [self.item.images add:parser.picturesarray];
         self.item.itemtitle = parser.itemtitle;
+        self.item.permalink = parser.itempermalink;
         self.item.itemaddress = parser.itemaddress;
         self.item.latitude = parser.latitude;
         self.item.longitude = parser.longitude;

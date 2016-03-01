@@ -16,6 +16,7 @@
         self.itemtitle = self.validjson[@"title"];
         self.itemcurrency = self.validjson[@"currency_id"];
         self.itemprice = self.validjson[@"price"];
+        self.itempermalink = self.validjson[@"permalink"];
         NSArray *jsonpictures = self.validjson[@"pictures"];
         NSArray *rawattributes = self.validjson[@"attributes"];
         NSDictionary *rawlocation = self.validjson[@"location"];

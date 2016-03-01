@@ -20,7 +20,36 @@
 
 -(void)loadView
 {
+    self.view = [[vitemcontactview alloc] init:self];
+}
+
+#pragma mark public
+
+-(void)call
+{
+    NSString *rawphone = self.item.contactphone;
     
+    rawphone = [rawphone stringByReplacingOccurrencesOfString:@" " withString:@""];
+    rawphone = [rawphone stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    rawphone = [rawphone stringByReplacingOccurrencesOfString:@"/" withString:@""];
+    rawphone = [rawphone stringByReplacingOccurrencesOfString:@"." withString:@""];
+    rawphone = [rawphone stringByReplacingOccurrencesOfString:@"_" withString:@""];
+    rawphone = [rawphone stringByReplacingOccurrencesOfString:@"," withString:@""];
+    
+    NSString *phone = [NSString stringWithFormat:@"tel:%@", rawphone];
+    NSURL *url = [NSURL URLWithString:phone];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+-(void)close
+{
+    [[cmain singleton] dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)browse
+{
+    NSURL *url = [NSURL URLWithString:self.item.permalink];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 @end

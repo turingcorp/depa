@@ -7,6 +7,7 @@
 @property(copy, nonatomic)NSString *itemtitle;
 @property(copy, nonatomic)NSString *itemcurrency;
 @property(copy, nonatomic)NSString *itemaddress;
+@property(copy, nonatomic)NSString *itempermalink;
 @property(copy, nonatomic)NSNumber *itemprice;
 @property(copy, nonatomic)NSNumber *latitude;
 @property(copy, nonatomic)NSNumber *longitude;

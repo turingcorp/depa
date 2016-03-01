@@ -20,6 +20,7 @@
     self.model = [[mitemdetailinfo alloc] init];
     vitembar *bar = [[vitembar alloc] init:controller];
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
+    [contact addTarget:self action:@selector(actioncontact:) forControlEvents:UIControlEventTouchUpInside];
     
     carheight = 320;
     barmaxheight = 65;
@@ -94,6 +95,11 @@
     [button removeFromSuperview];
     [self.spinner startAnimating];
     [self.controlleritem tryagain];
+}
+
+-(void)actioncontact:(UIButton*)button
+{
+    [self.controlleritem contact];
 }
 
 #pragma mark public

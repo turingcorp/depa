@@ -5,6 +5,9 @@
 @interface citemcontact:UIViewController
 
 +(void)show:(mitemdetail*)item;
+-(void)call;
+-(void)close;
+-(void)browse;
 
 @property(weak, nonatomic)mitemdetail *item;
 

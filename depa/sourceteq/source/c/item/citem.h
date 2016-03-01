@@ -8,6 +8,7 @@
 +(void)show:(mitemdetail*)item;
 -(void)back;
 -(void)tryagain;
+-(void)contact;
 
 @property(weak, nonatomic)amanager *manager;
 @property(weak, nonatomic)vitem *viewitem;

@@ -43,6 +43,10 @@
 "item_detail_stats_meters"="%@ m²";
 "item_detail_stats_rooms"="%@";
 "item_detail_stats_garages"="%@";
+"item_detail_contact_nophone"="No phone provided";
+"item_detail_contact_close"="Accept";
+"item_detail_contact_browse"="View more";
+"item_detail_contact_call"="Call";
 
 "settings_original_locationname"="Mexico City";
 
