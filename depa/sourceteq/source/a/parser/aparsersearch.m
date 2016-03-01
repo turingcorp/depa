@@ -159,6 +159,7 @@
                 searchresult.itemtitle = rawtitle;
                 searchresult.itemcurrency = rawcurrency;
                 searchresult.itemprice = rawprice;
+                searchresult.phone = rawphone;
 
                 [self.array addObject:searchresult];
             }

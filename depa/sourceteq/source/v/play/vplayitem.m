@@ -43,7 +43,10 @@
 
 -(void)actiondetail:(UIButton*)button
 {
-    mitemdetail *itemdetail = [[mitemdetail alloc] init:self.model.item.itemid type:[[msettings singleton].searchtype type] mode:[[msettings singleton].searchmode type]];
+    mitemdetail *itemdetail = [[mitemdetail alloc] init:self.model.item.itemid];
+    itemdetail.type = [[msettings singleton].searchtype type];
+    itemdetail.mode = [[msettings singleton].searchmode type];
+    itemdetail.contactphone = self.model.phone;
     [citem show:itemdetail];
 }
 

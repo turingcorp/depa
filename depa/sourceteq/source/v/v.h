@@ -50,3 +50,4 @@
 #import "vitemlocationmap.h"
 #import "vitemstats.h"
 #import "vitemstatscel.h"
+#import "vitemcontactview.h"

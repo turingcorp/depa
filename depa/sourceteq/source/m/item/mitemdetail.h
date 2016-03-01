@@ -4,7 +4,7 @@
 
 @interface mitemdetail:NSObject
 
--(instancetype)init:(NSString*)itemid type:(search_type)type mode:(search_mode)mode;
+-(instancetype)init:(NSString*)itemid;
 
 @property(strong, nonatomic)mitemdetailimg *images;
 @property(copy, nonatomic)NSString *displaytitle;
@@ -13,6 +13,7 @@
 @property(copy, nonatomic)NSString *itemprice;
 @property(copy, nonatomic)NSString *itemdesc;
 @property(copy, nonatomic)NSString *itemaddress;
+@property(copy, nonatomic)NSString *contactphone;
 @property(copy, nonatomic)NSNumber *latitude;
 @property(copy, nonatomic)NSNumber *longitude;
 @property(nonatomic)search_type type;

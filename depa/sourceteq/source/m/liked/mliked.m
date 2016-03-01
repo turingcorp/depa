@@ -36,6 +36,8 @@
                            item.thumbnail = rawitem.thumbnail;
                            item.type = rawitem.type;
                            item.mode = rawitem.mode;
+                           item.contactphone = rawitem.phone;
+                           
                            [array addObject:item];
                        }
                        

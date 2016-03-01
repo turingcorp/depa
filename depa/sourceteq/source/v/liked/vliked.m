@@ -85,7 +85,11 @@
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
     mlikeditem *item = [self.model item:index.item];
-    mitemdetail *itemdetail = [[mitemdetail alloc] init:item.itemid type:item.type mode:item.mode];
+    mitemdetail *itemdetail = [[mitemdetail alloc] init:item.itemid];
+    itemdetail.mode = item.mode;
+    itemdetail.type = item.type;
+    itemdetail.contactphone = item.contactphone;
+    
     [citem show:itemdetail];
 }
 
