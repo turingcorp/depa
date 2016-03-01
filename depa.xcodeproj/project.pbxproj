@@ -91,6 +91,8 @@
 		DA3173201C7CF65800B6CEF7 /* aparserlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA31731F1C7CF65800B6CEF7 /* aparserlocation.m */; };
 		DA3173231C7CF7D400B6CEF7 /* acalllocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173221C7CF7D400B6CEF7 /* acalllocation.m */; };
 		DA3173261C7D175C00B6CEF7 /* sconfigloccity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173251C7D175C00B6CEF7 /* sconfigloccity.m */; };
+		DA4118BC1C85E186002CD805 /* citemlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118BB1C85E186002CD805 /* citemlocation.m */; };
+		DA4118BF1C85E3B3002CD805 /* vitemlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118BE1C85E3B3002CD805 /* vitemlocation.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -328,6 +330,10 @@
 		DA3173221C7CF7D400B6CEF7 /* acalllocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalllocation.m; sourceTree = "<group>"; };
 		DA3173241C7D175C00B6CEF7 /* sconfigloccity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sconfigloccity.h; sourceTree = "<group>"; };
 		DA3173251C7D175C00B6CEF7 /* sconfigloccity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sconfigloccity.m; sourceTree = "<group>"; };
+		DA4118BA1C85E186002CD805 /* citemlocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = citemlocation.h; sourceTree = "<group>"; };
+		DA4118BB1C85E186002CD805 /* citemlocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = citemlocation.m; sourceTree = "<group>"; };
+		DA4118BD1C85E3B3002CD805 /* vitemlocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemlocation.h; sourceTree = "<group>"; };
+		DA4118BE1C85E3B3002CD805 /* vitemlocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemlocation.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -1134,6 +1140,8 @@
 			children = (
 				DAD5C3831C7F9A3400FF8FDF /* citem.h */,
 				DAD5C3841C7F9A3400FF8FDF /* citem.m */,
+				DA4118BA1C85E186002CD805 /* citemlocation.h */,
+				DA4118BB1C85E186002CD805 /* citemlocation.m */,
 			);
 			path = item;
 			sourceTree = "<group>";
@@ -1157,6 +1165,8 @@
 				DA12BC8C1C84D91600ED9497 /* vitemcarpaging.m */,
 				DA12BC8E1C84D94000ED9497 /* vitemcarpagingcel.h */,
 				DA12BC8F1C84D94000ED9497 /* vitemcarpagingcel.m */,
+				DA4118BD1C85E3B3002CD805 /* vitemlocation.h */,
+				DA4118BE1C85E3B3002CD805 /* vitemlocation.m */,
 			);
 			path = item;
 			sourceTree = "<group>";
@@ -1327,6 +1337,7 @@
 				DA25B1611C7BAAFD00B4BB21 /* cconfigloc.m in Sources */,
 				DACDA8551C76073200A37D15 /* vrate.m in Sources */,
 				DA25B16E1C7BB1D500B4BB21 /* vconfiglocmenucel.m in Sources */,
+				DA4118BC1C85E186002CD805 /* citemlocation.m in Sources */,
 				DA3172E11C7CA4C800B6CEF7 /* mcountryitembuy.m in Sources */,
 				DA3172EC1C7CBE9B00B6CEF7 /* sconfiglocstate.m in Sources */,
 				DA12BC931C84F2E600ED9497 /* mitemdetailinfo.m in Sources */,
@@ -1436,6 +1447,7 @@
 				DA3172FD1C7CC8C600B6CEF7 /* mconfigmodbuy.m in Sources */,
 				DAD5C3971C7FAFE500FF8FDF /* aparsersearchattitem.m in Sources */,
 				DA1C50921C810F3A00598B1A /* vitemcontact.m in Sources */,
+				DA4118BF1C85E3B3002CD805 /* vitemlocation.m in Sources */,
 				DA12BC871C848BF900ED9497 /* mitemdetailimg.m in Sources */,
 				DA31731D1C7CF4BA00B6CEF7 /* aparserlocationstate.m in Sources */,
 				DA3172F21C7CC74700B6CEF7 /* vconfigmodecel.m in Sources */,

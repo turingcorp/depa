@@ -11,3 +11,4 @@
 #import "cconfigitemno.h"
 #import "cliked.h"
 #import "citem.h"
+#import "citemlocation.h"
