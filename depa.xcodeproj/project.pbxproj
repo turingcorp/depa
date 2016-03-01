@@ -96,6 +96,7 @@
 		DA4118C21C85E498002CD805 /* vitemlocationmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118C11C85E498002CD805 /* vitemlocationmenu.m */; };
 		DA4118C51C85ED04002CD805 /* vitemlocationmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118C41C85ED04002CD805 /* vitemlocationmap.m */; };
 		DA4118C71C85EFF8002CD805 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4118C61C85EFF8002CD805 /* MapKit.framework */; };
+		DA4118CA1C85F22E002CD805 /* mitemannotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118C91C85F22E002CD805 /* mitemannotation.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -342,6 +343,8 @@
 		DA4118C31C85ED04002CD805 /* vitemlocationmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemlocationmap.h; sourceTree = "<group>"; };
 		DA4118C41C85ED04002CD805 /* vitemlocationmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemlocationmap.m; sourceTree = "<group>"; };
 		DA4118C61C85EFF8002CD805 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DA4118C81C85F22E002CD805 /* mitemannotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mitemannotation.h; sourceTree = "<group>"; };
+		DA4118C91C85F22E002CD805 /* mitemannotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemannotation.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -517,6 +520,8 @@
 				DA12BC961C84F56B00ED9497 /* mitemdetailinfotitleprice.m */,
 				DA12BCA11C85078B00ED9497 /* mitemdetailinfodesc.h */,
 				DA12BCA21C85078B00ED9497 /* mitemdetailinfodesc.m */,
+				DA4118C81C85F22E002CD805 /* mitemannotation.h */,
+				DA4118C91C85F22E002CD805 /* mitemannotation.m */,
 			);
 			path = item;
 			sourceTree = "<group>";
@@ -1391,6 +1396,7 @@
 				DA3172DE1C7CA4BD00B6CEF7 /* mcountryitemrent.m in Sources */,
 				DACDA84D1C76073200A37D15 /* mdb.m in Sources */,
 				DA91418E1C766B77004BE5D1 /* vplayload.m in Sources */,
+				DA4118CA1C85F22E002CD805 /* mitemannotation.m in Sources */,
 				DACDA8521C76073200A37D15 /* vblur.m in Sources */,
 				DAD5C3851C7F9A3400FF8FDF /* citem.m in Sources */,
 				DA25B16B1C7BB0B900B4BB21 /* vconfiglocmenu.m in Sources */,

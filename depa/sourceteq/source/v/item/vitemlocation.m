@@ -68,7 +68,7 @@
                 [self.locationmanager startUpdatingLocation];
             }
             
-            if([UIVisualEffectView class])
+            if(![UIVisualEffectView class])
             {
                 [self.map setShowsUserLocation:YES];
             }
@@ -82,7 +82,21 @@
     }
 }
 
+#pragma mark public
+
+-(void)loadmap
+{
+    [self.map setDelegate:self];
+    [self locationscheck];
+}
+
 -(void)centeruser
+{
+    MKCoordinateRegion region = MKCoordinateRegionMake(self.userlocation, self.mapspan);
+    [self.map setRegion:region animated:YES];
+}
+
+-(void)centeritem
 {
     if(!self.updateinitial)
     {
@@ -92,21 +106,13 @@
     }
 }
 
-#pragma mark public
-
--(void)loadmap
-{
-    [self.map setDelegate:self];
-    [self locationscheck];
-}
-
 #pragma mark -
 #pragma mark location delegate
 
 -(void)mapView:(MKMapView*)mapview didUpdateUserLocation:(MKUserLocation*)userlocation
 {
     self.userlocation = userlocation.coordinate;
-    [self centeruser];
+    [self centeritem];
 }
 
 -(void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status

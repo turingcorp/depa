@@ -7,6 +7,8 @@
 @interface vitemlocation:viewbase<MKMapViewDelegate, CLLocationManagerDelegate>
 
 -(void)loadmap;
+-(void)centeruser;
+-(void)centeritem;
 
 @property(weak, nonatomic)vitemlocationmenu *menu;
 @property(weak, nonatomic)vitemlocationmap *map;
