@@ -93,6 +93,7 @@
 		DA3173261C7D175C00B6CEF7 /* sconfigloccity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173251C7D175C00B6CEF7 /* sconfigloccity.m */; };
 		DA4118BC1C85E186002CD805 /* citemlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118BB1C85E186002CD805 /* citemlocation.m */; };
 		DA4118BF1C85E3B3002CD805 /* vitemlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118BE1C85E3B3002CD805 /* vitemlocation.m */; };
+		DA4118C21C85E498002CD805 /* vitemlocationmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118C11C85E498002CD805 /* vitemlocationmenu.m */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -334,6 +335,8 @@
 		DA4118BB1C85E186002CD805 /* citemlocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = citemlocation.m; sourceTree = "<group>"; };
 		DA4118BD1C85E3B3002CD805 /* vitemlocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemlocation.h; sourceTree = "<group>"; };
 		DA4118BE1C85E3B3002CD805 /* vitemlocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemlocation.m; sourceTree = "<group>"; };
+		DA4118C01C85E498002CD805 /* vitemlocationmenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemlocationmenu.h; sourceTree = "<group>"; };
+		DA4118C11C85E498002CD805 /* vitemlocationmenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemlocationmenu.m; sourceTree = "<group>"; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -1167,6 +1170,8 @@
 				DA12BC8F1C84D94000ED9497 /* vitemcarpagingcel.m */,
 				DA4118BD1C85E3B3002CD805 /* vitemlocation.h */,
 				DA4118BE1C85E3B3002CD805 /* vitemlocation.m */,
+				DA4118C01C85E498002CD805 /* vitemlocationmenu.h */,
+				DA4118C11C85E498002CD805 /* vitemlocationmenu.m */,
 			);
 			path = item;
 			sourceTree = "<group>";
@@ -1441,6 +1446,7 @@
 				DAD5C39A1C7FC34900FF8FDF /* mdbitem.m in Sources */,
 				DA25B1501C7B82C800B4BB21 /* mconfiglocation.m in Sources */,
 				DA12BC971C84F56B00ED9497 /* mitemdetailinfotitleprice.m in Sources */,
+				DA4118C21C85E498002CD805 /* vitemlocationmenu.m in Sources */,
 				DACDA8531C76073200A37D15 /* viewbase.m in Sources */,
 				DA3173051C7CDBD700B6CEF7 /* mconfigtyphouse.m in Sources */,
 				DAD5C3761C7F85B300FF8FDF /* cconfigitemno.m in Sources */,

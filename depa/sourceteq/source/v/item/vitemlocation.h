@@ -1,13 +1,6 @@
-//
-//  vitemlocation.h
-//  depa
-//
-//  Created by zero on 3/1/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "viewbase.h"
 
-#import <Foundation/Foundation.h>
-
-@interface vitemlocation : NSObject
+@interface vitemlocation:viewbase
 
 @end
