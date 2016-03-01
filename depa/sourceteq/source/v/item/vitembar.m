@@ -25,7 +25,7 @@
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setUserInteractionEnabled:NO];
     [label setTextColor:[UIColor whiteColor]];
-    [label setText:controller.title];
+    [label setText:controller.item.displaytitle];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [self addSubview:button];

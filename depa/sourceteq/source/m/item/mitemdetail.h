@@ -7,6 +7,7 @@
 -(instancetype)init:(NSString*)itemid type:(search_type)type mode:(search_mode)mode;
 
 @property(strong, nonatomic)mitemdetailimg *images;
+@property(copy, nonatomic)NSString *displaytitle;
 @property(copy, nonatomic)NSString *itemid;
 @property(copy, nonatomic)NSString *itemtitle;
 @property(copy, nonatomic)NSString *itemprice;

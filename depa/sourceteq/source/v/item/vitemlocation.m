@@ -8,9 +8,8 @@
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor clearColor]];
     
-    self.updateinitial = NO;
+    self.controllerlocation = controller;
     self.mapspan = MKCoordinateSpanMake(0.07, 0.07);
-    
     vblur *blur = [vblur light:YES];
     vitemlocationmenu *menu = [[vitemlocationmenu alloc] init:controller];
     self.menu = menu;
@@ -98,12 +97,17 @@
 
 -(void)centeritem
 {
-    if(!self.updateinitial)
+    if(!self.annotation)
     {
-        self.updateinitial = YES;
-        MKCoordinateRegion region = MKCoordinateRegionMake(self.userlocation, self.mapspan);
-        [self.map setRegion:region animated:YES];
+        mitemdetail *item = self.controllerlocation.item;
+        mitemannotation *annotation = [[mitemannotation alloc] init:item.displaytitle latitude:item.latitude.doubleValue longitude:item.longitude.doubleValue];
+        self.annotation = annotation;
+        
+        [self.map addAnnotation:annotation];
     }
+    
+    MKCoordinateRegion region = MKCoordinateRegionMake(self.annotation.coordinate, self.mapspan);
+    [self.map setRegion:region animated:YES];
 }
 
 #pragma mark -

@@ -88,6 +88,7 @@
             break;
     }
     
+    self.item.displaytitle = displaytitle;
     [self setTitle:displaytitle];
 }
 
