@@ -48,6 +48,7 @@
         case kCLAuthorizationStatusAuthorizedWhenInUse:
             
             [self.map setShowsUserLocation:YES];
+            [self.menu showuserbutton];
             
             break;
             
@@ -69,6 +70,7 @@
             
             if(![UIVisualEffectView class])
             {
+                [self.menu showuserbutton];
                 [self.map setShowsUserLocation:YES];
             }
             
@@ -129,6 +131,7 @@
 {
     if(status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse)
     {
+        [self.menu showuserbutton];
         [self.map setShowsUserLocation:YES];
     }
 }
