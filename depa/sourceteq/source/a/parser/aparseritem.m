@@ -62,32 +62,32 @@
             rawcountryname = rawcountry[@"name"];
         }
         
-        if(rawaddressline)
+        if(rawaddressline && rawaddressline.length > 1)
         {
             [mutlocation appendString:rawaddressline];
         }
         
-        if(rawneightname)
+        if(rawneightname && rawneightname.length > 1)
         {
             [mutlocation appendFormat:@"\n%@", rawneightname];
         }
         
-        if(rawcityname)
+        if(rawcityname && rawcityname.length > 1)
         {
             [mutlocation appendFormat:@"\n%@", rawcityname];
         }
         
-        if(rawstatename)
+        if(rawstatename && rawstatename.length > 1)
         {
             [mutlocation appendFormat:@", %@", rawstatename];
         }
         
-        if(rawcountryname)
+        if(rawcountryname && rawcountryname.length > 1)
         {
             [mutlocation appendFormat:@", %@", rawcountryname];
         }
         
-        if(rawzipcode)
+        if(rawzipcode && rawzipcode.length > 1)
         {
             [mutlocation appendFormat:@"\n%@", rawzipcode];
         }

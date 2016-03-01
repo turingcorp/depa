@@ -13,9 +13,9 @@
 {
     self = [super init];
     
-    marginvertical = 10;
+    marginvertical = 15;
     marginhorizontal = 20;
-    iconheight = 50;
+    iconheight = 70;
     
     return self;
 }
@@ -25,6 +25,8 @@
 -(void)actionmap:(UIButton*)button
 {
     
+    
+//    [[cmain singleton] presentViewController:controller animated:YES completion:nil];
 }
 
 #pragma mark -
@@ -32,6 +34,8 @@
 
 -(void)config:(mitemdetail*)item collection:(UICollectionView*)collection
 {
+    self.item = item;
+    
     NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
     mutstring = [[NSMutableAttributedString alloc] init];
     [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemaddress attributes:attrtitle]];
@@ -51,7 +55,6 @@
 {
     UIView *overview = [[UIView alloc] init];
     [overview setClipsToBounds:YES];
-    [overview setUserInteractionEnabled:NO];
     [overview setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     UILabel *label = [[UILabel alloc] init];
@@ -75,9 +78,10 @@
     [overview addSubview:button];
     
     NSDictionary *views = @{@"label":label, @"icon":button};
-    NSDictionary *metrics = @{@"horizontal":@(marginhorizontal), @"vertical":@(marginvertical)};
+    NSDictionary *metrics = @{@"horizontal":@(marginhorizontal), @"vertical":@(marginvertical), @"iconheight":@(iconheight)};
     
     [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(horizontal)-[label]-(horizontal)-|" options:0 metrics:metrics views:views]];
+    [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
     [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(vertical)-[label]-(vertical)-[icon(iconheight)]" options:0 metrics:metrics views:views]];
     
     return overview;

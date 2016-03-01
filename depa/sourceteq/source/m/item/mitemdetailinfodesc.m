@@ -12,7 +12,7 @@
 {
     self = [super init];
     
-    marginvertical = 10;
+    marginvertical = 15;
     marginhorizontal = 20;
     
     return self;

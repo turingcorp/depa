@@ -21,7 +21,7 @@
     vitembar *bar = [[vitembar alloc] init:controller];
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
     
-    carheight = 280;
+    carheight = 320;
     barmaxheight = 65;
     barminheight = 20;
     contactmintop = 10;
@@ -38,7 +38,7 @@
     [flow setMinimumInteritemSpacing:0];
     [flow setMinimumLineSpacing:2];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flow setSectionInset:UIEdgeInsetsMake(carheight, 0, 40, 0)];
+    [flow setSectionInset:UIEdgeInsetsMake(carheight, 0, 60, 0)];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setClipsToBounds:YES];
