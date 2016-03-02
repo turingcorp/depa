@@ -18,7 +18,7 @@ static const NSUInteger minitemspull = 3;
     }
     
     [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:YES];
-    
+ 
     return self;
 }
 

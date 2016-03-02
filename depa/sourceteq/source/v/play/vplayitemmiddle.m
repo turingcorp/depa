@@ -15,7 +15,8 @@
     [label setUserInteractionEnabled:NO];
     [label setClipsToBounds:YES];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setFont:[UIFont fontWithName:fontboldname size:17]];
+    [label setFont:[UIFont fontWithName:fontname size:16]];
+    [label setTextColor:[UIColor colorWithWhite:0 alpha:0.4]];
     [label setText:[[tools singleton] pricetostring:model.itemprice currency:model.itemcurrency]];
     
     [self addSubview:label];

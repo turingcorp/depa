@@ -10,8 +10,8 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setUserInteractionEnabled:NO];
     
-    NSDictionary *attrnorm = @{NSFontAttributeName:[UIFont fontWithName:fontname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.7]};
-    NSDictionary *attrhl = @{NSFontAttributeName:[UIFont fontWithName:fontboldname size:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.2]};
+    NSDictionary *attrnorm = @{NSFontAttributeName:[UIFont fontWithName:fontname size:13], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
+    NSDictionary *attrhl = @{NSFontAttributeName:[UIFont fontWithName:fontboldname size:13], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.2]};
     NSString *stringcurrent = [[tools singleton] numbertostring:@(model.search.current)];
     NSString *stringtotal = [NSString stringWithFormat:NSLocalizedString(@"play_item_header_of", nil), [[tools singleton] numbertostring:@(model.search.total)]];
     
