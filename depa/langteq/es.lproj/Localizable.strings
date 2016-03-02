@@ -1,0 +1,62 @@
+"app_title"="depa";
+
+"play_load_retrylabel"="Error en la busqueda";
+"play_load_retrybutton"="Intenta de nuevo";
+"play_empty"="No resultados de busqueda o ya los jugaste, edita tus filtros para seguir jugando";
+"play_empty_button"="Editar filtros";
+"play_item_header_of"=" de %@";
+
+"search_type_flat"="Departamento";
+"search_type_house"="Casa";
+"search_mode_rent"="for rent";
+"search_mode_buy"="for sale";
+
+"config_title"="Settings";
+"config_location_title"="Location";
+"config_location_menu_list"="List";
+"config_location_menu_map"="Map";
+"config_location_list_countries"="Country";
+"config_location_list_state"="State";
+"config_location_list_city"="City";
+"config_location_list_neigh"="Neightbourhood";
+"config_location_list_select"="Filter by %@";
+"config_location_list_current"="Search in %@";
+"config_location_button_retry"="Try again";
+"config_location_mapselected"="Map selection";
+"config_mode_rent"="Rent";
+"config_mode_buy"="Buy";
+"config_type_house"="House";
+"config_type_apartment"="Apartment";
+"config_order_lower"="Lower price";
+"config_order_higher"="Higher price";
+"config_order_relevance"="Relevance";
+"config_item_like_title"="Likes";
+"config_item_like_info"="Liked publications are excluded while searching and shown on the Liked list\n\nClear the liked list to play all the publications again";
+"config_item_like_button"="Clear list";
+"config_item_no_title"="Discarded";
+"config_item_no_info"="Discarded publications are excluded while searching and never shown\n\nClear the discarded list to play all the publications again";
+"config_item_no_button"="Clear list";
+"config_item_alert_clear"="Clear";
+"config_item_alert_cancel"="Keep list";
+"config_item_like_alert_title"="Clear liked?";
+"config_item_like_alert_message"="Publications will be played once more";
+"config_item_no_alert_title"="Clear discarded?";
+"config_item_no_alert_message"="Publications will be played once more";
+
+"item_detail_buttonretry"="Try again";
+"item_detail_stats_meters"="%@ m²";
+"item_detail_stats_rooms"="%@";
+"item_detail_stats_garages"="%@";
+"item_detail_contact_nophone"="No phone provided";
+"item_detail_contact_close"="Accept";
+"item_detail_contact_browse"="View more";
+"item_detail_contact_call"="Call";
+
+"settings_original_locationname"="Mexico City";
+
+"liked_title"="Liked";
+"liked_empty"="No likes yet";
+
+"apicall_error_nodata"="Error connecting to server, try again";
+"apicall_error_parsingjgon"="Error reading server response, try again";
+"apicall_imateq_error_noimage"="Error downloading image";
