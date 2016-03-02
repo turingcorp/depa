@@ -116,4 +116,20 @@
     }
 }
 
+-(MKAnnotationView*)mapView:(MKMapView*)mapview viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKAnnotationView *anview;
+    
+    if(annotation == self.map.annotation)
+    {
+        anview = [[vconfiglocmapann alloc] init];
+    }
+    else
+    {
+        anview = [mapview viewForAnnotation:annotation];
+    }
+    
+    return anview;
+}
+
 @end

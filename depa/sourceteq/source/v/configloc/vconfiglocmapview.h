@@ -1,9 +1,9 @@
 #import "appdel.h"
 
-@class vconfiglocmapann;
+@class mconfiglocmapann;
 
 @interface vconfiglocmapview:MKMapView<UIGestureRecognizerDelegate>
 
-@property(weak, nonatomic)vconfiglocmapann *annotation;
+@property(weak, nonatomic)mconfiglocmapann *annotation;
 
 @end

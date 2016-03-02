@@ -24,14 +24,24 @@
     return self;
 }
 
+#pragma mark functionality
+
+-(CLLocationCoordinate2D)pointtocoord:(CGPoint)point
+{
+    CLLocationCoordinate2D location;
+    location = [self convertPoint:point toCoordinateFromView:self];
+    
+    return location;
+}
+
 #pragma mark gesture
 
--(void)taprecognized:(UITapGestureRecognizer*)_gesture
+-(void)taprecognized:(UITapGestureRecognizer*)gesture
 {
     [self removeAnnotation:self.annotation];
-    annotation = [[modannotation alloc] init:[self pointtocoord:[_gesture locationInView:mapview]]];
-    [mapview addAnnotation:annotation];
-    [menu showsearch];
+    mconfiglocmapann *annotation = [[mconfiglocmapann alloc] init:[self pointtocoord:[gesture locationInView:self]]];
+    self.annotation = annotation;
+    [self addAnnotation:annotation];
 }
 
 @end

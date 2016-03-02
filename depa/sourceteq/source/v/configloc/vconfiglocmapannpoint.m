@@ -1,7 +1,7 @@
 #import "vconfiglocmapannpoint.h"
 
-static const NSUInteger squaremargin = 6;
-static const NSUInteger sidewidth = 8;
+static const NSUInteger squaremargin = 12;
+static const NSUInteger sidewidth = 14;
 
 @implementation vconfiglocmapannpoint
 
@@ -15,20 +15,26 @@ static const NSUInteger sidewidth = 8;
     UIView *square = [[UIView alloc] init];
     [square setClipsToBounds:YES];
     [square setUserInteractionEnabled:NO];
-    [square setBackgroundColor:[colormain colorWithAlphaComponent:0.5]];
+    [square setBackgroundColor:[colorsecond colorWithAlphaComponent:0.25]];
     [square setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [square.layer setBorderWidth:1];
+    [square.layer setBorderColor:[colorsecond colorWithAlphaComponent:0.3].CGColor];
     
     UIView *left = [[UIView alloc] init];
     [left setClipsToBounds:YES];
     [left setUserInteractionEnabled:NO];
-    [left setBackgroundColor:colorsecond];
+    [left setBackgroundColor:[UIColor colorWithRed:0.4 green:0.7 blue:0.8 alpha:1]];
     [left setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [left.layer setBorderWidth:1];
+    [left.layer setBorderColor:[UIColor colorWithWhite:0 alpha:0.1].CGColor];
     
     UIView *right = [[UIView alloc] init];
     [right setClipsToBounds:YES];
     [right setUserInteractionEnabled:NO];
-    [right setBackgroundColor:colorsecond];
+    [right setBackgroundColor:[UIColor colorWithRed:0.4 green:0.7 blue:0.8 alpha:1]];
     [right setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [right.layer setBorderWidth:1];
+    [right.layer setBorderColor:[UIColor colorWithWhite:0 alpha:0.1].CGColor];
     
     [self addSubview:square];
     [self addSubview:left];
