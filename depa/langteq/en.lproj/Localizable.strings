@@ -2,7 +2,7 @@
 
 "play_load_retrylabel"="Error searching";
 "play_load_retrybutton"="Try again";
-"play_empty"="No search results, edit your filters";
+"play_empty"="No search results or you played them already, edit your filters to keep playing";
 "play_empty_button"="Edit filters";
 "play_item_header_of"=" of %@";
 

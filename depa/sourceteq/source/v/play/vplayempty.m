@@ -13,7 +13,7 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setFont:[UIFont fontWithName:fontname size:20]];
-    [label setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
+    [label setTextColor:[UIColor colorWithWhite:0 alpha:0.4]];
     [label setText:NSLocalizedString(@"play_empty", nil)];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setNumberOfLines:0];
@@ -22,7 +22,7 @@
     [button setTranslatesAutoresizingMaskIntoConstraints:NO];
     [button setClipsToBounds:YES];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorWithWhite:1 alpha:0.2] forState:UIControlStateHighlighted];
+    [button setTitleColor:[UIColor colorWithWhite:1 alpha:0.1] forState:UIControlStateHighlighted];
     [button setBackgroundColor:colormain];
     [button setTitle:NSLocalizedString(@"play_empty_button", nil) forState:UIControlStateNormal];
     [button.titleLabel setFont:[UIFont fontWithName:fontboldname size:16]];
@@ -37,7 +37,7 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-25-[label]-25-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[button]-80-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-150-[label]-20-[button(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-150-[label]-20-[button(42)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
