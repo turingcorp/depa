@@ -12,6 +12,13 @@
 #pragma mark -
 #pragma mark typ protocol
 
+-(NSString*)sortparameter
+{
+    NSString *parameter = @"&sort=price_asc";
+    
+    return parameter;
+}
+
 -(NSString*)title
 {
     NSString *title = NSLocalizedString(@"config_order_lower", nil);

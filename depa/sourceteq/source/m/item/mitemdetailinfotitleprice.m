@@ -32,7 +32,7 @@
     
     CGFloat colwidth = collection.bounds.size.width;
     CGFloat textwidth = colwidth - (marginhorizontal * 2);
-    CGFloat textheight = ceilf([mutstring boundingRectWithSize:CGSizeMake(textwidth, 500) options:stringdrawing context:nil].size.height);
+    CGFloat textheight = ceilf([mutstring boundingRectWithSize:CGSizeMake(textwidth, 2000) options:stringdrawing context:nil].size.height);
     cellheight = textheight + (marginvertical * 2);
 }
 
@@ -56,7 +56,7 @@
     NSDictionary *metrics = @{@"horizontal":@(marginhorizontal), @"vertical":@(marginvertical)};
     
     [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(horizontal)-[label]-(horizontal)-|" options:0 metrics:metrics views:views]];
-    [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(vertical)-[label]-(vertical)-|" options:0 metrics:metrics views:views]];
+    [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     
     return overview;
 }

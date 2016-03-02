@@ -9,6 +9,7 @@
     [self setUserInteractionEnabled:NO];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setUserInteractionEnabled:NO];
+    [self setClipsToBounds:YES];
 
     UILabel *label = [[UILabel alloc] init];
     [label setUserInteractionEnabled:NO];

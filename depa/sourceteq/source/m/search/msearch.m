@@ -49,6 +49,7 @@ static const NSUInteger itemslimit = 10;
 {
     NSMutableString *string = [NSMutableString string];
     [string appendFormat:@"category=%@", [[msettings singleton].country categoryforsettings]];
+    [string appendString:[[msettings singleton].searchorder sortparameter]];
     [string appendString:@"&has_pictures=yes"];
     [string appendFormat:@"&limit=%@", @(self.limit)];
     [string appendFormat:@"&offset=%@&", @(self.offset)];
