@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */; };
+		DA121A231C87381E00D2B67E /* mconfigsorrelevance.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A221C87381E00D2B67E /* mconfigsorrelevance.m */; };
 		DA12BC7B1C84869900ED9497 /* acallitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC7A1C84869900ED9497 /* acallitem.m */; };
 		DA12BC7E1C8487BC00ED9497 /* aparseritem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC7D1C8487BC00ED9497 /* aparseritem.m */; };
 		DA12BC841C848B0700ED9497 /* mitemdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC831C848B0700ED9497 /* mitemdetail.m */; };
@@ -175,6 +176,8 @@
 		2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.release.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.release.xcconfig"; sourceTree = "<group>"; };
 		78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-depa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.debug.xcconfig"; sourceTree = "<group>"; };
+		DA121A211C87381E00D2B67E /* mconfigsorrelevance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsorrelevance.h; sourceTree = "<group>"; };
+		DA121A221C87381E00D2B67E /* mconfigsorrelevance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsorrelevance.m; sourceTree = "<group>"; };
 		DA12BC791C84869900ED9497 /* acallitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acallitem.h; sourceTree = "<group>"; };
 		DA12BC7A1C84869900ED9497 /* acallitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acallitem.m; sourceTree = "<group>"; };
 		DA12BC7C1C8487BC00ED9497 /* aparseritem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparseritem.h; sourceTree = "<group>"; };
@@ -745,6 +748,8 @@
 				DA3E74211C866AF600A73297 /* mconfigsorlower.m */,
 				DA3E74231C866B0100A73297 /* mconfigsorhigher.h */,
 				DA3E74241C866B0100A73297 /* mconfigsorhigher.m */,
+				DA121A211C87381E00D2B67E /* mconfigsorrelevance.h */,
+				DA121A221C87381E00D2B67E /* mconfigsorrelevance.m */,
 			);
 			path = configsor;
 			sourceTree = "<group>";
@@ -1563,6 +1568,7 @@
 				DA31731D1C7CF4BA00B6CEF7 /* aparserlocationstate.m in Sources */,
 				DA3172F21C7CC74700B6CEF7 /* vconfigmodecel.m in Sources */,
 				DACDA84E1C76073200A37D15 /* mdbcreate.m in Sources */,
+				DA121A231C87381E00D2B67E /* mconfigsorrelevance.m in Sources */,
 				DA12BC901C84D94000ED9497 /* vitemcarpagingcel.m in Sources */,
 				DA25B14C1C7B828F00B4BB21 /* mconfig.m in Sources */,
 				DA1FBD541C7E06CA0038A822 /* acalllocationcity.m in Sources */,
