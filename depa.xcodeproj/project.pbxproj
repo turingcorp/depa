@@ -12,6 +12,7 @@
 		DA121A261C8738FD00D2B67E /* mconfigsort.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A251C8738FD00D2B67E /* mconfigsort.m */; };
 		DA121A291C87397700D2B67E /* vconfigsort.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A281C87397700D2B67E /* vconfigsort.m */; };
 		DA121A2C1C87398100D2B67E /* vconfigsortcel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A2B1C87398100D2B67E /* vconfigsortcel.m */; };
+		DA121A2F1C8749DF00D2B67E /* vconfiglocmapview.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A2E1C8749DF00D2B67E /* vconfiglocmapview.m */; };
 		DA12BC7B1C84869900ED9497 /* acallitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC7A1C84869900ED9497 /* acallitem.m */; };
 		DA12BC7E1C8487BC00ED9497 /* aparseritem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC7D1C8487BC00ED9497 /* aparseritem.m */; };
 		DA12BC841C848B0700ED9497 /* mitemdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC831C848B0700ED9497 /* mitemdetail.m */; };
@@ -187,6 +188,8 @@
 		DA121A281C87397700D2B67E /* vconfigsort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigsort.m; sourceTree = "<group>"; };
 		DA121A2A1C87398100D2B67E /* vconfigsortcel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigsortcel.h; sourceTree = "<group>"; };
 		DA121A2B1C87398100D2B67E /* vconfigsortcel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigsortcel.m; sourceTree = "<group>"; };
+		DA121A2D1C8749DF00D2B67E /* vconfiglocmapview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfiglocmapview.h; sourceTree = "<group>"; };
+		DA121A2E1C8749DF00D2B67E /* vconfiglocmapview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfiglocmapview.m; sourceTree = "<group>"; };
 		DA12BC791C84869900ED9497 /* acallitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acallitem.h; sourceTree = "<group>"; };
 		DA12BC7A1C84869900ED9497 /* acallitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acallitem.m; sourceTree = "<group>"; };
 		DA12BC7C1C8487BC00ED9497 /* aparseritem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparseritem.h; sourceTree = "<group>"; };
@@ -686,6 +689,8 @@
 				DA25B18C1C7BE7B300B4BB21 /* vconfigloclistcel.m */,
 				DA25B17C1C7BBECE00B4BB21 /* vconfiglocmap.h */,
 				DA25B17D1C7BBECE00B4BB21 /* vconfiglocmap.m */,
+				DA121A2D1C8749DF00D2B67E /* vconfiglocmapview.h */,
+				DA121A2E1C8749DF00D2B67E /* vconfiglocmapview.m */,
 			);
 			path = configloc;
 			sourceTree = "<group>";
@@ -1514,6 +1519,7 @@
 				DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */,
 				DA12BCA31C85078B00ED9497 /* mitemdetailinfodesc.m in Sources */,
 				DA3173201C7CF65800B6CEF7 /* aparserlocation.m in Sources */,
+				DA121A2F1C8749DF00D2B67E /* vconfiglocmapview.m in Sources */,
 				DA31730E1C7CDFD800B6CEF7 /* vconfigtype.m in Sources */,
 				DA6973241C764C3600A2C6EB /* aparser.m in Sources */,
 				DA2427B61C77F61100FE44B0 /* vplayitemmiddle.m in Sources */,

@@ -1,6 +1,6 @@
-#import "vitemlocationmap.h"
+#import "vconfiglocmapview.h"
 
-@implementation vitemlocationmap
+@implementation vconfiglocmapview
 
 -(instancetype)init
 {
@@ -13,9 +13,9 @@
     [self setPitchEnabled:NO];
     [self setMapType:MKMapTypeStandard];
     [self setShowsBuildings:NO];
-    [self setShowsCompass:YES];
-    [self setShowsPointsOfInterest:YES];
-    [self setShowsScale:YES];
+    [self setShowsCompass:NO];
+    [self setShowsPointsOfInterest:NO];
+    [self setShowsScale:NO];
     [self setShowsTraffic:NO];
     
     return self;
