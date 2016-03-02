@@ -8,7 +8,9 @@
     self.itemplay = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"play"] style:UIBarButtonItemStylePlain target:self action:@selector(actionplay:)];
     self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
     self.itemconfig = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"filter"] style:UIBarButtonItemStylePlain target:self action:@selector(actionconfig:)];
-    self.itemfavorites = [[UIBarButtonItem  alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(actionfavorites:)];
+    self.itemconfig.imageInsets = UIEdgeInsetsMake(0, -14, 0, 0);
+    self.itemfavorites = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"liked"] style:UIBarButtonItemStylePlain target:self action:@selector(actionfavorites:)];
+    self.itemfavorites.imageInsets = UIEdgeInsetsMake(0, -14, 0, 14);
     
     [self showplay:UIPageViewControllerNavigationDirectionForward animated:NO sync:NO];
     
@@ -69,6 +71,7 @@
     [self setTitle:NSLocalizedString(@"config_title", nil)];
     
     self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
+    self.itemplay.imageInsets = UIEdgeInsetsMake(0, -14, 0, 14);
     [self changecontroller:[[cconfig alloc] init] direction:direction animated:animated];
     [self.navigationItem setRightBarButtonItem:self.itemplay];
     [self.navigationItem setLeftBarButtonItem:nil];
@@ -79,6 +82,7 @@
     [self setTitle:NSLocalizedString(@"liked_title", nil)];
     
     self.itemplay.tag = UIPageViewControllerNavigationDirectionReverse;
+    self.itemplay.imageInsets = UIEdgeInsetsMake(0, -14, 0, 0);
     [self changecontroller:[[cliked alloc] init] direction:direction animated:animated];
     [self.navigationItem setRightBarButtonItem:nil];
     [self.navigationItem setLeftBarButtonItem:self.itemplay];
