@@ -37,6 +37,13 @@ static const NSUInteger minitemspull = 3;
     return NO;
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[analytics singleton] trackscreen:ga_screen_play];
+}
+
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];

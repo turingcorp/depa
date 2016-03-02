@@ -12,6 +12,8 @@
 {
     [super viewDidAppear:animated];
     [(vliked*)self.view unselect];
+    
+    [[analytics singleton] trackscreen:ga_screen_liked];
 }
 
 -(void)loadView

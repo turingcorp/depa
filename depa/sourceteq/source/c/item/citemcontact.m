@@ -18,6 +18,13 @@
     return self;
 }
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [[analytics singleton] trackscreen:ga_screen_contact];
+}
+
 -(void)loadView
 {
     self.view = [[vitemcontactview alloc] init:self];

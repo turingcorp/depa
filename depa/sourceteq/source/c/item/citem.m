@@ -37,7 +37,8 @@
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
     [self setExtendedLayoutIncludesOpaqueBars:NO];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
-#warning "analytics"
+    
+    [[analytics singleton] trackscreen:ga_screen_detail];
 }
 
 -(void)loadView
