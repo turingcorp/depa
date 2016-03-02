@@ -1,13 +1,6 @@
-//
-//  mconfigsorrelevance.h
-//  depa
-//
-//  Created by zero on 3/2/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "mconfigsorprotocol.h"
 
-#import <Foundation/Foundation.h>
-
-@interface mconfigsorrelevance : NSObject
+@interface mconfigsorrelevance:NSObject<mconfigsorprotocol>
 
 @end

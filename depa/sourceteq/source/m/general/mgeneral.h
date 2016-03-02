@@ -15,7 +15,8 @@ typedef NS_ENUM(NSUInteger, search_type)
 typedef NS_ENUM(NSUInteger, search_order)
 {
     search_order_lower,
-    search_order_higher
+    search_order_higher,
+    search_order_relevance
 };
 
 typedef NS_ENUM(NSUInteger, search_attr)

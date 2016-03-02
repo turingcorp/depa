@@ -28,7 +28,7 @@
 
 -(NSString*)assetname
 {
-    NSString *assetname = @"sortlower";
+    NSString *assetname = @"priceasc";
     
     return assetname;
 }
