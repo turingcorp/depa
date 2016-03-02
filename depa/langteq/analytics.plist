@@ -7,7 +7,8 @@
 		<string>play</string>
         <string>liked</string>
         <string>detail</string>
-        <string>contact</string>
+        <string>detail/contact</string>
+        <string>detail/location</string>
         <string>config</string>
         <string>config/location</string>
         <string>config/likes</string>
