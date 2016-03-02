@@ -2,8 +2,8 @@
 
 "play_load_retrylabel"="Error searching";
 "play_load_retrybutton"="Try again";
-"play_empty"="You played all the results, refine your search and start again";
-"play_empty_button"="Refine now";
+"play_empty"="No search results, edit your filters";
+"play_empty_button"="Edit filters";
 "play_item_header_of"=" of %@";
 
 "search_type_flat"="Apartment";
@@ -22,6 +22,7 @@
 "config_location_list_select"="Filter by %@";
 "config_location_list_current"="Search in %@";
 "config_location_button_retry"="Try again";
+"config_location_mapselected"="Map selection";
 "config_mode_rent"="Rent";
 "config_mode_buy"="Buy";
 "config_type_house"="House";

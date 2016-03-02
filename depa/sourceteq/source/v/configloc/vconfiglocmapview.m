@@ -24,7 +24,7 @@
     return self;
 }
 
-#pragma mark functionality
+#pragma mark public
 
 -(CLLocationCoordinate2D)pointtocoord:(CGPoint)point
 {
@@ -33,8 +33,6 @@
     
     return location;
 }
-
-#pragma mark public
 
 -(void)addannotation:(CLLocationCoordinate2D)coords
 {

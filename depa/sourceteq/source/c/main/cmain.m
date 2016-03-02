@@ -13,7 +13,9 @@
 
 -(instancetype)init
 {
-    self = [super initWithRootViewController:[[cpages alloc] init]];
+    cpages *pages = [[cpages alloc] init];
+    self.pages = pages;
+    self = [super initWithRootViewController:pages];
     
     return self;
 }

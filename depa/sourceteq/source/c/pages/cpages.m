@@ -88,4 +88,11 @@
     [self.navigationItem setLeftBarButtonItem:self.itemplay];
 }
 
+#pragma mark public
+
+-(void)openconfig
+{
+    [self actionconfig:nil];
+}
+
 @end

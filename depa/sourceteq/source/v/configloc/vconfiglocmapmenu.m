@@ -64,9 +64,47 @@
 
 -(void)actionaccept:(UIButton*)button
 {
-    [button setUserInteractionEnabled:NO];
+    [self.map setUserInteractionEnabled:NO];
     
-//    [[msettings singleton] changecountry:self.model.country location:[self.model path] locationname:self.model.title];
+    vconfiglocmapview *map = self.map.map;
+    vconfiglocmapann *ann = (vconfiglocmapann*)[map viewForAnnotation:map.annotation];
+    
+    CGPoint point1 = ann.point.frame.origin;
+    CGPoint point2 = CGPointMake(CGRectGetMaxX(ann.point.frame), CGRectGetMaxY(ann.point.frame));
+    
+    CGPoint point1x = [map convertPoint:point1 fromView:ann];
+    CGPoint point2x = [map convertPoint:point2 fromView:ann];
+    CLLocationCoordinate2D locmin = [map pointtocoord:point1x];
+    CLLocationCoordinate2D locmax = [map pointtocoord:point2x];
+    double lata = locmin.latitude;
+    double latb = locmax.latitude;
+    double lona = locmin.longitude;
+    double lonb = locmax.longitude;
+    double minlat = lata;
+    double maxlat = latb;
+    double minlon = lona;
+    double maxlon = lonb;
+    
+    if(minlat > maxlat)
+    {
+        double aux = minlat;
+        minlat = maxlat;
+        maxlat = aux;
+    }
+    
+    if(minlon > maxlon)
+    {
+        double aux = minlon;
+        minlon = maxlon;
+        maxlon = aux;
+    }
+    
+    NSMutableString *vars = [NSMutableString string];
+    [vars appendString:@"item_location="];
+    [vars appendFormat:@"lat:%@_%@", @(minlat), @(maxlat)];
+    [vars appendFormat:@",lon:%@_%@", @(minlon), @(maxlon)];
+    
+    [[msettings singleton] changecountry:[msettings singleton].country location:vars locationname:NSLocalizedString(@"config_location_mapselected", nil)];
     [[cmain singleton] popViewControllerAnimated:YES];
 }
 

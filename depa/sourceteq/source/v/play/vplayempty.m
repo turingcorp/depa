@@ -27,6 +27,7 @@
     [button setTitle:NSLocalizedString(@"play_empty_button", nil) forState:UIControlStateNormal];
     [button.titleLabel setFont:[UIFont fontWithName:fontboldname size:16]];
     [button.layer setCornerRadius:4];
+    [button addTarget:self action:@selector(actioneditfilters:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:label];
     [self addSubview:button];
@@ -39,6 +40,13 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-150-[label]-20-[button(40)]" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+#pragma mark actions
+
+-(void)actioneditfilters:(UIButton*)button
+{
+    [[cmain singleton].pages openconfig];
 }
 
 @end

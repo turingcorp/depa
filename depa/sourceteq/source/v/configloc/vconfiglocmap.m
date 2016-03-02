@@ -9,7 +9,7 @@
     [self setBackgroundColor:[UIColor clearColor]];
 
     self.firsttime = YES;
-    self.mapspan = MKCoordinateSpanMake(0.05, 0.05);
+    self.mapspan = MKCoordinateSpanMake(0.1, 0.1);
     
     vconfiglocmapview *map = [[vconfiglocmapview alloc] init];
     [map setDelegate:self];

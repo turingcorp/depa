@@ -1,9 +1,9 @@
 #import "vconfiglocmapann.h"
 
-static const NSUInteger annwidth = 500;
-static const NSUInteger annheight = 500;
-static const NSUInteger pointerwidth = 150;
-static const NSUInteger pointerheight = 150;
+static const NSUInteger annwidth = 200;
+static const NSUInteger annheight = 200;
+static const NSUInteger pointerwidth = 120;
+static const NSUInteger pointerheight = 120;
 
 @implementation vconfiglocmapann
 {
