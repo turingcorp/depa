@@ -12,6 +12,12 @@
     self.map = map;
     vblur *blur = [vblur light:NO];
     
+    UIView *border = [[UIView alloc] init];
+    [border setUserInteractionEnabled:NO];
+    [border setClipsToBounds:YES];
+    [border setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.1]];
+    [border setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
     UIButton *btnaccept = [[UIButton alloc] init];
     [btnaccept setClipsToBounds:YES];
     [btnaccept setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -33,14 +39,17 @@
     self.btnuser = btnuser;
     
     [self addSubview:blur];
+    [self addSubview:border];
     [self addSubview:btnaccept];
     [self addSubview:btnuser];
     
-    NSDictionary *views = @{@"blur":blur, @"accept":btnaccept, @"user":btnuser};
+    NSDictionary *views = @{@"blur":blur, @"accept":btnaccept, @"user":btnuser, @"border":border};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blur]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[blur]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(1)]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[user(80)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[accept(80)]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[user]-5-|" options:0 metrics:metrics views:views]];
