@@ -29,8 +29,6 @@
 -(void)callerror:(NSString*)errorstring
 {
     [self.delegate call:self error:errorstring];
-    
-#warning "track analytics"
 }
 
 #pragma mark public

@@ -37,9 +37,7 @@
 
 -(void)imageerror:(NSString*)error
 {
-    NSLog(@"Image error: %@", error);
-    
-#warning "add analytics"
+//    NSLog(@"Image error: %@", error);
 }
 
 #pragma mark public
