@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
     
-    [[analytics singleton] trackscreen:ga_screen_contact];
+    [[analytics singleton] trackscreen:ga_screen_detail_contact];
 }
 
 -(void)loadView

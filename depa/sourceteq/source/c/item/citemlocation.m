@@ -25,6 +25,7 @@
     [super viewDidLoad];
     
     [(vitemlocation*)self.view loadmap];
+    [[analytics singleton] trackscreen:ga_screen_detail_location];
 }
 
 -(void)loadView

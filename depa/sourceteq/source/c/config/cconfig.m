@@ -8,6 +8,13 @@
     [(vconfig*)self.view didappear];
 }
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [[analytics singleton] trackscreen:ga_screen_config];
+}
+
 -(void)loadView
 {
     self.view = [[vconfig alloc] init:self];
