@@ -104,6 +104,7 @@
     {
         self.firsttime = NO;
         [self centeruser];
+        [self.map addannotation:self.userlocation];
     }
 }
 

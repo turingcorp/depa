@@ -34,14 +34,21 @@
     return location;
 }
 
+#pragma mark public
+
+-(void)addannotation:(CLLocationCoordinate2D)coords
+{
+    [self removeAnnotation:self.annotation];
+    mconfiglocmapann *annotation = [[mconfiglocmapann alloc] init:coords];
+    self.annotation = annotation;
+    [self addAnnotation:annotation];
+}
+
 #pragma mark gesture
 
 -(void)taprecognized:(UITapGestureRecognizer*)gesture
 {
-    [self removeAnnotation:self.annotation];
-    mconfiglocmapann *annotation = [[mconfiglocmapann alloc] init:[self pointtocoord:[gesture locationInView:self]]];
-    self.annotation = annotation;
-    [self addAnnotation:annotation];
+    [self addannotation:[self pointtocoord:[gesture locationInView:self]]];
 }
 
 @end
