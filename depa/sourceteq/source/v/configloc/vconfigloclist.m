@@ -6,7 +6,7 @@
 {
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]];
+    [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
 
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
