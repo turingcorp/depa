@@ -4,15 +4,30 @@
 <dict>
 	<key>screens</key>
 	<array>
-		<string>list</string>
+		<string>play</string>
+        <string>liked</string>
+        <string>detail</string>
+        <string>contact</string>
+        <string>config</string>
+        <string>config/location</string>
+        <string>config/likes</string>
+        <string>config/discarded</string>
 	</array>
 	<key>events</key>
 	<array>
-		<string>export</string>
+		<string>play</string>
+        <string>location</string>
+        <string>clear</string>
+        <string>call</string>
+        <string>viewmore</string>
+        <string>error</string>
 	</array>
 	<key>actions</key>
 	<array>
-		<string>done</string>
+		<string>like</string>
+        <string>no</string>
+        <string>map</string>
+        <string>list</string>
 	</array>
 </dict>
 </plist>
