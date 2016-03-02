@@ -10,4 +10,11 @@
     return self;
 }
 
+#pragma mark -
+#pragma mark config cel protocol
+
+-(void)hover:(BOOL)hover
+{
+}
+
 @end

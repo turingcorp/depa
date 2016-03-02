@@ -15,7 +15,7 @@
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
     [flow setMinimumLineSpacing:2];
-    [flow setSectionInset:UIEdgeInsetsMake(2, 0, 20, 0)];
+    [flow setSectionInset:UIEdgeInsetsMake(2, 0, 30, 0)];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];

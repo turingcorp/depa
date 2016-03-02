@@ -1,5 +1,6 @@
 #import "appdel.h"
+#import "vconfigcelprotocol.h"
 
-@interface vconfigsort:UIView
+@interface vconfigsort:UIView<vconfigcelprotocol>
 
 @end
