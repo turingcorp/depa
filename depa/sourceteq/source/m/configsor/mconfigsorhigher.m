@@ -1,13 +1,34 @@
-//
-//  mconfigsorhigher.m
-//  depa
-//
-//  Created by zero on 3/1/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mconfigsorhigher.h"
 
 @implementation mconfigsorhigher
+
+-(NSString*)description
+{
+    NSString *description = NSLocalizedString(@"config_order_higher", nil);
+    
+    return description;
+}
+
+#pragma mark -
+#pragma mark typ protocol
+
+-(NSString*)title
+{
+    NSString *title = NSLocalizedString(@"config_order_higher", nil);
+    
+    return title;
+}
+
+-(NSString*)assetname
+{
+    NSString *assetname = @"sorthigher";
+    
+    return assetname;
+}
+
+-(search_order)type
+{
+    return search_order_higher;
+}
 
 @end

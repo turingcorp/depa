@@ -1,13 +1,6 @@
-//
-//  mconfigsorhigher.h
-//  depa
-//
-//  Created by zero on 3/1/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "mconfigsorprotocol.h"
 
-#import <Foundation/Foundation.h>
-
-@interface mconfigsorhigher : NSObject
+@interface mconfigsorhigher:NSObject<mconfigsorprotocol>
 
 @end

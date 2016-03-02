@@ -1,6 +1,7 @@
 #import "appdel.h"
 #import "mconfigmodprotocol.h"
 #import "mconfigtypprotocol.h"
+#import "mconfigsorprotocol.h"
 
 @class mcountryitem;
 
@@ -12,6 +13,7 @@
 
 @property(strong, nonatomic)id<mconfigmodprotocol> searchmode;
 @property(strong, nonatomic)id<mconfigtypprotocol> searchtype;
+@property(strong, nonatomic)id<mconfigsorprotocol> searchorder;
 @property(copy, nonatomic)NSString *location;
 @property(copy, nonatomic)NSString *locationname;
 @property(weak, nonatomic)mcountryitem *country;

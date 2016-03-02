@@ -1,13 +1,10 @@
-//
-//  mconfigsor.h
-//  depa
-//
-//  Created by zero on 3/1/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "mconfigsorprotocol.h"
 
-#import <Foundation/Foundation.h>
+@interface mconfigsor:NSObject
 
-@interface mconfigsor : NSObject
+-(NSUInteger)count;
+-(id<mconfigsorprotocol>)item:(NSUInteger)index;
+-(id<mconfigsorprotocol>)itemwithtype:(search_order)type;
 
 @end
