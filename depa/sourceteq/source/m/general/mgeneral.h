@@ -38,15 +38,29 @@ typedef NS_ENUM(NSUInteger, item_status)
 
 typedef NS_ENUM(NSUInteger, ga_screen)
 {
-    ga_screen_list,
+    ga_screen_play,
+    ga_screen_liked,
+    ga_screen_detail,
+    ga_screen_contact,
+    ga_screen_config,
+    ga_screen_config_location,
+    ga_screen_config_likes,
+    ga_screen_config_discarded
 };
 
 typedef NS_ENUM(NSUInteger, ga_event)
 {
-    ga_event_export
+    ga_event_play,
+    ga_event_location,
+    ga_event_clear,
+    ga_event_viewmore,
+    ga_event_error
 };
 
 typedef NS_ENUM(NSUInteger, ga_action)
 {
-    ga_action_done
+    ga_action_like,
+    ga_action_no,
+    ga_action_map,
+    ga_action_list
 };
