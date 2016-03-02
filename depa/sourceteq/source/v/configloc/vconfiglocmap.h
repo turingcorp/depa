@@ -4,9 +4,12 @@
 
 @interface vconfiglocmap:UICollectionViewCell<MKMapViewDelegate, CLLocationManagerDelegate>
 
+-(void)centeruser;
+
 @property(weak, nonatomic)vconfiglocmapview *map;
 @property(strong, nonatomic)CLLocationManager *locationmanager;
 @property(nonatomic)MKCoordinateSpan mapspan;
 @property(nonatomic)CLLocationCoordinate2D userlocation;
+@property(nonatomic)BOOL firsttime;
 
 @end
