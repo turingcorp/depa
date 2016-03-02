@@ -151,6 +151,8 @@
 
 -(void)accept
 {
+    [[analytics singleton] trackevent:ga_event_location action:ga_action_list label:nil];
+    
     [[msettings singleton] changecountry:self.model.country location:[self.model path] locationname:self.model.title];
     [[cmain singleton] popViewControllerAnimated:YES];
 }

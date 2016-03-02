@@ -29,6 +29,7 @@
         <string>no</string>
         <string>map</string>
         <string>list</string>
+        <string>optin</string>
 	</array>
 </dict>
 </plist>

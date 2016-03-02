@@ -31,12 +31,16 @@
 
 -(void)playlike
 {
+    [[analytics singleton] trackevent:ga_event_play action:ga_action_like label:nil];
+    
     [self.item playlike];
     [self.play playlike];
 }
 
 -(void)playno
 {
+    [[analytics singleton] trackevent:ga_event_play action:ga_action_no label:nil];
+    
     [self.item playno];
     [self.play playno];
 }

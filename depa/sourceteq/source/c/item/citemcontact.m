@@ -34,6 +34,8 @@
 
 -(void)call
 {
+    [[analytics singleton] trackevent:ga_event_call action:ga_action_optin label:nil];
+    
     NSString *rawphone = self.item.contactphone;
     
     rawphone = [rawphone stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -55,6 +57,8 @@
 
 -(void)browse
 {
+    [[analytics singleton] trackevent:ga_event_viewmore action:ga_action_optin label:nil];
+    
     NSURL *url = [NSURL URLWithString:self.item.permalink];
     [[UIApplication sharedApplication] openURL:url];
 }

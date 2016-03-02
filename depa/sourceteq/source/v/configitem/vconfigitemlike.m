@@ -93,6 +93,7 @@
                    ^
                    {
                        [mdb clear:item_status_like];
+                       [[analytics singleton] trackevent:ga_event_clear action:ga_action_list label:nil];
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^

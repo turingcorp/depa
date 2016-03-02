@@ -143,6 +143,8 @@
                             dispatch_async(dispatch_get_main_queue(),
                                            ^
                                            {
+                                               [[analytics singleton] trackevent:ga_event_location action:ga_action_map label:nil];
+                                               
                                                [[msettings singleton] changecountry:country location:vars locationname:NSLocalizedString(@"config_location_mapselected", nil)];
                                                [[cmain singleton] popViewControllerAnimated:YES];
                                            });

@@ -54,6 +54,7 @@ typedef NS_ENUM(NSUInteger, ga_event)
     ga_event_play,
     ga_event_location,
     ga_event_clear,
+    ga_event_call,
     ga_event_viewmore,
     ga_event_error
 };
@@ -63,5 +64,6 @@ typedef NS_ENUM(NSUInteger, ga_action)
     ga_action_like,
     ga_action_no,
     ga_action_map,
-    ga_action_list
+    ga_action_list,
+    ga_action_optin
 };
