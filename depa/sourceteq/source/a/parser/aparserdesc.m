@@ -13,10 +13,12 @@
         
         if(rawtext && rawtext.length > 1)
         {
-            self.itemdesc = [tools cleanlatin:rawtext];
+            rawtext = [tools cleanlatin:rawtext];
+            self.itemdesc = rawtext;
         }
         else if(rawhtmltext && rawhtmltext.length > 1)
         {
+            rawhtmltext = [tools cleanlatin:rawhtmltext];
             self.itemdesc = rawhtmltext;
         }
         else
