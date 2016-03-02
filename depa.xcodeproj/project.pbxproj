@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */; };
 		DA121A231C87381E00D2B67E /* mconfigsorrelevance.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A221C87381E00D2B67E /* mconfigsorrelevance.m */; };
+		DA121A261C8738FD00D2B67E /* mconfigsort.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A251C8738FD00D2B67E /* mconfigsort.m */; };
+		DA121A291C87397700D2B67E /* vconfigsort.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A281C87397700D2B67E /* vconfigsort.m */; };
+		DA121A2C1C87398100D2B67E /* vconfigsortcel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A2B1C87398100D2B67E /* vconfigsortcel.m */; };
 		DA12BC7B1C84869900ED9497 /* acallitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC7A1C84869900ED9497 /* acallitem.m */; };
 		DA12BC7E1C8487BC00ED9497 /* aparseritem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC7D1C8487BC00ED9497 /* aparseritem.m */; };
 		DA12BC841C848B0700ED9497 /* mitemdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA12BC831C848B0700ED9497 /* mitemdetail.m */; };
@@ -178,6 +181,12 @@
 		A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.debug.xcconfig"; sourceTree = "<group>"; };
 		DA121A211C87381E00D2B67E /* mconfigsorrelevance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsorrelevance.h; sourceTree = "<group>"; };
 		DA121A221C87381E00D2B67E /* mconfigsorrelevance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsorrelevance.m; sourceTree = "<group>"; };
+		DA121A241C8738FD00D2B67E /* mconfigsort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsort.h; sourceTree = "<group>"; };
+		DA121A251C8738FD00D2B67E /* mconfigsort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsort.m; sourceTree = "<group>"; };
+		DA121A271C87397700D2B67E /* vconfigsort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigsort.h; sourceTree = "<group>"; };
+		DA121A281C87397700D2B67E /* vconfigsort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigsort.m; sourceTree = "<group>"; };
+		DA121A2A1C87398100D2B67E /* vconfigsortcel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigsortcel.h; sourceTree = "<group>"; };
+		DA121A2B1C87398100D2B67E /* vconfigsortcel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigsortcel.m; sourceTree = "<group>"; };
 		DA12BC791C84869900ED9497 /* acallitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acallitem.h; sourceTree = "<group>"; };
 		DA12BC7A1C84869900ED9497 /* acallitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acallitem.m; sourceTree = "<group>"; };
 		DA12BC7C1C8487BC00ED9497 /* aparseritem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparseritem.h; sourceTree = "<group>"; };
@@ -605,6 +614,10 @@
 				DA1FBD6F1C7F73F90038A822 /* vconfiglike.m */,
 				DA1FBD711C7F74050038A822 /* vconfigno.h */,
 				DA1FBD721C7F74050038A822 /* vconfigno.m */,
+				DA121A271C87397700D2B67E /* vconfigsort.h */,
+				DA121A281C87397700D2B67E /* vconfigsort.m */,
+				DA121A2A1C87398100D2B67E /* vconfigsortcel.h */,
+				DA121A2B1C87398100D2B67E /* vconfigsortcel.m */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -621,6 +634,8 @@
 				DA25B1521C7B82D300B4BB21 /* mconfigtype.m */,
 				DA25B1541C7B82DB00B4BB21 /* mconfigmode.h */,
 				DA25B1551C7B82DB00B4BB21 /* mconfigmode.m */,
+				DA121A241C8738FD00D2B67E /* mconfigsort.h */,
+				DA121A251C8738FD00D2B67E /* mconfigsort.m */,
 				DA1FBD6B1C7F72B70038A822 /* mconfiglike.h */,
 				DA1FBD6C1C7F72B70038A822 /* mconfiglike.m */,
 				DA1FBD681C7F6EEA0038A822 /* mconfigno.h */,
@@ -1444,6 +1459,7 @@
 				DA3172EC1C7CBE9B00B6CEF7 /* sconfiglocstate.m in Sources */,
 				DA12BC931C84F2E600ED9497 /* mitemdetailinfo.m in Sources */,
 				DA25B18D1C7BE7B300B4BB21 /* vconfigloclistcel.m in Sources */,
+				DA121A291C87397700D2B67E /* vconfigsort.m in Sources */,
 				DA9141881C766669004BE5D1 /* vplay.m in Sources */,
 				DA1FBD731C7F74050038A822 /* vconfigno.m in Sources */,
 				DA3172D01C7C9DD600B6CEF7 /* mcountry.m in Sources */,
@@ -1470,6 +1486,7 @@
 				DACDA8421C76073200A37D15 /* appdel.m in Sources */,
 				DA6973271C764C4700A2C6EB /* aparsersearch.m in Sources */,
 				DA1C508F1C80F59700598B1A /* vitembar.m in Sources */,
+				DA121A261C8738FD00D2B67E /* mconfigsort.m in Sources */,
 				DA12BC8D1C84D91600ED9497 /* vitemcarpaging.m in Sources */,
 				DA9141971C769440004BE5D1 /* vplaymenu.m in Sources */,
 				DA3172DE1C7CA4BD00B6CEF7 /* mcountryitemrent.m in Sources */,
@@ -1520,6 +1537,7 @@
 				DA4118D71C860F50002CD805 /* mitemdetailinfostatsrooms.m in Sources */,
 				DA9141A81C769738004BE5D1 /* mplaymenuno.m in Sources */,
 				DA1FBD701C7F73F90038A822 /* vconfiglike.m in Sources */,
+				DA121A2C1C87398100D2B67E /* vconfigsortcel.m in Sources */,
 				DA1FBD571C7E078C0038A822 /* aparserlocationcity.m in Sources */,
 				DA4118CD1C860468002CD805 /* vplayitembutton.m in Sources */,
 				DA25B17E1C7BBECE00B4BB21 /* vconfiglocmap.m in Sources */,

@@ -28,6 +28,8 @@
 #import "vconfiglocmap.h"
 #import "vconfigmode.h"
 #import "vconfigmodecel.h"
+#import "vconfigsort.h"
+#import "vconfigsortcel.h"
 #import "vconfigtype.h"
 #import "vconfigtypecel.h"
 #import "vconfiglike.h"
