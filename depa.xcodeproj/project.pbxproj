@@ -96,6 +96,9 @@
 		DA3E74141C86386800A73297 /* citemcontact.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E74131C86386800A73297 /* citemcontact.m */; };
 		DA3E74171C86398E00A73297 /* vitemcontactview.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E74161C86398E00A73297 /* vitemcontactview.m */; };
 		DA3E741A1C86502100A73297 /* vlikedheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E74191C86502100A73297 /* vlikedheader.m */; };
+		DA3E741E1C8669BE00A73297 /* mconfigsor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E741D1C8669BE00A73297 /* mconfigsor.m */; };
+		DA3E74221C866AF600A73297 /* mconfigsorlower.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E74211C866AF600A73297 /* mconfigsorlower.m */; };
+		DA3E74251C866B0100A73297 /* mconfigsorhigher.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E74241C866B0100A73297 /* mconfigsorhigher.m */; };
 		DA4118BC1C85E186002CD805 /* citemlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118BB1C85E186002CD805 /* citemlocation.m */; };
 		DA4118BF1C85E3B3002CD805 /* vitemlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118BE1C85E3B3002CD805 /* vitemlocation.m */; };
 		DA4118C21C85E498002CD805 /* vitemlocationmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118C11C85E498002CD805 /* vitemlocationmenu.m */; };
@@ -353,6 +356,13 @@
 		DA3E74161C86398E00A73297 /* vitemcontactview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemcontactview.m; sourceTree = "<group>"; };
 		DA3E74181C86502100A73297 /* vlikedheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vlikedheader.h; sourceTree = "<group>"; };
 		DA3E74191C86502100A73297 /* vlikedheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vlikedheader.m; sourceTree = "<group>"; };
+		DA3E741C1C8669BE00A73297 /* mconfigsor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsor.h; sourceTree = "<group>"; };
+		DA3E741D1C8669BE00A73297 /* mconfigsor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsor.m; sourceTree = "<group>"; };
+		DA3E741F1C866A6300A73297 /* mconfigsorprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsorprotocol.h; sourceTree = "<group>"; };
+		DA3E74201C866AF600A73297 /* mconfigsorlower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsorlower.h; sourceTree = "<group>"; };
+		DA3E74211C866AF600A73297 /* mconfigsorlower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsorlower.m; sourceTree = "<group>"; };
+		DA3E74231C866B0100A73297 /* mconfigsorhigher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsorhigher.h; sourceTree = "<group>"; };
+		DA3E74241C866B0100A73297 /* mconfigsorhigher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsorhigher.m; sourceTree = "<group>"; };
 		DA4118BA1C85E186002CD805 /* citemlocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = citemlocation.h; sourceTree = "<group>"; };
 		DA4118BB1C85E186002CD805 /* citemlocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = citemlocation.m; sourceTree = "<group>"; };
 		DA4118BD1C85E3B3002CD805 /* vitemlocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemlocation.h; sourceTree = "<group>"; };
@@ -725,6 +735,20 @@
 			path = configtyp;
 			sourceTree = "<group>";
 		};
+		DA3E741B1C8669AE00A73297 /* configsor */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E741C1C8669BE00A73297 /* mconfigsor.h */,
+				DA3E741D1C8669BE00A73297 /* mconfigsor.m */,
+				DA3E741F1C866A6300A73297 /* mconfigsorprotocol.h */,
+				DA3E74201C866AF600A73297 /* mconfigsorlower.h */,
+				DA3E74211C866AF600A73297 /* mconfigsorlower.m */,
+				DA3E74231C866B0100A73297 /* mconfigsorhigher.h */,
+				DA3E74241C866B0100A73297 /* mconfigsorhigher.m */,
+			);
+			path = configsor;
+			sourceTree = "<group>";
+		};
 		DA6973031C760CF600A2C6EB /* play */ = {
 			isa = PBXGroup;
 			children = (
@@ -1036,6 +1060,7 @@
 		DACDA81B1C76073200A37D15 /* m */ = {
 			isa = PBXGroup;
 			children = (
+				DA3E741B1C8669AE00A73297 /* configsor */,
 				DAD5C3911C7FA19B00FF8FDF /* liked */,
 				DA1FBD611C7F45D20038A822 /* item */,
 				DA3172FE1C7CDBB200B6CEF7 /* configtyp */,
@@ -1430,6 +1455,7 @@
 				DA3172DB1C7CA49E00B6CEF7 /* mcountryitemhouse.m in Sources */,
 				DA31730B1C7CDF1A00B6CEF7 /* mconfigtypapartment.m in Sources */,
 				DAD5C38A1C7F9AC500FF8FDF /* vliked.m in Sources */,
+				DA3E74221C866AF600A73297 /* mconfigsorlower.m in Sources */,
 				DA12BC9A1C84F70700ED9497 /* vitemcel.m in Sources */,
 				DAD5C39D1C7FC81500FF8FDF /* mliked.m in Sources */,
 				DA25B1871C7BE43B00B4BB21 /* mconfigloclistitem.m in Sources */,
@@ -1479,6 +1505,7 @@
 				DA3172FA1C7CC8BC00B6CEF7 /* mconfigmodrent.m in Sources */,
 				DA31731A1C7CF43D00B6CEF7 /* acalllocationstate.m in Sources */,
 				DA91419A1C769605004BE5D1 /* vplaymenucel.m in Sources */,
+				DA3E741E1C8669BE00A73297 /* mconfigsor.m in Sources */,
 				DA25B1451C7B7E4600B4BB21 /* vconfig.m in Sources */,
 				DA69731F1C764B6100A2C6EB /* acallsearch.m in Sources */,
 				DA1C50861C80A6A000598B1A /* vlikedflow.m in Sources */,
@@ -1520,6 +1547,7 @@
 				DA1FBD671C7F514E0038A822 /* mitemitem.m in Sources */,
 				DA4118D41C860F42002CD805 /* mitemdetailinfostatsmeters.m in Sources */,
 				DAD5C39A1C7FC34900FF8FDF /* mdbitem.m in Sources */,
+				DA3E74251C866B0100A73297 /* mconfigsorhigher.m in Sources */,
 				DA25B1501C7B82C800B4BB21 /* mconfiglocation.m in Sources */,
 				DA3E74171C86398E00A73297 /* vitemcontactview.m in Sources */,
 				DA12BC971C84F56B00ED9497 /* mitemdetailinfotitleprice.m in Sources */,
