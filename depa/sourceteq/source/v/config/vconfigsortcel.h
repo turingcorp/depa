@@ -1,13 +1,11 @@
-//
-//  vconfigsortcel.h
-//  depa
-//
-//  Created by zero on 3/2/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "mconfigsorprotocol.h"
 
-#import <Foundation/Foundation.h>
+@interface vconfigsortcel:UICollectionViewCell
 
-@interface vconfigsortcel : NSObject
+-(void)config:(id<mconfigsorprotocol>)model;
+
+@property(weak, nonatomic)UILabel *label;
+@property(weak, nonatomic)UIImageView *image;
 
 @end

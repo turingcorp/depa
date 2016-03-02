@@ -28,6 +28,7 @@
 "config_type_apartment"="Apartment";
 "config_order_lower"="Lower price";
 "config_order_higher"="Higher price";
+"config_order_relevance"="Relevance";
 "config_item_like_title"="Likes";
 "config_item_like_info"="Liked publications are excluded while searching and shown on the Liked list\n\nClear the liked list to play all the publications again";
 "config_item_like_button"="Clear list";
