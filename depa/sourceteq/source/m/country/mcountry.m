@@ -66,4 +66,29 @@
     return country;
 }
 
+-(mcountryitem*)countryforname:(NSString*)name
+{
+    mcountryitem *country;
+    NSUInteger count = [self count];
+    
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        mcountryitem *incountry = [self item:i];
+        
+        if([incountry.countryname.lowercaseString isEqualToString:name])
+        {
+            country = incountry;
+            
+            break;
+        }
+    }
+    
+    return country;
+}
+
+-(mcountryitem*)countrydefault
+{
+    return [self countryforid:@"MLM"];
+}
+
 @end

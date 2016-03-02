@@ -5,6 +5,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <AddressBook/AddressBook.h>
 #import "analytics.h"
 #import "db.h"
 #import "timerbg.h"
