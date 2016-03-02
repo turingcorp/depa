@@ -55,6 +55,24 @@
     return uiimage;
 }
 
++(NSString*)cleanlatin:(NSString*)string
+{
+    NSString *str = [string stringByReplacingOccurrencesOfString:@"&ntilde;" withString:@"ñ"];
+    str = [str stringByReplacingOccurrencesOfString:@"&aacute;" withString:@"á"];
+    str = [str stringByReplacingOccurrencesOfString:@"&Aacute;" withString:@"Á"];
+    str = [str stringByReplacingOccurrencesOfString:@"&eacute;" withString:@"é"];
+    str = [str stringByReplacingOccurrencesOfString:@"&Eacute;" withString:@"É"];
+    str = [str stringByReplacingOccurrencesOfString:@"&iacute;" withString:@"í"];
+    str = [str stringByReplacingOccurrencesOfString:@"&Iacute;" withString:@"Í"];
+    str = [str stringByReplacingOccurrencesOfString:@"&oacute;" withString:@"ó"];
+    str = [str stringByReplacingOccurrencesOfString:@"&Oacute;" withString:@"Ó"];
+    str = [str stringByReplacingOccurrencesOfString:@"&uacute;" withString:@"ú"];
+    str = [str stringByReplacingOccurrencesOfString:@"&Uacute;" withString:@"Ú"];
+    str = [str stringByReplacingOccurrencesOfString:@"&#34;" withString:@"\""];
+    
+    return str;
+}
+
 #pragma mark -
 
 -(instancetype)init
