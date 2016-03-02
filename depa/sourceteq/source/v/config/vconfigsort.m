@@ -13,6 +13,7 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     self.model = [[mconfigsor alloc] init];
+    self.selected = 0;
     cellwidth = 120;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
@@ -40,6 +41,21 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    
+    NSUInteger count = [self.model count];
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        id<mconfigsorprotocol> item = [self.model item:i];
+        
+        if([item type] == [[msettings singleton].searchorder type])
+        {
+            self.selected = i;
+            
+            break;
+        }
+    }
+    
+    [collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:self.selected inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     
     return self;
 }
@@ -83,6 +99,18 @@
     [cell config:[self.model item:index.item]];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    NSUInteger item = index.item;
+    
+    if(item != self.selected)
+    {
+        [msettings singleton].searchorder = [self.model item:item];
+        [[msettings singleton] save];
+        self.selected = item;
+    }
 }
 
 #pragma mark config cel protocol
