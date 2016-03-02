@@ -10,17 +10,24 @@
 
     self.firsttime = YES;
     self.mapspan = MKCoordinateSpanMake(0.05, 0.05);
+    
     vconfiglocmapview *map = [[vconfiglocmapview alloc] init];
     [map setDelegate:self];
     self.map = map;
     
-    [self addSubview:map];
+    vconfiglocmapmenu *menu = [[vconfiglocmapmenu alloc] init:self];
+    self.menu = menu;
     
-    NSDictionary *views = @{@"map":map};
+    [self addSubview:map];
+    [self addSubview:menu];
+    
+    NSDictionary *views = @{@"map":map, @"menu":menu};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[menu(60)]" options:0 metrics:metrics views:views]];
     
     [self locationscheck];
     

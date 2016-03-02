@@ -27,6 +27,7 @@
 #import "vconfigloclistcel.h"
 #import "vconfiglocmap.h"
 #import "vconfiglocmapview.h"
+#import "vconfiglocmapmenu.h"
 #import "vconfigmode.h"
 #import "vconfigmodecel.h"
 #import "vconfigsort.h"
