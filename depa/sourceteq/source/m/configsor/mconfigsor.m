@@ -11,7 +11,8 @@
     
     array = @[
               [[mconfigsorlower alloc] init],
-              [[mconfigsorhigher alloc] init]
+              [[mconfigsorhigher alloc] init],
+              [[mconfigsorrelevance alloc] init]
               ];
     
     return self;

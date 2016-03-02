@@ -13,7 +13,7 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont fontWithName:fontname size:14]];
+    [label setFont:[UIFont fontWithName:fontname size:12]];
     self.label = label;
     
     UIImageView *image = [[UIImageView alloc] init];
@@ -30,7 +30,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[image(75)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[image(70)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label]-10-|" options:0 metrics:metrics views:views]];
     
