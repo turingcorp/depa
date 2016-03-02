@@ -18,7 +18,20 @@
     [self setShowsScale:NO];
     [self setShowsTraffic:NO];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(taprecognized:)];
+    [self addGestureRecognizer:tap];
+    
     return self;
+}
+
+#pragma mark gesture
+
+-(void)taprecognized:(UITapGestureRecognizer*)_gesture
+{
+    [mapview removeAnnotation:annotation];
+    annotation = [[modannotation alloc] init:[self pointtocoord:[_gesture locationInView:mapview]]];
+    [mapview addAnnotation:annotation];
+    [menu showsearch];
 }
 
 @end

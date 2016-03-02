@@ -1,5 +1,5 @@
 #import "appdel.h"
 
-@interface vconfiglocmapview:MKMapView
+@interface vconfiglocmapview:MKMapView<UIGestureRecognizerDelegate>
 
 @end
