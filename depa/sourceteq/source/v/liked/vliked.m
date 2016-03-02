@@ -49,7 +49,6 @@
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       [self.header removeFromSuperview];
                        [self.collection reloadData];
                        [self addheader];
                    });
@@ -59,6 +58,8 @@
 
 -(void)addheader
 {
+    [self.header removeFromSuperview];
+    
     if(![self.model count])
     {
         vlikedheader *header = [[vlikedheader alloc] init];

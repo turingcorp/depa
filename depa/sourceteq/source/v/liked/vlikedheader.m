@@ -8,6 +8,7 @@
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor clearColor]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self setUserInteractionEnabled:NO];
     
     UILabel *label = [[UILabel alloc] init];
     [label setUserInteractionEnabled:NO];
