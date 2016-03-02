@@ -23,6 +23,7 @@
 #import "mconfigloclist.h"
 #import "mconfigloclistitem.h"
 #import "mconfiglocmap.h"
+#import "mconfiglocmapann.h"
 #import "mcountry.h"
 #import "mcountryitem.h"
 #import "mcountryitemapartment.h"

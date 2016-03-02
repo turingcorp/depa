@@ -28,7 +28,7 @@
 
 -(void)taprecognized:(UITapGestureRecognizer*)_gesture
 {
-    [mapview removeAnnotation:annotation];
+    [self removeAnnotation:self.annotation];
     annotation = [[modannotation alloc] init:[self pointtocoord:[_gesture locationInView:mapview]]];
     [mapview addAnnotation:annotation];
     [menu showsearch];
