@@ -124,7 +124,7 @@
 
 -(void)errorfound:(NSString*)error
 {
-    NSLog(@"%@", error);
+    //NSLog(@"%@", error);
     [valert alert:error inview:self offsettop:0];
 }
 

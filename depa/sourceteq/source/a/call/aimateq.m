@@ -49,7 +49,7 @@
                    {
                        if(!item.task)
                        {
-                           NSLog(@"%@", item.url);
+                           //NSLog(@"%@", item.url);
                            
                            NSURL *url = [NSURL URLWithString:item.url];
                            NSURLSessionDownloadTask *task = [self.session downloadTaskWithURL:url];

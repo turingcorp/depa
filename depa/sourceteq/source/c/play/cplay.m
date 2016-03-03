@@ -163,7 +163,7 @@ static const NSUInteger minitemspull = 3;
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-    NSLog(@"Error: %@", error);
+    //NSLog(@"Error: %@", error);
     
     dispatch_async(dispatch_get_main_queue(),
                    ^
