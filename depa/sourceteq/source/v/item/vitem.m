@@ -22,7 +22,7 @@
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
     [contact addTarget:self action:@selector(actioncontact:) forControlEvents:UIControlEventTouchUpInside];
     
-    carheight = 320;
+    carheight = 350;
     barmaxheight = 65;
     barminheight = 20;
     contactmintop = 10;

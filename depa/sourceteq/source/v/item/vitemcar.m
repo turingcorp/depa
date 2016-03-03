@@ -4,6 +4,7 @@
 {
     CGFloat cellwidth;
     CGFloat cellheight;
+    CGFloat interline;
 }
 
 -(instancetype)init:(citem*)controller
@@ -16,12 +17,12 @@
     self.controller = controller;
     cellwidth = 0;
     cellheight = 0;
+    interline = 0;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumLineSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     [flow setSectionInset:UIEdgeInsetsMake(2, 0, 2, 0)];
     
@@ -34,7 +35,6 @@
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
     [collection setDataSource:self];
     [collection setDelegate:self];
-    [collection setPagingEnabled:YES];
     [collection registerClass:[vitemcarcel class] forCellWithReuseIdentifier:celid];
     self.collection = collection;
 
@@ -69,15 +69,45 @@
     
     if(cellwidth > 900)
     {
-        cellwidth = 500;
+        cellwidth = 700;
+        interline = 3;
+        [self.collection setPagingEnabled:NO];
+    }
+    else
+    {
+        interline = 0;
+        [self.collection setPagingEnabled:YES];
     }
     
     [self.collection reloadData];
     [self.paging.collection reloadData];
+    
+    if([self.controller.item.images count])
+    {
+        [self.paging.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+    }
 }
 
 #pragma mark -
 #pragma mark col del
+
+-(void)scrollViewDidScroll:(UIScrollView*)scroll
+{
+    CGFloat leftoffset = scroll.contentOffset.x;
+    
+    CGPoint point = CGPointMake(leftoffset + (scroll.bounds.size.width / 2.0), 3);
+    NSIndexPath *index = [self.collection indexPathForItemAtPoint:point];
+    
+    if(index)
+    {
+        [self.paging.collection selectItemAtIndexPath:index animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+    }
+}
+
+-(CGFloat)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return interline;
+}
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
@@ -103,14 +133,8 @@
 {
     vitemcarcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
     [cel config:[self.controller.item.images item:index.item]];
-    [self.paging.collection selectItemAtIndexPath:index animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     
     return cel;
-}
-
--(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
-{
-    
 }
 
 @end
