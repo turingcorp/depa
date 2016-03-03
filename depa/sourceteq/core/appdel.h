@@ -2,7 +2,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Google/Analytics.h>
-#import <AVFoundation/AVFoundation.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <AddressBook/AddressBook.h>
