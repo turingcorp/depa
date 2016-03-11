@@ -2,4 +2,6 @@
 
 @interface splunk:NSObject
 
++(void)start;
+
 @end

@@ -4,7 +4,7 @@
 
 +(void)start
 {
-    [[Mint sharedInstance] initAndStartSession:[Interface singleton].splunkMintApiKey];
+    [[Mint sharedInstance] initAndStartSession:splunkid];
 }
 
 @end
