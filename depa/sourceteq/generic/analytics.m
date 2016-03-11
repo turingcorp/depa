@@ -36,6 +36,13 @@
     [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
     [[GAI sharedInstance] setDispatchInterval:10];
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelNone];
+    
+#if DEBUG
+    
+    [[GAI sharedInstance] setDryRun:YES];
+    
+#endif
+    
 }
 
 -(void)trackscreen:(ga_screen)screen
