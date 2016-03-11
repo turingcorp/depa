@@ -1357,6 +1357,7 @@
 				DAADE8411C755FB900489E6E /* Resources */,
 				3E532161D82269EC7F54515B /* Embed Pods Frameworks */,
 				42047248BA6BF1822F5CFD1B /* Copy Pods Resources */,
+				DAD308FE1C9317180028E934 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1470,6 +1471,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-depa/Pods-depa-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DAD308FE1C9317180028E934 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT=`/usr/bin/find \"${SRCROOT}\" -name splunkmint_postbuild_dsym_upload_script.sh | head -n 1`\n/bin/bash \"${SCRIPT}\" \"a9ee566d\" \"dcfbba050d34e60a3112edb\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
