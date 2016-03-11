@@ -6,5 +6,6 @@
 target 'depa' do
 
 pod 'Google/Analytics'
+pod 'SplunkMint'
 
 end
