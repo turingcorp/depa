@@ -3,11 +3,11 @@
 @implementation updater
 
 NSString *documents;
-NSString *flowsfolder;
 
 +(void)launch
 {
     [[analytics singleton] start];
+    [splunk start];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 100), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
@@ -22,7 +22,6 @@ NSString *flowsfolder;
 +(void)update
 {
     documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    flowsfolder = [documents stringByAppendingPathComponent:@"flows"];
     NSDictionary *defaults = [tools defaultdict];
     NSUserDefaults *properties = [NSUserDefaults standardUserDefaults];
     NSInteger def_version = [defaults[@"version"] integerValue];
@@ -35,10 +34,8 @@ NSString *flowsfolder;
         if(pro_version < 10)
         {
             [updater firsttime:defaults];
-            [mdirs createdir:[NSURL fileURLWithPath:flowsfolder]];
+            [mdb updatedb];
         }
-        
-        [mdb updatedb];
     }
     
     dbname = [documents stringByAppendingPathComponent:[properties valueForKey:@"dbname"]];
@@ -53,8 +50,6 @@ NSString *flowsfolder;
     [userdef removePersistentDomainForName:NSArgumentDomain];
     [userdef removePersistentDomainForName:NSRegistrationDomain];
     [userdef setValue:appid forKey:@"appid"];
-    [userdef setValue:@0 forKey:@"ttl"];
-    [userdef setValue:[[NSUUID UUID] UUIDString] forKey:@"uuid"];
     [userdef synchronize];
 }
 
