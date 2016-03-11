@@ -2,10 +2,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Google/Analytics.h>
+#import <SplunkMint/SplunkMint.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <AddressBook/AddressBook.h>
 #import "analytics.h"
+#import "splunk.h"
 #import "db.h"
 #import "timerbg.h"
 #import "generic.h"
