@@ -14,6 +14,9 @@ NSString *documents;
                    {
                        [updater update];
                        [msettings singleton];
+                       
+                       NSArray *array = [NSArray array];
+                       NSLog(@"%@", );
                    });
 }
 
