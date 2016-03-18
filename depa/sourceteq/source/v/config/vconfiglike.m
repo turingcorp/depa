@@ -15,7 +15,7 @@
     [icon setTranslatesAutoresizingMaskIntoConstraints:NO];
     [icon setImage:[[UIImage imageNamed:@"like"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [icon setContentMode:UIViewContentModeScaleAspectFit];
-    [icon setTintColor:colorthird];
+    [icon setTintColor:colormain];
     self.icon = icon;
     
     UILabel *label = [[UILabel alloc] init];
@@ -23,7 +23,7 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setFont:[UIFont fontWithName:fontboldname size:22]];
-    [label setTextColor:colorthird];
+    [label setTextColor:colormain];
     [label setTextAlignment:NSTextAlignmentRight];
     self.label = label;
     
@@ -65,8 +65,8 @@
     }
     else
     {
-        [self.icon setTintColor:colorthird];
-        [self.label setTextColor:colorthird];
+        [self.icon setTintColor:colormain];
+        [self.label setTextColor:colormain];
     }
 }
 

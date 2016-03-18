@@ -14,14 +14,14 @@
     [image setUserInteractionEnabled:NO];
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setImage:[[UIImage imageNamed:@"like"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    [image setTintColor:colorthird];
+    [image setTintColor:colormain];
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setFont:[UIFont fontWithName:fontboldname size:25]];
-    [label setTextColor:colorthird];
+    [label setTextColor:colormain];
     [label setTextAlignment:NSTextAlignmentCenter];
     
     UILabel *info = [[UILabel alloc] init];
@@ -35,7 +35,7 @@
     [info setText:NSLocalizedString(@"config_item_like_info", nil)];
     
     UIButton *button = [[UIButton alloc] init];
-    [button setBackgroundColor:colorthird];
+    [button setBackgroundColor:colormain];
     [button setClipsToBounds:YES];
     [button setTranslatesAutoresizingMaskIntoConstraints:NO];
     [button.titleLabel setFont:[UIFont fontWithName:fontboldname size:15]];

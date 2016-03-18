@@ -14,7 +14,7 @@
 
 -(UIColor*)tintcolor
 {
-    UIColor *color = colorthird;
+    UIColor *color = colormain;
     
     return color;
 }
