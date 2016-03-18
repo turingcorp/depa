@@ -42,7 +42,7 @@
 
             if(!item || item.status == item_status_none)
             {
-                rawtitle = itemresults[@"title"];
+                rawtitle = [tools cleanlatin:itemresults[@"title"]];
                 rawthumb = itemresults[@"thumbnail"];
                 rawcurrency = itemresults[@"currency_id"];
                 rawprice = itemresults[@"price"];
