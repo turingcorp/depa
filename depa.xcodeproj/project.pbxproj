@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */; };
 		DA0ABA971C9C573300E023C3 /* vitemceladdress.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA961C9C573300E023C3 /* vitemceladdress.m */; };
+		DA0ABA9A1C9C5D1000E023C3 /* vitemceladdressmarker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA991C9C5D1000E023C3 /* vitemceladdressmarker.m */; };
 		DA121A231C87381E00D2B67E /* mconfigsorrelevance.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A221C87381E00D2B67E /* mconfigsorrelevance.m */; };
 		DA121A261C8738FD00D2B67E /* mconfigsort.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A251C8738FD00D2B67E /* mconfigsort.m */; };
 		DA121A291C87397700D2B67E /* vconfigsort.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A281C87397700D2B67E /* vconfigsort.m */; };
@@ -188,6 +189,8 @@
 		A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.debug.xcconfig"; sourceTree = "<group>"; };
 		DA0ABA951C9C573300E023C3 /* vitemceladdress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemceladdress.h; sourceTree = "<group>"; };
 		DA0ABA961C9C573300E023C3 /* vitemceladdress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemceladdress.m; sourceTree = "<group>"; };
+		DA0ABA981C9C5D1000E023C3 /* vitemceladdressmarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemceladdressmarker.h; sourceTree = "<group>"; };
+		DA0ABA991C9C5D1000E023C3 /* vitemceladdressmarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemceladdressmarker.m; sourceTree = "<group>"; };
 		DA121A211C87381E00D2B67E /* mconfigsorrelevance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsorrelevance.h; sourceTree = "<group>"; };
 		DA121A221C87381E00D2B67E /* mconfigsorrelevance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsorrelevance.m; sourceTree = "<group>"; };
 		DA121A241C8738FD00D2B67E /* mconfigsort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsort.h; sourceTree = "<group>"; };
@@ -1286,6 +1289,8 @@
 				DA12BC991C84F70700ED9497 /* vitemcel.m */,
 				DA0ABA951C9C573300E023C3 /* vitemceladdress.h */,
 				DA0ABA961C9C573300E023C3 /* vitemceladdress.m */,
+				DA0ABA981C9C5D1000E023C3 /* vitemceladdressmarker.h */,
+				DA0ABA991C9C5D1000E023C3 /* vitemceladdressmarker.m */,
 				DA1C508D1C80F59700598B1A /* vitembar.h */,
 				DA1C508E1C80F59700598B1A /* vitembar.m */,
 				DA1C50871C80EDA800598B1A /* vitemcar.h */,
@@ -1648,6 +1653,7 @@
 				DA25B14C1C7B828F00B4BB21 /* mconfig.m in Sources */,
 				DA1FBD541C7E06CA0038A822 /* acalllocationcity.m in Sources */,
 				DA3172F61C7CC8A400B6CEF7 /* mconfigmod.m in Sources */,
+				DA0ABA9A1C9C5D1000E023C3 /* vitemceladdressmarker.m in Sources */,
 				DA12BC841C848B0700ED9497 /* mitemdetail.m in Sources */,
 				DAD5C37A1C7F871800FF8FDF /* vconfigitemlike.m in Sources */,
 				DAD5C3941C7FAFD800FF8FDF /* aparsersearchatt.m in Sources */,

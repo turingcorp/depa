@@ -2,7 +2,7 @@
 
 static NSUInteger const consmarginvertical = 15;
 static NSUInteger const consmarginhorizontal = 20;
-static NSUInteger const consiconheight = 70;
+static NSUInteger const consiconheight = 120;
 
 @implementation mitemdetailinfoaddress
 

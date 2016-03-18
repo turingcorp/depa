@@ -27,6 +27,9 @@
     [button setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
     [button addTarget:self action:@selector(actionmap:) forControlEvents:UIControlEventTouchUpInside];
     
+    UILabel *labelbutton = [[UILabel alloc] init];
+    [labelbutton setBackgroundColor:[UIColor clearColor]];
+    
     [self addSubview:button];
     [self addSubview:label];
     
