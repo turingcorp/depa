@@ -1,9 +1,6 @@
 #import "vconfiglike.h"
 
 @implementation vconfiglike
-{
-    UIColor *color;
-}
 
 -(instancetype)init
 {
@@ -12,15 +9,13 @@
     [self setBackgroundColor:[UIColor clearColor]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    color = [UIColor colorWithRed:0.4 green:0.7 blue:0.8 alpha:1];
-    
     UIImageView *icon = [[UIImageView alloc] init];
     [icon setClipsToBounds:YES];
     [icon setUserInteractionEnabled:NO];
     [icon setTranslatesAutoresizingMaskIntoConstraints:NO];
     [icon setImage:[[UIImage imageNamed:@"like"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [icon setContentMode:UIViewContentModeScaleAspectFit];
-    [icon setTintColor:color];
+    [icon setTintColor:colorthird];
     self.icon = icon;
     
     UILabel *label = [[UILabel alloc] init];
@@ -28,7 +23,7 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setFont:[UIFont fontWithName:fontboldname size:22]];
-    [label setTextColor:color];
+    [label setTextColor:colorthird];
     [label setTextAlignment:NSTextAlignmentRight];
     self.label = label;
     
@@ -70,8 +65,8 @@
     }
     else
     {
-        [self.icon setTintColor:color];
-        [self.label setTextColor:color];
+        [self.icon setTintColor:colorthird];
+        [self.label setTextColor:colorthird];
     }
 }
 

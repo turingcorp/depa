@@ -8,22 +8,20 @@
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor whiteColor]];
     
-    UIColor *color = [UIColor colorWithRed:0.4 green:0.7 blue:0.8 alpha:1];
-    
     UIImageView *image = [[UIImageView alloc] init];
     [image setClipsToBounds:YES];
     [image setContentMode:UIViewContentModeScaleAspectFit];
     [image setUserInteractionEnabled:NO];
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setImage:[[UIImage imageNamed:@"like"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    [image setTintColor:color];
+    [image setTintColor:colorthird];
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setFont:[UIFont fontWithName:fontboldname size:25]];
-    [label setTextColor:color];
+    [label setTextColor:colorthird];
     [label setTextAlignment:NSTextAlignmentCenter];
     
     UILabel *info = [[UILabel alloc] init];
@@ -37,7 +35,7 @@
     [info setText:NSLocalizedString(@"config_item_like_info", nil)];
     
     UIButton *button = [[UIButton alloc] init];
-    [button setBackgroundColor:color];
+    [button setBackgroundColor:colorthird];
     [button setClipsToBounds:YES];
     [button setTranslatesAutoresizingMaskIntoConstraints:NO];
     [button.titleLabel setFont:[UIFont fontWithName:fontboldname size:15]];

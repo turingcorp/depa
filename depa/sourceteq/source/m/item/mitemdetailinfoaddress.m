@@ -2,7 +2,6 @@
 
 @implementation mitemdetailinfoaddress
 {
-    NSMutableAttributedString *mutstring;
     CGFloat cellheight;
     CGFloat marginvertical;
     CGFloat marginhorizontal;
@@ -20,13 +19,6 @@
     return self;
 }
 
-#pragma mark actions
-
--(void)actionmap:(UIButton*)button
-{
-    [citemlocation show:self.item];
-}
-
 #pragma mark -
 #pragma amrk detail info protocol
 
@@ -35,12 +27,12 @@
     self.item = item;
     
     NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
-    mutstring = [[NSMutableAttributedString alloc] init];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemaddress attributes:attrtitle]];
+    self.mutstring = [[NSMutableAttributedString alloc] init];
+    [self.mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemaddress attributes:attrtitle]];
     
     CGFloat colwidth = collection.bounds.size.width;
     CGFloat textwidth = colwidth - (marginhorizontal * 2);
-    CGFloat textheight = ceilf([mutstring boundingRectWithSize:CGSizeMake(textwidth, 2000) options:stringdrawing context:nil].size.height);
+    CGFloat textheight = ceilf([self.mutstring boundingRectWithSize:CGSizeMake(textwidth, 2000) options:stringdrawing context:nil].size.height);
     cellheight = textheight + (marginvertical * 2);
     
     if(item.latitude && item.longitude)
@@ -51,10 +43,6 @@
 
 -(UIView*)overview
 {
-    UIView *overview = [[UIView alloc] init];
-    [overview setClipsToBounds:YES];
-    [overview setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
@@ -75,12 +63,7 @@
     [overview addSubview:label];
     [overview addSubview:button];
     
-    NSDictionary *views = @{@"label":label, @"icon":button};
-    NSDictionary *metrics = @{@"horizontal":@(marginhorizontal), @"vertical":@(marginvertical), @"iconheight":@(iconheight)};
     
-    [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(horizontal)-[label]-(horizontal)-|" options:0 metrics:metrics views:views]];
-    [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-120-[icon]-120-|" options:0 metrics:metrics views:views]];
-    [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(vertical)-[label]-(vertical)-[icon(iconheight)]" options:0 metrics:metrics views:views]];
     
     return overview;
 }
