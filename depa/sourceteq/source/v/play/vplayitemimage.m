@@ -1,18 +1,24 @@
 #import "vplayitemimage.h"
 
-static NSUInteger const imagemargin = 10;
-
 @implementation vplayitemimage
 
 -(instancetype)init:(msearchresult*)model
 {
     self = [super init];
-    [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundColor:colormain];
     [self setUserInteractionEnabled:NO];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
     
-    UIColor *color = [UIColor colorWithWhite:0 alpha:0.2];
+    UIView *overview = [[UIView alloc] init];
+    [overview setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.1]];
+    [overview setUserInteractionEnabled:NO];
+    [overview setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    UIView *border = [[UIView alloc] init];
+    [border setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.1]];
+    [border setUserInteractionEnabled:NO];
+    [border setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     self.model = model;
     UIImageView *image = [[UIImageView alloc] init];
@@ -20,26 +26,21 @@ static NSUInteger const imagemargin = 10;
     [image setUserInteractionEnabled:NO];
     [image setContentMode:UIViewContentModeScaleAspectFill];
     [image setClipsToBounds:YES];
-    [image.layer setBorderWidth:1];
-    [image.layer setBorderColor:color.CGColor];
-    [image.layer setCornerRadius:4];
     self.image = image;
     
-    UIView *border = [[UIView alloc] init];
-    [border setBackgroundColor:color];
-    [border setUserInteractionEnabled:NO];
-    [border setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
+    [self addSubview:overview];
     [self addSubview:image];
     [self addSubview:border];
     
-    NSDictionary *views = @{@"image":image, @"border":border};
-    NSDictionary *metrics = @{@"margin":@(imagemargin)};
+    NSDictionary *views = @{@"image":image, @"over":overview, @"border":border};
+    NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(margin)-[image]-(margin)-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(margin)-[image]-(-10)-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(margin)-[border]-(margin)-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[over]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[over]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(1)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[image]-0-|" options:0 metrics:metrics views:views]];
     
     [self refreshimage];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedimage:) name:notimageloaded object:nil];
