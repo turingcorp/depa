@@ -107,6 +107,16 @@
 -(NSString*)pricetostring:(NSNumber*)number currency:(NSString*)currency
 {
     [priceformatter setCurrencyCode:currency];
+    
+    if([currency.lowercaseString isEqualToString:@"usd"])
+    {
+        [priceformatter setCurrencySymbol:@"USD $ "];
+    }
+    else
+    {
+        [priceformatter setCurrencySymbol:@"$ "];
+    }
+    
     NSString *string = [priceformatter stringFromNumber:number];
     
     return string;

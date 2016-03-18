@@ -5,8 +5,8 @@
 
 // font
 
-#define fontname                @"AppleSDGothicNeo-Light"
-#define fontboldname            @"AppleSDGothicNeo-Medium"
+#define fontname                @"AvenirNext-Regular"
+#define fontboldname            @"AvenirNext-DemiBold"
 
 // ids
 

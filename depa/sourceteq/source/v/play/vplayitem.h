@@ -2,6 +2,7 @@
 
 @class msearchresult;
 @class vplayitemimage;
+@class vplayiteminfo;
 
 @interface vplayitem:UIView
 

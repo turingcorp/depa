@@ -1,5 +1,7 @@
 #import "vplayitem.h"
 
+static NSUInteger const infoheight = 150;
+
 @implementation vplayitem
 
 -(instancetype)init:(msearchresult*)model
@@ -11,10 +13,8 @@
 
     self.model = model;
     vplayitemheader *header = [[vplayitemheader alloc] init:model];
-    vplayitemfooter *footer = [[vplayitemfooter alloc] init:model];
-    vplayitemmiddle *middle = [[vplayitemmiddle alloc] init:model];
     vplayitemimage *image = [[vplayitemimage alloc] init:model];
-    vplayiteminfo *info = [[vplayiteminfo alloc] init:];
+    vplayiteminfo *info = [[vplayiteminfo alloc] init:model];
     self.image = image;
     
     vplayitembutton *button = [[vplayitembutton alloc] init];
@@ -22,18 +22,16 @@
     
     [self addSubview:image];
     [self addSubview:header];
-    [self addSubview:middle];
-    [self addSubview:footer];
+    [self addSubview:info];
     [self addSubview:button];
     
-    NSDictionary *views = @{@"image":image, @"header":header, @"footer":footer, @"middle":middle, @"button":button};
-    NSDictionary *metrics = @{};
+    NSDictionary *views = @{@"image":image, @"header":header, @"info":info, @"button":button};
+    NSDictionary *metrics = @{@"infoheight":@(infoheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[header]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[footer]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[middle]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[header(20)]-0-[image]-0-[footer(150)]-0-[middle(40)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[info]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[header(20)]-0-[image]-0-[info(infoheight)]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[button]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[button]-0-|" options:0 metrics:metrics views:views]];
     
