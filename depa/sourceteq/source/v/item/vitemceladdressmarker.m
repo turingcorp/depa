@@ -1,7 +1,7 @@
 #import "vitemceladdressmarker.h"
 
-static NSUInteger const minselectormargin = 2;
-static NSUInteger const maxselectormargin = 30;
+static NSInteger const minselectormargin = 1;
+static NSInteger const maxselectormargin = 30;
 
 @implementation vitemceladdressmarker
 
@@ -19,6 +19,7 @@ static NSUInteger const maxselectormargin = 30;
     [image setTintColor:colormain];
     [image setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.image = image;
     
     UILabel *caption = [[UILabel alloc] init];
     [caption setBackgroundColor:[UIColor clearColor]];
@@ -28,6 +29,7 @@ static NSUInteger const maxselectormargin = 30;
     [caption setText:NSLocalizedString(@"item_detail_address_marker", nil)];
     [caption setTextColor:colormain];
     [caption setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.caption = caption;
     
     UIImageView *mapselector = [[UIImageView alloc] init];
     [mapselector setClipsToBounds:YES];
@@ -50,7 +52,7 @@ static NSUInteger const maxselectormargin = 30;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[caption]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[mapselector]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[image]-(-5)-[caption(16)]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-35-[image]-(-10)-[caption(16)]-52-|" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutselectortop];
     [self addConstraint:self.layoutselectorbottom];
     [self hover];
@@ -92,10 +94,13 @@ static NSUInteger const maxselectormargin = 30;
     self.layoutselectorbottom.constant = -maxselectormargin;
     __weak typeof(self) weakself = self;
     
-    [UIView animateWithDuration:1 animations:
+    [UIView animateWithDuration:0.4 animations:
      ^
      {
          [weakself layoutIfNeeded];
+         [self.image setAlpha:0.3];
+         [self.caption setAlpha:0.3];
+         [self.mapselector setAlpha:0.05];
      }];
 }
 
@@ -104,6 +109,10 @@ static NSUInteger const maxselectormargin = 30;
     [self.mapselector setHidden:YES];
     self.layoutselectortop.constant = minselectormargin;
     self.layoutselectorbottom.constant = -minselectormargin;
+    
+    [self.image setAlpha:1];
+    [self.caption setAlpha:1];
+    [self.mapselector setAlpha:1];
 }
 
 @end

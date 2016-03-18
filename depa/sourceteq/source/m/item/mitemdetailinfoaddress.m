@@ -2,7 +2,7 @@
 
 static NSUInteger const consmarginvertical = 15;
 static NSUInteger const consmarginhorizontal = 20;
-static NSUInteger const consiconheight = 120;
+static NSUInteger const consiconheight = 160;
 
 @implementation mitemdetailinfoaddress
 
@@ -35,7 +35,7 @@ static NSUInteger const consiconheight = 120;
     
     if(item.latitude && item.longitude)
     {
-        self.cellheight += self.iconheight + self.marginvertical;
+        self.cellheight += self.iconheight;
     }
 }
 
