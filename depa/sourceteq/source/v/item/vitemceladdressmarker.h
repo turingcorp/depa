@@ -1,5 +1,8 @@
 #import "appdel.h"
 
-@interface vitemceladdressmarker:UIView
+@interface vitemceladdressmarker:UIButton
+
+@property(weak, nonatomic)UIImageView *image;
+@property(weak, nonatomic)UILabel *caption;
 
 @end

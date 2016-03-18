@@ -17,23 +17,13 @@
     [label setNumberOfLines:0];
     [label setAttributedText:model.mutstring];
     
-    UIButton *button = [[UIButton alloc] init];
-    [button setClipsToBounds:YES];
-    [button setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [button.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    [button.imageView setClipsToBounds:YES];
-    [button.imageView setTintColor:colorthird];
-    [button setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [button setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
-    [button addTarget:self action:@selector(actionmap:) forControlEvents:UIControlEventTouchUpInside];
+    vitemceladdressmarker *marker = [[vitemceladdressmarker alloc] init];
+    [marker addTarget:self action:@selector(actionmap:) forControlEvents:UIControlEventTouchUpInside];
     
-    UILabel *labelbutton = [[UILabel alloc] init];
-    [labelbutton setBackgroundColor:[UIColor clearColor]];
-    
-    [self addSubview:button];
+    [self addSubview:marker];
     [self addSubview:label];
     
-    NSDictionary *views = @{@"label":label, @"icon":button};
+    NSDictionary *views = @{@"label":label, @"icon":marker};
     NSDictionary *metrics = @{@"horizontal":@(model.marginhorizontal), @"vertical":@(model.marginvertical), @"iconheight":@(model.iconheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(horizontal)-[label]-(horizontal)-|" options:0 metrics:metrics views:views]];
