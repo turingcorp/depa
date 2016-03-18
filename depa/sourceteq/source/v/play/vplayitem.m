@@ -14,6 +14,7 @@
     vplayitemfooter *footer = [[vplayitemfooter alloc] init:model];
     vplayitemmiddle *middle = [[vplayitemmiddle alloc] init:model];
     vplayitemimage *image = [[vplayitemimage alloc] init:model];
+    vplayiteminfo *info = [[vplayiteminfo alloc] init:];
     self.image = image;
     
     vplayitembutton *button = [[vplayitembutton alloc] init];

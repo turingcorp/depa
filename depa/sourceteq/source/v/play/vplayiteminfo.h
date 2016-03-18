@@ -1,13 +1,7 @@
-//
-//  vplayiteminfo.h
-//  depa
-//
-//  Created by zero on 3/18/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
 
-#import <Foundation/Foundation.h>
+@interface vplayiteminfo:UIView
 
-@interface vplayiteminfo : NSObject
+-(instancetype)init:(msearchresult*)model;
 
 @end
