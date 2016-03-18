@@ -22,7 +22,7 @@
     [button setTranslatesAutoresizingMaskIntoConstraints:NO];
     [button.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [button.imageView setClipsToBounds:YES];
-    [button.imageView setTintColor:colorsecond];
+    [button.imageView setTintColor:colorthird];
     [button setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [button setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
     [button addTarget:self action:@selector(actionmap:) forControlEvents:UIControlEventTouchUpInside];
@@ -31,7 +31,7 @@
     [self addSubview:label];
     
     NSDictionary *views = @{@"label":label, @"icon":button};
-    NSDictionary *metrics = @{@"horizontal":@(marginhorizontal), @"vertical":@(marginvertical), @"iconheight":@(iconheight)};
+    NSDictionary *metrics = @{@"horizontal":@(model.marginhorizontal), @"vertical":@(model.marginvertical), @"iconheight":@(model.iconheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(horizontal)-[label]-(horizontal)-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-120-[icon]-120-|" options:0 metrics:metrics views:views]];

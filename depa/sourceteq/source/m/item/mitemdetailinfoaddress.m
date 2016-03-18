@@ -1,20 +1,18 @@
 #import "mitemdetailinfoaddress.h"
 
+static NSUInteger const consmarginvertical = 15;
+static NSUInteger const consmarginhorizontal = 20;
+static NSUInteger const consiconheight = 70;
+
 @implementation mitemdetailinfoaddress
-{
-    CGFloat cellheight;
-    CGFloat marginvertical;
-    CGFloat marginhorizontal;
-    CGFloat iconheight;
-}
 
 -(instancetype)init
 {
     self = [super init];
     
-    marginvertical = 15;
-    marginhorizontal = 20;
-    iconheight = 70;
+    self.marginvertical = consmarginvertical;
+    self.marginhorizontal = consmarginhorizontal;
+    self.iconheight = consiconheight;
     
     return self;
 }
@@ -31,46 +29,26 @@
     [self.mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemaddress attributes:attrtitle]];
     
     CGFloat colwidth = collection.bounds.size.width;
-    CGFloat textwidth = colwidth - (marginhorizontal * 2);
+    CGFloat textwidth = colwidth - (self.marginhorizontal * 2);
     CGFloat textheight = ceilf([self.mutstring boundingRectWithSize:CGSizeMake(textwidth, 2000) options:stringdrawing context:nil].size.height);
-    cellheight = textheight + (marginvertical * 2);
+    self.cellheight = textheight + (self.marginvertical * 2);
     
     if(item.latitude && item.longitude)
     {
-        cellheight += iconheight + marginvertical;
+        self.cellheight += self.iconheight + self.marginvertical;
     }
 }
 
 -(UIView*)overview
 {
-    UILabel *label = [[UILabel alloc] init];
-    [label setBackgroundColor:[UIColor clearColor]];
-    [label setUserInteractionEnabled:NO];
-    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setNumberOfLines:0];
-    [label setAttributedText:mutstring];
-    
-    UIButton *button = [[UIButton alloc] init];
-    [button setClipsToBounds:YES];
-    [button setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [button.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    [button.imageView setClipsToBounds:YES];
-    [button.imageView setTintColor:colorsecond];
-    [button setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [button setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
-    [button addTarget:self action:@selector(actionmap:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [overview addSubview:label];
-    [overview addSubview:button];
-    
-    
+    vitemceladdress *overview = [[vitemceladdress alloc] init:self];
     
     return overview;
 }
 
 -(CGFloat)height
 {
-    return cellheight;
+    return self.cellheight;
 }
 
 @end
