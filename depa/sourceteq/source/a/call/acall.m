@@ -58,8 +58,12 @@
         [request setHTTPMethod:@"POST"];
         [request setHTTPBody:bodydata];
     }
+
+#if DEBUG
     
-//    NSLog(@"%@", urlstring);
+    NSLog(@"%@", urlstring);
+    
+#endif
     
     return request;
 }
