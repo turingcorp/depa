@@ -1,6 +1,6 @@
 #import "vplay.h"
 
-static NSUInteger const menuheight = 150;
+static NSUInteger const menuheight = 100;
 
 @implementation vplay
 

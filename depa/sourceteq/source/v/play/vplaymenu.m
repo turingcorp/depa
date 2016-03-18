@@ -1,6 +1,6 @@
 #import "vplaymenu.h"
 
-static const NSUInteger cellwidth = 120;
+static const NSUInteger cellwidth = 100;
 
 @implementation vplaymenu
 
