@@ -6,12 +6,12 @@
 {
     self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor whiteColor]];
+    [self setBackgroundColor:colormain];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setUserInteractionEnabled:NO];
     
-    NSDictionary *attrnorm = @{NSFontAttributeName:[UIFont fontWithName:fontname size:13], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
-    NSDictionary *attrhl = @{NSFontAttributeName:[UIFont fontWithName:fontboldname size:13], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.2]};
+    NSDictionary *attrnorm = @{NSFontAttributeName:[UIFont fontWithName:fontname size:13], NSForegroundColorAttributeName:[UIColor colorWithWhite:1 alpha:0.7]};
+    NSDictionary *attrhl = @{NSFontAttributeName:[UIFont fontWithName:fontboldname size:13], NSForegroundColorAttributeName:[UIColor colorWithWhite:1 alpha:0.5]};
     NSString *stringcurrent = [[tools singleton] numbertostring:@(model.search.current)];
     NSString *stringtotal = [NSString stringWithFormat:NSLocalizedString(@"play_item_header_of", nil), [[tools singleton] numbertostring:@(model.search.total)]];
     
@@ -32,7 +32,7 @@
     NSDictionary *views = @{@"label":label};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label]-15-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[label]-15-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     
     return self;

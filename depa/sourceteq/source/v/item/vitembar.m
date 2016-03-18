@@ -21,7 +21,7 @@
     [button addTarget:self action:@selector(actionback:) forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *label = [[UILabel alloc] init];
-    [label setFont:[UIFont fontWithName:fontboldname size:16]];
+    [label setFont:[UIFont fontWithName:fontboldname size:14]];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setUserInteractionEnabled:NO];
     [label setTextColor:[UIColor whiteColor]];

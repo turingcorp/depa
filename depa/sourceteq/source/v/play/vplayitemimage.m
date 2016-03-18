@@ -5,7 +5,7 @@
 -(instancetype)init:(msearchresult*)model
 {
     self = [super init];
-    [self setBackgroundColor:[UIColor blackColor]];
+    [self setBackgroundColor:[UIColor clearColor]];
     [self setUserInteractionEnabled:NO];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
@@ -16,6 +16,10 @@
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setUserInteractionEnabled:NO];
     [image setContentMode:UIViewContentModeScaleAspectFill];
+    [image setClipsToBounds:YES];
+    [image.layer setBorderWidth:1];
+    [image.layer setBorderColor:[UIColor blackColor].CGColor];
+    [image.layer setCornerRadius:4];
     self.image = image;
     
     [self addSubview:image];
@@ -23,8 +27,8 @@
     NSDictionary *views = @{@"image":image};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[image]-1-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-18-[image]-18-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-17-[image]-(-10)-|" options:0 metrics:metrics views:views]];
     
     [self refreshimage];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedimage:) name:notimageloaded object:nil];
