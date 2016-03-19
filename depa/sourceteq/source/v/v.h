@@ -16,6 +16,7 @@
 #import "vplayitemmiddle.h"
 #import "vplayitemimage.h"
 #import "vplayitemimagelike.h"
+#import "vplayitemimagelikestar.h"
 #import "vplayempty.h"
 #import "vconfig.h"
 #import "vconfigcel.h"
