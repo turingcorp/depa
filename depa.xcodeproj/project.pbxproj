@@ -11,6 +11,7 @@
 		DA0ABA971C9C573300E023C3 /* vitemceladdress.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA961C9C573300E023C3 /* vitemceladdress.m */; };
 		DA0ABA9A1C9C5D1000E023C3 /* vitemceladdressmarker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA991C9C5D1000E023C3 /* vitemceladdressmarker.m */; };
 		DA0ABA9D1C9C808B00E023C3 /* vplayiteminfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA9C1C9C808B00E023C3 /* vplayiteminfo.m */; };
+		DA0ABAA01C9DDADD00E023C3 /* vplayitemimagelike.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA9F1C9DDADD00E023C3 /* vplayitemimagelike.m */; };
 		DA121A231C87381E00D2B67E /* mconfigsorrelevance.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A221C87381E00D2B67E /* mconfigsorrelevance.m */; };
 		DA121A261C8738FD00D2B67E /* mconfigsort.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A251C8738FD00D2B67E /* mconfigsort.m */; };
 		DA121A291C87397700D2B67E /* vconfigsort.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A281C87397700D2B67E /* vconfigsort.m */; };
@@ -194,6 +195,8 @@
 		DA0ABA991C9C5D1000E023C3 /* vitemceladdressmarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemceladdressmarker.m; sourceTree = "<group>"; };
 		DA0ABA9B1C9C808B00E023C3 /* vplayiteminfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayiteminfo.h; sourceTree = "<group>"; };
 		DA0ABA9C1C9C808B00E023C3 /* vplayiteminfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayiteminfo.m; sourceTree = "<group>"; };
+		DA0ABA9E1C9DDADD00E023C3 /* vplayitemimagelike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemimagelike.h; sourceTree = "<group>"; };
+		DA0ABA9F1C9DDADD00E023C3 /* vplayitemimagelike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemimagelike.m; sourceTree = "<group>"; };
 		DA121A211C87381E00D2B67E /* mconfigsorrelevance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsorrelevance.h; sourceTree = "<group>"; };
 		DA121A221C87381E00D2B67E /* mconfigsorrelevance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsorrelevance.m; sourceTree = "<group>"; };
 		DA121A241C8738FD00D2B67E /* mconfigsort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsort.h; sourceTree = "<group>"; };
@@ -924,6 +927,8 @@
 				DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */,
 				DA2427B71C783D7A00FE44B0 /* vplayitemimage.h */,
 				DA2427B81C783D7A00FE44B0 /* vplayitemimage.m */,
+				DA0ABA9E1C9DDADD00E023C3 /* vplayitemimagelike.h */,
+				DA0ABA9F1C9DDADD00E023C3 /* vplayitemimagelike.m */,
 				DA2427CE1C7863E800FE44B0 /* vplayempty.h */,
 				DA2427CF1C7863E800FE44B0 /* vplayempty.m */,
 			);
@@ -1635,6 +1640,7 @@
 				DACDA8511C76073200A37D15 /* valert.m in Sources */,
 				DA4118C51C85ED04002CD805 /* vitemlocationmap.m in Sources */,
 				DACDA84B1C76073200A37D15 /* crate.m in Sources */,
+				DA0ABAA01C9DDADD00E023C3 /* vplayitemimagelike.m in Sources */,
 				DA1FBD671C7F514E0038A822 /* mitemitem.m in Sources */,
 				DA4118D41C860F42002CD805 /* mitemdetailinfostatsmeters.m in Sources */,
 				DAD5C39A1C7FC34900FF8FDF /* mdbitem.m in Sources */,
