@@ -51,6 +51,7 @@
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.likeover.timer invalidate];
 }
 
 #pragma mark notified
@@ -78,7 +79,9 @@
 
 -(void)like
 {
-    [self addSubview:[[vplayitemimagelike alloc] initWithFrame:self.bounds]];
+    vplayitemimagelike *likeover = [[vplayitemimagelike alloc] initWithFrame:self.bounds];
+    self.likeover = likeover;
+    [self addSubview:likeover];
 }
 
 -(void)no
