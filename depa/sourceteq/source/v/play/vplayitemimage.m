@@ -74,4 +74,16 @@
     [self.image setImage:self.model.apiimage.image];
 }
 
+#pragma mark public
+
+-(void)like
+{
+    [self addSubview:[[vplayitemimagelike alloc] initWithFrame:self.bounds]];
+}
+
+-(void)no
+{
+    
+}
+
 @end
