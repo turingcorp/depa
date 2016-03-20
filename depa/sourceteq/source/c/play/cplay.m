@@ -72,20 +72,9 @@ static const NSUInteger minitemspull = 3;
 
 -(void)changecontroller:(UIViewController*)controller direction:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
-    UIViewController *prev;
-    
-    if(self.viewControllers.count)
-    {
-        prev = self.viewControllers[0];
-    }
-    
     self.current = controller;
     NSArray *array = @[controller];
-    [self setViewControllers:array direction:direction animated:animated completion:
-     ^(BOOL done)
-     {
-         prev.view = nil;
-     }];
+    [self setViewControllers:array direction:direction animated:animated completion:nil];
 }
 
 -(void)shownextitem:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated

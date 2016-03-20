@@ -12,6 +12,11 @@
     return self;
 }
 
+-(void)dealloc
+{
+    NSLog(@"shisus");
+}
+
 -(void)loadView
 {
     self.view = [[vplay alloc] init:self];

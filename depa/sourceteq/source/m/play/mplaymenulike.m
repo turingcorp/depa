@@ -24,7 +24,7 @@
     vplay *view = (vplay*)controller.view;
     [view.item.image like];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 2), dispatch_get_main_queue(),
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 500), dispatch_get_main_queue(),
                    ^
                    {
                        [controller playlike];

@@ -1,11 +1,14 @@
 #import "vplayitemimagelike.h"
 
-static NSUInteger const starsize = 20;
+static NSUInteger const starsize = 24;
+static NSUInteger const maxticks = 60;
+static NSInteger const increase = 2;
 
 @implementation vplayitemimagelike
 {
     CGFloat starmaxy;
     CGFloat starmaxx;
+    NSUInteger ticks;
 }
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -17,9 +20,10 @@ static NSUInteger const starsize = 20;
     
     starmaxx = frame.size.width - starsize;
     starmaxy = frame.size.height + starsize;
+    ticks = 0;
     
     [self addstar];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(tick:) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(tick:) userInfo:nil repeats:YES];
     
     return self;
 }
@@ -33,8 +37,15 @@ static NSUInteger const starsize = 20;
 
 -(void)tick:(NSTimer*)timer
 {
+    ticks++;
+    
     [self movestars];
     [self addstar];
+    
+    if(ticks > maxticks)
+    {
+        [timer invalidate];
+    }
 }
 
 -(void)movestars
@@ -42,8 +53,8 @@ static NSUInteger const starsize = 20;
     for(vplayitemimagelikestar *star in self.stars)
     {
         CGPoint point = star.center;
-        point.y--;
-        point.x += star.deltax;
+        point.y -= increase;
+        point.x += star.deltax * increase;
         
         [star setCenter:point];
     }
@@ -51,10 +62,10 @@ static NSUInteger const starsize = 20;
 
 -(void)addstar
 {
-    CGFloat alpha = (arc4random_uniform(8) / 10.0) + 0.2;
+    CGFloat alpha = (arc4random_uniform(8) / 10.0) + 0.1;
     NSUInteger currentx = arc4random_uniform(starmaxx);
-    NSUInteger currenty = arc4random_uniform(starmaxy);
-    NSUInteger deltax = arc4random_uniform(3) - 1;
+    NSUInteger currenty = starmaxy;
+    NSInteger deltax = arc4random_uniform(3) - 1;
     
     vplayitemimagelikestar *star = [[vplayitemimagelikestar alloc] initWithFrame:CGRectMake(currentx, currenty, starsize, starsize)];
     [star setAlpha:alpha];

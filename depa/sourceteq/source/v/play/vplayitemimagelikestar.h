@@ -2,6 +2,6 @@
 
 @interface vplayitemimagelikestar:UIImageView
 
-@property(nonatomic)NSUInteger deltax;
+@property(nonatomic)NSInteger deltax;
 
 @end
