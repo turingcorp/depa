@@ -11,6 +11,10 @@
     self.itemconfig.imageInsets = UIEdgeInsetsMake(0, -14, 0, 0);
     self.itemfavorites = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"liked"] style:UIBarButtonItemStylePlain target:self action:@selector(actionfavorites:)];
     self.itemfavorites.imageInsets = UIEdgeInsetsMake(0, -14, 0, 14);
+
+    vbadge *badge = [[vbadge alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    self.badge = badge;
+    [self.navigationController.navigationBar addSubview:badge];
     
     UIImageView *titleview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [titleview setUserInteractionEnabled:NO];

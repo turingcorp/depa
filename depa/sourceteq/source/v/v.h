@@ -4,6 +4,8 @@
 #import "vrate.h"
 #import "vratemenu.h"
 #import "vratemenucel.h"
+#import "vbadge.h"
+#import "vlikedbutton.h"
 #import "vplay.h"
 #import "vplayload.h"
 #import "vplaymenu.h"
