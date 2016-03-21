@@ -5,7 +5,6 @@
 -(instancetype)init
 {
     self = [super init];
-    [self add];
     
     return self;
 }

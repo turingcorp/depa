@@ -79,7 +79,7 @@
     [self.titleview setImage:[[UIImage imageNamed:@"play"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     
     [self changecontroller:[[cplay alloc] init:sync] direction:direction animated:animated];
-    [self.navigationItem setRightBarButtonItem:self.itemfavorites animated:YES];
+    [self.navigationItem setRightBarButtonItem:self.itemliked animated:YES];
     [self.navigationItem setLeftBarButtonItem:self.itemconfig animated:YES];
 }
 
