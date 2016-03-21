@@ -6,9 +6,7 @@
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
-    self.itemliked = [[UIBarButtonItem alloc] initWithCustomView:[[vlikedbutton alloc] init]];
-    [self.itemliked setTarget:self];
-    [self.itemliked setAction:@selector(actionfavorites:)];
+    self.itemliked = [[UIBarButtonItem alloc] initWithCustomView:[[vlikedbutton alloc] init:self]];
     self.itemplay = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"play"] style:UIBarButtonItemStylePlain target:self action:@selector(actionplay:)];
     self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
     self.itemconfig = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"filter"] style:UIBarButtonItemStylePlain target:self action:@selector(actionconfig:)];
@@ -108,6 +106,11 @@
 -(void)openconfig
 {
     [self actionconfig:nil];
+}
+
+-(void)openfavorites
+{
+    [self actionfavorites:nil];
 }
 
 @end
