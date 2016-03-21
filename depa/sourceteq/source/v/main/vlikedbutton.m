@@ -2,9 +2,10 @@
 
 @implementation vlikedbutton
 
--(instancetype)init
+-(instancetype)init:(cpages*)pages
 {
-    self = [super init];
+    self = [super initWithImage:[UIImage imageNamed:@"liked"] style:UIBarButtonItemStylePlain target:pages action:@selector(openfavorites)];
+    self.imageInsets = UIEdgeInsetsMake(0, -14, 0, 14);
     
     return self;
 }

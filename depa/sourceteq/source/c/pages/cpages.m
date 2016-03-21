@@ -9,8 +9,6 @@
     self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
     self.itemconfig = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"filter"] style:UIBarButtonItemStylePlain target:self action:@selector(actionconfig:)];
     self.itemconfig.imageInsets = UIEdgeInsetsMake(0, -14, 0, 0);
-    self.itemfavorites = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"liked"] style:UIBarButtonItemStylePlain target:self action:@selector(actionfavorites:)];
-    self.itemfavorites.imageInsets = UIEdgeInsetsMake(0, -14, 0, 14);
 
     vbadge *badge = [[vbadge alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     self.badge = badge;
@@ -110,6 +108,11 @@
 -(void)openconfig
 {
     [self actionconfig:nil];
+}
+
+-(void)openfavorites
+{
+    [self actionfavorites:nil];
 }
 
 @end
