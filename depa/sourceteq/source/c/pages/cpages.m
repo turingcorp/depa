@@ -5,14 +5,14 @@
 -(instancetype)init
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    
+    self.itemliked = [[UIBarButtonItem alloc] initWithCustomView:[[vlikedbutton alloc] init]];
+    [self.itemliked setTarget:self];
+    [self.itemliked setAction:@selector(actionfavorites:)];
     self.itemplay = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"play"] style:UIBarButtonItemStylePlain target:self action:@selector(actionplay:)];
     self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
     self.itemconfig = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"filter"] style:UIBarButtonItemStylePlain target:self action:@selector(actionconfig:)];
     self.itemconfig.imageInsets = UIEdgeInsetsMake(0, -14, 0, 0);
-
-    vbadge *badge = [[vbadge alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    self.badge = badge;
-    [self.navigationController.navigationBar addSubview:badge];
     
     UIImageView *titleview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [titleview setUserInteractionEnabled:NO];
@@ -108,11 +108,6 @@
 -(void)openconfig
 {
     [self actionconfig:nil];
-}
-
--(void)openfavorites
-{
-    [self actionfavorites:nil];
 }
 
 @end

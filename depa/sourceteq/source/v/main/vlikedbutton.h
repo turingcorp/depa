@@ -1,9 +1,9 @@
 #import "appdel.h"
 
-@class cpages;
+@class vbadge;
 
-@interface vlikedbutton:UIBarButtonItem
+@interface vlikedbutton:UIView
 
--(instancetype)init:(cpages*)pages;
+@property(weak, nonatomic)vbadge *badge;
 
 @end

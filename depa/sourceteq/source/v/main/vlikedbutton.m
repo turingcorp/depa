@@ -2,10 +2,27 @@
 
 @implementation vlikedbutton
 
--(instancetype)init:(cpages*)pages
+-(instancetype)init
 {
-    self = [super initWithImage:[UIImage imageNamed:@"liked"] style:UIBarButtonItemStylePlain target:pages action:@selector(openfavorites)];
-    self.imageInsets = UIEdgeInsetsMake(0, -14, 0, 14);
+    self = [super initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [self setClipsToBounds:YES];
+    [self setBackgroundColor:[UIColor clearColor]];
+    [self setContentMode:UIViewContentModeScaleAspectFit];
+    
+    UIImageView *image = [[UIImageView alloc] init];
+    [image setClipsToBounds:YES];
+    [image setContentMode:UIViewContentModeScaleAspectFit];
+    [image setUserInteractionEnabled:NO];
+    [image setImage:[UIImage imageNamed:@"liked"]];
+    [image setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [self addSubview:image];
+    
+    NSDictionary *views = @{@"image":image};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
