@@ -30,10 +30,10 @@
                        @"INSERT INTO item "
                        "(created, countryid, itemid, status, thumbnail, title, currency, price, "
                        "meters, rooms, parking, phone, email, latitude, longitude, "
-                       "searchmode, searchtype) "
+                       "searchmode, searchtype, viewed) "
                        "VALUES(%@, \"%@\", \"%@\", %@, \"%@\", \"%@\", \"%@\", %@, "
                        "%@, %@, %@, \"%@\", \"%@\", %@, %@, "
-                       "%@, %@);",
+                       "%@, %@, 0);",
                        @(now), item.countryid, item.itemid, @(item.status), item.thumbnail, item.title, item.currency, item.price,
                        item.meters, item.rooms, item.parking, item.phone, item.email, @(intlatitude), @(intlongitude),
                        @(item.mode), @(item.type)];

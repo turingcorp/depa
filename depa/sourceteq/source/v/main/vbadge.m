@@ -6,14 +6,17 @@
 {
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor whiteColor]];
+    [self setBackgroundColor:[UIColor clearColor]];
     [self setUserInteractionEnabled:NO];
+    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     UIImageView *image = [[UIImageView alloc] init];
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setUserInteractionEnabled:NO];
     [image setClipsToBounds:YES];
     [image setContentMode:UIViewContentModeScaleAspectFit];
+    [image setImage:[UIImage imageNamed:@"badge"]];
+    self.image = image;
     
     [self addSubview:image];
     

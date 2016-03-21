@@ -34,8 +34,9 @@ NSString *documents;
         if(pro_version < 10)
         {
             [updater firsttime:defaults];
-            [mdb updatedb];
         }
+        
+        [mdb updatedb];
     }
     
     dbname = [documents stringByAppendingPathComponent:[properties valueForKey:@"dbname"]];
