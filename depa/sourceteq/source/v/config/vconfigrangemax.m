@@ -45,7 +45,7 @@
     [slider setTranslatesAutoresizingMaskIntoConstraints:NO];
     [slider setMinimumTrackTintColor:colormain];
     [slider setMaximumTrackTintColor:[UIColor colorWithWhite:0 alpha:0.15]];
-    [slider setMaximumValue:[[msettings singleton].searchmode]];
+    [slider setMaximumValue:[[msettings singleton].searchmode pricemax]];
     [slider setContinuous:YES];
     [slider addTarget:self action:@selector(actionslider:) forControlEvents:UIControlEventValueChanged];
     self.slider = slider;
@@ -69,7 +69,27 @@
  
     [self updaterange];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedpriceminchanged:) name:notminpricechanged object:nil];
+    
     return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark notified
+
+-(void)notifiedpriceminchanged:(NSNotification*)notification
+{
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [self bounceminprice];
+                       [self print];
+                       [self save];
+                   });
 }
 
 #pragma mark actions
@@ -86,7 +106,7 @@
     if(check.isOn)
     {
         self.currentprice = 0;
-        [self.slider setValue:limitmaxpricemax animated:NO];
+        [self.slider setValue:[[msettings singleton].searchmode pricemax] animated:NO];
         [self slideravailable:NO];
     }
     else
@@ -105,6 +125,8 @@
 {
     [msettings singleton].maxprice = self.currentprice;
     [[msettings singleton] save];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:notmaxpricechanged object:nil];
 }
 
 -(void)print
@@ -135,7 +157,7 @@
         [self.check setOn:YES];
         [self.slider setUserInteractionEnabled:NO];
         [self.slider setAlpha:0.2];
-        [self.slider setValue:limitmaxpricemax animated:NO];
+        [self.slider setValue:[[msettings singleton].searchmode pricemax] animated:NO];
         [self.label setAlpha:0.2];
     }
 }
@@ -143,7 +165,6 @@
 -(void)updaterange
 {
     self.currentprice = [msettings singleton].maxprice;
-    NSUInteger minprice = [msettings singleton].minprice;
     
     if(self.currentprice)
     {
@@ -154,16 +175,28 @@
         [self slideravailable:NO];
     }
     
+    [self bounceminprice];
+    [self print];
+}
+
+-(void)bounceminprice
+{
+    NSUInteger minprice = [msettings singleton].minprice;
+    
     if(minprice)
     {
         [self.slider setMinimumValue:minprice];
+        
+        if(minprice > self.currentprice)
+        {
+            self.currentprice = minprice;
+            [self.slider setValue:self.currentprice animated:NO];
+        }
     }
     else
     {
-        [self.slider setMinimumValue:limitmaxprice];
+        [self.slider setMinimumValue:[[msettings singleton].searchmode pricemaxmin]];
     }
-    
-    [self print];
 }
 
 #pragma mark -

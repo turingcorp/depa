@@ -51,7 +51,9 @@
 "config_like_title"="Guardados";
 "config_no_title"="Descartados";
 "config_rangemax_title"="Precio maximo";
-"config_rangemax_descr"="Sin limite maximo";
+"config_rangemax_descr"="Cualquiera";
+"config_rangemin_title"="Precio minimo";
+"config_rangemin_descr"="Cualquiera";
 
 "item_detail_buttonretry"="Reintentar";
 "item_detail_stats_meters"="%@ m²";

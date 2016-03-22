@@ -25,6 +25,8 @@
 #define notitemsloaded          @"itemsloaded"
 #define notlikedloaded          @"likedloaded"
 #define notbadgechange          @"badgechange"
+#define notmaxpricechanged      @"maxpricechanged"
+#define notminpricechanged      @"minpricechanged"
 
 // extra
 
