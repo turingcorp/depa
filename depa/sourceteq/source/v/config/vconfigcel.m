@@ -34,7 +34,7 @@
     }
     else
     {
-        [self setBackgroundColor:[UIColor whiteColor]];
+        [self setBackgroundColor:[UIColor clearColor]];
     }
     
     [self.overview hover:hover];

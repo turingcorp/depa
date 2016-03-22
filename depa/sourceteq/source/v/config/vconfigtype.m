@@ -1,9 +1,8 @@
 #import "vconfigtype.h"
 
+static NSUInteger const cellwidth = 80;
+
 @implementation vconfigtype
-{
-    NSUInteger cellwidth;
-}
 
 -(instancetype)init
 {
@@ -14,7 +13,6 @@
 
     self.model = [[mconfigtyp alloc] init];
     self.selected = 0;
-    cellwidth = 100;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];

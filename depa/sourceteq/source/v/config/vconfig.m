@@ -16,7 +16,7 @@ static NSUInteger const headerheight = 60;
 {
     self = [super init:controller];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]];
+    [self setBackgroundColor:[UIColor colorWithWhite:0.94 alpha:1]];
 
     self.model = [[mconfig alloc] init];
     

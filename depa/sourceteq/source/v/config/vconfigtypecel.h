@@ -7,5 +7,6 @@
 
 @property(weak, nonatomic)UILabel *label;
 @property(weak, nonatomic)UIImageView *icon;
+@property(weak, nonatomic)UIView *selector;
 
 @end
