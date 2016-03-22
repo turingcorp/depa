@@ -58,8 +58,6 @@
 		DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A91C77D14900FE44B0 /* aimateq.m */; };
 		DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */; };
 		DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */; };
-		DA2427B31C77F2DE00FE44B0 /* vplayitemfooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427B21C77F2DE00FE44B0 /* vplayitemfooter.m */; };
-		DA2427B61C77F61100FE44B0 /* vplayitemmiddle.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */; };
 		DA2427B91C783D7A00FE44B0 /* vplayitemimage.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427B81C783D7A00FE44B0 /* vplayitemimage.m */; };
 		DA2427CD1C7863A100FE44B0 /* cplayempty.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427CC1C7863A100FE44B0 /* cplayempty.m */; };
 		DA2427D01C7863E800FE44B0 /* vplayempty.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427CF1C7863E800FE44B0 /* vplayempty.m */; };
@@ -301,10 +299,6 @@
 		DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aimateqitem.m; sourceTree = "<group>"; };
 		DA2427AE1C77F17B00FE44B0 /* vplayitemheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemheader.h; sourceTree = "<group>"; };
 		DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemheader.m; sourceTree = "<group>"; };
-		DA2427B11C77F2DE00FE44B0 /* vplayitemfooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemfooter.h; sourceTree = "<group>"; };
-		DA2427B21C77F2DE00FE44B0 /* vplayitemfooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemfooter.m; sourceTree = "<group>"; };
-		DA2427B41C77F61100FE44B0 /* vplayitemmiddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemmiddle.h; sourceTree = "<group>"; };
-		DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemmiddle.m; sourceTree = "<group>"; };
 		DA2427B71C783D7A00FE44B0 /* vplayitemimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemimage.h; sourceTree = "<group>"; };
 		DA2427B81C783D7A00FE44B0 /* vplayitemimage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemimage.m; sourceTree = "<group>"; };
 		DA2427CB1C7863A100FE44B0 /* cplayempty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cplayempty.h; sourceTree = "<group>"; };
@@ -970,10 +964,6 @@
 				DA4118CC1C860468002CD805 /* vplayitembutton.m */,
 				DA2427AE1C77F17B00FE44B0 /* vplayitemheader.h */,
 				DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */,
-				DA2427B11C77F2DE00FE44B0 /* vplayitemfooter.h */,
-				DA2427B21C77F2DE00FE44B0 /* vplayitemfooter.m */,
-				DA2427B41C77F61100FE44B0 /* vplayitemmiddle.h */,
-				DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */,
 				DA2427B71C783D7A00FE44B0 /* vplayitemimage.h */,
 				DA2427B81C783D7A00FE44B0 /* vplayitemimage.m */,
 				DA0ABA9E1C9DDADD00E023C3 /* vplayitemimagelike.h */,
@@ -1645,7 +1635,6 @@
 				DA121A2F1C8749DF00D2B67E /* vconfiglocmapview.m in Sources */,
 				DA31730E1C7CDFD800B6CEF7 /* vconfigtype.m in Sources */,
 				DA6973241C764C3600A2C6EB /* aparser.m in Sources */,
-				DA2427B61C77F61100FE44B0 /* vplayitemmiddle.m in Sources */,
 				DAE860691CA1BD1F00A88133 /* mconfigrangemin.m in Sources */,
 				DA3E741A1C86502100A73297 /* vlikedheader.m in Sources */,
 				DA69732E1C76549400A2C6EB /* msearchresult.m in Sources */,
@@ -1737,7 +1726,6 @@
 				DA12BC7E1C8487BC00ED9497 /* aparseritem.m in Sources */,
 				DA25B18A1C7BE7A900B4BB21 /* vconfigloclistheader.m in Sources */,
 				DAE8606F1CA1C05F00A88133 /* vconfigrangemin.m in Sources */,
-				DA2427B31C77F2DE00FE44B0 /* vplayitemfooter.m in Sources */,
 				DA2427CD1C7863A100FE44B0 /* cplayempty.m in Sources */,
 				DA2427D01C7863E800FE44B0 /* vplayempty.m in Sources */,
 				DA3172EF1C7CC6B700B6CEF7 /* vconfigmode.m in Sources */,

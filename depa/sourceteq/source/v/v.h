@@ -14,8 +14,6 @@
 #import "vplayiteminfo.h"
 #import "vplayitembutton.h"
 #import "vplayitemheader.h"
-#import "vplayitemfooter.h"
-#import "vplayitemmiddle.h"
 #import "vplayitemimage.h"
 #import "vplayitemimagelike.h"
 #import "vplayitemimagelikestar.h"
