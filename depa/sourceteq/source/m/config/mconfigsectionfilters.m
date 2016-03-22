@@ -11,9 +11,7 @@
                    [[mconfigtype alloc] init],
                    [[mconfigmode alloc] init],
                    [[mconfigsort alloc] init],
-                   [[mconfiglocation alloc] init],
-                   [[mconfiglike alloc] init],
-                   [[mconfigno alloc] init]
+                   [[mconfiglocation alloc] init]
                    ];
     
     return self;

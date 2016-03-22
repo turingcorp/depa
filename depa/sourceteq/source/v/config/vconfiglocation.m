@@ -26,13 +26,12 @@
     [labellocation setTextAlignment:NSTextAlignmentCenter];
     [labellocation setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labellocation setText:[msettings singleton].locationname];
-    [labellocation setTextAlignment:NSTextAlignmentRight];
     self.labellocation = labellocation;
     
     UILabel *change = [[UILabel alloc] init];
     [change setBackgroundColor:[UIColor clearColor]];
     [change setUserInteractionEnabled:NO];
-    [change setFont:[UIFont fontWithName:fontboldname size:15]];
+    [change setFont:[UIFont fontWithName:fontboldname size:16]];
     [change setUserInteractionEnabled:NO];
     [change setTranslatesAutoresizingMaskIntoConstraints:NO];
     [change setTextAlignment:NSTextAlignmentCenter];
@@ -46,7 +45,6 @@
     self.border = border;
     
     UIView *selector = [[UIView alloc] init];
-    [selector setBackgroundColor:colormain];
     [selector setUserInteractionEnabled:NO];
     [selector setTranslatesAutoresizingMaskIntoConstraints:NO];
     [selector setClipsToBounds:YES];
@@ -66,9 +64,9 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[change]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[border]-100-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[location]-5-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-14-[label(16)]-15-[location]-2-[border(1)]-2-[change]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-14-[label(16)]-23-[location]-3-[border(1)]-3-[change]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[selector]-20-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[selector]-15-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-43-[selector]-20-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -83,14 +81,14 @@
         [self.labellocation setTextColor:[UIColor whiteColor]];
         [self.border setBackgroundColor:[UIColor whiteColor]];
         [self.change setTextColor:[UIColor whiteColor]];
-        [self.selector setHidden:NO];
+        [self.selector setBackgroundColor:colormain];
     }
     else
     {
         [self.labellocation setTextColor:colormain];
-        [self.border setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.2]];
-        [self.change setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
-        [self.selector setHidden:YES];
+        [self.border setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.1]];
+        [self.change setTextColor:[UIColor colorWithWhite:0 alpha:0.4]];
+        [self.selector setBackgroundColor:[UIColor whiteColor]];
     }
 }
 
