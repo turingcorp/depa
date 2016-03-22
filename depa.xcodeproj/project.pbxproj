@@ -192,6 +192,8 @@
 		DAD5C3A31C7FD14000FF8FDF /* vlikedcel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3A21C7FD14000FF8FDF /* vlikedcel.m */; };
 		DAE860691CA1BD1F00A88133 /* mconfigrangemin.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE860681CA1BD1F00A88133 /* mconfigrangemin.m */; };
 		DAE8606C1CA1BD2800A88133 /* mconfigrangemax.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8606B1CA1BD2800A88133 /* mconfigrangemax.m */; };
+		DAE8606F1CA1C05F00A88133 /* vconfigrangemin.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8606E1CA1C05F00A88133 /* vconfigrangemin.m */; };
+		DAE860721CA1C06900A88133 /* vconfigrangemax.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE860711CA1C06900A88133 /* vconfigrangemax.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -579,6 +581,10 @@
 		DAE860681CA1BD1F00A88133 /* mconfigrangemin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigrangemin.m; sourceTree = "<group>"; };
 		DAE8606A1CA1BD2800A88133 /* mconfigrangemax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigrangemax.h; sourceTree = "<group>"; };
 		DAE8606B1CA1BD2800A88133 /* mconfigrangemax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigrangemax.m; sourceTree = "<group>"; };
+		DAE8606D1CA1C05F00A88133 /* vconfigrangemin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigrangemin.h; sourceTree = "<group>"; };
+		DAE8606E1CA1C05F00A88133 /* vconfigrangemin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigrangemin.m; sourceTree = "<group>"; };
+		DAE860701CA1C06900A88133 /* vconfigrangemax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigrangemax.h; sourceTree = "<group>"; };
+		DAE860711CA1C06900A88133 /* vconfigrangemax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigrangemax.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -677,6 +683,10 @@
 				DA121A281C87397700D2B67E /* vconfigsort.m */,
 				DA121A2A1C87398100D2B67E /* vconfigsortcel.h */,
 				DA121A2B1C87398100D2B67E /* vconfigsortcel.m */,
+				DAE8606D1CA1C05F00A88133 /* vconfigrangemin.h */,
+				DAE8606E1CA1C05F00A88133 /* vconfigrangemin.m */,
+				DAE860701CA1C06900A88133 /* vconfigrangemax.h */,
+				DAE860711CA1C06900A88133 /* vconfigrangemax.m */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -1616,6 +1626,7 @@
 				DACDA8461C76073200A37D15 /* tools.m in Sources */,
 				DA25B1531C7B82D300B4BB21 /* mconfigtype.m in Sources */,
 				DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */,
+				DAE860721CA1C06900A88133 /* vconfigrangemax.m in Sources */,
 				DA3173111C7CDFE200B6CEF7 /* vconfigtypecel.m in Sources */,
 				DA12BCA01C85050C00ED9497 /* acalldesc.m in Sources */,
 				DA74726B1CA0D082006F56AF /* mconfigsection.m in Sources */,
@@ -1725,6 +1736,7 @@
 				DAD5C3941C7FAFD800FF8FDF /* aparsersearchatt.m in Sources */,
 				DA12BC7E1C8487BC00ED9497 /* aparseritem.m in Sources */,
 				DA25B18A1C7BE7A900B4BB21 /* vconfigloclistheader.m in Sources */,
+				DAE8606F1CA1C05F00A88133 /* vconfigrangemin.m in Sources */,
 				DA2427B31C77F2DE00FE44B0 /* vplayitemfooter.m in Sources */,
 				DA2427CD1C7863A100FE44B0 /* cplayempty.m in Sources */,
 				DA2427D01C7863E800FE44B0 /* vplayempty.m in Sources */,

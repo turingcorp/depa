@@ -11,6 +11,8 @@
                    [[mconfigtype alloc] init],
                    [[mconfigmode alloc] init],
                    [[mconfigsort alloc] init],
+                   [[mconfigrangemin alloc] init],
+                   [[mconfigrangemax alloc] init],
                    [[mconfiglocation alloc] init]
                    ];
     

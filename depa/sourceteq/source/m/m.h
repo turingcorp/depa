@@ -20,6 +20,8 @@
 #import "mconfigsort.h"
 #import "mconfiglike.h"
 #import "mconfigno.h"
+#import "mconfigrangemin.h"
+#import "mconfigrangemax.h"
 #import "mconfigloc.h"
 #import "mconfiglocprotocol.h"
 #import "mconfigloclist.h"

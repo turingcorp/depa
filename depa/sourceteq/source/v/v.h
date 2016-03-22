@@ -44,6 +44,8 @@
 #import "vconfigtypecel.h"
 #import "vconfiglike.h"
 #import "vconfigno.h"
+#import "vconfigrangemin.h"
+#import "vconfigrangemax.h"
 #import "vconfigitemlike.h"
 #import "vconfigitemno.h"
 #import "vliked.h"
