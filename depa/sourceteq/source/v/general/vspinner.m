@@ -16,7 +16,10 @@
                              [UIImage imageNamed:@"loader1"],
                              [UIImage imageNamed:@"loader2"],
                              [UIImage imageNamed:@"loader3"],
-                             [UIImage imageNamed:@"loader4"]
+                             [UIImage imageNamed:@"loader4"],
+                             [UIImage imageNamed:@"loader5"],
+                             [UIImage imageNamed:@"loader6"],
+                             [UIImage imageNamed:@"loader7"]
                              ];
     
     return self;
