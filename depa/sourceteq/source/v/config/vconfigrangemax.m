@@ -1,8 +1,5 @@
 #import "vconfigrangemax.h"
 
-static NSUInteger const limitmaxprice = 2000;
-static NSUInteger const limitmaxpricemax = 200000;
-
 @implementation vconfigrangemax
 
 -(instancetype)init
@@ -47,8 +44,8 @@ static NSUInteger const limitmaxpricemax = 200000;
     UISlider *slider = [[UISlider alloc] init];
     [slider setTranslatesAutoresizingMaskIntoConstraints:NO];
     [slider setMinimumTrackTintColor:colormain];
-    [slider setMaximumTrackTintColor:[UIColor colorWithWhite:0 alpha:0.2]];
-    [slider setMaximumValue:limitmaxpricemax];
+    [slider setMaximumTrackTintColor:[UIColor colorWithWhite:0 alpha:0.15]];
+    [slider setMaximumValue:[[msettings singleton].searchmode]];
     [slider setContinuous:YES];
     [slider addTarget:self action:@selector(actionslider:) forControlEvents:UIControlEventValueChanged];
     self.slider = slider;

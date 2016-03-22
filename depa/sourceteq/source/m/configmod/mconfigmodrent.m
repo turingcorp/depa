@@ -1,5 +1,10 @@
 #import "mconfigmodrent.h"
 
+static NSUInteger const cpricemax = 30000;
+static NSUInteger const cpricemaxmin = 1100;
+static NSUInteger const cpricemin = 1000;
+static NSUInteger const cpriceminmax = 25000;
+
 @implementation mconfigmodrent
 
 -(NSString*)description
@@ -22,6 +27,26 @@
 -(search_mode)type
 {
     return search_mode_rent;
+}
+
+-(NSUInteger)pricemax
+{
+    return cpricemax;
+}
+
+-(NSUInteger)pricemaxmin
+{
+    return cpricemaxmin;
+}
+
+-(NSUInteger)pricemin
+{
+    return cpricemin;
+}
+
+-(NSUInteger)priceminmax
+{
+    return cpriceminmax;
 }
 
 @end
