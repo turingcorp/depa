@@ -8,6 +8,7 @@ static NSUInteger const limitmaxpricemax = 200000;
 -(instancetype)init
 {
     self = [super init];
+    [self setBackgroundColor:[UIColor clearColor]];
     [self setClipsToBounds:YES];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     
@@ -46,9 +47,10 @@ static NSUInteger const limitmaxpricemax = 200000;
     UISlider *slider = [[UISlider alloc] init];
     [slider setTranslatesAutoresizingMaskIntoConstraints:NO];
     [slider setMinimumTrackTintColor:colormain];
-    [slider setMaximumTrackTintColor:[UIColor colorWithWhite:0 alpha:0.3]];
+    [slider setMaximumTrackTintColor:[UIColor colorWithWhite:0 alpha:0.2]];
     [slider setMaximumValue:limitmaxpricemax];
     [slider setContinuous:YES];
+    [slider addTarget:self action:@selector(actionslider:) forControlEvents:UIControlEventValueChanged];
     self.slider = slider;
     
     [self addSubview:labeltitle];
@@ -61,7 +63,7 @@ static NSUInteger const limitmaxpricemax = 200000;
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[check]-10-[labeldescr]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-51-[check]-10-[slider]-10-[label]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-51-[check]-20-[label(25)]-0-[slider]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-54-[labeldescr]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labeltitle]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[slider]-20-|" options:0 metrics:metrics views:views]];
@@ -74,6 +76,13 @@ static NSUInteger const limitmaxpricemax = 200000;
 }
 
 #pragma mark actions
+
+-(void)actionslider:(UISlider*)slider
+{
+    self.currentprice = slider.value;
+    [self print];
+    [self save];
+}
 
 -(void)actioncheck:(UISwitch*)check
 {
@@ -89,6 +98,7 @@ static NSUInteger const limitmaxpricemax = 200000;
         [self slideravailable:YES];
     }
     
+    [self print];
     [self save];
 }
 
@@ -127,8 +137,8 @@ static NSUInteger const limitmaxpricemax = 200000;
     {
         [self.check setOn:YES];
         [self.slider setUserInteractionEnabled:NO];
-        [self.slider setAlpha:0.4];
-        [self.slider setValue:limitmaxprice animated:NO];
+        [self.slider setAlpha:0.2];
+        [self.slider setValue:limitmaxpricemax animated:NO];
         [self.label setAlpha:0.2];
     }
 }

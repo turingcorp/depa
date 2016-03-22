@@ -12,7 +12,7 @@
 
 -(NSUInteger)cellheight
 {
-    return 140;
+    return 195;
 }
 
 -(UIView*)overview
