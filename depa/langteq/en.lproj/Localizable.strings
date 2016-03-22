@@ -12,6 +12,8 @@
 "search_mode_buy"="for sale";
 
 "config_title"="Settings";
+"config_section_filters"="Search filters";
+"config_section_options"="App options";
 "config_location_title"="Location";
 "config_location_menu_list"="List";
 "config_location_menu_map"="Map";

@@ -7,12 +7,8 @@
     self = [super init];
     
     self.items = @[
-                   [[mconfigtype alloc] init],
-                   [[mconfigmode alloc] init],
-                   [[mconfigsort alloc] init],
-                   [[mconfiglocation alloc] init],
-                   [[mconfiglike alloc] init],
-                   [[mconfigno alloc] init]
+                   [[mconfigsectionfilters alloc] init],
+                   [[mconfigsectionoptions alloc] init],
                    ];
     
     return self;

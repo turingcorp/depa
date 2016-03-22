@@ -1,8 +1,8 @@
 #import "appdel.h"
-#import "mconfigprotocol.h"
+#import "mconfigsection.h"
 
 @interface mconfig:NSObject
 
-@property(strong, nonatomic)NSArray<id<mconfigprotocol>> *items;
+@property(strong, nonatomic)NSArray<mconfigsection*> *items;
 
 @end

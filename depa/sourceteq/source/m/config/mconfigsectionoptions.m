@@ -1,13 +1,13 @@
-//
-//  mconfigsectionoptions.m
-//  depa
-//
-//  Created by zero on 3/21/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mconfigsectionoptions.h"
 
 @implementation mconfigsectionoptions
+
+-(instancetype)init
+{
+    self = [super init];
+    self.name = NSLocalizedString(@"config_section_options", nil);
+    
+    return self;
+}
 
 @end
