@@ -1,6 +1,6 @@
 #import "appdel.h"
 #import "vconfigcelprotocol.h"
 
-@interface vconfigrangemax:NSObject<vconfigcelprotocol>
+@interface vconfigrangemax:UIView<vconfigcelprotocol>
 
 @end

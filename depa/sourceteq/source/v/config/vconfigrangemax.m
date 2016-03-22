@@ -1,13 +1,20 @@
-//
-//  vconfigrangemax.m
-//  depa
-//
-//  Created by zero on 3/22/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "vconfigrangemax.h"
 
 @implementation vconfigrangemax
+
+-(instancetype)init
+{
+    self = [super init];
+    [self setClipsToBounds:YES];
+    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    return self;
+}
+
+#pragma mark config cel protocol
+
+-(void)hover:(BOOL)hover
+{
+}
 
 @end

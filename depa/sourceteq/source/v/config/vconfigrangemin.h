@@ -1,6 +1,6 @@
 #import "appdel.h"
 #import "vconfigcelprotocol.h"
 
-@interface vconfigrangemin:<vconfigcelprotocol>
+@interface vconfigrangemin:UIView<vconfigcelprotocol>
 
 @end
