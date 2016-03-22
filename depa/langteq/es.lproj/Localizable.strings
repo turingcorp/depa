@@ -12,6 +12,8 @@
 "search_mode_buy"="en venta";
 
 "config_title"="Configuracion";
+"config_section_filters"="Filtros de busqueda";
+"config_section_options"="Opciones de la app";
 "config_location_title"="Ubicacion";
 "config_location_menu_list"="Lista";
 "config_location_menu_map"="Mapa";
@@ -26,7 +28,7 @@
 "config_mode_rent"="Renta";
 "config_mode_buy"="Compra";
 "config_type_house"="Casa";
-"config_type_apartment"="Departamento";
+"config_type_apartment"="Depa";
 "config_order_lower"="Precio bajo";
 "config_order_higher"="Precio alto";
 "config_order_relevance"="Relevancia";

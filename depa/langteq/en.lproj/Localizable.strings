@@ -28,7 +28,7 @@
 "config_mode_rent"="Rent";
 "config_mode_buy"="Buy";
 "config_type_house"="House";
-"config_type_apartment"="Apartment";
+"config_type_apartment"="Apt";
 "config_order_lower"="Lower price";
 "config_order_higher"="Higher price";
 "config_order_relevance"="Relevance";

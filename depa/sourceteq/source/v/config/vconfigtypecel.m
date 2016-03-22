@@ -12,7 +12,7 @@
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont fontWithName:fontname size:12]];
+    [label setFont:[UIFont fontWithName:fontname size:14]];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.label = label;
     
@@ -30,7 +30,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[icon(75)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[icon(60)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label]-10-|" options:0 metrics:metrics views:views]];
     
@@ -55,13 +55,13 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.icon setTintColor:colormain];
-        [self.label setTextColor:colormain];
+        [self.icon setTintColor:colorsecond];
+        [self.label setTextColor:colorsecond];
     }
     else
     {
-        [self.icon setTintColor:[UIColor colorWithWhite:0 alpha:0.2]];
-        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.3]];
+        [self.icon setTintColor:[UIColor colorWithWhite:0 alpha:0.4]];
+        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
     }
 }
 
