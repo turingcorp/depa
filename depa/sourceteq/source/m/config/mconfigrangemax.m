@@ -17,7 +17,7 @@
 
 -(UIView*)overview
 {
-    vconfiglike *over = [[vconfiglike alloc] init];
+    vconfigrangemax *over = [[vconfigrangemax alloc] init];
     
     return over;
 }

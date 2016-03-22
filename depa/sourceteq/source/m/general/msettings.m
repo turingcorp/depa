@@ -28,7 +28,8 @@
         mode = (search_mode)[settings[@"searchmode"] unsignedIntegerValue];
         type = (search_type)[settings[@"searchtype"] unsignedIntegerValue];
         order = (search_order)[settings[@"searchorder"] unsignedIntegerValue];
-        self.pricerange = settings[@"pricerange"];
+        self.maxprice = [settings[@"maxprice"] unsignedIntegerValue];
+        self.minprice = [settings[@"minprice"] unsignedIntegerValue];
         self.location = settings[@"location"];
         self.locationname = settings[@"locationname"];
     }
@@ -38,7 +39,8 @@
         mode = search_mode_rent;
         type = search_type_apartment;
         order = search_order_lower;
-        self.pricerange = @"*-*";
+        self.maxprice = 0;
+        self.minprice = 0;
         self.location = @"state=TUxNUERJUzYwOTQ&";
         self.locationname = NSLocalizedString(@"settings_original_locationname", nil);
     }
@@ -97,7 +99,8 @@
     settings[@"searchtype"] = @([self.searchtype type]);
     settings[@"searchorder"] = @([self.searchorder type]);
     settings[@"countryid"] = self.country.countryid;
-    settings[@"pricerange"] = self.pricerange;
+    settings[@"maxprice"] = @(self.maxprice);
+    settings[@"minprice"] = @(self.minprice);
     settings[@"location"] = self.location;
     settings[@"locationname"] = self.locationname;
     
@@ -112,6 +115,33 @@
     [self changecountry:country];
     
     [self save];
+}
+
+-(NSString*)pricerange
+{
+    NSMutableString *string = [NSMutableString string];
+    
+    if(self.minprice)
+    {
+        [string appendFormat:@"%@", @(self.minprice)];
+    }
+    else
+    {
+        [string appendString:@"*"];
+    }
+    
+    [string appendString:@"-"];
+    
+    if(self.maxprice)
+    {
+        [string appendFormat:@"%@", @(self.maxprice)];
+    }
+    else
+    {
+        [string appendString:@"*"];
+    }
+        
+    return string;
 }
 
 @end

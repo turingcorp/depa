@@ -50,6 +50,8 @@
 "config_location_change"="Change";
 "config_like_title"="Saved";
 "config_no_title"="Discarded";
+"config_rangemax_title"="Max price";
+"config_rangemax_descr"="No max limit";
 
 "item_detail_buttonretry"="Try again";
 "item_detail_stats_meters"="%@ m²";
