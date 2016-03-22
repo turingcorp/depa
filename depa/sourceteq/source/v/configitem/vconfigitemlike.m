@@ -45,20 +45,33 @@
     [button.layer setCornerRadius:4];
     [button addTarget:self action:@selector(actionclear:) forControlEvents:UIControlEventTouchUpInside];
     
+    UIButton *buttonview = [[UIButton alloc] init];
+    [buttonview setBackgroundColor:colorsecond];
+    [buttonview setClipsToBounds:YES];
+    [buttonview setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [buttonview.titleLabel setFont:[UIFont fontWithName:fontboldname size:15]];
+    [buttonview setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [buttonview setTitleColor:[UIColor colorWithWhite:1 alpha:0.2] forState:UIControlStateHighlighted];
+    [buttonview setTitle:NSLocalizedString(@"config_item_like_buttonview", nil) forState:UIControlStateNormal];
+    [buttonview.layer setCornerRadius:4];
+    [buttonview addTarget:self action:@selector(actionview:) forControlEvents:UIControlEventTouchUpInside];
+    
     [self addSubview:label];
     [self addSubview:info];
     [self addSubview:image];
     [self addSubview:button];
+    [self addSubview:buttonview];
     
-    NSDictionary *views = @{@"image":image, @"label":label, @"info":info, @"button":button};
+    NSDictionary *views = @{@"image":image, @"label":label, @"info":info, @"button":button, @"buttonview":buttonview};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-30-[info]-30-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[button]-80-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-90-[image(70)]-(-25)-[label]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[info]-10-[button(40)]-100-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[buttonview]-80-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[image(80)]-(-12)-[label]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[info]-10-[button(40)]-20-[buttonview(40)]-90-|" options:0 metrics:metrics views:views]];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
@@ -81,6 +94,17 @@
 -(void)actionclear:(UIButton*)button
 {
     [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"config_item_like_alert_title", nil) message:NSLocalizedString(@"config_item_like_alert_message", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"config_item_alert_cancel", nil) otherButtonTitles:NSLocalizedString(@"config_item_alert_clear", nil), nil] show];
+}
+
+-(void)actionview:(UIButton*)button
+{
+    [[cmain singleton] popViewControllerAnimated:YES];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 500), dispatch_get_main_queue(),
+                   ^
+                   {
+                       [[cmain singleton].pages openfavorites];
+                   });
 }
 
 #pragma mark functionality

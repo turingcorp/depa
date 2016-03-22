@@ -5,7 +5,7 @@
 -(instancetype)init:(msearchresult*)model
 {
     self = [super init];
-    [self setBackgroundColor:colormain];
+    [self setBackgroundColor:[UIColor colorWithWhite:0.98 alpha:1]];
     [self setUserInteractionEnabled:NO];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
@@ -40,7 +40,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(1)]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[image]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     
     [self refreshimage];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedimage:) name:notimageloaded object:nil];
@@ -86,7 +86,8 @@
 
 -(void)no
 {
-    
+    [self setBackgroundColor:[UIColor blackColor]];
+    [self.image setAlpha:0.4];
 }
 
 @end

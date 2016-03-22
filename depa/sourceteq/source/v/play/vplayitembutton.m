@@ -6,6 +6,7 @@
 {
     self = [super init];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self setBackgroundColor:[UIColor clearColor]];
     
     return self;
 }
@@ -28,11 +29,9 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.7]];
     }
     else
     {
-        [self setBackgroundColor:[UIColor clearColor]];
     }
 }
 
