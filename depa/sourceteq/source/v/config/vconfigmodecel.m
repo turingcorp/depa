@@ -57,13 +57,13 @@
     {
         [self.selector setHidden:NO];
         [self.label setTextColor:[UIColor whiteColor]];
-        [self.label setFont:[UIFont fontWithName:fontboldname size:14]];
+        [self.label setFont:[UIFont fontWithName:fontboldname size:16]];
     }
     else
     {
         [self.selector setHidden:YES];
-        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.65]];
-        [self.label setFont:[UIFont fontWithName:fontname size:14]];
+        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.7]];
+        [self.label setFont:[UIFont fontWithName:fontname size:16]];
     }
 }
 

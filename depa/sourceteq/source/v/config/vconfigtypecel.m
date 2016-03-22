@@ -12,7 +12,6 @@
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont fontWithName:fontname size:15]];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.label = label;
     
@@ -39,9 +38,9 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[icon(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[icon(40)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label]-25-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-1-[selector]-1-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[selector]-15-|" options:0 metrics:metrics views:views]];
     
@@ -68,12 +67,14 @@
     {
         [self.icon setTintColor:[UIColor whiteColor]];
         [self.label setTextColor:[UIColor whiteColor]];
+        [self.label setFont:[UIFont fontWithName:fontboldname size:15]];
         [self.selector setHidden:NO];
     }
     else
     {
-        [self.icon setTintColor:[UIColor colorWithWhite:0 alpha:0.35]];
-        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.6]];
+        [self.icon setTintColor:[UIColor colorWithWhite:0 alpha:0.5]];
+        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
+        [self.label setFont:[UIFont fontWithName:fontname size:15]];
         [self.selector setHidden:YES];
     }
 }

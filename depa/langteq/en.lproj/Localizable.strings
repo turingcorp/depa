@@ -29,9 +29,9 @@
 "config_mode_buy"="Sale";
 "config_type_house"="House";
 "config_type_apartment"="Apt";
-"config_order_lower"="Lower price";
-"config_order_higher"="Higher price";
-"config_order_relevance"="Relevance";
+"config_order_lower"="Lower";
+"config_order_higher"="Higher";
+"config_order_relevance"="Rating";
 "config_item_like_title"="Likes";
 "config_item_like_info"="Liked publications are excluded while searching and shown on the Liked list\n\nClear the Liked list to play all the publications again";
 "config_item_like_button"="Clear list";

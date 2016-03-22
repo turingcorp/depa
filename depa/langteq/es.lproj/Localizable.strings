@@ -29,9 +29,9 @@
 "config_mode_buy"="Venta";
 "config_type_house"="Casa";
 "config_type_apartment"="Depa";
-"config_order_lower"="Precio bajo";
-"config_order_higher"="Precio alto";
-"config_order_relevance"="Relevancia";
+"config_order_lower"="Menor";
+"config_order_higher"="Mayor";
+"config_order_relevance"="Rating";
 "config_item_like_title"="Likes";
 "config_item_like_info"="Las publicaciones con Like se excluyen de la busqueda pero aparecen en la lista de Likes\n\nLimpia la lista de Likes para jugar todas las publicaciones de nuevo";
 "config_item_like_button"="Limpiar lista";
