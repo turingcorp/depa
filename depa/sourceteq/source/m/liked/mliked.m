@@ -11,7 +11,6 @@
     
     self.fonttitle = [UIFont fontWithName:fontname size:14];
     self.fontprice = [UIFont fontWithName:fontname size:12];
-    [self load];
     
     return self;
 }
