@@ -14,22 +14,22 @@
     [image setUserInteractionEnabled:NO];
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setImage:[[UIImage imageNamed:@"like"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    [image setTintColor:colormain];
+    [image setTintColor:colorsecond];
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setFont:[UIFont fontWithName:fontboldname size:25]];
-    [label setTextColor:colormain];
+    [label setFont:[UIFont fontWithName:fontboldname size:20]];
+    [label setTextColor:[UIColor blackColor]];
     [label setTextAlignment:NSTextAlignmentCenter];
     
     UILabel *info = [[UILabel alloc] init];
     [info setBackgroundColor:[UIColor clearColor]];
     [info setUserInteractionEnabled:NO];
     [info setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [info setFont:[UIFont fontWithName:fontname size:19]];
-    [info setTextColor:[UIColor colorWithWhite:0 alpha:0.8]];
+    [info setFont:[UIFont fontWithName:fontname size:17]];
+    [info setTextColor:[UIColor colorWithWhite:0 alpha:0.6]];
     [info setTextAlignment:NSTextAlignmentCenter];
     [info setNumberOfLines:0];
     [info setText:NSLocalizedString(@"config_item_like_info", nil)];
@@ -57,7 +57,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-30-[info]-30-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[button]-80-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[image(150)]-(-25)-[label]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-90-[image(70)]-(-25)-[label]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[info]-10-[button(40)]-100-|" options:0 metrics:metrics views:views]];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
