@@ -116,6 +116,24 @@
     return value;
 }
 
++(NSNumber*)newitems
+{
+    NSString *query = [NSString stringWithFormat:
+                       @"SELECT COUNT(id) FROM item WHERE status=%@ and viewed=0;",
+                       @(item_status_like)];
+    NSNumber *value = [db value:query];
+    
+    return value;
+}
+
++(void)clearviewed
+{
+    NSString *query = [NSString stringWithFormat:
+                       @"UPDATE item SET viewed=1 WHERE status=%@ and viewed=0;",
+                       @(item_status_like)];
+    [db query:query];
+}
+
 +(void)clear:(item_status)status
 {
     NSString *query = [NSString stringWithFormat:

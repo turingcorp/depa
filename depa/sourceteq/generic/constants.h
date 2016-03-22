@@ -24,6 +24,7 @@
 #define notloclistitemfetched   @"loclistitemfetched"
 #define notitemsloaded          @"itemsloaded"
 #define notlikedloaded          @"likedloaded"
+#define notbadgechange          @"badgechange"
 
 // extra
 

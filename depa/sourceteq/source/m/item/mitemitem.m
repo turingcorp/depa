@@ -26,6 +26,8 @@
                                           "WHERE id=%@;",
                                           @(status), @(self.dbid)];
                        [db query:query];
+                       
+                       [[NSNotificationCenter defaultCenter] postNotificationName:notbadgechange object:nil];
                    });
 }
 

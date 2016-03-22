@@ -18,13 +18,25 @@
     [image setImage:[UIImage imageNamed:@"badge"]];
     self.image = image;
     
-    [self addSubview:image];
+    UILabel *label = [[UILabel alloc] init];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setUserInteractionEnabled:NO];
+    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    [label setFont:[UIFont fontWithName:fontname size:12]];
+    [label setTextColor:colormain];
+    self.label = label;
     
-    NSDictionary *views = @{@"image":image};
+    [self addSubview:image];
+    [self addSubview:label];
+    
+    NSDictionary *views = @{@"image":image, @"label":label};
     NSDictionary *metrcis = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrcis views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image]-0-|" options:0 metrics:metrcis views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrcis views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrcis views:views]];
     
     return self;
 }

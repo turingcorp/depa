@@ -6,6 +6,9 @@
 {
     [super viewDidLoad];
     [self setTitle:NSLocalizedString(@"liked_title", nil)];
+    
+    [mdb clearviewed];
+    [[NSNotificationCenter defaultCenter] postNotificationName:notbadgechange object:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated
