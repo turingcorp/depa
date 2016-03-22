@@ -47,6 +47,7 @@
 "config_type_title"="Search for";
 "config_mode_title"="For";
 "config_sort_title"="Order by";
+"config_location_change"="Change";
 
 "item_detail_buttonretry"="Try again";
 "item_detail_stats_meters"="%@ m²";

@@ -6,6 +6,7 @@
 {
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
+    [self setBackgroundColor:[UIColor clearColor]];
     
     return self;
 }
@@ -27,16 +28,6 @@
 -(void)hover
 {
     BOOL hover = self.isSelected || self.isHighlighted;
-    
-    if(hover)
-    {
-        [self setBackgroundColor:colorsecond];
-    }
-    else
-    {
-        [self setBackgroundColor:[UIColor clearColor]];
-    }
-    
     [self.overview hover:hover];
 }
 

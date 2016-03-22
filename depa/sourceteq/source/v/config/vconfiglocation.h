@@ -4,6 +4,7 @@
 @interface vconfiglocation:UIView<vconfigcelprotocol>
 
 @property(weak, nonatomic)UILabel *labellocation;
-@property(weak, nonatomic)UILabel *label;
+@property(weak, nonatomic)UILabel *change;
+@property(weak, nonatomic)UIView *border;
 
 @end
