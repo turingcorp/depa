@@ -10,6 +10,7 @@
 +(instancetype)singleton;
 -(void)save;
 -(void)changecountry:(mcountryitem*)country location:(NSString*)location locationname:(NSString*)locationname;
+-(void)changesearchmode:(id<mconfigmodprotocol>)model;
 -(NSString*)pricerange;
 
 @property(strong, nonatomic)id<mconfigmodprotocol> searchmode;

@@ -45,7 +45,6 @@
     [slider setTranslatesAutoresizingMaskIntoConstraints:NO];
     [slider setMinimumTrackTintColor:colormain];
     [slider setMaximumTrackTintColor:[UIColor colorWithWhite:0 alpha:0.15]];
-    [slider setMaximumValue:[[msettings singleton].searchmode pricemax]];
     [slider setContinuous:YES];
     [slider addTarget:self action:@selector(actionslider:) forControlEvents:UIControlEventValueChanged];
     self.slider = slider;
@@ -70,6 +69,7 @@
     [self updaterange];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedpriceminchanged:) name:notminpricechanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedsearchmodechanged:) name:notsearchmodechanged object:nil];
     
     return self;
 }
@@ -89,6 +89,15 @@
                        [self bounceminprice];
                        [self print];
                        [self save];
+                   });
+}
+
+-(void)notifiedsearchmodechanged:(NSNotification*)notification
+{
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [self updaterange];
                    });
 }
 
@@ -164,6 +173,8 @@
 
 -(void)updaterange
 {
+    [self.slider setMaximumValue:[[msettings singleton].searchmode pricemax]];
+    
     self.currentprice = [msettings singleton].maxprice;
     [self bounceminprice];
     

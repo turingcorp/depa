@@ -1,9 +1,9 @@
 #import "mconfigmodrent.h"
 
-static NSUInteger const cpricemax = 25000;
+static NSUInteger const cpricemax = 20000;
 static NSUInteger const cpricemaxmin = 3100;
 static NSUInteger const cpricemin = 3000;
-static NSUInteger const cpriceminmax = 20000;
+static NSUInteger const cpriceminmax = 18000;
 
 @implementation mconfigmodrent
 

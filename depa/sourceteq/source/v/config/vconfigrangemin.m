@@ -45,7 +45,6 @@
     [slider setTranslatesAutoresizingMaskIntoConstraints:NO];
     [slider setMinimumTrackTintColor:colormain];
     [slider setMaximumTrackTintColor:[UIColor colorWithWhite:0 alpha:0.15]];
-    [slider setMinimumValue:[[msettings singleton].searchmode pricemin]];
     [slider setContinuous:YES];
     [slider addTarget:self action:@selector(actionslider:) forControlEvents:UIControlEventValueChanged];
     self.slider = slider;
@@ -174,6 +173,8 @@
 
 -(void)updaterange
 {
+    [self.slider setMinimumValue:[[msettings singleton].searchmode pricemin]];
+    
     self.currentprice = [msettings singleton].minprice;
     [self bouncemaxprice];
     

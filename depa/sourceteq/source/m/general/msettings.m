@@ -117,6 +117,16 @@
     [self save];
 }
 
+-(void)changesearchmode:(id<mconfigmodprotocol>)model
+{
+    self.searchmode = model;
+    self.minprice = [model pricemin];
+    self.maxprice = [model pricemax];
+    [self save];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:notsearchmodechanged object:nil];
+}
+
 -(NSString*)pricerange
 {
     NSMutableString *string = [NSMutableString string];
