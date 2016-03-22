@@ -1,8 +1,8 @@
 #import "mconfigmodbuy.h"
 
 static NSUInteger const cpricemax = 8000000;
-static NSUInteger const cpricemaxmin = 310000;
-static NSUInteger const cpricemin = 300000;
+static NSUInteger const cpricemaxmin = 510000;
+static NSUInteger const cpricemin = 500000;
 static NSUInteger const cpriceminmax = 7500000;
 
 @implementation mconfigmodbuy
