@@ -99,6 +99,8 @@
     self.currentprice = slider.value;
     [self print];
     [self save];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:notmaxpricechanged object:nil];
 }
 
 -(void)actioncheck:(UISwitch*)check
@@ -125,8 +127,6 @@
 {
     [msettings singleton].maxprice = self.currentprice;
     [[msettings singleton] save];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:notmaxpricechanged object:nil];
 }
 
 -(void)print
@@ -165,6 +165,7 @@
 -(void)updaterange
 {
     self.currentprice = [msettings singleton].maxprice;
+    [self bounceminprice];
     
     if(self.currentprice)
     {
@@ -175,7 +176,6 @@
         [self slideravailable:NO];
     }
     
-    [self bounceminprice];
     [self print];
 }
 
