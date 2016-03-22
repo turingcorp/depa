@@ -77,7 +77,7 @@
     NSDictionary *metrics = @{};
     
     [self.map addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
-    [self.map addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[spinner(80)]" options:0 metrics:metrics views:views]];
+    [self.map addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-120-[spinner(40)]" options:0 metrics:metrics views:views]];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
