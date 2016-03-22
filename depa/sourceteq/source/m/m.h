@@ -11,6 +11,8 @@
 #import "mplaymenulike.h"
 #import "mplaymenuno.h"
 #import "mconfig.h"
+#import "mconfigsectionfilters.h"
+#import "mconfigsectionoptions.h"
 #import "mconfigprotocol.h"
 #import "mconfiglocation.h"
 #import "mconfigtype.h"

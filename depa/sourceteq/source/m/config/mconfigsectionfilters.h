@@ -1,13 +1,6 @@
-//
-//  mconfigsectionfilters.h
-//  depa
-//
-//  Created by zero on 3/21/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "mconfigsection.h"
 
-#import <Foundation/Foundation.h>
-
-@interface mconfigsectionfilters : NSObject
+@interface mconfigsectionfilters:mconfigsection
 
 @end
