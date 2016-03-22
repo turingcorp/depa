@@ -2,11 +2,12 @@
 
 @implementation vplayitembutton
 
--(instancetype)init
+-(instancetype)init:(vplayitem*)item
 {
     self = [super init];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setBackgroundColor:[UIColor clearColor]];
+    self.item = item;
     
     return self;
 }
@@ -29,9 +30,11 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
+        [self.item.image setAlpha:0.6];
     }
     else
     {
+        [self.item.image setAlpha:1];
     }
 }
 

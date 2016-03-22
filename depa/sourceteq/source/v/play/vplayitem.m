@@ -17,7 +17,7 @@ static NSUInteger const infoheight = 150;
     vplayiteminfo *info = [[vplayiteminfo alloc] init:model];
     self.image = image;
     
-    vplayitembutton *button = [[vplayitembutton alloc] init];
+    vplayitembutton *button = [[vplayitembutton alloc] init:self];
     [button addTarget:self action:@selector(actiondetail:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:image];

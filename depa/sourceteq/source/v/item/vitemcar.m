@@ -10,7 +10,7 @@
 -(instancetype)init:(citem*)controller
 {
     self = [super init];
-    [self setBackgroundColor:[UIColor colorWithWhite:0.92 alpha:1]];
+    [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
     
@@ -24,7 +24,7 @@
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    [flow setSectionInset:UIEdgeInsetsMake(2, 0, 2, 0)];
+    [flow setSectionInset:UIEdgeInsetsMake(0, 0, 1, 0)];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setBackgroundColor:[UIColor clearColor]];
@@ -111,7 +111,7 @@
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    cellheight = col.bounds.size.height - 4;
+    cellheight = col.bounds.size.height - 1;
     CGSize size = CGSizeMake(cellwidth, cellheight);
     
     return size;
