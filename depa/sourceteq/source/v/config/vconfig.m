@@ -1,7 +1,7 @@
 #import "vconfig.h"
 
 static NSUInteger const headerheight = 50;
-static NSUInteger const cellspacing = 20;
+static NSUInteger const cellspacing = 30;
 static NSUInteger const sectionbottom = 40;
 
 @interface vconfig ()
