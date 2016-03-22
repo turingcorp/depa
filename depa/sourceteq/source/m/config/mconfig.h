@@ -3,6 +3,6 @@
 
 @interface mconfig:NSObject
 
-@property(strong, nonatomic)NSArray<mconfigsection*> *items;
+@property(strong, nonatomic)NSArray<mconfigsection*> *sections;
 
 @end

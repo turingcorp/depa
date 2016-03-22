@@ -41,6 +41,15 @@
     return self;
 }
 
+#pragma mark functionality
+
+-(id<mconfigprotocol>)modelat:(NSIndexPath*)index
+{
+    id<mconfigprotocol> model = self.model.sections[index.section].items[index.item];
+    
+    return model;
+}
+
 #pragma mark public
 
 -(void)didappear
@@ -53,41 +62,47 @@
 
 -(BOOL)collectionView:(UICollectionView*)col shouldSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    BOOL selectable = [[self.model item:index.item] selectable];
+    id<mconfigprotocol> model = [self modelat:index];
+    BOOL selectable = [model selectable];
     
     return selectable;
 }
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGSize size = CGSizeMake(col.bounds.size.width, [[self.model item:index.item] cellheight]);
+    id<mconfigprotocol> model = [self modelat:index];
+    CGSize size = CGSizeMake(col.bounds.size.width, [model cellheight]);
     
     return size;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
-    return 1;
+    NSUInteger sections = self.model.sections.count;
+    
+    return sections;
 }
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger count = [self.model count];
+    NSUInteger count = self.model.sections[section].items.count;
     
     return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    id<mconfigprotocol> model = [self modelat:index];
     vconfigcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
-    [cel config:[[self.model item:index.item] overview]];
+    [cel config:[model overview]];
     
     return cel;
 }
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    [[self.model item:index.item] selected:(cconfig*)self.controller];
+    id<mconfigprotocol> model = [self modelat:index];
+    [model selected:(cconfig*)self.controller];
 }
 
 @end

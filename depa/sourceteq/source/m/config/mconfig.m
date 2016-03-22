@@ -6,10 +6,10 @@
 {
     self = [super init];
     
-    self.items = @[
-                   [[mconfigsectionfilters alloc] init],
-                   [[mconfigsectionoptions alloc] init],
-                   ];
+    self.sections = @[
+                      [[mconfigsectionfilters alloc] init],
+                      [[mconfigsectionoptions alloc] init],
+                      ];
     
     return self;
 }
