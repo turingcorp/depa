@@ -16,6 +16,7 @@
 @property(strong, nonatomic)id<mconfigsorprotocol> searchorder;
 @property(copy, nonatomic)NSString *location;
 @property(copy, nonatomic)NSString *locationname;
+@property(copy, nonatomic)NSString *pricerange;
 @property(weak, nonatomic)mcountryitem *country;
 
 @end

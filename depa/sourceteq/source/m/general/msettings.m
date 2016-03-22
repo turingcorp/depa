@@ -28,6 +28,7 @@
         mode = (search_mode)[settings[@"searchmode"] unsignedIntegerValue];
         type = (search_type)[settings[@"searchtype"] unsignedIntegerValue];
         order = (search_order)[settings[@"searchorder"] unsignedIntegerValue];
+        self.pricerange = settings[@"pricerange"];
         self.location = settings[@"location"];
         self.locationname = settings[@"locationname"];
     }
@@ -37,6 +38,7 @@
         mode = search_mode_rent;
         type = search_type_apartment;
         order = search_order_lower;
+        self.pricerange = @"*-*";
         self.location = @"state=TUxNUERJUzYwOTQ&";
         self.locationname = NSLocalizedString(@"settings_original_locationname", nil);
     }
@@ -95,6 +97,7 @@
     settings[@"searchtype"] = @([self.searchtype type]);
     settings[@"searchorder"] = @([self.searchorder type]);
     settings[@"countryid"] = self.country.countryid;
+    settings[@"pricerange"] = self.pricerange;
     settings[@"location"] = self.location;
     settings[@"locationname"] = self.locationname;
     
