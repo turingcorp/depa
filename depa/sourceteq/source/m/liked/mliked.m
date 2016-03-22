@@ -28,7 +28,7 @@
                        for(NSUInteger i = 0; i < count; i++)
                        {
                            mdbitem *rawitem = rawarray[i];
-                           mlikeditem *item = [[mlikeditem alloc] init:self];
+                           mlikeditem *item = [[mlikeditem alloc] init:weakself];
                            [item title:rawitem.title currency:rawitem.currency price:rawitem.price];
                            item.itemid = rawitem.itemid;
                            item.thumbnail = rawitem.thumbnail;

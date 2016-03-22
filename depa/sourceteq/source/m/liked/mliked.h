@@ -8,6 +8,6 @@
 
 @property(strong, nonatomic)UIFont *fonttitle;
 @property(strong, nonatomic)UIFont *fontprice;
-@property(strong, nonatomic)NSMutableArray<mlikeditem*> *items;
+@property(strong, nonatomic)NSArray<mlikeditem*> *items;
 
 @end

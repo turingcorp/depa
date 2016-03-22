@@ -3,7 +3,6 @@
 
 @interface mconfig:NSObject
 
--(NSUInteger)count;
--(id<mconfigprotocol>)item:(NSUInteger)index;
+@property(strong, nonatomic)NSArray<id<mconfigprotocol>> *items;
 
 @end
