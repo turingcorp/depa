@@ -1,9 +1,8 @@
 #import "vconfigmode.h"
 
+static NSUInteger const cellwidth = 80;
+
 @implementation vconfigmode
-{
-    NSUInteger celwidth;
-}
 
 -(instancetype)init
 {
@@ -14,7 +13,6 @@
 
     self.selected = 0;
     self.model = [[mconfigmod alloc] init];
-    celwidth = 120;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
@@ -34,13 +32,24 @@
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.collection = collection;
     
+    UILabel *labeltitle = [[UILabel alloc] init];
+    [labeltitle setBackgroundColor:[UIColor clearColor]];
+    [labeltitle setUserInteractionEnabled:NO];
+    [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labeltitle setFont:[UIFont fontWithName:fontname size:14]];
+    [labeltitle setTextColor:[UIColor colorWithWhite:0 alpha:0.6]];
+    [labeltitle setText:NSLocalizedString(@"config_type_mode", nil)];
+    [labeltitle setTextAlignment:NSTextAlignmentCenter];
+    
+    [self addSubview:labeltitle];
     [self addSubview:collection];
     
-    NSDictionary *views = @{@"col":collection};
+    NSDictionary *views = @{@"col":collection, @"labeltitle":labeltitle};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labeltitle]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-14-[labeltitle(16)]-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
     NSUInteger count = [self.model count];
     for(NSUInteger i = 0; i < count; i++)
@@ -66,7 +75,7 @@
 -(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
 {
     CGFloat totalwidth = col.bounds.size.width;
-    CGFloat totalcells = celwidth * [self.model count];
+    CGFloat totalcells = cellwidth * [self.model count];
     CGFloat margin = (totalwidth - totalcells) / 2.0;
     UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, 0, margin);
     
@@ -76,7 +85,7 @@
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
     CGFloat totalheight = col.bounds.size.height;
-    CGSize size = CGSizeMake(celwidth, totalheight);
+    CGSize size = CGSizeMake(cellwidth, totalheight);
     
     return size;
 }

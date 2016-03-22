@@ -26,7 +26,7 @@
 "config_location_button_retry"="Reintentar";
 "config_location_mapselected"="Seleccion en mapa";
 "config_mode_rent"="Renta";
-"config_mode_buy"="Compra";
+"config_mode_buy"="Venta";
 "config_type_house"="Casa";
 "config_type_apartment"="Depa";
 "config_order_lower"="Precio bajo";
@@ -44,6 +44,8 @@
 "config_item_like_alert_message"="Publicaciones se veran de nuevo";
 "config_item_no_alert_title"="¿Limpiar Descartados?";
 "config_item_no_alert_message"="Publicaciones se veran de nuevo";
+"config_type_title"="Buscar";
+"config_type_mode"="En";
 
 "item_detail_buttonretry"="Reintentar";
 "item_detail_stats_meters"="%@ m²";

@@ -1,6 +1,8 @@
 #import "vconfig.h"
 
-static NSUInteger const headerheight = 60;
+static NSUInteger const headerheight = 50;
+static NSUInteger const cellspacing = 20;
+static NSUInteger const sectionbottom = 40;
 
 @interface vconfig ()
 
@@ -24,8 +26,8 @@ static NSUInteger const headerheight = 60;
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumLineSpacing:2];
-    [flow setSectionInset:UIEdgeInsetsMake(0, 0, 40, 0)];
+    [flow setMinimumLineSpacing:cellspacing];
+    [flow setSectionInset:UIEdgeInsetsMake(cellspacing, 0, sectionbottom, 0)];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];

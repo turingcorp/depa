@@ -31,8 +31,8 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[selector]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[selector]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-1-[selector]-1-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-13-[selector]-13-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -57,13 +57,13 @@
     {
         [self.selector setHidden:NO];
         [self.label setTextColor:[UIColor whiteColor]];
-        [self.label setFont:[UIFont fontWithName:fontboldname size:18]];
+        [self.label setFont:[UIFont fontWithName:fontboldname size:14]];
     }
     else
     {
         [self.selector setHidden:YES];
-        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
-        [self.label setFont:[UIFont fontWithName:fontname size:16]];
+        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.65]];
+        [self.label setFont:[UIFont fontWithName:fontname size:14]];
     }
 }
 
