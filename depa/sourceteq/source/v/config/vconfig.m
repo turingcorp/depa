@@ -1,5 +1,7 @@
 #import "vconfig.h"
 
+static NSUInteger const headerheight = 80;
+
 @interface vconfig ()
 
 @property(weak, nonatomic)cconfig *controller;
@@ -35,6 +37,7 @@
     [collection setDelegate:self];
     [collection setDataSource:self];
     [collection registerClass:[vconfigcel class] forCellWithReuseIdentifier:celid];
+    [collection registerClass:[vconfigheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerid];
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.collection = collection;
     
@@ -76,6 +79,14 @@
     return selectable;
 }
 
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    CGFloat width = col.bounds.size.width;
+    CGSize size = CGSizeMake(width, headerheight);
+    
+    return size;
+}
+
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
     id<mconfigprotocol> model = [self modelat:index];
@@ -96,6 +107,14 @@
     NSUInteger count = self.model.sections[section].items.count;
     
     return count;
+}
+
+-(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
+{
+    vconfigheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerid forIndexPath:index];
+    [header config:self.model.sections[index.section]];
+    
+    return header;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
