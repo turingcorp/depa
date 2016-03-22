@@ -23,7 +23,7 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont fontWithName:fontname size:12]];
+    [label setFont:[UIFont fontWithName:fontboldname size:12]];
     [label setTextColor:colormain];
     self.label = label;
     

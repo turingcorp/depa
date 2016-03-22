@@ -31,9 +31,9 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-50-[image]-(-16)-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[badge(28)]-6-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[badge(25)]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[badge(28)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[badge(25)]-18-|" options:0 metrics:metrics views:views]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedbadgechanged:) name:notbadgechange object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedbadgechanged:) name:notitemsloaded object:nil];
