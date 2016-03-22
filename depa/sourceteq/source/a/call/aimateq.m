@@ -37,7 +37,11 @@
 
 -(void)imageerror:(NSString*)error
 {
-//    NSLog(@"Image error: %@", error);
+#if DEBUG
+    
+    NSLog(@"Image error: %@", error);
+    
+#endif
 }
 
 #pragma mark public

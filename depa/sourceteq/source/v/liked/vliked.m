@@ -60,7 +60,7 @@
 {
     [self.header removeFromSuperview];
     
-    if(![self.model count])
+    if(!self.model.items.count)
     {
         vlikedheader *header = [[vlikedheader alloc] init];
         self.header = header;
@@ -91,22 +91,23 @@
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger count = [self.model count];
+    NSUInteger count = self.model.items.count;
     
     return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    mlikeditem *model = self.model.items[index.item];
     vlikedcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
-    [cel config:[self.model item:index.item]];
+    [cel config:model];
     
     return cel;
 }
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    mlikeditem *item = [self.model item:index.item];
+    mlikeditem *item = self.model.items[index.item];
     mitemdetail *itemdetail = [[mitemdetail alloc] init:item.itemid];
     itemdetail.mode = item.mode;
     itemdetail.type = item.type;

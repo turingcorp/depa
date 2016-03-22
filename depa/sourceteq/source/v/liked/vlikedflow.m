@@ -43,7 +43,7 @@
     CGFloat celwidth;
     CGFloat textwidth;
     NSUInteger columns;
-    NSUInteger items = [self.model count];
+    NSUInteger items = self.model.items.count;
     NSUInteger currentcol;
     totalwidth = self.collectionView.bounds.size.width;
     totalcellwidth = totalwidth - padding;
@@ -77,10 +77,11 @@
     
     for(NSUInteger i = 0; i < items; i++)
     {
+        mlikeditem *model = self.model.items[i];
         currentcol = i % columns;
         
         NSIndexPath *indexpath = [NSIndexPath indexPathForItem:i inSection:0];
-        CGFloat height = [[self.model item:i] heightforwidth:textwidth] + addedheight;
+        CGFloat height = [model heightforwidth:textwidth] + addedheight;
         CGFloat heightpadding = height + padding2;
         CGFloat x = [xoff[currentcol] floatValue];
         CGFloat y = [yoff[currentcol] floatValue];

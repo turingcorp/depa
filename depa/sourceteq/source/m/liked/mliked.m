@@ -1,9 +1,6 @@
 #import "mliked.h"
 
 @implementation mliked
-{
-    NSMutableArray *array;
-}
 
 -(instancetype)init
 {
@@ -19,10 +16,12 @@
 
 -(void)load
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       array = [NSMutableArray array];
+                       NSMutableArray<mlikeditem*> *rawitems = [NSMutableArray array];
                        NSArray *rawarray = [mdb allitemsfor:item_status_like];
                        NSUInteger count = rawarray.count;
                        
@@ -37,25 +36,12 @@
                            item.mode = rawitem.mode;
                            item.contactphone = rawitem.phone;
                            
-                           [array addObject:item];
+                           [rawitems addObject:item];
                        }
                        
+                       weakself.items = rawitems;
                        [[NSNotificationCenter defaultCenter] postNotificationName:notlikedloaded object:nil];
                    });
-}
-
--(NSUInteger)count
-{
-    NSUInteger count = array.count;
-    
-    return count;
-}
-
--(mlikeditem*)item:(NSUInteger)index
-{
-    mlikeditem *item = array[index];
-    
-    return item;
 }
 
 @end
