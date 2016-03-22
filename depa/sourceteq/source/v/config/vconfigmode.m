@@ -38,7 +38,7 @@ static NSUInteger const cellwidth = 80;
     [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labeltitle setFont:[UIFont fontWithName:fontname size:14]];
     [labeltitle setTextColor:[UIColor colorWithWhite:0 alpha:0.6]];
-    [labeltitle setText:NSLocalizedString(@"config_type_mode", nil)];
+    [labeltitle setText:NSLocalizedString(@"config_mode_title", nil)];
     [labeltitle setTextAlignment:NSTextAlignmentCenter];
     
     [self addSubview:labeltitle];

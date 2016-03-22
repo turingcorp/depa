@@ -45,7 +45,8 @@
 "config_item_no_alert_title"="Clear discarded?";
 "config_item_no_alert_message"="Publications will be played once more";
 "config_type_title"="Search for";
-"config_type_mode"="For";
+"config_mode_title"="For";
+"config_sort_title"="Order by";
 
 "item_detail_buttonretry"="Try again";
 "item_detail_stats_meters"="%@ m²";

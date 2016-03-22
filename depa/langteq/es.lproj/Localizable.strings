@@ -45,7 +45,8 @@
 "config_item_no_alert_title"="¿Limpiar Descartados?";
 "config_item_no_alert_message"="Publicaciones se veran de nuevo";
 "config_type_title"="Buscar";
-"config_type_mode"="En";
+"config_mode_title"="En";
+"config_sort_title"="Ordernar por";
 
 "item_detail_buttonretry"="Reintentar";
 "item_detail_stats_meters"="%@ m²";
