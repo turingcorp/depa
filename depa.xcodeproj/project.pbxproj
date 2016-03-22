@@ -140,6 +140,7 @@
 		DA74726B1CA0D082006F56AF /* mconfigsection.m in Sources */ = {isa = PBXBuildFile; fileRef = DA74726A1CA0D082006F56AF /* mconfigsection.m */; };
 		DA74726E1CA0D099006F56AF /* mconfigsectionfilters.m in Sources */ = {isa = PBXBuildFile; fileRef = DA74726D1CA0D099006F56AF /* mconfigsectionfilters.m */; };
 		DA7472711CA0D0A9006F56AF /* mconfigsectionoptions.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7472701CA0D0A9006F56AF /* mconfigsectionoptions.m */; };
+		DA7472741CA0E46F006F56AF /* vconfigheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7472731CA0E46F006F56AF /* vconfigheader.m */; };
 		DA9141881C766669004BE5D1 /* vplay.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141871C766669004BE5D1 /* vplay.m */; };
 		DA91418E1C766B77004BE5D1 /* vplayload.m in Sources */ = {isa = PBXBuildFile; fileRef = DA91418D1C766B77004BE5D1 /* vplayload.m */; };
 		DA9141911C766C3F004BE5D1 /* cplayload.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141901C766C3F004BE5D1 /* cplayload.m */; };
@@ -463,6 +464,8 @@
 		DA74726D1CA0D099006F56AF /* mconfigsectionfilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsectionfilters.m; sourceTree = "<group>"; };
 		DA74726F1CA0D0A9006F56AF /* mconfigsectionoptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsectionoptions.h; sourceTree = "<group>"; };
 		DA7472701CA0D0A9006F56AF /* mconfigsectionoptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsectionoptions.m; sourceTree = "<group>"; };
+		DA7472721CA0E46F006F56AF /* vconfigheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigheader.h; sourceTree = "<group>"; };
+		DA7472731CA0E46F006F56AF /* vconfigheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigheader.m; sourceTree = "<group>"; };
 		DA9141861C766669004BE5D1 /* vplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplay.h; sourceTree = "<group>"; };
 		DA9141871C766669004BE5D1 /* vplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplay.m; sourceTree = "<group>"; };
 		DA91418C1C766B77004BE5D1 /* vplayload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayload.h; sourceTree = "<group>"; };
@@ -645,6 +648,8 @@
 			children = (
 				DA25B1431C7B7E4600B4BB21 /* vconfig.h */,
 				DA25B1441C7B7E4600B4BB21 /* vconfig.m */,
+				DA7472721CA0E46F006F56AF /* vconfigheader.h */,
+				DA7472731CA0E46F006F56AF /* vconfigheader.m */,
 				DA25B1461C7B80CE00B4BB21 /* vconfigcel.h */,
 				DA25B1471C7B80CE00B4BB21 /* vconfigcel.m */,
 				DAD5C3691C7F82C000FF8FDF /* vconfigcelprotocol.h */,
@@ -1631,6 +1636,7 @@
 				DA9141A11C76969F004BE5D1 /* mplaymenu.m in Sources */,
 				DA3172FA1C7CC8BC00B6CEF7 /* mconfigmodrent.m in Sources */,
 				DA31731A1C7CF43D00B6CEF7 /* acalllocationstate.m in Sources */,
+				DA7472741CA0E46F006F56AF /* vconfigheader.m in Sources */,
 				DA91419A1C769605004BE5D1 /* vplaymenucel.m in Sources */,
 				DA3E741E1C8669BE00A73297 /* mconfigsor.m in Sources */,
 				DA25B1451C7B7E4600B4BB21 /* vconfig.m in Sources */,

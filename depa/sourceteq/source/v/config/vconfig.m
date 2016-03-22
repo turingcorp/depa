@@ -1,6 +1,14 @@
 #import "vconfig.h"
 
+@interface vconfig ()
+
+@property(weak, nonatomic)cconfig *controller;
+
+@end
+
 @implementation vconfig
+
+@dynamic controller;
 
 -(instancetype)init:(cconfig*)controller
 {
@@ -102,7 +110,7 @@
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
     id<mconfigprotocol> model = [self modelat:index];
-    [model selected:(cconfig*)self.controller];
+    [model selected:self.controller];
 }
 
 @end

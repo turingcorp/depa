@@ -21,6 +21,7 @@
 #import "vplayitemimagelikestar.h"
 #import "vplayempty.h"
 #import "vconfig.h"
+#import "vconfigheader.h"
 #import "vconfigcel.h"
 #import "vconfigcelprotocol.h"
 #import "vconfiglocation.h"
