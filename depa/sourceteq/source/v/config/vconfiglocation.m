@@ -45,12 +45,21 @@
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.border = border;
     
+    UIView *selector = [[UIView alloc] init];
+    [selector setBackgroundColor:colormain];
+    [selector setUserInteractionEnabled:NO];
+    [selector setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [selector setClipsToBounds:YES];
+    [selector.layer setCornerRadius:4];
+    self.selector = selector;
+    
+    [self addSubview:selector];
     [self addSubview:border];
     [self addSubview:change];
     [self addSubview:label];
     [self addSubview:labellocation];
 
-    NSDictionary *views = @{@"label":label, @"location":labellocation, @"change":change, @"border":border};
+    NSDictionary *views = @{@"label":label, @"location":labellocation, @"change":change, @"border":border, @"selector":selector};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
@@ -58,6 +67,8 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[border]-100-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[location]-5-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-14-[label(16)]-15-[location]-2-[border(1)]-2-[change]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[selector]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[selector]-15-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -72,12 +83,14 @@
         [self.labellocation setTextColor:[UIColor whiteColor]];
         [self.border setBackgroundColor:[UIColor whiteColor]];
         [self.change setTextColor:[UIColor whiteColor]];
+        [self.selector setHidden:NO];
     }
     else
     {
         [self.labellocation setTextColor:colormain];
         [self.border setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.2]];
         [self.change setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
+        [self.selector setHidden:YES];
     }
 }
 
