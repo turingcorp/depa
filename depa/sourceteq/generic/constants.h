@@ -27,6 +27,7 @@
 #define notbadgechange          @"badgechange"
 #define notmaxpricechanged      @"maxpricechanged"
 #define notminpricechanged      @"minpricechanged"
+#define notsearchmodechanged    @"searchmodechanged"
 
 // extra
 

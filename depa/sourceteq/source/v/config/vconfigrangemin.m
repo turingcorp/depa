@@ -70,6 +70,7 @@
     [self updaterange];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedpricemaxchanged:) name:notmaxpricechanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedsearchmodechanged:) name:notsearchmodechanged object:nil];
     
     return self;
 }
@@ -89,6 +90,15 @@
                        [self bouncemaxprice];
                        [self print];
                        [self save];
+                   });
+}
+
+-(void)notifiedsearchmodechanged:(NSNotification*)notification
+{
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [self updaterange];
                    });
 }
 

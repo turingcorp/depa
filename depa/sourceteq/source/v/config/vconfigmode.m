@@ -119,6 +119,8 @@ static NSUInteger const cellwidth = 80;
         [msettings singleton].searchmode = [self.model item:item];
         [[msettings singleton] save];
         self.selected = item;
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:notsearchmodechanged object:nil];
     }
 }
 
