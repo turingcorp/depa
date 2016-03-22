@@ -49,6 +49,7 @@
 "config_sort_title"="Order by";
 "config_location_change"="Change";
 "config_like_title"="Saved";
+"config_no_title"="Discarded";
 
 "item_detail_buttonretry"="Try again";
 "item_detail_stats_meters"="%@ m²";
