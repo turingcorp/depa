@@ -30,9 +30,9 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addheader];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedupdateliked:) name:notlikedloaded object:nil];
+    [self.model load];
     
     return self;
 }

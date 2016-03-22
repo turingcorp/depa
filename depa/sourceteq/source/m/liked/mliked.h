@@ -4,6 +4,7 @@
 
 @interface mliked:NSObject
 
+-(void)load;
 -(NSUInteger)count;
 -(mlikeditem*)item:(NSUInteger)index;
 

@@ -16,7 +16,7 @@
     return self;
 }
 
-#pragma mark functionality
+#pragma mark public
 
 -(void)load
 {
@@ -44,8 +44,6 @@
                        [[NSNotificationCenter defaultCenter] postNotificationName:notlikedloaded object:nil];
                    });
 }
-
-#pragma mark public
 
 -(NSUInteger)count
 {
