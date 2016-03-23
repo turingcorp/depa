@@ -12,7 +12,6 @@
 @property(weak, nonatomic)citem *controller;
 @property(weak, nonatomic)vitemcarcel *cellcurrent;
 @property(weak, nonatomic)vitemcarcel *cellnext;
-@property(weak, nonatomic)aimateqitem *currentimage;
 @property(weak, nonatomic)aimateqitem *nextimage;
 @property(weak, nonatomic)UICollectionView *maincollection;
 @property(weak, nonatomic)UIPanGestureRecognizer *pangesture;

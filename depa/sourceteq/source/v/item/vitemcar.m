@@ -1,7 +1,14 @@
 #import "vitemcar.h"
 
+typedef NS_ENUM(NSUInteger, pandirection)
+{
+    pandirection_righ,
+    pandirection_left
+};
+
 @implementation vitemcar
 {
+    pandirection direction;
     CGPoint startingpoint;
     CGFloat initialoffsety;
     CGFloat newoffsety;
@@ -94,6 +101,8 @@
     {
         [self.maincollection setContentOffset:CGPointZero animated:YES];
     }
+    
+    self.nextimage = nil;
 }
 
 -(void)movepan:(CGPoint)point
@@ -102,12 +111,11 @@
     CGFloat deltay = point.y - startingpoint.y;
     
     [self verticalpanning:deltay];
-}
-
--(void)loadimages
-{
-    [self.cellcurrent config:self.currentimage];
-    [self.cellnext config:self.nextimage];
+    
+    if(!self.nextimage)
+    {
+        
+    }
 }
 
 #pragma mark public
@@ -117,10 +125,9 @@
     if(self.controller.item.images.items.count)
     {
         self.currentindex = 0;
-        self.currentimage = self.controller.item.images.items[self.currentindex];
         self.nextimage = nil;
         
-        [self loadimages];
+        [self.cellcurrent config:self.controller.item.images.items[self.currentindex]];
     }
 }
 
