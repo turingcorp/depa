@@ -15,6 +15,7 @@
 @property(weak, nonatomic)aimateqitem *nextimage;
 @property(weak, nonatomic)UICollectionView *maincollection;
 @property(weak, nonatomic)UIPanGestureRecognizer *pangesture;
+@property(weak, nonatomic)NSArray<aimateqitem*> *images;
 @property(nonatomic)NSUInteger currentindex;
 
 @end

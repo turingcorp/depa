@@ -1,8 +1,10 @@
 #import "vitemcar.h"
 
+static CGFloat const tresholdmin = 160.0;
+
 typedef NS_ENUM(NSUInteger, pandirection)
 {
-    pandirection_righ,
+    pandirection_right,
     pandirection_left
 };
 
@@ -12,6 +14,7 @@ typedef NS_ENUM(NSUInteger, pandirection)
     CGPoint startingpoint;
     CGFloat initialoffsety;
     CGFloat newoffsety;
+    CGFloat deltax;
 }
 
 -(instancetype)init:(citem*)controller
@@ -21,6 +24,7 @@ typedef NS_ENUM(NSUInteger, pandirection)
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
     self.controller = controller;
+    self.images = self.controller.item.images.items;
     self.currentindex = 0;
     
     vitemcarcel *cellcurrent = [[vitemcarcel alloc] init];
@@ -102,19 +106,68 @@ typedef NS_ENUM(NSUInteger, pandirection)
         [self.maincollection setContentOffset:CGPointZero animated:YES];
     }
     
-    self.nextimage = nil;
+    if(self.nextimage)
+    {
+        BOOL changeimage = NO;
+        
+        if(deltax > tresholdmin && direction == pandirection_left)
+        {
+            changeimage = YES;
+        }
+        else if(deltax < -tresholdmin && direction == pandirection_right)
+        {
+            changeimage = YES;
+        }
+        
+        if(changeimage)
+        {
+            [self.cellcurrent config:self.nextimage];
+        }
+        
+        [self.cellnext setAlpha:0];
+        self.nextimage = nil;
+    }
+}
+
+-(void)panalpha
+{
 }
 
 -(void)movepan:(CGPoint)point
 {
-    CGFloat deltax = point.x - startingpoint.x;
     CGFloat deltay = point.y - startingpoint.y;
+    deltax = point.x - startingpoint.x;
     
     [self verticalpanning:deltay];
     
-    if(!self.nextimage)
+    if(self.nextimage)
     {
+        [self panalpha];
+    }
+    else
+    {
+        if(deltax > 0)
+        {
+            if(self.currentindex)
+            {
+                self.nextimage = self.images[self.currentindex - 1];
+                direction = pandirection_left;
+            }
+        }
+        else if(deltax < 0)
+        {
+            if(self.currentindex < self.images.count - 1)
+            {
+                self.nextimage = self.images[self.currentindex + 1];
+                direction = pandirection_right;
+            }
+        }
         
+        if(self.nextimage)
+        {
+            [self.cellnext config:self.nextimage];
+            [self panalpha];
+        }
     }
 }
 
@@ -127,7 +180,7 @@ typedef NS_ENUM(NSUInteger, pandirection)
         self.currentindex = 0;
         self.nextimage = nil;
         
-        [self.cellcurrent config:self.controller.item.images.items[self.currentindex]];
+        [self.cellcurrent config:self.images[self.currentindex]];
     }
 }
 
