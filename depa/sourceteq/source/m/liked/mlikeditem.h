@@ -17,5 +17,6 @@
 @property(copy, nonatomic)NSString *contactphone;
 @property(nonatomic)search_type type;
 @property(nonatomic)search_mode mode;
+@property(nonatomic)NSUInteger dbid;
 
 @end

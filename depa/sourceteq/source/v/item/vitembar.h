@@ -7,5 +7,6 @@
 -(instancetype)init:(citem*)controller;
 
 @property(weak, nonatomic)citem *controller;
+@property(weak, nonatomic)UIButton *buttonstar;
 
 @end

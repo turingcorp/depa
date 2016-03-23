@@ -35,6 +35,7 @@
                            item.type = rawitem.type;
                            item.mode = rawitem.mode;
                            item.contactphone = rawitem.phone;
+                           item.dbid = [rawitem.dbid unsignedIntegerValue];
                            
                            [rawitems addObject:item];
                        }

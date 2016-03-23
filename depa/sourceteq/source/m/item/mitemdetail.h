@@ -5,6 +5,7 @@
 @interface mitemdetail:NSObject
 
 -(instancetype)init:(NSString*)itemid;
+-(void)changestatus:(item_status)status;
 
 @property(strong, nonatomic)mitemdetailimg *images;
 @property(copy, nonatomic)NSString *displaytitle;
@@ -19,6 +20,8 @@
 @property(copy, nonatomic)NSNumber *longitude;
 @property(nonatomic)search_type type;
 @property(nonatomic)search_mode mode;
+@property(nonatomic)item_status status;
+@property(nonatomic)NSUInteger dbid;
 @property(nonatomic)NSUInteger meters;
 @property(nonatomic)NSUInteger rooms;
 @property(nonatomic)NSUInteger garages;

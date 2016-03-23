@@ -15,4 +15,12 @@
     return self;
 }
 
+#pragma mark public
+
+-(void)changestatus:(item_status)status
+{
+    self.status = status;
+    [mdb item:self.dbid newstatus:status];
+}
+
 @end

@@ -112,6 +112,8 @@
     itemdetail.mode = item.mode;
     itemdetail.type = item.type;
     itemdetail.contactphone = item.contactphone;
+    itemdetail.status = item_status_like;
+    itemdetail.dbid = item.dbid;
     
     [citem show:itemdetail];
 }

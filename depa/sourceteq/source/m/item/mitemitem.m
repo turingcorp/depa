@@ -16,17 +16,13 @@
 
 -(void)changestatus:(item_status)status
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       self.status = status;
-                       
-                       NSString *query = [NSString stringWithFormat:
-                                          @"UPDATE item SET status=%@ "
-                                          "WHERE id=%@;",
-                                          @(status), @(self.dbid)];
-                       [db query:query];
-                       
+                       weakself.status = status;
+                       [mdb item:weakself.dbid newstatus:status];
                        [[NSNotificationCenter defaultCenter] postNotificationName:notbadgechange object:nil];
                    });
 }

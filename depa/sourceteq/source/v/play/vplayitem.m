@@ -46,6 +46,8 @@ static NSUInteger const infoheight = 150;
     itemdetail.type = [[msettings singleton].searchtype type];
     itemdetail.mode = [[msettings singleton].searchmode type];
     itemdetail.contactphone = self.model.phone;
+    itemdetail.status = self.model.item.status;
+    itemdetail.dbid = self.model.item.dbid;
     [citem show:itemdetail];
 }
 

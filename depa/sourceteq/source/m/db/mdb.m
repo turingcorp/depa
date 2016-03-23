@@ -126,6 +126,15 @@
     return value;
 }
 
++(void)item:(NSUInteger)dbid newstatus:(item_status)status
+{
+    NSString *query = [NSString stringWithFormat:
+                       @"UPDATE item SET status=%@ "
+                       "WHERE id=%@;",
+                       @(status), @(dbid)];
+    [db query:query];
+}
+
 +(void)clearviewed
 {
     NSString *query = [NSString stringWithFormat:
