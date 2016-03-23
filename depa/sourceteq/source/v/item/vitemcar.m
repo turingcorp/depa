@@ -13,6 +13,7 @@
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
+    [self setUserInteractionEnabled:NO];
     
     self.controller = controller;
     cellwidth = 0;
@@ -31,7 +32,7 @@
     [collection setClipsToBounds:YES];
     [collection setShowsHorizontalScrollIndicator:NO];
     [collection setShowsVerticalScrollIndicator:NO];
-    [collection setAlwaysBounceHorizontal:YES];
+    [collection setBounces:NO];
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
     [collection setDataSource:self];
     [collection setDelegate:self];

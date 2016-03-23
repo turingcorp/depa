@@ -1,5 +1,9 @@
 #import "vitem.h"
 
+static NSUInteger const mincarheight = 250;
+static NSUInteger const midcarheight = 400;
+static NSUInteger const maxcarheight = 450;
+
 @implementation vitem
 {
     CGFloat barmaxheight;
@@ -16,18 +20,31 @@
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
 
+    CGFloat screenheight = [UIScreen mainScreen].bounds.size.height;
     self.controlleritem = controller;
     self.model = [[mitemdetailinfo alloc] init];
     vitembar *bar = [[vitembar alloc] init:controller];
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
     [contact addTarget:self action:@selector(actioncontact:) forControlEvents:UIControlEventTouchUpInside];
     
-    carheight = 350;
     barmaxheight = 65;
     barminheight = 20;
     contactmintop = 10;
     contactmaxtop = 20;
     carminheight = 120;
+    
+    if(screenheight > 600)
+    {
+        carheight = maxcarheight;
+    }
+    else if(screenheight > 500)
+    {
+        carheight = midcarheight;
+    }
+    else
+    {
+        carheight = mincarheight;
+    }
     
     vspinner *spinner = [[vspinner alloc] init];
     [spinner startAnimating];

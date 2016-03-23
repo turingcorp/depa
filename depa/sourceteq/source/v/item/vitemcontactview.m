@@ -25,7 +25,7 @@
     [icon setUserInteractionEnabled:NO];
     [icon setTranslatesAutoresizingMaskIntoConstraints:NO];
     [icon setImage:[[UIImage imageNamed:@"contact"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    [icon setTintColor:colormain];
+    [icon setTintColor:[UIColor blackColor]];
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
@@ -38,7 +38,7 @@
     [label setText:phone];
     
     UIButton *btnclose = [[UIButton alloc] init];
-    [btnclose setBackgroundColor:[UIColor colorWithRed:1 green:0.1 blue:0 alpha:1]];
+    [btnclose setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.6]];
     [btnclose setTitle:NSLocalizedString(@"item_detail_contact_close", nil) forState:UIControlStateNormal];
     [btnclose setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btnclose setTitleColor:[UIColor colorWithWhite:1 alpha:0.1] forState:UIControlStateHighlighted];
@@ -49,7 +49,7 @@
     [btnclose addTarget:self action:@selector(actionclose:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *btnbrowse = [[UIButton alloc] init];
-    [btnbrowse setBackgroundColor:colormain];
+    [btnbrowse setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.2]];
     [btnbrowse setTitle:NSLocalizedString(@"item_detail_contact_browse", nil) forState:UIControlStateNormal];
     [btnbrowse setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btnbrowse setTitleColor:[UIColor colorWithWhite:1 alpha:0.1] forState:UIControlStateHighlighted];
@@ -60,7 +60,7 @@
     [btnbrowse addTarget:self action:@selector(actionbrowse:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *btncall = [[UIButton alloc] init];
-    [btncall setBackgroundColor:colormain];
+    [btncall setBackgroundColor:[colormain colorWithAlphaComponent:0.8]];
     [btncall setTitle:NSLocalizedString(@"item_detail_contact_call", nil) forState:UIControlStateNormal];
     [btncall setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btncall setTitleColor:[UIColor colorWithWhite:1 alpha:0.1] forState:UIControlStateHighlighted];
@@ -87,7 +87,7 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[blur]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blur]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[icon(50)]-50-[label]-20-[call(40)]-20-[browse(40)]-40-[close(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-130-[icon(40)]-50-[label]-60-[call(40)]-10-[browse(40)]-10-[close(40)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[label]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[close]-80-|" options:0 metrics:metrics views:views]];

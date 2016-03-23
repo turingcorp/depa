@@ -2,7 +2,7 @@
 
 @class aimateqitem;
 
-@interface vitemcarcel:UICollectionViewCell
+@interface vitemcarcel:UIView
 
 -(void)config:(aimateqitem*)apiimage;
 

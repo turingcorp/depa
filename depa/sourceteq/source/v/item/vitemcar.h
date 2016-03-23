@@ -10,6 +10,7 @@
 
 @property(weak, nonatomic)citem *controller;
 @property(weak, nonatomic)vitemcarpaging *paging;
-@property(weak, nonatomic)UICollectionView *collection;
+@property(weak, nonatomic)UIImageView *currentImage;
+@property(weak, nonatomic)UIImageView 
 
 @end
