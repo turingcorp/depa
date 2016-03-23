@@ -4,7 +4,7 @@
 @class vitemcarpaging;
 @class vitemcarcel;
 
-@interface vitemcar:UIView<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface vitemcar:UIView
 
 -(instancetype)init:(citem*)controller;
 -(void)refresh;
