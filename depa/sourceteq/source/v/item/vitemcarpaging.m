@@ -50,7 +50,7 @@
 {
     CGFloat totalwidth = col.bounds.size.width;
     CGFloat circlesize = col.bounds.size.height + interitem;
-    CGFloat totalcircles = circlesize * [self.controller.item.images count];
+    CGFloat totalcircles = circlesize * self.controller.item.images.items.count;
     CGFloat margin = (totalwidth - totalcircles) / 2.0;
     
     if(margin < 1)
@@ -78,7 +78,7 @@
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger count = [self.controller.item.images count];
+    NSUInteger count = self.controller.item.images.items.count;
     
     return count;
 }

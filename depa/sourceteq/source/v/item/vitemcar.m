@@ -10,40 +10,49 @@
     [self setClipsToBounds:YES];
     [self setUserInteractionEnabled:NO];
     self.controller = controller;
+    self.currentindex = 0;
     
-    NSDictionary *views = @{@"col":collection};
+    vitemcarcel *cellcurrent = [[vitemcarcel alloc] init];
+    self.cellcurrent = cellcurrent;
+    
+    vitemcarcel *cellnext = [[vitemcarcel alloc] init];
+    self.cellnext = cellnext;
+    
+    [self addSubview:cellcurrent];
+    [self addSubview:cellnext];
+    
+    NSDictionary *views = @{@"cellcurrent":cellcurrent, @"cellnext":cellnext};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[cellcurrent]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[cellcurrent]-1-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[cellnext]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[cellnext]-1-|" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+#pragma mark functionality
+
+-(void)loadimages
+{
+    [self.cellcurrent config:self.currentimage];
+    [self.cellnext config:self.nextimage];
 }
 
 #pragma mark public
 
 -(void)refresh
 {
-    cellwidth = self.collection.bounds.size.width;
-    
-    if(cellwidth > 900)
+    if(self.controller.item.images.items.count)
     {
-        cellwidth = 700;
-        interline = 3;
-        [self.collection setPagingEnabled:NO];
-    }
-    else
-    {
-        interline = 0;
-        [self.collection setPagingEnabled:YES];
-    }
-    
-    [self.collection reloadData];
-    [self.paging.collection reloadData];
-    
-    if([self.controller.item.images count])
-    {
-        [self.paging.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+        self.currentindex = 0;
+        self.currentimage = self.controller.item.images.items[self.currentindex];
+        self.nextimage = nil;
+        
+        [self loadimages];
     }
 }
 
