@@ -12,7 +12,6 @@
 -(void)descriptionloaded;
 -(void)errorloading;
 
-@property(weak, nonatomic)citem *controlleritem;
 @property(weak, nonatomic)vspinner *spinner;
 @property(weak, nonatomic)vitemcar *car;
 @property(strong, nonatomic)mitemdetailinfo *model;

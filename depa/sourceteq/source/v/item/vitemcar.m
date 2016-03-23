@@ -1,6 +1,6 @@
 #import "vitemcar.h"
 
-static CGFloat const tresholdmin = 160.0;
+static CGFloat const threshold = 100.0;
 
 typedef NS_ENUM(NSUInteger, pandirection)
 {
@@ -110,27 +110,81 @@ typedef NS_ENUM(NSUInteger, pandirection)
     {
         BOOL changeimage = NO;
         
-        if(deltax > tresholdmin && direction == pandirection_left)
+        if(direction == pandirection_left)
         {
-            changeimage = YES;
+            CGFloat minthreshold = threshold / 2.0;
+            
+            if(deltax > minthreshold)
+            {
+                self.currentindex--;
+                changeimage = YES;
+            }
         }
-        else if(deltax < -tresholdmin && direction == pandirection_right)
+        else if(direction == pandirection_right)
         {
-            changeimage = YES;
+            CGFloat minthreshold = threshold / -2.0;
+            
+            if(deltax < minthreshold)
+            {
+                self.currentindex++;
+                changeimage = YES;
+            }
         }
         
         if(changeimage)
         {
-            [self.cellcurrent config:self.nextimage];
+            __weak typeof(self.cellnext) auxcell = self.cellcurrent;
+            self.cellcurrent = self.cellnext;
+            self.cellnext = auxcell;
         }
         
-        [self.cellnext setAlpha:0];
         self.nextimage = nil;
+        
+        [UIView animateWithDuration:0.4 animations:
+         ^
+         {
+             [self.cellcurrent setAlpha:1];
+             [self.cellnext setAlpha:0];
+         }];
     }
 }
 
 -(void)panalpha
 {
+    CGFloat alphacurrent;
+    CGFloat alphanext;
+    
+    if(direction == pandirection_left)
+    {
+        alphacurrent = (threshold - deltax) / threshold;
+        alphanext = deltax / threshold;
+    }
+    else
+    {
+        alphacurrent = (threshold - (-deltax)) / threshold;
+        alphanext = -deltax / threshold;
+    }
+    
+    if(alphacurrent < 0)
+    {
+        alphacurrent = 0;
+    }
+    else if(alphacurrent > 1)
+    {
+        alphacurrent = 1;
+    }
+    
+    if(alphanext < 0)
+    {
+        alphanext = 0;
+    }
+    else if(alphanext > 1)
+    {
+        alphanext = 1;
+    }
+    
+    [self.cellnext setAlpha:alphanext];
+    [self.cellcurrent setAlpha:alphacurrent];
 }
 
 -(void)movepan:(CGPoint)point

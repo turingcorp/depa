@@ -4,6 +4,12 @@ static NSUInteger const mincarheight = 280;
 static NSUInteger const midcarheight = 350;
 static NSUInteger const maxcarheight = 420;
 
+@interface vitem ()
+
+@property(weak, nonatomic)citem *controller;
+
+@end
+
 @implementation vitem
 {
     CGFloat barmaxheight;
@@ -21,7 +27,6 @@ static NSUInteger const maxcarheight = 420;
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
 
     CGFloat screenheight = [UIScreen mainScreen].bounds.size.height;
-    self.controlleritem = controller;
     self.model = [[mitemdetailinfo alloc] init];
     vitembar *bar = [[vitembar alloc] init:controller];
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
@@ -71,7 +76,7 @@ static NSUInteger const maxcarheight = 420;
     [collection setHidden:YES];
     self.collection = collection;
     
-    vitemcar *car = [[vitemcar alloc] init:self.controlleritem];
+    vitemcar *car = [[vitemcar alloc] init:controller];
     [car setHidden:YES];
     self.car = car;
     
@@ -111,12 +116,12 @@ static NSUInteger const maxcarheight = 420;
 {
     [button removeFromSuperview];
     [self.spinner startAnimating];
-    [self.controlleritem tryagain];
+    [self.controller tryagain];
 }
 
 -(void)actioncontact:(UIButton*)button
 {
-    [self.controlleritem contact];
+    [self.controller contact];
 }
 
 #pragma mark public
