@@ -2,11 +2,13 @@
 
 @implementation vitemcarcel
 
--(instancetype)initWithFrame:(CGRect)frame
+-(instancetype)init
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
+    [self setBackgroundColor:[UIColor clearColor]];
+    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self setUserInteractionEnabled:NO];
     
     UIImageView *image = [[UIImageView alloc] init];
     [image setClipsToBounds:YES];

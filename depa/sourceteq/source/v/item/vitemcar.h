@@ -2,6 +2,7 @@
 
 @class citem;
 @class vitemcarpaging;
+@class vitemcarcel;
 
 @interface vitemcar:UIView<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -10,7 +11,7 @@
 
 @property(weak, nonatomic)citem *controller;
 @property(weak, nonatomic)vitemcarpaging *paging;
-@property(weak, nonatomic)UIImageView *currentImage;
-@property(weak, nonatomic)UIImageView 
+@property(weak, nonatomic)vitemcarcel *cellcurrent;
+@property(weak, nonatomic)vitemcarcel *cellnext;
 
 @end
