@@ -1,8 +1,8 @@
 #import "vitem.h"
 
-static NSUInteger const mincarheight = 250;
-static NSUInteger const midcarheight = 400;
-static NSUInteger const maxcarheight = 450;
+static NSUInteger const mincarheight = 280;
+static NSUInteger const midcarheight = 350;
+static NSUInteger const maxcarheight = 420;
 
 @implementation vitem
 {
