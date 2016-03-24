@@ -14,6 +14,7 @@
     if(self.validjson)
     {
         self.itemtitle = [tools cleanlatin:self.validjson[@"title"]];
+        self.itemtitle = [tools capitalfirst:self.itemtitle];
         self.itemcurrency = self.validjson[@"currency_id"];
         self.itemprice = self.validjson[@"price"];
         self.itempermalink = self.validjson[@"permalink"];
@@ -120,6 +121,8 @@
             
             if(rawaddressline && rawaddressline.length > 1)
             {
+                rawaddressline = [tools cleanlatin:rawaddressline];
+                rawaddressline = [tools capitalfirst:rawaddressline];
                 [mutlocation appendString:rawaddressline];
             }
             
