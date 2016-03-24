@@ -1,5 +1,12 @@
 #import "citem.h"
 
+typedef NS_ENUM(NSUInteger, item_loaded)
+{
+    item_loaded_none,
+    item_loaded_info,
+    item_loaded_descr
+};
+
 @interface citem ()
 
 @property(strong, nonatomic)vitem *view;
@@ -7,6 +14,9 @@
 @end
 
 @implementation citem
+{
+    item_loaded loaded;
+}
 
 @dynamic view;
 
@@ -21,6 +31,7 @@
     self = [super init];
     
     self.item = item;
+    loaded = item_loaded_none;
     
     return self;
 }
@@ -63,6 +74,18 @@
     return NO;
 }
 
+#pragma mark functionality
+
+-(void)loaditem
+{
+    self.manager = [amanager call:[[acallitem alloc] init:self.item.itemid] delegate:self];
+}
+
+-(void)loaddescr
+{
+    self.manager = [amanager call:[[acalldesc alloc] init:self.item.itemid] delegate:self];
+}
+
 #pragma mark public
 
 -(void)back
@@ -72,10 +95,24 @@
 
 -(void)tryagain
 {
-    if(!self.manager)
+    [self.manager cancelcall];
+    
+    switch(loaded)
     {
-        amanager *manager = [amanager call:[[acallitem alloc] init:self.item.itemid] delegate:self];
-        self.manager = manager;
+        case item_loaded_none:
+            
+            [self loaditem];
+            
+            break;
+            
+        case item_loaded_info:
+            
+            [self loaddescr];
+            
+            break;
+            
+        case item_loaded_descr:
+            break;
     }
 }
 
@@ -107,10 +144,9 @@
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
+                           loaded = item_loaded_info;
                            [self.view itemloaded];
-                           
-                           amanager *manager = [amanager call:[[acalldesc alloc] init:self.item.itemid] delegate:self];
-                           self.manager = manager;
+                           [self loaddescr];
                        });
     }
     else
@@ -122,6 +158,7 @@
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
+                           loaded = item_loaded_descr;
                            [self.view descriptionloaded];
                        });
     }
@@ -129,8 +166,6 @@
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-    self.manager = nil;
-    
     if([manager.call isKindOfClass:[acallitem class]])
     {
         [valert alert:error inview:self.view offsettop:65];
