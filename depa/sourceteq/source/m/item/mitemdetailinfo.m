@@ -18,16 +18,16 @@
     self.items = [NSMutableArray array];
     
     mitemdetailinfopaging *infopaging = [[mitemdetailinfopaging alloc] init];
-    [infopaging config:item collection:self.collection];
+    [infopaging config:item view:self.view];
     
     mitemdetailinfostats *infostats = [[mitemdetailinfostats alloc] init];
-    [infostats config:item collection:self.collection];
+    [infostats config:item view:self.view];
     
     mitemdetailinfoaddress *infoaddress = [[mitemdetailinfoaddress alloc] init];
-    [infoaddress config:item collection:self.collection];
+    [infoaddress config:item view:self.view];
     
     mitemdetailinfotitleprice *infotitleprice = [[mitemdetailinfotitleprice alloc] init];
-    [infotitleprice config:item collection:self.collection];
+    [infotitleprice config:item view:self.view];
     
     [self.items addObject:infopaging];
     [self.items addObject:infostats];
@@ -38,7 +38,7 @@
 -(void)adddescription
 {
     mitemdetailinfodesc *infodesc = [[mitemdetailinfodesc alloc] init];
-    [infodesc config:self.item collection:self.collection];
+    [infodesc config:self.item view:self.view];
     
     [self.items addObject:infodesc];
 }
