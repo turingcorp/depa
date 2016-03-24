@@ -39,6 +39,7 @@
             aparsersearchatt *attributes = [[aparsersearchatt alloc] init:rawattributes];
             aparsersearchattitem *attmeters = [attributes itemfor:search_attr_mtrs];
             aparsersearchattitem *attrooms = [attributes itemfor:search_attr_rooms];
+            aparsersearchattitem *attbaths = [attributes itemfor:search_attr_baths];
             aparsersearchattitem *attgarage = [attributes itemfor:search_attr_garage];
             
             if(attmeters)
@@ -58,6 +59,16 @@
                 if(rawrooms > 0)
                 {
                     self.rooms = rawrooms;
+                }
+            }
+            
+            if(attbaths)
+            {
+                NSInteger rawbaths = attbaths.value.integerValue;
+                
+                if(rawbaths > 0)
+                {
+                    self.baths = rawbaths;
                 }
             }
             

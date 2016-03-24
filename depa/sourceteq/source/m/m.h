@@ -57,6 +57,7 @@
 #import "mitemdetailinfostatsprotocol.h"
 #import "mitemdetailinfostatsmeters.h"
 #import "mitemdetailinfostatsrooms.h"
+#import "mitemdetailinfostatsbaths.h"
 #import "mitemdetailinfostatsgarages.h"
 #import "mitemdetailinfoaddress.h"
 #import "mitemdetailinfotitleprice.h"

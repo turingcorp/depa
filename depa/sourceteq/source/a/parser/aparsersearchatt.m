@@ -42,6 +42,10 @@
         {
             attr = search_attr_rooms;
         }
+        else if([concreteid isEqualToString:@"bathqty"])
+        {
+            attr = search_attr_baths;
+        }
         else if([concreteid isEqualToString:@"garage"])
         {
             attr = search_attr_garage;

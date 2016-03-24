@@ -24,6 +24,7 @@
 @property(nonatomic)NSUInteger dbid;
 @property(nonatomic)NSUInteger meters;
 @property(nonatomic)NSUInteger rooms;
+@property(nonatomic)NSUInteger baths;
 @property(nonatomic)NSUInteger garages;
 
 @end

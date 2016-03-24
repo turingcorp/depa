@@ -137,6 +137,7 @@ typedef NS_ENUM(NSUInteger, item_loaded)
         self.item.longitude = parser.longitude;
         self.item.meters = parser.meters;
         self.item.rooms = parser.rooms;
+        self.item.baths = parser.baths;
         self.item.garages = parser.garages;
         self.item.itemprice = [[tools singleton] pricetostring:parser.itemprice currency:parser.itemcurrency];
         [self.view.model loaditem:self.item];

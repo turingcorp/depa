@@ -1,13 +1,6 @@
-//
-//  mitemdetailinfostatsbaths.h
-//  depa
-//
-//  Created by zero on 3/24/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
+#import "mitemdetailinfostatsprotocol.h"
 
-#import <Foundation/Foundation.h>
-
-@interface mitemdetailinfostatsbaths : NSObject
+@interface mitemdetailinfostatsbaths:NSObject<mitemdetailinfostatsprotocol>
 
 @end

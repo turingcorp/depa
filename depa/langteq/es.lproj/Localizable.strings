@@ -59,6 +59,7 @@
 "item_detail_buttonretry"="Reintentar";
 "item_detail_stats_meters"="%@ m²";
 "item_detail_stats_rooms"="%@";
+"item_detail_stats_baths"="%@";
 "item_detail_stats_garages"="%@";
 "item_detail_contact_nophone"="No tiene telefono";
 "item_detail_contact_close"="Cerrar";

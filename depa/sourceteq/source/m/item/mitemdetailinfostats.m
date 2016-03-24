@@ -27,6 +27,15 @@
         [self.items addObject:rooms];
     }
     
+    if(item.baths)
+    {
+        NSString *bathstitle = [NSString stringWithFormat:NSLocalizedString(@"item_detail_stats_baths", nil), @(item.baths)];
+        mitemdetailinfostatsbaths *baths = [[mitemdetailinfostatsbaths alloc] init];
+        baths.title = bathstitle;
+        
+        [self.items addObject:baths];
+    }
+    
     if(item.garages)
     {
         NSString *garagetitle = [NSString stringWithFormat:NSLocalizedString(@"item_detail_stats_garages", nil), @(item.garages)];
