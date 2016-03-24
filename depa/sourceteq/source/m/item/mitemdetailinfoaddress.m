@@ -28,7 +28,7 @@ static NSUInteger const consiconheight = 160;
     self.mutstring = [[NSMutableAttributedString alloc] init];
     [self.mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemaddress attributes:attrtitle]];
     
-    CGFloat colwidth = collection.bounds.size.width;
+    CGFloat colwidth = view.bounds.size.width;
     CGFloat textwidth = colwidth - (self.marginhorizontal * 2);
     CGFloat textheight = ceilf([self.mutstring boundingRectWithSize:CGSizeMake(textwidth, 2000) options:stringdrawing context:nil].size.height);
     self.cellheight = textheight + (self.marginvertical * 2);

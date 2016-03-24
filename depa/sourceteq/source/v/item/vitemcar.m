@@ -1,6 +1,6 @@
 #import "vitemcar.h"
 
-static CGFloat const threshold = 180.0;
+static CGFloat const threshold = 80.0;
 
 typedef NS_ENUM(NSUInteger, pandirection)
 {
@@ -147,6 +147,8 @@ typedef NS_ENUM(NSUInteger, pandirection)
              [self.cellnext setAlpha:0];
          }];
     }
+    
+    [self bouncepaging];
 }
 
 -(void)panalpha
@@ -225,6 +227,12 @@ typedef NS_ENUM(NSUInteger, pandirection)
     }
 }
 
+-(void)bouncepaging
+{
+    NSIndexPath *indexpath = [NSIndexPath indexPathForItem:self.currentindex inSection:0];
+    [self.paging.collection selectItemAtIndexPath:indexpath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+}
+
 #pragma mark public
 
 -(void)refresh
@@ -235,9 +243,14 @@ typedef NS_ENUM(NSUInteger, pandirection)
         self.nextimage = nil;
         
         [self.cellcurrent config:self.images[self.currentindex]];
+        [self bouncepaging];
     }
 }
 
-#pragma mark -
+-(void)loadpaging:(vitemcarpaging*)paging
+{
+    self.paging = paging;
+    [self bouncepaging];
+}
 
 @end

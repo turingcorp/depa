@@ -45,7 +45,7 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.square setBackgroundColor:colorsecond];
+        [self.square setBackgroundColor:colormain];
     }
     else
     {

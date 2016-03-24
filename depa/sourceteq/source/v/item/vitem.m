@@ -27,6 +27,7 @@ static NSUInteger const maxcarheight = 420;
     self = [super init:controller];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
+    self.model = [[mitemdetailinfo alloc] init:self];
 
     CGFloat screenheight = [UIScreen mainScreen].bounds.size.height;
     vitembar *bar = [[vitembar alloc] init:controller];
@@ -107,8 +108,6 @@ static NSUInteger const maxcarheight = 420;
     [self addConstraint:self.lccontact];
     [self addConstraint:self.lccar];
     [self addConstraint:self.lccartop];
-    
-    self.model = [[mitemdetailinfo alloc] init:collection];
     
     return self;
 }
