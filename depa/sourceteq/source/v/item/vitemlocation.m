@@ -1,6 +1,6 @@
 #import "vitemlocation.h"
 
-static CGFloat const mapsansize = 0.03;
+static CGFloat const mapsansize = 0.025;
 
 @implementation vitemlocation
 

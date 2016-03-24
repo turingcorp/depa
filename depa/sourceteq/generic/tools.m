@@ -58,6 +58,7 @@
 +(NSString*)cleanlatin:(NSString*)string
 {
     NSString *str = [string stringByReplacingOccurrencesOfString:@"&ntilde;" withString:@"ñ"];
+    str = [string stringByReplacingOccurrencesOfString:@"&Ntilde;" withString:@"Ñ"];
     str = [str stringByReplacingOccurrencesOfString:@"&aacute;" withString:@"á"];
     str = [str stringByReplacingOccurrencesOfString:@"&Aacute;" withString:@"Á"];
     str = [str stringByReplacingOccurrencesOfString:@"&eacute;" withString:@"é"];
@@ -69,6 +70,16 @@
     str = [str stringByReplacingOccurrencesOfString:@"&uacute;" withString:@"ú"];
     str = [str stringByReplacingOccurrencesOfString:@"&Uacute;" withString:@"Ú"];
     str = [str stringByReplacingOccurrencesOfString:@"&#34;" withString:@"\""];
+    
+    return str;
+}
+
++(NSString*)cleanwhite:(NSString*)string
+{
+    NSString *str = [string stringByReplacingOccurrencesOfString:@"  " withString:@" "];
+    str = [string stringByReplacingOccurrencesOfString:@".\n" withString:@".\n\n"];
+    str = [string stringByReplacingOccurrencesOfString:@". " withString:@".\n\n"];
+    str = [string stringByReplacingOccurrencesOfString:@"\n\n\n" withString:@"\n\n"];
     
     return str;
 }

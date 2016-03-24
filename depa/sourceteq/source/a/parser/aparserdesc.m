@@ -14,11 +14,15 @@
         if(rawtext && rawtext.length > 1)
         {
             rawtext = [tools cleanlatin:rawtext];
+            rawtext = [tools cleanwhite:rawtext];
+            rawtext = [tools capitalfirst:rawtext];
             self.itemdesc = rawtext;
         }
         else if(rawhtmltext && rawhtmltext.length > 1)
         {
             rawhtmltext = [tools cleanlatin:rawhtmltext];
+            rawhtmltext = [tools cleanwhite:rawhtmltext];
+            rawhtmltext = [tools capitalfirst:rawhtmltext];
             self.itemdesc = rawhtmltext;
         }
         else
