@@ -14,26 +14,29 @@
 
 -(void)loaditem:(mitemdetail*)item
 {
+    self.item = item;
     self.items = [NSMutableArray array];
     
     mitemdetailinfostats *infostats = [[mitemdetailinfostats alloc] init];
-    [infostats config:self.item collection:self.view.collection];
+    [infostats config:item collection:self.collection];
     
     mitemdetailinfoaddress *infoaddress = [[mitemdetailinfoaddress alloc] init];
-    [infoaddress config:self.item collection:self.view.collection];
+    [infoaddress config:item collection:self.collection];
     
     mitemdetailinfotitleprice *infotitleprice = [[mitemdetailinfotitleprice alloc] init];
-    [infotitleprice config:self.item collection:self.view.collection];
+    [infotitleprice config:item collection:self.collection];
     
-    [self.view.model add:infostats];
-    [self.view.model add:infoaddress];
-    [self.view.model add:infotitleprice];
+    [self.items addObject:infostats];
+    [self.items addObject:infoaddress];
+    [self.items addObject:infotitleprice];
 }
 
 -(void)adddescription
 {
     mitemdetailinfodesc *infodesc = [[mitemdetailinfodesc alloc] init];
-    [infodesc config:self.item collection:self.view.collection];
+    [infodesc config:self.item collection:self.collection];
+    
+    [self.items addObject:infodesc];
 }
 
 @end

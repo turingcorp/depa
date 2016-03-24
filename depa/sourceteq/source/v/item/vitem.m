@@ -215,7 +215,7 @@ static NSUInteger const maxcarheight = 420;
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGFloat height = [[self.model item:index.item] height];
+    CGFloat height = [self.model.items[index.item] height];
     CGSize size = CGSizeMake(col.bounds.size.width, height);
     
     return size;
@@ -228,15 +228,16 @@ static NSUInteger const maxcarheight = 420;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger count = [self.model count];
+    NSUInteger count = self.model.items.count;
     
     return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    id<mitemdetailinfoprotocol> model = self.model.items[index.item];
     vitemcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
-    [cel config:[[self.model item:index.item] overview]];
+    [cel config:[model overview]];
     
     return cel;
 }
