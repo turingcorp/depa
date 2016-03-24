@@ -201,15 +201,6 @@ static NSUInteger const maxcarheight = 420;
         cartop -= delta;
     }
     
-    if(offset > 20)
-    {
-        [self.contact.background setHidden:NO];
-    }
-    else
-    {
-        [self.contact.background setHidden:YES];
-    }
-    
     self.lcbar.constant = barheight;
     self.lccontact.constant = contacttop;
     self.lccar.constant = newcarheight;
