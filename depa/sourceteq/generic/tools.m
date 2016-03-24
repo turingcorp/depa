@@ -73,6 +73,38 @@
     return str;
 }
 
++(NSString*)capitalfirst:(NSString*)string
+{
+    NSMutableString *result = [NSMutableString string];
+    NSArray *components = [string componentsSeparatedByString:@"."];
+    NSUInteger count = components.count;
+    
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        NSString *instring = components[i];
+        
+        if(i)
+        {
+            [result appendString:@"."];
+        }
+        
+        if(instring.length > 1)
+        {
+            NSString *rawprefix = [instring substringToIndex:1].uppercaseString;
+            NSString *rawsuffix = [instring substringFromIndex:1].lowercaseString;
+            
+            [result appendString:rawprefix];
+            [result appendString:rawsuffix];
+        }
+        else
+        {
+            [result appendString:instring];
+        }
+    }
+    
+    return result;
+}
+
 #pragma mark -
 
 -(instancetype)init

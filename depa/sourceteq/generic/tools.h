@@ -8,6 +8,7 @@
 +(NSInteger)timestamp;
 +(UIImage*)qrcode:(NSString*)string;
 +(NSString*)cleanlatin:(NSString*)string;
++(NSString*)capitalfirst:(NSString*)string;
 -(NSString*)urlencode:(NSString*)string;
 -(NSString*)numbertostring:(NSNumber*)number;
 -(NSString*)pricetostring:(NSNumber*)number currency:(NSString*)currency;
