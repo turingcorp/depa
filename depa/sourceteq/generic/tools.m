@@ -58,7 +58,7 @@
 +(NSString*)cleanlatin:(NSString*)string
 {
     NSString *str = [string stringByReplacingOccurrencesOfString:@"&ntilde;" withString:@"ñ"];
-    str = [string stringByReplacingOccurrencesOfString:@"&Ntilde;" withString:@"Ñ"];
+    str = [str stringByReplacingOccurrencesOfString:@"&Ntilde;" withString:@"Ñ"];
     str = [str stringByReplacingOccurrencesOfString:@"&aacute;" withString:@"á"];
     str = [str stringByReplacingOccurrencesOfString:@"&Aacute;" withString:@"Á"];
     str = [str stringByReplacingOccurrencesOfString:@"&eacute;" withString:@"é"];
@@ -77,9 +77,9 @@
 +(NSString*)cleanwhite:(NSString*)string
 {
     NSString *str = [string stringByReplacingOccurrencesOfString:@"  " withString:@" "];
-    str = [string stringByReplacingOccurrencesOfString:@".\n" withString:@".\n\n"];
-    str = [string stringByReplacingOccurrencesOfString:@". " withString:@".\n\n"];
-    str = [string stringByReplacingOccurrencesOfString:@"\n\n\n" withString:@"\n\n"];
+    str = [str stringByReplacingOccurrencesOfString:@".\n" withString:@".\n\n"];
+    str = [str stringByReplacingOccurrencesOfString:@". " withString:@".\n\n"];
+    str = [str stringByReplacingOccurrencesOfString:@"\n\n\n" withString:@"\n\n"];
     
     return str;
 }
@@ -93,27 +93,45 @@
     for(NSUInteger i = 0; i < count; i++)
     {
         NSString *instring = components[i];
+        NSUInteger length = instring.length;
         
         if(i)
         {
             [result appendString:@"."];
         }
         
-        if(instring.length > 1)
+        if(length)
         {
-            NSString *rawprefix = [instring substringToIndex:1].uppercaseString;
-            NSString *rawsuffix = [instring substringFromIndex:1].lowercaseString;
+            NSUInteger index = 0;
             
+            for(NSUInteger j = 0; j < length; j++)
+            {
+                char c = [instring characterAtIndex:j];
+                
+                if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'))
+                {
+                    index = j + 1;
+                    j = length;
+                }
+            }
+            
+            NSString *rawprefix = [instring substringToIndex:index].uppercaseString;
             [result appendString:rawprefix];
-            [result appendString:rawsuffix];
-        }
-        else
-        {
-            [result appendString:instring];
+            
+            if(index < length)
+            {
+                NSString *rawsuffix = [instring substringFromIndex:index].lowercaseString;
+                [result appendString:rawsuffix];
+            }
         }
     }
     
     return result;
+}
+
++(NSString*)removehtml:(NSString*)string
+{
+    
 }
 
 #pragma mark -
