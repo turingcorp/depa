@@ -19,14 +19,17 @@
     [button.imageView setClipsToBounds:YES];
     [button.imageView setTintColor:[UIColor colorWithWhite:1 alpha:0.1]];
     [button addTarget:self action:@selector(actionback:) forControlEvents:UIControlEventTouchUpInside];
+    self.button = button;
     
-    UIButton *buttonstar = [[UIButton alloc] init];
-    [buttonstar setImage:[[UIImage imageNamed:@"like"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [buttonstar setImage:[[UIImage imageNamed:@"like"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
-    [buttonstar.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    [buttonstar setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [buttonstar addTarget:self action:@selector(actionlike:) forControlEvents:UIControlEventTouchUpInside];
-    self.buttonstar = buttonstar;
+    UIButton *buttonmap = [[UIButton alloc] init];
+    [buttonmap setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [buttonmap setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
+    [buttonmap.imageView setTintColor:[UIColor whiteColor]];
+    [buttonmap.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [buttonmap setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [buttonmap setHidden:YES];
+    [buttonmap addTarget:self action:@selector(actionmap:) forControlEvents:UIControlEventTouchUpInside];
+    self.buttonmap = buttonmap;
     
     UIButton *buttonshare = [[UIButton alloc] init];
     [buttonshare setImage:[[UIImage imageNamed:@"share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
@@ -35,20 +38,20 @@
     [buttonshare.imageView setTintColor:[UIColor whiteColor]];
     [buttonshare setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonshare addTarget:self action:@selector(actionshare:) forControlEvents:UIControlEventTouchUpInside];
+    self.buttonshare = buttonshare;
     
     [self addSubview:button];
-    [self addSubview:buttonstar];
+    [self addSubview:buttonmap];
     [self addSubview:buttonshare];
     
-    NSDictionary *views = @{@"button":button, @"buttonstar":buttonstar, @"buttonshare":buttonshare};
+    NSDictionary *views = @{@"button":button, @"buttonmap":buttonmap, @"buttonshare":buttonshare};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[button(60)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[buttonstar(52)]-6-[buttonshare(52)]-50-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[button(50)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-18-[buttonstar(44)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[buttonshare(40)]" options:0 metrics:metrics views:views]];
-    [self changestar];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[buttonmap(52)]-8-[buttonshare(52)]-50-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[button(50)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[buttonmap(40)]-5-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[buttonshare(40)]-5-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -75,51 +78,35 @@
     [[cmain singleton] presentViewController:act animated:YES completion:nil];
 }
 
--(void)actionlike:(UIButton*)button
+-(void)actionmap:(UIButton*)button
 {
-    [button setUserInteractionEnabled:NO];
-    
-    __weak typeof(self) weakself = self;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-                   ^
-                   {
-                       item_status newstatus;
-                       
-                       if(weakself.controller.item.status == item_status_like)
-                       {
-                           newstatus = item_status_none;
-                       }
-                       else
-                       {
-                           newstatus = item_status_like;
-                       }
-                       
-                       [weakself.controller.item changestatus:newstatus];
-                       
-                       dispatch_async(dispatch_get_main_queue(),
-                                      ^
-                                      {
-                                          [weakself changestar];
-                                          [button setUserInteractionEnabled:YES];
-                                      });
-                   });
-    
-    
+    [citemlocation show:self.controller.item];
 }
 
-#pragma mark functionality
+#pragma mark public
 
--(void)changestar
+-(void)refresh
 {
-    if(self.controller.item.status == item_status_like)
+    if(self.controller.item.latitude && self.controller.item.longitude)
     {
-        [self.buttonstar.imageView setTintColor:colorsecond];
+        [self.buttonmap setHidden:NO];
     }
-    else
+}
+
+-(void)buttonsalpha:(CGFloat)alpha
+{
+    if(alpha < 0)
     {
-        [self.buttonstar.imageView setTintColor:[UIColor colorWithWhite:1 alpha:0.5]];
+        alpha = 0;
     }
+    else if(alpha > 1)
+    {
+        alpha = 1;
+    }
+    
+    [self.button setAlpha:alpha];
+    [self.buttonmap setAlpha:alpha];
+    [self.buttonshare setAlpha:alpha];
 }
 
 @end

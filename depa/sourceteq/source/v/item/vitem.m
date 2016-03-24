@@ -31,6 +31,7 @@ static NSUInteger const maxcarheight = 420;
 
     CGFloat screenheight = [UIScreen mainScreen].bounds.size.height;
     vitembar *bar = [[vitembar alloc] init:controller];
+    self.bar = bar;
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
     self.contact = contact;
     [contact addTarget:self action:@selector(actioncontact:) forControlEvents:UIControlEventTouchUpInside];
@@ -131,6 +132,7 @@ static NSUInteger const maxcarheight = 420;
     [self.car setHidden:NO];
     [self.collection reloadData];
     [self.car refresh];
+    [self.bar refresh];
 }
 
 -(void)descriptionloaded
@@ -169,6 +171,7 @@ static NSUInteger const maxcarheight = 420;
 {
     CGFloat offset = self.collection.contentOffset.y;
     CGFloat offset_10 = offset / 10.0;
+    CGFloat offset_30 = offset / 30.0;
     CGFloat barheight = barmaxheight - offset;
     CGFloat contacttop = contactmintop + offset_10;
     CGFloat newcarheight = carheight - offset;
@@ -205,6 +208,8 @@ static NSUInteger const maxcarheight = 420;
     self.lccontact.constant = contacttop;
     self.lccar.constant = newcarheight;
     self.lccartop.constant = cartop;
+    
+    [self.bar buttonsalpha:1 - offset_30];
 }
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
