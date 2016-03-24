@@ -3,4 +3,6 @@
 
 @interface mitemdetailinfopaging:NSObject<mitemdetailinfoprotocol>
 
+@property(weak, nonatomic)mitemdetail *item;
+
 @end

@@ -17,6 +17,9 @@
     self.item = item;
     self.items = [NSMutableArray array];
     
+    mitemdetailinfopaging *infopaging = [[mitemdetailinfopaging alloc] init];
+    [infopaging config:item collection:self.collection];
+    
     mitemdetailinfostats *infostats = [[mitemdetailinfostats alloc] init];
     [infostats config:item collection:self.collection];
     
@@ -26,6 +29,7 @@
     mitemdetailinfotitleprice *infotitleprice = [[mitemdetailinfotitleprice alloc] init];
     [infotitleprice config:item collection:self.collection];
     
+    [self.items addObject:infopaging];
     [self.items addObject:infostats];
     [self.items addObject:infoaddress];
     [self.items addObject:infotitleprice];

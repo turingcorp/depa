@@ -52,6 +52,7 @@
 #import "mitemdetail.h"
 #import "mitemdetailinfo.h"
 #import "mitemdetailinfoprotocol.h"
+#import "mitemdetailinfopaging.h"
 #import "mitemdetailinfostats.h"
 #import "mitemdetailinfostatsprotocol.h"
 #import "mitemdetailinfostatsmeters.h"

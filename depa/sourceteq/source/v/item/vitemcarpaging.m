@@ -1,24 +1,22 @@
 #import "vitemcarpaging.h"
 
-@implementation vitemcarpaging
-{
-    CGFloat interitem;
-}
+static CGFloat const interitemspace = 1;
 
--(instancetype)init:(citem*)controller
+@implementation vitemcarpaging
+
+-(instancetype)init:(NSArray<aimateqitem*>*)images
 {
     self = [super init];
     [self setClipsToBounds:YES];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setUserInteractionEnabled:NO];
+    self.images = images;
     
-    interitem = 1;
-    self.controller = controller;
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumLineSpacing:interitem];
+    [flow setMinimumLineSpacing:interitemspace];
     [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
@@ -49,8 +47,8 @@
 -(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
 {
     CGFloat totalwidth = col.bounds.size.width;
-    CGFloat circlesize = col.bounds.size.height + interitem;
-    CGFloat totalcircles = circlesize * self.controller.item.images.items.count;
+    CGFloat circlesize = col.bounds.size.height + interitemspace;
+    CGFloat totalcircles = circlesize * self.images.count;
     CGFloat margin = (totalwidth - totalcircles) / 2.0;
     
     if(margin < 1)
@@ -78,7 +76,7 @@
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger count = self.controller.item.images.items.count;
+    NSUInteger count = self.images.count;
     
     return count;
 }

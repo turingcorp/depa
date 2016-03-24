@@ -1,6 +1,6 @@
 #import "vitemcar.h"
 
-static CGFloat const threshold = 100.0;
+static CGFloat const threshold = 180.0;
 
 typedef NS_ENUM(NSUInteger, pandirection)
 {
