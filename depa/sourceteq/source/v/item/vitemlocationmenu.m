@@ -16,7 +16,7 @@
     [buttonback setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonback setImage:[[UIImage imageNamed:@"aback"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
     [buttonback setImage:[[UIImage imageNamed:@"aback"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [buttonback.imageView setTintColor:colormain];
+    [buttonback.imageView setTintColor:[UIColor blackColor]];
     [buttonback.imageView setClipsToBounds:YES];
     [buttonback.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonback addTarget:self action:@selector(actionback:) forControlEvents:UIControlEventTouchUpInside];
@@ -24,8 +24,8 @@
     UIButton *buttondepa = [[UIButton alloc] init];
     [buttondepa setClipsToBounds:YES];
     [buttondepa setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [buttondepa setImage:[[UIImage imageNamed:@"apt"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-    [buttondepa setImage:[[UIImage imageNamed:@"apt"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
+    [buttondepa setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [buttondepa setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
     [buttondepa.imageView setTintColor:[UIColor whiteColor]];
     [buttondepa.imageView setClipsToBounds:YES];
     [buttondepa.imageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -35,7 +35,7 @@
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
     [border setClipsToBounds:YES];
     [border setUserInteractionEnabled:NO];
-    [border setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.2]];
+    [border setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.1]];
     
     [self addSubview:border];
     [self addSubview:buttonback];
@@ -48,8 +48,8 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(1)]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[back(60)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[back(50)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[depa(70)]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[depa(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[depa(50)]-5-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-24-[depa(32)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -80,7 +80,7 @@
     [buttonuser setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonuser setImage:[[UIImage imageNamed:@"user"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [buttonuser setImage:[[UIImage imageNamed:@"user"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
-    [buttonuser.imageView setTintColor:colormain];
+    [buttonuser.imageView setTintColor:[UIColor blackColor]];
     [buttonuser.imageView setClipsToBounds:YES];
     [buttonuser.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonuser addTarget:self action:@selector(actionuser:) forControlEvents:UIControlEventTouchUpInside];
@@ -90,8 +90,8 @@
     NSDictionary *views = @{@"user":buttonuser};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[user(70)]-70-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[user(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[user(50)]-50-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-17-[user(46)]" options:0 metrics:metrics views:views]];
 }
 
 @end

@@ -63,6 +63,7 @@
 #import "vitemlocation.h"
 #import "vitemlocationmenu.h"
 #import "vitemlocationmap.h"
+#import "vitemlocationannotation.h"
 #import "vitemstats.h"
 #import "vitemstatscel.h"
 #import "vitemcontactview.h"
