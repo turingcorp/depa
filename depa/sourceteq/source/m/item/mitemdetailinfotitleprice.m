@@ -1,21 +1,12 @@
 #import "mitemdetailinfotitleprice.h"
 
+static NSUInteger const marginvertical = 30;
+static NSUInteger const marginhorizontal = 20;
+
 @implementation mitemdetailinfotitleprice
 {
     NSMutableAttributedString *mutstring;
     CGFloat cellheight;
-    CGFloat marginvertical;
-    CGFloat marginhorizontal;
-}
-
--(instancetype)init
-{
-    self = [super init];
-    
-    marginvertical = 30;
-    marginhorizontal = 20;
-    
-    return self;
 }
 
 #pragma mark -
@@ -23,7 +14,7 @@
 
 -(void)config:(mitemdetail*)item view:(vitem*)view
 {
-    NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:21], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.7]};
+    NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:21], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.8]};
     NSDictionary *attrprice = @{NSFontAttributeName:[UIFont fontWithName:fontname size:26], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
     mutstring = [[NSMutableAttributedString alloc] init];
     [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemprice attributes:attrprice]];

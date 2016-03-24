@@ -77,6 +77,7 @@
 +(NSString*)cleanwhite:(NSString*)string
 {
     NSString *str = [string stringByReplacingOccurrencesOfString:@"  " withString:@" "];
+    str = [str stringByReplacingOccurrencesOfString:@"  " withString:@" "];
     str = [str stringByReplacingOccurrencesOfString:@"\n " withString:@"\n"];
     str = [str stringByReplacingOccurrencesOfString:@".\n" withString:@".\n\n"];
     str = [str stringByReplacingOccurrencesOfString:@". " withString:@".\n\n"];
