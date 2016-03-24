@@ -2,10 +2,10 @@
 
 @implementation mitemdetailinfo
 
--(instancetype)init:(UICollectionView*)collection
+-(instancetype)init:(vitem*)view
 {
     self = [super init];
-    self.collection = collection;
+    self.view = view;
     
     return self;
 }

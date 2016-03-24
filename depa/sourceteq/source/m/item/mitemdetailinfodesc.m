@@ -27,7 +27,7 @@
     mutstring = [[NSMutableAttributedString alloc] init];
     [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemdesc attributes:attrtitle]];
     
-    CGFloat colwidth = collection.bounds.size.width;
+    CGFloat colwidth = view.bounds.size.width;
     CGFloat textwidth = colwidth - (marginhorizontal * 2);
     CGFloat textheight = ceilf([mutstring boundingRectWithSize:CGSizeMake(textwidth, 2000) options:stringdrawing context:nil].size.height);
     cellheight = textheight + (marginvertical * 2);
