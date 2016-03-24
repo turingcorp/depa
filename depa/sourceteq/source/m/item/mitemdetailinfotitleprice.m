@@ -21,7 +21,7 @@
 #pragma mark -
 #pragma amrk detail info protocol
 
--(void)config:(mitemdetail*)item collection:(UICollectionView*)collection
+-(void)config:(mitemdetail*)item view:(vitem*)view
 {
     NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:19], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.5]};
     NSDictionary *attrprice = @{NSFontAttributeName:[UIFont fontWithName:fontname size:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.35]};

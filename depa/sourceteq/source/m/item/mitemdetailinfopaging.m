@@ -5,7 +5,7 @@
 #pragma mark -
 #pragma amrk detail info protocol
 
--(void)config:(mitemdetail*)item collection:(UICollectionView*)collection
+-(void)config:(mitemdetail*)item view:(vitem*)view
 {
     self.item = item;
 }
