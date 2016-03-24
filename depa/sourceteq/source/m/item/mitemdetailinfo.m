@@ -31,8 +31,8 @@
     
     [self.items addObject:infopaging];
     [self.items addObject:infostats];
-    [self.items addObject:infoaddress];
     [self.items addObject:infotitleprice];
+    [self.items addObject:infoaddress];
 }
 
 -(void)adddescription

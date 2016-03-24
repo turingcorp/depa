@@ -12,7 +12,7 @@
 {
     self = [super init];
     
-    marginvertical = 15;
+    marginvertical = 30;
     marginhorizontal = 20;
     
     return self;
@@ -23,12 +23,12 @@
 
 -(void)config:(mitemdetail*)item view:(vitem*)view
 {
-    NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:19], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.5]};
-    NSDictionary *attrprice = @{NSFontAttributeName:[UIFont fontWithName:fontname size:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.35]};
+    NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:21], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.7]};
+    NSDictionary *attrprice = @{NSFontAttributeName:[UIFont fontWithName:fontname size:26], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
     mutstring = [[NSMutableAttributedString alloc] init];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemtitle attributes:attrtitle]];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:attrprice]];
     [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemprice attributes:attrprice]];
+    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:attrprice]];
+    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemtitle attributes:attrtitle]];
     
     CGFloat colwidth = view.bounds.size.width;
     CGFloat textwidth = colwidth - (marginhorizontal * 2);
