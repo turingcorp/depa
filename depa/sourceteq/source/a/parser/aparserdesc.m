@@ -20,6 +20,7 @@
         }
         else if(rawhtmltext && rawhtmltext.length > 1)
         {
+            rawhtmltext = [tools removehtml:rawhtmltext];
             rawhtmltext = [tools cleanlatin:rawhtmltext];
             rawhtmltext = [tools cleanwhite:rawhtmltext];
             rawhtmltext = [tools capitalfirst:rawhtmltext];

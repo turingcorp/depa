@@ -77,8 +77,10 @@
 +(NSString*)cleanwhite:(NSString*)string
 {
     NSString *str = [string stringByReplacingOccurrencesOfString:@"  " withString:@" "];
+    str = [str stringByReplacingOccurrencesOfString:@"\n " withString:@"\n"];
     str = [str stringByReplacingOccurrencesOfString:@".\n" withString:@".\n\n"];
     str = [str stringByReplacingOccurrencesOfString:@". " withString:@".\n\n"];
+    str = [str stringByReplacingOccurrencesOfString:@"\n\n\n\n" withString:@"\n\n"];
     str = [str stringByReplacingOccurrencesOfString:@"\n\n\n" withString:@"\n\n"];
     
     return str;
@@ -131,7 +133,35 @@
 
 +(NSString*)removehtml:(NSString*)string
 {
+    NSMutableString *str = [NSMutableString string];
+    NSUInteger count = string.length;
     
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        char c = [string characterAtIndex:i];
+        
+        if(c == '<')
+        {
+            for(++i; i < count; i++)
+            {
+                c = [string characterAtIndex:i];
+                
+                if(c == '>')
+                {
+                    break;
+                }
+            }
+        }
+        else
+        {
+            [str appendFormat:@"%c", c];
+        }
+    }
+    
+    NSString *strnochars = [str stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@" "];
+    strnochars = [strnochars stringByReplacingOccurrencesOfString:@"&deg;" withString:@"°"];
+    
+    return strnochars;
 }
 
 #pragma mark -
