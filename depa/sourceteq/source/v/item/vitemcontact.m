@@ -25,18 +25,19 @@
     [background setUserInteractionEnabled:NO];
     [background setTranslatesAutoresizingMaskIntoConstraints:NO];
     [background.layer setCornerRadius:4];
+    [background setHidden:YES];
     self.background = background;
     
-    [background addSubview:image];
     [self addSubview:background];
+    [self addSubview:image];
     
     NSDictionary *views = @{@"background":background, @"image":image};
     NSDictionary *metrics = @{@"circleside":@(circleside)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[background]-(-10)-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[background(circleside)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[image]-22-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-12-[image]-12-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-12-[image]-10-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-18-[image]-18-|" options:0 metrics:metrics views:views]];
     
     [self hover];
     
@@ -61,13 +62,13 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.image setTintColor:[UIColor colorWithWhite:0 alpha:0.6]];
-        [self.background setBackgroundColor:[colormain colorWithAlphaComponent:0.2]];
+        [self.image setTintColor:[UIColor colorWithWhite:0 alpha:0.8]];
+        [self.background setBackgroundColor:[colormain colorWithAlphaComponent:0.4]];
     }
     else
     {
         [self.image setTintColor:[UIColor whiteColor]];
-        [self.background setBackgroundColor:colormain];
+        [self.background setBackgroundColor:[colormain colorWithAlphaComponent:0.8]];
     }
 }
 

@@ -13,7 +13,7 @@
 
 -(UIView*)overview
 {
-    vitemcarpaging *view = [[vitemcarpaging alloc] init:self.item.images.items];
+    vitemcarpaging *view = [[vitemcarpaging alloc] init:self.item.images.items view:self.view];
     [self.view.car loadpaging:view];
     
     return view;

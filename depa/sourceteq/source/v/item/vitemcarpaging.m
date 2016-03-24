@@ -92,7 +92,7 @@ static CGFloat const paddingvertical = 5;
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    
+    [self.view.car selectitem:index.item];
 }
 
 @end

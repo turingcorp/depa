@@ -1,5 +1,10 @@
 #import "vitem.h"
 
+static NSUInteger const barmaxheight = 65;
+static NSUInteger const barminheight = 20;
+static NSUInteger const contactmintop = 10;
+static NSUInteger const contactmaxtop = 20;
+static NSUInteger const carminheight = 120;
 static NSUInteger const mincarheight = 280;
 static NSUInteger const midcarheight = 350;
 static NSUInteger const maxcarheight = 420;
@@ -12,12 +17,7 @@ static NSUInteger const maxcarheight = 420;
 
 @implementation vitem
 {
-    CGFloat barmaxheight;
-    CGFloat barminheight;
-    CGFloat contactmaxtop;
-    CGFloat contactmintop;
     CGFloat carheight;
-    CGFloat carminheight;
 }
 
 @dynamic controller;
@@ -32,13 +32,8 @@ static NSUInteger const maxcarheight = 420;
     CGFloat screenheight = [UIScreen mainScreen].bounds.size.height;
     vitembar *bar = [[vitembar alloc] init:controller];
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
+    self.contact = contact;
     [contact addTarget:self action:@selector(actioncontact:) forControlEvents:UIControlEventTouchUpInside];
-    
-    barmaxheight = 65;
-    barminheight = 20;
-    contactmintop = 10;
-    contactmaxtop = 20;
-    carminheight = 120;
     
     if(screenheight > 600)
     {
@@ -204,6 +199,15 @@ static NSUInteger const maxcarheight = 420;
         CGFloat delta = carminheight - newcarheight;
         newcarheight = carminheight;
         cartop -= delta;
+    }
+    
+    if(offset > 20)
+    {
+        [self.contact.background setHidden:NO];
+    }
+    else
+    {
+        [self.contact.background setHidden:YES];
     }
     
     self.lcbar.constant = barheight;

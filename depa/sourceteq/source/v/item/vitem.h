@@ -4,6 +4,7 @@
 @class citem;
 @class vspinner;
 @class vitemcar;
+@class vitemcontact;
 @class mitemdetailinfo;
 
 @interface vitem:viewbase<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
@@ -14,6 +15,7 @@
 
 @property(weak, nonatomic)vspinner *spinner;
 @property(weak, nonatomic)vitemcar *car;
+@property(weak, nonatomic)vitemcontact *contact;
 @property(strong, nonatomic)mitemdetailinfo *model;
 @property(weak, nonatomic)UICollectionView *collection;
 @property(weak, nonatomic)NSLayoutConstraint *lcbar;
