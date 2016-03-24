@@ -62,7 +62,7 @@
 
 -(void)actionshare:(UIButton*)button
 {
-    NSURL *url = [NSURL fileURLWithPath:self.controller.item.permalink];
+    NSURL *url = [NSURL URLWithString:self.controller.item.permalink];
     UIActivityViewController *act = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
     
     if([UIPopoverPresentationController class])
