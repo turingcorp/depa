@@ -1,5 +1,7 @@
 #import "vitemstats.h"
 
+static NSUInteger const cellwidth = 80;
+
 @implementation vitemstats
 
 -(instancetype)init:(mitemdetailinfostats*)model
@@ -17,7 +19,6 @@
     [flow setMinimumInteritemSpacing:0];
     [flow setMinimumLineSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    [flow setSectionInset:UIEdgeInsetsZero];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setClipsToBounds:YES];
@@ -42,6 +43,11 @@
 }
 
 #pragma mark col del
+
+-(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
+{
+    
+}
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {

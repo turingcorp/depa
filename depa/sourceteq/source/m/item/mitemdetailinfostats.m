@@ -1,32 +1,13 @@
 #import "mitemdetailinfostats.h"
 
 @implementation mitemdetailinfostats
-{
-    NSMutableArray *array;
-}
-
-#pragma mark public
-
--(NSUInteger)count
-{
-    NSUInteger count = array.count;
-    
-    return count;
-}
-
--(id<mitemdetailinfostatsprotocol>)item:(NSUInteger)index;
-{
-    id<mitemdetailinfostatsprotocol> item = array[index];
-    
-    return item;
-}
 
 #pragma mark -
 #pragma amrk detail info protocol
 
 -(void)config:(mitemdetail*)item view:(vitem*)view
 {
-    array = [NSMutableArray array];
+    self.items = [NSMutableArray array];
     
     if(item.meters)
     {
@@ -34,7 +15,7 @@
         mitemdetailinfostatsmeters *meters = [[mitemdetailinfostatsmeters alloc] init];
         meters.title = meterstitle;
         
-        [array addObject:meters];
+        [self.items addObject:meters];
     }
     
     if(item.rooms)
@@ -43,7 +24,7 @@
         mitemdetailinfostatsrooms *rooms = [[mitemdetailinfostatsrooms alloc] init];
         rooms.title = roomstitle;
         
-        [array addObject:rooms];
+        [self.items addObject:rooms];
     }
     
     if(item.garages)
@@ -52,7 +33,7 @@
         mitemdetailinfostatsgarages *garage = [[mitemdetailinfostatsgarages alloc] init];
         garage.title = garagetitle;
         
-        [array addObject:garage];
+        [self.items addObject:garage];
     }
 }
 
