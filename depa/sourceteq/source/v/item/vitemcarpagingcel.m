@@ -8,23 +8,21 @@
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor clearColor]];
     
-    UIView *circle = [[UIView alloc] init];
-    [circle setClipsToBounds:YES];
-    [circle.layer setCornerRadius:2];
-    [circle.layer setBorderWidth:1];
-    [circle.layer setBorderColor:[UIColor colorWithWhite:0.7 alpha:1].CGColor];
-    [circle setUserInteractionEnabled:NO];
-    [circle setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.circle = circle;
+    UIView *square = [[UIView alloc] init];
+    [square setClipsToBounds:YES];
+    [square.layer setCornerRadius:2];
+    [square setUserInteractionEnabled:NO];
+    [square setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.square = square;
     
-    [self addSubview:circle];
+    [self addSubview:square];
     [self hover];
     
-    NSDictionary *views = @{@"circle":circle};
+    NSDictionary *views = @{@"square":square};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-1-[circle]-1-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[circle]-1-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[square]-2-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-2-[square]-2-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -47,11 +45,11 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.circle setBackgroundColor:[UIColor whiteColor]];
+        [self.square setBackgroundColor:colorsecond];
     }
     else
     {
-        [self.circle setBackgroundColor:[UIColor clearColor]];
+        [self.square setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.1]];
     }
 }
 

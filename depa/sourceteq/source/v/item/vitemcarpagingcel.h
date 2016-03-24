@@ -2,6 +2,6 @@
 
 @interface vitemcarpagingcel:UICollectionViewCell
 
-@property(weak, nonatomic)UIView *circle;
+@property(weak, nonatomic)UIView *square;
 
 @end

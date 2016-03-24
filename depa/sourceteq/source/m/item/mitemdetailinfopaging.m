@@ -19,7 +19,7 @@
 
 -(CGFloat)height
 {
-    return 20;
+    return 18;
 }
 
 @end

@@ -1,6 +1,7 @@
 #import "vitemcarpaging.h"
 
 static CGFloat const interitemspace = 1;
+static CGFloat const paddingvertical = 2;
 
 @implementation vitemcarpaging
 
@@ -10,6 +11,7 @@ static CGFloat const interitemspace = 1;
     [self setClipsToBounds:YES];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setUserInteractionEnabled:NO];
+    [self setBackgroundColor:[UIColor whiteColor]];
     self.images = images;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
@@ -47,7 +49,7 @@ static CGFloat const interitemspace = 1;
 -(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
 {
     CGFloat totalwidth = col.bounds.size.width;
-    CGFloat circlesize = col.bounds.size.height + interitemspace;
+    CGFloat circlesize = (col.bounds.size.height - (paddingvertical * 2)) + interitemspace;
     CGFloat totalcircles = circlesize * self.images.count;
     CGFloat margin = (totalwidth - totalcircles) / 2.0;
     
@@ -56,14 +58,14 @@ static CGFloat const interitemspace = 1;
         margin = 0;
     }
     
-    UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, 0, margin);
+    UIEdgeInsets insets = UIEdgeInsetsMake(paddingvertical, margin, paddingvertical, margin);
     
     return insets;
 }
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGFloat side = col.bounds.size.height;
+    CGFloat side = col.bounds.size.height - (paddingvertical * 2);
     CGSize size = CGSizeMake(side, side);
     
     return size;
