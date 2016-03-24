@@ -10,6 +10,7 @@
 -(instancetype)init:(citem*)controller;
 -(void)refresh;
 -(void)loadpaging:(vitemcarpaging*)paging;
+-(void)selectitem:(NSUInteger)index;
 
 @property(weak, nonatomic)citem *controller;
 @property(weak, nonatomic)vitemcarcel *cellcurrent;

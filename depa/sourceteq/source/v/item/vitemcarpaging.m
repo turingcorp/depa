@@ -1,17 +1,17 @@
 #import "vitemcarpaging.h"
 
-static CGFloat const interitemspace = 1;
-static CGFloat const paddingvertical = 2;
+static CGFloat const interitemspace = 0;
+static CGFloat const paddingvertical = 5;
 
 @implementation vitemcarpaging
 
--(instancetype)init:(NSArray<aimateqitem*>*)images
+-(instancetype)init:(NSArray<aimateqitem*>*)images view:(vitem*)view
 {
     self = [super init];
     [self setClipsToBounds:YES];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self setUserInteractionEnabled:NO];
     [self setBackgroundColor:[UIColor whiteColor]];
+    self.view = view;
     self.images = images;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
@@ -88,6 +88,11 @@ static CGFloat const paddingvertical = 2;
     vitemcarpagingcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
     
     return cel;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    
 }
 
 @end

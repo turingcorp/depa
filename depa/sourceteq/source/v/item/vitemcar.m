@@ -239,10 +239,7 @@ typedef NS_ENUM(NSUInteger, pandirection)
 {
     if(self.controller.item.images.items.count)
     {
-        self.currentindex = 0;
-        self.nextimage = nil;
-        
-        [self.cellcurrent config:self.images[self.currentindex]];
+        [self selectitem:0];
         [self bouncepaging];
     }
 }
@@ -251,6 +248,18 @@ typedef NS_ENUM(NSUInteger, pandirection)
 {
     self.paging = paging;
     [self bouncepaging];
+}
+
+-(void)selectitem:(NSUInteger)index
+{
+    [self.pangesture setEnabled:NO];
+    self.currentindex = index;
+    self.nextimage = nil;
+    
+    [self.cellcurrent config:self.images[index]];
+    [self.cellcurrent setAlpha:1];
+    [self.cellnext setAlpha:0];
+    [self.pangesture setEnabled:YES];
 }
 
 @end
