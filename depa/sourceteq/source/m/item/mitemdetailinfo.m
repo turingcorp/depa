@@ -1,38 +1,39 @@
 #import "mitemdetailinfo.h"
 
 @implementation mitemdetailinfo
-{
-    NSMutableArray *array;
-}
 
--(instancetype)init
+-(instancetype)init:(UICollectionView*)collection
 {
     self = [super init];
-    
-    array = [NSMutableArray array];
+    self.collection = collection;
     
     return self;
 }
 
 #pragma mark public
 
--(NSUInteger)count
+-(void)loaditem:(mitemdetail*)item
 {
-    NSUInteger count = array.count;
+    self.items = [NSMutableArray array];
     
-    return count;
+    mitemdetailinfostats *infostats = [[mitemdetailinfostats alloc] init];
+    [infostats config:self.item collection:self.view.collection];
+    
+    mitemdetailinfoaddress *infoaddress = [[mitemdetailinfoaddress alloc] init];
+    [infoaddress config:self.item collection:self.view.collection];
+    
+    mitemdetailinfotitleprice *infotitleprice = [[mitemdetailinfotitleprice alloc] init];
+    [infotitleprice config:self.item collection:self.view.collection];
+    
+    [self.view.model add:infostats];
+    [self.view.model add:infoaddress];
+    [self.view.model add:infotitleprice];
 }
 
--(id<mitemdetailinfoprotocol>)item:(NSUInteger)index
+-(void)adddescription
 {
-    id<mitemdetailinfoprotocol> item = array[index];
-    
-    return item;
-}
-
--(void)add:(id<mitemdetailinfoprotocol>)item
-{
-    [array addObject:item];
+    mitemdetailinfodesc *infodesc = [[mitemdetailinfodesc alloc] init];
+    [infodesc config:self.item collection:self.view.collection];
 }
 
 @end

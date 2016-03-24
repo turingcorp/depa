@@ -1,10 +1,15 @@
 #import "appdel.h"
 #import "mitemdetailinfoprotocol.h"
 
+@class mitemdetail;
+
 @interface mitemdetailinfo:NSObject
 
--(NSUInteger)count;
--(id<mitemdetailinfoprotocol>)item:(NSUInteger)index;
--(void)add:(id<mitemdetailinfoprotocol>)item;
+-(instancetype)init:(UICollectionView*)collection;
+-(void)loaditem:(mitemdetail*)item;
+-(void)adddescription;
+
+@property(strong, nonatomic)NSMutableArray<id<mitemdetailinfoprotocol>> *items;
+@property(weak, nonatomic)UICollectionView *collection;
 
 @end

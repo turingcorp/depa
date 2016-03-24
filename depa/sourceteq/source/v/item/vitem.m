@@ -20,6 +20,8 @@ static NSUInteger const maxcarheight = 420;
     CGFloat carminheight;
 }
 
+@dynamic controller;
+
 -(instancetype)init:(citem*)controller
 {
     self = [super init:controller];
@@ -27,7 +29,6 @@ static NSUInteger const maxcarheight = 420;
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
 
     CGFloat screenheight = [UIScreen mainScreen].bounds.size.height;
-    self.model = [[mitemdetailinfo alloc] init];
     vitembar *bar = [[vitembar alloc] init:controller];
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
     [contact addTarget:self action:@selector(actioncontact:) forControlEvents:UIControlEventTouchUpInside];
@@ -106,6 +107,8 @@ static NSUInteger const maxcarheight = 420;
     [self addConstraint:self.lccontact];
     [self addConstraint:self.lccar];
     [self addConstraint:self.lccartop];
+    
+    self.model = [[mitemdetailinfo alloc] init:collection];
     
     return self;
 }

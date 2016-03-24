@@ -1,6 +1,14 @@
 #import "citem.h"
 
+@interface citem ()
+
+@property(strong, nonatomic)vitem *view;
+
+@end
+
 @implementation citem
+
+@dynamic view;
 
 +(void)show:(mitemdetail*)item
 {
@@ -13,7 +21,6 @@
     self = [super init];
     
     self.item = item;
-    [self createtitle];
     
     return self;
 }
@@ -44,7 +51,6 @@
 -(void)loadView
 {
     self.view = [[vitem alloc] init:self];
-    self.viewitem = (vitem*)self.view;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -55,48 +61,6 @@
 -(BOOL)prefersStatusBarHidden
 {
     return NO;
-}
-
-#pragma mark functionality
-
--(void)createtitle
-{
-    NSMutableString *displaytitle = [NSMutableString string];
-    
-    switch(self.item.type)
-    {
-        case search_type_house:
-            
-            [displaytitle appendString:NSLocalizedString(@"search_type_house", nil)];
-            
-            break;
-            
-        case search_type_apartment:
-            
-            [displaytitle appendString:NSLocalizedString(@"search_type_flat", nil)];
-            
-            break;
-    }
-    
-    [displaytitle appendString:@" "];
-    
-    switch(self.item.mode)
-    {
-        case search_mode_rent:
-            
-            [displaytitle appendString:NSLocalizedString(@"search_mode_rent", nil)];
-            
-            break;
-            
-        case search_mode_buy:
-            
-            [displaytitle appendString:NSLocalizedString(@"search_mode_buy", nil)];
-            
-            break;
-    }
-    
-    self.item.displaytitle = displaytitle;
-    [self setTitle:displaytitle];
 }
 
 #pragma mark public
@@ -138,24 +102,12 @@
         self.item.rooms = parser.rooms;
         self.item.garages = parser.garages;
         self.item.itemprice = [[tools singleton] pricetostring:parser.itemprice currency:parser.itemcurrency];
-        
-        mitemdetailinfostats *infostats = [[mitemdetailinfostats alloc] init];
-        [infostats config:self.item collection:self.viewitem.collection];
-        
-        mitemdetailinfoaddress *infoaddress = [[mitemdetailinfoaddress alloc] init];
-        [infoaddress config:self.item collection:self.viewitem.collection];
-        
-        mitemdetailinfotitleprice *infotitleprice = [[mitemdetailinfotitleprice alloc] init];
-        [infotitleprice config:self.item collection:self.viewitem.collection];
-        
-        [self.viewitem.model add:infostats];
-        [self.viewitem.model add:infoaddress];
-        [self.viewitem.model add:infotitleprice];
+        [self.view.model loaditem:self.item];
         
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [self.viewitem itemloaded];
+                           [self.view itemloaded];
                            
                            amanager *manager = [amanager call:[[acalldesc alloc] init:self.item.itemid] delegate:self];
                            self.manager = manager;
@@ -165,16 +117,12 @@
     {
         aparserdesc *parser = (aparserdesc*)manager.call.parser;
         self.item.itemdesc = parser.itemdesc;
-        
-        mitemdetailinfodesc *infodesc = [[mitemdetailinfodesc alloc] init];
-        [infodesc config:self.item collection:self.viewitem.collection];
-        
-        [self.viewitem.model add:infodesc];
+        [self.view.model adddescription];
         
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [self.viewitem descriptionloaded];
+                           [self.view descriptionloaded];
                        });
     }
 }
@@ -185,12 +133,12 @@
     
     if([manager.call isKindOfClass:[acallitem class]])
     {
-        [valert alert:error inview:self.viewitem offsettop:65];
+        [valert alert:error inview:self.view offsettop:65];
         
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [self.viewitem errorloading];
+                           [self.view errorloading];
                        });
     }
 }
