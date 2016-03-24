@@ -6,6 +6,4 @@
 
 -(instancetype)init:(mitemdetailinfoaddress*)model;
 
-@property(weak, nonatomic)mitemdetailinfoaddress *model;
-
 @end

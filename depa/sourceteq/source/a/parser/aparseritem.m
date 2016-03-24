@@ -125,17 +125,32 @@
             
             if(rawneightname && rawneightname.length > 1)
             {
-                [mutlocation appendFormat:@"\n%@", rawneightname];
+                if(mutlocation.length > 1)
+                {
+                    [mutlocation appendString:@"\n"];
+                }
+                
+                [mutlocation appendString:rawneightname];
             }
             
             if(rawcityname && rawcityname.length > 1)
             {
-                [mutlocation appendFormat:@"\n%@", rawcityname];
+                if(mutlocation.length > 1)
+                {
+                    [mutlocation appendString:@"\n"];
+                }
+                
+                [mutlocation appendString:rawcityname];
             }
             
             if(rawstatename && rawstatename.length > 1)
             {
-                [mutlocation appendFormat:@", %@", rawstatename];
+                if(mutlocation.length > 1)
+                {
+                    [mutlocation appendString:@", "];
+                }
+                
+                [mutlocation appendString:rawstatename];
             }
             
             if(rawcountryname && rawcountryname.length > 1)
