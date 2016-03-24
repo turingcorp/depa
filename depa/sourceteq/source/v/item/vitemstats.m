@@ -46,12 +46,19 @@ static NSUInteger const cellwidth = 80;
 
 -(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
 {
+    CGFloat totalwidth = col.bounds.size.width;
+    CGFloat totalcells = self.model.items.count * cellwidth;
+    CGFloat remain = totalwidth - totalcells;
+    CGFloat margin = remain / 2.0;
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, 0, margin);
     
+    return insets;
 }
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGSize size = CGSizeMake(col.bounds.size.width / [self.model count], col.bounds.size.height);
+    CGFloat height = col.bounds.size.height;
+    CGSize size = CGSizeMake(cellwidth, height);
     
     return size;
 }
@@ -63,15 +70,16 @@ static NSUInteger const cellwidth = 80;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger count = [self.model count];
+    NSUInteger count = self.model.items.count;
     
     return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    id<mitemdetailinfostatsprotocol> model = self.model.items[index.item];
     vitemstatscel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
-    [cel config:[self.model item:index.item]];
+    [cel config:model];
     
     return cel;
 }
