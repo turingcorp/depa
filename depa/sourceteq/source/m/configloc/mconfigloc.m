@@ -11,8 +11,8 @@
 
     self.selected = 0;
     array = @[
-              [[mconfigloclist alloc] init],
-              [[mconfiglocmap alloc] init]
+              [[mconfiglocmap alloc] init],
+              [[mconfigloclist alloc] init]
               ];
     
     return self;

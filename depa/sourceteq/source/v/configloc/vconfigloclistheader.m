@@ -27,6 +27,7 @@
     self.buttonback = buttonback;
     
     UIButton *buttonsearch = [[UIButton alloc] init];
+    [buttonsearch setClipsToBounds:YES];
     [buttonsearch setBackgroundColor:colormain];
     [buttonsearch setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonsearch setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
