@@ -60,10 +60,12 @@ static const NSUInteger minitemspull = 3;
     
     if([self.current isKindOfClass:[cplayload class]])
     {
+        __weak typeof(self) weakself = self;
+        
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [(cplayload*)self.current recall];
+                           [(cplayload*)weakself.current recall];
                        });
     }
 }
@@ -104,16 +106,18 @@ static const NSUInteger minitemspull = 3;
 
 -(void)backgroundpull
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       if([self.model count] < minitemspull && self.model.offset < self.model.total)
+                       if([weakself.model count] < minitemspull && weakself.model.offset < weakself.model.total)
                        {
-                           if(!self.model.busy)
+                           if(!weakself.model.busy)
                            {
-                               self.model.busy = YES;
-                               amanager *callmanager = [amanager call:[[acallsearch alloc] init:[self.model variables]] delegate:self];
-                               self.callmanager = callmanager;
+                               weakself.model.busy = YES;
+                               amanager *callmanager = [amanager call:[[acallsearch alloc] init:[weakself.model variables]] delegate:weakself];
+                               weakself.callmanager = callmanager;
                            }
                        }
                    });
@@ -151,10 +155,12 @@ static const NSUInteger minitemspull = 3;
     
     if([self.current isKindOfClass:[cplayload class]])
     {
+        __weak typeof(self) weakself = self;
+        
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [self shownextitem:UIPageViewControllerNavigationDirectionForward animated:NO];
+                           [weakself shownextitem:UIPageViewControllerNavigationDirectionForward animated:NO];
                        });
     }
     
@@ -165,10 +171,12 @@ static const NSUInteger minitemspull = 3;
 {
     //NSLog(@"Error: %@", error);
     
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       [self stopcall];
+                       [weakself stopcall];
                    });
 }
 

@@ -142,12 +142,14 @@ typedef NS_ENUM(NSUInteger, item_loaded)
         self.item.itemprice = [[tools singleton] pricetostring:parser.itemprice currency:parser.itemcurrency];
         [self.view.model loaditem:self.item];
         
+        __weak typeof(self) weakself = self;
+        
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
                            loaded = item_loaded_info;
-                           [self.view itemloaded];
-                           [self loaddescr];
+                           [weakself.view itemloaded];
+                           [weakself loaddescr];
                        });
     }
     else
@@ -156,11 +158,13 @@ typedef NS_ENUM(NSUInteger, item_loaded)
         self.item.itemdesc = parser.itemdesc;
         [self.view.model adddescription];
         
+        __weak typeof(self) weakself = self;
+        
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
                            loaded = item_loaded_descr;
-                           [self.view descriptionloaded];
+                           [weakself.view descriptionloaded];
                        });
     }
 }
@@ -171,10 +175,12 @@ typedef NS_ENUM(NSUInteger, item_loaded)
     {
         [valert alert:error inview:self.view offsettop:65];
         
+        __weak typeof(self) weakself = self;
+        
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [self.view errorloading];
+                           [weakself.view errorloading];
                        });
     }
 }

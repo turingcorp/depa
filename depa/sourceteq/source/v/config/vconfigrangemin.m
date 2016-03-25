@@ -83,21 +83,25 @@
 
 -(void)notifiedpricemaxchanged:(NSNotification*)notification
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       [self bouncemaxprice];
-                       [self print];
-                       [self save];
+                       [weakself bouncemaxprice];
+                       [weakself print];
+                       [weakself save];
                    });
 }
 
 -(void)notifiedsearchmodechanged:(NSNotification*)notification
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       [self updaterange];
+                       [weakself updaterange];
                    });
 }
 

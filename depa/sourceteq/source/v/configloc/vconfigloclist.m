@@ -87,10 +87,12 @@ static NSUInteger const headermaxheight = 260;
 
 -(void)notifiedloclistitemfetched:(NSNotification*)notification
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       [self refreshcol];
+                       [weakself refreshcol];
                    });
 }
 
@@ -136,14 +138,16 @@ static NSUInteger const headermaxheight = 260;
 
 -(void)load:(mconfigloclistitem*)item
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       self.model = item;
-                       [self.buttonretry setHidden:YES];
-                       [self.collection setHidden:YES];
-                       [self.spinner setHidden:NO];
-                       [self.spinner startAnimating];
+                       weakself.model = item;
+                       [weakself.buttonretry setHidden:YES];
+                       [weakself.collection setHidden:YES];
+                       [weakself.spinner setHidden:NO];
+                       [weakself.spinner startAnimating];
                        
                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                                       ^

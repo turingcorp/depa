@@ -46,11 +46,13 @@
 
 -(void)notifiedupdateliked:(NSNotification*)notification
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       [self addheader];
-                       [self.collection reloadData];
+                       [weakself addheader];
+                       [weakself.collection reloadData];
                    });
 }
 

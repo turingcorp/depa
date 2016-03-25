@@ -60,10 +60,12 @@
 {
     if([self.model.apiimage equalsnotification:notification])
     {
+        __weak typeof(self) weakself = self;
+        
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [self refreshimage];
+                           [weakself refreshimage];
                        });
     }
 }

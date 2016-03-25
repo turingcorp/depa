@@ -99,10 +99,12 @@
         [self.play.model join:parser];
         self.play.model.busy = NO;
         
+        __weak typeof(self) weakself = self;
+        
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [self.play playitem];
+                           [weakself.play playitem];
                        });
     }
 }
@@ -112,10 +114,12 @@
     [valert alert:error inview:self.view offsettop:0];
     //NSLog(@"Error: %@", error);
 
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       [self stopcall];
+                       [weakself stopcall];
                    });
 }
 

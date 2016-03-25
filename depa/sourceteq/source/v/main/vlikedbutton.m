@@ -83,12 +83,12 @@
                                           if(numnews.integerValue)
                                           {
                                               color = colorsecond;
-                                              [self.badge setHidden:NO];
-                                              [self.badge.label setText:[NSString stringWithFormat:@"%@", numnews]];
+                                              [weakself.badge setHidden:NO];
+                                              [weakself.badge.label setText:[NSString stringWithFormat:@"%@", numnews]];
                                           }
                                           else
                                           {
-                                              [self.badge setHidden:YES];
+                                              [weakself.badge setHidden:YES];
                                               color = [UIColor whiteColor];
                                           }
                                           

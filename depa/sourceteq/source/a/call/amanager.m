@@ -88,11 +88,13 @@
         }
         else
         {
+            __weak typeof(self) weakself = self;
+            
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                            ^
                            {
-                               [self.call.parser parse:self.response];
-                               [self.delegate callsuccess:self];
+                               [weakself.call.parser parse:weakself.response];
+                               [weakself.delegate callsuccess:weakself];
                            });
         }
     }
