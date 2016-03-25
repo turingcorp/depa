@@ -21,7 +21,7 @@
 "config_location_list_state"="State";
 "config_location_list_city"="City";
 "config_location_list_neigh"="Neightbourhood";
-"config_location_list_select"="Filter by %@";
+"config_location_list_select"="Select %@";
 "config_location_list_current"="Search in %@";
 "config_location_button_retry"="Try again";
 "config_location_mapselected"="Map selection";

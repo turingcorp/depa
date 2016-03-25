@@ -21,7 +21,7 @@
 "config_location_list_state"="Estado";
 "config_location_list_city"="Ciudad";
 "config_location_list_neigh"="Colonia";
-"config_location_list_select"="Filtrar por %@";
+"config_location_list_select"="Selecciona %@";
 "config_location_list_current"="Buscar en %@";
 "config_location_button_retry"="Reintentar";
 "config_location_mapselected"="Seleccion en mapa";
