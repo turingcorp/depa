@@ -5,6 +5,7 @@
 -(instancetype)init
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    [self setTitle:@""];
     
     self.itemliked = [[UIBarButtonItem alloc] initWithCustomView:[[vlikedbutton alloc] init:self]];
     self.itemplay = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"play"] style:UIBarButtonItemStylePlain target:self action:@selector(actionplay:)];
