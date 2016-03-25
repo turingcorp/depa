@@ -80,10 +80,24 @@ static CGFloat const mapspanradius = 0.3;
             break;
             
         case kCLAuthorizationStatusDenied:
+            
+            [self afterfocusoncenter];
+            
             break;
         case kCLAuthorizationStatusRestricted:
             break;
     }
+}
+
+-(void)afterfocusoncenter
+{
+    __weak typeof(self) weakself = self;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 500), dispatch_get_main_queue(),
+                   ^
+                   {
+                       [weakself.map focusoncenter];
+                   });
 }
 
 #pragma mark public

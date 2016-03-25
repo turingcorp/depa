@@ -44,10 +44,13 @@
 
 -(void)focusoncenter
 {
-    CGFloat width_2 = self.bounds.size.width / 2.0;
-    CGFloat height_2 = self.bounds.size.height / 2.0;
-    CGPoint center = CGPointMake(width_2, height_2);
+    CGFloat width = self.bounds.size.width;
+    CGFloat height = self.bounds.size.height;
+    CGFloat centerx = width / 2.0;
+    CGFloat centery = height / 2.0;
+    CGPoint center;
     
+    center = CGPointMake(centerx, centery);
     [self addann:[self pointtocoord:center]];
 }
 
