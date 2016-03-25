@@ -10,7 +10,6 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     self.map = map;
-    vblur *blur = [vblur light:NO];
     
     UIView *border = [[UIView alloc] init];
     [border setUserInteractionEnabled:NO];
@@ -21,11 +20,12 @@
     UIButton *btnaccept = [[UIButton alloc] init];
     [btnaccept setClipsToBounds:YES];
     [btnaccept setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [btnaccept setImage:[[UIImage imageNamed:@"accept"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-    [btnaccept setImage:[[UIImage imageNamed:@"accept"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
-    [btnaccept.imageView setTintColor:[UIColor colorWithWhite:0 alpha:0.2]];
-    [btnaccept.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    [btnaccept.imageView setClipsToBounds:YES];
+    [btnaccept setBackgroundColor:colormain];
+    [btnaccept setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnaccept setTitleColor:[UIColor colorWithWhite:1 alpha:0.2] forState:UIControlStateHighlighted];
+    [btnaccept.titleLabel setFont:[UIFont fontWithName:fontboldname size:14]];
+    [btnaccept.layer setCornerRadius:4];
+    [btnaccept setTitle:NSLocalizedString(@"config_location_acceptselection", nil) forState:UIControlStateNormal];
     [btnaccept addTarget:self action:@selector(actionaccept:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *btnuser = [[UIButton alloc] init];
@@ -33,28 +33,24 @@
     [btnuser setTranslatesAutoresizingMaskIntoConstraints:NO];
     [btnuser setImage:[[UIImage imageNamed:@"user"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
     [btnuser setImage:[[UIImage imageNamed:@"user"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [btnuser.imageView setTintColor:[UIColor colorWithWhite:0 alpha:1]];
+    [btnuser.imageView setTintColor:colormain];
     [btnuser.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [btnuser.imageView setClipsToBounds:YES];
     [btnuser setHidden:YES];
     [btnuser addTarget:self action:@selector(actionuser:) forControlEvents:UIControlEventTouchUpInside];
     self.btnuser = btnuser;
-    
-    [self addSubview:blur];
+
     [self addSubview:border];
     [self addSubview:btnaccept];
     [self addSubview:btnuser];
     
-    NSDictionary *views = @{@"blur":blur, @"accept":btnaccept, @"user":btnuser, @"border":border};
+    NSDictionary *views = @{@"accept":btnaccept, @"user":btnuser, @"border":border};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blur]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[blur]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(1)]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[user(90)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[accept(90)]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[user]-10-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[user(50)]-10-[accept(180)]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[user]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[accept]-10-|" options:0 metrics:metrics views:views]];
     
     return self;
@@ -77,7 +73,7 @@
     NSDictionary *metrics = @{};
     
     [self.map addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
-    [self.map addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[spinner(80)]" options:0 metrics:metrics views:views]];
+    [self.map addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-120-[spinner(40)]" options:0 metrics:metrics views:views]];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
@@ -140,12 +136,17 @@
                                 country = [[mcountry singleton] countrydefault];
                             }
                             
+                            [[analytics singleton] trackevent:ga_event_location action:ga_action_map label:nil];
+                            [[msettings singleton] changecountry:country location:vars locationname:NSLocalizedString(@"config_location_mapselected", nil)];
+                            
                             dispatch_async(dispatch_get_main_queue(),
                                            ^
                                            {
-                                               [[analytics singleton] trackevent:ga_event_location action:ga_action_map label:nil];
+                                               if([[cmain singleton].pages.current isKindOfClass:[cplay class]])
+                                               {
+                                                   [[cmain singleton].pages recallplay];
+                                               }
                                                
-                                               [[msettings singleton] changecountry:country location:vars locationname:NSLocalizedString(@"config_location_mapselected", nil)];
                                                [[cmain singleton] popViewControllerAnimated:YES];
                                            });
                         }];

@@ -1,5 +1,7 @@
 #import "vconfiglocmap.h"
 
+static CGFloat const mapspanradius = 0.3;
+
 @implementation vconfiglocmap
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -9,7 +11,7 @@
     [self setBackgroundColor:[UIColor clearColor]];
 
     self.firsttime = YES;
-    self.mapspan = MKCoordinateSpanMake(0.3, 0.3);
+    self.mapspan = MKCoordinateSpanMake(mapspanradius, mapspanradius);
     
     vconfiglocmapview *map = [[vconfiglocmapview alloc] init];
     [map setDelegate:self];
@@ -25,9 +27,8 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[menu(70)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[menu(50)]-0-[map]-0-|" options:0 metrics:metrics views:views]];
     
     [self locationscheck];
     
@@ -79,10 +80,24 @@
             break;
             
         case kCLAuthorizationStatusDenied:
+            
+            [self afterfocusoncenter];
+            
             break;
         case kCLAuthorizationStatusRestricted:
             break;
     }
+}
+
+-(void)afterfocusoncenter
+{
+    __weak typeof(self) weakself = self;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 500), dispatch_get_main_queue(),
+                   ^
+                   {
+                       [weakself.map focusoncenter];
+                   });
 }
 
 #pragma mark public
@@ -104,7 +119,7 @@
     {
         self.firsttime = NO;
         [self centeruser];
-        [self.map addannotation:self.userlocation];
+        [self.map addann:self.userlocation];
     }
 }
 
@@ -114,6 +129,10 @@
     {
         [self.menu showbuttonuser];
         [self.map setShowsUserLocation:YES];
+    }
+    else
+    {
+        [self.map focusoncenter];
     }
 }
 

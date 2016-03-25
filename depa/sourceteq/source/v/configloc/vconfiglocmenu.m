@@ -1,9 +1,8 @@
 #import "vconfiglocmenu.h"
 
+static NSUInteger const cellwidth = 80;
+
 @implementation vconfiglocmenu
-{
-    NSUInteger cellwidth;
-}
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
@@ -11,10 +10,8 @@
     [self setBackgroundColor:[UIColor clearColor]];
     [self setClipsToBounds:YES];
     
-    cellwidth = 100;
-    
     UIView *border = [[UIView alloc] init];
-    [border setBackgroundColor:[colorsecond colorWithAlphaComponent:0.2]];
+    [border setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.08]];
     [border setUserInteractionEnabled:NO];
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
     
@@ -45,7 +42,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(2)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(1)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

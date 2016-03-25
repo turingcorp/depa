@@ -1,9 +1,8 @@
 #import "appdel.h"
-#import "mconfigprotocol.h"
+#import "mconfigsection.h"
 
 @interface mconfig:NSObject
 
--(NSUInteger)count;
--(id<mconfigprotocol>)item:(NSUInteger)index;
+@property(strong, nonatomic)NSArray<mconfigsection*> *sections;
 
 @end

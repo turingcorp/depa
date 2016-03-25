@@ -8,36 +8,34 @@
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor whiteColor]];
     
-    UIColor *color = [UIColor colorWithRed:1 green:0.33 blue:0 alpha:1];
-    
     UIImageView *image = [[UIImageView alloc] init];
     [image setClipsToBounds:YES];
     [image setContentMode:UIViewContentModeScaleAspectFit];
     [image setUserInteractionEnabled:NO];
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setImage:[[UIImage imageNamed:@"no"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    [image setTintColor:color];
+    [image setTintColor:colormain];
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setFont:[UIFont fontWithName:fontboldname size:25]];
-    [label setTextColor:color];
+    [label setFont:[UIFont fontWithName:fontboldname size:20]];
+    [label setTextColor:[UIColor blackColor]];
     [label setTextAlignment:NSTextAlignmentCenter];
     
     UILabel *info = [[UILabel alloc] init];
     [info setBackgroundColor:[UIColor clearColor]];
     [info setUserInteractionEnabled:NO];
     [info setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [info setFont:[UIFont fontWithName:fontname size:19]];
-    [info setTextColor:[UIColor colorWithWhite:0 alpha:0.8]];
+    [info setFont:[UIFont fontWithName:fontname size:17]];
+    [info setTextColor:[UIColor colorWithWhite:0 alpha:0.6]];
     [info setTextAlignment:NSTextAlignmentCenter];
     [info setNumberOfLines:0];
     [info setText:NSLocalizedString(@"config_item_no_info", nil)];
     
     UIButton *button = [[UIButton alloc] init];
-    [button setBackgroundColor:color];
+    [button setBackgroundColor:colormain];
     [button setClipsToBounds:YES];
     [button setTranslatesAutoresizingMaskIntoConstraints:NO];
     [button.titleLabel setFont:[UIFont fontWithName:fontboldname size:15]];
@@ -59,19 +57,21 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-30-[info]-30-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[button]-80-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[image(150)]-(-25)-[label]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[info]-10-[button(40)]-100-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[image(80)]-(-12)-[label]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[info]-10-[button(40)]-150-|" options:0 metrics:metrics views:views]];
+    
+    __weak typeof(self) weakself = self;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
                        NSNumber *value = [mdb itemsfor:item_status_no];
-                       NSString *valuestring = [[tools singleton] numbertostring:value];
+                       weakself.valueno = [[tools singleton] numbertostring:value];
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
-                                          [label setText:valuestring];
+                                          [label setText:weakself.valueno];
                                       });
                    });
     
@@ -89,11 +89,13 @@
 
 -(void)clearlist
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
                        [mdb clear:item_status_no];
-                       [[analytics singleton] trackevent:ga_event_clear action:ga_action_no label:nil];
+                       [[analytics singleton] trackevent:ga_event_clear action:ga_action_no label:weakself.valueno];
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^

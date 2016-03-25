@@ -58,6 +58,7 @@
 +(NSString*)cleanlatin:(NSString*)string
 {
     NSString *str = [string stringByReplacingOccurrencesOfString:@"&ntilde;" withString:@"ñ"];
+    str = [str stringByReplacingOccurrencesOfString:@"&Ntilde;" withString:@"Ñ"];
     str = [str stringByReplacingOccurrencesOfString:@"&aacute;" withString:@"á"];
     str = [str stringByReplacingOccurrencesOfString:@"&Aacute;" withString:@"Á"];
     str = [str stringByReplacingOccurrencesOfString:@"&eacute;" withString:@"é"];
@@ -71,6 +72,97 @@
     str = [str stringByReplacingOccurrencesOfString:@"&#34;" withString:@"\""];
     
     return str;
+}
+
++(NSString*)cleanwhite:(NSString*)string
+{
+    NSString *str = [string stringByReplacingOccurrencesOfString:@"  " withString:@" "];
+    str = [str stringByReplacingOccurrencesOfString:@"  " withString:@" "];
+    str = [str stringByReplacingOccurrencesOfString:@"\n " withString:@"\n"];
+    str = [str stringByReplacingOccurrencesOfString:@".\n" withString:@".\n\n"];
+    str = [str stringByReplacingOccurrencesOfString:@". " withString:@".\n\n"];
+    str = [str stringByReplacingOccurrencesOfString:@"\n\n\n\n" withString:@"\n\n"];
+    str = [str stringByReplacingOccurrencesOfString:@"\n\n\n" withString:@"\n\n"];
+    
+    return str;
+}
+
++(NSString*)capitalfirst:(NSString*)string
+{
+    NSMutableString *result = [NSMutableString string];
+    NSArray *components = [string componentsSeparatedByString:@"."];
+    NSUInteger count = components.count;
+    
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        NSString *instring = components[i];
+        NSUInteger length = instring.length;
+        
+        if(i)
+        {
+            [result appendString:@"."];
+        }
+        
+        if(length)
+        {
+            NSUInteger index = 0;
+            
+            for(NSUInteger j = 0; j < length; j++)
+            {
+                char c = [instring characterAtIndex:j];
+                
+                if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'))
+                {
+                    index = j + 1;
+                    j = length;
+                }
+            }
+            
+            NSString *rawprefix = [instring substringToIndex:index].uppercaseString;
+            [result appendString:rawprefix];
+            
+            if(index < length)
+            {
+                NSString *rawsuffix = [instring substringFromIndex:index].lowercaseString;
+                [result appendString:rawsuffix];
+            }
+        }
+    }
+    
+    return result;
+}
+
++(NSString*)removehtml:(NSString*)string
+{
+    NSMutableString *str = [NSMutableString string];
+    NSUInteger count = string.length;
+    
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        char c = [string characterAtIndex:i];
+        
+        if(c == '<')
+        {
+            for(++i; i < count; i++)
+            {
+                c = [string characterAtIndex:i];
+                
+                if(c == '>')
+                {
+                    break;
+                }
+            }
+        }
+        else
+        {
+            [str appendFormat:@"%c", c];
+        }
+    }
+    
+    NSString *strnochars = [str stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@" "];
+    strnochars = [strnochars stringByReplacingOccurrencesOfString:@"&deg;" withString:@"°"];
+    
+    return strnochars;
 }
 
 #pragma mark -
@@ -106,7 +198,15 @@
 
 -(NSString*)pricetostring:(NSNumber*)number currency:(NSString*)currency
 {
-    [priceformatter setCurrencyCode:currency];
+    if([currency.lowercaseString isEqualToString:@"usd"])
+    {
+        [priceformatter setCurrencySymbol:@"USD $ "];
+    }
+    else
+    {
+        [priceformatter setCurrencySymbol:@"$ "];
+    }
+    
     NSString *string = [priceformatter stringFromNumber:number];
     
     return string;

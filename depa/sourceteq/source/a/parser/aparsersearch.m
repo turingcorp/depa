@@ -42,20 +42,11 @@
 
             if(!item || item.status == item_status_none)
             {
-                rawtitle = itemresults[@"title"];
+                rawtitle = [tools cleanlatin:itemresults[@"title"]];
+                rawtitle = [tools capitalfirst:rawtitle];
                 rawthumb = itemresults[@"thumbnail"];
                 rawcurrency = itemresults[@"currency_id"];
                 rawprice = itemresults[@"price"];
-                
-                if(rawtitle.length > 1)
-                {
-                    NSString *rawtitleprefix = [rawtitle substringToIndex:1].uppercaseString;
-                    NSString *rawtitlesuffix = [rawtitle substringFromIndex:1].lowercaseString;
-                    rawtitle = [NSString stringWithFormat:
-                                @"%@%@",
-                                rawtitleprefix, rawtitlesuffix];
-                }
-                
                 rawthumb = [rawthumb stringByReplacingOccurrencesOfString:@"-I." withString:@"-O."];
                 
                 if(!item)

@@ -5,12 +5,13 @@
 -(instancetype)init
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    [self setTitle:@""];
+    
+    self.itemliked = [[UIBarButtonItem alloc] initWithCustomView:[[vlikedbutton alloc] init:self]];
     self.itemplay = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"play"] style:UIBarButtonItemStylePlain target:self action:@selector(actionplay:)];
     self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
     self.itemconfig = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"filter"] style:UIBarButtonItemStylePlain target:self action:@selector(actionconfig:)];
     self.itemconfig.imageInsets = UIEdgeInsetsMake(0, -14, 0, 0);
-    self.itemfavorites = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"liked"] style:UIBarButtonItemStylePlain target:self action:@selector(actionfavorites:)];
-    self.itemfavorites.imageInsets = UIEdgeInsetsMake(0, -14, 0, 14);
     
     UIImageView *titleview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [titleview setUserInteractionEnabled:NO];
@@ -66,6 +67,7 @@
 
 -(void)changecontroller:(UIViewController*)controller direction:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
+    self.current = controller;
     NSArray *array = @[controller];
     [self setViewControllers:array direction:direction animated:animated completion:nil];
 }
@@ -75,8 +77,8 @@
     [self.titleview setImage:[[UIImage imageNamed:@"play"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     
     [self changecontroller:[[cplay alloc] init:sync] direction:direction animated:animated];
-    [self.navigationItem setRightBarButtonItem:self.itemfavorites];
-    [self.navigationItem setLeftBarButtonItem:self.itemconfig];
+    [self.navigationItem setRightBarButtonItem:self.itemliked animated:YES];
+    [self.navigationItem setLeftBarButtonItem:self.itemconfig animated:YES];
 }
 
 -(void)showconfig:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
@@ -86,8 +88,8 @@
     self.itemplay.tag = UIPageViewControllerNavigationDirectionForward;
     self.itemplay.imageInsets = UIEdgeInsetsMake(0, -14, 0, 14);
     [self changecontroller:[[cconfig alloc] init] direction:direction animated:animated];
-    [self.navigationItem setRightBarButtonItem:self.itemplay];
-    [self.navigationItem setLeftBarButtonItem:nil];
+    [self.navigationItem setRightBarButtonItem:self.itemplay animated:YES];
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
 }
 
 -(void)showfavorites:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
@@ -97,8 +99,8 @@
     self.itemplay.tag = UIPageViewControllerNavigationDirectionReverse;
     self.itemplay.imageInsets = UIEdgeInsetsMake(0, -14, 0, 0);
     [self changecontroller:[[cliked alloc] init] direction:direction animated:animated];
-    [self.navigationItem setRightBarButtonItem:nil];
-    [self.navigationItem setLeftBarButtonItem:self.itemplay];
+    [self.navigationItem setRightBarButtonItem:nil animated:YES];
+    [self.navigationItem setLeftBarButtonItem:self.itemplay animated:YES];
 }
 
 #pragma mark public
@@ -106,6 +108,16 @@
 -(void)openconfig
 {
     [self actionconfig:nil];
+}
+
+-(void)openfavorites
+{
+    [self actionfavorites:nil];
+}
+
+-(void)recallplay
+{
+    [self showplay:UIPageViewControllerNavigationDirectionForward animated:NO sync:YES];
 }
 
 @end

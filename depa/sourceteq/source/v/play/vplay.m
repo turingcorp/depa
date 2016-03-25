@@ -1,5 +1,7 @@
 #import "vplay.h"
 
+static NSUInteger const menuheight = 100;
+
 @implementation vplay
 
 -(instancetype)init:(cplayitem*)controller
@@ -18,11 +20,11 @@
     [self addSubview:menu];
     
     NSDictionary *views = @{@"item":item, @"menu":menu};
-    NSDictionary *metrics = @{};
+    NSDictionary *metrics = @{@"menuheight":@(menuheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[item]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[item]-0-[menu(100)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[item]-0-[menu(menuheight)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

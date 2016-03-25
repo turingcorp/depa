@@ -1,11 +1,19 @@
 #import "cconfig.h"
 
+@interface cconfig ()
+
+@property(strong, nonatomic)vconfig *view;
+
+@end
+
 @implementation cconfig
+
+@dynamic view;
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [(vconfig*)self.view didappear];
+    [self.view didappear];
 }
 
 -(void)viewDidLoad

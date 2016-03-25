@@ -9,7 +9,7 @@
     
     self.variables = variables;
     self.post = NO;
-    self.timeout = 18;
+    self.timeout = 25;
     self.keyforserver = @"server";
     self.keyforendpoint = @"";
     self.cachepolicy = NSURLRequestReloadIgnoringLocalCacheData;
@@ -58,8 +58,12 @@
         [request setHTTPMethod:@"POST"];
         [request setHTTPBody:bodydata];
     }
+
+#if DEBUG
     
-//    NSLog(@"%@", urlstring);
+    NSLog(@"%@", urlstring);
+    
+#endif
     
     return request;
 }

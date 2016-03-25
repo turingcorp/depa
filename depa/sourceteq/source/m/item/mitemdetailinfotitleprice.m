@@ -1,36 +1,40 @@
 #import "mitemdetailinfotitleprice.h"
 
+static NSUInteger const marginvertical = 30;
+static NSUInteger const marginhorizontal = 20;
+
 @implementation mitemdetailinfotitleprice
 {
     NSMutableAttributedString *mutstring;
     CGFloat cellheight;
-    CGFloat marginvertical;
-    CGFloat marginhorizontal;
-}
-
--(instancetype)init
-{
-    self = [super init];
-    
-    marginvertical = 15;
-    marginhorizontal = 20;
-    
-    return self;
 }
 
 #pragma mark -
 #pragma amrk detail info protocol
 
--(void)config:(mitemdetail*)item collection:(UICollectionView*)collection
+-(void)config:(mitemdetail*)item view:(vitem*)view
 {
-    NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:19], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.5]};
-    NSDictionary *attrprice = @{NSFontAttributeName:[UIFont fontWithName:fontname size:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.35]};
-    mutstring = [[NSMutableAttributedString alloc] init];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemtitle attributes:attrtitle]];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:attrprice]];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemprice attributes:attrprice]];
+    NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:21], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.8]};
+    NSDictionary *attrprice = @{NSFontAttributeName:[UIFont fontWithName:fontname size:26], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
+    NSString *stringprice = item.itemprice;
+    NSString *stringtitle = item.itemtitle;
     
-    CGFloat colwidth = collection.bounds.size.width;
+    if(!stringprice)
+    {
+        stringprice = @"";
+    }
+    
+    if(!stringtitle)
+    {
+        stringtitle = @"";
+    }
+    
+    mutstring = [[NSMutableAttributedString alloc] init];
+    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:stringprice attributes:attrprice]];
+    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:attrprice]];
+    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:stringtitle attributes:attrtitle]];
+    
+    CGFloat colwidth = view.bounds.size.width;
     CGFloat textwidth = colwidth - (marginhorizontal * 2);
     CGFloat textheight = ceilf([mutstring boundingRectWithSize:CGSizeMake(textwidth, 2000) options:stringdrawing context:nil].size.height);
     cellheight = textheight + (marginvertical * 2);

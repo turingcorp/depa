@@ -6,7 +6,7 @@
 {
     self = [super init:controller];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
+    [self setBackgroundColor:[UIColor colorWithWhite:0.96 alpha:1]];
 
     self.model = [[mliked alloc] init];
     vlikedflow *flow = [[vlikedflow alloc] init:self.model];
@@ -30,9 +30,9 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addheader];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedupdateliked:) name:notlikedloaded object:nil];
+    [self.model load];
     
     return self;
 }
@@ -46,11 +46,13 @@
 
 -(void)notifiedupdateliked:(NSNotification*)notification
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       [self.collection reloadData];
-                       [self addheader];
+                       [weakself addheader];
+                       [weakself.collection reloadData];
                    });
 }
 
@@ -60,7 +62,7 @@
 {
     [self.header removeFromSuperview];
     
-    if(![self.model count])
+    if(!self.model.items.count)
     {
         vlikedheader *header = [[vlikedheader alloc] init];
         self.header = header;
@@ -91,26 +93,29 @@
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger count = [self.model count];
+    NSUInteger count = self.model.items.count;
     
     return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    mlikeditem *model = self.model.items[index.item];
     vlikedcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
-    [cel config:[self.model item:index.item]];
+    [cel config:model];
     
     return cel;
 }
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    mlikeditem *item = [self.model item:index.item];
+    mlikeditem *item = self.model.items[index.item];
     mitemdetail *itemdetail = [[mitemdetail alloc] init:item.itemid];
     itemdetail.mode = item.mode;
     itemdetail.type = item.type;
     itemdetail.contactphone = item.contactphone;
+    itemdetail.status = item_status_like;
+    itemdetail.dbid = item.dbid;
     
     [citem show:itemdetail];
 }

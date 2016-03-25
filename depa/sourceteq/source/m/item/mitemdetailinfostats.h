@@ -4,7 +4,6 @@
 
 @interface mitemdetailinfostats:NSObject<mitemdetailinfoprotocol>
 
--(NSUInteger)count;
--(id<mitemdetailinfostatsprotocol>)item:(NSUInteger)index;
+@property(strong, nonatomic)NSMutableArray<id<mitemdetailinfostatsprotocol>> *items;
 
 @end

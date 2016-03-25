@@ -1,12 +1,16 @@
 #import "vconfigloclist.h"
 
+static NSUInteger const cellheight = 65;
+static NSUInteger const headerminheight = 100;
+static NSUInteger const headermaxheight = 260;
+
 @implementation vconfigloclist
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
+    [self setBackgroundColor:[UIColor clearColor]];
 
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
@@ -53,7 +57,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[spinner(80)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-120-[spinner(40)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[retry]-80-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-140-[retry(40)]" options:0 metrics:metrics views:views]];
     
@@ -83,10 +87,12 @@
 
 -(void)notifiedloclistitemfetched:(NSNotification*)notification
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       [self refreshcol];
+                       [weakself refreshcol];
                    });
 }
 
@@ -132,14 +138,16 @@
 
 -(void)load:(mconfigloclistitem*)item
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       self.model = item;
-                       [self.buttonretry setHidden:YES];
-                       [self.collection setHidden:YES];
-                       [self.spinner setHidden:NO];
-                       [self.spinner startAnimating];
+                       weakself.model = item;
+                       [weakself.buttonretry setHidden:YES];
+                       [weakself.collection setHidden:YES];
+                       [weakself.spinner setHidden:NO];
+                       [weakself.spinner startAnimating];
                        
                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                                       ^
@@ -151,9 +159,16 @@
 
 -(void)accept
 {
-    [[analytics singleton] trackevent:ga_event_location action:ga_action_list label:nil];
+    NSString *locationpath = [self.model path];
     
-    [[msettings singleton] changecountry:self.model.country location:[self.model path] locationname:self.model.title];
+    [[analytics singleton] trackevent:ga_event_location action:ga_action_list label:locationpath];
+    [[msettings singleton] changecountry:self.model.country location:locationpath locationname:self.model.title];
+    
+    if([[cmain singleton].pages.current isKindOfClass:[cplay class]])
+    {
+        [[cmain singleton].pages recallplay];
+    }
+    
     [[cmain singleton] popViewControllerAnimated:YES];
 }
 
@@ -168,11 +183,11 @@
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
 {
-    CGFloat height = 70;
+    CGFloat height = headerminheight;
     
     if(self.model.parent)
     {
-        height = 230;
+        height = headermaxheight;
     }
     
     CGSize size = CGSizeMake(col.bounds.size.width, height);
@@ -182,7 +197,7 @@
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGSize size = CGSizeMake(col.bounds.size.width, 65);
+    CGSize size = CGSizeMake(col.bounds.size.width, cellheight);
     
     return size;
 }

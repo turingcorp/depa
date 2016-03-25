@@ -1,6 +1,24 @@
 #import "citem.h"
 
+typedef NS_ENUM(NSUInteger, item_loaded)
+{
+    item_loaded_none,
+    item_loaded_info,
+    item_loaded_descr
+};
+
+@interface citem ()
+
+@property(strong, nonatomic)vitem *view;
+
+@end
+
 @implementation citem
+{
+    item_loaded loaded;
+}
+
+@dynamic view;
 
 +(void)show:(mitemdetail*)item
 {
@@ -13,7 +31,7 @@
     self = [super init];
     
     self.item = item;
-    [self createtitle];
+    loaded = item_loaded_none;
     
     return self;
 }
@@ -44,7 +62,6 @@
 -(void)loadView
 {
     self.view = [[vitem alloc] init:self];
-    self.viewitem = (vitem*)self.view;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -59,44 +76,14 @@
 
 #pragma mark functionality
 
--(void)createtitle
+-(void)loaditem
 {
-    NSMutableString *displaytitle = [NSMutableString string];
-    
-    switch(self.item.type)
-    {
-        case search_type_house:
-            
-            [displaytitle appendString:NSLocalizedString(@"search_type_house", nil)];
-            
-            break;
-            
-        case search_type_apartment:
-            
-            [displaytitle appendString:NSLocalizedString(@"search_type_flat", nil)];
-            
-            break;
-    }
-    
-    [displaytitle appendString:@" "];
-    
-    switch(self.item.mode)
-    {
-        case search_mode_rent:
-            
-            [displaytitle appendString:NSLocalizedString(@"search_mode_rent", nil)];
-            
-            break;
-            
-        case search_mode_buy:
-            
-            [displaytitle appendString:NSLocalizedString(@"search_mode_buy", nil)];
-            
-            break;
-    }
-    
-    self.item.displaytitle = displaytitle;
-    [self setTitle:displaytitle];
+    self.manager = [amanager call:[[acallitem alloc] init:self.item.itemid] delegate:self];
+}
+
+-(void)loaddescr
+{
+    self.manager = [amanager call:[[acalldesc alloc] init:self.item.itemid] delegate:self];
 }
 
 #pragma mark public
@@ -108,10 +95,24 @@
 
 -(void)tryagain
 {
-    if(!self.manager)
+    [self.manager cancelcall];
+    
+    switch(loaded)
     {
-        amanager *manager = [amanager call:[[acallitem alloc] init:self.item.itemid] delegate:self];
-        self.manager = manager;
+        case item_loaded_none:
+            
+            [self loaditem];
+            
+            break;
+            
+        case item_loaded_info:
+            
+            [self loaddescr];
+            
+            break;
+            
+        case item_loaded_descr:
+            break;
     }
 }
 
@@ -136,61 +137,50 @@
         self.item.longitude = parser.longitude;
         self.item.meters = parser.meters;
         self.item.rooms = parser.rooms;
+        self.item.baths = parser.baths;
         self.item.garages = parser.garages;
         self.item.itemprice = [[tools singleton] pricetostring:parser.itemprice currency:parser.itemcurrency];
+        [self.view.model loaditem:self.item];
         
-        mitemdetailinfostats *infostats = [[mitemdetailinfostats alloc] init];
-        [infostats config:self.item collection:self.viewitem.collection];
-        
-        mitemdetailinfoaddress *infoaddress = [[mitemdetailinfoaddress alloc] init];
-        [infoaddress config:self.item collection:self.viewitem.collection];
-        
-        mitemdetailinfotitleprice *infotitleprice = [[mitemdetailinfotitleprice alloc] init];
-        [infotitleprice config:self.item collection:self.viewitem.collection];
-        
-        [self.viewitem.model add:infostats];
-        [self.viewitem.model add:infoaddress];
-        [self.viewitem.model add:infotitleprice];
+        __weak typeof(self) weakself = self;
         
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [self.viewitem itemloaded];
-                           
-                           amanager *manager = [amanager call:[[acalldesc alloc] init:self.item.itemid] delegate:self];
-                           self.manager = manager;
+                           loaded = item_loaded_info;
+                           [weakself.view itemloaded];
+                           [weakself loaddescr];
                        });
     }
     else
     {
         aparserdesc *parser = (aparserdesc*)manager.call.parser;
         self.item.itemdesc = parser.itemdesc;
+        [self.view.model adddescription];
         
-        mitemdetailinfodesc *infodesc = [[mitemdetailinfodesc alloc] init];
-        [infodesc config:self.item collection:self.viewitem.collection];
-        
-        [self.viewitem.model add:infodesc];
+        __weak typeof(self) weakself = self;
         
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [self.viewitem descriptionloaded];
+                           loaded = item_loaded_descr;
+                           [weakself.view descriptionloaded];
                        });
     }
 }
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-    self.manager = nil;
-    
     if([manager.call isKindOfClass:[acallitem class]])
     {
-        [valert alert:error inview:self.viewitem offsettop:65];
+        [valert alert:error inview:self.view offsettop:65];
+        
+        __weak typeof(self) weakself = self;
         
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [self.viewitem errorloading];
+                           [weakself.view errorloading];
                        });
     }
 }

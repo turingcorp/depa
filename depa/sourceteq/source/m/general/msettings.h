@@ -8,8 +8,11 @@
 @interface msettings:NSObject
 
 +(instancetype)singleton;
+-(void)loadsettings;
 -(void)save;
 -(void)changecountry:(mcountryitem*)country location:(NSString*)location locationname:(NSString*)locationname;
+-(void)changesearchmode:(id<mconfigmodprotocol>)model;
+-(NSString*)pricerange;
 
 @property(strong, nonatomic)id<mconfigmodprotocol> searchmode;
 @property(strong, nonatomic)id<mconfigtypprotocol> searchtype;
@@ -17,5 +20,7 @@
 @property(copy, nonatomic)NSString *location;
 @property(copy, nonatomic)NSString *locationname;
 @property(weak, nonatomic)mcountryitem *country;
+@property(nonatomic)NSUInteger maxprice;
+@property(nonatomic)NSUInteger minprice;
 
 @end

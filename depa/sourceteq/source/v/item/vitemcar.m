@@ -1,140 +1,265 @@
 #import "vitemcar.h"
 
+static CGFloat const threshold = 80.0;
+
+typedef NS_ENUM(NSUInteger, pandirection)
+{
+    pandirection_right,
+    pandirection_left
+};
+
 @implementation vitemcar
 {
-    CGFloat cellwidth;
-    CGFloat cellheight;
-    CGFloat interline;
+    pandirection direction;
+    CGPoint startingpoint;
+    CGFloat initialoffsety;
+    CGFloat newoffsety;
+    CGFloat deltax;
 }
 
 -(instancetype)init:(citem*)controller
 {
     self = [super init];
-    [self setBackgroundColor:[UIColor colorWithWhite:0.92 alpha:1]];
+    [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
-    
     self.controller = controller;
-    cellwidth = 0;
-    cellheight = 0;
-    interline = 0;
+    self.images = self.controller.item.images.items;
+    self.currentindex = 0;
     
-    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
-    [flow setHeaderReferenceSize:CGSizeZero];
-    [flow setFooterReferenceSize:CGSizeZero];
-    [flow setMinimumInteritemSpacing:0];
-    [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    [flow setSectionInset:UIEdgeInsetsMake(2, 0, 2, 0)];
+    vitemcarcel *cellcurrent = [[vitemcarcel alloc] init];
+    self.cellcurrent = cellcurrent;
     
-    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
-    [collection setBackgroundColor:[UIColor clearColor]];
-    [collection setClipsToBounds:YES];
-    [collection setShowsHorizontalScrollIndicator:NO];
-    [collection setShowsVerticalScrollIndicator:NO];
-    [collection setAlwaysBounceHorizontal:YES];
-    [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [collection setDataSource:self];
-    [collection setDelegate:self];
-    [collection registerClass:[vitemcarcel class] forCellWithReuseIdentifier:celid];
-    self.collection = collection;
-
-    vitemcarpaging *paging = [[vitemcarpaging alloc] init:controller];
-    self.paging = paging;
+    vitemcarcel *cellnext = [[vitemcarcel alloc] init];
+    self.cellnext = cellnext;
     
-    [self addSubview:collection];
-    [self addSubview:paging];
+    [self addSubview:cellcurrent];
+    [self addSubview:cellnext];
     
-    NSDictionary *views = @{@"col":collection, @"paging":paging};
+    NSDictionary *views = @{@"cellcurrent":cellcurrent, @"cellnext":cellnext};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[paging]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[paging(11)]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[cellcurrent]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[cellcurrent]-1-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[cellnext]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[cellnext]-1-|" options:0 metrics:metrics views:views]];
+
+    UIPanGestureRecognizer *pangesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(actionpanning:)];
+    self.pangesture = pangesture;
+    [self addGestureRecognizer:pangesture];
     
     return self;
 }
 
--(void)layoutSubviews
+#pragma mark actions
+
+-(void)actionpanning:(UIPanGestureRecognizer*)panning
 {
-    [self.collection.collectionViewLayout invalidateLayout];
-    [super layoutSubviews];
+    CGPoint newpoint;
+    
+    switch(panning.state)
+    {
+        case UIGestureRecognizerStateBegan:
+        case UIGestureRecognizerStatePossible:
+            
+            if(!self.maincollection)
+            {
+                self.maincollection = ((vitem*)self.controller.view).collection;
+            }
+            
+            startingpoint = [panning locationInView:self];
+            initialoffsety = self.maincollection.contentOffset.y;
+            
+            break;
+            
+        case UIGestureRecognizerStateChanged:
+            
+            newpoint = [panning locationInView:self];
+            [self movepan:newpoint];
+            
+            break;
+            
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateFailed:
+        case UIGestureRecognizerStateCancelled:
+            
+            [self endedpanning];
+            
+            break;
+    }
+}
+
+#pragma mark functionality
+
+-(void)verticalpanning:(CGFloat)movey
+{
+    newoffsety = initialoffsety - movey;
+    
+    CGPoint newoffset = CGPointMake(0, newoffsety);
+    [self.maincollection setContentOffset:newoffset animated:NO];
+}
+
+-(void)endedpanning
+{
+    if(newoffsety < 0)
+    {
+        [self.maincollection setContentOffset:CGPointZero animated:YES];
+    }
+    
+    if(self.nextimage)
+    {
+        BOOL changeimage = NO;
+        
+        if(direction == pandirection_left)
+        {
+            CGFloat minthreshold = threshold / 2.0;
+            
+            if(deltax > minthreshold)
+            {
+                self.currentindex--;
+                changeimage = YES;
+            }
+        }
+        else if(direction == pandirection_right)
+        {
+            CGFloat minthreshold = threshold / -2.0;
+            
+            if(deltax < minthreshold)
+            {
+                self.currentindex++;
+                changeimage = YES;
+            }
+        }
+        
+        if(changeimage)
+        {
+            __weak typeof(self.cellnext) auxcell = self.cellcurrent;
+            self.cellcurrent = self.cellnext;
+            self.cellnext = auxcell;
+        }
+        
+        self.nextimage = nil;
+        
+        [UIView animateWithDuration:0.4 animations:
+         ^
+         {
+             [self.cellcurrent setAlpha:1];
+             [self.cellnext setAlpha:0];
+         }];
+    }
+    
+    [self bouncepaging];
+}
+
+-(void)panalpha
+{
+    CGFloat alphacurrent;
+    CGFloat alphanext;
+    
+    if(direction == pandirection_left)
+    {
+        alphacurrent = (threshold - deltax) / threshold;
+        alphanext = deltax / threshold;
+    }
+    else
+    {
+        alphacurrent = (threshold - (-deltax)) / threshold;
+        alphanext = -deltax / threshold;
+    }
+    
+    if(alphacurrent < 0)
+    {
+        alphacurrent = 0;
+    }
+    else if(alphacurrent > 1)
+    {
+        alphacurrent = 1;
+    }
+    
+    if(alphanext < 0)
+    {
+        alphanext = 0;
+    }
+    else if(alphanext > 1)
+    {
+        alphanext = 1;
+    }
+    
+    [self.cellnext setAlpha:alphanext];
+    [self.cellcurrent setAlpha:alphacurrent];
+}
+
+-(void)movepan:(CGPoint)point
+{
+    CGFloat deltay = point.y - startingpoint.y;
+    deltax = point.x - startingpoint.x;
+    
+    [self verticalpanning:deltay];
+    
+    if(self.nextimage)
+    {
+        [self panalpha];
+    }
+    else
+    {
+        if(deltax > 0)
+        {
+            if(self.currentindex)
+            {
+                self.nextimage = self.images[self.currentindex - 1];
+                direction = pandirection_left;
+            }
+        }
+        else if(deltax < 0)
+        {
+            if(self.currentindex < self.images.count - 1)
+            {
+                self.nextimage = self.images[self.currentindex + 1];
+                direction = pandirection_right;
+            }
+        }
+        
+        if(self.nextimage)
+        {
+            [self.cellnext config:self.nextimage];
+            [self panalpha];
+        }
+    }
+}
+
+-(void)bouncepaging
+{
+    NSIndexPath *indexpath = [NSIndexPath indexPathForItem:self.currentindex inSection:0];
+    [self.paging.collection selectItemAtIndexPath:indexpath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
 }
 
 #pragma mark public
 
 -(void)refresh
 {
-    cellwidth = self.collection.bounds.size.width;
-    
-    if(cellwidth > 900)
+    if(self.controller.item.images.items.count)
     {
-        cellwidth = 700;
-        interline = 3;
-        [self.collection setPagingEnabled:NO];
-    }
-    else
-    {
-        interline = 0;
-        [self.collection setPagingEnabled:YES];
-    }
-    
-    [self.collection reloadData];
-    [self.paging.collection reloadData];
-    
-    if([self.controller.item.images count])
-    {
-        [self.paging.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+        [self selectitem:0];
+        [self bouncepaging];
     }
 }
 
-#pragma mark -
-#pragma mark col del
-
--(void)scrollViewDidScroll:(UIScrollView*)scroll
+-(void)loadpaging:(vitemcarpaging*)paging
 {
-    CGFloat leftoffset = scroll.contentOffset.x;
-    
-    CGPoint point = CGPointMake(leftoffset + (scroll.bounds.size.width / 2.0), 3);
-    NSIndexPath *index = [self.collection indexPathForItemAtPoint:point];
-    
-    if(index)
-    {
-        [self.paging.collection selectItemAtIndexPath:index animated:NO scrollPosition:UICollectionViewScrollPositionNone];
-    }
+    self.paging = paging;
+    [self bouncepaging];
 }
 
--(CGFloat)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+-(void)selectitem:(NSUInteger)index
 {
-    return interline;
-}
-
--(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
-{
-    cellheight = col.bounds.size.height - 4;
-    CGSize size = CGSizeMake(cellwidth, cellheight);
+    [self.pangesture setEnabled:NO];
+    self.currentindex = index;
+    self.nextimage = nil;
     
-    return size;
-}
-
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
-{
-    return 1;
-}
-
--(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
-{
-    NSUInteger count = [self.controller.item.images count];
-    
-    return count;
-}
-
--(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
-{
-    vitemcarcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
-    [cel config:[self.controller.item.images item:index.item]];
-    
-    return cel;
+    [self.cellcurrent config:self.images[index]];
+    [self.cellcurrent setAlpha:1];
+    [self.cellnext setAlpha:0];
+    [self.pangesture setEnabled:YES];
 }
 
 @end

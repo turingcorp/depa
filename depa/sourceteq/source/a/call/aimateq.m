@@ -18,10 +18,11 @@
     NSString *queuename = @"imagedispatch";
     self.queue = dispatch_queue_create(queuename.UTF8String, DISPATCH_QUEUE_SERIAL);
     dispatch_set_target_queue(self.queue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
-    dispatch_async(self.queue,
+    __weak typeof(self) weakself = self;
+    dispatch_async(weakself.queue,
                    ^
                    {
-                       self.items = [NSMutableArray array];
+                       weakself.items = [NSMutableArray array];
                    });
     
     NSOperationQueue *operation = [[NSOperationQueue alloc] init];
@@ -37,14 +38,19 @@
 
 -(void)imageerror:(NSString*)error
 {
-//    NSLog(@"Image error: %@", error);
+#if DEBUG
+    
+    NSLog(@"Image error: %@", error);
+    
+#endif
 }
 
 #pragma mark public
 
 -(void)addtoqueue:(aimateqitem*)item
 {
-    dispatch_async(self.queue,
+    __weak typeof(self) weakself = self;
+    dispatch_async(weakself.queue,
                    ^
                    {
                        if(!item.task)
@@ -54,7 +60,7 @@
                            NSURL *url = [NSURL URLWithString:item.url];
                            NSURLSessionDownloadTask *task = [self.session downloadTaskWithURL:url];
                            item.task = task;
-                           [self.items addObject:item];
+                           [weakself.items addObject:item];
                            [task resume];
                        }
                    });
@@ -80,18 +86,19 @@
     
     if(image)
     {
-        dispatch_async(self.queue,
+        __weak typeof(self) weakself = self;
+        dispatch_async(weakself.queue,
                        ^
                        {
-                           NSUInteger count = self.items.count;
+                           NSUInteger count = weakself.items.count;
                            
                            for(NSUInteger i = 0; i < count; i++)
                            {
-                               aimateqitem *item = self.items[i];
+                               aimateqitem *item = weakself.items[i];
                                
                                if(item.task == task)
                                {
-                                   [self.items removeObjectAtIndex:i];
+                                   [weakself.items removeObjectAtIndex:i];
                                    item.image = image;
                                    [[NSNotificationCenter defaultCenter] postNotificationName:notimageloaded object:nil userInfo:[item userinfo]];
                                    

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */; };
+		DA0ABA971C9C573300E023C3 /* vitemceladdress.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA961C9C573300E023C3 /* vitemceladdress.m */; };
+		DA0ABA9D1C9C808B00E023C3 /* vplayiteminfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA9C1C9C808B00E023C3 /* vplayiteminfo.m */; };
+		DA0ABAA01C9DDADD00E023C3 /* vplayitemimagelike.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA9F1C9DDADD00E023C3 /* vplayitemimagelike.m */; };
+		DA0ABAA31C9DDF0B00E023C3 /* vplayitemimagelikestar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABAA21C9DDF0B00E023C3 /* vplayitemimagelikestar.m */; };
+		DA0ABAA61C9F12D800E023C3 /* vbadge.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABAA51C9F12D800E023C3 /* vbadge.m */; };
+		DA0ABAA91C9F164C00E023C3 /* vlikedbutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABAA81C9F164C00E023C3 /* vlikedbutton.m */; };
 		DA121A231C87381E00D2B67E /* mconfigsorrelevance.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A221C87381E00D2B67E /* mconfigsorrelevance.m */; };
 		DA121A261C8738FD00D2B67E /* mconfigsort.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A251C8738FD00D2B67E /* mconfigsort.m */; };
 		DA121A291C87397700D2B67E /* vconfigsort.m in Sources */ = {isa = PBXBuildFile; fileRef = DA121A281C87397700D2B67E /* vconfigsort.m */; };
@@ -51,8 +57,6 @@
 		DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A91C77D14900FE44B0 /* aimateq.m */; };
 		DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */; };
 		DA2427B01C77F17B00FE44B0 /* vplayitemheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */; };
-		DA2427B31C77F2DE00FE44B0 /* vplayitemfooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427B21C77F2DE00FE44B0 /* vplayitemfooter.m */; };
-		DA2427B61C77F61100FE44B0 /* vplayitemmiddle.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */; };
 		DA2427B91C783D7A00FE44B0 /* vplayitemimage.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427B81C783D7A00FE44B0 /* vplayitemimage.m */; };
 		DA2427CD1C7863A100FE44B0 /* cplayempty.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427CC1C7863A100FE44B0 /* cplayempty.m */; };
 		DA2427D01C7863E800FE44B0 /* vplayempty.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427CF1C7863E800FE44B0 /* vplayempty.m */; };
@@ -100,6 +104,8 @@
 		DA3173201C7CF65800B6CEF7 /* aparserlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA31731F1C7CF65800B6CEF7 /* aparserlocation.m */; };
 		DA3173231C7CF7D400B6CEF7 /* acalllocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173221C7CF7D400B6CEF7 /* acalllocation.m */; };
 		DA3173261C7D175C00B6CEF7 /* sconfigloccity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3173251C7D175C00B6CEF7 /* sconfigloccity.m */; };
+		DA3422B61CA46F0200941F10 /* mitemdetailinfostatsbaths.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3422B51CA46F0200941F10 /* mitemdetailinfostatsbaths.m */; };
+		DA3422B91CA4851200941F10 /* vitemlocationannotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3422B81CA4851200941F10 /* vitemlocationannotation.m */; };
 		DA3E740E1C862C6300A73297 /* vitemstats.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E740D1C862C6300A73297 /* vitemstats.m */; };
 		DA3E74111C862C6C00A73297 /* vitemstatscel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E74101C862C6C00A73297 /* vitemstatscel.m */; };
 		DA3E74141C86386800A73297 /* citemcontact.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3E74131C86386800A73297 /* citemcontact.m */; };
@@ -130,6 +136,10 @@
 		DA6973271C764C4700A2C6EB /* aparsersearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6973261C764C4700A2C6EB /* aparsersearch.m */; };
 		DA69732B1C76547B00A2C6EB /* msearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DA69732A1C76547B00A2C6EB /* msearch.m */; };
 		DA69732E1C76549400A2C6EB /* msearchresult.m in Sources */ = {isa = PBXBuildFile; fileRef = DA69732D1C76549400A2C6EB /* msearchresult.m */; };
+		DA74726B1CA0D082006F56AF /* mconfigsection.m in Sources */ = {isa = PBXBuildFile; fileRef = DA74726A1CA0D082006F56AF /* mconfigsection.m */; };
+		DA74726E1CA0D099006F56AF /* mconfigsectionfilters.m in Sources */ = {isa = PBXBuildFile; fileRef = DA74726D1CA0D099006F56AF /* mconfigsectionfilters.m */; };
+		DA7472711CA0D0A9006F56AF /* mconfigsectionoptions.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7472701CA0D0A9006F56AF /* mconfigsectionoptions.m */; };
+		DA7472741CA0E46F006F56AF /* vconfigheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7472731CA0E46F006F56AF /* vconfigheader.m */; };
 		DA9141881C766669004BE5D1 /* vplay.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141871C766669004BE5D1 /* vplay.m */; };
 		DA91418E1C766B77004BE5D1 /* vplayload.m in Sources */ = {isa = PBXBuildFile; fileRef = DA91418D1C766B77004BE5D1 /* vplayload.m */; };
 		DA9141911C766C3F004BE5D1 /* cplayload.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141901C766C3F004BE5D1 /* cplayload.m */; };
@@ -179,12 +189,29 @@
 		DAD5C39D1C7FC81500FF8FDF /* mliked.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C39C1C7FC81500FF8FDF /* mliked.m */; };
 		DAD5C3A01C7FC81F00FF8FDF /* mlikeditem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C39F1C7FC81F00FF8FDF /* mlikeditem.m */; };
 		DAD5C3A31C7FD14000FF8FDF /* vlikedcel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C3A21C7FD14000FF8FDF /* vlikedcel.m */; };
+		DAD9E48F1CA3684100D5E3BD /* mitemdetailinfopaging.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD9E48E1CA3684100D5E3BD /* mitemdetailinfopaging.m */; };
+		DAE860691CA1BD1F00A88133 /* mconfigrangemin.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE860681CA1BD1F00A88133 /* mconfigrangemin.m */; };
+		DAE8606C1CA1BD2800A88133 /* mconfigrangemax.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8606B1CA1BD2800A88133 /* mconfigrangemax.m */; };
+		DAE8606F1CA1C05F00A88133 /* vconfigrangemin.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8606E1CA1C05F00A88133 /* vconfigrangemin.m */; };
+		DAE860721CA1C06900A88133 /* vconfigrangemax.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE860711CA1C06900A88133 /* vconfigrangemax.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.release.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.release.xcconfig"; sourceTree = "<group>"; };
 		78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-depa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.debug.xcconfig"; sourceTree = "<group>"; };
+		DA0ABA951C9C573300E023C3 /* vitemceladdress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemceladdress.h; sourceTree = "<group>"; };
+		DA0ABA961C9C573300E023C3 /* vitemceladdress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemceladdress.m; sourceTree = "<group>"; };
+		DA0ABA9B1C9C808B00E023C3 /* vplayiteminfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayiteminfo.h; sourceTree = "<group>"; };
+		DA0ABA9C1C9C808B00E023C3 /* vplayiteminfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayiteminfo.m; sourceTree = "<group>"; };
+		DA0ABA9E1C9DDADD00E023C3 /* vplayitemimagelike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemimagelike.h; sourceTree = "<group>"; };
+		DA0ABA9F1C9DDADD00E023C3 /* vplayitemimagelike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemimagelike.m; sourceTree = "<group>"; };
+		DA0ABAA11C9DDF0B00E023C3 /* vplayitemimagelikestar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemimagelikestar.h; sourceTree = "<group>"; };
+		DA0ABAA21C9DDF0B00E023C3 /* vplayitemimagelikestar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemimagelikestar.m; sourceTree = "<group>"; };
+		DA0ABAA41C9F12D800E023C3 /* vbadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vbadge.h; sourceTree = "<group>"; };
+		DA0ABAA51C9F12D800E023C3 /* vbadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vbadge.m; sourceTree = "<group>"; };
+		DA0ABAA71C9F164C00E023C3 /* vlikedbutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vlikedbutton.h; sourceTree = "<group>"; };
+		DA0ABAA81C9F164C00E023C3 /* vlikedbutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vlikedbutton.m; sourceTree = "<group>"; };
 		DA121A211C87381E00D2B67E /* mconfigsorrelevance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsorrelevance.h; sourceTree = "<group>"; };
 		DA121A221C87381E00D2B67E /* mconfigsorrelevance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsorrelevance.m; sourceTree = "<group>"; };
 		DA121A241C8738FD00D2B67E /* mconfigsort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsort.h; sourceTree = "<group>"; };
@@ -272,10 +299,6 @@
 		DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aimateqitem.m; sourceTree = "<group>"; };
 		DA2427AE1C77F17B00FE44B0 /* vplayitemheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemheader.h; sourceTree = "<group>"; };
 		DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemheader.m; sourceTree = "<group>"; };
-		DA2427B11C77F2DE00FE44B0 /* vplayitemfooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemfooter.h; sourceTree = "<group>"; };
-		DA2427B21C77F2DE00FE44B0 /* vplayitemfooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemfooter.m; sourceTree = "<group>"; };
-		DA2427B41C77F61100FE44B0 /* vplayitemmiddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemmiddle.h; sourceTree = "<group>"; };
-		DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemmiddle.m; sourceTree = "<group>"; };
 		DA2427B71C783D7A00FE44B0 /* vplayitemimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitemimage.h; sourceTree = "<group>"; };
 		DA2427B81C783D7A00FE44B0 /* vplayitemimage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitemimage.m; sourceTree = "<group>"; };
 		DA2427CB1C7863A100FE44B0 /* cplayempty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cplayempty.h; sourceTree = "<group>"; };
@@ -374,6 +397,10 @@
 		DA3173221C7CF7D400B6CEF7 /* acalllocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalllocation.m; sourceTree = "<group>"; };
 		DA3173241C7D175C00B6CEF7 /* sconfigloccity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sconfigloccity.h; sourceTree = "<group>"; };
 		DA3173251C7D175C00B6CEF7 /* sconfigloccity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sconfigloccity.m; sourceTree = "<group>"; };
+		DA3422B41CA46F0200941F10 /* mitemdetailinfostatsbaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mitemdetailinfostatsbaths.h; sourceTree = "<group>"; };
+		DA3422B51CA46F0200941F10 /* mitemdetailinfostatsbaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemdetailinfostatsbaths.m; sourceTree = "<group>"; };
+		DA3422B71CA4851200941F10 /* vitemlocationannotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemlocationannotation.h; sourceTree = "<group>"; };
+		DA3422B81CA4851200941F10 /* vitemlocationannotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemlocationannotation.m; sourceTree = "<group>"; };
 		DA3E740C1C862C6300A73297 /* vitemstats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemstats.h; sourceTree = "<group>"; };
 		DA3E740D1C862C6300A73297 /* vitemstats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemstats.m; sourceTree = "<group>"; };
 		DA3E740F1C862C6C00A73297 /* vitemstatscel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemstatscel.h; sourceTree = "<group>"; };
@@ -433,6 +460,14 @@
 		DA69732A1C76547B00A2C6EB /* msearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = msearch.m; sourceTree = "<group>"; };
 		DA69732C1C76549400A2C6EB /* msearchresult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msearchresult.h; sourceTree = "<group>"; };
 		DA69732D1C76549400A2C6EB /* msearchresult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = msearchresult.m; sourceTree = "<group>"; };
+		DA7472691CA0D082006F56AF /* mconfigsection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsection.h; sourceTree = "<group>"; };
+		DA74726A1CA0D082006F56AF /* mconfigsection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsection.m; sourceTree = "<group>"; };
+		DA74726C1CA0D099006F56AF /* mconfigsectionfilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsectionfilters.h; sourceTree = "<group>"; };
+		DA74726D1CA0D099006F56AF /* mconfigsectionfilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsectionfilters.m; sourceTree = "<group>"; };
+		DA74726F1CA0D0A9006F56AF /* mconfigsectionoptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigsectionoptions.h; sourceTree = "<group>"; };
+		DA7472701CA0D0A9006F56AF /* mconfigsectionoptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsectionoptions.m; sourceTree = "<group>"; };
+		DA7472721CA0E46F006F56AF /* vconfigheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigheader.h; sourceTree = "<group>"; };
+		DA7472731CA0E46F006F56AF /* vconfigheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigheader.m; sourceTree = "<group>"; };
 		DA9141861C766669004BE5D1 /* vplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplay.h; sourceTree = "<group>"; };
 		DA9141871C766669004BE5D1 /* vplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplay.m; sourceTree = "<group>"; };
 		DA91418C1C766B77004BE5D1 /* vplayload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayload.h; sourceTree = "<group>"; };
@@ -540,6 +575,16 @@
 		DAD5C39F1C7FC81F00FF8FDF /* mlikeditem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mlikeditem.m; sourceTree = "<group>"; };
 		DAD5C3A11C7FD14000FF8FDF /* vlikedcel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vlikedcel.h; sourceTree = "<group>"; };
 		DAD5C3A21C7FD14000FF8FDF /* vlikedcel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vlikedcel.m; sourceTree = "<group>"; };
+		DAD9E48D1CA3684100D5E3BD /* mitemdetailinfopaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mitemdetailinfopaging.h; sourceTree = "<group>"; };
+		DAD9E48E1CA3684100D5E3BD /* mitemdetailinfopaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemdetailinfopaging.m; sourceTree = "<group>"; };
+		DAE860671CA1BD1F00A88133 /* mconfigrangemin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigrangemin.h; sourceTree = "<group>"; };
+		DAE860681CA1BD1F00A88133 /* mconfigrangemin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigrangemin.m; sourceTree = "<group>"; };
+		DAE8606A1CA1BD2800A88133 /* mconfigrangemax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mconfigrangemax.h; sourceTree = "<group>"; };
+		DAE8606B1CA1BD2800A88133 /* mconfigrangemax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigrangemax.m; sourceTree = "<group>"; };
+		DAE8606D1CA1C05F00A88133 /* vconfigrangemin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigrangemin.h; sourceTree = "<group>"; };
+		DAE8606E1CA1C05F00A88133 /* vconfigrangemin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigrangemin.m; sourceTree = "<group>"; };
+		DAE860701CA1C06900A88133 /* vconfigrangemax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigrangemax.h; sourceTree = "<group>"; };
+		DAE860711CA1C06900A88133 /* vconfigrangemax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigrangemax.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -580,6 +625,8 @@
 				DA12BC911C84F2E600ED9497 /* mitemdetailinfo.h */,
 				DA12BC921C84F2E600ED9497 /* mitemdetailinfo.m */,
 				DA12BC941C84F2F500ED9497 /* mitemdetailinfoprotocol.h */,
+				DAD9E48D1CA3684100D5E3BD /* mitemdetailinfopaging.h */,
+				DAD9E48E1CA3684100D5E3BD /* mitemdetailinfopaging.m */,
 				DA12BCA41C850B6C00ED9497 /* mitemdetailinfostats.h */,
 				DA12BCA51C850B6C00ED9497 /* mitemdetailinfostats.m */,
 				DA4118D11C860F28002CD805 /* mitemdetailinfostatsprotocol.h */,
@@ -589,6 +636,8 @@
 				DA4118D61C860F50002CD805 /* mitemdetailinfostatsrooms.m */,
 				DA4118D81C860F60002CD805 /* mitemdetailinfostatsgarages.h */,
 				DA4118D91C860F60002CD805 /* mitemdetailinfostatsgarages.m */,
+				DA3422B41CA46F0200941F10 /* mitemdetailinfostatsbaths.h */,
+				DA3422B51CA46F0200941F10 /* mitemdetailinfostatsbaths.m */,
 				DA12BCA71C85128E00ED9497 /* mitemdetailinfoaddress.h */,
 				DA12BCA81C85128E00ED9497 /* mitemdetailinfoaddress.m */,
 				DA12BC951C84F56B00ED9497 /* mitemdetailinfotitleprice.h */,
@@ -615,6 +664,8 @@
 			children = (
 				DA25B1431C7B7E4600B4BB21 /* vconfig.h */,
 				DA25B1441C7B7E4600B4BB21 /* vconfig.m */,
+				DA7472721CA0E46F006F56AF /* vconfigheader.h */,
+				DA7472731CA0E46F006F56AF /* vconfigheader.m */,
 				DA25B1461C7B80CE00B4BB21 /* vconfigcel.h */,
 				DA25B1471C7B80CE00B4BB21 /* vconfigcel.m */,
 				DAD5C3691C7F82C000FF8FDF /* vconfigcelprotocol.h */,
@@ -636,6 +687,10 @@
 				DA121A281C87397700D2B67E /* vconfigsort.m */,
 				DA121A2A1C87398100D2B67E /* vconfigsortcel.h */,
 				DA121A2B1C87398100D2B67E /* vconfigsortcel.m */,
+				DAE8606D1CA1C05F00A88133 /* vconfigrangemin.h */,
+				DAE8606E1CA1C05F00A88133 /* vconfigrangemin.m */,
+				DAE860701CA1C06900A88133 /* vconfigrangemax.h */,
+				DAE860711CA1C06900A88133 /* vconfigrangemax.m */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -645,6 +700,12 @@
 			children = (
 				DA25B14A1C7B828F00B4BB21 /* mconfig.h */,
 				DA25B14B1C7B828F00B4BB21 /* mconfig.m */,
+				DA7472691CA0D082006F56AF /* mconfigsection.h */,
+				DA74726A1CA0D082006F56AF /* mconfigsection.m */,
+				DA74726C1CA0D099006F56AF /* mconfigsectionfilters.h */,
+				DA74726D1CA0D099006F56AF /* mconfigsectionfilters.m */,
+				DA74726F1CA0D0A9006F56AF /* mconfigsectionoptions.h */,
+				DA7472701CA0D0A9006F56AF /* mconfigsectionoptions.m */,
 				DA25B14D1C7B82B600B4BB21 /* mconfigprotocol.h */,
 				DA25B14E1C7B82C800B4BB21 /* mconfiglocation.h */,
 				DA25B14F1C7B82C800B4BB21 /* mconfiglocation.m */,
@@ -658,6 +719,10 @@
 				DA1FBD6C1C7F72B70038A822 /* mconfiglike.m */,
 				DA1FBD681C7F6EEA0038A822 /* mconfigno.h */,
 				DA1FBD691C7F6EEA0038A822 /* mconfigno.m */,
+				DAE860671CA1BD1F00A88133 /* mconfigrangemin.h */,
+				DAE860681CA1BD1F00A88133 /* mconfigrangemin.m */,
+				DAE8606A1CA1BD2800A88133 /* mconfigrangemax.h */,
+				DAE8606B1CA1BD2800A88133 /* mconfigrangemax.m */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -903,16 +968,18 @@
 				DA9141991C769605004BE5D1 /* vplaymenucel.m */,
 				DA2427A51C77A9FF00FE44B0 /* vplayitem.h */,
 				DA2427A61C77A9FF00FE44B0 /* vplayitem.m */,
+				DA0ABA9B1C9C808B00E023C3 /* vplayiteminfo.h */,
+				DA0ABA9C1C9C808B00E023C3 /* vplayiteminfo.m */,
 				DA4118CB1C860468002CD805 /* vplayitembutton.h */,
 				DA4118CC1C860468002CD805 /* vplayitembutton.m */,
 				DA2427AE1C77F17B00FE44B0 /* vplayitemheader.h */,
 				DA2427AF1C77F17B00FE44B0 /* vplayitemheader.m */,
-				DA2427B11C77F2DE00FE44B0 /* vplayitemfooter.h */,
-				DA2427B21C77F2DE00FE44B0 /* vplayitemfooter.m */,
-				DA2427B41C77F61100FE44B0 /* vplayitemmiddle.h */,
-				DA2427B51C77F61100FE44B0 /* vplayitemmiddle.m */,
 				DA2427B71C783D7A00FE44B0 /* vplayitemimage.h */,
 				DA2427B81C783D7A00FE44B0 /* vplayitemimage.m */,
+				DA0ABA9E1C9DDADD00E023C3 /* vplayitemimagelike.h */,
+				DA0ABA9F1C9DDADD00E023C3 /* vplayitemimagelike.m */,
+				DA0ABAA11C9DDF0B00E023C3 /* vplayitemimagelikestar.h */,
+				DA0ABAA21C9DDF0B00E023C3 /* vplayitemimagelikestar.m */,
 				DA2427CE1C7863E800FE44B0 /* vplayempty.h */,
 				DA2427CF1C7863E800FE44B0 /* vplayempty.m */,
 			);
@@ -1217,6 +1284,10 @@
 				DACDA83A1C76073200A37D15 /* vratemenu.m */,
 				DACDA83B1C76073200A37D15 /* vratemenucel.h */,
 				DACDA83C1C76073200A37D15 /* vratemenucel.m */,
+				DA0ABAA41C9F12D800E023C3 /* vbadge.h */,
+				DA0ABAA51C9F12D800E023C3 /* vbadge.m */,
+				DA0ABAA71C9F164C00E023C3 /* vlikedbutton.h */,
+				DA0ABAA81C9F164C00E023C3 /* vlikedbutton.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -1281,6 +1352,8 @@
 				DAD5C38C1C7F9ADD00FF8FDF /* vitem.m */,
 				DA12BC981C84F70700ED9497 /* vitemcel.h */,
 				DA12BC991C84F70700ED9497 /* vitemcel.m */,
+				DA0ABA951C9C573300E023C3 /* vitemceladdress.h */,
+				DA0ABA961C9C573300E023C3 /* vitemceladdress.m */,
 				DA1C508D1C80F59700598B1A /* vitembar.h */,
 				DA1C508E1C80F59700598B1A /* vitembar.m */,
 				DA1C50871C80EDA800598B1A /* vitemcar.h */,
@@ -1299,6 +1372,8 @@
 				DA4118C11C85E498002CD805 /* vitemlocationmenu.m */,
 				DA4118C31C85ED04002CD805 /* vitemlocationmap.h */,
 				DA4118C41C85ED04002CD805 /* vitemlocationmap.m */,
+				DA3422B71CA4851200941F10 /* vitemlocationannotation.h */,
+				DA3422B81CA4851200941F10 /* vitemlocationannotation.m */,
 				DA3E740C1C862C6300A73297 /* vitemstats.h */,
 				DA3E740D1C862C6300A73297 /* vitemstats.m */,
 				DA3E740F1C862C6C00A73297 /* vitemstatscel.h */,
@@ -1496,6 +1571,7 @@
 				DA1FBD6D1C7F72B70038A822 /* mconfiglike.m in Sources */,
 				DACDA8501C76073200A37D15 /* msettings.m in Sources */,
 				DA25B1611C7BAAFD00B4BB21 /* cconfigloc.m in Sources */,
+				DA0ABAA91C9F164C00E023C3 /* vlikedbutton.m in Sources */,
 				DACDA8551C76073200A37D15 /* vrate.m in Sources */,
 				DA25B16E1C7BB1D500B4BB21 /* vconfiglocmenucel.m in Sources */,
 				DA4118BC1C85E186002CD805 /* citemlocation.m in Sources */,
@@ -1535,6 +1611,7 @@
 				DA6973271C764C4700A2C6EB /* aparsersearch.m in Sources */,
 				DA1C508F1C80F59700598B1A /* vitembar.m in Sources */,
 				DA121A261C8738FD00D2B67E /* mconfigsort.m in Sources */,
+				DA0ABA9D1C9C808B00E023C3 /* vplayiteminfo.m in Sources */,
 				DA12BC8D1C84D91600ED9497 /* vitemcarpaging.m in Sources */,
 				DA9141971C769440004BE5D1 /* vplaymenu.m in Sources */,
 				DA3172DE1C7CA4BD00B6CEF7 /* mcountryitemrent.m in Sources */,
@@ -1549,8 +1626,10 @@
 				DACDA8461C76073200A37D15 /* tools.m in Sources */,
 				DA25B1531C7B82D300B4BB21 /* mconfigtype.m in Sources */,
 				DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */,
+				DAE860721CA1C06900A88133 /* vconfigrangemax.m in Sources */,
 				DA3173111C7CDFE200B6CEF7 /* vconfigtypecel.m in Sources */,
 				DA12BCA01C85050C00ED9497 /* acalldesc.m in Sources */,
+				DA74726B1CA0D082006F56AF /* mconfigsection.m in Sources */,
 				DA3E74111C862C6C00A73297 /* vitemstatscel.m in Sources */,
 				DAD5C38D1C7F9ADD00FF8FDF /* vitem.m in Sources */,
 				DAD5C3A01C7FC81F00FF8FDF /* mlikeditem.m in Sources */,
@@ -1566,17 +1645,20 @@
 				DA121A2F1C8749DF00D2B67E /* vconfiglocmapview.m in Sources */,
 				DA31730E1C7CDFD800B6CEF7 /* vconfigtype.m in Sources */,
 				DA6973241C764C3600A2C6EB /* aparser.m in Sources */,
-				DA2427B61C77F61100FE44B0 /* vplayitemmiddle.m in Sources */,
+				DAE860691CA1BD1F00A88133 /* mconfigrangemin.m in Sources */,
 				DA3E741A1C86502100A73297 /* vlikedheader.m in Sources */,
 				DA69732E1C76549400A2C6EB /* msearchresult.m in Sources */,
 				DA121A321C874EC000D2B67E /* vconfiglocmapmenu.m in Sources */,
+				DA3422B61CA46F0200941F10 /* mitemdetailinfostatsbaths.m in Sources */,
 				DA25B1411C7B7D3A00B4BB21 /* cconfig.m in Sources */,
 				DACDA84F1C76073200A37D15 /* mdirs.m in Sources */,
 				DACDA8471C76073200A37D15 /* updater.m in Sources */,
+				DA7472711CA0D0A9006F56AF /* mconfigsectionoptions.m in Sources */,
 				DA25B17B1C7BBEC200B4BB21 /* vconfigloclist.m in Sources */,
 				DA9141A11C76969F004BE5D1 /* mplaymenu.m in Sources */,
 				DA3172FA1C7CC8BC00B6CEF7 /* mconfigmodrent.m in Sources */,
 				DA31731A1C7CF43D00B6CEF7 /* acalllocationstate.m in Sources */,
+				DA7472741CA0E46F006F56AF /* vconfigheader.m in Sources */,
 				DA91419A1C769605004BE5D1 /* vplaymenucel.m in Sources */,
 				DA3E741E1C8669BE00A73297 /* mconfigsor.m in Sources */,
 				DA25B1451C7B7E4600B4BB21 /* vconfig.m in Sources */,
@@ -1596,9 +1678,13 @@
 				DA6973061C760D0600A2C6EB /* cplay.m in Sources */,
 				DA25B1711C7BBA6400B4BB21 /* mconfigloc.m in Sources */,
 				DA3173011C7CDBBD00B6CEF7 /* mconfigtyp.m in Sources */,
+				DAE8606C1CA1BD2800A88133 /* mconfigrangemax.m in Sources */,
+				DA74726E1CA0D099006F56AF /* mconfigsectionfilters.m in Sources */,
+				DAD9E48F1CA3684100D5E3BD /* mitemdetailinfopaging.m in Sources */,
 				DACDA8541C76073200A37D15 /* vspinner.m in Sources */,
 				DA69732B1C76547B00A2C6EB /* msearch.m in Sources */,
 				DA12BCA91C85128E00ED9497 /* mitemdetailinfoaddress.m in Sources */,
+				DA0ABA971C9C573300E023C3 /* vitemceladdress.m in Sources */,
 				DAD5C37D1C7F872600FF8FDF /* vconfigitemno.m in Sources */,
 				DA3173231C7CF7D400B6CEF7 /* acalllocation.m in Sources */,
 				DA9141941C766C97004BE5D1 /* cplayitem.m in Sources */,
@@ -1614,13 +1700,17 @@
 				DA9141A51C76971D004BE5D1 /* mplaymenulike.m in Sources */,
 				DA4118DA1C860F60002CD805 /* mitemdetailinfostatsgarages.m in Sources */,
 				DAD5C3A31C7FD14000FF8FDF /* vlikedcel.m in Sources */,
+				DA0ABAA31C9DDF0B00E023C3 /* vplayitemimagelikestar.m in Sources */,
 				DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */,
+				DA0ABAA61C9F12D800E023C3 /* vbadge.m in Sources */,
 				DACDA8511C76073200A37D15 /* valert.m in Sources */,
 				DA4118C51C85ED04002CD805 /* vitemlocationmap.m in Sources */,
 				DACDA84B1C76073200A37D15 /* crate.m in Sources */,
+				DA0ABAA01C9DDADD00E023C3 /* vplayitemimagelike.m in Sources */,
 				DA1FBD671C7F514E0038A822 /* mitemitem.m in Sources */,
 				DA4118D41C860F42002CD805 /* mitemdetailinfostatsmeters.m in Sources */,
 				DAD5C39A1C7FC34900FF8FDF /* mdbitem.m in Sources */,
+				DA3422B91CA4851200941F10 /* vitemlocationannotation.m in Sources */,
 				DA3E74251C866B0100A73297 /* mconfigsorhigher.m in Sources */,
 				DA25B1501C7B82C800B4BB21 /* mconfiglocation.m in Sources */,
 				DA3E74171C86398E00A73297 /* vitemcontactview.m in Sources */,
@@ -1647,7 +1737,7 @@
 				DAD5C3941C7FAFD800FF8FDF /* aparsersearchatt.m in Sources */,
 				DA12BC7E1C8487BC00ED9497 /* aparseritem.m in Sources */,
 				DA25B18A1C7BE7A900B4BB21 /* vconfigloclistheader.m in Sources */,
-				DA2427B31C77F2DE00FE44B0 /* vplayitemfooter.m in Sources */,
+				DAE8606F1CA1C05F00A88133 /* vconfigrangemin.m in Sources */,
 				DA2427CD1C7863A100FE44B0 /* cplayempty.m in Sources */,
 				DA2427D01C7863E800FE44B0 /* vplayempty.m in Sources */,
 				DA3172EF1C7CC6B700B6CEF7 /* vconfigmode.m in Sources */,
@@ -1759,7 +1849,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Agustin Iturbide (Q3HFYLXFGT)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/depa/sourceteq/core/Info.plist";
@@ -1780,7 +1870,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Agustin Iturbide (7AMWG3RLHN)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/depa/sourceteq/core/Info.plist";

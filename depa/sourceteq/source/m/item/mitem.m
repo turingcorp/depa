@@ -18,11 +18,13 @@
 
 -(void)load:(NSString*)countryid
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       self.countryid = countryid;
-                       [self insideload];
+                       weakself.countryid = countryid;
+                       [weakself insideload];
                        
                        [[NSNotificationCenter defaultCenter] postNotificationName:notitemsloaded object:nil];
                    });

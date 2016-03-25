@@ -4,8 +4,8 @@
 
 @interface mitemdetailimg:NSObject
 
--(NSUInteger)count;
--(aimateqitem*)item:(NSUInteger)index;
 -(void)add:(NSArray*)urls;
+
+@property(strong, nonatomic)NSMutableArray<aimateqitem*> *items;
 
 @end

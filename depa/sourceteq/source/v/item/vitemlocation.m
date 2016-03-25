@@ -1,30 +1,28 @@
 #import "vitemlocation.h"
 
+static CGFloat const mapsansize = 0.025;
+
 @implementation vitemlocation
 
 -(instancetype)init:(citemlocation*)controller
 {
     self = [super init:controller];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundColor:[UIColor whiteColor]];
     
     self.controllerlocation = controller;
-    self.mapspan = MKCoordinateSpanMake(0.005, 0.005);
-    vblur *blur = [vblur light:YES];
+    self.mapspan = MKCoordinateSpanMake(mapsansize, mapsansize);
     vitemlocationmenu *menu = [[vitemlocationmenu alloc] init:controller];
     self.menu = menu;
     vitemlocationmap *map = [[vitemlocationmap alloc] init];
     self.map = map;
-    
-    [self addSubview:blur];
+
     [self addSubview:menu];
     [self addSubview:map];
     
-    NSDictionary *views = @{@"blur":blur, @"menu":menu, @"map":map};
+    NSDictionary *views = @{@"menu":menu, @"map":map};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blur]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[blur]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[menu(65)]-0-[map]-0-|" options:0 metrics:metrics views:views]];
@@ -134,6 +132,22 @@
         [self.menu showuserbutton];
         [self.map setShowsUserLocation:YES];
     }
+}
+
+-(MKAnnotationView*)mapView:(MKMapView*)mapview viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKAnnotationView *anview;
+    
+    if(annotation == self.annotation)
+    {
+        anview = [[vitemlocationannotation alloc] init];
+    }
+    else
+    {
+        anview = [mapview viewForAnnotation:annotation];
+    }
+    
+    return anview;
 }
 
 @end

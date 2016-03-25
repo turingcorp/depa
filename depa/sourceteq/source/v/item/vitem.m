@@ -1,33 +1,53 @@
 #import "vitem.h"
 
+static NSUInteger const barmaxheight = 65;
+static NSUInteger const barminheight = 20;
+static NSUInteger const contactmintop = 10;
+static NSUInteger const contactmaxtop = 20;
+static NSUInteger const carminheight = 120;
+static NSUInteger const mincarheight = 280;
+static NSUInteger const midcarheight = 350;
+static NSUInteger const maxcarheight = 420;
+
+@interface vitem ()
+
+@property(weak, nonatomic)citem *controller;
+
+@end
+
 @implementation vitem
 {
-    CGFloat barmaxheight;
-    CGFloat barminheight;
-    CGFloat contactmaxtop;
-    CGFloat contactmintop;
     CGFloat carheight;
-    CGFloat carminheight;
 }
+
+@dynamic controller;
 
 -(instancetype)init:(citem*)controller
 {
     self = [super init:controller];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
+    self.model = [[mitemdetailinfo alloc] init:self];
 
-    self.controlleritem = controller;
-    self.model = [[mitemdetailinfo alloc] init];
+    CGFloat screenheight = [UIScreen mainScreen].bounds.size.height;
     vitembar *bar = [[vitembar alloc] init:controller];
+    self.bar = bar;
     vitemcontact *contact = [[vitemcontact alloc] init:controller];
+    self.contact = contact;
     [contact addTarget:self action:@selector(actioncontact:) forControlEvents:UIControlEventTouchUpInside];
     
-    carheight = 350;
-    barmaxheight = 65;
-    barminheight = 20;
-    contactmintop = 10;
-    contactmaxtop = 20;
-    carminheight = 120;
+    if(screenheight > 600)
+    {
+        carheight = maxcarheight;
+    }
+    else if(screenheight > 500)
+    {
+        carheight = midcarheight;
+    }
+    else
+    {
+        carheight = mincarheight;
+    }
     
     vspinner *spinner = [[vspinner alloc] init];
     [spinner startAnimating];
@@ -54,7 +74,7 @@
     [collection setHidden:YES];
     self.collection = collection;
     
-    vitemcar *car = [[vitemcar alloc] init:self.controlleritem];
+    vitemcar *car = [[vitemcar alloc] init:controller];
     [car setHidden:YES];
     self.car = car;
     
@@ -72,12 +92,12 @@
     NSDictionary *views = @{@"contact":contact, @"bar":bar, @"collection":collection, @"spinner":spinner, @"car":car};
     NSDictionary *metrics = @{@"carheight":@(carheight)};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[contact(60)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[contact(50)]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[contact(60)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[collection]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-100-[spinner(80)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-120-[spinner(40)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[car]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[collection]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraint:self.lcbar];
@@ -94,12 +114,12 @@
 {
     [button removeFromSuperview];
     [self.spinner startAnimating];
-    [self.controlleritem tryagain];
+    [self.controller tryagain];
 }
 
 -(void)actioncontact:(UIButton*)button
 {
-    [self.controlleritem contact];
+    [self.controller contact];
 }
 
 #pragma mark public
@@ -112,6 +132,7 @@
     [self.car setHidden:NO];
     [self.collection reloadData];
     [self.car refresh];
+    [self.bar refresh];
 }
 
 -(void)descriptionloaded
@@ -150,6 +171,7 @@
 {
     CGFloat offset = self.collection.contentOffset.y;
     CGFloat offset_10 = offset / 10.0;
+    CGFloat offset_30 = offset / 30.0;
     CGFloat barheight = barmaxheight - offset;
     CGFloat contacttop = contactmintop + offset_10;
     CGFloat newcarheight = carheight - offset;
@@ -186,11 +208,13 @@
     self.lccontact.constant = contacttop;
     self.lccar.constant = newcarheight;
     self.lccartop.constant = cartop;
+    
+    [self.bar buttonsalpha:1 - offset_30];
 }
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGFloat height = [[self.model item:index.item] height];
+    CGFloat height = [self.model.items[index.item] height];
     CGSize size = CGSizeMake(col.bounds.size.width, height);
     
     return size;
@@ -203,15 +227,16 @@
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger count = [self.model count];
+    NSUInteger count = self.model.items.count;
     
     return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    id<mitemdetailinfoprotocol> model = self.model.items[index.item];
     vitemcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
-    [cel config:[[self.model item:index.item] overview]];
+    [cel config:[model overview]];
     
     return cel;
 }

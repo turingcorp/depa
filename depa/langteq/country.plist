@@ -62,5 +62,25 @@
 			<string>6406</string>
 		</dict>
 	</dict>
+    <dict>
+        <key>id</key>
+        <string>MCO</string>
+        <key>name</key>
+        <string>Colombia</string>
+        <key>apartment</key>
+        <dict>
+            <key>buy</key>
+            <string>1474</string>
+            <key>rent</key>
+            <string>1473</string>
+        </dict>
+        <key>house</key>
+        <dict>
+            <key>buy</key>
+            <string>1468</string>
+            <key>rent</key>
+            <string>1467</string>
+        </dict>
+    </dict>
 </array>
 </plist>

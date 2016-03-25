@@ -1,93 +1,53 @@
 #import "mitemdetailinfoaddress.h"
 
+static NSUInteger const consmarginvertical = 30;
+static NSUInteger const consmarginhorizontal = 20;
+
 @implementation mitemdetailinfoaddress
-{
-    NSMutableAttributedString *mutstring;
-    CGFloat cellheight;
-    CGFloat marginvertical;
-    CGFloat marginhorizontal;
-    CGFloat iconheight;
-}
 
 -(instancetype)init
 {
     self = [super init];
     
-    marginvertical = 15;
-    marginhorizontal = 20;
-    iconheight = 70;
+    self.marginvertical = consmarginvertical;
+    self.marginhorizontal = consmarginhorizontal;
     
     return self;
-}
-
-#pragma mark actions
-
--(void)actionmap:(UIButton*)button
-{
-    [citemlocation show:self.item];
 }
 
 #pragma mark -
 #pragma amrk detail info protocol
 
--(void)config:(mitemdetail*)item collection:(UICollectionView*)collection
+-(void)config:(mitemdetail*)item view:(vitem*)view
 {
     self.item = item;
     
-    NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
-    mutstring = [[NSMutableAttributedString alloc] init];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemaddress attributes:attrtitle]];
+    NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.5]};
+    NSString *stringaddress = item.itemaddress;
     
-    CGFloat colwidth = collection.bounds.size.width;
-    CGFloat textwidth = colwidth - (marginhorizontal * 2);
-    CGFloat textheight = ceilf([mutstring boundingRectWithSize:CGSizeMake(textwidth, 2000) options:stringdrawing context:nil].size.height);
-    cellheight = textheight + (marginvertical * 2);
-    
-    if(item.latitude && item.longitude)
+    if(!stringaddress)
     {
-        cellheight += iconheight + marginvertical;
+        stringaddress = @"";
     }
+    
+    self.attrstring = [[NSAttributedString alloc] initWithString:stringaddress attributes:attrtitle];
+    
+    CGFloat colwidth = view.bounds.size.width;
+    CGFloat textwidth = colwidth - (self.marginhorizontal * 2);
+    CGFloat textheight = ceilf([self.attrstring boundingRectWithSize:CGSizeMake(textwidth, 2000) options:stringdrawing context:nil].size.height);
+    self.cellheight = textheight + (self.marginvertical * 2);
 }
 
 -(UIView*)overview
 {
-    UIView *overview = [[UIView alloc] init];
-    [overview setClipsToBounds:YES];
-    [overview setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
-    UILabel *label = [[UILabel alloc] init];
-    [label setBackgroundColor:[UIColor clearColor]];
-    [label setUserInteractionEnabled:NO];
-    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setNumberOfLines:0];
-    [label setAttributedText:mutstring];
-    
-    UIButton *button = [[UIButton alloc] init];
-    [button setClipsToBounds:YES];
-    [button setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [button.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    [button.imageView setClipsToBounds:YES];
-    [button.imageView setTintColor:colorsecond];
-    [button setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [button setImage:[[UIImage imageNamed:@"map"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
-    [button addTarget:self action:@selector(actionmap:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [overview addSubview:label];
-    [overview addSubview:button];
-    
-    NSDictionary *views = @{@"label":label, @"icon":button};
-    NSDictionary *metrics = @{@"horizontal":@(marginhorizontal), @"vertical":@(marginvertical), @"iconheight":@(iconheight)};
-    
-    [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(horizontal)-[label]-(horizontal)-|" options:0 metrics:metrics views:views]];
-    [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-120-[icon]-120-|" options:0 metrics:metrics views:views]];
-    [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(vertical)-[label]-(vertical)-[icon(iconheight)]" options:0 metrics:metrics views:views]];
+    vitemceladdress *overview = [[vitemceladdress alloc] init:self];
     
     return overview;
 }
 
 -(CGFloat)height
 {
-    return cellheight;
+    return self.cellheight;
 }
 
 @end

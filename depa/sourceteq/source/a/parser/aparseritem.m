@@ -13,7 +13,9 @@
     
     if(self.validjson)
     {
-        self.itemtitle = self.validjson[@"title"];
+        self.itemtitle = [tools cleanlatin:self.validjson[@"title"]];
+        self.itemtitle = [tools cleanwhite:self.itemtitle];
+        self.itemtitle = [tools capitalfirst:self.itemtitle];
         self.itemcurrency = self.validjson[@"currency_id"];
         self.itemprice = self.validjson[@"price"];
         self.itempermalink = self.validjson[@"permalink"];
@@ -39,6 +41,7 @@
             aparsersearchatt *attributes = [[aparsersearchatt alloc] init:rawattributes];
             aparsersearchattitem *attmeters = [attributes itemfor:search_attr_mtrs];
             aparsersearchattitem *attrooms = [attributes itemfor:search_attr_rooms];
+            aparsersearchattitem *attbaths = [attributes itemfor:search_attr_baths];
             aparsersearchattitem *attgarage = [attributes itemfor:search_attr_garage];
             
             if(attmeters)
@@ -58,6 +61,16 @@
                 if(rawrooms > 0)
                 {
                     self.rooms = rawrooms;
+                }
+            }
+            
+            if(attbaths)
+            {
+                NSInteger rawbaths = attbaths.value.integerValue;
+                
+                if(rawbaths > 0)
+                {
+                    self.baths = rawbaths;
                 }
             }
             
@@ -109,22 +122,40 @@
             
             if(rawaddressline && rawaddressline.length > 1)
             {
+                rawaddressline = [tools cleanlatin:rawaddressline];
+                rawaddressline = [tools cleanwhite:rawaddressline];
+                rawaddressline = [tools capitalfirst:rawaddressline];
                 [mutlocation appendString:rawaddressline];
             }
             
             if(rawneightname && rawneightname.length > 1)
             {
-                [mutlocation appendFormat:@"\n%@", rawneightname];
+                if(mutlocation.length > 1)
+                {
+                    [mutlocation appendString:@"\n"];
+                }
+                
+                [mutlocation appendString:rawneightname];
             }
             
             if(rawcityname && rawcityname.length > 1)
             {
-                [mutlocation appendFormat:@"\n%@", rawcityname];
+                if(mutlocation.length > 1)
+                {
+                    [mutlocation appendString:@"\n"];
+                }
+                
+                [mutlocation appendString:rawcityname];
             }
             
             if(rawstatename && rawstatename.length > 1)
             {
-                [mutlocation appendFormat:@", %@", rawstatename];
+                if(mutlocation.length > 1)
+                {
+                    [mutlocation appendString:@", "];
+                }
+                
+                [mutlocation appendString:rawstatename];
             }
             
             if(rawcountryname && rawcountryname.length > 1)

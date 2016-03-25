@@ -1,24 +1,24 @@
 #import "vitemcarpaging.h"
 
-@implementation vitemcarpaging
-{
-    CGFloat interitem;
-}
+static CGFloat const interitemspace = 0;
+static CGFloat const paddingvertical = 5;
 
--(instancetype)init:(citem*)controller
+@implementation vitemcarpaging
+
+-(instancetype)init:(NSArray<aimateqitem*>*)images view:(vitem*)view
 {
     self = [super init];
     [self setClipsToBounds:YES];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self setUserInteractionEnabled:NO];
+    [self setBackgroundColor:[UIColor whiteColor]];
+    self.view = view;
+    self.images = images;
     
-    interitem = 1;
-    self.controller = controller;
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumLineSpacing:interitem];
+    [flow setMinimumLineSpacing:interitemspace];
     [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
@@ -49,8 +49,8 @@
 -(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
 {
     CGFloat totalwidth = col.bounds.size.width;
-    CGFloat circlesize = col.bounds.size.height + interitem;
-    CGFloat totalcircles = circlesize * [self.controller.item.images count];
+    CGFloat circlesize = (col.bounds.size.height - (paddingvertical * 2)) + interitemspace;
+    CGFloat totalcircles = circlesize * self.images.count;
     CGFloat margin = (totalwidth - totalcircles) / 2.0;
     
     if(margin < 1)
@@ -58,14 +58,14 @@
         margin = 0;
     }
     
-    UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, 0, margin);
+    UIEdgeInsets insets = UIEdgeInsetsMake(paddingvertical, margin, paddingvertical, margin);
     
     return insets;
 }
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGFloat side = col.bounds.size.height;
+    CGFloat side = col.bounds.size.height - (paddingvertical * 2);
     CGSize size = CGSizeMake(side, side);
     
     return size;
@@ -78,7 +78,7 @@
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger count = [self.controller.item.images count];
+    NSUInteger count = self.images.count;
     
     return count;
 }
@@ -88,6 +88,11 @@
     vitemcarpagingcel *cel = [col dequeueReusableCellWithReuseIdentifier:celid forIndexPath:index];
     
     return cel;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    [self.view.car selectitem:index.item];
 }
 
 @end

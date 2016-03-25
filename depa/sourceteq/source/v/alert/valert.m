@@ -47,9 +47,14 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[lbl]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-11-[lbl]-11-|" options:0 metrics:metrics views:views]];
     
-    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timeout:) userInfo:nil repeats:NO];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timeout:) userInfo:nil repeats:NO];
     
     return self;
+}
+
+-(void)dealloc
+{
+    [self.timer invalidate];
 }
 
 #pragma mark functionality
@@ -73,6 +78,9 @@
 
 -(void)hide
 {
+    [self.timer invalidate];
+    self.timer = nil;
+    
     [UIView animateWithDuration:0.5 animations:
      ^
      {

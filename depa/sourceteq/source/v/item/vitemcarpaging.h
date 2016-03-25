@@ -1,12 +1,14 @@
 #import "appdel.h"
 
-@class citem;
+@class vitem;
+@class aimateqitem;
 
 @interface vitemcarpaging:UIView<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
--(instancetype)init:(citem*)controller;
+-(instancetype)init:(NSArray<aimateqitem*>*)images view:(vitem*)view;
 
-@property(weak, nonatomic)citem *controller;
+@property(weak, nonatomic)vitem *view;
+@property(weak, nonatomic)NSArray<aimateqitem*> *images;
 @property(weak, nonatomic)UICollectionView *collection;
 
 @end

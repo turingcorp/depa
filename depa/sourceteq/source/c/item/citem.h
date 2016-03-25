@@ -11,7 +11,6 @@
 -(void)contact;
 
 @property(weak, nonatomic)amanager *manager;
-@property(weak, nonatomic)vitem *viewitem;
 @property(strong, nonatomic)mitemdetail *item;
 
 @end

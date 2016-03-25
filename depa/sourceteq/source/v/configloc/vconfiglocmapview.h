@@ -5,7 +5,8 @@
 @interface vconfiglocmapview:MKMapView<UIGestureRecognizerDelegate>
 
 -(CLLocationCoordinate2D)pointtocoord:(CGPoint)point;
--(void)addannotation:(CLLocationCoordinate2D)coords;
+-(void)addann:(CLLocationCoordinate2D)coords;
+-(void)focusoncenter;
 
 @property(weak, nonatomic)mconfiglocmapann *annotation;
 

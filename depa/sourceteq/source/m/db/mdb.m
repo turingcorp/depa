@@ -30,10 +30,10 @@
                        @"INSERT INTO item "
                        "(created, countryid, itemid, status, thumbnail, title, currency, price, "
                        "meters, rooms, parking, phone, email, latitude, longitude, "
-                       "searchmode, searchtype) "
+                       "searchmode, searchtype, viewed) "
                        "VALUES(%@, \"%@\", \"%@\", %@, \"%@\", \"%@\", \"%@\", %@, "
                        "%@, %@, %@, \"%@\", \"%@\", %@, %@, "
-                       "%@, %@);",
+                       "%@, %@, 0);",
                        @(now), item.countryid, item.itemid, @(item.status), item.thumbnail, item.title, item.currency, item.price,
                        item.meters, item.rooms, item.parking, item.phone, item.email, @(intlatitude), @(intlongitude),
                        @(item.mode), @(item.type)];
@@ -114,6 +114,33 @@
     NSNumber *value = [db value:query];
     
     return value;
+}
+
++(NSNumber*)newitems
+{
+    NSString *query = [NSString stringWithFormat:
+                       @"SELECT COUNT(id) FROM item WHERE status=%@ and viewed=0;",
+                       @(item_status_like)];
+    NSNumber *value = [db value:query];
+    
+    return value;
+}
+
++(void)item:(NSUInteger)dbid newstatus:(item_status)status
+{
+    NSString *query = [NSString stringWithFormat:
+                       @"UPDATE item SET status=%@ "
+                       "WHERE id=%@;",
+                       @(status), @(dbid)];
+    [db query:query];
+}
+
++(void)clearviewed
+{
+    NSString *query = [NSString stringWithFormat:
+                       @"UPDATE item SET viewed=1 WHERE status=%@ and viewed=0;",
+                       @(item_status_like)];
+    [db query:query];
 }
 
 +(void)clear:(item_status)status

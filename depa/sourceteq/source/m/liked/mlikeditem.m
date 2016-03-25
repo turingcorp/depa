@@ -17,11 +17,11 @@
 {
     NSDictionary *atttitle = @{NSFontAttributeName:self.model.fonttitle};
     NSDictionary *attprice = @{NSFontAttributeName:self.model.fontprice};
-    NSString *pricestring = [NSString stringWithFormat:@"\n\n%@", [[tools singleton] pricetostring:price currency:currency]];
+    NSString *pricestring = [NSString stringWithFormat:@"%@\n", [[tools singleton] pricetostring:price currency:currency]];
     
     self.display = [[NSMutableAttributedString alloc] init];
-    [self.display appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:atttitle]];
     [self.display appendAttributedString:[[NSAttributedString alloc] initWithString:pricestring attributes:attprice]];
+    [self.display appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:atttitle]];
 }
 
 -(CGFloat)heightforwidth:(CGFloat)width;

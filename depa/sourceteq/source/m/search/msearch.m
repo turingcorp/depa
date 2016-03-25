@@ -52,7 +52,8 @@ static const NSUInteger itemslimit = 10;
     [string appendString:[[msettings singleton].searchorder sortparameter]];
     [string appendString:@"&has_pictures=yes"];
     [string appendFormat:@"&limit=%@", @(self.limit)];
-    [string appendFormat:@"&offset=%@&", @(self.offset)];
+    [string appendFormat:@"&offset=%@", @(self.offset)];
+    [string appendFormat:@"&price=%@&", [[msettings singleton] pricerange]];
     [string appendString:[msettings singleton].location];
     
     return string;

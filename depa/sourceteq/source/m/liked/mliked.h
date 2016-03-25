@@ -4,10 +4,10 @@
 
 @interface mliked:NSObject
 
--(NSUInteger)count;
--(mlikeditem*)item:(NSUInteger)index;
+-(void)load;
 
 @property(strong, nonatomic)UIFont *fonttitle;
 @property(strong, nonatomic)UIFont *fontprice;
+@property(strong, nonatomic)NSArray<mlikeditem*> *items;
 
 @end

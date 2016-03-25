@@ -81,10 +81,12 @@
 {
     if([self.item.apiimage equalsnotification:notification])
     {
+        __weak typeof(self) weakself = self;
+        
         dispatch_async(dispatch_get_main_queue(),
                        ^
                        {
-                           [self refreshimage];
+                           [weakself refreshimage];
                        });
     }
 }
@@ -116,15 +118,15 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.baseimage setAlpha:0.4];
-        [self.basegeneral setBackgroundColor:[UIColor colorWithWhite:0.85 alpha:1]];
-        [self.label setTextColor:colormain];
+        [self.baseimage setAlpha:0.3];
+        [self.basegeneral setBackgroundColor:[UIColor colorWithWhite:0.6 alpha:1]];
+        [self.label setTextColor:[UIColor whiteColor]];
     }
     else
     {
         [self.baseimage setAlpha:1];
         [self.basegeneral setBackgroundColor:[UIColor whiteColor]];
-        [self.label setTextColor:colorsecond];
+        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
     }
 }
 
