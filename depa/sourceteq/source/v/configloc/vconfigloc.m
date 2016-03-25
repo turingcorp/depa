@@ -9,7 +9,7 @@
 {
     self = [super init:controller];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor whiteColor]];
+    [self setBackgroundColor:[UIColor colorWithWhite:0.96 alpha:1]];
 
     menuheight = 60;
     self.model = [[mconfigloc alloc] init];

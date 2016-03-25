@@ -10,7 +10,7 @@
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
-    [label setFont:[UIFont fontWithName:fontname size:15]];
+    [label setFont:[UIFont fontWithName:fontname size:16]];
     [label setNumberOfLines:0];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.label = label;
@@ -20,7 +20,7 @@
     NSDictionary *views = @{@"label":label};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[label]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[label]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
@@ -49,7 +49,7 @@
     }
     else
     {
-        [self.label setTextColor:[UIColor colorWithWhite:0 alpha:0.85]];
+        [self.label setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
         [self setBackgroundColor:[UIColor whiteColor]];
     }
 }

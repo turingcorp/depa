@@ -1,12 +1,16 @@
 #import "vconfigloclist.h"
 
+static NSUInteger const cellheight = 65;
+static NSUInteger const headerminheight = 100;
+static NSUInteger const headermaxheight = 260;
+
 @implementation vconfigloclist
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1]];
+    [self setBackgroundColor:[UIColor clearColor]];
 
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
@@ -168,11 +172,11 @@
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
 {
-    CGFloat height = 70;
+    CGFloat height = headerminheight;
     
     if(self.model.parent)
     {
-        height = 230;
+        height = headermaxheight;
     }
     
     CGSize size = CGSizeMake(col.bounds.size.width, height);
@@ -182,7 +186,7 @@
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGSize size = CGSizeMake(col.bounds.size.width, 65);
+    CGSize size = CGSizeMake(col.bounds.size.width, cellheight);
     
     return size;
 }
