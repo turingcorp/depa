@@ -43,7 +43,6 @@
             if(!item || item.status == item_status_none)
             {
                 rawtitle = [tools cleanlatin:itemresults[@"title"]];
-                rawtitle = [tools cleanwhite:rawtitle];
                 rawtitle = [tools capitalfirst:rawtitle];
                 rawthumb = itemresults[@"thumbnail"];
                 rawcurrency = itemresults[@"currency_id"];
