@@ -1,5 +1,7 @@
 #import "vconfiglocmap.h"
 
+static CGFloat const mapspanradius = 0.3;
+
 @implementation vconfiglocmap
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -9,7 +11,7 @@
     [self setBackgroundColor:[UIColor clearColor]];
 
     self.firsttime = YES;
-    self.mapspan = MKCoordinateSpanMake(0.3, 0.3);
+    self.mapspan = MKCoordinateSpanMake(mapspanradius, mapspanradius);
     
     vconfiglocmapview *map = [[vconfiglocmapview alloc] init];
     [map setDelegate:self];

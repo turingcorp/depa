@@ -73,16 +73,18 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[image(80)]-(-12)-[label]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[info]-10-[button(40)]-20-[buttonview(40)]-90-|" options:0 metrics:metrics views:views]];
     
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
                        NSNumber *value = [mdb itemsfor:item_status_like];
-                       NSString *valuestring = [[tools singleton] numbertostring:value];
+                       weakself.valuestars = [[tools singleton] numbertostring:value];
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
-                                          [label setText:valuestring];
+                                          [label setText:weakself.valuestars];
                                       });
                    });
     
@@ -111,11 +113,14 @@
 
 -(void)clearlist
 {
+    __weak typeof(self) weakself = self;
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
                        [mdb clear:item_status_like];
-                       [[analytics singleton] trackevent:ga_event_clear action:ga_action_list label:nil];
+                       [[analytics singleton] trackevent:ga_event_clear action:ga_action_list label:weakself.valuestars];
+                       [[NSNotificationCenter defaultCenter] postNotificationName:notbadgechange object:nil];
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
