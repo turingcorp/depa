@@ -26,6 +26,7 @@
 "config_location_list_current"="Select %@";
 "config_location_button_retry"="Try again";
 "config_location_mapselected"="Map selection";
+"config_location_acceptselection"="Confirm selection";
 "config_mode_rent"="Rent";
 "config_mode_buy"="Sale";
 "config_type_house"="House";

@@ -20,6 +20,12 @@
     UIButton *btnaccept = [[UIButton alloc] init];
     [btnaccept setClipsToBounds:YES];
     [btnaccept setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [btnaccept setBackgroundColor:colormain];
+    [btnaccept setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnaccept setTitleColor:[UIColor colorWithWhite:1 alpha:0.2] forState:UIControlStateHighlighted];
+    [btnaccept.titleLabel setFont:[UIFont fontWithName:fontboldname size:14]];
+    [btnaccept.layer setCornerRadius:4];
+    [btnaccept setTitle:NSLocalizedString(@"config_location_acceptselection", nil) forState:UIControlStateNormal];
     [btnaccept addTarget:self action:@selector(actionaccept:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *btnuser = [[UIButton alloc] init];
@@ -43,7 +49,7 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(1)]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[user(50)]-10-[accept(120)]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[user(50)]-10-[accept(160)]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[user]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[accept]-10-|" options:0 metrics:metrics views:views]];
     
