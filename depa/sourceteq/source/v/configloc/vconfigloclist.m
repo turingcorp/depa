@@ -155,9 +155,16 @@ static NSUInteger const headermaxheight = 260;
 
 -(void)accept
 {
-    [[analytics singleton] trackevent:ga_event_location action:ga_action_list label:nil];
+    NSString *locationpath = [self.model path];
     
-    [[msettings singleton] changecountry:self.model.country location:[self.model path] locationname:self.model.title];
+    [[analytics singleton] trackevent:ga_event_location action:ga_action_list label:locationpath];
+    [[msettings singleton] changecountry:self.model.country location:locationpath locationname:self.model.title];
+    
+    if([[cmain singleton].pages.current isKindOfClass:[cplay class]])
+    {
+        [[cmain singleton].pages recallplay];
+    }
+    
     [[cmain singleton] popViewControllerAnimated:YES];
 }
 
