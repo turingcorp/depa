@@ -67,6 +67,7 @@
 
 -(void)changecontroller:(UIViewController*)controller direction:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
+    self.current = controller;
     NSArray *array = @[controller];
     [self setViewControllers:array direction:direction animated:animated completion:nil];
 }
@@ -112,6 +113,11 @@
 -(void)openfavorites
 {
     [self actionfavorites:nil];
+}
+
+-(void)recallplay
+{
+    [self showplay:UIPageViewControllerNavigationDirectionForward animated:NO sync:YES];
 }
 
 @end

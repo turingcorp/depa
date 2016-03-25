@@ -136,12 +136,17 @@
                                 country = [[mcountry singleton] countrydefault];
                             }
                             
+                            [[analytics singleton] trackevent:ga_event_location action:ga_action_map label:nil];
+                            [[msettings singleton] changecountry:country location:vars locationname:NSLocalizedString(@"config_location_mapselected", nil)];
+                            
                             dispatch_async(dispatch_get_main_queue(),
                                            ^
                                            {
-                                               [[analytics singleton] trackevent:ga_event_location action:ga_action_map label:nil];
+                                               if([[cmain singleton].pages.current isKindOfClass:[cplay class]])
+                                               {
+                                                   [[cmain singleton].pages recallplay];
+                                               }
                                                
-                                               [[msettings singleton] changecountry:country location:vars locationname:NSLocalizedString(@"config_location_mapselected", nil)];
                                                [[cmain singleton] popViewControllerAnimated:YES];
                                            });
                         }];
