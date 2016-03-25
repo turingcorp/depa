@@ -2,7 +2,7 @@
 
 "play_load_retrylabel"="Error searching";
 "play_load_retrybutton"="Try again";
-"play_empty"="No search results or you played them already, edit your filters to keep playing";
+"play_empty"="No results found, edit filters to find more";
 "play_empty_button"="Edit filters";
 "play_item_header_of"=" of %@";
 
@@ -21,8 +21,9 @@
 "config_location_list_state"="State";
 "config_location_list_city"="City";
 "config_location_list_neigh"="Neightbourhood";
-"config_location_list_select"="Select %@";
-"config_location_list_current"="Search in %@";
+"config_location_list_select"="Choose %@";
+"config_location_list_back"="Change %@";
+"config_location_list_current"="Select %@";
 "config_location_button_retry"="Try again";
 "config_location_mapselected"="Map selection";
 "config_mode_rent"="Rent";

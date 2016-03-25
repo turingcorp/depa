@@ -2,7 +2,7 @@
 
 "play_load_retrylabel"="Error en la busqueda";
 "play_load_retrybutton"="Intenta de nuevo";
-"play_empty"="No resultados de busqueda o ya los jugaste, edita tus filtros para seguir jugando";
+"play_empty"="No se encontraron inmuebles, edita los filtros para encontrar mas";
 "play_empty_button"="Editar filtros";
 "play_item_header_of"=" de %@";
 
@@ -21,8 +21,9 @@
 "config_location_list_state"="Estado";
 "config_location_list_city"="Ciudad";
 "config_location_list_neigh"="Colonia";
-"config_location_list_select"="Selecciona %@";
-"config_location_list_current"="Buscar en %@";
+"config_location_list_select"="Escoge %@";
+"config_location_list_back"="Cambiar %@";
+"config_location_list_current"="Seleccionar %@";
 "config_location_button_retry"="Reintentar";
 "config_location_mapselected"="Seleccion en mapa";
 "config_mode_rent"="Renta";
