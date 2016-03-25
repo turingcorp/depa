@@ -34,7 +34,7 @@
     return location;
 }
 
--(void)addannotation:(CLLocationCoordinate2D)coords
+-(void)addann:(CLLocationCoordinate2D)coords
 {
     [self removeAnnotation:self.annotation];
     mconfiglocmapann *annotation = [[mconfiglocmapann alloc] init:coords];
@@ -42,11 +42,20 @@
     [self addAnnotation:annotation];
 }
 
+-(void)focusoncenter
+{
+    CGFloat width_2 = self.bounds.size.width / 2.0;
+    CGFloat height_2 = self.bounds.size.height / 2.0;
+    CGPoint center = CGPointMake(width_2, height_2);
+    
+    [self addann:[self pointtocoord:center]];
+}
+
 #pragma mark gesture
 
 -(void)taprecognized:(UITapGestureRecognizer*)gesture
 {
-    [self addannotation:[self pointtocoord:[gesture locationInView:self]]];
+    [self addann:[self pointtocoord:[gesture locationInView:self]]];
 }
 
 @end

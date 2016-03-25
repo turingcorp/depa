@@ -105,7 +105,7 @@ static CGFloat const mapspanradius = 0.3;
     {
         self.firsttime = NO;
         [self centeruser];
-        [self.map addannotation:self.userlocation];
+        [self.map addann:self.userlocation];
     }
 }
 
@@ -115,6 +115,10 @@ static CGFloat const mapspanradius = 0.3;
     {
         [self.menu showbuttonuser];
         [self.map setShowsUserLocation:YES];
+    }
+    else
+    {
+        [self.map focusoncenter];
     }
 }
 
