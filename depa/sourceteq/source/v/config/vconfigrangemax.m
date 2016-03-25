@@ -88,9 +88,7 @@
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       [weakself bounceminprice];
-                       [weakself print];
-                       [weakself save];
+                       [weakself updaterange];
                    });
 }
 
@@ -202,10 +200,13 @@
     {
         [self.slider setMinimumValue:minprice];
         
-        if(minprice > self.currentprice)
+        if(self.currentprice)
         {
-            self.currentprice = minprice;
-            [self.slider setValue:self.currentprice animated:NO];
+            if(minprice > self.currentprice)
+            {
+                self.currentprice = minprice;
+                [self.slider setValue:self.currentprice animated:NO];
+            }
         }
     }
     else

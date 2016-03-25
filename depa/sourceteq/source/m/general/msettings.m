@@ -116,8 +116,17 @@
 -(void)changesearchmode:(id<mconfigmodprotocol>)model
 {
     self.searchmode = model;
-    self.minprice = [model pricemin];
-    self.maxprice = [model pricemax];
+    
+    if(self.minprice)
+    {
+        self.minprice = [model pricemin];
+    }
+    
+    if(self.maxprice)
+    {
+        self.maxprice = [model pricemax];
+    }
+    
     [self save];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:notsearchmodechanged object:nil];

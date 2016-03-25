@@ -88,9 +88,7 @@
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       [weakself bouncemaxprice];
-                       [weakself print];
-                       [weakself save];
+                       [weakself updaterange];
                    });
 }
 
@@ -202,10 +200,13 @@
     {
         [self.slider setMaximumValue:maxprice];
         
-        if(maxprice < self.currentprice)
+        if(self.currentprice)
         {
-            self.currentprice = maxprice;
-            [self.slider setValue:self.currentprice animated:NO];
+            if(maxprice < self.currentprice)
+            {
+                self.currentprice = maxprice;
+                [self.slider setValue:self.currentprice animated:NO];
+            }
         }
     }
     else
