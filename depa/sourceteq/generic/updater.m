@@ -46,8 +46,9 @@ NSString *documents;
         {
             firstime = YES;
             [updater firsttime:defaults];
-            [mdb updatedb];
         }
+        
+        [mdb updatedb];
     }
     
     dbname = [documents stringByAppendingPathComponent:[properties valueForKey:@"dbname"]];
