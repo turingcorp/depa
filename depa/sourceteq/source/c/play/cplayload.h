@@ -11,7 +11,6 @@
 -(void)recall;
 
 @property(weak, nonatomic)cplay *play;
-@property(weak, nonatomic)vplayload *viewload;
 @property(weak, nonatomic)amanager *callmanager;
 
 @end

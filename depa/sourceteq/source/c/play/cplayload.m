@@ -1,6 +1,14 @@
 #import "cplayload.h"
 
+@interface cplayload ()
+
+@property(strong, nonatomic)vplayload *view;
+
+@end
+
 @implementation cplayload
+
+@dynamic view;
 
 -(instancetype)init:(cplay*)play
 {
@@ -19,7 +27,6 @@
 -(void)loadView
 {
     self.view = [[vplayload alloc] init:self];
-    self.viewload = (vplayload*)self.view;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -49,7 +56,7 @@
 -(void)stopcall
 {
     [self.callmanager cancelcall];
-    [self.viewload showretry];
+    [self.view showretry];
     self.play.model.busy = NO;
 }
 
@@ -63,7 +70,7 @@
 
 -(void)recall
 {
-    [self.viewload showloading];
+    [self.view showloading];
     
     if(self.play.model)
     {
@@ -102,7 +109,7 @@
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-    [valert alert:error inview:self.viewload offsettop:0];
+    [valert alert:error inview:self.view offsettop:0];
     //NSLog(@"Error: %@", error);
 
     dispatch_async(dispatch_get_main_queue(),
