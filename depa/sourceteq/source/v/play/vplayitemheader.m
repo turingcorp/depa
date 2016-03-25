@@ -14,9 +14,15 @@
     NSDictionary *attrhl = @{NSFontAttributeName:[UIFont fontWithName:fontboldname size:12], NSForegroundColorAttributeName:[UIColor colorWithWhite:1 alpha:0.4]};
     NSString *stringcurrent = [[tools singleton] numbertostring:@(model.search.current)];
     NSString *stringtotal = [NSString stringWithFormat:NSLocalizedString(@"play_item_header_of", nil), [[tools singleton] numbertostring:@(model.search.total)]];
+    NSString *stringdisplayname = model.search.displayname;
+    
+    if(!stringdisplayname)
+    {
+        stringdisplayname = @"";
+    }
     
     NSMutableAttributedString *mut = [[NSMutableAttributedString alloc] init];
-    [mut appendAttributedString:[[NSAttributedString alloc] initWithString:model.search.displayname attributes:attrnorm]];
+    [mut appendAttributedString:[[NSAttributedString alloc] initWithString:stringdisplayname attributes:attrnorm]];
     [mut appendAttributedString:[[NSAttributedString alloc] initWithString:stringcurrent attributes:attrnorm]];
     [mut appendAttributedString:[[NSAttributedString alloc] initWithString:stringtotal attributes:attrhl]];
     

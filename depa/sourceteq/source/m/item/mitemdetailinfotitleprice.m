@@ -16,10 +16,23 @@ static NSUInteger const marginhorizontal = 20;
 {
     NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:21], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.8]};
     NSDictionary *attrprice = @{NSFontAttributeName:[UIFont fontWithName:fontname size:26], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
+    NSString *stringprice = item.itemprice;
+    NSString *stringtitle = item.itemtitle;
+    
+    if(!stringprice)
+    {
+        stringprice = @"";
+    }
+    
+    if(!stringtitle)
+    {
+        stringtitle = @"";
+    }
+    
     mutstring = [[NSMutableAttributedString alloc] init];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemprice attributes:attrprice]];
+    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:stringprice attributes:attrprice]];
     [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:attrprice]];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemtitle attributes:attrtitle]];
+    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:stringtitle attributes:attrtitle]];
     
     CGFloat colwidth = view.bounds.size.width;
     CGFloat textwidth = colwidth - (marginhorizontal * 2);

@@ -5,7 +5,7 @@ static NSUInteger const marginhorizontal = 20;
 
 @implementation mitemdetailinfodesc
 {
-    NSMutableAttributedString *mutstring;
+    NSAttributedString *attrstring;
     CGFloat cellheight;
 }
 
@@ -15,12 +15,18 @@ static NSUInteger const marginhorizontal = 20;
 -(void)config:(mitemdetail*)item view:(vitem*)view
 {
     NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont fontWithName:fontname size:19], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.6]};
-    mutstring = [[NSMutableAttributedString alloc] init];
-    [mutstring appendAttributedString:[[NSAttributedString alloc] initWithString:item.itemdesc attributes:attrtitle]];
+    NSString *stringdescr = item.itemdesc;
+    
+    if(!stringdescr)
+    {
+        stringdescr = @"";
+    }
+    
+    attrstring = [[NSAttributedString alloc] initWithString:stringdescr attributes:attrtitle];
     
     CGFloat colwidth = view.bounds.size.width;
     CGFloat textwidth = colwidth - (marginhorizontal * 2);
-    CGFloat textheight = ceilf([mutstring boundingRectWithSize:CGSizeMake(textwidth, 2000) options:stringdrawing context:nil].size.height);
+    CGFloat textheight = ceilf([attrstring boundingRectWithSize:CGSizeMake(textwidth, 2000) options:stringdrawing context:nil].size.height);
     cellheight = textheight + (marginvertical * 2);
 }
 
@@ -36,7 +42,7 @@ static NSUInteger const marginhorizontal = 20;
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setNumberOfLines:0];
-    [label setAttributedText:mutstring];
+    [label setAttributedText:attrstring];
     
     [overview addSubview:label];
     

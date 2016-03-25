@@ -15,7 +15,7 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setNumberOfLines:0];
-    [label setAttributedText:model.mutstring];
+    [label setAttributedText:model.attrstring];
     
     [self addSubview:label];
     
