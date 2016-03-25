@@ -8,6 +8,7 @@
 @interface msettings:NSObject
 
 +(instancetype)singleton;
+-(void)loadsettings;
 -(void)save;
 -(void)changecountry:(mcountryitem*)country location:(NSString*)location locationname:(NSString*)locationname;
 -(void)changesearchmode:(id<mconfigmodprotocol>)model;

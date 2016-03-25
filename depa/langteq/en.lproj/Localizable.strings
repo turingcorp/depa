@@ -1,5 +1,3 @@
-"app_title"="depa";
-
 "play_load_retrylabel"="Error searching";
 "play_load_retrybutton"="Try again";
 "play_empty"="No results found, edit filters to find more";
@@ -11,7 +9,6 @@
 "search_mode_rent"="for rent";
 "search_mode_buy"="for sale";
 
-"config_title"="Settings";
 "config_section_filters"="Search filters";
 "config_section_options"="App options";
 "config_location_title"="Location";
@@ -34,7 +31,7 @@
 "config_order_lower"="Lower";
 "config_order_higher"="Higher";
 "config_order_relevance"="Rating";
-"config_item_like_title"="Stored";
+"config_item_like_title"="Stars";
 "config_item_like_info"="Giving a Star saves the property and it appears on the Stars screen";
 "config_item_like_button"="Clear Stars";
 "config_item_like_buttonview"="View Stars";
@@ -71,8 +68,7 @@
 
 "settings_original_locationname"="Mexico City";
 
-"liked_title"="Liked";
-"liked_empty"="No likes yet";
+"liked_empty"="Haven't given a Star";
 
 "apicall_error_nodata"="Error connecting to server, try again";
 "apicall_error_parsingjgon"="Error reading server response, try again";

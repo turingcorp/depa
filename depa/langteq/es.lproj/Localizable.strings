@@ -1,5 +1,3 @@
-"app_title"="depa";
-
 "play_load_retrylabel"="Error en la busqueda";
 "play_load_retrybutton"="Intenta de nuevo";
 "play_empty"="No se encontraron inmuebles, edita los filtros para encontrar mas";
@@ -11,7 +9,6 @@
 "search_mode_rent"="en renta";
 "search_mode_buy"="en venta";
 
-"config_title"="Configuracion";
 "config_section_filters"="Filtros de busqueda";
 "config_section_options"="Opciones de la app";
 "config_location_title"="Ubicacion";
@@ -34,7 +31,7 @@
 "config_order_lower"="Menor";
 "config_order_higher"="Mayor";
 "config_order_relevance"="Rating";
-"config_item_like_title"="Guardadas";
+"config_item_like_title"="Estrellas";
 "config_item_like_info"="Cuando das Estrella el inmueble se guarda y aparece en la pantalla de Estrellas";
 "config_item_like_button"="Borrar Estrellas";
 "config_item_like_buttonview"="Ver Estrellas";
@@ -71,8 +68,7 @@
 
 "settings_original_locationname"="Ciudad de Mexico";
 
-"liked_title"="Likes";
-"liked_empty"="No tienes Likes";
+"liked_empty"="No has dados Estrellas";
 
 "apicall_error_nodata"="Error al conectarse al servidor, reintentalo";
 "apicall_error_parsingjgon"="Error leyendo la respuesta del servidor, reintentalo";
