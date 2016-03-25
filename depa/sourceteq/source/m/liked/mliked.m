@@ -6,8 +6,8 @@
 {
     self = [super init];
     
-    self.fonttitle = [UIFont fontWithName:fontname size:14];
-    self.fontprice = [UIFont fontWithName:fontname size:12];
+    self.fonttitle = [UIFont fontWithName:fontname size:16];
+    self.fontprice = [UIFont fontWithName:fontname size:13];
     
     return self;
 }
