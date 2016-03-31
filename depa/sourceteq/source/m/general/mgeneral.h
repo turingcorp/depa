@@ -44,6 +44,7 @@ typedef NS_ENUM(NSUInteger, ga_screen)
     ga_screen_detail,
     ga_screen_detail_contact,
     ga_screen_detail_location,
+    ga_screen_detail_share,
     ga_screen_config,
     ga_screen_config_location,
     ga_screen_config_likes,

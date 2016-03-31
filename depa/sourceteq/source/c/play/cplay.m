@@ -108,7 +108,7 @@ static const NSUInteger minitemspull = 3;
                    {
                        if(!weakself.model.busy)
                        {
-                           if([weakself.model count] < minitemspull && weakself.model.offset < weakself.model.total)
+                           if(weakself.model.items.count < minitemspull && weakself.model.offset < weakself.model.total)
                            {
                                weakself.model.busy = YES;
                                amanager *callmanager = [amanager call:[[acallsearch alloc] init:[weakself.model variables]] delegate:weakself];
@@ -166,8 +166,6 @@ static const NSUInteger minitemspull = 3;
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-    //NSLog(@"Error: %@", error);
-    
     __weak typeof(self) weakself = self;
     
     dispatch_async(dispatch_get_main_queue(),

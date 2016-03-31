@@ -112,7 +112,6 @@
 -(void)call:(amanager*)manager error:(NSString*)error
 {
     [valert alert:error inview:self.view offsettop:0];
-    //NSLog(@"Error: %@", error);
 
     __weak typeof(self) weakself = self;
     

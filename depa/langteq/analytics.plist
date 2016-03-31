@@ -9,6 +9,7 @@
 		<string>detail</string>
 		<string>detail/contact</string>
 		<string>detail/location</string>
+        <string>detail/share</string>
 		<string>config</string>
 		<string>config/location</string>
 		<string>config/likes</string>

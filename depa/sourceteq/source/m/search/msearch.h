@@ -5,14 +5,13 @@
 
 @interface msearch:NSObject
 
--(NSUInteger)count;
--(msearchresult*)item:(NSUInteger)index;
 -(void)remove:(NSUInteger)index;
 -(NSString*)variables;
 -(void)stats:(aparsersearch*)searchresults;
 -(void)join:(aparsersearch*)searchresults;
 -(msearchresult*)next;
 
+@property(strong, nonatomic)NSMutableArray<msearchresult*> *items;
 @property(copy, nonatomic)NSString *displayname;
 @property(nonatomic)NSUInteger total;
 @property(nonatomic)NSUInteger offset;

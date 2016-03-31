@@ -1,5 +1,8 @@
 #import "vlikedflow.h"
 
+static NSUInteger const mincols = 2;
+static NSUInteger const maxcols = 3;
+
 @implementation vlikedflow
 {
     NSMutableArray *attrs;
@@ -11,8 +14,6 @@
     CGFloat totalwidth;
     CGFloat totalheight;
     CGFloat totalcellwidth;
-    NSUInteger mincols;
-    NSUInteger maxcols;
 }
 
 -(instancetype)init:(mliked*)model
@@ -23,8 +24,6 @@
     padding = 4;
     padding_2 = padding / 2;
     padding2 = padding * 2;
-    mincols = 2;
-    maxcols = 3;
     addedwidth = vlikedcellhrpadding * 2;
     addedheight = vlikedcellimageheight + vlikedcellspacing + vlikedcellbottompadding;
     
