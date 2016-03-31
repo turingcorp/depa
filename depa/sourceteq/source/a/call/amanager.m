@@ -19,6 +19,7 @@
 -(instancetype)init:(id<acalldelegate>)delegate
 {
     self = [super init];
+    self.invalidated = NO;
     self.delegate = delegate;
     
     return self;
@@ -51,6 +52,7 @@
 
 -(void)cancelcall
 {
+    self.invalidated = YES;
     [self.session invalidateAndCancel];
 }
 
@@ -59,39 +61,42 @@
 
 -(void)URLSession:(NSURLSession*)session didBecomeInvalidWithError:(NSError*)error
 {
-    self.error = self.error ? self.error : error;
-    
-    if(self.error)
+    if(!self.invalidated)
     {
-        [self callerror:self.error.localizedDescription];
-    }
-    else if(!self.data)
-    {
-        [self callerror:NSLocalizedString(@"apicall_error_nodata", nil)];
-    }
-    else
-    {
-        NSError *jsonerror;
-        self.response = [NSJSONSerialization JSONObjectWithData:self.data options:NSJSONReadingAllowFragments error:&jsonerror];
+        self.error = self.error ? self.error : error;
         
-        if(jsonerror)
+        if(self.error)
         {
-            [self callerror:jsonerror.localizedDescription];
+            [self callerror:self.error.localizedDescription];
         }
-        else if(!self.response)
+        else if(!self.data)
         {
-            [self callerror:NSLocalizedString(@"apicall_error_parsingjgon", nil)];
+            [self callerror:NSLocalizedString(@"apicall_error_nodata", nil)];
         }
         else
         {
-            __block typeof(self) weakself = self;
+            NSError *jsonerror;
+            self.response = [NSJSONSerialization JSONObjectWithData:self.data options:NSJSONReadingAllowFragments error:&jsonerror];
             
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-                           ^
-                           {
-                               [weakself.call.parser parse:weakself.response];
-                               [weakself.delegate callsuccess:weakself];
-                           });
+            if(jsonerror)
+            {
+                [self callerror:jsonerror.localizedDescription];
+            }
+            else if(!self.response)
+            {
+                [self callerror:NSLocalizedString(@"apicall_error_parsingjgon", nil)];
+            }
+            else
+            {
+                __block typeof(self) weakself = self;
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                               ^
+                               {
+                                   [weakself.call.parser parse:weakself.response];
+                                   [weakself.delegate callsuccess:weakself];
+                               });
+            }
         }
     }
 }
