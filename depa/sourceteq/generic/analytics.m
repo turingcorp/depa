@@ -40,7 +40,7 @@
 #if DEBUG
     
     [[GAI sharedInstance] setDryRun:YES];
-//    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
+    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
     
 #endif
     

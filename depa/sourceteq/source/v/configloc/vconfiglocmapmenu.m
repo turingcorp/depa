@@ -136,7 +136,7 @@
                                 country = [[mcountry singleton] countrydefault];
                             }
                             
-                            [[analytics singleton] trackevent:ga_event_location action:ga_action_map label:nil];
+                            [[analytics singleton] trackevent:ga_event_location action:ga_action_map label:vars];
                             [[msettings singleton] changecountry:country location:vars locationname:NSLocalizedString(@"config_location_mapselected", nil)];
                             
                             dispatch_async(dispatch_get_main_queue(),

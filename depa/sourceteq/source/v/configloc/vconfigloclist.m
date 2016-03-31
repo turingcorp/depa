@@ -160,8 +160,9 @@ static NSUInteger const headermaxheight = 260;
 -(void)accept
 {
     NSString *locationpath = [self.model path];
+    NSString *locationname = [self.model locationname];
     
-    [[analytics singleton] trackevent:ga_event_location action:ga_action_list label:locationpath];
+    [[analytics singleton] trackevent:ga_event_location action:ga_action_list label:locationname];
     [[msettings singleton] changecountry:self.model.country location:locationpath locationname:self.model.title];
     
     if([[cmain singleton].pages.current isKindOfClass:[cplay class]])

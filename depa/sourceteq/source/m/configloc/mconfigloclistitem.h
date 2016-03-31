@@ -13,6 +13,7 @@
 -(void)returnerror:(NSString*)error;
 -(void)sort;
 -(NSString*)path;
+-(NSString*)locationname;
 
 @property(strong, nonatomic)id<sconfiglocprotocol> strategyinstance;
 @property(strong, nonatomic)mconfigloclistitem *parent;

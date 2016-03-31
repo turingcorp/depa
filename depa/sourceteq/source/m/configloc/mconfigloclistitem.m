@@ -77,4 +77,21 @@
     return string;
 }
 
+-(NSString*)locationname
+{
+    NSMutableString *string = [NSMutableString string];
+    
+    if(self.title)
+    {
+        [string appendString:self.title];
+    }
+    
+    if(self.parent)
+    {
+        [string appendFormat:@", %@", [self.parent locationname]];
+    }
+    
+    return string;
+}
+
 @end
