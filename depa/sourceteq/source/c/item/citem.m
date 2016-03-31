@@ -36,6 +36,11 @@ typedef NS_ENUM(NSUInteger, item_loaded)
     return self;
 }
 
+-(void)dealloc
+{
+    [self.manager cancelcall];
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

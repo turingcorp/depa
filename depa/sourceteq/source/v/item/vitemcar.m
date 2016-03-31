@@ -202,27 +202,30 @@ typedef NS_ENUM(NSUInteger, pandirection)
     }
     else
     {
-        if(deltax > 0)
+        if(self.controller.item.images.items.count)
         {
-            if(self.currentindex)
+            if(deltax > 0)
             {
-                self.nextimage = self.images[self.currentindex - 1];
-                direction = pandirection_left;
+                if(self.currentindex)
+                {
+                    self.nextimage = self.images[self.currentindex - 1];
+                    direction = pandirection_left;
+                }
             }
-        }
-        else if(deltax < 0)
-        {
-            if(self.currentindex < self.images.count - 1)
+            else if(deltax < 0)
             {
-                self.nextimage = self.images[self.currentindex + 1];
-                direction = pandirection_right;
+                if(self.currentindex < self.images.count - 1)
+                {
+                    self.nextimage = self.images[self.currentindex + 1];
+                    direction = pandirection_right;
+                }
             }
-        }
-        
-        if(self.nextimage)
-        {
-            [self.cellnext config:self.nextimage];
-            [self panalpha];
+            
+            if(self.nextimage)
+            {
+                [self.cellnext config:self.nextimage];
+                [self panalpha];
+            }
         }
     }
 }
@@ -241,6 +244,7 @@ typedef NS_ENUM(NSUInteger, pandirection)
     {
         [self selectitem:0];
         [self bouncepaging];
+        [self.pangesture setEnabled:YES];
     }
 }
 

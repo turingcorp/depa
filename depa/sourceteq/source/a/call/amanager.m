@@ -44,11 +44,7 @@
     [configuration setTimeoutIntervalForRequest:call.timeout];
     self.session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:operation];
     task = [self.session dataTaskWithRequest:call.request];
-    
-    if(task.state == NSURLSessionTaskStateSuspended)
-    {
-        [task resume];
-    }
+    [task resume];
     
     [self.session finishTasksAndInvalidate];
 }

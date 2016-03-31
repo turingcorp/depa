@@ -15,5 +15,6 @@
 @property(strong, nonatomic)NSURLSession *session;
 @property(strong, nonatomic)NSMutableData *data;
 @property(strong, nonatomic)NSError *error;
+@property(nonatomic)BOOL invalidated;
 
 @end
