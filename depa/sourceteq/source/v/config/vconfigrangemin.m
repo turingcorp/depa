@@ -1,5 +1,7 @@
 #import "vconfigrangemin.h"
 
+static CGFloat const secondsbeforesave = 5;
+
 @implementation vconfigrangemin
 
 -(instancetype)init
@@ -156,7 +158,7 @@
     [[msettings singleton] save];
     
     [self.timer invalidate];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:20 target:self selector:@selector(tick:) userInfo:nil repeats:NO];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:secondsbeforesave target:self selector:@selector(tick:) userInfo:nil repeats:NO];
 }
 
 -(void)print

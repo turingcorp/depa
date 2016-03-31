@@ -1,5 +1,7 @@
 #import "vconfigrangemax.h"
 
+static CGFloat const secondsbeforesave = 5;
+
 @implementation vconfigrangemax
 
 -(instancetype)init
@@ -77,6 +79,8 @@
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 #pragma mark notified
@@ -134,13 +138,27 @@
 
 #pragma mark functionality
 
+-(void)savechange
+{
+    NSString *maxstr = [NSString stringWithFormat:@"%@", @(self.currentprice)];
+    [[analytics singleton] trackevent:ga_event_config_maxprice action:ga_action_change label:maxstr];
+}
+
+-(void)tick:(NSTimer*)timer
+{
+    [timer invalidate];
+    timer = nil;
+    
+    [self savechange];
+}
+
 -(void)save
 {
     [msettings singleton].maxprice = self.currentprice;
     [[msettings singleton] save];
     
-    NSString *maxstr = [NSString stringWithFormat:@"%@", @(self.currentprice)];
-    [[analytics singleton] trackevent:ga_event_config_maxprice action:ga_action_change label:maxstr];
+    [self.timer invalidate];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:secondsbeforesave target:self selector:@selector(tick:) userInfo:nil repeats:NO];
 }
 
 -(void)print
