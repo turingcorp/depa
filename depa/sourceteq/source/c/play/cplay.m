@@ -25,6 +25,7 @@ static const NSUInteger minitemspull = 3;
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.callmanager cancelcall];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
