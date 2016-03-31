@@ -156,7 +156,9 @@
             }
         }
         
-        if(results.count && !self.array.count)
+        NSUInteger newresults = self.array.count;
+        
+        if(results.count && !newresults)
         {
             self.pullagain = YES;
         }
@@ -164,6 +166,9 @@
         self.total = [paging[@"total"] unsignedIntegerValue];
         self.offset = [paging[@"offset"] unsignedIntegerValue];
         self.limit = [paging[@"limit"] unsignedIntegerValue];
+        
+        NSString *strnewresults = [NSString stringWithFormat:@"%@", @(newresults)];
+        [[analytics singleton] trackevent:ga_event_search action:ga_action_results label:strnewresults];
     }
 }
 
