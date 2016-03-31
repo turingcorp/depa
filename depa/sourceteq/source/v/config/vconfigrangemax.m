@@ -1,6 +1,6 @@
 #import "vconfigrangemax.h"
 
-static CGFloat const secondsbeforesave = 5;
+static CGFloat const secondsbeforesave = 6;
 
 @implementation vconfigrangemax
 
