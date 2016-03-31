@@ -1,5 +1,7 @@
 #import "analytics.h"
 
+static NSUInteger const analyticsdispatch = 10;
+
 @implementation analytics
 {
     NSArray *screens;
@@ -34,7 +36,7 @@
 {
     self.tracker = [[GAI sharedInstance] trackerWithTrackingId:analyticsid];
     [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
-    [[GAI sharedInstance] setDispatchInterval:20];
+    [[GAI sharedInstance] setDispatchInterval:analyticsdispatch];
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelNone];
     
 #if DEBUG

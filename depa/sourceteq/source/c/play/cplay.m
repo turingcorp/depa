@@ -18,6 +18,7 @@ static const NSUInteger minitemspull = 3;
     }
     
     [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:YES];
+    [[analytics singleton] trackscreen:ga_screen_play];
  
     return self;
 }
@@ -36,13 +37,6 @@ static const NSUInteger minitemspull = 3;
 -(BOOL)prefersStatusBarHidden
 {
     return NO;
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    [[analytics singleton] trackscreen:ga_screen_play];
 }
 
 -(void)viewWillDisappear:(BOOL)animated

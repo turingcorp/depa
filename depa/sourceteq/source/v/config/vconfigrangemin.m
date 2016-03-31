@@ -77,6 +77,8 @@
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 #pragma mark notified
@@ -134,10 +136,27 @@
 
 #pragma mark functionality
 
+-(void)savechange
+{
+    NSString *minstr = [NSString stringWithFormat:@"%@", @(self.currentprice)];
+    [[analytics singleton] trackevent:ga_event_config_minprice action:ga_action_change label:minstr];
+}
+
+-(void)tick:(NSTimer*)timer
+{
+    [timer invalidate];
+    timer = nil;
+    
+    [self savechange];
+}
+
 -(void)save
 {
     [msettings singleton].minprice = self.currentprice;
     [[msettings singleton] save];
+    
+    [self.timer invalidate];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:20 target:self selector:@selector(tick:) userInfo:nil repeats:NO];
 }
 
 -(void)print

@@ -138,6 +138,9 @@
 {
     [msettings singleton].maxprice = self.currentprice;
     [[msettings singleton] save];
+    
+    NSString *maxstr = [NSString stringWithFormat:@"%@", @(self.currentprice)];
+    [[analytics singleton] trackevent:ga_event_config_maxprice action:ga_action_change label:maxstr];
 }
 
 -(void)print

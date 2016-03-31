@@ -115,9 +115,12 @@ static NSUInteger const cellwidth = 80;
     
     if(item != self.selected)
     {
-        [msettings singleton].searchtype = [self.model item:item];
+        id<mconfigtypprotocol> model = [self.model item:item];
+        [msettings singleton].searchtype = model;
         [[msettings singleton] save];
         self.selected = item;
+        
+        [[analytics singleton] trackevent:ga_event_config_type action:ga_action_change label:[model title]];
     }
 }
 
