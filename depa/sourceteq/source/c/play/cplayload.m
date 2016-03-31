@@ -43,7 +43,7 @@
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [self stopcall];
+    [self.callmanager cancelcall];
 }
 
 -(BOOL)prefersStatusBarHidden

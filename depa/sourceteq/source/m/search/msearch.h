@@ -16,7 +16,6 @@
 @property(copy, nonatomic)NSString *displayname;
 @property(nonatomic)NSUInteger total;
 @property(nonatomic)NSUInteger offset;
-@property(nonatomic)NSUInteger limit;
 @property(nonatomic)NSUInteger current;
 @property(nonatomic)BOOL busy;
 

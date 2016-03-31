@@ -39,7 +39,7 @@
             double rawlongitude = 0;
             
             item = [[mitem singleton] item:rawid];
-
+            
             if(!item || item.status == item_status_none)
             {
                 rawtitle = [tools cleanlatin:itemresults[@"title"]];
@@ -151,7 +151,7 @@
                 searchresult.itemcurrency = rawcurrency;
                 searchresult.itemprice = rawprice;
                 searchresult.phone = rawphone;
-
+                
                 [self.array addObject:searchresult];
             }
         }

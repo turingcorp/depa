@@ -48,7 +48,7 @@ static const NSUInteger minitemspull = 3;
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self stopcall];
+    [self.callmanager cancelcall];
 }
 
 #pragma mark notified
@@ -112,9 +112,9 @@ static const NSUInteger minitemspull = 3;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       if([weakself.model count] < minitemspull && weakself.model.offset < weakself.model.total)
+                       if(!weakself.model.busy)
                        {
-                           if(!weakself.model.busy)
+                           if([weakself.model count] < minitemspull && weakself.model.offset < weakself.model.total)
                            {
                                weakself.model.busy = YES;
                                amanager *callmanager = [amanager call:[[acallsearch alloc] init:[weakself.model variables]] delegate:weakself];
@@ -152,7 +152,9 @@ static const NSUInteger minitemspull = 3;
 
 -(void)callsuccess:(amanager*)manager
 {
-    [self.model join:(aparsersearch*)manager.call.parser];
+    aparsersearch *parser = (aparsersearch*)manager.call.parser;
+    [self.model stats:parser];
+    [self.model join:parser];
     
     if([self.current isKindOfClass:[cplayload class]])
     {

@@ -1,6 +1,6 @@
 #import "msearch.h"
 
-static const NSUInteger itemslimit = 10;
+static NSUInteger const itemslimit = 10;
 
 @implementation msearch
 {
@@ -11,7 +11,6 @@ static const NSUInteger itemslimit = 10;
 {
     self = [super init];
     
-    self.limit = itemslimit;
     self.current = 0;
     self.offset = 0;
     array = [NSMutableArray array];
@@ -47,12 +46,13 @@ static const NSUInteger itemslimit = 10;
 
 -(NSString*)variables
 {
+    NSUInteger offset = self.offset;
     NSMutableString *string = [NSMutableString string];
     [string appendFormat:@"category=%@", [[msettings singleton].country categoryforsettings]];
     [string appendString:[[msettings singleton].searchorder sortparameter]];
     [string appendString:@"&has_pictures=yes"];
-    [string appendFormat:@"&limit=%@", @(self.limit)];
-    [string appendFormat:@"&offset=%@", @(self.offset)];
+    [string appendFormat:@"&limit=%@", @(itemslimit)];
+    [string appendFormat:@"&offset=%@", @(offset)];
     [string appendFormat:@"&price=%@&", [[msettings singleton] pricerange]];
     [string appendString:[msettings singleton].location];
     
@@ -62,7 +62,7 @@ static const NSUInteger itemslimit = 10;
 -(void)stats:(aparsersearch*)searchresults
 {
     self.total = searchresults.total;
-    self.offset = searchresults.offset + self.limit;
+    self.offset = searchresults.offset + itemslimit;
 }
 
 -(void)join:(aparsersearch*)searchresults
