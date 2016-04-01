@@ -5,30 +5,39 @@
 	<key>screens</key>
 	<array>
 		<string>play</string>
-        <string>liked</string>
-        <string>detail</string>
-        <string>detail/contact</string>
-        <string>detail/location</string>
-        <string>config</string>
-        <string>config/location</string>
-        <string>config/likes</string>
-        <string>config/discarded</string>
+		<string>liked</string>
+		<string>detail</string>
+		<string>detail/contact</string>
+		<string>detail/location</string>
+        <string>detail/share</string>
+		<string>config</string>
+		<string>config/location</string>
+		<string>config/likes</string>
+		<string>config/discarded</string>
 	</array>
 	<key>events</key>
 	<array>
 		<string>play</string>
-        <string>location</string>
-        <string>clear</string>
-        <string>call</string>
-        <string>viewmore</string>
+		<string>location</string>
+		<string>clear</string>
+		<string>call</string>
+		<string>viewmore</string>
+		<string>search</string>
+        <string>config/minprice</string>
+        <string>config/maxprice</string>
+        <string>config/order</string>
+        <string>config/mode</string>
+        <string>config/type</string>
 	</array>
 	<key>actions</key>
 	<array>
 		<string>like</string>
-        <string>no</string>
-        <string>map</string>
-        <string>list</string>
-        <string>optin</string>
+		<string>no</string>
+		<string>map</string>
+		<string>list</string>
+		<string>optin</string>
+		<string>results</string>
+		<string>change</string>
 	</array>
 </dict>
 </plist>

@@ -119,6 +119,8 @@ static NSUInteger const cellwidth = 80;
         id<mconfigmodprotocol> model = [self.model item:item];
         [[msettings singleton] changesearchmode:model];
         self.selected = item;
+        
+        [[analytics singleton] trackevent:ga_event_config_mode action:ga_action_change label:[model title]];
     }
 }
 

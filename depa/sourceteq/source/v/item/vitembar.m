@@ -75,7 +75,11 @@
         act.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown;
     }
     
-    [[cmain singleton] presentViewController:act animated:YES completion:nil];
+    [[cmain singleton] presentViewController:act animated:YES completion:
+     ^
+     {
+         [[analytics singleton] trackscreen:ga_screen_detail_share];
+     }];
 }
 
 -(void)actionmap:(UIButton*)button

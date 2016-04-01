@@ -18,6 +18,7 @@ static const NSUInteger minitemspull = 3;
     }
     
     [self changecontroller:[[cplayload alloc] init:self] direction:UIPageViewControllerNavigationDirectionForward animated:YES];
+    [[analytics singleton] trackscreen:ga_screen_play];
  
     return self;
 }
@@ -25,6 +26,7 @@ static const NSUInteger minitemspull = 3;
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.callmanager cancelcall];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -37,17 +39,10 @@ static const NSUInteger minitemspull = 3;
     return NO;
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    [[analytics singleton] trackscreen:ga_screen_play];
-}
-
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self stopcall];
+    [self.callmanager cancelcall];
 }
 
 #pragma mark notified
@@ -111,9 +106,9 @@ static const NSUInteger minitemspull = 3;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       if([weakself.model count] < minitemspull && weakself.model.offset < weakself.model.total)
+                       if(!weakself.model.busy)
                        {
-                           if(!weakself.model.busy)
+                           if(weakself.model.items.count < minitemspull && weakself.model.offset < weakself.model.total)
                            {
                                weakself.model.busy = YES;
                                amanager *callmanager = [amanager call:[[acallsearch alloc] init:[weakself.model variables]] delegate:weakself];
@@ -151,7 +146,9 @@ static const NSUInteger minitemspull = 3;
 
 -(void)callsuccess:(amanager*)manager
 {
-    [self.model join:(aparsersearch*)manager.call.parser];
+    aparsersearch *parser = (aparsersearch*)manager.call.parser;
+    [self.model stats:parser];
+    [self.model join:parser];
     
     if([self.current isKindOfClass:[cplayload class]])
     {
@@ -169,8 +166,6 @@ static const NSUInteger minitemspull = 3;
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-    //NSLog(@"Error: %@", error);
-    
     __weak typeof(self) weakself = self;
     
     dispatch_async(dispatch_get_main_queue(),

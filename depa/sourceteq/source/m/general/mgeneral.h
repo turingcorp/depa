@@ -44,6 +44,7 @@ typedef NS_ENUM(NSUInteger, ga_screen)
     ga_screen_detail,
     ga_screen_detail_contact,
     ga_screen_detail_location,
+    ga_screen_detail_share,
     ga_screen_config,
     ga_screen_config_location,
     ga_screen_config_likes,
@@ -56,7 +57,13 @@ typedef NS_ENUM(NSUInteger, ga_event)
     ga_event_location,
     ga_event_clear,
     ga_event_call,
-    ga_event_viewmore
+    ga_event_viewmore,
+    ga_event_search,
+    ga_event_config_minprice,
+    ga_event_config_maxprice,
+    ga_event_config_order,
+    ga_event_config_mode,
+    ga_event_config_type
 };
 
 typedef NS_ENUM(NSUInteger, ga_action)
@@ -65,5 +72,7 @@ typedef NS_ENUM(NSUInteger, ga_action)
     ga_action_no,
     ga_action_map,
     ga_action_list,
-    ga_action_optin
+    ga_action_optin,
+    ga_action_results,
+    ga_action_change
 };

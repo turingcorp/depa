@@ -39,7 +39,7 @@
             double rawlongitude = 0;
             
             item = [[mitem singleton] item:rawid];
-
+            
             if(!item || item.status == item_status_none)
             {
                 rawtitle = [tools cleanlatin:itemresults[@"title"]];
@@ -151,12 +151,14 @@
                 searchresult.itemcurrency = rawcurrency;
                 searchresult.itemprice = rawprice;
                 searchresult.phone = rawphone;
-
+                
                 [self.array addObject:searchresult];
             }
         }
         
-        if(results.count && !self.array.count)
+        NSUInteger newresults = self.array.count;
+        
+        if(results.count && !newresults)
         {
             self.pullagain = YES;
         }
@@ -164,6 +166,9 @@
         self.total = [paging[@"total"] unsignedIntegerValue];
         self.offset = [paging[@"offset"] unsignedIntegerValue];
         self.limit = [paging[@"limit"] unsignedIntegerValue];
+        
+        NSString *strnewresults = [NSString stringWithFormat:@"%@", @(newresults)];
+        [[analytics singleton] trackevent:ga_event_search action:ga_action_results label:strnewresults];
     }
 }
 
