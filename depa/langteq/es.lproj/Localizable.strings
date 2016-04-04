@@ -68,7 +68,7 @@
 
 "settings_original_locationname"="Ciudad de Mexico";
 
-"liked_empty"="No has dados Estrellas";
+"liked_empty"="No has dado Estrellas";
 
 "apicall_error_nodata"="Error al conectarse al servidor, reintentalo";
 "apicall_error_parsingjgon"="Error leyendo la respuesta del servidor, reintentalo";
