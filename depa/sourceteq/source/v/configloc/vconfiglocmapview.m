@@ -18,6 +18,8 @@
     [self setShowsScale:NO];
     [self setShowsTraffic:NO];
     
+    if()
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(taprecognized:)];
     [self addGestureRecognizer:tap];
     
