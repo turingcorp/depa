@@ -66,20 +66,24 @@
 -(void)actionshare:(UIButton*)button
 {
     NSURL *url = [NSURL URLWithString:self.controller.item.permalink];
-    UIActivityViewController *act = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
     
-    if([UIPopoverPresentationController class])
+    if(url)
     {
-        act.popoverPresentationController.sourceView = self.controller.view;
-        act.popoverPresentationController.sourceRect = CGRectMake((self.controller.view.bounds.size.width / 2.0) - 2, self.controller.view.bounds.size.height - 100, 1, 1);
-        act.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown;
+        UIActivityViewController *act = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
+        
+        if([UIPopoverPresentationController class])
+        {
+            act.popoverPresentationController.sourceView = self.controller.view;
+            act.popoverPresentationController.sourceRect = CGRectMake((self.controller.view.bounds.size.width / 2.0) - 2, self.controller.view.bounds.size.height - 100, 1, 1);
+            act.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown;
+        }
+        
+        [[cmain singleton] presentViewController:act animated:YES completion:
+         ^
+         {
+             [[analytics singleton] trackscreen:ga_screen_detail_share];
+         }];
     }
-    
-    [[cmain singleton] presentViewController:act animated:YES completion:
-     ^
-     {
-         [[analytics singleton] trackscreen:ga_screen_detail_share];
-     }];
 }
 
 -(void)actionmap:(UIButton*)button
