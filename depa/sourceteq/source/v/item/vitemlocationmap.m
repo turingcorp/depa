@@ -13,10 +13,14 @@
     [self setPitchEnabled:NO];
     [self setMapType:MKMapTypeStandard];
     [self setShowsBuildings:NO];
-    [self setShowsCompass:YES];
     [self setShowsPointsOfInterest:YES];
     [self setShowsScale:YES];
     [self setShowsTraffic:NO];
+    
+    if([self respondsToSelector:@selector(setShowsCompass:)])
+    {
+        [self setShowsCompass:NO];
+    }
     
     return self;
 }
