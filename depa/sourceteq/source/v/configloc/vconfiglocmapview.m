@@ -13,10 +13,14 @@
     [self setPitchEnabled:NO];
     [self setMapType:MKMapTypeStandard];
     [self setShowsBuildings:NO];
-    [self setShowsCompass:NO];
     [self setShowsPointsOfInterest:NO];
     [self setShowsScale:NO];
     [self setShowsTraffic:NO];
+    
+    if([self respondsToSelector:@selector(setShowsCompass:)])
+    {
+        [self setShowsCompass:NO];
+    }
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(taprecognized:)];
     [self addGestureRecognizer:tap];
