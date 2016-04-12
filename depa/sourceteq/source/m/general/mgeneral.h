@@ -63,7 +63,7 @@ typedef NS_ENUM(NSUInteger, ga_event)
     ga_event_config_maxprice,
     ga_event_config_order,
     ga_event_config_mode,
-    ga_event_config_type
+    ga_event_config_type,
 };
 
 typedef NS_ENUM(NSUInteger, ga_action)
@@ -74,5 +74,6 @@ typedef NS_ENUM(NSUInteger, ga_action)
     ga_action_list,
     ga_action_optin,
     ga_action_results,
-    ga_action_change
+    ga_action_change,
+    ga_action_detail
 };

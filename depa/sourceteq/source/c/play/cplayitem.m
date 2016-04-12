@@ -31,7 +31,7 @@
 
 -(void)playlike
 {
-    [[analytics singleton] trackevent:ga_event_play action:ga_action_like label:nil];
+    [[analytics singleton] trackevent:ga_event_play action:ga_action_like label:self.item.item.itemid];
     
     [self.item playlike];
     [self.play playlike];
@@ -39,7 +39,7 @@
 
 -(void)playno
 {
-    [[analytics singleton] trackevent:ga_event_play action:ga_action_no label:nil];
+    [[analytics singleton] trackevent:ga_event_play action:ga_action_no label:self.item.item.itemid];
     
     [self.item playno];
     [self.play playno];
