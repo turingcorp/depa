@@ -62,6 +62,7 @@ typedef NS_ENUM(NSUInteger, item_loaded)
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     
     [[analytics singleton] trackscreen:ga_screen_detail];
+    [[analytics singleton] trackevent:ga_event_detail action:ga_ label:<#(NSString *)#>];
 }
 
 -(void)loadView

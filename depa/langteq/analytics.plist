@@ -28,7 +28,6 @@
 		<string>config/order</string>
 		<string>config/mode</string>
 		<string>config/type</string>
-		<string>detail</string>
 	</array>
 	<key>actions</key>
 	<array>
@@ -39,6 +38,7 @@
 		<string>optin</string>
 		<string>results</string>
 		<string>change</string>
+		<string>detail</string>
 	</array>
 </dict>
 </plist>
