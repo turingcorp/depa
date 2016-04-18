@@ -1,6 +1,6 @@
 #import "vitemlocation.h"
 
-static CGFloat const mapsansize = 0.025;
+static CGFloat const mapspansize = 0.025;
 
 @interface vitemlocation ()
 
@@ -18,7 +18,7 @@ static CGFloat const mapsansize = 0.025;
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor whiteColor]];
     
-    self.mapspan = MKCoordinateSpanMake(mapsansize, mapsansize);
+    self.mapspan = MKCoordinateSpanMake(mapspansize, mapspansize);
     vitemlocationmenu *menu = [[vitemlocationmenu alloc] init:controller];
     self.menu = menu;
     vitemlocationmap *map = [[vitemlocationmap alloc] init];
