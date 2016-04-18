@@ -26,6 +26,7 @@
 {
     [super viewDidLoad];
     
+#warning "maybe move to view did appear"
     [self.view loadmap];
     [[analytics singleton] trackscreen:ga_screen_detail_location];
 }
