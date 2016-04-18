@@ -12,7 +12,6 @@
 -(void)centeruser;
 -(void)centeritem;
 
-@property(weak, nonatomic)citemlocation *controllerlocation;
 @property(weak, nonatomic)vitemlocationmenu *menu;
 @property(weak, nonatomic)vitemlocationmap *map;
 @property(weak, nonatomic)mitemannotation *annotation;

@@ -2,7 +2,15 @@
 
 static CGFloat const mapsansize = 0.025;
 
+@interface vitemlocation ()
+
+@property(weak, nonatomic)citemlocation *controller;
+
+@end
+
 @implementation vitemlocation
+
+@dynamic controller;
 
 -(instancetype)init:(citemlocation*)controller
 {
@@ -10,7 +18,6 @@ static CGFloat const mapsansize = 0.025;
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor whiteColor]];
     
-    self.controllerlocation = controller;
     self.mapspan = MKCoordinateSpanMake(mapsansize, mapsansize);
     vitemlocationmenu *menu = [[vitemlocationmenu alloc] init:controller];
     self.menu = menu;
@@ -105,7 +112,7 @@ static CGFloat const mapsansize = 0.025;
 {
     if(!self.annotation)
     {
-        mitemdetail *item = self.controllerlocation.item;
+        mitemdetail *item = self.controller.item;
         mitemannotation *annotation = [[mitemannotation alloc] init:item.displaytitle latitude:item.latitude.doubleValue longitude:item.longitude.doubleValue];
         self.annotation = annotation;
         
