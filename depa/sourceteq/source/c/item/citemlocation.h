@@ -8,6 +8,6 @@
 -(void)back;
 
 @property(weak, nonatomic)mitemdetail *item;
-@property(weak, nonatomic)vitemlocation *viewlocation;
+@property(strong, nonatomic)vitemlocation *view;
 
 @end

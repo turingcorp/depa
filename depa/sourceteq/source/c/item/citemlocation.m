@@ -4,6 +4,8 @@
 
 @implementation citemlocation
 
+@dynamic view;
+
 +(void)show:(mitemdetail*)item
 {
     citemlocation *controller = [[citemlocation alloc] init:item];
@@ -31,7 +33,6 @@
 -(void)loadView
 {
     self.view = [[vitemlocation alloc] init:self];
-    self.viewlocation = (vitemlocation*)self.view;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle

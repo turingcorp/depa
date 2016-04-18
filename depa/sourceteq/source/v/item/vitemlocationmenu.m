@@ -63,12 +63,12 @@
 
 -(void)actiondepa:(UIButton*)button
 {
-    [self.controller.viewlocation centeritem];
+    [self.controller.view centeritem];
 }
 
 -(void)actionuser:(UIButton*)button
 {
-    [self.controller.viewlocation centeruser];
+    [self.controller.view centeruser];
 }
 
 #pragma mark public
