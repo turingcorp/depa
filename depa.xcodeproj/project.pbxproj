@@ -1851,6 +1851,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Agustin Iturbide (Q3HFYLXFGT)";
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/depa/sourceteq/core/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1860,6 +1861,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.depa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fe3408d0-c4a5-4ad7-a13b-fe7b8af9197f";
+				PROVISIONING_PROFILE_SPECIFIER = "depa dev";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1872,6 +1875,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Agustin Iturbide (7AMWG3RLHN)";
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/depa/sourceteq/core/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1881,6 +1885,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.depa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4a11041d-0b2b-480d-9b91-3dedbc172d84";
+				PROVISIONING_PROFILE_SPECIFIER = "depa dist store";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
