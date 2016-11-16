@@ -28,7 +28,12 @@
     [self.view loadmap];
     [[analytics singleton] trackscreen:ga_screen_detail_location];
     
-    [[cmain singleton] statusba];
+    [[cmain singleton] statusBarDefault];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[cmain singleton] statusBarLight];
 }
 
 -(void)loadView
