@@ -22,13 +22,13 @@
     return self;
 }
 
--(void)viewDidLoad
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-    
-#warning "maybe move to view did appear"
+    [super viewDidAppear:animated];
     [self.view loadmap];
     [[analytics singleton] trackscreen:ga_screen_detail_location];
+    
+    [[cmain singleton] statusba];
 }
 
 -(void)loadView
