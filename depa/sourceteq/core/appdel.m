@@ -22,11 +22,15 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger ttl = [[defaults valueForKey:@"ttl"] integerValue];
     
-    if(ttl == 2)
+    if(ttl > 10)
     {
         ttl = 0;
         
-        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ttl_title", nil) message:NSLocalizedString(@"ttl_message", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"ttl_cancel", nil) otherButtonTitles:NSLocalizedString(@"ttl_rate", nil), nil] show];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 3000), dispatch_get_main_queue(),
+                       ^
+                       {
+                           [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ttl_title", nil) message:NSLocalizedString(@"ttl_message", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"ttl_cancel", nil) otherButtonTitles:NSLocalizedString(@"ttl_rate", nil), nil] show];
+                       });
     }
     else
     {
@@ -43,6 +47,11 @@
 {
     if(index)
     {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSInteger ttl = [[defaults valueForKey:@"ttl"] integerValue];
+        ttl = -150;
+        [defaults setValue:@(ttl) forKey:@"ttl"];
+        
         NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1089721156&type=Purple+Software&mt=8"];
         [[UIApplication sharedApplication] openURL:url];
     }
