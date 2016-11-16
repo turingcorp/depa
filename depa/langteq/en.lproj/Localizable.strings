@@ -73,3 +73,8 @@
 "apicall_error_nodata"="Error connecting to server, try again";
 "apicall_error_parsingjgon"="Error reading server response, try again";
 "apicall_imateq_error_noimage"="Error downloading image";
+
+"ttl_title"="Give us some feedback";
+"ttl_message"="Write a review on the App Store";
+"ttl_cancel"="Not now";
+"ttl_rate"="Sure";

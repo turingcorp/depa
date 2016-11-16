@@ -18,6 +18,6 @@
 #import "s.h"
 #import "a.h"
 
-@interface appdel:UIResponder<UIApplicationDelegate>
+@interface appdel:UIResponder<UIApplicationDelegate, UIAlertViewDelegate>
 
 @end
