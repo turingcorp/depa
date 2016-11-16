@@ -1,6 +1,9 @@
 #import "cmain.h"
 
 @implementation cmain
+{
+    UIStatusBarStyle statusBarStyle;
+}
 
 +(instancetype)singleton
 {
@@ -14,6 +17,7 @@
 -(instancetype)init
 {
     cpages *pages = [[cpages alloc] init];
+    statusBarStyle = UIStatusBarStyleLightContent;
     self.pages = pages;
     self = [super initWithRootViewController:pages];
     
@@ -42,12 +46,24 @@
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleLightContent;
+    return statusBarStyle;
 }
 
 -(BOOL)prefersStatusBarHidden
 {
     return NO;
+}
+
+-(void)statusBarDefault
+{
+    statusBarStyle = UIStatusBarStyleDefault;
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+-(void)statusBarLight
+{
+    statusBarStyle = UIStatusBarStyleDefault;
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 @end

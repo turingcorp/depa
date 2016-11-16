@@ -73,3 +73,8 @@
 "apicall_error_nodata"="Error al conectarse al servidor, reintentalo";
 "apicall_error_parsingjgon"="Error leyendo la respuesta del servidor, reintentalo";
 "apicall_imateq_error_noimage"="Error descargando imagen";
+
+"ttl_title"="¿Que opinas de depa?";
+"ttl_message"="Escribenos una reseña en la tienda";
+"ttl_cancel"="Ahora no";
+"ttl_rate"="Claro";

@@ -4,6 +4,8 @@
 
 @implementation citemlocation
 
+@dynamic view;
+
 +(void)show:(mitemdetail*)item
 {
     citemlocation *controller = [[citemlocation alloc] init:item];
@@ -20,18 +22,16 @@
     return self;
 }
 
--(void)viewDidLoad
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-    
-    [(vitemlocation*)self.view loadmap];
+    [super viewDidAppear:animated];
+    [self.view loadmap];
     [[analytics singleton] trackscreen:ga_screen_detail_location];
 }
 
 -(void)loadView
 {
     self.view = [[vitemlocation alloc] init:self];
-    self.viewlocation = (vitemlocation*)self.view;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
