@@ -17,4 +17,21 @@
     return YES;
 }
 
+-(void)applicationWillEnterForeground:(UIApplication*)application
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger ttl = [[defaults valueForKey:@"ttl"] integerValue];
+    
+    if(ttl == 2)
+    {
+        ttl = 0;
+    }
+    else
+    {
+        ttl++;
+    }
+    
+    [defaults setValue:@(ttl) forKey:@"ttl"];
+}
+
 @end
