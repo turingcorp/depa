@@ -8,6 +8,6 @@
 -(void)trackscreen:(ga_screen)screen;
 -(void)trackevent:(ga_event)event action:(ga_action)action label:(NSString*)label;
 
-@property(weak, nonatomic)id<GAITracker> tracker;
+//@property(weak, nonatomic)id<GAITracker> tracker;
 
 @end

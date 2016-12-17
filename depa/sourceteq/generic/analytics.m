@@ -34,30 +34,30 @@ static NSUInteger const analyticsdispatch = 10;
 
 -(void)start
 {
-    self.tracker = [[GAI sharedInstance] trackerWithTrackingId:analyticsid];
-    [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
-    [[GAI sharedInstance] setDispatchInterval:analyticsdispatch];
-    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelNone];
-    
-#if DEBUG
-    
-    [[GAI sharedInstance] setDryRun:YES];
-    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
-    
-#endif
-    
+//    self.tracker = [[GAI sharedInstance] trackerWithTrackingId:analyticsid];
+//    [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
+//    [[GAI sharedInstance] setDispatchInterval:analyticsdispatch];
+//    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelNone];
+//    
+//#if DEBUG
+//    
+//    [[GAI sharedInstance] setDryRun:YES];
+//    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
+//    
+//#endif
+//    
 }
 
 -(void)trackscreen:(ga_screen)screen
 {
-    [self.tracker send:[[[GAIDictionaryBuilder createScreenView] set:screens[screen] forKey:kGAIScreenName] build]];
+//    [self.tracker send:[[[GAIDictionaryBuilder createScreenView] set:screens[screen] forKey:kGAIScreenName] build]];
 }
 
 -(void)trackevent:(ga_event)event action:(ga_action)action label:(NSString*)label
 {
-    NSString *eventname = events[event];
-    NSString *eventaction = actions[action];
-    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:eventname action:eventaction label:label value:@(1)] build]];
+//    NSString *eventname = events[event];
+//    NSString *eventaction = actions[action];
+//    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:eventname action:eventaction label:label value:@(1)] build]];
 }
 
 @end

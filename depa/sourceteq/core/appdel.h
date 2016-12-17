@@ -5,7 +5,6 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AddressBook/AddressBook.h>
 #import "analytics.h"
-#import "splunk.h"
 #import "db.h"
 #import "timerbg.h"
 #import "generic.h"
