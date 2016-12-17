@@ -48,9 +48,7 @@
     if(index)
     {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSInteger ttl = [[defaults valueForKey:@"ttl"] integerValue];
-        ttl = -150;
-        [defaults setValue:@(ttl) forKey:@"ttl"];
+        [defaults setValue:@(-150) forKey:@"ttl"];
         
         NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1089721156&type=Purple+Software&mt=8"];
         [[UIApplication sharedApplication] openURL:url];
