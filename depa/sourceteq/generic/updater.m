@@ -7,7 +7,6 @@ NSString *documents;
 +(void)launch
 {
     [[analytics singleton] start];
-    [splunk start];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 100), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^

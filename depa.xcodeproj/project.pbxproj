@@ -53,6 +53,7 @@
 		DA1FBD6D1C7F72B70038A822 /* mconfiglike.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD6C1C7F72B70038A822 /* mconfiglike.m */; };
 		DA1FBD701C7F73F90038A822 /* vconfiglike.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD6F1C7F73F90038A822 /* vconfiglike.m */; };
 		DA1FBD731C7F74050038A822 /* vconfigno.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1FBD721C7F74050038A822 /* vconfigno.m */; };
+		DA21E7141E05CE7A004A800F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DA21E7131E05CE7A004A800F /* libsqlite3.tbd */; };
 		DA2427A71C77A9FF00FE44B0 /* vplayitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A61C77A9FF00FE44B0 /* vplayitem.m */; };
 		DA2427AA1C77D14900FE44B0 /* aimateq.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427A91C77D14900FE44B0 /* aimateq.m */; };
 		DA2427AD1C77D1C200FE44B0 /* aimateqitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2427AC1C77D1C200FE44B0 /* aimateqitem.m */; };
@@ -290,6 +291,7 @@
 		DA1FBD6F1C7F73F90038A822 /* vconfiglike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfiglike.m; sourceTree = "<group>"; };
 		DA1FBD711C7F74050038A822 /* vconfigno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigno.h; sourceTree = "<group>"; };
 		DA1FBD721C7F74050038A822 /* vconfigno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigno.m; sourceTree = "<group>"; };
+		DA21E7131E05CE7A004A800F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		DA2427A51C77A9FF00FE44B0 /* vplayitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayitem.h; sourceTree = "<group>"; };
 		DA2427A61C77A9FF00FE44B0 /* vplayitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplayitem.m; sourceTree = "<group>"; };
 		DA2427A81C77D14900FE44B0 /* aimateq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aimateq.h; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA21E7141E05CE7A004A800F /* libsqlite3.tbd in Frameworks */,
 				DACDA8491C76073200A37D15 /* libtimerbg.a in Frameworks */,
 				DACDA8481C76073200A37D15 /* libdb.a in Frameworks */,
 				DA4118C71C85EFF8002CD805 /* MapKit.framework in Frameworks */,
@@ -1399,6 +1402,7 @@
 		DE15BEF0973E01072524BBA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA21E7131E05CE7A004A800F /* libsqlite3.tbd */,
 				DA0995CB1E05C4BC007F627D /* Mofiler.framework */,
 				DA4118C61C85EFF8002CD805 /* MapKit.framework */,
 				78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */,
@@ -1416,7 +1420,6 @@
 				DAADE83F1C755FB900489E6E /* Sources */,
 				DAADE8401C755FB900489E6E /* Frameworks */,
 				DAADE8411C755FB900489E6E /* Resources */,
-				DAD308FE1C9317180028E934 /* ShellScript */,
 				DA0995CE1E05C50C007F627D /* Carthage */,
 			);
 			buildRules = (
@@ -1500,19 +1503,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		DAD308FE1C9317180028E934 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "SCRIPT=`/usr/bin/find \"${SRCROOT}\" -name splunkmint_postbuild_dsym_upload_script.sh | head -n 1`\n/bin/bash \"${SCRIPT}\" \"a9ee566d\" \"dcfbba050d34e60a3112edb\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
