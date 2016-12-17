@@ -35,6 +35,7 @@ static NSUInteger const analyticsdispatch = 10;
 -(void)start
 {
     Mofiler *mofiler = [Mofiler sharedInstance];
+    mofiler.useLocation = false;
     
     
 //    self.tracker = [[GAI sharedInstance] trackerWithTrackingId:analyticsid];
