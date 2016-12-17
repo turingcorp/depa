@@ -197,9 +197,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.release.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.release.xcconfig"; sourceTree = "<group>"; };
 		78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-depa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.debug.xcconfig"; sourceTree = "<group>"; };
 		DA0995CB1E05C4BC007F627D /* Mofiler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mofiler.framework; path = Carthage/Build/iOS/Mofiler.framework; sourceTree = "<group>"; };
 		DA0995CF1E05CA73007F627D /* Mofiler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mofiler.framework; path = Carthage/Build/iOS/Mofiler.framework; sourceTree = "<group>"; };
 		DA0ABA951C9C573300E023C3 /* vitemceladdress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemceladdress.h; sourceTree = "<group>"; };
@@ -604,15 +602,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB4E0AF9290284B33151FF99 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */,
-				2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		DA1FBD611C7F45D20038A822 /* item */ = {
 			isa = PBXGroup;
 			children = (
@@ -1008,7 +997,6 @@
 				DA0995CF1E05CA73007F627D /* Mofiler.framework */,
 				DAADE8451C755FB900489E6E /* depa */,
 				DAADE8441C755FB900489E6E /* Products */,
-				AB4E0AF9290284B33151FF99 /* Pods */,
 				DE15BEF0973E01072524BBA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -1822,7 +1810,6 @@
 		};
 		DAADE85B1C755FB900489E6E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A34312FDD550DEFDE1A01CFF /* Pods-depa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -1851,7 +1838,6 @@
 		};
 		DAADE85C1C755FB900489E6E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
