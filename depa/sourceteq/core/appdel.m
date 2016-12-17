@@ -8,7 +8,7 @@
 -(BOOL)application:(UIApplication*)app didFinishLaunchingWithOptions:(NSDictionary*)options
 {
     [updater launch];
-    
+    /*
     Mofiler *mofiler = [Mofiler sharedInstance];
     [mofiler initializeWithAppKey:@"MY-APPKEY-HERE-IOS" appName:@"MyIosTestApplication" identity:@{@"username":@"johndoe"}];
     mofiler.delegate = self;
@@ -16,7 +16,7 @@
     [mofiler addIdentityWithIdentity:@{@"name":@"john doe"}];
     [mofiler addIdentityWithIdentity:@{@"email":@"john@doe.com"}];
     mofiler.useLocation = false;
-    mofiler.useVerboseContext = true;
+    mofiler.useVerboseContext = true;*/
     
     window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [window makeKeyAndVisible];

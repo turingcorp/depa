@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */; };
-		DA0995CD1E05C4DF007F627D /* Mofiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0995CB1E05C4BC007F627D /* Mofiler.framework */; };
-		DA0995D01E05CA74007F627D /* Mofiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0995CF1E05CA73007F627D /* Mofiler.framework */; };
-		DA0995D11E05CA74007F627D /* Mofiler.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA0995CF1E05CA73007F627D /* Mofiler.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DA0995D31E05CB9A007F627D /* Mofiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0995CF1E05CA73007F627D /* Mofiler.framework */; };
 		DA0ABA971C9C573300E023C3 /* vitemceladdress.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA961C9C573300E023C3 /* vitemceladdress.m */; };
 		DA0ABA9D1C9C808B00E023C3 /* vplayiteminfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA9C1C9C808B00E023C3 /* vplayiteminfo.m */; };
 		DA0ABAA01C9DDADD00E023C3 /* vplayitemimagelike.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA9F1C9DDADD00E023C3 /* vplayitemimagelike.m */; };
@@ -198,20 +196,6 @@
 		DAE8606F1CA1C05F00A88133 /* vconfigrangemin.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8606E1CA1C05F00A88133 /* vconfigrangemin.m */; };
 		DAE860721CA1C06900A88133 /* vconfigrangemax.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE860711CA1C06900A88133 /* vconfigrangemax.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		DA0995D21E05CA74007F627D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				DA0995D11E05CA74007F627D /* Mofiler.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2284DD2C1B759A0E96000387 /* Pods-depa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-depa.release.xcconfig"; path = "Pods/Target Support Files/Pods-depa/Pods-depa.release.xcconfig"; sourceTree = "<group>"; };
@@ -613,10 +597,9 @@
 			files = (
 				DACDA8491C76073200A37D15 /* libtimerbg.a in Frameworks */,
 				DACDA8481C76073200A37D15 /* libdb.a in Frameworks */,
-				DA0995CD1E05C4DF007F627D /* Mofiler.framework in Frameworks */,
-				DA0995D01E05CA74007F627D /* Mofiler.framework in Frameworks */,
 				DA4118C71C85EFF8002CD805 /* MapKit.framework in Frameworks */,
 				7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */,
+				DA0995D31E05CB9A007F627D /* Mofiler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1457,7 +1440,6 @@
 				42047248BA6BF1822F5CFD1B /* Copy Pods Resources */,
 				DAD308FE1C9317180028E934 /* ShellScript */,
 				DA0995CE1E05C50C007F627D /* Carthage */,
-				DA0995D21E05CA74007F627D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
