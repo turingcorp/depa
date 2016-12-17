@@ -6,6 +6,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <AddressBook/AddressBook.h>
+#import <Mofiler/Mofiler.h>
 #import "analytics.h"
 #import "splunk.h"
 #import "db.h"
@@ -18,6 +19,6 @@
 #import "s.h"
 #import "a.h"
 
-@interface appdel:UIResponder<UIApplicationDelegate, UIAlertViewDelegate>
+@interface appdel:UIResponder<UIApplicationDelegate, UIAlertViewDelegate, MofilerDelegate>
 
 @end
