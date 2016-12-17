@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */; };
 		DA0995D31E05CB9A007F627D /* Mofiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0995CF1E05CA73007F627D /* Mofiler.framework */; };
 		DA0ABA971C9C573300E023C3 /* vitemceladdress.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA961C9C573300E023C3 /* vitemceladdress.m */; };
 		DA0ABA9D1C9C808B00E023C3 /* vplayiteminfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA9C1C9C808B00E023C3 /* vplayiteminfo.m */; };
@@ -598,7 +597,6 @@
 				DACDA8491C76073200A37D15 /* libtimerbg.a in Frameworks */,
 				DACDA8481C76073200A37D15 /* libdb.a in Frameworks */,
 				DA4118C71C85EFF8002CD805 /* MapKit.framework in Frameworks */,
-				7EE82B0622EFCEC12E0CA039 /* libPods-depa.a in Frameworks */,
 				DA0995D31E05CB9A007F627D /* Mofiler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1432,12 +1430,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAADE85A1C755FB900489E6E /* Build configuration list for PBXNativeTarget "depa" */;
 			buildPhases = (
-				1EBA22556BB5D97B4002D502 /* Check Pods Manifest.lock */,
 				DAADE83F1C755FB900489E6E /* Sources */,
 				DAADE8401C755FB900489E6E /* Frameworks */,
 				DAADE8411C755FB900489E6E /* Resources */,
-				3E532161D82269EC7F54515B /* Embed Pods Frameworks */,
-				42047248BA6BF1822F5CFD1B /* Copy Pods Resources */,
 				DAD308FE1C9317180028E934 /* ShellScript */,
 				DA0995CE1E05C50C007F627D /* Carthage */,
 			);
@@ -1508,51 +1503,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1EBA22556BB5D97B4002D502 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3E532161D82269EC7F54515B /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-depa/Pods-depa-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		42047248BA6BF1822F5CFD1B /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-depa/Pods-depa-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DA0995CE1E05C50C007F627D /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
