@@ -1437,6 +1437,7 @@
 				3E532161D82269EC7F54515B /* Embed Pods Frameworks */,
 				42047248BA6BF1822F5CFD1B /* Copy Pods Resources */,
 				DAD308FE1C9317180028E934 /* ShellScript */,
+				DA0995CE1E05C50C007F627D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1549,6 +1550,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-depa/Pods-depa-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DA0995CE1E05C50C007F627D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Mofiler.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 		DAD308FE1C9317180028E934 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
