@@ -64,16 +64,4 @@
     }
 }
 
-#pragma mark mofiler del
-
--(void)responseValueWithKey:(NSString *)key identityKey:(NSString *)identityKey identityValue:(NSString *)identityValue value:(NSDictionary<NSString *,id> *)value
-{
-    NSLog(@"%@", value);
-}
-
--(void)errorOcurredWithError:(NSString *)error userInfo:(NSDictionary<NSString *,NSString *> *)userInfo
-{
-    NSLog(@"%@", error);
-}
-
 @end

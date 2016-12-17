@@ -34,6 +34,9 @@ static NSUInteger const analyticsdispatch = 10;
 
 -(void)start
 {
+    Mofiler *mofiler = [Mofiler sharedInstance];
+    
+    
 //    self.tracker = [[GAI sharedInstance] trackerWithTrackingId:analyticsid];
 //    [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
 //    [[GAI sharedInstance] setDispatchInterval:analyticsdispatch];
@@ -58,6 +61,19 @@ static NSUInteger const analyticsdispatch = 10;
 //    NSString *eventname = events[event];
 //    NSString *eventaction = actions[action];
 //    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:eventname action:eventaction label:label value:@(1)] build]];
+}
+
+#pragma mark -
+#pragma mark mofiler del
+
+-(void)responseValueWithKey:(NSString *)key identityKey:(NSString *)identityKey identityValue:(NSString *)identityValue value:(NSDictionary<NSString *,id> *)value
+{
+    NSLog(@"%@", value);
+}
+
+-(void)errorOcurredWithError:(NSString *)error userInfo:(NSDictionary<NSString *,NSString *> *)userInfo
+{
+    NSLog(@"%@", error);
 }
 
 @end

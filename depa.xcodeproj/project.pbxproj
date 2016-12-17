@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA0995D31E05CB9A007F627D /* Mofiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0995CF1E05CA73007F627D /* Mofiler.framework */; };
 		DA0ABA971C9C573300E023C3 /* vitemceladdress.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA961C9C573300E023C3 /* vitemceladdress.m */; };
 		DA0ABA9D1C9C808B00E023C3 /* vplayiteminfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA9C1C9C808B00E023C3 /* vplayiteminfo.m */; };
 		DA0ABAA01C9DDADD00E023C3 /* vplayitemimagelike.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0ABA9F1C9DDADD00E023C3 /* vplayitemimagelike.m */; };
@@ -119,7 +118,6 @@
 		DA4118BF1C85E3B3002CD805 /* vitemlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118BE1C85E3B3002CD805 /* vitemlocation.m */; };
 		DA4118C21C85E498002CD805 /* vitemlocationmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118C11C85E498002CD805 /* vitemlocationmenu.m */; };
 		DA4118C51C85ED04002CD805 /* vitemlocationmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118C41C85ED04002CD805 /* vitemlocationmap.m */; };
-		DA4118C71C85EFF8002CD805 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4118C61C85EFF8002CD805 /* MapKit.framework */; };
 		DA4118CA1C85F22E002CD805 /* mitemannotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118C91C85F22E002CD805 /* mitemannotation.m */; };
 		DA4118CD1C860468002CD805 /* vplayitembutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118CC1C860468002CD805 /* vplayitembutton.m */; };
 		DA4118D41C860F42002CD805 /* mitemdetailinfostatsmeters.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118D31C860F42002CD805 /* mitemdetailinfostatsmeters.m */; };
@@ -141,6 +139,8 @@
 		DA74726E1CA0D099006F56AF /* mconfigsectionfilters.m in Sources */ = {isa = PBXBuildFile; fileRef = DA74726D1CA0D099006F56AF /* mconfigsectionfilters.m */; };
 		DA7472711CA0D0A9006F56AF /* mconfigsectionoptions.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7472701CA0D0A9006F56AF /* mconfigsectionoptions.m */; };
 		DA7472741CA0E46F006F56AF /* vconfigheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7472731CA0E46F006F56AF /* vconfigheader.m */; };
+		DA8681E61E05D121002B0B78 /* Mofiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8681E51E05D121002B0B78 /* Mofiler.framework */; };
+		DA8681E71E05D121002B0B78 /* Mofiler.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA8681E51E05D121002B0B78 /* Mofiler.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA9141881C766669004BE5D1 /* vplay.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141871C766669004BE5D1 /* vplay.m */; };
 		DA91418E1C766B77004BE5D1 /* vplayload.m in Sources */ = {isa = PBXBuildFile; fileRef = DA91418D1C766B77004BE5D1 /* vplayload.m */; };
 		DA9141911C766C3F004BE5D1 /* cplayload.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141901C766C3F004BE5D1 /* cplayload.m */; };
@@ -196,10 +196,23 @@
 		DAE860721CA1C06900A88133 /* vconfigrangemax.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE860711CA1C06900A88133 /* vconfigrangemax.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DA8681E81E05D122002B0B78 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DA8681E71E05D121002B0B78 /* Mofiler.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-depa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0995CB1E05C4BC007F627D /* Mofiler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mofiler.framework; path = Carthage/Build/iOS/Mofiler.framework; sourceTree = "<group>"; };
-		DA0995CF1E05CA73007F627D /* Mofiler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mofiler.framework; path = Carthage/Build/iOS/Mofiler.framework; sourceTree = "<group>"; };
 		DA0ABA951C9C573300E023C3 /* vitemceladdress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemceladdress.h; sourceTree = "<group>"; };
 		DA0ABA961C9C573300E023C3 /* vitemceladdress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemceladdress.m; sourceTree = "<group>"; };
 		DA0ABA9B1C9C808B00E023C3 /* vplayiteminfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayiteminfo.h; sourceTree = "<group>"; };
@@ -469,6 +482,7 @@
 		DA7472701CA0D0A9006F56AF /* mconfigsectionoptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mconfigsectionoptions.m; sourceTree = "<group>"; };
 		DA7472721CA0E46F006F56AF /* vconfigheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigheader.h; sourceTree = "<group>"; };
 		DA7472731CA0E46F006F56AF /* vconfigheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigheader.m; sourceTree = "<group>"; };
+		DA8681E51E05D121002B0B78 /* Mofiler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mofiler.framework; path = Carthage/Build/iOS/Mofiler.framework; sourceTree = "<group>"; };
 		DA9141861C766669004BE5D1 /* vplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplay.h; sourceTree = "<group>"; };
 		DA9141871C766669004BE5D1 /* vplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vplay.m; sourceTree = "<group>"; };
 		DA91418C1C766B77004BE5D1 /* vplayload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vplayload.h; sourceTree = "<group>"; };
@@ -594,8 +608,7 @@
 				DA21E7141E05CE7A004A800F /* libsqlite3.tbd in Frameworks */,
 				DACDA8491C76073200A37D15 /* libtimerbg.a in Frameworks */,
 				DACDA8481C76073200A37D15 /* libdb.a in Frameworks */,
-				DA4118C71C85EFF8002CD805 /* MapKit.framework in Frameworks */,
-				DA0995D31E05CB9A007F627D /* Mofiler.framework in Frameworks */,
+				DA8681E61E05D121002B0B78 /* Mofiler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -994,7 +1007,7 @@
 		DAADE83A1C755FB900489E6E = {
 			isa = PBXGroup;
 			children = (
-				DA0995CF1E05CA73007F627D /* Mofiler.framework */,
+				DA8681E51E05D121002B0B78 /* Mofiler.framework */,
 				DAADE8451C755FB900489E6E /* depa */,
 				DAADE8441C755FB900489E6E /* Products */,
 				DE15BEF0973E01072524BBA8 /* Frameworks */,
@@ -1421,6 +1434,7 @@
 				DAADE8401C755FB900489E6E /* Frameworks */,
 				DAADE8411C755FB900489E6E /* Resources */,
 				DA0995CE1E05C50C007F627D /* Carthage */,
+				DA8681E81E05D122002B0B78 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1795,6 +1809,7 @@
 		DAADE85B1C755FB900489E6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Agustin Iturbide (Q3HFYLXFGT)";
@@ -1823,6 +1838,7 @@
 		DAADE85C1C755FB900489E6E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Agustin Iturbide (7AMWG3RLHN)";

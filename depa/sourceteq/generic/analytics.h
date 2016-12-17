@@ -1,7 +1,7 @@
 #import "appdel.h"
 #import "mgeneral.h"
 
-@interface analytics:NSObject
+@interface analytics:NSObject<MofilerDelegate>
 
 +(instancetype)singleton;
 -(void)start;
