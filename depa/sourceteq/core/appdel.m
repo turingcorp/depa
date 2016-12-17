@@ -9,6 +9,15 @@
 {
     [updater launch];
     
+    Mofiler *mofiler = [Mofiler sharedInstance];
+    [mofiler initializeWithAppKey:@"MY-APPKEY-HERE-IOS" appName:@"MyIosTestApplication" identity:@{@"username":@"johndoe"}];
+    mofiler.delegate = self;
+    mofiler.url = @"mofiler.com";
+    [mofiler addIdentityWithIdentity:@{@"name":@"john doe"}];
+    [mofiler addIdentityWithIdentity:@{@"email":@"john@doe.com"}];
+    mofiler.useLocation = false;
+    mofiler.useVerboseContext = true;
+    
     window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [window makeKeyAndVisible];
     [window setBackgroundColor:[UIColor whiteColor]];
@@ -53,6 +62,18 @@
         NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1089721156&type=Purple+Software&mt=8"];
         [[UIApplication sharedApplication] openURL:url];
     }
+}
+
+#pragma mark mofiler del
+
+-(void)responseValueWithKey:(NSString *)key identityKey:(NSString *)identityKey identityValue:(NSString *)identityValue value:(NSDictionary<NSString *,id> *)value
+{
+    NSLog(@"%@", value);
+}
+
+-(void)errorOcurredWithError:(NSString *)error userInfo:(NSDictionary<NSString *,NSString *> *)userInfo
+{
+    NSLog(@"%@", error);
 }
 
 @end
