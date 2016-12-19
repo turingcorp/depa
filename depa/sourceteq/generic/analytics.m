@@ -23,7 +23,7 @@
 -(void)start
 {
     Mofiler *mofiler = [Mofiler sharedInstance];
-    [mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:@{}];
+    [mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:@{@"username":@"anonymous"}];
     mofiler.delegate = self;
     mofiler.useLocation = true;
     mofiler.url = @"mofiler.com";
