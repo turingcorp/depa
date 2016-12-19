@@ -1,5 +1,7 @@
 #import "analytics.h"
 
+NSString *const analyticsId = @"DEPA";
+NSString *const analyticsKey = @"DEPA";
 NSString *const kKeyUsername = @"username";
 NSString *const kValueUsername = @"default";
 NSString *const kKeyScreen = @"screen";
@@ -39,12 +41,12 @@ NSString *const kKeyScreen = @"screen";
     NSMutableDictionary *identity = [NSMutableDictionary dictionary];
     identity[kKeyUsername] = kValueUsername;
     
-    Mofiler *mofiler = [Mofiler sharedInstance];
-    [mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:identity];
-    mofiler.delegate = self;
-    mofiler.useLocation = false;
+    self.mofiler = [Mofiler sharedInstance];
+    [self.mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:identity];
+    self.mofiler.delegate = self;
+    self.mofiler.useLocation = false;
 //    mofiler.url = @"mofiler.com";
-    mofiler.useVerboseContext = true;
+//    self.mofiler.useVerboseContext = true;
 }
 
 -(void)trackscreen:(ga_screen)screen
@@ -52,8 +54,8 @@ NSString *const kKeyScreen = @"screen";
     NSMutableDictionary *screenEvent = [NSMutableDictionary dictionary];
     screenEvent[kKeyScreen] = screens[screen];
     
-    [[Mofiler sharedInstance] injectValueWithNewValue:screenEvent expirationDateInMilliseconds:nil];
-    [[Mofiler sharedInstance] flushDataToMofiler];
+    [self.mofiler injectValueWithNewValue:screenEvent expirationDateInMilliseconds:nil];
+    [self.mofiler flushDataToMofiler];
 }
 
 -(void)trackevent:(ga_event)event action:(ga_action)action label:(NSString*)label
@@ -63,14 +65,12 @@ NSString *const kKeyScreen = @"screen";
     NSString *eventNameAction = [NSString stringWithFormat:@"%@.%@", eventname, eventaction];
     
     NSMutableDictionary *actionEvent = [NSMutableDictionary dictionary];
-    actionEvent[eventNameAction] = label;
+    actionEvent[eventNameAction] = @"{value:\"test\"}";
     
-    [[Mofiler sharedInstance] injectValueWithNewValue:actionEvent expirationDateInMilliseconds:nil];
-    [[Mofiler sharedInstance] flushDataToMofiler];
+    [self.mofiler injectValueWithNewValue:actionEvent expirationDateInMilliseconds:nil];
+    [self.mofiler flushDataToMofiler];
     
-    [[Mofiler sharedInstance] getValueWithKey:eventNameAction identityKey:kKeyUsername identityValue:kValueUsername callback:^(id resutl, id error) {
-        NSLog(@"%@, error: %@", resutl, error);
-    }];
+    [self.mofiler getValueWithKey:eventNameAction identityKey:kKeyUsername identityValue:kValueUsername];
 }
 
 #pragma mark -
