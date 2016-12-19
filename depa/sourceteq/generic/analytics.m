@@ -38,7 +38,6 @@
     mofiler.useLocation = true;
     mofiler.url = @"mofiler.com";
     mofiler.useVerboseContext = true;
-
 }
 
 -(void)trackscreen:(ga_screen)screen
@@ -60,12 +59,20 @@
 
 -(void)responseValueWithKey:(NSString *)key identityKey:(NSString *)identityKey identityValue:(NSString *)identityValue value:(NSDictionary<NSString *,id> *)value
 {
-    NSLog(@"%@", value);
+#if DEBUG
+    
+    NSLog(@"analytics response: %@", value);
+    
+#endif
 }
 
 -(void)errorOcurredWithError:(NSString *)error userInfo:(NSDictionary<NSString *,NSString *> *)userInfo
 {
-    NSLog(@"%@", error);
+#if DEBUG
+    
+    NSLog(@"analytics error: %@", error);
+    
+#endif
 }
 
 @end
