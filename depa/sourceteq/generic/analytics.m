@@ -42,11 +42,16 @@ NSString *const kKeyScreen = @"screen";
     identity[kKeyUsername] = kValueUsername;
     
     self.mofiler = [Mofiler sharedInstance];
-    [self.mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:identity];
     self.mofiler.delegate = self;
-    self.mofiler.useLocation = false;
-//    mofiler.url = @"mofiler.com";
-//    self.mofiler.useVerboseContext = true;
+    [self.mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:identity];
+    self.mofiler.url = @"mofiler.com";
+    self.mofiler.useLocation = true;
+    [self.mofiler addIdentityWithIdentity:@{@"name":@"default"}];
+    [self.mofiler addIdentityWithIdentity:@{@"email":@"default@mail.com"}];
+    self.mofiler.useVerboseContext = false;
+    self.mofiler.debugLogging = false;
+    
+    NSLog(@"debug %@", @(self.mofiler.debugLogging));
 }
 
 -(void)trackscreen:(ga_screen)screen
@@ -65,12 +70,13 @@ NSString *const kKeyScreen = @"screen";
     NSString *eventNameAction = [NSString stringWithFormat:@"%@.%@", eventname, eventaction];
     
     NSMutableDictionary *actionEvent = [NSMutableDictionary dictionary];
-    actionEvent[eventNameAction] = @"{value:\"test\"}";
+    actionEvent[eventNameAction] = label;
     
     [self.mofiler injectValueWithNewValue:actionEvent expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"test":@"{\"value\":\"test\"}"} expirationDateInMilliseconds:nil];
     [self.mofiler flushDataToMofiler];
     
-    [self.mofiler getValueWithKey:eventNameAction identityKey:kKeyUsername identityValue:kValueUsername];
+    [self.mofiler getValueWithKey:@"test" identityKey:kKeyUsername identityValue:kValueUsername];
 }
 
 #pragma mark -
@@ -81,7 +87,7 @@ NSString *const kKeyScreen = @"screen";
     
 #if DEBUG
     
-    NSLog(@"analytics response: %@", value);
+    NSLog(@"analytics response: %@:%@", key, value);
     
 #endif
     
