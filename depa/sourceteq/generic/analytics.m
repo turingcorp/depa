@@ -43,14 +43,16 @@
 
 -(void)trackscreen:(ga_screen)screen
 {
-//    [self.tracker send:[[[GAIDictionaryBuilder createScreenView] set:screens[screen] forKey:kGAIScreenName] build]];
+    [[Mofiler sharedInstance] injectValueWithNewValue:@{@"screen":screens[screen]} expirationDateInMilliseconds:nil];
+    [[Mofiler sharedInstance] flushDataToMofiler];
 }
 
 -(void)trackevent:(ga_event)event action:(ga_action)action label:(NSString*)label
 {
-//    NSString *eventname = events[event];
-//    NSString *eventaction = actions[action];
-//    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:eventname action:eventaction label:label value:@(1)] build]];
+    NSString *eventname = events[event];
+    NSString *eventaction = actions[action];
+    [[Mofiler sharedInstance] injectValueWithNewValue:@{eventname:eventaction} expirationDateInMilliseconds:nil];
+    [[Mofiler sharedInstance] flushDataToMofiler];
 }
 
 #pragma mark -
