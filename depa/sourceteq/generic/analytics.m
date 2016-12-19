@@ -1,7 +1,5 @@
 #import "analytics.h"
 
-static NSUInteger const analyticsdispatch = 10;
-
 @implementation analytics
 {
     NSArray *screens;
