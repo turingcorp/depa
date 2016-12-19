@@ -40,19 +40,14 @@
     [mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:@{keyUserName:valueUserName}];
     mofiler.delegate = self;
     mofiler.useLocation = false;
-    mofiler.url = @"mofiler.com";
+//    mofiler.url = @"mofiler.com";
     mofiler.useVerboseContext = true;
 }
 
 -(void)trackscreen:(ga_screen)screen
 {
-    NSLog(@"%@:%@", keyScreen, screens[screen]);
-    
-    dispatch_async(dispatch_get_main_queue(),
-                   ^{
-                       [[Mofiler sharedInstance] injectValueWithNewValue:@{keyScreen:screens[screen]} expirationDateInMilliseconds:nil];
-                       [[Mofiler sharedInstance] flushDataToMofiler];
-                   });
+    [[Mofiler sharedInstance] injectValueWithNewValue:@{keyScreen:screens[screen]} expirationDateInMilliseconds:nil];
+    [[Mofiler sharedInstance] flushDataToMofiler];
 }
 
 -(void)trackevent:(ga_event)event action:(ga_action)action label:(NSString*)label
@@ -61,13 +56,8 @@
     NSString *eventaction = actions[action];
     NSString *eventNameAction = [NSString stringWithFormat:@"%@/%@", eventname, eventaction];
     
-    NSLog(@"%@:%@", eventNameAction, label);
-    
-    dispatch_async(dispatch_get_main_queue(),
-    ^{
-        [[Mofiler sharedInstance] injectValueWithNewValue:@{eventNameAction:label} expirationDateInMilliseconds:nil];
-        [[Mofiler sharedInstance] flushDataToMofiler];
-    });
+    [[Mofiler sharedInstance] injectValueWithNewValue:@{eventNameAction:label} expirationDateInMilliseconds:nil];
+    [[Mofiler sharedInstance] flushDataToMofiler];
 }
 
 #pragma mark -
