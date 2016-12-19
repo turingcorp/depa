@@ -192,6 +192,7 @@
 		DAE8606C1CA1BD2800A88133 /* mconfigrangemax.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8606B1CA1BD2800A88133 /* mconfigrangemax.m */; };
 		DAE8606F1CA1C05F00A88133 /* vconfigrangemin.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8606E1CA1C05F00A88133 /* vconfigrangemin.m */; };
 		DAE860721CA1C06900A88133 /* vconfigrangemax.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE860711CA1C06900A88133 /* vconfigrangemax.m */; };
+		DAFFF3F21E0830EE00E14F12 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAFFF3F11E0830EE00E14F12 /* analytics.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -580,6 +581,7 @@
 		DAE8606E1CA1C05F00A88133 /* vconfigrangemin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigrangemin.m; sourceTree = "<group>"; };
 		DAE860701CA1C06900A88133 /* vconfigrangemax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vconfigrangemax.h; sourceTree = "<group>"; };
 		DAE860711CA1C06900A88133 /* vconfigrangemax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vconfigrangemax.m; sourceTree = "<group>"; };
+		DAFFF3F11E0830EE00E14F12 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1039,6 +1041,7 @@
 				DACDA7F41C76073200A37D15 /* Localizable.strings */,
 				DA6973141C76328900A2C6EB /* urlpar.plist */,
 				DA3172D41C7C9EAD00B6CEF7 /* country.plist */,
+				DAFFF3F11E0830EE00E14F12 /* analytics.plist */,
 			);
 			path = langteq;
 			sourceTree = "<group>";
@@ -1467,6 +1470,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAFFF3F21E0830EE00E14F12 /* analytics.plist in Resources */,
 				DACDA8411C76073200A37D15 /* Localizable.strings in Resources */,
 				DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */,
 				DA9738A81C77918000F148FA /* imateq.xcassets in Resources */,
