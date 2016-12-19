@@ -1,6 +1,11 @@
 #import "analytics.h"
 
 @implementation analytics
+{
+    NSArray *screens;
+    NSArray *events;
+    NSArray *actions;
+}
 
 +(instancetype)singleton
 {
@@ -14,6 +19,11 @@
 -(instancetype)init
 {
     self = [super init];
+    
+    NSDictionary *plist = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"analytics" withExtension:@"plist"]];
+    screens = plist[@"screens"];
+    events = plist[@"events"];
+    actions = plist[@"actions"];
     
     return self;
 }
