@@ -1,11 +1,6 @@
 #import "analytics.h"
 
 @implementation analytics
-{
-    NSArray *screens;
-    NSArray *events;
-    NSArray *actions;
-}
 
 +(instancetype)singleton
 {
@@ -20,11 +15,6 @@
 {
     self = [super init];
     
-    NSDictionary *plist = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"analytics" withExtension:@"plist"]];
-    screens = plist[@"screens"];
-    events = plist[@"events"];
-    actions = plist[@"actions"];
-    
     return self;
 }
 
@@ -33,21 +23,12 @@
 -(void)start
 {
     Mofiler *mofiler = [Mofiler sharedInstance];
-    mofiler.useLocation = false;
-    
-    
-//    self.tracker = [[GAI sharedInstance] trackerWithTrackingId:analyticsid];
-//    [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
-//    [[GAI sharedInstance] setDispatchInterval:analyticsdispatch];
-//    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelNone];
-//    
-//#if DEBUG
-//    
-//    [[GAI sharedInstance] setDryRun:YES];
-//    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
-//    
-//#endif
-//    
+    [mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:@{}];
+    mofiler.delegate = self;
+    mofiler.useLocation = true;
+    mofiler.url = @"mofiler.com";
+    mofiler.useVerboseContext = true;
+
 }
 
 -(void)trackscreen:(ga_screen)screen

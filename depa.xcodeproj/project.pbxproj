@@ -150,7 +150,6 @@
 		DA9141A51C76971D004BE5D1 /* mplaymenulike.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141A41C76971D004BE5D1 /* mplaymenulike.m */; };
 		DA9141A81C769738004BE5D1 /* mplaymenuno.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9141A71C769738004BE5D1 /* mplaymenuno.m */; };
 		DA9738A81C77918000F148FA /* imateq.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA9738A71C77918000F148FA /* imateq.xcassets */; };
-		DACDA83F1C76073200A37D15 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F21C76073200A37D15 /* analytics.plist */; };
 		DACDA8401C76073200A37D15 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F31C76073200A37D15 /* defs.plist */; };
 		DACDA8411C76073200A37D15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DACDA7F41C76073200A37D15 /* Localizable.strings */; };
 		DACDA8421C76073200A37D15 /* appdel.m in Sources */ = {isa = PBXBuildFile; fileRef = DACDA7FA1C76073200A37D15 /* appdel.m */; };
@@ -488,7 +487,6 @@
 		DA9141A71C769738004BE5D1 /* mplaymenuno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mplaymenuno.m; sourceTree = "<group>"; };
 		DA9738A71C77918000F148FA /* imateq.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = imateq.xcassets; sourceTree = "<group>"; };
 		DAADE8431C755FB900489E6E /* depa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = depa.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DACDA7F21C76073200A37D15 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
 		DACDA7F31C76073200A37D15 /* defs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defs.plist; sourceTree = "<group>"; };
 		DACDA7F51C76073200A37D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DACDA7F61C76073200A37D15 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1037,7 +1035,6 @@
 		DACDA7F11C76073200A37D15 /* langteq */ = {
 			isa = PBXGroup;
 			children = (
-				DACDA7F21C76073200A37D15 /* analytics.plist */,
 				DACDA7F31C76073200A37D15 /* defs.plist */,
 				DACDA7F41C76073200A37D15 /* Localizable.strings */,
 				DA6973141C76328900A2C6EB /* urlpar.plist */,
@@ -1477,7 +1474,6 @@
 				DA6972FC1C760A7100A2C6EB /* depa.db in Resources */,
 				DACDA8401C76073200A37D15 /* defs.plist in Resources */,
 				DA3172D51C7C9EAD00B6CEF7 /* country.plist in Resources */,
-				DACDA83F1C76073200A37D15 /* analytics.plist in Resources */,
 				DA6973001C760C5400A2C6EB /* in in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
