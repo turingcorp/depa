@@ -41,7 +41,7 @@
     mofiler.delegate = self;
     mofiler.useLocation = true;
     mofiler.url = @"mofiler.com";
-    mofiler.useVerboseContext = true;
+//    mofiler.useVerboseContext = true;
 }
 
 -(void)trackscreen:(ga_screen)screen
@@ -54,7 +54,8 @@
 {
     NSString *eventname = events[event];
     NSString *eventaction = actions[action];
-    [[Mofiler sharedInstance] injectValueWithNewValue:@{eventname:eventaction} expirationDateInMilliseconds:nil];
+    NSString *eventAction = [NSString stringWithFormat:@"%@/%@", eventname, eventaction];
+    [[Mofiler sharedInstance] injectValueWithNewValue:@{eventAction:label} expirationDateInMilliseconds:nil];
     [[Mofiler sharedInstance] flushDataToMofiler];
 }
 
