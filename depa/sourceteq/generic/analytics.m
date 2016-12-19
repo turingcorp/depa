@@ -1,8 +1,8 @@
 #import "analytics.h"
 
-#define keyUserName @"username"
-#define valueUserName @"default"
-#define keyScreen @"screen"
+NSString *const kKeyUsername = @"username";
+NSString *const kValueUsername = @"default";
+NSString *const kKeyScreen = @"screen";
 
 @implementation analytics
 {
@@ -36,8 +36,11 @@
 
 -(void)start
 {
+    NSMutableDictionary *identity = [NSMutableDictionary dictionary];
+    identity[kKeyUsername] = kValueUsername;
+    
     Mofiler *mofiler = [Mofiler sharedInstance];
-    [mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:@{keyUserName:valueUserName}];
+    [mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:identity];
     mofiler.delegate = self;
     mofiler.useLocation = false;
 //    mofiler.url = @"mofiler.com";
@@ -46,7 +49,10 @@
 
 -(void)trackscreen:(ga_screen)screen
 {
-    [[Mofiler sharedInstance] injectValueWithNewValue:@{keyScreen:screens[screen]} expirationDateInMilliseconds:nil];
+    NSMutableDictionary *screenEvent = [NSMutableDictionary dictionary];
+    screenEvent[kKeyScreen] = screens[screen];
+    
+    [[Mofiler sharedInstance] injectValueWithNewValue:screenEvent expirationDateInMilliseconds:nil];
     [[Mofiler sharedInstance] flushDataToMofiler];
 }
 
@@ -54,10 +60,17 @@
 {
     NSString *eventname = events[event];
     NSString *eventaction = actions[action];
-    NSString *eventNameAction = [NSString stringWithFormat:@"%@/%@", eventname, eventaction];
+    NSString *eventNameAction = [NSString stringWithFormat:@"%@.%@", eventname, eventaction];
     
-    [[Mofiler sharedInstance] injectValueWithNewValue:@{eventNameAction:label} expirationDateInMilliseconds:nil];
+    NSMutableDictionary *actionEvent = [NSMutableDictionary dictionary];
+    actionEvent[eventNameAction] = label;
+    
+    [[Mofiler sharedInstance] injectValueWithNewValue:actionEvent expirationDateInMilliseconds:nil];
     [[Mofiler sharedInstance] flushDataToMofiler];
+    
+    [[Mofiler sharedInstance] getValueWithKey:eventNameAction identityKey:kKeyUsername identityValue:kValueUsername callback:^(id resutl, id error) {
+        NSLog(@"%@, error: %@", resutl, error);
+    }];
 }
 
 #pragma mark -
