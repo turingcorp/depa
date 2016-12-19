@@ -41,11 +41,13 @@
     mofiler.delegate = self;
     mofiler.useLocation = false;
     mofiler.url = @"mofiler.com";
-//    mofiler.useVerboseContext = true;
+    mofiler.useVerboseContext = true;
 }
 
 -(void)trackscreen:(ga_screen)screen
 {
+    NSLog(@"%@:%@", keyScreen, screens[screen]);
+    
     dispatch_async(dispatch_get_main_queue(),
                    ^{
                        [[Mofiler sharedInstance] injectValueWithNewValue:@{keyScreen:screens[screen]} expirationDateInMilliseconds:nil];
@@ -57,11 +59,13 @@
 {
     NSString *eventname = events[event];
     NSString *eventaction = actions[action];
-    NSString *eventAction = [NSString stringWithFormat:@"%@/%@", eventname, eventaction];
+    NSString *eventNameAction = [NSString stringWithFormat:@"%@/%@", eventname, eventaction];
+    
+    NSLog(@"%@:%@", eventNameAction, label);
     
     dispatch_async(dispatch_get_main_queue(),
     ^{
-        [[Mofiler sharedInstance] injectValueWithNewValue:@{eventAction:label} expirationDateInMilliseconds:nil];
+        [[Mofiler sharedInstance] injectValueWithNewValue:@{eventNameAction:label} expirationDateInMilliseconds:nil];
         [[Mofiler sharedInstance] flushDataToMofiler];
     });
 }
