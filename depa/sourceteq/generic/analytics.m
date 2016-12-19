@@ -1,5 +1,9 @@
 #import "analytics.h"
 
+#define keyUserName @"username"
+#define valueUserName @"default"
+#define keyScreen @"screen"
+
 @implementation analytics
 {
     NSArray *screens;
@@ -33,7 +37,7 @@
 -(void)start
 {
     Mofiler *mofiler = [Mofiler sharedInstance];
-    [mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:@{@"username":@"anonymous"}];
+    [mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:@{keyUserName:valueUserName}];
     mofiler.delegate = self;
     mofiler.useLocation = true;
     mofiler.url = @"mofiler.com";
@@ -42,7 +46,7 @@
 
 -(void)trackscreen:(ga_screen)screen
 {
-    [[Mofiler sharedInstance] injectValueWithNewValue:@{@"screen":screens[screen]} expirationDateInMilliseconds:nil];
+    [[Mofiler sharedInstance] injectValueWithNewValue:@{keyScreen:screens[screen]} expirationDateInMilliseconds:nil];
     [[Mofiler sharedInstance] flushDataToMofiler];
 }
 
@@ -59,20 +63,24 @@
 
 -(void)responseValueWithKey:(NSString *)key identityKey:(NSString *)identityKey identityValue:(NSString *)identityValue value:(NSDictionary<NSString *,id> *)value
 {
+    
 #if DEBUG
     
     NSLog(@"analytics response: %@", value);
     
 #endif
+    
 }
 
 -(void)errorOcurredWithError:(NSString *)error userInfo:(NSDictionary<NSString *,NSString *> *)userInfo
 {
+    
 #if DEBUG
     
     NSLog(@"analytics error: %@", error);
     
 #endif
+    
 }
 
 @end
