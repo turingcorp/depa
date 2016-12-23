@@ -73,7 +73,7 @@ NSString *const kKeyScreen = @"screen";
     actionEvent[eventNameAction] = label;
     
     [self.mofiler injectValueWithNewValue:actionEvent expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"test":@"{\"value\":\"test\"}"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"test":@"hello world"} expirationDateInMilliseconds:@(1001000)];
     [self.mofiler flushDataToMofiler];
     
     [self.mofiler getValueWithKey:@"test" identityKey:kKeyUsername identityValue:kValueUsername];
