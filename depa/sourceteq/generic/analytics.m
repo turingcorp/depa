@@ -3,7 +3,7 @@
 NSString *const analyticsId = @"DEPA";
 NSString *const analyticsKey = @"DEPA";
 NSString *const kKeyUsername = @"username";
-NSString *const kValueUsername = @"default";
+NSString *const kValueUsername = @"juan";
 NSString *const kKeyScreen = @"screen";
 
 @implementation analytics
@@ -40,18 +40,17 @@ NSString *const kKeyScreen = @"screen";
 {
     NSMutableDictionary *identity = [NSMutableDictionary dictionary];
     identity[kKeyUsername] = kValueUsername;
+    identity[@"name"] = @"juan";
+    identity[@"email"] = @"juan@mail.com";
     
     self.mofiler = [Mofiler sharedInstance];
-    self.mofiler.delegate = self;
     [self.mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:identity];
+    self.mofiler.delegate = self;
     self.mofiler.url = @"mofiler.com";
-    self.mofiler.useLocation = true;
-    [self.mofiler addIdentityWithIdentity:@{@"name":@"default"}];
-    [self.mofiler addIdentityWithIdentity:@{@"email":@"default@mail.com"}];
-    self.mofiler.useVerboseContext = false;
-    self.mofiler.debugLogging = false;
+    self.mofiler.useLocation = false;
+    self.mofiler.useVerboseContext = true;
+    self.mofiler.debugLogging = true;
     
-    NSLog(@"debug %@", @(self.mofiler.debugLogging));
 }
 
 -(void)trackscreen:(ga_screen)screen
@@ -72,11 +71,28 @@ NSString *const kKeyScreen = @"screen";
     NSMutableDictionary *actionEvent = [NSMutableDictionary dictionary];
     actionEvent[eventNameAction] = label;
     
-    [self.mofiler injectValueWithNewValue:actionEvent expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"test":@"hello world"} expirationDateInMilliseconds:@(1001000)];
+//    [self.mofiler injectValueWithNewValue:actionEvent expirationDateInMilliseconds:nil];
+    
+    [self.mofiler injectValueWithNewValue:@{@"key1":@"value1"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"key2":@"value2"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"key3":@"value3"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"key4":@"value4"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"key5":@"value5"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"key6":@"value6"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"key7":@"value7"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"key8":@"value8"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"key9":@"value9"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"key10":@"value10"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"key11":@"value11"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"key12":@"value12"} expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:@{@"key13":@"value13"} expirationDateInMilliseconds:nil];
     [self.mofiler flushDataToMofiler];
     
-    [self.mofiler getValueWithKey:@"test" identityKey:kKeyUsername identityValue:kValueUsername];
+    [self.mofiler getValueWithKey:@"key1" identityKey:kKeyUsername identityValue:kValueUsername callback:
+     ^(id result, id error)
+     {
+         NSLog(@"%@", result);
+     }];
 }
 
 #pragma mark -
@@ -87,7 +103,7 @@ NSString *const kKeyScreen = @"screen";
     
 #if DEBUG
     
-    NSLog(@"analytics response: %@:%@", key, value);
+    NSLog(@"analytics response: %@", value);
     
 #endif
     
@@ -99,6 +115,7 @@ NSString *const kKeyScreen = @"screen";
 #if DEBUG
     
     NSLog(@"analytics error: %@", error);
+    NSLog(@"%@", userInfo);
     
 #endif
     
