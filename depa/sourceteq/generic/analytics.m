@@ -38,6 +38,10 @@ NSString *const kMofilerUrl = @"modefiler.com";
     return self;
 }
 
+#pragma mark private
+
+
+
 #pragma mark public
 
 -(void)start
@@ -58,8 +62,24 @@ NSString *const kMofilerUrl = @"modefiler.com";
 
 -(void)trackscreen:(ga_screen)screen
 {
+    NSString *screenName = [NSString stringWithFormat:@"%@%@",
+                            kKeyScreen,
+                            screens[screen]];
+    NSNumber *trackCounter = tracked[screenName];
+    
+    if (trackCounter == nil)
+    {
+        trackCounter = @1;
+    }
+    else
+    {
+        trackCounter = @(trackCounter.integerValue + 1);
+    }
+    
     NSMutableDictionary *screenEvent = [NSMutableDictionary dictionary];
-    screenEvent[kKeyScreen] = screens[screen];
+    screenEvent[screenName] = [NSString stringWithFormat:@"%@",
+                               trackCounter];
+    tracked[screenName] = trackCounter;
     
     [self.mofiler injectValueWithNewValue:screenEvent expirationDateInMilliseconds:nil];
     [self.mofiler flushDataToMofiler];
