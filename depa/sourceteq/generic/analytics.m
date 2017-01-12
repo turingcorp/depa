@@ -35,8 +35,6 @@ NSString *const kMofilerUrl = @"modefiler.com";
     actions = plist[@"actions"];
     userName = [NSUUID UUID].UUIDString;
     
-    NSLog(@"username: %@", userName);
-    
     return self;
 }
 
