@@ -3,14 +3,16 @@
 NSString *const analyticsId = @"DEPA";
 NSString *const analyticsKey = @"DEPA";
 NSString *const kKeyUsername = @"username";
-NSString *const kValueUsername = @"juan";
 NSString *const kKeyScreen = @"screen";
+NSString *const kMofilerUrl = @"modefiler.com";
 
 @implementation analytics
 {
+    NSMutableDictionary *tracked;
     NSArray *screens;
     NSArray *events;
     NSArray *actions;
+    NSString *userName;
 }
 
 +(instancetype)singleton
@@ -26,10 +28,12 @@ NSString *const kKeyScreen = @"screen";
 {
     self = [super init];
     
+    tracked = [NSMutableDictionary dictionary];
     NSDictionary *plist = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"analytics" withExtension:@"plist"]];
     screens = plist[@"screens"];
     events = plist[@"events"];
     actions = plist[@"actions"];
+    userName = [NSUUID UUID].UUIDString;
     
     return self;
 }
@@ -38,26 +42,18 @@ NSString *const kKeyScreen = @"screen";
 
 -(void)start
 {
-    dispatch_async(dispatch_get_main_queue(),
-                   ^
-                   {
-                       NSMutableDictionary *identity = [NSMutableDictionary dictionary];
-                       identity[@"user"] = kValueUsername;
-                       
-                       self.mofiler = [Mofiler sharedInstance];
-                       [self.mofiler initializeWithAppKey:analyticsKey appName:analyticsId useAdvertisingId:true];
-                       [self.mofiler addIdentityWithIdentity:@{@"user":@"juan"}];
-                       [self.mofiler addIdentityWithIdentity:@{@"name":@"juan"}];
-                       [self.mofiler addIdentityWithIdentity:@{@"username":@"juan"}];
-                       [self.mofiler addIdentityWithIdentity:@{@"email":@"juan@juan.com"}];
-                       self.mofiler.delegate = self;
-                       self.mofiler.url = @"mofiler.com";
-                       self.mofiler.useLocation = false;
-                       self.mofiler.useVerboseContext = true;
-                       self.mofiler.debugLogging = true;
-                       [self.mofiler flushDataToMofiler];
-                   });
+    NSMutableDictionary *identity = [NSMutableDictionary dictionary];
+    identity[kKeyUsername] = userName;
     
+    self.mofiler = [Mofiler sharedInstance];
+    [self.mofiler initializeWithAppKey:analyticsKey appName:analyticsId useAdvertisingId:true];
+    [self.mofiler addIdentityWithIdentity:identity];
+    self.mofiler.delegate = self;
+    self.mofiler.url = kMofilerUrl;
+    self.mofiler.useLocation = true;
+    self.mofiler.useVerboseContext = false;
+    self.mofiler.debugLogging = false;
+    [self.mofiler flushDataToMofiler];
 }
 
 -(void)trackscreen:(ga_screen)screen
@@ -79,53 +75,7 @@ NSString *const kKeyScreen = @"screen";
     actionEvent[eventNameAction] = label;
     
     [self.mofiler injectValueWithNewValue:actionEvent expirationDateInMilliseconds:nil];
-    
-    
-    
-    dispatch_async(dispatch_get_main_queue(),
-                   ^
-                   {
-                       [self.mofiler injectValueWithNewValue:@{@"mykey1":@"a123"} expirationDateInMilliseconds:nil];
-                       [self.mofiler flushDataToMofiler];
-                   });
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.mofiler getValueWithKey:@"mykey1" identityKey:@"name" identityValue:kValueUsername callback:
-         ^(id result, id error)
-         {
-             NSLog(@"%@", result);
-         }];
-        
-        [self.mofiler getValueWithKey:@"mykey1" identityKey:@"name" identityValue:kValueUsername callback:
-         ^(id result, id error)
-         {
-             NSLog(@"%@", result);
-         }];
-        
-        [self.mofiler getValueWithKey:@"mykey1" identityKey:@"name" identityValue:kValueUsername callback:
-         ^(id result, id error)
-         {
-             NSLog(@"%@", result);
-         }];
-        
-        [self.mofiler getValueWithKey:@"mykey1" identityKey:@"name" identityValue:kValueUsername callback:
-         ^(id result, id error)
-         {
-             NSLog(@"%@", result);
-         }];
-        
-        [self.mofiler getValueWithKey:@"mykey1" identityKey:@"name" identityValue:kValueUsername callback:
-         ^(id result, id error)
-         {
-             NSLog(@"%@", result);
-         }];
-        
-        [self.mofiler getValueWithKey:@"mykey1" identityKey:@"name" identityValue:kValueUsername callback:
-         ^(id result, id error)
-         {
-             NSLog(@"%@", result);
-         }];
-    });
+    [self.mofiler flushDataToMofiler];
 }
 
 #pragma mark -
