@@ -35,12 +35,39 @@ NSString *const kMofilerUrl = @"modefiler.com";
     actions = plist[@"actions"];
     userName = [NSUUID UUID].UUIDString;
     
+    NSLog(@"username: %@", userName);
+    
     return self;
 }
 
 #pragma mark private
 
+-(NSString*)countFor:(NSString*)key
+{
+    NSNumber *trackCounter = tracked[key];
+    
+    if (trackCounter == nil)
+    {
+        trackCounter = @1;
+    }
+    else
+    {
+        trackCounter = @(trackCounter.integerValue + 1);
+    }
+    
+    tracked[key] = trackCounter;
+    
+    NSString *counterString = [NSString stringWithFormat:@"%@",
+                               trackCounter];
+    
+    return counterString;
+}
 
+-(void)inject:(NSDictionary*)dictionary
+{
+    [self.mofiler injectValueWithNewValue:dictionary expirationDateInMilliseconds:nil];
+    [self.mofiler flushDataToMofiler];
+}
 
 #pragma mark public
 
@@ -62,40 +89,24 @@ NSString *const kMofilerUrl = @"modefiler.com";
 
 -(void)trackscreen:(ga_screen)screen
 {
-    NSString *screenName = [NSString stringWithFormat:@"%@%@",
+    NSString *screenName = [NSString stringWithFormat:@"%@.%@",
                             kKeyScreen,
                             screens[screen]];
-    NSNumber *trackCounter = tracked[screenName];
-    
-    if (trackCounter == nil)
-    {
-        trackCounter = @1;
-    }
-    else
-    {
-        trackCounter = @(trackCounter.integerValue + 1);
-    }
-    
-    NSMutableDictionary *screenEvent = [NSMutableDictionary dictionary];
-    screenEvent[screenName] = [NSString stringWithFormat:@"%@",
-                               trackCounter];
-    tracked[screenName] = trackCounter;
-    
-    [self.mofiler injectValueWithNewValue:screenEvent expirationDateInMilliseconds:nil];
-    [self.mofiler flushDataToMofiler];
+    NSString *countString = [self countFor:screenName];
+    NSDictionary *log = @{screenName:countString};
+    [self inject:log];
 }
 
 -(void)trackevent:(ga_event)event action:(ga_action)action label:(NSString*)label
 {
     NSString *eventname = events[event];
     NSString *eventaction = actions[action];
-    NSString *eventNameAction = [NSString stringWithFormat:@"%@.%@", eventname, eventaction];
-    
-    NSMutableDictionary *actionEvent = [NSMutableDictionary dictionary];
-    actionEvent[eventNameAction] = label;
-    
-    [self.mofiler injectValueWithNewValue:actionEvent expirationDateInMilliseconds:nil];
-    [self.mofiler flushDataToMofiler];
+    NSString *eventNameAction = [NSString stringWithFormat:@"%@.%@",
+                                 eventname,
+                                 eventaction];
+    NSString *countString = [self countFor:eventNameAction];
+    NSDictionary *log = @{eventNameAction:countString};
+    [self inject:log];
 }
 
 #pragma mark -
