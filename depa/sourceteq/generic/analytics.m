@@ -38,18 +38,25 @@ NSString *const kKeyScreen = @"screen";
 
 -(void)start
 {
-    NSMutableDictionary *identity = [NSMutableDictionary dictionary];
-    identity[kKeyUsername] = kValueUsername;
-    identity[@"name"] = @"juan";
-    identity[@"email"] = @"juan@mail.com";
-    
-    self.mofiler = [Mofiler sharedInstance];
-    [self.mofiler initializeWithAppKey:analyticsKey appName:analyticsId identity:identity];
-    self.mofiler.delegate = self;
-    self.mofiler.url = @"mofiler.com";
-    self.mofiler.useLocation = false;
-    self.mofiler.useVerboseContext = true;
-    self.mofiler.debugLogging = true;
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       NSMutableDictionary *identity = [NSMutableDictionary dictionary];
+                       identity[@"user"] = kValueUsername;
+                       
+                       self.mofiler = [Mofiler sharedInstance];
+                       [self.mofiler initializeWithAppKey:analyticsKey appName:analyticsId useAdvertisingId:true];
+                       [self.mofiler addIdentityWithIdentity:@{@"user":@"juan"}];
+                       [self.mofiler addIdentityWithIdentity:@{@"name":@"juan"}];
+                       [self.mofiler addIdentityWithIdentity:@{@"username":@"juan"}];
+                       [self.mofiler addIdentityWithIdentity:@{@"email":@"juan@juan.com"}];
+                       self.mofiler.delegate = self;
+                       self.mofiler.url = @"mofiler.com";
+                       self.mofiler.useLocation = false;
+                       self.mofiler.useVerboseContext = true;
+                       self.mofiler.debugLogging = true;
+                       [self.mofiler flushDataToMofiler];
+                   });
     
 }
 
@@ -71,28 +78,54 @@ NSString *const kKeyScreen = @"screen";
     NSMutableDictionary *actionEvent = [NSMutableDictionary dictionary];
     actionEvent[eventNameAction] = label;
     
-//    [self.mofiler injectValueWithNewValue:actionEvent expirationDateInMilliseconds:nil];
+    [self.mofiler injectValueWithNewValue:actionEvent expirationDateInMilliseconds:nil];
     
-    [self.mofiler injectValueWithNewValue:@{@"key1":@"value1"} expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"key2":@"value2"} expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"key3":@"value3"} expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"key4":@"value4"} expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"key5":@"value5"} expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"key6":@"value6"} expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"key7":@"value7"} expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"key8":@"value8"} expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"key9":@"value9"} expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"key10":@"value10"} expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"key11":@"value11"} expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"key12":@"value12"} expirationDateInMilliseconds:nil];
-    [self.mofiler injectValueWithNewValue:@{@"key13":@"value13"} expirationDateInMilliseconds:nil];
-    [self.mofiler flushDataToMofiler];
     
-    [self.mofiler getValueWithKey:@"key1" identityKey:kKeyUsername identityValue:kValueUsername callback:
-     ^(id result, id error)
-     {
-         NSLog(@"%@", result);
-     }];
+    
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [self.mofiler injectValueWithNewValue:@{@"mykey1":@"a123"} expirationDateInMilliseconds:nil];
+                       [self.mofiler flushDataToMofiler];
+                   });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.mofiler getValueWithKey:@"mykey1" identityKey:@"name" identityValue:kValueUsername callback:
+         ^(id result, id error)
+         {
+             NSLog(@"%@", result);
+         }];
+        
+        [self.mofiler getValueWithKey:@"mykey1" identityKey:@"name" identityValue:kValueUsername callback:
+         ^(id result, id error)
+         {
+             NSLog(@"%@", result);
+         }];
+        
+        [self.mofiler getValueWithKey:@"mykey1" identityKey:@"name" identityValue:kValueUsername callback:
+         ^(id result, id error)
+         {
+             NSLog(@"%@", result);
+         }];
+        
+        [self.mofiler getValueWithKey:@"mykey1" identityKey:@"name" identityValue:kValueUsername callback:
+         ^(id result, id error)
+         {
+             NSLog(@"%@", result);
+         }];
+        
+        [self.mofiler getValueWithKey:@"mykey1" identityKey:@"name" identityValue:kValueUsername callback:
+         ^(id result, id error)
+         {
+             NSLog(@"%@", result);
+         }];
+        
+        [self.mofiler getValueWithKey:@"mykey1" identityKey:@"name" identityValue:kValueUsername callback:
+         ^(id result, id error)
+         {
+             NSLog(@"%@", result);
+         }];
+    });
 }
 
 #pragma mark -

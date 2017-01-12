@@ -26,12 +26,12 @@
     return YES;
 }
 
--(void)applicationWillEnterForeground:(UIApplication*)application
+-(void)applicationDidBecomeActive:(UIApplication *)application
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger ttl = [[defaults valueForKey:@"ttl"] integerValue];
     
-    if(ttl > 10)
+    if(ttl > 6)
     {
         ttl = 0;
         
