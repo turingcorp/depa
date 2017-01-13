@@ -4,7 +4,7 @@ NSString *const analyticsId = @"DEPA";
 NSString *const analyticsKey = @"DEPA";
 NSString *const kKeyUsername = @"username";
 NSString *const kKeyScreen = @"screen";
-NSString *const kMofilerUrl = @"modefiler.com";
+NSString *const kMofilerUrl = @"mofiler.com";
 
 @implementation analytics
 {
