@@ -17,9 +17,9 @@
 -(instancetype)init
 {
     cpages *pages = [[cpages alloc] init];
-    statusBarStyle = UIStatusBarStyleLightContent;
     self.pages = pages;
     self = [super initWithRootViewController:pages];
+    statusBarStyle = UIStatusBarStyleLightContent;
     
     return self;
 }
