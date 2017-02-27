@@ -196,7 +196,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-depa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0995CB1E05C4BC007F627D /* Mofiler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mofiler.framework; path = Carthage/Build/iOS/Mofiler.framework; sourceTree = "<group>"; };
 		DA0ABA951C9C573300E023C3 /* vitemceladdress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vitemceladdress.h; sourceTree = "<group>"; };
 		DA0ABA961C9C573300E023C3 /* vitemceladdress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vitemceladdress.m; sourceTree = "<group>"; };
@@ -1401,7 +1400,6 @@
 				DA21E7131E05CE7A004A800F /* libsqlite3.tbd */,
 				DA0995CB1E05C4BC007F627D /* Mofiler.framework */,
 				DA4118C61C85EFF8002CD805 /* MapKit.framework */,
-				78C59ACFBD53DB989F36E0A0 /* libPods-depa.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
