@@ -3,10 +3,14 @@
 @implementation updater
 
 NSString *documents;
+NSString *const kAppsFlyerDevKey = @"g8TjryqG8FWgH826PratvY";
+NSString *const kAppId = @"1089721156";
 
 +(void)launch
 {
     [[analytics singleton] start];
+    [AppsFlyerTracker sharedTracker].appsFlyerDevKey = kAppsFlyerDevKey;
+    [AppsFlyerTracker sharedTracker].appleAppID = kAppId;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 100), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^

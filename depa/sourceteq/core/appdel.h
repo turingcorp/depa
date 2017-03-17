@@ -5,6 +5,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AddressBook/AddressBook.h>
 #import <Mofiler/Mofiler-Swift.h>
+#import <AppsFlyerLib/AppsFlyerTracker.h>
 #import "analytics.h"
 #import "db.h"
 #import "timerbg.h"
