@@ -19,6 +19,8 @@
 
 -(void)applicationDidBecomeActive:(UIApplication *)application
 {
+    [[AppsFlyerTracker sharedTracker] trackAppLaunch];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger ttl = [[defaults valueForKey:@"ttl"] integerValue];
     
