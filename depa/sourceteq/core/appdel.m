@@ -19,6 +19,8 @@
 
 -(void)applicationDidBecomeActive:(UIApplication *)application
 {
+    [[AppsFlyerTracker sharedTracker] trackAppLaunch];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger ttl = [[defaults valueForKey:@"ttl"] integerValue];
     
@@ -48,10 +50,10 @@
     if(index)
     {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setValue:@(-30) forKey:@"ttl"];
+        [defaults setValue:@(-6) forKey:@"ttl"];
         
         NSURL *url = [NSURL URLWithString:
-                      @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1089721156&type=Purple+Software&mt=8"];
+                      @"https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1089721156&type=Purple+Software&mt=8"];
         [[UIApplication sharedApplication] openURL:url];
     }
 }

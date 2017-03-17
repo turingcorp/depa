@@ -34,19 +34,19 @@
         
         concreteid = concreteid.lowercaseString;
         
-        if([concreteid isEqualToString:@"mtrs"])
+        if([concreteid isEqualToString:@"total_area"])
         {
             attr = search_attr_mtrs;
         }
-        else if([concreteid isEqualToString:@"ambqty"])
+        else if([concreteid isEqualToString:@"bedrooms"])
         {
             attr = search_attr_rooms;
         }
-        else if([concreteid isEqualToString:@"bathqty"])
+        else if([concreteid isEqualToString:@"full_bathrooms"])
         {
             attr = search_attr_baths;
         }
-        else if([concreteid isEqualToString:@"garage"])
+        else if([concreteid isEqualToString:@"parking_lots"])
         {
             attr = search_attr_garage;
         }
