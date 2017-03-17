@@ -38,7 +38,7 @@
         {
             attr = search_attr_mtrs;
         }
-        else if([concreteid isEqualToString:@"rooms"])
+        else if([concreteid isEqualToString:@"bedrooms"])
         {
             attr = search_attr_rooms;
         }
