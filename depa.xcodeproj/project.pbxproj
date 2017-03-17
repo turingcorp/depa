@@ -124,8 +124,8 @@
 		DA4118D71C860F50002CD805 /* mitemdetailinfostatsrooms.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118D61C860F50002CD805 /* mitemdetailinfostatsrooms.m */; };
 		DA4118DA1C860F60002CD805 /* mitemdetailinfostatsgarages.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118D91C860F60002CD805 /* mitemdetailinfostatsgarages.m */; };
 		DA66929F1E7C79A9004CAEB9 /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA66929E1E7C79A9004CAEB9 /* AppsFlyerLib.framework */; };
-		DA6692A11E7C79C1004CAEB9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6692A01E7C79C1004CAEB9 /* AdSupport.framework */; };
-		DA6692A31E7C79D2004CAEB9 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6692A21E7C79D2004CAEB9 /* iAd.framework */; };
+		DA6692A11E7C79C1004CAEB9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6692A01E7C79C1004CAEB9 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DA6692A31E7C79D2004CAEB9 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6692A21E7C79D2004CAEB9 /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
