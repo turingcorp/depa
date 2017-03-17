@@ -125,6 +125,7 @@
 		DA4118DA1C860F60002CD805 /* mitemdetailinfostatsgarages.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4118D91C860F60002CD805 /* mitemdetailinfostatsgarages.m */; };
 		DA66929F1E7C79A9004CAEB9 /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA66929E1E7C79A9004CAEB9 /* AppsFlyerLib.framework */; };
 		DA6692A11E7C79C1004CAEB9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6692A01E7C79C1004CAEB9 /* AdSupport.framework */; };
+		DA6692A31E7C79D2004CAEB9 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6692A21E7C79D2004CAEB9 /* iAd.framework */; };
 		DA6972FC1C760A7100A2C6EB /* depa.db in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FB1C760A7100A2C6EB /* depa.db */; };
 		DA6972FE1C760BCD00A2C6EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FD1C760BCD00A2C6EB /* Images.xcassets */; };
 		DA6973001C760C5400A2C6EB /* in in Resources */ = {isa = PBXBuildFile; fileRef = DA6972FF1C760C5400A2C6EB /* in */; };
@@ -440,6 +441,7 @@
 		DA4118D91C860F60002CD805 /* mitemdetailinfostatsgarages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mitemdetailinfostatsgarages.m; sourceTree = "<group>"; };
 		DA66929E1E7C79A9004CAEB9 /* AppsFlyerLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppsFlyerLib.framework; sourceTree = "<group>"; };
 		DA6692A01E7C79C1004CAEB9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		DA6692A21E7C79D2004CAEB9 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		DA6972FB1C760A7100A2C6EB /* depa.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depa.db; sourceTree = "<group>"; };
 		DA6972FD1C760BCD00A2C6EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA6972FF1C760C5400A2C6EB /* in */ = {isa = PBXFileReference; lastKnownFileType = folder; path = in; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 				DA21E7141E05CE7A004A800F /* libsqlite3.tbd in Frameworks */,
 				DACDA8491C76073200A37D15 /* libtimerbg.a in Frameworks */,
 				DACDA8481C76073200A37D15 /* libdb.a in Frameworks */,
+				DA6692A31E7C79D2004CAEB9 /* iAd.framework in Frameworks */,
 				DA6692A11E7C79C1004CAEB9 /* AdSupport.framework in Frameworks */,
 				DA66929F1E7C79A9004CAEB9 /* AppsFlyerLib.framework in Frameworks */,
 				DA8681E91E05D2D6002B0B78 /* Mofiler.framework in Frameworks */,
@@ -1403,6 +1406,7 @@
 		DE15BEF0973E01072524BBA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA6692A21E7C79D2004CAEB9 /* iAd.framework */,
 				DA6692A01E7C79C1004CAEB9 /* AdSupport.framework */,
 				DA66929E1E7C79A9004CAEB9 /* AppsFlyerLib.framework */,
 				DA21E7131E05CE7A004A800F /* libsqlite3.tbd */,
